@@ -121,18 +121,21 @@ class DBManager:
             self.logger.error(f"Error al exportar los datos de la tabla {table} a {filename}: {e}")
         
     def fetchData(self, table, i):
-        query = f"SELECT * FROM {table}"
-        self.cursor.execute(query)
+        query = f"SELECT * FROM (SELECT *, ROW_NUMBER() OVER (ORDER BY (SELECT NULL)) AS rn FROM {table}) AS sub WHERE rn = ?"
         try:
-            rows = self.cursor.fetchall()
-            if i < len(rows):
-                self.logger.info(f"Datos obtenidos de la fila en la posición {i} de la tabla {table}.")
-                return rows[i]  # Devuelve la fila en la posición i
+            self.cursor.execute(query, (i,))
+            row = self.cursor.fetchone()
+            if row:
+                self.logger.info(f"Datos obtenidos de la fila en la posición {i} de la tabla {table}. Con PK = {row[0]}")
+                return row  # Devuelve la fila en la posición i
             else:
                 self.logger.error(f"Índice {i} fuera de rango para la tabla {table}.")
                 return None
         except pyodbc.Error as e:
             self.logger.error(f"Error al obtener datos de la tabla {table}: {e}")
+            return None
+        except (TypeError, ValueError) as e:
+            self.logger.error(f"Error de tipo o valor al obtener datos de la tabla {table}: {e}")
             return None
         
     def truncateTable(self, table):
@@ -172,3 +175,11 @@ class DBManager:
         except pyodbc.Error as e:
             self.logger.error(f"Error al obtener el tamaño de la tabla {table_name}: {e}")
             return None
+        
+    def comp(self):
+        for n in range(0, 8000):
+            cod = self.fetchData("Codigos", n)
+            exp = self.fetchData("Licitaciones", n)
+            if cod[0] != exp[0]:
+                print(f"Error in {n}: {cod[0]} | {exp[0]}")
+
