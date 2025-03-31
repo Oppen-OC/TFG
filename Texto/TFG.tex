@@ -1,0 +1,193 @@
+\documentclass{article}
+\usepackage{graphicx}
+\graphicspath{{images/}}
+
+% Language setting
+% Replace `english' with e.g. `spanish' to change the document language
+\usepackage[spanish]{babel}
+
+% Set page size and margins
+% Replace `letterpaper' with `a4paper' for UK/EU standard size
+\usepackage[letterpaper,top=2cm,bottom=2cm,left=3cm,right=3cm,marginparwidth=1.75cm]{geometry}
+
+% Useful packages
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage[colorlinks=true, allcolors=blue]{hyperref}
+
+% Para posicionar la imagen en la esquina superior izquierda
+\usepackage[absolute,overlay]{textpos}
+
+\title{TFG}
+\author{Daniel Alpeñes De Lucca}
+
+% Para el espaciado de la tabla de contenidos
+\usepackage[utf8]{inputenc}
+\usepackage{tocloft}
+\setlength{\cftbeforesecskip}{12pt} % Espacio antes de cada sección
+\setlength{\cftbeforesubsecskip}{6pt} % Espacio antes de cada subsección
+
+
+\begin{document}
+
+% Colocar la imagen en la esquina superior izquierda
+\begin{textblock*}{5cm}(0.8cm, 1cm) % Tamaño y posición de la imagen
+    \includegraphics[width=4cm]{etsinf_logo} % Ajusta el tamaño de la imagen
+\end{textblock*}
+\begin{textblock*}{5cm}(17cm, 1cm) % Tamaño y posición de la imagen
+    \includegraphics[width=4cm]{UPV_logo} % Ajusta el tamaño de la imagen
+\end{textblock*}
+
+\begin{titlepage}
+\vspace*{2cm} % Ajusta este valor para mover el contenido hacia abajo
+\centering
+{\bfseries\LARGE Universitat Politècnica de València \par}
+\vspace{1cm}
+{\scshape\Large Escuela técnica superior de ingeniería informática \par}
+\vspace{3cm}
+{\scshape\Huge T\'itulo del proyecto \par}
+\vspace{3cm}
+{\itshape\Large Trabajo de fin de grado \par}
+\vfill
+\vspace{3cm}
+{\Large Autor:\par}
+{\Large  Daniel Alpeñes De Lucca \par}
+\vspace{1cm}
+{\Large Tutoras:\par}
+{\Large  Stella María Heras Barberá \par}
+{\Large  María Laura Montalban Domingo \par}
+
+\vfill
+{\Large Curso académico 2024-2025 \par}
+\end{titlepage}
+
+\begin{titlepage}
+{\bfseries\LARGE Dedicatoria \par}
+Don pollo
+\end{titlepage}
+
+{\bfseries\LARGE Agradecimientos \par}
+\begin{itemize}
+  \item A toda la gente bonita de internet
+  \item Xenu
+\end{itemize}
+\newpage
+
+{\bfseries\LARGE Resumen \par}
+Lorem ipsum dolor sit amet consectetur adipiscing elit, duis nostra sagittis nunc class mauris fermentum, semper lobortis eu dui per ridiculus. Sodales augue ad neque lobortis taciti facilisi, nec cum vehicula scelerisque senectus ante, inceptos massa maecenas vel natoque. Faucibus sem mattis sociosqu tempor proin sapien egestas tempus, purus condimentum ligula tellus libero penatibus mauris tortor, sagittis cum aenean nunc rutrum odio habitasse.
+
+Eros sociis dictumst auctor habitasse libero molestie nascetur laoreet sodales, a vitae cubilia sollicitudin hendrerit elementum neque ullamcorper, mollis ultrices felis enim conubia lacus scelerisque mi. Semper orci nisl aliquam imperdiet viverra ac, molestie litora penatibus aliquet himenaeos feugiat conubia, habitasse eu leo volutpat curae. Quam parturient purus accumsan eu dui curae torquent porta ligula, nibh ornare augue aenean mus sem iaculis arcu, et sapien eros volutpat enim feugiat ac metus.
+\newpage
+
+{\bfseries\LARGE Palabras clave \par}
+\begin{itemize}
+    \item Lorem ipsum dolor
+    \item sit amet consectetur adipiscing elit
+    \item duis nostra sagittis nunc class mauris fermentum
+    \item semper lobortis eu dui per ridiculus
+    \item odales augue ad neque lobortis taciti facilisi
+    \item nec cum vehicula scelerisque senectus ante
+    \item inceptos massa maecenas vel natoque
+\end{itemize}
+\newpage
+
+\addtocontents{toc}{\protect\enlargethispage{\baselineskip}}
+{\Large % Cambia el tamaño de la letra aquí
+\tableofcontents
+}\newpage
+
+% Secciones y subsecciones
+\section{Autenticación}
+Lorem ipsum dolor sit amet consectetur adipiscing elit, duis nostra sagittis nunc class mauris fermentum, semper lobortis eu dui per ridiculus. Sodales augue ad neque lobortis taciti facilisi, nec cum vehicula scelerisque senectus ante, inceptos massa maecenas vel natoque. Faucibus sem mattis sociosqu tempor proin sapien egestas tempus, purus condimentum ligula tellus libero penatibus mauris tortor, sagittis cum aenean nunc rutrum odio habitasse.
+
+Eros sociis dictumst auctor habitasse libero molestie nascetur laoreet sodales, a vitae cubilia sollicitudin hendrerit elementum neque ullamcorper, mollis ultrices felis enim conubia lacus scelerisque mi. Semper orci nisl aliquam imperdiet viverra ac, molestie litora penatibus aliquet himenaeos feugiat conubia, habitasse eu leo volutpat curae. Quam parturient purus accumsan eu dui curae torquent porta ligula, nibh ornare augue aenean mus sem iaculis arcu, et sapien eros volutpat enim feugiat ac metus.
+\newpage
+
+\section{Introducción}
+Las agencias públicas encargadas del desarrollo de infraestructuras están demandando modelos digitales de gestión que optimicen la contratación de los contratos de obras. El objetivo de estos modelos es reducir los sobrecostes y retrasos en la construcción, garantizando una mayor eficiencia en la planificación y ejecución de los proyectos.
+
+
+\subsection{Motivación}
+Uno de los principales desafíos en la gestión de contratos de obra pública es la subjetividad en la identificación y evaluación de riesgos. Además, la interdependencia de los riesgos y la incertidumbre inherente a los proyectos de infraestructura complican la toma de decisiones. Por ello, es necesario desarrollar metodologías que permitan minimizar estas incertidumbres y mejorar la precisión en la estimación de los factores de contratación.
+
+\subsection{Objetivos}
+El proyecto busca aplicar técnicas de Inteligencia Artificial (IA), como los modelos de lenguaje de gran tamaño (LLMs), el procesamiento del lenguaje natural (NLP) y la argumentación computacional, para abordar los siguientes objetivos:
+\begin{itemize}
+  \item Desarrollar un algoritmo para extraer información de la licitación y adjudicación de contratos de obras.
+  \item Desarrollar un modelo de análisis de la relación calidad-precio de las ofertas presentadas, considerando las características de la contratación
+  \item Desarrollar un modelo predictivo de riesgos de sobrecostes o retrasos temporales.
+\end{itemize}
+Para alcanzar estos objetivos, se utilizarán bases de datos con información sobre expedientes de licitación y ejecución de contratos de la administración pública.
+
+\subsection{Metodología}
+La forma de trabajo con la que se llevó a cabo este proyecto fue por medio de reuniones semanales entre mi persona y ambas tutoras, en las que se discutía sobre el progreso realizado y se planteaban nuevos objetivos para la proxima reunión. Este proceso ue tambien apoyado por comunicación constante por medio de mensajería instantánea, agilizando así nuestra comunicación. 
+\newpage
+
+\section{Estado del arte}
+Lorem ipsum dolor sit amet consectetur adipiscing elit, duis nostra sagittis nunc class mauris fermentum, semper lobortis eu dui per ridiculus. Sodales augue ad neque lobortis taciti facilisi, nec cum vehicula scelerisque senectus ante, inceptos massa maecenas vel natoque. Faucibus sem mattis sociosqu tempor proin sapien egestas tempus, purus condimentum ligula tellus libero penatibus mauris tortor, sagittis cum aenean nunc rutrum odio habitasse.
+
+Eros sociis dictumst auctor habitasse libero molestie nascetur laoreet sodales, a vitae cubilia sollicitudin hendrerit elementum neque ullamcorper, mollis ultrices felis enim conubia lacus scelerisque mi. Semper orci nisl aliquam imperdiet viverra ac, molestie litora penatibus aliquet himenaeos feugiat conubia, habitasse eu leo volutpat curae. Quam parturient purus accumsan eu dui curae torquent porta ligula, nibh ornare augue aenean mus sem iaculis arcu, et sapien eros volutpat enim feugiat ac metus.
+\subsection{LLMs}
+\subsection{RAG}
+\subsection{Lenguaje de programación}
+\subsection{Frontend}
+\subsection{Crítica al estado del arte}
+\newpage
+
+\section{Propuesta}
+Lorem ipsum dolor sit amet consectetur adipiscing elit, duis nostra sagittis nunc class mauris fermentum, semper lobortis eu dui per ridiculus. Sodales augue ad neque lobortis taciti facilisi, nec cum vehicula scelerisque senectus ante, inceptos massa maecenas vel natoque. Faucibus sem mattis sociosqu tempor proin sapien egestas tempus, purus condimentum ligula tellus libero penatibus mauris tortor, sagittis cum aenean nunc rutrum odio habitasse.
+
+Eros sociis dictumst auctor habitasse libero molestie nascetur laoreet sodales, a vitae cubilia sollicitudin hendrerit elementum neque ullamcorper, mollis ultrices felis enim conubia lacus scelerisque mi. Semper orci nisl aliquam imperdiet viverra ac, molestie litora penatibus aliquet himenaeos feugiat conubia, habitasse eu leo volutpat curae. Quam parturient purus accumsan eu dui curae torquent porta ligula, nibh ornare augue aenean mus sem iaculis arcu, et sapien eros volutpat enim feugiat ac metus.
+Análisis del problema}
+\subsection{Identificación y análisis de soluciones posibles}
+\subsection{Solución propuesta}
+\subsection{Plan de Trabajo}
+\subsection{Diseño de la solución}
+\subsubsection{Arquitectura del Sistema}
+\subsubsection{Diseño Detallado}
+\subsection{Tecnología Utilizada}
+\subsection{Desarrollo de la solución propuesta}
+\newpage
+
+\section{Implantación}
+Lorem ipsum dolor sit amet consectetur adipiscing elit, duis nostra sagittis nunc class mauris fermentum, semper lobortis eu dui per ridiculus. Sodales augue ad neque lobortis taciti facilisi, nec cum vehicula scelerisque senectus ante, inceptos massa maecenas vel natoque. Faucibus sem mattis sociosqu tempor proin sapien egestas tempus, purus condimentum ligula tellus libero penatibus mauris tortor, sagittis cum aenean nunc rutrum odio habitasse.
+
+Eros sociis dictumst auctor habitasse libero molestie nascetur laoreet sodales, a vitae cubilia sollicitudin hendrerit elementum neque ullamcorper, mollis ultrices felis enim conubia lacus scelerisque mi. Semper orci nisl aliquam imperdiet viverra ac, molestie litora penatibus aliquet himenaeos feugiat conubia, habitasse eu leo volutpat curae. Quam parturient purus accumsan eu dui curae torquent porta ligula, nibh ornare augue aenean mus sem iaculis arcu, et sapien eros volutpat enim feugiat ac metus.
+\newpage
+
+\section{Pruebas}
+Lorem ipsum dolor sit amet consectetur adipiscing elit, duis nostra sagittis nunc class mauris fermentum, semper lobortis eu dui per ridiculus. Sodales augue ad neque lobortis taciti facilisi, nec cum vehicula scelerisque senectus ante, inceptos massa maecenas vel natoque. Faucibus sem mattis sociosqu tempor proin sapien egestas tempus, purus condimentum ligula tellus libero penatibus mauris tortor, sagittis cum aenean nunc rutrum odio habitasse.
+
+Eros sociis dictumst auctor habitasse libero molestie nascetur laoreet sodales, a vitae cubilia sollicitudin hendrerit elementum neque ullamcorper, mollis ultrices felis enim conubia lacus scelerisque mi. Semper orci nisl aliquam imperdiet viverra ac, molestie litora penatibus aliquet himenaeos feugiat conubia, habitasse eu leo volutpat curae. Quam parturient purus accumsan eu dui curae torquent porta ligula, nibh ornare augue aenean mus sem iaculis arcu, et sapien eros volutpat enim feugiat ac metus.
+\newpage
+
+\section{Conclusiones}
+Lorem ipsum dolor sit amet consectetur adipiscing elit, duis nostra sagittis nunc class mauris fermentum, semper lobortis eu dui per ridiculus. Sodales augue ad neque lobortis taciti facilisi, nec cum vehicula scelerisque senectus ante, inceptos massa maecenas vel natoque. Faucibus sem mattis sociosqu tempor proin sapien egestas tempus, purus condimentum ligula tellus libero penatibus mauris tortor, sagittis cum aenean nunc rutrum odio habitasse.
+
+Eros sociis dictumst auctor habitasse libero molestie nascetur laoreet sodales, a vitae cubilia sollicitudin hendrerit elementum neque ullamcorper, mollis ultrices felis enim conubia lacus scelerisque mi. Semper orci nisl aliquam imperdiet viverra ac, molestie litora penatibus aliquet himenaeos feugiat conubia, habitasse eu leo volutpat curae. Quam parturient purus accumsan eu dui curae torquent porta ligula, nibh ornare augue aenean mus sem iaculis arcu, et sapien eros volutpat enim feugiat ac metus.
+\newpage
+
+\section{Relación del trabajo desarrollado con los estudios cursados}
+Lorem ipsum dolor sit amet consectetur adipiscing elit, duis nostra sagittis nunc class mauris fermentum, semper lobortis eu dui per ridiculus. Sodales augue ad neque lobortis taciti facilisi, nec cum vehicula scelerisque senectus ante, inceptos massa maecenas vel natoque. Faucibus sem mattis sociosqu tempor proin sapien egestas tempus, purus condimentum ligula tellus libero penatibus mauris tortor, sagittis cum aenean nunc rutrum odio habitasse.
+
+Eros sociis dictumst auctor habitasse libero molestie nascetur laoreet sodales, a vitae cubilia sollicitudin hendrerit elementum neque ullamcorper, mollis ultrices felis enim conubia lacus scelerisque mi. Semper orci nisl aliquam imperdiet viverra ac, molestie litora penatibus aliquet himenaeos feugiat conubia, habitasse eu leo volutpat curae. Quam parturient purus accumsan eu dui curae torquent porta ligula, nibh ornare augue aenean mus sem iaculis arcu, et sapien eros volutpat enim feugiat ac metus.
+\newpage
+
+\section{Trabajos futuros}
+Lorem ipsum dolor sit amet consectetur adipiscing elit, duis nostra sagittis nunc class mauris fermentum, semper lobortis eu dui per ridiculus. Sodales augue ad neque lobortis taciti facilisi, nec cum vehicula scelerisque senectus ante, inceptos massa maecenas vel natoque. Faucibus sem mattis sociosqu tempor proin sapien egestas tempus, purus condimentum ligula tellus libero penatibus mauris tortor, sagittis cum aenean nunc rutrum odio habitasse.
+
+Eros sociis dictumst auctor habitasse libero molestie nascetur laoreet sodales, a vitae cubilia sollicitudin hendrerit elementum neque ullamcorper, mollis ultrices felis enim conubia lacus scelerisque mi. Semper orci nisl aliquam imperdiet viverra ac, molestie litora penatibus aliquet himenaeos feugiat conubia, habitasse eu leo volutpat curae. Quam parturient purus accumsan eu dui curae torquent porta ligula, nibh ornare augue aenean mus sem iaculis arcu, et sapien eros volutpat enim feugiat ac metus.
+\newpage
+
+\section{Referencias}
+Lorem ipsum dolor sit amet consectetur adipiscing elit, duis nostra sagittis nunc class mauris fermentum, semper lobortis eu dui per ridiculus. Sodales augue ad neque lobortis taciti facilisi, nec cum vehicula scelerisque senectus ante, inceptos massa maecenas vel natoque. Faucibus sem mattis sociosqu tempor proin sapien egestas tempus, purus condimentum ligula tellus libero penatibus mauris tortor, sagittis cum aenean nunc rutrum odio habitasse.
+
+Eros sociis dictumst auctor habitasse libero molestie nascetur laoreet sodales, a vitae cubilia sollicitudin hendrerit elementum neque ullamcorper, mollis ultrices felis enim conubia lacus scelerisque mi. Semper orci nisl aliquam imperdiet viverra ac, molestie litora penatibus aliquet himenaeos feugiat conubia, habitasse eu leo volutpat curae. Quam parturient purus accumsan eu dui curae torquent porta ligula, nibh ornare augue aenean mus sem iaculis arcu, et sapien eros volutpat enim feugiat ac metus.
+\newpage
+
+\section{Anexos}
+Lorem ipsum dolor sit amet consectetur adipiscing elit, duis nostra sagittis nunc class mauris fermentum, semper lobortis eu dui per ridiculus. Sodales augue ad neque lobortis taciti facilisi, nec cum vehicula scelerisque senectus ante, inceptos massa maecenas vel natoque. Faucibus sem mattis sociosqu tempor proin sapien egestas tempus, purus condimentum ligula tellus libero penatibus mauris tortor, sagittis cum aenean nunc rutrum odio habitasse.
+
+Eros sociis dictumst auctor habitasse libero molestie nascetur laoreet sodales, a vitae cubilia sollicitudin hendrerit elementum neque ullamcorper, mollis ultrices felis enim conubia lacus scelerisque mi. Semper orci nisl aliquam imperdiet viverra ac, molestie litora penatibus aliquet himenaeos feugiat conubia, habitasse eu leo volutpat curae. Quam parturient purus accumsan eu dui curae torquent porta ligula, nibh ornare augue aenean mus sem iaculis arcu, et sapien eros volutpat enim feugiat ac metus.
+
+\end{document}

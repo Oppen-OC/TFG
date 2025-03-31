@@ -26,12 +26,12 @@
     },
 
     "dataBase": {
-        "Licitaciones": "(Expediente, ID_Publicacion_TED, Organo_Contratacion, ID_Organo_Contratacion, Estado_Licitacion, Objeto_Contrato, Financiacion_UE, Presupuesto_Base_Licitacion, Valor_Estimado_Contrato, Tipo_Contrato, Codigo_CPV, Lugar_Ejecucion, Sistema_Contratacion, Procedimiento_Contratacion, Tipo_Tramitacion,Metodo_Presentacion_Oferta, Resultado,Adjudicatario,Num_Licitadores_Presentados,Importe_Adjudicacion)",
+        "Licitaciones": "(COD, ID_Publicacion_TED, Organo_Contratacion, ID_Organo_Contratacion, Estado_Licitacion, Objeto_Contrato, Financiacion_UE, Presupuesto_Base_Licitacion, Valor_Estimado_Contrato, Tipo_Contrato, Codigo_CPV, Lugar_Ejecucion, Sistema_Contratacion, Procedimiento_Contratacion, Tipo_Tramitacion,Metodo_Presentacion_Oferta, Resultado,Adjudicatario,Num_Licitadores_Presentados,Importe_Adjudicacion)",
         "LicitacionesV": "VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)",
         "Codigos": "(COD, DIR_URL)",
         "CodigosV": "VALUES(?, ?)",
-        "Anexo": "(COD, url_pliego, anexo_I)",
-        "AnexoV": "VALUES(?, ?, ?)"
+        "Anexos": "(COD, url_pliego, titulo_pliego, anexo_I, multiples)",
+        "AnexosV": "VALUES(?, ?, ?, ?, ?)"
     }
 
     

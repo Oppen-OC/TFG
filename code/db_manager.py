@@ -56,7 +56,7 @@ class DBManager:
             self.cnxn.commit()
             self.logger.info(f"Se ha insertado correctamente los valores en la tabla {table}.")
 
-        except pyodbc.Error as e:
+        except Exception as e:
             self.logger.error(f"Error al insertar los valores en la tabla {table}: {e}")
 
     def deleteObject(self, table, pk_name, pk_value):
@@ -99,9 +99,9 @@ class DBManager:
         try:
             self.cursor.execute(sql, tuple(search_criteria.values()))
             rows = self.cursor.fetchall()
-            self.logger.info(f"Resultados de la búsqueda en la tabla {table}:")
-            for cont, row in enumerate(rows):
-                self.logger.info(f"{cont}- {row}")
+            self.logger.info(f"Resultados de la búsqueda en la tabla {table}: {rows}")
+            #for cont, row in enumerate(rows):
+                # self.logger.info(f"{cont}- {row}")
             return rows
         except pyodbc.Error as e:
             self.logger.error(f"Error al buscar en la tabla {table}: {e}")
@@ -120,22 +120,31 @@ class DBManager:
         except pyodbc.Error as e:
             self.logger.error(f"Error al exportar los datos de la tabla {table} a {filename}: {e}")
         
-    def fetchData(self, table, i):
-        query = f"SELECT * FROM (SELECT *, ROW_NUMBER() OVER (ORDER BY (SELECT NULL)) AS rn FROM {table}) AS sub WHERE rn = ?"
+    def fetchData(self, table, n):
+        query = f"""
+            WITH CTE AS (
+                SELECT *, ROW_NUMBER() OVER (ORDER BY (SELECT NULL)) AS rn 
+                FROM {table}
+            )
+            SELECT * FROM CTE WHERE rn = ?
+        """
+        
         try:
-            self.cursor.execute(query, (i,))
+            self.cursor.execute(query, (n,))  # Use n instead of i
             row = self.cursor.fetchone()
+            
             if row:
-                self.logger.info(f"Datos obtenidos de la fila en la posición {i} de la tabla {table}. Con PK = {row[0]}")
-                return row  # Devuelve la fila en la posición i
+                self.logger.info(f"Datos obtenidos de la fila en la posición {n} de la tabla {table}. Con PK = {row[0]}")
+                return row  # Return the row at position n
             else:
-                self.logger.error(f"Índice {i} fuera de rango para la tabla {table}.")
+                self.logger.warning(f"Índice {n} fuera de rango para la tabla {table}.")
                 return None
+        
         except pyodbc.Error as e:
-            self.logger.error(f"Error al obtener datos de la tabla {table}: {e}")
+            self.logger.error(f"Error al obtener datos de la tabla {table}: {str(e)}")
             return None
         except (TypeError, ValueError) as e:
-            self.logger.error(f"Error de tipo o valor al obtener datos de la tabla {table}: {e}")
+            self.logger.error(f"Error de tipo o valor: {str(e)}")
             return None
         
     def truncateTable(self, table):
@@ -183,3 +192,8 @@ class DBManager:
             if cod[0] != exp[0]:
                 print(f"Error in {n}: {cod[0]} | {exp[0]}")
 
+
+if __name__ == "__main__":   
+    db = DBManager()
+    db.openConnection()
+    db.viewTable("Anexos")
