@@ -1,0 +1,79 @@
+{
+    "Formulario": {
+        "Pagina": "https://contrataciondelestado.es/wps/portal/licitaciones",
+        "Licitaciones": "a[id=\"viewns_Z7_AVEQAI930OBRD02JPMTPG21004_:form1:linkFormularioBusqueda\"]",
+        "FechaMin": "input[id=\"viewns_Z7_AVEQAI930OBRD02JPMTPG21004_:form1:textMinFecLimite\"]",
+        "FechaMax": "input[id=\"viewns_Z7_AVEQAI930OBRD02JPMTPG21004_:form1:textMaxFecLimite\"]",
+        "Tipo": "select[id=\"viewns_Z7_AVEQAI930OBRD02JPMTPG21004_:form1:combo1MAQ\"]",
+        "Presentacion": "select[id=\"viewns_Z7_AVEQAI930OBRD02JPMTPG21004_:form1:menuFormaPresentacionMAQ1_SistPresent\"]",
+        "SiguientePag": "input[id=\"viewns_Z7_AVEQAI930OBRD02JPMTPG21004_:form1:footerSiguiente\"]",
+        "Buscar": "input[id=\"viewns_Z7_AVEQAI930OBRD02JPMTPG21004_:form1:button1\"]",
+        "Nuts": "a[id=\"viewns_Z7_AVEQAI930OBRD02JPMTPG21004_:form1:linkSeleccionNUTS\"]",
+        "Valencia": "select[id=\"viewns_Z7_AVEQAI930OBRD02JPMTPG21004_:form1:listbox11MAQ\"]",
+        "NutsClose": "input[id=\"viewns_Z7_AVEQAI930OBRD02JPMTPG21004_:form1:buttonAceptarSeleccionNUTS\"]",
+        "Pais": "select[id=\"viewns_Z7_AVEQAI930OBRD02JPMTPG21004_:form1:menu1MAQ1\"]"
+    },
+
+    "Expediente": {
+        "Atributos": ["filaIdPublicacionTED_columna2", "fila2_columna2", "filaIdOrganoContratacion_columna2", "fila3_columna2", "fila4_columna2", "filaFinanciacionUE_columna2", "fila5_columna2", "fila6_columna2", "fila7_columna2", "fila8_columna2", "fila9_columna2", "filaSistemaContratacion_columna2", "fila10_columna2", "filaTipoTramitacion_columna2"],
+        "Informacion": ["filaPresentacionOferta_columna2", "fila13_columna2", "fila14_columna2", "fila15_columna2", "fila16_columna2"]
+    },
+
+    "Anexo":{
+        "Tabla": "myTablaDetalleVISUOE",
+        "ColumPlieg": "tipoDocumento  padding0punto2",
+        "ColumHtml": "documentosPub  padding0punto2"
+    },
+
+    "dataBase": {
+        "Licitaciones": "(COD, ID_Publicacion_TED, Organo_Contratacion, ID_Organo_Contratacion, Estado_Licitacion, Objeto_Contrato, Financiacion_UE, Presupuesto_Base_Licitacion, Valor_Estimado_Contrato, Tipo_Contrato, Codigo_CPV, Lugar_Ejecucion, Sistema_Contratacion, Procedimiento_Contratacion, Tipo_Tramitacion,Metodo_Presentacion_Oferta, Resultado,Adjudicatario,Num_Licitadores_Presentados,Importe_Adjudicacion)",
+        "LicitacionesV": "VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)",
+        "Codigos": "(COD, DIR_URL)",
+        "CodigosV": "VALUES(?, ?)",
+        "Anexos": "(COD, url_pliego, titulo_pliego, anexo_I, multiples, modificado)",
+        "AnexosV": "VALUES(?, ?, ?, ?, ?, ?)"
+    },
+
+    "Prompts":{
+        "Anexo": {
+            "Importe sin inpuestos": "Obtén el valor en euros del importe sin impuestos, responde únicamente con el",
+            "Puntuacion_tecnica": "Obtén la puntuación tecnica del contrato, responde únicamente con el valor",
+            "Unidad": "Obtén la unidad encargada del contrato, nombres como 'Servicio de Infraestructuras e Inversiones' o 'Dirección General de Gestión Económica",
+            "Abonos a cuentas": "Responde únicamente si o no, indica si hay abonos a cuentas",
+            "Clasificacion_grupo": "Obtén la clasificación de grupo, y tener un nombre corto",
+            "Clasificacion_categoria": "Obtén la clasificación de categoria, responde unicamente con la clasificación numerica",
+            "Importe con impuestos": "Obtén el valor en euros del importe con impuestos, responde únicamente con el valor",
+            "Puntuación_economica": "Obtén la puntuación economica del contrato, responde únicamente con el valor",
+            "Criterios_solvencia_economica": "Obten los criterios de solvencia economica",
+            "Medios_solvencia_economica": "Obten los medios de solvencia economica",
+            "Criterios_solvencia_tecnica": "Obten los criterios de solvencia tecnica",
+            "Medios_solvencia_tecnica": "Obten los medios de solvencia tecnica",
+            "Criterios_valores_anormales": "Obten los criterios anormales",
+            "Condiciones_especiales": "Obten las condiciones especiales",
+            "Consid_infracc": "Obten las consideraciones de infracción, responde unicamente con si o no",
+            "Contratacion_control_calidad": "Indica si existe contratacion del control de calidad, responde unicamente con si o no",
+            "Forma_pago": "Obten la forma de pago",
+            "Garantia_definitiva": "Obten la garantia definitiva",
+            "Garantia_provisional": "Obten la garantia provisional",
+            "Gastos_desisistimiento": "Obten los gastos por desistimiento",
+            "Modificaciones_previstas": "Obten las modificaciones previstas",
+            "Revicion_precios_prevista": "Obten la revision de precios prevista, responde unicamente con si o no",
+            "Inclusion_control_calidad": "Indica si existe la inclusion de control de calidad, responde unicamente con si o no",
+            "Obligacion_indicar_subuncontratacion": "Indica si existe la obligacion de indicar subcontratacion, responde unicamente con si o no",
+            "Penalidad_incumplimiento": "Obten la penalidad por incumplimiento",
+            "Ampliacion_presupuesto": "Indica si existe la ampliacion de presupuesto, responde unicamente con si o no",
+            "Regimen_penalidad": "Obten el regimen de penalidades",
+            "Revision_precios": "Indica si contiene revision de precios, responde unicamente con si o no",
+            "Subasta_elecronica": "Indica si existe subasta electronica, responde unicamente con si o no",
+            "Indic_sub_como_crit": "Indica si la subcontratacion es un criterio, responde unicamente con si o no",
+            "Tareas_crit": "Indica si hay tareas criticas, responde unicamente con si o no"
+        },
+
+        "Anuncio": {
+            "Plazo": "",
+            "Duracion": ""
+        }
+    }
+
+}
+

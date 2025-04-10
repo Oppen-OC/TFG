@@ -4,6 +4,7 @@ from odf.text import P
 from docx import Document
 import os
 import PyPDF2
+import pdfplumber
 
 
 def idDocType(title):
@@ -12,18 +13,6 @@ def idDocType(title):
 
 
 def download_and_convert_to_text(url, file_type, name = "", output_dir=None):
-    """
-    Descarga un documento desde una URL y lo convierte a texto.
-
-    Args:
-        url (str): La URL del documento.
-        file_type (str): El tipo de archivo ('doc', 'odt', 'pdf').
-        output_dir (str, optional): El directorio donde se guardará el archivo de texto. 
-                                    Si no se proporciona, se usará el directorio actual.
-
-    Returns:
-        str: La ruta del archivo de texto generado.
-    """
 
     try:
         # Usar el directorio actual si no se proporciona output_dir
@@ -42,17 +31,19 @@ def download_and_convert_to_text(url, file_type, name = "", output_dir=None):
         # Convertir el documento a texto
         if file_type == 'odt':
             doc = load(temp_doc_path)
-            text = "\n".join([str(para) for para in doc.getElementsByType(P)])
+            text = "###\n".join([str(para) for para in doc.getElementsByType(P)])
+
         elif file_type == 'docx':
             doc = Document(temp_doc_path)
-            text = "\n".join([para.text for para in doc.paragraphs])
+            text = "###\n".join([para.text for para in doc.paragraphs])
+
         elif file_type == 'pdf':
             text = ""
             try:
-                with open(temp_doc_path, 'rb') as pdf_file:
-                    reader = PyPDF2.PdfReader(pdf_file)
-                    for i in range(0, len(reader.pages)):
-                        text += reader.pages[i].extract_text() + "\n"
+                with pdfplumber.open("example.pdf") as pdf:
+                    text = ""
+                    for page in pdf.pages:
+                        text += page.extract_text() + "\f\n"
             except Exception as e:
                 print(f"Error al leer el archivo PDF: {e}")
                 return None

@@ -1,81 +1,191 @@
 from dotenv import load_dotenv
-from openai import OpenAI
+import openai
 import os
-from langchain_core.documents import Document
-from sklearn.cluster import KMeans
+import faiss
+from sentence_transformers import SentenceTransformer
+from langchain_text_splitters import RecursiveCharacterTextSplitter
+import json
+import logging
 import numpy as np
-import ast  # for converting embeddings saved as strings back to arrays
-from openai import OpenAI # for calling the OpenAI API
-import pandas as pd  # for storing text and embeddings data
-import tiktoken  # for counting tokens
-import os # for getting API token from env variable OPENAI_API_KEY
-from scipy import spatial  # for calculating vector similarities for search
 
 load_dotenv()
 
-def load_file_to_document(file_path, chunk_size=500):
-    """
-    Carga un documento plano de texto a un objeto Document, divide su contenido
-    en chunks de un tamaño indicado en el parametro de la función y le asigna un 
-    index para poder ser referenciado en un futuro.
-    """
-    documents = []
-    try:
-        with open(file_path, 'r', encoding='utf-8') as file:
-            i = 0
-            while True:
-                content = file.read(chunk_size)
-                if not content:  # Stop when the file is fully read
-                    break
-                document = Document(
-                    page_content=content,
-                    metadata={"source": file_path, "chunk_index": i}
-                )
-                documents.append(document)
-                i += 1
-        return documents
-    except Exception as e:
-        print(f"Error reading the file: {e}")
-        return []
+class RAG:
+
+    # Configuración del logger específico para el rag
+    rag_logger = logging.getLogger("rag_logger")
+    rag_logger.setLevel(logging.INFO)
+    rag_handler = logging.FileHandler("rag.log", mode='w', encoding='utf-8')
+    rag_handler.setLevel(logging.INFO)
+    rag_formatter = logging.Formatter("%(asctime)s - %(levelname)s - %(message)s")
+    rag_handler.setFormatter(rag_formatter)
+    rag_logger.addHandler(rag_handler)
+    rag_logger.propagate = False
+
+    def __init__(self, 
+                 batch_size=512,
+                 overlap=128, 
+                 embedding_model = SentenceTransformer("all-MiniLM-L6-v2"),  
+                 text_path="C:/Users/DALPDEL/Desktop/TFG/code/temp.txt",
+                 client = openai.OpenAI( api_key=os.getenv("UPV_API_KEY"), base_url="https://api.poligpt.upv.es"),
+                 logger = rag_logger,
+                 minimun_distance = 0.9
+                 ):
+        
+        self.batch_size = batch_size
+        self.overlap = overlap
+        self.faiss_path = "C:/Users/DALPDEL/Desktop/TFG/embeddings_index.faiss"
+        self.text_path = text_path
+        self.embeddings = []
+        self.chunks = []
+        self.chunk_pages = []
+        self.embedding_model = embedding_model
+        self.client = client
+        self.prompt = ""
+        self.logger = logger
+        self.promptCount = 0
+        self.minimun_distance = minimun_distance
+
+        self.logger.info("RAG object initialized.")
+        print("RAG object initialized.")
+
+    def textSplitter(self):
+        try:
+            with open(self.text_path, 'r', encoding='utf-8') as file:
+                text = file.read()
+                if not text.strip():
+                    self.logger.error("The text file is empty.")
+
+            chunks = self.spliter(text, separator="###", size=self.batch_size, overlap=self.overlap)
+            self.logger.info(f"Text split into {len(chunks)} chunks.")
+            self.chunks = chunks
+
+        except Exception as e:
+            self.logger.error(f"Error reading the file or splitting text at line {e.__traceback__.tb_lineno}: {e}")
+
+    def generate_embeddings(self):
+        self.embeddings = self.embedding_model.encode(self.chunks, batch_size=1024)
+        self.logger.info(f"Generated {len(self.embeddings)} embeddings.")
+        print(f"Generated {len(self.embeddings)} embeddings.")
+
+    def store_embeddings_in_faiss(self):
+
+        dimension = self.embeddings.shape[1]
+        index = faiss.IndexFlatL2(dimension)
+
+        index.add(self.embeddings)
+        faiss.write_index(index, "embeddings_index.faiss")
+
+        self.logger.info(f"Stored {len(self.embeddings)} embeddings in FAISS index.")
+
+    def retrieve_similar_chunks(self, query):
+
+        self.promptCount += 1
+
+        try:
+            index = faiss.read_index(self.faiss_path)
+        except Exception as e:
+            print(f"Error reading FAISS index from {self.faiss_path}: {e}")
+            return []
+
+        # Encode the query using the model
+        query_embedding = self.embedding_model.encode([query])
+
+        # Search for similar chunks in the FAISS index
+        distances, indices = index.search(query_embedding, k=5)
+
+        # Convierte a la lista de indices en una lista de enteros
+        indices = indices.flatten().tolist()
+        distances = distances.flatten().tolist()
+        try:
+            indices, distances = zip(*[(i, d) for i, d in zip(indices, distances) if d >= self.minimun_distance])
+        except ValueError:
+            self.logger.warning(f"No similar chunks found for query: {query}")
+            return []
+  
+        
+        self.logger.info(f"Query: {query}")
+        self.logger.info(f"Retrieved chunks {indices}, with distances {distances}.")
+
+        aux = ""
+        for i in range(len(indices)):
+            aux += " " + str(self.chunk_pages[indices[i]])
+
+        self.logger.info(f"from pages: {aux}.")
+        similar_chunks = [{"text": self.chunks[i], "distance": distances[j]} for j, i in enumerate(indices)]
+
+        return similar_chunks
+
+    def generate_response_with_context(self, query, similar_chunks):
+        context = " ".join([rank['text'] for rank in similar_chunks])
+
+        self.prompt = f"""
+        Eres un asistente de IA que responde preguntas sobre un documento.
+        Context:\n{context}\n
+        Question: {query}\n
+        Answer:
+        """
+
+        # Call the OpenAI API
+        response = self.client.chat.completions.create(
+            model="llama3.3:70b",
+            messages=[{"role": "assistant",
+                       "content": self.prompt
+                       }],
+        )
+
+        answer = response.choices[0].message.content.strip()
+
+        # Check if the answer is relevant or empty
+        if not answer or "I'm sorry" in answer or "I don't know" in answer:
+            return "N/A"
+
+        return answer
+
+    def rag_workflow(self, query):
+        similar_chunks = self.retrieve_similar_chunks(query)
+        if similar_chunks == []:
+            self.logger.info(f"No similar chunks found for query: {query}")
+            return "N/A"
+        
+        return self.generate_response_with_context(query, similar_chunks)
 
 
-client_upv = OpenAI(
-    api_key=os.getenv("OPENAI_API_KEY"),
-    base_url="https://api.poligpt.upv.es",
-)
+    def spliter(self, text, separator, size, overlap):
+        pages = text.split(separator)
+        splitter = RecursiveCharacterTextSplitter(chunk_size=size, chunk_overlap=overlap)
+        chunks = []
+        current_page = 1
 
-client = OpenAI(
-    api_key=os.getenv("OTRA"),
-)
+        for i, page in enumerate(pages):
+            page_chunks = splitter.split_text(page)
+            for j, chunk in enumerate(page_chunks):
+                # If it's the first chunk of a page and overlap exists, include the last chunk of the previous page
+                if j == 0 and i > 0 and overlap > 0:
+                    if chunks:
+                        previous_chunk = chunks[-1]
+                        chunk = previous_chunk[-overlap:] + chunk
+                self.chunk_pages.append(current_page)
+            chunks.extend(page_chunks)
+            current_page += 1
 
-def get_embedding(text, model="text-embedding-3-small"):
-    text = text.replace("\n", " ")
-    return client.embeddings.create(input = [text], model=model).data[0].embedding
+        return chunks
 
 def main():
-    try:
-        print("Hola")
-        client_local = OpenAI(
-            api_key=os.getenv("OPENAI_API_KEY"),
-            base_url="https://api.poligpt.upv.es",
-        )
-        print(client_local)
-        response = client_local.chat.completions.create(
-            messages=[
-                {
-                    'role': 'user',
-                    'content': 'Hello, world!',
-                }
-            ],
-            model='poligpt',
-        )
-        print(response)
-        # Accede al atributo 'content' directamente
-        return response.choices[0].message.content
-    except Exception as e:
-        print(e)
+    with open('code/JSON/Strings.json', 'r', encoding='utf-8') as f:
+        strings = json.load(f)
+    prompts = strings["Prompts"]["Anexo"]
+
+    reg_object = RAG()
+    reg_object.textSplitter()
+    reg_object.generate_embeddings()
+    reg_object.store_embeddings_in_faiss()
+
+    with open("output.txt", "w", encoding="utf-8") as output_file:
+        for prompt in prompts:
+            output_file.write(prompts[prompt] + "\n\n")
+            output_file.write(reg_object.rag_workflow(prompts[prompt]) + "\n")
+            output_file.write("--------------------------------------------\n")
 
 if __name__ == "__main__":
-    print("HOla")
-    # print(main())
-    print(load_file_to_document("C:/Users/DALPDEL/Desktop/TFG/code/temp.txt")[-1])
+    main()

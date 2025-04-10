@@ -1,4 +1,4 @@
-C:\Users\DALPDEL\Desktop\TFG\code\winter_olympics_2022.csv
+code\winter_olympics_2022.csv
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
@@ -37,6 +37,14 @@ MANIFEST
 # Installer logs
 pip-log.txt
 pip-delete-this-directory.txt
+
+# Playwright
+node_modules/
+/test-results/
+/playwright-report/
+/blob-report/
+/playwright/.cache/
+
 
 # Unit test / coverage reports
 htmlcov/

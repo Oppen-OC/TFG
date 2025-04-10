@@ -46,7 +46,7 @@ Requiere informe SEP según BEP:          ☒ SI
 Fecha Informe SEP (si se requiere):  07/10/2019  SERVICI  DE CONTRACTACIÓ  
  
  
- 
+ ###
 Id. document: 89NZ myCV ETkN BaqJ 4eEN dhvO QAM=
 CÒPIA INFORMATIVA (NO VERIFICABLE EN SEU ELECTRÒNICA)
 Signat electrònicament per:Antefirma Nom Data Emissor cert Núm. sèrie cert
@@ -84,7 +84,7 @@ TRANSFERENCIA DE DERECHOS DE PROPIEDAD INTELECTUAL O INDUSTRIAL:
 Se exige la transferencia de derechos de propiedad intelectual o industrial:  
 ☒ NO 
 CONTRATO RESERVADO DE CONFORMIDAD CON LA D.A. 4ª LCSP:  
-☒ NO 
+☒ NO ###
 Id. document: 89NZ myCV ETkN BaqJ 4eEN dhvO QAM=
 CÒPIA INFORMATIVA (NO VERIFICABLE EN SEU ELECTRÒNICA)
 Signat electrònicament per:Antefirma Nom Data Emissor cert Núm. sèrie cert
@@ -124,7 +124,7 @@ trabajan en las empresas adjudicatarias de contratos públicos.
  
 E. PLAZO DE EJECUCIÓN  
 PLAZO DE EJECUCIÓN:  
-11 meses  
+11 meses  ###
 Id. document: 89NZ myCV ETkN BaqJ 4eEN dhvO QAM=
 CÒPIA INFORMATIVA (NO VERIFICABLE EN SEU ELECTRÒNICA)
 Signat electrònicament per:Antefirma Nom Data Emissor cert Núm. sèrie cert
@@ -166,7 +166,7 @@ VALOR ESTIMADO  456.1 98,35 €
 Conceptos que se han tenido en cuenta en el cálculo:  
 ☒ Importe total , sin incluir el IVA :  
 456.198,35 €  
-☒ Costes derivados de la aplicación de las normativas laborales vigentes:  
+☒ Costes derivados de la aplicación de las normativas laborales vigentes:  ###
 Id. document: 89NZ myCV ETkN BaqJ 4eEN dhvO QAM=
 CÒPIA INFORMATIVA (NO VERIFICABLE EN SEU ELECTRÒNICA)
 Signat electrònicament per:Antefirma Nom Data Emissor cert Núm. sèrie cert
@@ -204,7 +204,7 @@ CRITERIO : MENOR PRECIO OFERTADO
 PONDERACIÓN : 
 Hasta un máximo de 55  puntos  
 VALORACIÓN : 
-Se valorará con el máximo de puntuación al menor precio ofertado.  
+Se valorará con el máximo de puntuación al menor precio ofertado.  ###
 Id. document: 89NZ myCV ETkN BaqJ 4eEN dhvO QAM=
 CÒPIA INFORMATIVA (NO VERIFICABLE EN SEU ELECTRÒNICA)
 Signat electrònicament per:Antefirma Nom Data Emissor cert Núm. sèrie cert
@@ -257,7 +257,7 @@ Hasta un máximo de 5 puntos
 VALORACIÓN : 
 Se valorará con 5 puntos el compromiso de diseñar e impartir la formación de al menos 20 
 horas durante la ejecuci ón del contrato , relacionada con la prestación contractual a la 
-plantilla que ejecutará el contrato.  
+plantilla que ejecutará el contrato.  ###
 Id. document: 89NZ myCV ETkN BaqJ 4eEN dhvO QAM=
 CÒPIA INFORMATIVA (NO VERIFICABLE EN SEU ELECTRÒNICA)
 Signat electrònicament per:Antefirma Nom Data Emissor cert Núm. sèrie cert
@@ -294,7 +294,7 @@ PRESENTACIÓN DE MODELOS FÍSICOS O A ESCALA:
 PLAZO DE SOLICITUD DE INFORMACIÓN ADICIONAL SOBRE LOS PLIEGOS:  
 ☒ Las personas o empresas interesadas, deberán solicitar información adicional sobre los 
 pliegos y demás documentación complementaria con una antelación de al menos 12 días del 
-transcurso del plazo de presentación de proposiciones (plazo legal).  
+transcurso del plazo de presentación de proposiciones (plazo legal).  ###
 Id. document: 89NZ myCV ETkN BaqJ 4eEN dhvO QAM=
 CÒPIA INFORMATIVA (NO VERIFICABLE EN SEU ELECTRÒNICA)
 Signat electrònicament per:Antefirma Nom Data Emissor cert Núm. sèrie cert
@@ -345,7 +345,7 @@ profesión y se llevaron normalmente a buen término.
  
 En los contratos  cuyo valor estimado sea inferior a 500.000 euros , este criterio de 
 selección no será aplicable a aquellas empresas que tengan una antigüedad 
-inferior a cinco años. Dichas empresas, como medio alternativo, acreditarán  la 
+inferior a cinco años. Dichas empresas, como medio alternativo, acreditarán  la ###
 Id. document: 89NZ myCV ETkN BaqJ 4eEN dhvO QAM=
 CÒPIA INFORMATIVA (NO VERIFICABLE EN SEU ELECTRÒNICA)
 Signat electrònicament per:Antefirma Nom Data Emissor cert Núm. sèrie cert
@@ -385,7 +385,7 @@ T. OTRAS CONDICIONES ESPECIALES DE EJECUCIÓN
 ☒ SI. En cuyo caso:  
 ☒ Es condición especial de ejecución, la obligación de la empresa adjudicataria, durante 
 todo el periodo de ejecución del contrato, de no minorar unilateralmente las condiciones 
-de trabajo en materia de jornada y salario, así como cualquier mejora sobre la legislación 
+de trabajo en materia de jornada y salario, así como cualquier mejora sobre la legislación ###
 Id. document: 89NZ myCV ETkN BaqJ 4eEN dhvO QAM=
 CÒPIA INFORMATIVA (NO VERIFICABLE EN SEU ELECTRÒNICA)
 Signat electrònicament per:Antefirma Nom Data Emissor cert Núm. sèrie cert
@@ -423,7 +423,7 @@ Servicio de Pueblos de València
  
 X. OTRAS CAUSAS DE MODIFICACIÓN DEL CONTRATO  
 ☒ NO 
- 
+ ###
 Id. document: 89NZ myCV ETkN BaqJ 4eEN dhvO QAM=
 CÒPIA INFORMATIVA (NO VERIFICABLE EN SEU ELECTRÒNICA)
 Signat electrònicament per:Antefirma Nom Data Emissor cert Núm. sèrie cert
@@ -450,4 +450,4 @@ PLAN DE SEGURIDAD Y SALUD:
 Valencia, dirig ida al Servicio de Arquitectura y Servicios Centrales Técnicos  
  Plazo de presentación: En el plazo máximo de 15 días naturales a contar desde el día 
 siguiente al de la formalización del contrato  
- 
+ ###

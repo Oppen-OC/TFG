@@ -1,7 +1,9 @@
 \documentclass{article}
 \usepackage{graphicx}
 \graphicspath{{images/}}
-
+\usepackage{changepage}
+ \usepackage{float}
+ 
 % Language setting
 % Replace `english' with e.g. `spanish' to change the document language
 \usepackage[spanish]{babel}
@@ -27,6 +29,10 @@
 \setlength{\cftbeforesecskip}{12pt} % Espacio antes de cada sección
 \setlength{\cftbeforesubsecskip}{6pt} % Espacio antes de cada subsección
 
+% Bibliografia
+\usepackage{csquotes} % Recomendado para citas
+\usepackage[backend=biber,style=apa]{biblatex} % Usa el estilo APA (puedes cambiarlo)
+\addbibresource{biblio.bib}
 
 \begin{document}
 
@@ -77,18 +83,12 @@ Don pollo
 Lorem ipsum dolor sit amet consectetur adipiscing elit, duis nostra sagittis nunc class mauris fermentum, semper lobortis eu dui per ridiculus. Sodales augue ad neque lobortis taciti facilisi, nec cum vehicula scelerisque senectus ante, inceptos massa maecenas vel natoque. Faucibus sem mattis sociosqu tempor proin sapien egestas tempus, purus condimentum ligula tellus libero penatibus mauris tortor, sagittis cum aenean nunc rutrum odio habitasse.
 
 Eros sociis dictumst auctor habitasse libero molestie nascetur laoreet sodales, a vitae cubilia sollicitudin hendrerit elementum neque ullamcorper, mollis ultrices felis enim conubia lacus scelerisque mi. Semper orci nisl aliquam imperdiet viverra ac, molestie litora penatibus aliquet himenaeos feugiat conubia, habitasse eu leo volutpat curae. Quam parturient purus accumsan eu dui curae torquent porta ligula, nibh ornare augue aenean mus sem iaculis arcu, et sapien eros volutpat enim feugiat ac metus.
-\newpage
 
-{\bfseries\LARGE Palabras clave \par}
-\begin{itemize}
-    \item Lorem ipsum dolor
-    \item sit amet consectetur adipiscing elit
-    \item duis nostra sagittis nunc class mauris fermentum
-    \item semper lobortis eu dui per ridiculus
-    \item odales augue ad neque lobortis taciti facilisi
-    \item nec cum vehicula scelerisque senectus ante
-    \item inceptos massa maecenas vel natoque
-\end{itemize}
+\vspace{1cm}
+
+{\bfseries Palabras clave \par}
+\vspace{0.25cm}
+LLM • RAG • NLP • SQL • Base vectorial • Query • Prompt • Scrapper • GPQA
 \newpage
 
 \addtocontents{toc}{\protect\enlargethispage{\baselineskip}}
@@ -97,11 +97,6 @@ Eros sociis dictumst auctor habitasse libero molestie nascetur laoreet sodales, 
 }\newpage
 
 % Secciones y subsecciones
-\section{Autenticación}
-Lorem ipsum dolor sit amet consectetur adipiscing elit, duis nostra sagittis nunc class mauris fermentum, semper lobortis eu dui per ridiculus. Sodales augue ad neque lobortis taciti facilisi, nec cum vehicula scelerisque senectus ante, inceptos massa maecenas vel natoque. Faucibus sem mattis sociosqu tempor proin sapien egestas tempus, purus condimentum ligula tellus libero penatibus mauris tortor, sagittis cum aenean nunc rutrum odio habitasse.
-
-Eros sociis dictumst auctor habitasse libero molestie nascetur laoreet sodales, a vitae cubilia sollicitudin hendrerit elementum neque ullamcorper, mollis ultrices felis enim conubia lacus scelerisque mi. Semper orci nisl aliquam imperdiet viverra ac, molestie litora penatibus aliquet himenaeos feugiat conubia, habitasse eu leo volutpat curae. Quam parturient purus accumsan eu dui curae torquent porta ligula, nibh ornare augue aenean mus sem iaculis arcu, et sapien eros volutpat enim feugiat ac metus.
-\newpage
 
 \section{Introducción}
 Las agencias públicas encargadas del desarrollo de infraestructuras están demandando modelos digitales de gestión que optimicen la contratación de los contratos de obras. El objetivo de estos modelos es reducir los sobrecostes y retrasos en la construcción, garantizando una mayor eficiencia en la planificación y ejecución de los proyectos.
@@ -120,25 +115,122 @@ El proyecto busca aplicar técnicas de Inteligencia Artificial (IA), como los mo
 Para alcanzar estos objetivos, se utilizarán bases de datos con información sobre expedientes de licitación y ejecución de contratos de la administración pública.
 
 \subsection{Metodología}
-La forma de trabajo con la que se llevó a cabo este proyecto fue por medio de reuniones semanales entre mi persona y ambas tutoras, en las que se discutía sobre el progreso realizado y se planteaban nuevos objetivos para la proxima reunión. Este proceso ue tambien apoyado por comunicación constante por medio de mensajería instantánea, agilizando así nuestra comunicación. 
+La forma de trabajo con la que se llevó a cabo este proyecto fue por medio de reuniones semanales entre mi persona y ambas tutoras, en las que se discutía sobre el progreso realizado y se planteaban nuevos objetivos para la próxima reunión. Este proceso que también apoyado por comunicación constante por medio de mensajería instantánea, agilizando así nuestra comunicación. 
 \newpage
 
 \section{Estado del arte}
-Lorem ipsum dolor sit amet consectetur adipiscing elit, duis nostra sagittis nunc class mauris fermentum, semper lobortis eu dui per ridiculus. Sodales augue ad neque lobortis taciti facilisi, nec cum vehicula scelerisque senectus ante, inceptos massa maecenas vel natoque. Faucibus sem mattis sociosqu tempor proin sapien egestas tempus, purus condimentum ligula tellus libero penatibus mauris tortor, sagittis cum aenean nunc rutrum odio habitasse.
+En los últimos años, el mundo ha experimentado una transformación acelerada debido a la democratización de diversos modelos generativos de inteligencia artificial. Un hito clave en este proceso fue el lanzamiento de ChatGPT el 30 de noviembre de 2022 por la empresa estadounidense OpenAI, lo que marcó el inicio de una de las mayores revoluciones tecnológicas del siglo. Como prueba de su impacto, esta plataforma alcanzó 100 millones de usuarios activos en menos de dos meses, un crecimiento significativamente más rápido que el de aplicaciones como Instagram, que tardó más de dos años en lograr la misma cifra. Desde entonces, la popularidad de los modelos de lenguaje ha seguido en ascenso, generando un cambio radical en múltiples industrias. Un ejemplo de ello se evidenció en mayo de 2024, cuando la empresa china DeepSeek lanzó su propio LLM, lo que ocasionó pérdidas multimillonarias en la bolsa de valores estadounidense. \\
+En la actualidad (año 2025), los LLM han alcanzado niveles de sofisticación sin precedentes, al punto de superar pruebas como el test de Turing. Existen cientos de modelos distintos y una amplia gama de tecnologías que aprovechan su capacidad de razonamiento y procesamiento del lenguaje natural, incluyendo traductores en tiempo real, imitadores de voz, generadores de código y asistentes virtuales, entre otros. Sin embargo, ante la gran cantidad de información y herramientas disponibles, puede resultar abrumador identificar la solución adecuada para un problema específico; no obstante, a continuación una serie de tecnologías y herramientas (no todas relacionadas con LLM's) que han demostrado ser útiles para este caso concreto:
 
-Eros sociis dictumst auctor habitasse libero molestie nascetur laoreet sodales, a vitae cubilia sollicitudin hendrerit elementum neque ullamcorper, mollis ultrices felis enim conubia lacus scelerisque mi. Semper orci nisl aliquam imperdiet viverra ac, molestie litora penatibus aliquet himenaeos feugiat conubia, habitasse eu leo volutpat curae. Quam parturient purus accumsan eu dui curae torquent porta ligula, nibh ornare augue aenean mus sem iaculis arcu, et sapien eros volutpat enim feugiat ac metus.
 \subsection{LLMs}
-\subsection{RAG}
-\subsection{Lenguaje de programación}
-\subsection{Frontend}
+\textbf{Para empezar, ¿exactamente qué es un LLM?} \\
+Un LLM (por sus siglas en inglés, Large Language Model) es un modelo de aprendizaje profundo basado en redes neuronales que ha sido entrenado con enormes cantidades de texto. Gracias a este entrenamiento, es capaz de identificar patrones, relaciones entre palabras y generar respuestas basadas en probabilidades. Sin embargo, es importante destacar que un LLM no "entiende" el contenido que genera en el sentido humano, sino que produce respuestas basadas en la información con la que ha sido entrenado; en base a esta información, crea matrices con miles de millones de parámetros que contienen la probabilidad de que una palabra esté seguida por otra. \\
+
+\begin{center}
+\includegraphics[width=12cm]{llm_probability}
+\end{center}
+
+\setlength{\parindent}{10pt} % Sangria
+\textbf{¿Cuales son los mejores LLM?}  \\
+
+
+\begin{figure}[H] % o [htbp] según prefieras
+\centering
+\includegraphics[width=15cm]{LLM_Graph.png}
+\caption{Gráfico que compara el desempeño de diversos LLMs a fecha de hoy} 
+\cite{llm-stats}
+\label{tab:LLM_Graph}
+\end{figure}
+
+Como se puede ver en la figura 1, al momento de redactar este documento, los LLMs que lideran el mercado son: \textbf{ChatGPT-o3}, \textbf{Claude 3.7 Sonnet} y \textbf{Grok-3}; cada uno con un puntaje GPQA del \textbf{87.7\%}, \textbf{84.8\%} y \textbf{84.6\%} respectivamente. Este porcentaje corresponde al resultado de una serie de pruebas realizadas por Google para evaluar la fiabilidad de cada modelo en la resolución de problemas y consultas en áreas como física, química, programación, entre otras.
+Sin embargo -y aunque pueda parecer contraproducente- el LLM elegido para sobrellevar el procesamiento computacional de este proyecto fue \textbf{Llama 3.3 70B Instruct}, por razones que se discutirán en la sección \ref{LLM}.
+
+
+\subsection{Herramientas similares} 
+  \subsubsection{Infoconcurso.com:} Infoconcurso es un buscador de concursos, licitaciones y adjudicaciones públicas en España. Ofrece un servicio diario de alertas personalizado para empresas, facilitando el acceso a información actualizada sobre contratos del sector público. Permite búsquedas específicas y configuración según criterios de interés.
+  \cite{infoconcurso}
+  
+  \subsubsection{Licitaciones.es:} Este servicio está centrado en ayudar a las empresas a aumentar sus ventas mediante el acceso a licitaciones públicas activas e históricas. Ofrece alertas personalizadas, panel de control, flujos de trabajo y consultoría especializada para optimizar la participación en concursos. Incluye informes, análisis de competencia y mercado, así como la posibilidad de anticiparse a licitaciones futuras. Todo está orientado a facilitar la toma de decisiones, ahorrar tiempo y mejorar la posición. 
+  \cite{licitaciones}
+  
+  \subsubsection{Gobierto.es:} Gobierto ofrece dos productos principales: Gobierto Transparencia  y Gobierto Contratación, para gestionar la contratación pública. Esta herramienta permite buscar y analizar licitaciones y adjudicaciones públicas con múltiples funcionalidades orientadas a empresas y profesionales: búsqueda avanzada, consulta de pliegos, gestión de proveedores, alertas personalizadas, seguimiento de competencia, monitorización de adjudicaciones, análisis de competencia, informes analíticos, exportación de datos y API.
+  \cite{Gobierto}
+
+  \subsubsection{Tenders4U:} Plataforma británica especializada en la búsqueda y notificación de licitaciones públicas y privadas, enfocada en el Reino Unido y la Unión Europea. Su principal función es enviar alertas diarias personalizadas a empresas sobre oportunidades de contratación que se ajusten a su perfil, ayudándolas a identificar rápidamente los concursos que más les interesan.
+
+La plataforma ofrece herramientas de búsqueda avanzada por ubicación, categoría y palabras clave, además de un sistema intuitivo para guardar, seguir y compartir licitaciones. También está optimizada para dispositivos móviles, permitiendo acceder a la información desde cualquier lugar. Tenders4U incluye soporte al cliente ilimitado y una gestión sencilla de las oportunidades detectadas.
+  
 \subsection{Crítica al estado del arte}
+Habiendo expuesto ya varias alternativas a la problemática planteada, es necesario diferenciar la solución que brinda este TFG  con las ya existentes; para ello, se hará de dos tablas, una con valores tecnicos y otra con valores funcionales. 
+
+\begin{table}[H]
+\centering
+\resizebox{\linewidth}{!}{%
+\begin{tabular}{|l|c|c|c|c|c|}
+\hline
+\textbf{Característica} & \textbf{Infoconcurso} & \textbf{Licitaciones} & \textbf{Gobierto} & \textbf{Tender4U} & \textbf{Mi TFG} \\
+\hline
+Tipo & Buscador/Servicio & Servicio & Servicio & Plataforma & App Web \\
+Análisis de datos & No & Sí & Sí & No & Sí \\
+Descarga de datos & No & No & No & No & Sí \\
+API & No & No & Sí & No & No \\
+Código abierto & No & No & No & No & Sí \\
+Gratuito & Si/No & No & No & No & Sí \\
+Ayuda profesional & Sí & Sí & Sí & Si & No \\
+Utiliza LLMs & No & No & No & No & Si \\
+Parám. extraidos & Aprox. 12 & Aprox. 15 & Aprox. 15 & Aprox. 10 & Aprox. 60 \\
+\hline
+\end{tabular}
+}
+\caption{Comparativa entre herramientas similares para licitaciones públicas}
+\label{tab:comparativa_1}
+\end{table}\begin{table}[H]
+
+\centering
+\resizebox{\linewidth}{!}{%
+\begin{tabular}{|l|c|c|c|c|c|}
+\hline
+\textbf{Característica} & \textbf{Infoconcurso} & \textbf{Licitaciones} & \textbf{Gobierto} & \textbf{Tender4U} & \textbf{Mi TFG} \\
+\hline
+Gratuito & Si/No & No & No & No & Sí \\
+Soporte técnico & Sí & Sí & Si & Si & Si \\
+Notificaciones & Sí & Si & Si & Si & No \\
+Público objetivo & Cualquiera & Cualquiera & Cualquiera & Empresas & Cualquiera \\
+\hline
+\end{tabular}
+}
+\caption{Comparativa entre herramientas similares para licitaciones públicas}
+\label{tab:Copmarativa_2}
+\end{table}
+
+Si bien queda claro que las opciones son amplias y variadas, siguen existiendo carencias las cuales este proyecto pretende abordar:
+
+\begin{itemize}
+\item{Uso de tecnologías punteras:}
+Los servicios listados basan su tecnología en busquedas semánticas, scrappers y asesoramiento profesional, todos metodos perfectamente válidos, pero la aparición de los LLM abre una ventana de oportunidad que es dificil de obviar, ya que nos da la capacidad de procesar grandes cantidades de información de la misma forma en la que la haría un humano, pero con un coste económico y temporal considerablemente menor. 
+
+\item{Visualización de la información:}
+La mayoría de los servicios actuales ofrecen formas claras y cómodas de visualizar la información que extraen. No obstante, esta herramienta no solo iguala esa capacidad de visualización, sino que además proporciona un volumen de datos considerablemente mayor. A esto se suma una funcionalidad especialmente destacada: la posibilidad de descargar los datos en plantillas CSV, una opción que, de momento, solo ofrece OpenPLACSP.
+
+\item{Transparencia de los datos:}
+Otras herramientas o no validan su información o simplemente citan el documento completo de donde han extraido la información, este programa cuenta con la capacidad de citar directamente las fuentes de donde ha obtenido la información, especificando la página o páginas que ha utilizado para formular su respuesta.
+
+\item{Automatizacion de procesos:}
+A diferencia de otros servicios, donde para acceder a la información de una licitación concreta suele ser necesario realizar peticiones específicas o esperar a que se completen ciertos procesos, este programa permite consultar directamente cualquier licitación listada en la página de \href{contratacionesdelestado.es}, actualizando diariamente y de forma automática la base de datos, permitiendo la visualización inmediata de casi cualquier licitación.
+
+\item{Precio:}
+La mayoría de herramientas listadas no permiten un acceso total a sus funcionalidades a menos de que se pague una cuota (que en algunos casos puede llegar a los miles de euros), en cambio, esta herramienta es completamente gratiuta y de código abierto, democratizando asi el acceso a la información.
+
+\end{itemize}
+
 \newpage
 
 \section{Propuesta}
 Lorem ipsum dolor sit amet consectetur adipiscing elit, duis nostra sagittis nunc class mauris fermentum, semper lobortis eu dui per ridiculus. Sodales augue ad neque lobortis taciti facilisi, nec cum vehicula scelerisque senectus ante, inceptos massa maecenas vel natoque. Faucibus sem mattis sociosqu tempor proin sapien egestas tempus, purus condimentum ligula tellus libero penatibus mauris tortor, sagittis cum aenean nunc rutrum odio habitasse.
 
 Eros sociis dictumst auctor habitasse libero molestie nascetur laoreet sodales, a vitae cubilia sollicitudin hendrerit elementum neque ullamcorper, mollis ultrices felis enim conubia lacus scelerisque mi. Semper orci nisl aliquam imperdiet viverra ac, molestie litora penatibus aliquet himenaeos feugiat conubia, habitasse eu leo volutpat curae. Quam parturient purus accumsan eu dui curae torquent porta ligula, nibh ornare augue aenean mus sem iaculis arcu, et sapien eros volutpat enim feugiat ac metus.
-Análisis del problema}
+
+\subsection{Análisis del problema}
 \subsection{Identificación y análisis de soluciones posibles}
 \subsection{Solución propuesta}
 \subsection{Plan de Trabajo}
@@ -146,10 +238,51 @@ Análisis del problema}
 \subsubsection{Arquitectura del Sistema}
 \subsubsection{Diseño Detallado}
 \subsection{Tecnología Utilizada}
+
+\subsubsection{RAG}
+
+\begin{figure}[h!]
+\centering
+\includegraphics[width=15cm]{RAG_flow}
+\caption{Imagen ilustrativa sobre el funcionamiento del RAG. Fuente: \url{https://www.gobierto.es/}}
+\label{fig:RAG_flow}
+\end{figure}
+
+\subsubsection{Base Vectorial} 
+\subsubsection{LLM} \label{LLM}
+Como ya se mencionó anteriormente, el LLM elegido para este proyecto fue \textbf{Llama 3.3 70B Instruct}, esto debido principalmente a su buen desempeño como LLM de código abierto y la disponibilidad de recursos otorgados por la universidad. 
+Según \cite{llm-stats}, este modelo se sitúa globalmente en el puesto 21 como uno de los mejores actualmente, pero si decidimos filtrar este número por modelos de código abierto, lo situamos en el puesto número 6, por detrás de modelos como \textbf{DeepSeek-R1}, \textbf{QwQ-32B} o \textbf{Phi-4}, para analizar la capacidad de este modelo, podemos hacer uso de la siguiente tabla comparandolo con el \textit{'estado del arte'} de los LLM de código abierto. 
+
+\begin{table}[H]
+\centering
+\resizebox{\linewidth}{!}{%
+\begin{tabular}{|l|c|c|}
+\hline
+\textbf{Característica} & \textbf{DeepSeek-R1}  & \textbf{Llama 3.3 70B Instruct} \\
+\hline
+Parametros & 671 & 70 \\
+Contexto & 131.072 & 128.000 \\
+1M input/\$ & \$0.55 & \$0.20 \\
+1M output/\$ & \$2.19 & \$0.20 \\
+GPQA & 71.5\% & 50.5\% \\
+MMLU & 90.8\% & 86.0\% \\
+
+\hline
+\end{tabular}
+}
+\caption{Comparativa}
+\label{tab:comparativa_llm}
+\end{table}
+
+\subsubsection{Scrapper}
+\subsubsection{SQLServer}
+\subsubsection{Python}
+\subsubsection{Django}
+
 \subsection{Desarrollo de la solución propuesta}
 \newpage
 
-\section{Implantación}
+\section{Implementación}
 Lorem ipsum dolor sit amet consectetur adipiscing elit, duis nostra sagittis nunc class mauris fermentum, semper lobortis eu dui per ridiculus. Sodales augue ad neque lobortis taciti facilisi, nec cum vehicula scelerisque senectus ante, inceptos massa maecenas vel natoque. Faucibus sem mattis sociosqu tempor proin sapien egestas tempus, purus condimentum ligula tellus libero penatibus mauris tortor, sagittis cum aenean nunc rutrum odio habitasse.
 
 Eros sociis dictumst auctor habitasse libero molestie nascetur laoreet sodales, a vitae cubilia sollicitudin hendrerit elementum neque ullamcorper, mollis ultrices felis enim conubia lacus scelerisque mi. Semper orci nisl aliquam imperdiet viverra ac, molestie litora penatibus aliquet himenaeos feugiat conubia, habitasse eu leo volutpat curae. Quam parturient purus accumsan eu dui curae torquent porta ligula, nibh ornare augue aenean mus sem iaculis arcu, et sapien eros volutpat enim feugiat ac metus.
@@ -168,9 +301,28 @@ Eros sociis dictumst auctor habitasse libero molestie nascetur laoreet sodales, 
 \newpage
 
 \section{Relación del trabajo desarrollado con los estudios cursados}
-Lorem ipsum dolor sit amet consectetur adipiscing elit, duis nostra sagittis nunc class mauris fermentum, semper lobortis eu dui per ridiculus. Sodales augue ad neque lobortis taciti facilisi, nec cum vehicula scelerisque senectus ante, inceptos massa maecenas vel natoque. Faucibus sem mattis sociosqu tempor proin sapien egestas tempus, purus condimentum ligula tellus libero penatibus mauris tortor, sagittis cum aenean nunc rutrum odio habitasse.
+\begin{itemize}
+    \item \textbf{Interfaces persona computador:}  
+    Esta asignatura fue nuestro primer acercamiento al mundo del frontend, nos otorgó nociones básicas de lo que es una buena interfaz de usuario y lo que no, gracias a ella pudimos obtener bases sólidas sobre cómo diseñar correctamente un programa dependiendo del usuario objetivo.
 
-Eros sociis dictumst auctor habitasse libero molestie nascetur laoreet sodales, a vitae cubilia sollicitudin hendrerit elementum neque ullamcorper, mollis ultrices felis enim conubia lacus scelerisque mi. Semper orci nisl aliquam imperdiet viverra ac, molestie litora penatibus aliquet himenaeos feugiat conubia, habitasse eu leo volutpat curae. Quam parturient purus accumsan eu dui curae torquent porta ligula, nibh ornare augue aenean mus sem iaculis arcu, et sapien eros volutpat enim feugiat ac metus.
+    \item \textbf{Bases de datos y sistemas de información:}  
+    Me otorgó una base bastante sólida sobre el diseño, mantenimiento, extracción e inserción de información en una base de datos mediante el uso de SQL. Sin esta asignatura no hubiera sido posible manejar el volumen de datos que el programa requiere de una forma escalable y eficiente.
+
+    \item \textbf{Ingeniería del software:}  
+    Si bien al momento de tomar esta asignatura, la mayoría de los alumnos ya teníamos una idea de cómo hacer y diseñar un programa funcional, fue esta materia la que nos dio las herramientas correctas para saber diseñar software de manera sostenible y estandarizada, enseñándonos a cómo trabajar en equipo, las capas que debería tener un proyecto, formas de mantener cada elemento independiente y encapsulado, técnicas para analizar y solucionar problemas, y un largo etcétera.
+
+    \item \textbf{Tecnología de sistemas de información en la red:}  
+    Herramientas como Django basan su lógica en buena parte del temario de esta materia, sin ella no hubiera sido capaz de comprender correctamente la funcionalidad de los servidores - clientes - proxys, cómo se manejan las solicitudes de cada usuario, cómo se maneja más de un usuario para un solo servidor, etcétera.
+
+    \item \textbf{Sistemas de almacenamiento y recuperación de información:}  
+    Concretamente, \textbf{SAR} fue una de las asignaturas de las que más siento haber sacado provecho para este proyecto concreto, ya que nos enseñó a diseñar un scrapper (parte indispensable de este proyecto), un programa de generación de texto (muy útil para comprender el funcionamiento de un LLM), funcionamiento de los embeddings y algoritmos de procesamiento de texto variados.
+
+    \item \textbf{Percepción / Aprendizaje automático:}  
+    Combino ambas materias debido a que una es la sucesora de la otra y han sido igual de importantes para este proyecto. Ellas me dieron una base muy sólida para comprender cómo funciona un LLM desde dentro, acercarme al mundo de las redes neuronales y sistemas de aprendizaje automático hubiera sido infinidad de veces más complicado sin los conocimientos que logré adquirir gracias a ambas asignaturas.
+\end{itemize}
+
+
+
 \newpage
 
 \section{Trabajos futuros}
@@ -180,9 +332,9 @@ Eros sociis dictumst auctor habitasse libero molestie nascetur laoreet sodales, 
 \newpage
 
 \section{Referencias}
-Lorem ipsum dolor sit amet consectetur adipiscing elit, duis nostra sagittis nunc class mauris fermentum, semper lobortis eu dui per ridiculus. Sodales augue ad neque lobortis taciti facilisi, nec cum vehicula scelerisque senectus ante, inceptos massa maecenas vel natoque. Faucibus sem mattis sociosqu tempor proin sapien egestas tempus, purus condimentum ligula tellus libero penatibus mauris tortor, sagittis cum aenean nunc rutrum odio habitasse.
+\cite{3blue1brown}
+\printbibliography
 
-Eros sociis dictumst auctor habitasse libero molestie nascetur laoreet sodales, a vitae cubilia sollicitudin hendrerit elementum neque ullamcorper, mollis ultrices felis enim conubia lacus scelerisque mi. Semper orci nisl aliquam imperdiet viverra ac, molestie litora penatibus aliquet himenaeos feugiat conubia, habitasse eu leo volutpat curae. Quam parturient purus accumsan eu dui curae torquent porta ligula, nibh ornare augue aenean mus sem iaculis arcu, et sapien eros volutpat enim feugiat ac metus.
 \newpage
 
 \section{Anexos}

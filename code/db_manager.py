@@ -1,4 +1,3 @@
-import asyncio
 import pyodbc
 import json
 import logging
@@ -14,7 +13,7 @@ cnxn_str_base = (
 
 # Construct the absolute path to Strings.json
 base_dir = os.path.dirname(os.path.abspath(__file__))
-strings_path = os.path.join(base_dir, 'Strings.json')
+strings_path = os.path.join(base_dir, 'JSON/Strings.json')
 
 with open(strings_path, 'r', encoding='utf-8') as f:
     strings = json.load(f)
