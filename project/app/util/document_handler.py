@@ -12,12 +12,16 @@ def idDocType(title):
     return parts[-1] if parts else None
 
 
-def download_and_convert_to_text(url, file_type, name = "", output_dir=None):
-
+def download_and_convert_to_text(url, file_type, name="", output_dir=None):
     try:
-        # Usar el directorio actual si no se proporciona output_dir
+        # Usar el directorio de logs si no se proporciona output_dir
         if output_dir is None:
-            output_dir = os.getcwd() + "/code"
+            base_dir = os.path.dirname(os.path.abspath(__file__))  # Ruta base del archivo actual
+            output_dir = os.path.join(base_dir, 'temp_files')  # Ruta al directorio de logs
+
+        # Crear el directorio de logs si no existe
+        if not os.path.exists(output_dir):
+            os.makedirs(output_dir)
 
         # Descargar el documento
         response = requests.get(url)
@@ -40,15 +44,15 @@ def download_and_convert_to_text(url, file_type, name = "", output_dir=None):
         elif file_type == 'pdf':
             text = ""
             try:
-                with pdfplumber.open("example.pdf") as pdf:
-                    text = ""
+                with pdfplumber.open(temp_doc_path) as pdf:
                     for page in pdf.pages:
                         text += page.extract_text() + "\f\n"
             except Exception as e:
                 print(f"Error al leer el archivo PDF: {e}")
                 return None
-        elif file_type == "zip": 
+        elif file_type == "zip":
             print("Funcionalidad aun no implementada")
+            return None
         else:
             print(f"Tipo de archivo no soportado: {file_type}")
             return None
@@ -69,7 +73,6 @@ def download_and_convert_to_text(url, file_type, name = "", output_dir=None):
     except Exception as e:
         print(f"Error al convertir el documento a texto: {e}")
         return None
-    
     
 
 def main():

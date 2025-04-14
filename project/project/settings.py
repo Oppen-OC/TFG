@@ -29,7 +29,6 @@ ALLOWED_HOSTS = []
 
 
 # Application definition
-
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
@@ -40,6 +39,7 @@ INSTALLED_APPS = [
     'app'
 ]
 
+# Middleware definition
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -50,12 +50,12 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'project.urls'
+ROOT_URLCONF = 'project.urls' # Archivo de URLs del proyecto
 
 TEMPLATES = [
     {
-        'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'BACKEND': 'django.template.backends.django.DjangoTemplates', # Plantilla de Django
+        'DIRS': [], # Directorios adicionales para las plantillas
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -68,19 +68,26 @@ TEMPLATES = [
     },
 ]
 
+# Entrada para el servidor WSGI, usado para deslpiegue en producción
 WSGI_APPLICATION = 'project.wsgi.application'
 
 
 # Database
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
-
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'mssql',
+        'NAME': 'TFG',
+        'USER': '',  # Usuario de la base de datos
+        'PASSWORD': '',  # Contraseña del usuario
+        'HOST': 'TATIOLD',  # Nombre del servidor SQL
+        'PORT': '',  # Puerto del servidor (por defecto es 1433)
+        'OPTIONS': {
+            'driver': 'ODBC Driver 17 for SQL Server',
+            'trusted_connection': 'yes',
+        },
     }
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/5.1/ref/settings/#auth-password-validators
@@ -104,12 +111,9 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/5.1/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
-
-TIME_ZONE = 'UTC'
-
+LANGUAGE_CODE = 'es-es'  # español de España
+TIME_ZONE = 'Europe/Madrid'
 USE_I18N = True
-
 USE_TZ = True
 
 

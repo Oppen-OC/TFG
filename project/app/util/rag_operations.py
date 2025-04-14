@@ -12,11 +12,22 @@ load_dotenv()
 
 class RAG:
 
-    # Configuración del logger específico para el rag
+
+    # Configuración del logger específico para el RAG y archivos temporales
+    base_dir = os.path.dirname(os.path.abspath(__file__))  # Ruta base del archivo actual
+    logs_dir = os.path.join(base_dir, 'logs')  # Ruta al directorio de logs
+    temp_files_dir = os.path.join(base_dir, 'temp_files')
+
+    # Ruta del archivo de log
+    log_file_path = os.path.join(logs_dir, 'rag.log')
+
     rag_logger = logging.getLogger("rag_logger")
     rag_logger.setLevel(logging.INFO)
-    rag_handler = logging.FileHandler("rag.log", mode='w', encoding='utf-8')
+
+    # Configurar el manejador de archivo para escribir logs en el directorio de logs
+    rag_handler = logging.FileHandler(log_file_path, mode='w', encoding='utf-8')
     rag_handler.setLevel(logging.INFO)
+
     rag_formatter = logging.Formatter("%(asctime)s - %(levelname)s - %(message)s")
     rag_handler.setFormatter(rag_formatter)
     rag_logger.addHandler(rag_handler)
@@ -26,23 +37,21 @@ class RAG:
                  batch_size=512,
                  overlap=128, 
                  embedding_model = SentenceTransformer("all-MiniLM-L6-v2"),  
-                 text_path="C:/Users/DALPDEL/Desktop/TFG/code/temp.txt",
                  client = openai.OpenAI( api_key=os.getenv("UPV_API_KEY"), base_url="https://api.poligpt.upv.es"),
-                 logger = rag_logger,
                  minimun_distance = 0.9
                  ):
         
         self.batch_size = batch_size
         self.overlap = overlap
-        self.faiss_path = "C:/Users/DALPDEL/Desktop/TFG/embeddings_index.faiss"
-        self.text_path = text_path
+        self.faiss_path = RAG.temp_files_dir + "/embeddings_index.faiss"
+        self.text_path = RAG.temp_files_dir + "/temp.txt"
         self.embeddings = []
         self.chunks = []
         self.chunk_pages = []
         self.embedding_model = embedding_model
         self.client = client
         self.prompt = ""
-        self.logger = logger
+        self.logger = RAG.rag_logger
         self.promptCount = 0
         self.minimun_distance = minimun_distance
 

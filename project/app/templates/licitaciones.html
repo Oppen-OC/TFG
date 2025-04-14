@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Licitaciones</title>
+</head>
+<body>
+    <h1>Tabla de Licitaciones</h1>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Columna 1</th>
+                <th>Columna 2</th>
+                <th>Columna 3</th>
+                <!-- Agrega más encabezados según las columnas de tu tabla -->
+            </tr>
+        </thead>
+        <tbody>
+            {% for row in licitaciones %}
+            <tr>
+                <td>{{ forloop.counter }}</td>
+                <td>{{ row.0 }}</td>
+                <td>{{ row.1 }}</td>
+                <td>{{ row.2 }}</td>
+                <!-- Agrega más celdas según las columnas de tu tabla -->
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>

@@ -2,16 +2,27 @@ import asyncio
 from playwright.async_api import async_playwright
 import json
 import logging
+import os
 from db_manager import DBManager
-import traceback
-# import tracemalloc
-# tracemalloc.start()
 
 # Configuración del logger específico para el scrapper
+base_dir = os.path.dirname(os.path.abspath(__file__))  # Ruta base del archivo actual
+logs_dir = os.path.join(base_dir, 'logs')  # Ruta al directorio de logs
+
+# Crear el directorio de logs si no existe
+if not os.path.exists(logs_dir):
+    os.makedirs(logs_dir)
+
+# Ruta del archivo de log
+log_file_path = os.path.join(logs_dir, 'scrapper.log')
+
 scrapper_logger = logging.getLogger("scrapper_logger")
 scrapper_logger.setLevel(logging.INFO)
-scrapper_handler = logging.FileHandler("scrapper.log", mode='w')
+
+# Configurar el manejador de archivo para escribir logs en el directorio de logs
+scrapper_handler = logging.FileHandler(log_file_path, mode='w', encoding='utf-8')
 scrapper_handler.setLevel(logging.INFO)
+
 scrapper_formatter = logging.Formatter("%(asctime)s - %(levelname)s - %(message)s")
 scrapper_handler.setFormatter(scrapper_formatter)
 scrapper_logger.addHandler(scrapper_handler)
@@ -28,9 +39,25 @@ async def checkProcedimiento(db, id):
     else:
         scrapper_logger.error(f"No se encontró el expediente{id}")
 
+async def safe_goto(page, url, max_retries=3, timeout=45000):
+    retries = 0
+    while retries < max_retries:
+        try:
+            await page.goto(url, timeout=timeout)
+            scrapper_logger.info(f"Accedido correctamente al URL: {url}")
+            return True  # Éxito
+        except Exception as e:
+            retries += 1
+            scrapper_logger.warning(f"Error al acceder al URL {url}. Intento {retries} de {max_retries}")
+            await asyncio.sleep(2)  # Espera antes de reintentar
+
+    return False  # Fallo después de los reintentos
+
 # Accede a link, rellena el formulario y devuelve la lista de expedientes encontrados.
 async def poblar_db():
-    with open('code/JSON/Strings.json', 'r', encoding='utf-8') as f:
+
+    strings_path = os.path.join(os.path.join(base_dir, 'JSON'), 'Strings.json')
+    with open(strings_path, 'r', encoding='utf-8') as f:
         strings = json.load(f)
         
     strings = strings["Formulario"]
@@ -41,7 +68,9 @@ async def poblar_db():
         page = await context.new_page()
 
         try:
-            await page.goto(strings["Pagina"], timeout=60000)
+            if not await safe_goto(page, strings["Pagina"]):
+                raise asyncio.TimeoutError()
+
             await page.click(strings["Licitaciones"], timeout=60000)
             await page.fill(strings["FechaMin"], "01-01-2020")
             await page.fill(strings["FechaMax"], "01-01-2024")
@@ -128,12 +157,11 @@ async def scratchUrls():
 
         for j in range(1, db.getTableSize("Codigos")):
             expediente = db.fetchData("Codigos", j)
+            cod = expediente[0]
             url = expediente[1]
-            scrapper_logger.info(f"{j}- Accediendo al expediente {expediente[0]} con url: {url}")
-            try: 
-                await page.goto(url, timeout=60000)
-            except Exception as e:
-                scrapper_logger.error(f"Error al acceder al url {url}: {e}")
+            scrapper_logger.info(f"{j}- Accediendo al expediente {cod} con url: {url}")
+            if not await safe_goto(page, url):
+                scrapper_logger.error(f"No se pudo acceder al expediente {cod} con url: {url}")
                 continue
 
             i = 0
@@ -159,10 +187,10 @@ async def scratchUrls():
                 aux_contents[i] = element_text
                 i += 1
 
-            aux_contents = [expediente[0].strip()] + aux_contents
+            aux_contents = [cod.strip()] + aux_contents
             await asyncio.to_thread(db.insertDb, "Licitaciones", aux_contents)
             await asyncio.sleep(0.1)  # Ensures sequential execution with a small delay
-            scrapper_logger.info(f"Expediente {expediente[0]} insertado correctamente en la base de datos en la posicion {j}.")
+            scrapper_logger.info(f"Expediente {cod} insertado correctamente en la base de datos en la posicion {j}.")
 
     db.closeConnection()
     await browser.close()
@@ -170,7 +198,7 @@ async def scratchUrls():
 # Busca el anexo I a partir del link del expediente y lo inserta en la tabla de Anexo
 # La funcion accede e inserta datos en la base de datos
 async def scratchAnexo():
-    scrapper_logger.info("Iniciando scrapper de Anexos.")
+    scrapper_logger.info("Iniciando scrapper de Documentos.")
     with open('code/JSON/Strings.json', 'r', encoding='utf-8') as file:
         strings = json.load(file)
     
@@ -178,7 +206,7 @@ async def scratchAnexo():
     db = DBManager()
     db.openConnection()
 
-    await asyncio.to_thread(db.truncateTable, "Anexos")
+    await asyncio.to_thread(db.truncateTable, "Documentos")
 
     async with async_playwright() as p:
         browser = await p.chromium.launch(headless=False)
@@ -186,31 +214,26 @@ async def scratchAnexo():
         page = await context.new_page()
 
         for j in range(1, db.getTableSize("Codigos")):
-            cond1 = True
-            cond2 = False
-            href = []
-            expediente = db.fetchData("Codigos", j)
+            cond1 = True # Indica si se encontró o no el anexo 1
+            cond2 = False # Indica si se encontró o no el modificado
+            hrefs = []
+            expediente = db.fetchData("Codigos", j) # Obtiene el expediente de la base de datos
             url = expediente[1]
-            scrapper_logger.info(f"{j}- Accediendo al url: {url}")
-            condition = await checkProcedimiento(db, expediente[0].strip())
-            if not condition:
-                lista = (expediente[0], "N/A", "N/A", 0, 0)
-                await asyncio.to_thread(db.insertDb, "Anexos", lista)
-                continue
+            cod = expediente[0]
+            scrapper_logger.info(f"{j} Accediendo al expediente {cod}")
+            lista = (cod, "N/A", "N/A", "N/A", 0, 0, 0)
 
             try: 
-                await page.goto(url, timeout=60000)
+                # Revisasi es procedimiento abierto
+                if not await checkProcedimiento(db, cod.strip()):
+                    raise Exception(f"El expediente {cod} no es de procedimiento abierto")
+                
+                if not await safe_goto(page, url):
+                    raise Exception(f"No se pudo acceder al expediente {cod} con url: {url}")
+                
+                # Espera a que el selector esté disponible
+                await page.wait_for_selector(f"#{strings['Tabla']} tbody tr")
 
-            except Exception as e:
-                scrapper_logger.error(f"Error al acceder al url {url}: {e}")
-                continue
-            
-            # Espera a que el selector esté disponible
-            try:
-                try:
-                    await page.wait_for_selector(f"#{strings['Tabla']} tbody tr")
-                except Exception as e:
-                    scrapper_logger.error("El documento no cuenta con Anexo")
                 # Busca la tabla
                 tabla = await page.query_selector(f"#{strings['Tabla']}")
 
@@ -219,47 +242,51 @@ async def scratchAnexo():
 
                 url_p, titulo, cont, index = "", "", 0, 0
 
-                # Parsear las filas y celdas
+                # Busca en la columna de Documento Pliego y Modificado
+                # Si encuentra pliego busca en el html por el anexo 1
+                # Si encuentra modificado guarda un booleano en la base de datos
                 for fila in filas:
                     # Extrae las celdas de cada fila
                     celdas = await fila.query_selector_all("td div")
-                    for celda in celdas:
-                        texto_celda = await celda.inner_text()
-                        if "Pliego" in texto_celda:
-                            cond1 = False
-                            scrapper_logger.info(f"Encontrado 'Pliego' en la celda: {texto_celda}")
-                            enlaces = await celdas[2].query_selector_all("a")
-                            aux = await enlaces[0].get_attribute("href")
-                            if aux != "#":
-                                href.append(aux)
-                                scrapper_logger.info(f"Enlace del documento de pliegos encontrado: {aux}")
+                    tiene_id = await fila.get_attribute("id") is not None # El cuerpo tiene varios elementos, solo nos interesan los que no tienen id
+                    if not tiene_id: 
+                        for celda in celdas:
+                            texto_celda = await celda.inner_text()
+                            if "Pliego" in texto_celda:
+                                cond1 = False
+                                scrapper_logger.info(f"Encontrado 'Pliego' en la celda: {texto_celda}")
+                                enlaces = await celdas[2].query_selector_all("a")
+                                href_aux = await enlaces[0].get_attribute("href")
+                                hrefs.append(href_aux)
+                                scrapper_logger.info(f"Enlace del documento de pliegos encontrado: {href_aux}")
 
                         if "Modificado" in texto_celda:
+                            scrapper_logger.info(f"Modificado encontrado en la celda: {texto_celda}")
                             cond2 = True
 
-                for ref in href:
-                    url_p, titulo, cont, index = await scratchPliego(page, ref)
-                    if url_p != None:
-                        if cont:
-                            lista = (expediente[0], url_p[index], titulo[index], 1, 1, cond2)
-                            await asyncio.to_thread(db.insertDb, "Anexos", lista)
-                        else:
-                            lista = (expediente[0], url_p, titulo, 1, 0, cond2)
-                            await asyncio.to_thread(db.insertDb, "Anexos", lista)
-                    else: 
-                        lista = (expediente[0], "N/A", "N/A", 0, 0, cond2)
-                        await asyncio.to_thread(db.insertDb, "Anexos", lista)
+                for href in hrefs:
+                    url_p, url_pliego, titulo, mult, index = await scratchPliego(page, href)
+                    if url_pliego != None: 
+                        if url_p != None:
+                            scrapper_logger.info(f"Se encontraron {cont} anexos I en {href}")
+                            lista = (cod, url_p[index], url_pliego, titulo[index], 1, mult, cond2)
+                                
+                        else: 
+                            scrapper_logger.info(f"No se encontró anexo I en el pliego {href}")
+                            lista = (cod, "N/A", url_pliego,"N/A", 0, 0, cond2)
+                    
+                    else:
+                        raise Exception(f"No se encontró clausula administrativa en  el url: {url}")
 
-                if cond1:
-                    lista = (expediente[0], "N/A", "N/A", 0)
-                    await asyncio.to_thread(db.insertDb, "Anexos", lista)
-                    scrapper_logger.error(f"No se encontró la casilla de Pliego en el url: {url}")
+                if cond1:                            
+                    raise Exception(f"No se encontró la casilla de Pliego en el url: {url}")
 
             except Exception as e:
                 scrapper_logger.error(e)
-                # scrapper_logger.error(traceback.format_exc())
-                continue
 
+            finally:
+                await asyncio.to_thread(db.insertDb, "Documentos", lista)
+                
     db.closeConnection()
     await browser.close()     
             
@@ -268,15 +295,14 @@ async def scratchAnexo():
 # La función no interactia con la base de datos
 async def scratchPliego(page, url):
     scrapper_logger.info(f"Accediendo al pliego en el url")
-    # await page.goto(url, timeout=60000)
-    print()
-    print(url)
 
-    if url == "#": 
-        return None, None, False, 0
+    # Valor de retorno predeterminado
+    result = (None, None, None, False, 0)
 
     try:
-        await page.goto(url, timeout=60000)
+        if not await safe_goto(page, url):
+            raise asyncio.TimeoutError()
+
         # Espera a que el selector esté disponible
         await page.wait_for_selector(".boxWithBackground")
         
@@ -286,59 +312,64 @@ async def scratchPliego(page, url):
         if box:
             # Busca todos los enlaces dentro del primer objeto boxWithBackground
             enlaces = await box.query_selector_all("a")
-            cont = 0
-            aux = 0
+            # No selecciona los enlaces que tienen un atributo title
+            enlaces = [enlace for enlace in enlaces if await enlace.get_attribute("title") is None]
+            
+            aux_index = 1
             hrefs = []
+            href_pliego = ""
             texto_enlaces = []
+
             for index, enlace in enumerate(enlaces):
                 texto_enlace = await enlace.inner_text()
                 texto_enlace = texto_enlace.lower()
+                href = await enlace.get_attribute("href")
 
-                if "anexo" in texto_enlace or "annex1" in texto_enlace:
-                    if contains_unwanted_substrings(texto_enlace):
-                        cont += 1
-                        if "modificado" in texto_enlace:
-                            scrapper_logger.info(f"Modificado encontrado:  {texto_enlace}") 
-                            aux = index
-                        print("Bien", texto_enlace)
-                        href = await enlace.get_attribute("href")
-                        hrefs.append(href)
-                        texto_enlaces.append(texto_enlace)
+                if texto_enlace == "pliego cláusulas administrativas":
+                    scrapper_logger.info(f"Pliego cláusulas administrativas: {href}")
+                    href_pliego = href
+                    continue
 
-            if cont > 0:     
+                elif filter(texto_enlace):
+                    scrapper_logger.info(f"Documento aceptado: {texto_enlace}")
+                    hrefs.append(href)
+                    texto_enlaces.append(texto_enlace)
+                    
+                    if "modificado" in texto_enlace:
+                        scrapper_logger.info(f"Modificado encontrado:  {texto_enlace}") 
+                        aux_index = index
+                
+                else: scrapper_logger.info(f"Documento rechazado: {texto_enlace}")
+
+            if len(hrefs) > 0:     
                 scrapper_logger.info(f"Enlace del ANEXO encontrado: {href}")   
-                await page.go_back(timeout=60000)
-                await asyncio.sleep(3)
-                return (hrefs, texto_enlaces, cont > 1, aux-1)
+                result = (hrefs, href_pliego, texto_enlaces, len(hrefs) > 1, aux_index - 1)
+
             else:
                 scrapper_logger.warning("No se encontró el documento Anexo")
-                await page.go_back(timeout=60000)
-                await asyncio.sleep(3)
-                return None, None, False, 0
+                result = (None , href_pliego, texto_enlaces, len(hrefs) > 1, aux_index - 1)
         else:
             scrapper_logger.error("No se encontró el objeto boxWithBackground")
-            await page.go_back(timeout=60000)
-            await asyncio.sleep(3)
-            return None, None, False, 0
         
     except Exception as e:
         scrapper_logger.error(f"Error al procesar el pliego en el url {url}: {e}")
-        await page.go_back(timeout=60000)
-        await asyncio.sleep(3)
-        return None, None, False, 0
     
     finally:
         await page.go_back(timeout=60000)
+        return result
     
-
-def contains_unwanted_substrings(text):
-    unwanted_substrings = ["ii", "iii", "iv", "vi", "vii", "viii", "ix", "control", "seguridad", "declaracion", "decl", "v-modelo", "confidencialidad"]
-    return not any(substring in text for substring in unwanted_substrings)
+def filter(text):
+    if "anexo" in text:
+        wanted = [" i ", "_i ", "_i_", " i_", "-i ", " i-", "-i- ", "_i.", " i.", "-i-.", "-i."]
+        unwanted = ["responsable"]
+        return any(substring in text for substring in wanted) and not any(substring in text for substring in unwanted)
+        
+    return "annex1" in text
 
 
 async def test_scratchPliego(url):
     async with async_playwright() as p:
-        browser = await p.chromium.launch(headless=True)
+        browser = await p.chromium.launch(headless=False)
         context = await browser.new_context()
         page = await context.new_page()
         await scratchPliego(page, url)
@@ -347,8 +378,8 @@ def main():
     # Carga los códigos de página
 
     # asyncio.run(poblar_db())
-    asyncio.run(scratchUrls())
-    # asyncio.run(scratchAnexo())
+    # asyncio.run(scratchUrls())
+    asyncio.run(scratchAnexo())
     # CONTIENE
     # asyncio.run(test_scratchPliego("https://contrataciondelestado.es/FileSystem/servlet/GetDocumentByIdServlet?DocumentIdParam=j5PwB4/qj%2Bdv2IbmNoZjSoXEiHgQGDlEd7C7/oOJrUwVJ73aAB1cKVAu0BTM/cI09rkIetxSbxO6dJYqBD1lepk2iAOGI%2BuU5VaqQsax2Jo%3D&cifrado=QUC1GjXXSiLkydRHJBmbpw%3D%3D"))
     # NO CONTIENE

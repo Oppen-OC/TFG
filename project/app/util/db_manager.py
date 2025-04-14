@@ -19,6 +19,27 @@ with open(strings_path, 'r', encoding='utf-8') as f:
     strings = json.load(f)
     strings_base = strings["dataBase"]
 
+# Configuración del logger específico para db_manager
+# Define the logs directory path
+logs_dir = os.path.join(base_dir, 'logs')
+
+# Create the logs directory if it doesn't exist
+if not os.path.exists(logs_dir):
+    os.makedirs(logs_dir)
+
+# Define the log file path inside the logs directory
+log_file_path = os.path.join(logs_dir, 'db_manager.log')
+
+db_logger = logging.getLogger('db_manager')
+db_logger.setLevel(logging.INFO)
+
+# Configure the file handler to write logs to the logs directory
+db_handler = logging.FileHandler(log_file_path, mode='w')
+db_handler.setLevel(logging.INFO)
+db_formatter = logging.Formatter('%(asctime)s - %(levelname)s - %(message)s')
+db_handler.setFormatter(db_formatter)
+db_logger.addHandler(db_handler)
+
 class DBManager:
     def __init__(self, cnxn_str=cnxn_str_base, strings=strings_base):
         
@@ -26,15 +47,6 @@ class DBManager:
         self.strings = strings
         self.cnxn = None
         self.cursor = None
-
-        # Configuración del logger específico para db_manager
-        db_logger = logging.getLogger('db_manager')
-        db_logger.setLevel(logging.INFO)
-        db_handler = logging.FileHandler('db_manager.log', mode='w')
-        db_handler.setLevel(logging.INFO)
-        db_formatter = logging.Formatter('%(asctime)s - %(levelname)s - %(message)s')
-        db_handler.setFormatter(db_formatter)
-        db_logger.addHandler(db_handler)
 
         self.logger = db_logger
 
