@@ -44,7 +44,7 @@ class RAG:
         self.batch_size = batch_size
         self.overlap = overlap
         self.faiss_path = RAG.temp_files_dir + "/embeddings_index.faiss"
-        self.text_path = RAG.temp_files_dir + "/temp.txt"
+        self.text_path = RAG.temp_files_dir + "/temp_document.txt"
         self.embeddings = []
         self.chunks = []
         self.chunk_pages = []
@@ -65,9 +65,8 @@ class RAG:
                 if not text.strip():
                     self.logger.error("The text file is empty.")
 
-            chunks = self.spliter(text, separator="###", size=self.batch_size, overlap=self.overlap)
-            self.logger.info(f"Text split into {len(chunks)} chunks.")
-            self.chunks = chunks
+            self.spliter(text, separator="\f", size=self.batch_size, overlap=self.overlap)
+            
 
         except Exception as e:
             self.logger.error(f"Error reading the file or splitting text at line {e.__traceback__.tb_lineno}: {e}")
@@ -83,7 +82,7 @@ class RAG:
         index = faiss.IndexFlatL2(dimension)
 
         index.add(self.embeddings)
-        faiss.write_index(index, "embeddings_index.faiss")
+        faiss.write_index(index, self.faiss_path)
 
         self.logger.info(f"Stored {len(self.embeddings)} embeddings in FAISS index.")
 
@@ -117,8 +116,8 @@ class RAG:
         self.logger.info(f"Retrieved chunks {indices}, with distances {distances}.")
 
         aux = ""
-        for i in range(len(indices)):
-            aux += " " + str(self.chunk_pages[indices[i]])
+        for i in indices:
+            aux += " " + str(self.chunk_pages[i])
 
         self.logger.info(f"from pages: {aux}.")
         similar_chunks = [{"text": self.chunks[i], "distance": distances[j]} for j, i in enumerate(indices)]
@@ -162,6 +161,7 @@ class RAG:
 
     def spliter(self, text, separator, size, overlap):
         pages = text.split(separator)
+        print(f"Splitting text into {len(pages)} pages.")
         splitter = RecursiveCharacterTextSplitter(chunk_size=size, chunk_overlap=overlap)
         chunks = []
         current_page = 1
@@ -177,11 +177,16 @@ class RAG:
                 self.chunk_pages.append(current_page)
             chunks.extend(page_chunks)
             current_page += 1
-
-        return chunks
+            
+        self.chunks = chunks
+        self.logger.info(f"Text split into {len(self.chunks)} chunks.")
 
 def main():
-    with open('code/JSON/Strings.json', 'r', encoding='utf-8') as f:
+    base_dir = os.path.dirname(os.path.abspath(__file__))
+    string_path = os.path.join(base_dir, 'JSON', 'Strings.json')
+    output_dir = os.path.join(base_dir, 'temp_files', 'output.txt')
+
+    with open(string_path, 'r', encoding='utf-8') as f:
         strings = json.load(f)
     prompts = strings["Prompts"]["Anexo"]
 
@@ -190,7 +195,7 @@ def main():
     reg_object.generate_embeddings()
     reg_object.store_embeddings_in_faiss()
 
-    with open("output.txt", "w", encoding="utf-8") as output_file:
+    with open(output_dir, "w", encoding="utf-8") as output_file:
         for prompt in prompts:
             output_file.write(prompts[prompt] + "\n\n")
             output_file.write(reg_object.rag_workflow(prompts[prompt]) + "\n")

@@ -27,14 +27,17 @@
 
     "dataBase": {
         "Licitaciones": "(COD, ID_Publicacion_TED, Organo_Contratacion, ID_Organo_Contratacion, Estado_Licitacion, Objeto_Contrato, Financiacion_UE, Presupuesto_Base_Licitacion, Valor_Estimado_Contrato, Tipo_Contrato, Codigo_CPV, Lugar_Ejecucion, Sistema_Contratacion, Procedimiento_Contratacion, Tipo_Tramitacion,Metodo_Presentacion_Oferta, Resultado,Adjudicatario,Num_Licitadores_Presentados,Importe_Adjudicacion)",
-        "LicitacionesV": "VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)",
+        "LicitacionesV": "VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)",        
+        "Licitaciones_test": "(COD, ID_Publicacion_TED, Organo_Contratacion, ID_Organo_Contratacion, Estado_Licitacion, Objeto_Contrato, Financiacion_UE, Presupuesto_Base_Licitacion, Valor_Estimado_Contrato, Tipo_Contrato, Codigo_CPV, Lugar_Ejecucion, Sistema_Contratacion, Procedimiento_Contratacion, Tipo_Tramitacion,Metodo_Presentacion_Oferta, Resultado,Adjudicatario,Num_Licitadores_Presentados,Importe_Adjudicacion)",
+        "Licitaciones_testV": "VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)",
         "Codigos": "(COD, DIR_URL)",
-        "CodigosV": "VALUES(?, ?)",
+        "CodigosV": "VALUES(?, ?)",        
+        "Codigos_test": "(COD, DIR_URL)",
+        "Codigos_testV": "VALUES(?, ?)",
         "Anexos": "(COD, url_pliego, titulo_pliego, anexo_I, multiples, modificado)",
         "AnexosV": "VALUES(?, ?, ?, ?, ?, ?)",
         "Documentos": "(COD, url_anexo, url_pliego, titulo_anexo, anexo_I, multiples, modificado)",
         "DocumentosV": "VALUES(?, ?, ?, ?, ?, ?, ?)"
-
     },
 
     "Prompts":{
@@ -56,8 +59,8 @@
             "Consid_infracc": "Obten las consideraciones de infracción, responde unicamente con si o no",
             "Contratacion_control_calidad": "Indica si existe contratacion del control de calidad, responde unicamente con si o no",
             "Forma_pago": "Obten la forma de pago",
-            "Garantia_definitiva": "Obten la garantia definitiva",
-            "Garantia_provisional": "Obten la garantia provisional",
+            "Garantia_definitiva": "Obten la garantía definitiva",
+            "Garantia_provisional": "Obten la garantía provisional",
             "Gastos_desisistimiento": "Obten los gastos por desistimiento",
             "Modificaciones_previstas": "Obten las modificaciones previstas",
             "Revicion_precios_prevista": "Obten la revision de precios prevista, responde unicamente con si o no",
@@ -71,6 +74,43 @@
             "Indic_sub_como_crit": "Indica si la subcontratacion es un criterio, responde unicamente con si o no",
             "Tareas_crit": "Indica si hay tareas criticas, responde unicamente con si o no"
         },
+
+        "Ajuntament": {
+            "Regulacion_armonizada": "Indica si existe la regulacion armonizada, responde unicamente con si o no",
+            "Sometido_recurso_especial": "Indica si existe el sometido a recurso especial, responde unicamente con si o no",
+            "Expediente": "Obtén el codigo o numero de expediente del contrato, responde unicamente con el expediente, suele tener la siguiente forma: 04101/2019/223-O",
+            "Objeto": "Obtén el objeto del contrato, suele describir el tipo de actividad y su ubicación",
+            "Tipo_Tramitacion": "Indica el tipo de tramitación, responde unicamente con el tipo de tramitación, suele ser ordinaria, urgente, u otra",
+            "Tipo_gasto": "Indica el tipo de gasto del contrato, suele ser únicamente una palabra como 'anticipada' o 'no anticipada'",
+            "Organo": "Indica el organo de contratación",
+            "Clasificación_obra": "Indica la clasificación de obras, suele ser una única palabra como 'reforma' o 'obra'",
+            "Nomenclatura": "Obten la nomenclatura o CPV del contrato, suele ser una lista de códigos acomapada de una descripción",
+            "Plazo_ejecución": "Obten el plazo de ejecución del contrato, responde únicamente con la duracion estipulada, suelen estar en meses",
+            "Presupuesto_sinIVA": "Ubica el presupuesto sin IVA de la licitación, responde únicamente con el valor en euros, este debe ser mas bajo que el preupuesto con IVA",
+            "Presupuesto_conIVA": "Ubica el presupuesto con IVA de la licitación, responde únicamente con el valor en euros, este debe ser mas alto que el presupuesto sin IVA",
+            "Importe_IVA": "Ubica el importe del IVA de la licitación, responde únicamente con el valor en euros, este debe ser mas bajo que el presupuesto con IVA y el presupuesto sin IVA",
+            "Sistema_Retribucion": "Indica el sistema de retribución del contrato",
+            "Valor_estimado": "Ubica el valor estimado del contrato, responde únicamente con el valor en euros",
+            "Revision_precios": "Indica si existe la revision de precios, responde unicamente con si o no",
+            "Garantia_definitiva": "Indica si existe la garantía definitiva, responde unicamente con si o no",
+            "Garantia_provisional": "Indica si existe la garantía provisional, responde unicamente con si o no, en caso de ser si responde con el valor numerico",
+            "Oferta_economica": "Ubica el criterio de oferta economica e indica el criterio, el puntaje maximo de ponderación y el metodo de valoracion del mismo",
+            "Formacion_plantilla": "Ubica el criterio de formacion de plantilla e indica el criterio, el puntaje maximo de ponderación y el metodo de valoracion del mismo",
+            "Criterios_juiciovalor": "Indica si el contrato cuenta con criterios dependeientes de un juicio de valor, responde unicamente con si o no",
+            "Admisibilidad_variantes": "Indica si el contrato cuenta con admisibilidad de variantes, responde unicametne con si o no",
+            "Clasificacion_solvencia":"Dentro de la sección de solvencia, indica la clasificacion",
+            "Grupo_solvencia":"Dentro de la sección de solvencia, indica el grupo al que pertenece",
+            "Subgrupo_Solvencia":"Dentro de la sección de solvencia, indica el subgrupo al que pertenece",
+            "Categoria_Solvencia":"Dentro de la sección de solvencia, indica la categoria a la que pertenece",
+            "Criterio_Solvencia_economica": "Dentro de la seccion de solvencia economica, indica el criterio de seleccion",
+            "Criterio_Solvencia_tecnica": "Dentro de la seccion de solvencia tecnica, indica el criterio de seleccion",
+            "Condiciones especiales": "Indica si existen condiciones especiales de ejecucion",
+            "Penalidad_incumplimiento": "Indica si existen penalidades por incumplimientos",
+            "Forma_pago": "Indica la forma de pago",
+            "Causas_modificacion": "Indica si existen causas de modificacion del contrato",
+            "Plazo_garantia": "Indica si el contrato cuenta con plazo de garantía"
+        }, 
+
 
         "Anuncio": {
             "Plazo": "",

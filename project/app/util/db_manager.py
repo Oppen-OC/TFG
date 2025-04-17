@@ -55,12 +55,24 @@ class DBManager:
         self.cursor = self.cnxn.cursor()
         self.logger.info("Conectado a la base de datos exitosamente.")
 
+    def ensure_connection(self):
+        if self.cnxn is None or self.cursor is None:
+            self.openConnection()
+
+    def reset_cursor(self):
+        self.cursor.close()
+        self.cursor = self.cnxn.cursor()
+
     def closeConnection(self):
         self.cursor.close()
         self.cnxn.close()
         self.logger.info("Desconexión a la base de datos completada.")
 
     def insertDb(self, table, values):
+        if not all(value is not None for value in values):
+            self.logger.error(f"Invalid data: {values}")
+            return
+
         try:
             query = f"INSERT INTO {table} {self.strings[table]} {self.strings[table + 'V']}"
             self.cursor.execute(query, values)
@@ -68,7 +80,9 @@ class DBManager:
             self.logger.info(f"Se ha insertado correctamente los valores en la tabla {table}.")
 
         except Exception as e:
-            self.logger.error(f"Error al insertar los valores en la tabla {table}: {e}")
+            self.logger.error(f"Error inserting values into table {table}: {e}")
+            self.logger.error(f"Query: {query}")
+            self.logger.error(f"Values: {values}")
 
     def deleteObject(self, table, pk_name, pk_value):
         sql = f"DELETE FROM {table} WHERE {pk_name} = ?"
