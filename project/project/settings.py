@@ -11,6 +11,22 @@ https://docs.djangoproject.com/en/5.1/ref/settings/
 """
 
 from pathlib import Path
+import os
+import django
+
+# Configurar la variable de entorno DJANGO_SETTINGS_MODULE
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'project.settings')
+
+# Inicializar Django
+django.setup()
+
+# Ahora puedes importar los modelos
+from app.models import Codigo
+
+# Ejemplo de uso del modelo
+codigos = Codigo.objects.all()
+for codigo in codigos:
+    print(codigo.cod, codigo.url)
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent

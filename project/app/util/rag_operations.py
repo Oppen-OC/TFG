@@ -2,17 +2,14 @@ from dotenv import load_dotenv
 import openai
 import os
 import faiss
-from sentence_transformers import SentenceTransformer
-from langchain_text_splitters import RecursiveCharacterTextSplitter
 import json
 import logging
 import numpy as np
+from tqdm import tqdm
 
 load_dotenv()
 
 class RAG:
-
-
     # Configuración del logger específico para el RAG y archivos temporales
     base_dir = os.path.dirname(os.path.abspath(__file__))  # Ruta base del archivo actual
     logs_dir = os.path.join(base_dir, 'logs')  # Ruta al directorio de logs
@@ -20,112 +17,96 @@ class RAG:
 
     # Ruta del archivo de log
     log_file_path = os.path.join(logs_dir, 'rag.log')
-
     rag_logger = logging.getLogger("rag_logger")
     rag_logger.setLevel(logging.INFO)
-
-    # Configurar el manejador de archivo para escribir logs en el directorio de logs
     rag_handler = logging.FileHandler(log_file_path, mode='w', encoding='utf-8')
     rag_handler.setLevel(logging.INFO)
-
     rag_formatter = logging.Formatter("%(asctime)s - %(levelname)s - %(message)s")
     rag_handler.setFormatter(rag_formatter)
     rag_logger.addHandler(rag_handler)
     rag_logger.propagate = False
 
     def __init__(self, 
-                 batch_size=512,
-                 overlap=128, 
-                 embedding_model = SentenceTransformer("all-MiniLM-L6-v2"),  
-                 client = openai.OpenAI( api_key=os.getenv("UPV_API_KEY"), base_url="https://api.poligpt.upv.es"),
-                 minimun_distance = 0.9
+                 file = None,
+                 embedding_model = "nomic-embed-text", #SentenceTransformer("all-MiniLM-L6-v2")  
+                 client = openai.OpenAI(api_key=os.getenv("UPV_API_KEY"), base_url="https://api.poligpt.upv.es"),
+                 minimun_distance = 0.5
                  ):
         
-        self.batch_size = batch_size
-        self.overlap = overlap
+        self.file = file
         self.faiss_path = RAG.temp_files_dir + "/embeddings_index.faiss"
         self.text_path = RAG.temp_files_dir + "/temp_document.txt"
         self.embeddings = []
-        self.chunks = []
-        self.chunk_pages = []
         self.embedding_model = embedding_model
         self.client = client
         self.prompt = ""
         self.logger = RAG.rag_logger
-        self.promptCount = 0
+        self.chunks = []
+        self.tables = []
+        self.metadata = []
         self.minimun_distance = minimun_distance
+
+        if os.path.exists(self.faiss_path):
+                os.remove(self.faiss_path)
+                self.logger.info(f"Previous FAISS index deleted: {self.faiss_path}")
 
         self.logger.info("RAG object initialized.")
         print("RAG object initialized.")
 
-    def textSplitter(self):
-        try:
-            with open(self.text_path, 'r', encoding='utf-8') as file:
-                text = file.read()
-                if not text.strip():
-                    self.logger.error("The text file is empty.")
 
-            self.spliter(text, separator="\f", size=self.batch_size, overlap=self.overlap)
-            
-
-        except Exception as e:
-            self.logger.error(f"Error reading the file or splitting text at line {e.__traceback__.tb_lineno}: {e}")
-
-    def generate_embeddings(self):
-        self.embeddings = self.embedding_model.encode(self.chunks, batch_size=1024)
-        self.logger.info(f"Generated {len(self.embeddings)} embeddings.")
-        print(f"Generated {len(self.embeddings)} embeddings.")
-
-    def store_embeddings_in_faiss(self):
-
-        dimension = self.embeddings.shape[1]
-        index = faiss.IndexFlatL2(dimension)
-
-        index.add(self.embeddings)
-        faiss.write_index(index, self.faiss_path)
-
-        self.logger.info(f"Stored {len(self.embeddings)} embeddings in FAISS index.")
-
+    #Devuelve los chunks de texto más similares a la consulta
     def retrieve_similar_chunks(self, query):
+        # Generar el embedding para la consulta usando la API de OpenAI
+        try:
+            response = self.client.embeddings.create(
+                input=query,
+                model=self.embedding_model  # Modelo especificado en la inicialización
+            )
+            query_embedding = np.array(response.data[0].embedding, dtype='float32').reshape(1, -1)  # Asegurar formato correcto
+        except Exception as e:
+            self.logger.error(f"Error generating query embedding: {e}")
+            return []
 
-        self.promptCount += 1
-
+        # Cargar el índice FAISS
         try:
             index = faiss.read_index(self.faiss_path)
         except Exception as e:
-            print(f"Error reading FAISS index from {self.faiss_path}: {e}")
+            self.logger.error(f"Error loading FAISS index: {e}")
             return []
 
-        # Encode the query using the model
-        query_embedding = self.embedding_model.encode([query])
+        # Buscar los chunks más similares en el índice FAISS
+        try:
+            distances, indices = index.search(query_embedding, k=5)  # Buscar los 5 más similares
+        except Exception as e:
+            self.logger.error(f"Error querying FAISS index: {e}")
+            return []
 
-        # Search for similar chunks in the FAISS index
-        distances, indices = index.search(query_embedding, k=5)
-
-        # Convierte a la lista de indices en una lista de enteros
+        # Convertir los resultados a listas
         indices = indices.flatten().tolist()
         distances = distances.flatten().tolist()
+
+        # Filtrar resultados según la distancia mínima
         try:
-            indices, distances = zip(*[(i, d) for i, d in zip(indices, distances) if d >= self.minimun_distance])
+            filtered_results = [(i, d) for i, d in zip(indices, distances) if d >= self.minimun_distance]
+            if not filtered_results:
+                self.logger.warning(f"No similar chunks found for query: {query}")
+                return []
+            indices, distances = zip(*filtered_results)
         except ValueError:
             self.logger.warning(f"No similar chunks found for query: {query}")
             return []
-  
-        
-        self.logger.info(f"Query: {query}")
-        self.logger.info(f"Retrieved chunks {indices}, with distances {distances}.")
 
-        aux = ""
-        for i in indices:
-            aux += " " + str(self.chunk_pages[i])
-
-        self.logger.info(f"from pages: {aux}.")
+        # Recuperar los chunks correspondientes
         similar_chunks = [{"text": self.chunks[i], "distance": distances[j]} for j, i in enumerate(indices)]
+
+        # Log de los resultados
+        self.logger.info(f"Query: {query}")
+        self.logger.info(f"Retrieved chunks: {indices}, with distances: {distances}.")
 
         return similar_chunks
 
     def generate_response_with_context(self, query, similar_chunks):
-        context = " ".join([rank['text'] for rank in similar_chunks])
+        context = " ".join([str(rank['text']) for rank in similar_chunks])
 
         self.prompt = f"""
         Eres un asistente de IA que responde preguntas sobre un documento.
@@ -133,6 +114,7 @@ class RAG:
         Question: {query}\n
         Answer:
         """
+        print("Procesando")
 
         # Call the OpenAI API
         response = self.client.chat.completions.create(
@@ -141,6 +123,7 @@ class RAG:
                        "content": self.prompt
                        }],
         )
+        print("respondido")
 
         answer = response.choices[0].message.content.strip()
 
@@ -158,48 +141,132 @@ class RAG:
         
         return self.generate_response_with_context(query, similar_chunks)
 
+    def embbed(self):
+        # Generar embeddings para todos los chunks
+        embeddings = []
+        for i, d in enumerate(self.file["chunks"]):
+            try:
+                # Llamar a la API de OpenAI para generar el embedding
+                response = self.client.embeddings.create(
+                    input=d,
+                    model=self.embedding_model  # Cambiar a "self.embedding_model" si es necesario
+                )
+                embedding = response.data[0].embedding  # Extraer el embedding
+                embeddings.append(embedding)
+            except Exception as e:
+                self.logger.error(f"Error generating embedding for chunk {i}: {e}")
+                continue
 
-    def spliter(self, text, separator, size, overlap):
-        pages = text.split(separator)
-        print(f"Splitting text into {len(pages)} pages.")
-        splitter = RecursiveCharacterTextSplitter(chunk_size=size, chunk_overlap=overlap)
-        chunks = []
-        current_page = 1
+        # Convertir los embeddings a un array de NumPy
+        embeddings_array = np.array(embeddings, dtype='float32')
 
-        for i, page in enumerate(pages):
-            page_chunks = splitter.split_text(page)
-            for j, chunk in enumerate(page_chunks):
-                # If it's the first chunk of a page and overlap exists, include the last chunk of the previous page
-                if j == 0 and i > 0 and overlap > 0:
-                    if chunks:
-                        previous_chunk = chunks[-1]
-                        chunk = previous_chunk[-overlap:] + chunk
-                self.chunk_pages.append(current_page)
-            chunks.extend(page_chunks)
-            current_page += 1
+        # Asegurarse de que el array sea bidimensional
+        if len(embeddings_array.shape) == 1:
+            embeddings_array = embeddings_array.reshape(1, -1)
+
+        # Inicializar el índice FAISS
+        dimension = embeddings_array.shape[1]  # Dimensión de los embeddings
+        index = faiss.IndexFlatL2(dimension)  # Distancia L2 (Euclidiana)
+
+        # Agregar los embeddings al índice FAISS
+        index.add(embeddings_array)
+
+        # Guardar el índice FAISS en disco
+        faiss.write_index(index, self.faiss_path)
+
+        self.logger.info(f"Stored {len(self.chunks)} embeddings in FAISS index.")
+
+    def embed_json(self):
+        try:
+            # Debug log to check the state of self.file
+            if not self.file:
+                self.logger.error("self.file is None or empty.")
+                return
+
+            # Use self.file directly as it already contains the parsed JSON data
+            data = self.file
+            self.logger.info(f"Loaded JSON data with {len(data)} pages.")
+
+            # Extract chunks from the JSON file
+            for i, page in enumerate(data):
+                chunks = page.get("chunks", [])
+                meta = (page.get("page", []), page.get("sections", []))
+                for chunk in chunks:
+                    self.chunks.append(chunk)  # Extract "chunks" field
+                    self.metadata.append(meta) # Extract "metadata" field
+
+            for i, page in enumerate(data):
+                if "tables" in page:
+                    table = page.get("tables", [])
+                    meta = page.get("page", []), page.get("sections", [])
+                    self.chunks.append(table)  # Extract "chunks" field
+                    self.metadata.append(meta)  # Extract "metadata" field
             
-        self.chunks = chunks
-        self.logger.info(f"Text split into {len(self.chunks)} chunks.")
+            # Generate embeddings for each chunk
+            embeddings = []
+            for i, chunk in enumerate(self.chunks):
+                input = ""
+                try:
+                    if isinstance(chunk, str):
+                        input = chunk
+
+                    elif chunk:
+                        zipped = list(zip(*chunk)) 
+                        input = "\n".join([", ".join(row) for row in zipped])
+                    
+                    if input != "":
+                        response = self.client.embeddings.create(
+                            input=input,
+                            model=self.embedding_model
+                        )
+                        self.logger.info(f"created embedding for chunk {i}: {input}")
+                        embedding = response.data[0].embedding
+                        embeddings.append(embedding)      
+                    
+                except Exception as e:
+                    self.logger.error(f"Error generating embedding for chunk {i}: {e}")
+                continue           
+
+            self.logger.info(f"Generated: {len(embeddings)} embeddings")
+
+            # Convert embeddings to a NumPy array
+            embeddings_array = np.array(embeddings, dtype='float32')
+
+            # Initialize a FAISS index
+            dimension = embeddings_array.shape[1]
+            index = faiss.IndexFlatL2(dimension)
+            index.add(embeddings_array)
+
+            # Save the FAISS index to disk
+            faiss.write_index(index, self.faiss_path)
+            self.logger.info(f"FAISS index saved to {self.faiss_path}")
+
+        except Exception as e:
+            self.logger.error(f"Error embedding JSON file: {e}")
 
 def main():
     base_dir = os.path.dirname(os.path.abspath(__file__))
     string_path = os.path.join(base_dir, 'JSON', 'Strings.json')
     output_dir = os.path.join(base_dir, 'temp_files', 'output.txt')
+    file_path = os.path.join(base_dir, 'temp_files', 'temp_document.json')
 
     with open(string_path, 'r', encoding='utf-8') as f:
         strings = json.load(f)
-    prompts = strings["Prompts"]["Anexo"]
+    prompts = strings["Prompts"]["Ajuntament"]    
+    
+    with open(file_path, 'r', encoding='utf-8') as f:
+        file = json.load(f)
 
-    reg_object = RAG()
-    reg_object.textSplitter()
-    reg_object.generate_embeddings()
-    reg_object.store_embeddings_in_faiss()
+    rag_object = RAG(file)
+    # rag_object.embbed()
+    rag_object.embed_json()
 
     with open(output_dir, "w", encoding="utf-8") as output_file:
-        for prompt in prompts:
-            output_file.write(prompts[prompt] + "\n\n")
-            output_file.write(reg_object.rag_workflow(prompts[prompt]) + "\n")
+        for prompt_key in tqdm(prompts, desc="Processing Prompts", unit="prompt", leave = False):
+            output_file.write(prompts[prompt_key] + "\n\n")
+            output_file.write(rag_object.rag_workflow(prompts[prompt_key]) + "\n")
             output_file.write("--------------------------------------------\n")
 
 if __name__ == "__main__":
     main()
+
