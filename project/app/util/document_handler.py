@@ -13,6 +13,20 @@ def idDocType(title):
     parts = title.split('.')
     return parts[-1] if parts else None
 
+def preprocess_text(text):
+    replacements = {
+        "☒": "[SELECCIONADO]",
+        "☐": "[NO SELECCIONADO]",
+        "Nº": "Número",
+        "x□": "[SELECCIONADO]",
+        "□": "[NO SELECCIONADO]"
+    }
+
+    for old, new in replacements.items():
+        text = text.replace(old, new)
+
+    return text
+
 def section_identifier(text, anterior):
     # Expresión regular para detectar letras seguidas de ". " o "APARTADO X\n"
     pattern = r"(?:^|\n)[A-ZÑ]{1}\. |(?:^|\n)APARTADO [A-ZÑ]{1}\n"
@@ -24,7 +38,7 @@ def section_identifier(text, anterior):
             ans.append(seccion)
     return ans
 
-def spliter(ant, text, size = 512, overlap=64):
+def spliter(ant, text, size = 1024, overlap=128):
     text_splitter = RecursiveCharacterTextSplitter(chunk_size=size,chunk_overlap=overlap)
     texts = text_splitter.split_text(ant)
     resto = size - len(texts[-1])
@@ -128,7 +142,8 @@ def download_to_json(url, file_type):
                 for i, page in enumerate(pdf.pages):
                     size = (0.1 * page.width, 0.1 * page.height, 0.95 * page.width, 0.85 * page.height)
                     cropped_page = page.crop(size)
-                    text = cropped_page.extract_text().replace("☒", "[CORRECTO]").replace("Nº", "número").replace("☐", "[INCORRECTO]")  # Extract text from the cropped page
+                    text = cropped_page.extract_text()
+                    text = preprocess_text(text)  # Preprocess the text
 
                     # Extract sections based on page number
                     if data:
@@ -151,7 +166,6 @@ def download_to_json(url, file_type):
                         chunks = spliter(ant_text, "")
                         data.append({"page": page.page_number , "chunks": chunks , "text": ant_text, "tables": ant_table,"sections": ant_sec})
                     
-
 
         elif file_type == "zip":
             print("Compatibilidad con .zip aun no implementada")
@@ -180,6 +194,7 @@ def main():
     
     odt = "https://contrataciondelestado.es/wps/wcm/connect/PLACE_es/Site/area/docAccCmpnt?srv=cmpnt&cmpntname=GetDocumentsById&source=library&DocumentIdParam=a9af0a63-71e1-4f05-b71c-55e7a7e1c107"
     pdf = "https://contrataciondelestado.es/wps/wcm/connect/PLACE_es/Site/area/docAccCmpnt?srv=cmpnt&cmpntname=GetDocumentsById&source=library&DocumentIdParam=ed28a294-d582-4936-84d5-3364242e1f8b"
+    pdf_2 = "https://contrataciondelestado.es/wps/wcm/connect/PLACE_es/Site/area/docAccCmpnt?srv=cmpnt&cmpntname=GetDocumentsById&source=library&DocumentIdParam=69c6ec11-3826-4b71-becc-d187156635cf"
     docx = "https://contrataciondelestado.es/wps/wcm/connect/PLACE_es/Site/area/docAccCmpnt?srv=cmpnt&cmpntname=GetDocumentsById&source=library&DocumentIdParam=0cf6ca6f-add4-4d37-a48d-9e33e72e2adb"
     #text_file_path_odt = download_and_convert_to_text(odt, "odt")
     # print("odt", text_file_path_odt)
