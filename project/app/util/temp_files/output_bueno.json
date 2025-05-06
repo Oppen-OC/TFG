@@ -1,0 +1,361 @@
+{
+    "prompts": [
+        {
+            "prompt_key": "Regulacion_armonizada",
+            "prompt": "Indica si tiene regulación armonizada",
+            "response": "No",
+            "score": 0.9619097319548258,
+            "index": [
+                0
+            ]
+        },
+        {
+            "prompt_key": "Sometido_recurso_especial",
+            "prompt": "Indica si tiene recurso especial",
+            "response": "No",
+            "score": 0.9594289641569889,
+            "index": [
+                0
+            ]
+        },
+        {
+            "prompt_key": "Expediente",
+            "prompt": "Obtén el codigo o número de expediente de contratación",
+            "response": "04101/2019/223-O",
+            "score": 0.9506190842245701,
+            "index": [
+                4,
+                15,
+                21
+            ]
+        },
+        {
+            "prompt_key": "Objeto",
+            "prompt": "Obtén el objeto del contrato",
+            "response": "El objeto del contrato es Obras del proyecto de ejecución-rehabilitación (participativa) de edificio para equipamiento en Camí Cases de Bàrcena, 63.",
+            "score": 0.8850366880310215,
+            "index": [
+                4,
+                15,
+                24
+            ]
+        },
+        {
+            "prompt_key": "Tipo_Tramitacion",
+            "prompt": "Indica el tipo de tramitación de gasto",
+            "response": "Ordinaria",
+            "score": 0.42378318272135035,
+            "index": [
+                26,
+                1,
+                0
+            ]
+        },
+        {
+            "prompt_key": "Tipo_gasto",
+            "prompt": "Indica el tipo de tramitacion de gasto del contrato",
+            "response": "Anticipada",
+            "score": 0.6613799455174866,
+            "index": [
+                26,
+                27,
+                25
+            ]
+        },
+        {
+            "prompt_key": "Organo",
+            "prompt": "Indica el órgano de contratación",
+            "response": "JUNTA DE GOBIERNO LOCAL",
+            "score": 0.5202290253205734,
+            "index": [
+                4,
+                15,
+                24
+            ]
+        },
+        {
+            "prompt_key": "Clasificación_obra",
+            "prompt": "Indica la clasificación de obras",
+            "response": "C:Edificaciones 4 Albañilería, revocos y revestidos D 3",
+            "score": 0.6352711285234043,
+            "index": [
+                27,
+                19,
+                21
+            ]
+        },
+        {
+            "prompt_key": "Nomenclatura",
+            "prompt": "Obten la nomenclatura o CPV del contrato, suele ser una lista de códigos acomapada de una descripción",
+            "response": "45000000-7 Trabajos de construcción 45300000-0 Trabajos de instalación en edificios 45330000-9 Trabajos de fontanería",
+            "score": 0.71885028488687,
+            "index": [
+                4,
+                15,
+                17
+            ]
+        },
+        {
+            "prompt_key": "Plazo_ejecución",
+            "prompt": "Obten el plazo de ejecución del contrato",
+            "response": "11 meses",
+            "score": 0.8575554718168947,
+            "index": [
+                15,
+                4,
+                7
+            ]
+        },
+        {
+            "prompt_key": "Presupuesto_sinIVA",
+            "prompt": "Ubica el presupuesto sin IVA de la licitación",
+            "response": "456.198,35€",
+            "score": 0.8743162487370195,
+            "index": [
+                10,
+                8,
+                5
+            ]
+        },
+        {
+            "prompt_key": "Presupuesto_conIVA",
+            "prompt": "Ubica el presupuesto con IVA de la licitación",
+            "response": "552.000,00 €",
+            "score": 0.968808653150282,
+            "index": [
+                10,
+                8,
+                5
+            ]
+        },
+        {
+            "prompt_key": "Importe_IVA",
+            "prompt": "Ubica el importe del IVA de la licitación",
+            "response": "95.801’65 €",
+            "score": 0.9349981310098273,
+            "index": [
+                10,
+                8,
+                9
+            ]
+        },
+        {
+            "prompt_key": "Sistema_Retribucion",
+            "prompt": "Indica el sistema de retribución del precio",
+            "response": "En función de precios unitarios referidos a los distintos componentes de la prestación",
+            "score": 0.36755604537488284,
+            "index": [
+                8
+            ]
+        },
+        {
+            "prompt_key": "Valor_estimado",
+            "prompt": "Ubica el valor estimado del contrato, responde únicamente con el valor en euros",
+            "response": "456.198,35 €",
+            "score": 0.9986035728763835,
+            "index": [
+                21,
+                4,
+                20
+            ]
+        },
+        {
+            "prompt_key": "Revision_precios",
+            "prompt": "Indica si existe la revisión de precios",
+            "response": "No",
+            "score": 0.9192340556897346,
+            "index": [
+                12,
+                11
+            ]
+        },
+        {
+            "prompt_key": "Garantia_definitiva",
+            "prompt": "Qué dice el documento sobre la garantía definitiva?",
+            "response": "Si. El plazo de garantía del presente contrato será de un año, a partir de la recepción de las obras.",
+            "score": 0.463056767200342,
+            "index": [
+                27,
+                26
+            ]
+        },
+        {
+            "prompt_key": "Garantia_provisional",
+            "prompt": "Qué dice el documento sobre la garantía provisional?",
+            "response": "No aplica",
+            "score": 0.4699453793153488,
+            "index": [
+                27,
+                26
+            ]
+        },
+        {
+            "prompt_key": "Criterio_1",
+            "prompt": "Dame detalles sobre el contenido del criterio 1",
+            "response": "CRITERIO: MENOR PLAZO TOTAL DE EJECUCIÓN, PONDERACIÓN: Hasta un máximo de 40 puntos, VALORACIÓN: Se valorará con el máximo de puntuación al menor plazo de ejecución ofertado respecto al previsto.",
+            "score": 0.7546513830097447,
+            "index": [
+                16,
+                17
+            ]
+        },
+        {
+            "prompt_key": "Criterio_2",
+            "prompt": "Dame detalles sobre el contenido del criterio 2",
+            "response": "Contenido del Criterio 2, Ponderación: La valoración se basa en el volumen de negocios mínimo anual y el plazo de ejecución ofertado no es considerado aquí, sino que está dentro del criterio menor plazo total de ejecución., Detalle adicional: Se acreditará por medio de sus cuentas anuales aprobadas y depositadas en el registro Mercantil.",
+            "score": 0.6428868245168926,
+            "index": [
+                16,
+                20
+            ]
+        },
+        {
+            "prompt_key": "Criterio_3",
+            "prompt": "Dame detalles sobre el contenido del criterio 3",
+            "response": "Criterio: MENOR PLAZO TOTAL DE EJECUCIÓN, Ponderación: Hasta un máximo de 40 puntos, Valoración: Se valorará con el máximo de puntuación al menor plazo de ejecución ofertado respecto al previsto.",
+            "score": 0.7757051724661754,
+            "index": [
+                7,
+                16
+            ]
+        },
+        {
+            "prompt_key": "Criterios_juiciovalor",
+            "prompt": "Indica si el contrato cuenta con criterios dependientes de un juicio de valor",
+            "response": "No",
+            "score": 0.42700021174178143,
+            "index": [
+                15,
+                4,
+                17
+            ]
+        },
+        {
+            "prompt_key": "Admisibilidad_variantes",
+            "prompt": "Indica si el contrato cuenta con admisibilidad de variantes",
+            "response": "No",
+            "score": 0.7627930250538865,
+            "index": [
+                15,
+                17,
+                20
+            ]
+        },
+        {
+            "prompt_key": "Clasificacion_solvencia",
+            "prompt": "Dentro de la sección de solvencia, indica la clasificacion",
+            "response": "Sustitutiva",
+            "score": 0.3255245923995972,
+            "index": [
+                19
+            ]
+        },
+        {
+            "prompt_key": "Grupo_solvencia",
+            "prompt": "Dentro de la sección de solvencia, indica el grupo al que pertenece",
+            "response": "C SUSTITUTIVA",
+            "score": 0.9384745487234623,
+            "index": [
+                19,
+                23,
+                18
+            ]
+        },
+        {
+            "prompt_key": "Subgrupo_Solvencia",
+            "prompt": "Dentro de la sección de solvencia, indica el subgrupo al que pertenece",
+            "response": "4 Albañilería, revocos y revestidos",
+            "score": 0.9983995016198592,
+            "index": [
+                19,
+                23,
+                24
+            ]
+        },
+        {
+            "prompt_key": "Categoria_Solvencia",
+            "prompt": "Dentro de la sección de solvencia, indica la categoria a la que pertenece",
+            "response": "D 3",
+            "score": 0.9384111426067746,
+            "index": [
+                19,
+                23,
+                18
+            ]
+        },
+        {
+            "prompt_key": "Criterio_Solvencia_economica",
+            "prompt": "Indica el criterio de selección de solvencia económica",
+            "response": "El criterio de selección es que el volumen de negocios mínimo anual sea de 684.297,50.-€, importe equivalente a una vez y media el valor estimado del contrato.",
+            "score": 0.5766147738110426,
+            "index": [
+                19,
+                18,
+                20
+            ]
+        },
+        {
+            "prompt_key": "Criterio_Solvencia_tecnica",
+            "prompt": "Indica el criterio de selección de solvencia técnica",
+            "response": "El criterio de selección es una relación de las obras ejecutadas en los últimos 5 años, con un importe anual acumulado igual o superior a 319.338,84.-€.",
+            "score": 0.643890889343227,
+            "index": [
+                23,
+                19,
+                18
+            ]
+        },
+        {
+            "prompt_key": "Condiciones_especiales",
+            "prompt": "Indica si existen condiciones especiales de ejecución",
+            "response": "Si, hay una condición especial de ejecución relacionada con no minorar las condiciones de trabajo en materia de jornada y salario para las personas trabajadoras adscritas al contrato.",
+            "score": 0.36826174960364666,
+            "index": [
+                7,
+                24
+            ]
+        },
+        {
+            "prompt_key": "Penalidad_incumplimiento",
+            "prompt": "Indica si existen penalidades por incumplimientos",
+            "response": "No",
+            "score": 0.9091172017776064,
+            "index": [
+                25
+            ]
+        },
+        {
+            "prompt_key": "Forma_pago",
+            "prompt": "Indica la forma de pago",
+            "response": "Una vez expedida la Certificación Mensual en los términos establecidos en el pliego de prescripciones técnicas, la empresa contratista presentará la correspondiente factura electrónica a través de la plataforma habilitada por el Ayuntamiento a dichos efectos.",
+            "score": 0.7769212438745249,
+            "index": [
+                26,
+                18,
+                14
+            ]
+        },
+        {
+            "prompt_key": "Causas_modificacion",
+            "prompt": "Indica si existen causas de modificacion del contrato",
+            "response": "NO",
+            "score": 0.6087385510414247,
+            "index": [
+                4,
+                26,
+                25
+            ]
+        },
+        {
+            "prompt_key": "Plazo_garantia",
+            "prompt": "Indica si el contrato cuenta con plazo de garantía",
+            "response": "Si, el contrato establece un plazo de garantía de un año a partir de la recepción de las obras.",
+            "score": 0.8318082107262413,
+            "index": [
+                27,
+                26,
+                8
+            ]
+        }
+    ]
+}

@@ -22,27 +22,45 @@ def preprocess_text(text):
         "□": "[NO SELECCIONADO]"
     }
 
+    # Realizar los reemplazos iniciales
     for old, new in replacements.items():
         text = text.replace(old, new)
+
+    # Eliminar texto seguido por [NO SELECCIONADO] hasta un salto de línea o [SELECCIONADO]
+    pattern = r"\[NO SELECCIONADO\].*?(?=\n|\[SELECCIONADO\])"
+    text = re.sub(pattern, "", text, flags=re.DOTALL)
+
+    # Eliminar información dentro de paréntesis que contenga "art."
+    pattern_art = r"\([^)]*?art\.[^)]*?\)"
+    text = re.sub(pattern_art, "", text)
 
     return text
 
 def section_identifier(text, anterior):
+    """
+    :param text: Texto a analizar.
+    :param anterior: Última sección identificada previamente.
+    :return: Lista de secciones identificadas.
+    """
     # Expresión regular para detectar letras seguidas de ". " o "APARTADO X\n"
     pattern = r"(?:^|\n)[A-ZÑ]{1}\. |(?:^|\n)APARTADO [A-ZÑ]{1}\n"
     secciones = re.findall(pattern, text)  # Encuentra todas las coincidencias
     ans = [anterior] if anterior else []
+    
     for seccion in secciones:
-        seccion = seccion.replace("\n", "")
+        seccion = seccion.replace("\n", "").replace(".", "").strip()  # Elimina saltos de línea, puntos y espacios
+        if "APARTADO" in seccion:
+            # Si contiene "APARTADO", quedarse con el último carácter
+            seccion = seccion[-1]
         if seccion not in ans:
             ans.append(seccion)
+    
     return ans
 
 def spliter(ant, text, size = 1024, overlap=128):
     text_splitter = RecursiveCharacterTextSplitter(chunk_size=size,chunk_overlap=overlap)
     texts = text_splitter.split_text(ant)
-    resto = size - len(texts[-1])
-    texts[-1] = texts[-1] + text[:resto]
+    texts[-1] = texts[-1] + text[:overlap]
     return texts
 
 def download_to_text(url, file_type):
@@ -74,8 +92,9 @@ def download_to_text(url, file_type):
         if file_type == 'pdf':
             with pdfplumber.open(temp_doc_path) as pdf:
                 for page in pdf.pages:
-                    size = (0.1 * page.width, 0.1 * page.height, 0.90 * page.width, 0.90 * page.height)
-                    cropped_page = page.within_bbox(size)
+                    # [x0, y0, x1, y1]
+                    size = (0.1 * page.width, 0 * page.height, 0.90 * page.width, 0.90 * page.height)
+                    cropped_page = page.crop(size)
                     text += cropped_page.extract_text(layout=True) + "\n"
                     text += f"##PAGINA:{page.page_number}##" + "\n\f\n"
 
@@ -133,7 +152,6 @@ def download_to_json(url, file_type):
             paragraphs = [para.text for para in doc.paragraphs]
             for i, para in enumerate(paragraphs):
                 data.append({"page": i + 1, "text": para})
-
         elif file_type == 'pdf':
             with pdfplumber.open(temp_doc_path) as pdf:
                 ant_text = ""
@@ -198,7 +216,7 @@ def main():
     docx = "https://contrataciondelestado.es/wps/wcm/connect/PLACE_es/Site/area/docAccCmpnt?srv=cmpnt&cmpntname=GetDocumentsById&source=library&DocumentIdParam=0cf6ca6f-add4-4d37-a48d-9e33e72e2adb"
     #text_file_path_odt = download_and_convert_to_text(odt, "odt")
     # print("odt", text_file_path_odt)
-    download_to_json(pdf, "pdf")
+    download_to_json(pdf_2, "pdf")
     # print("pdf", text_file_path_pdf)
     # text_file_path_docx = download_and_convert_to_text(docx, "docx")
     #print("docx", text_file_path_docx)

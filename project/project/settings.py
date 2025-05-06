@@ -12,21 +12,6 @@ https://docs.djangoproject.com/en/5.1/ref/settings/
 
 from pathlib import Path
 import os
-import django
-
-# Configurar la variable de entorno DJANGO_SETTINGS_MODULE
-os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'project.settings')
-
-# Inicializar Django
-django.setup()
-
-# Ahora puedes importar los modelos
-from app.models import Codigo
-
-# Ejemplo de uso del modelo
-codigos = Codigo.objects.all()
-for codigo in codigos:
-    print(codigo.cod, codigo.url)
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -41,11 +26,12 @@ SECRET_KEY = 'django-insecure-e9(*()i)%@#o=i0keu=f_xqi7w(2w=!^#$ong0i7x)s6jan%wn
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = []  # Agrega aquí tus dominios o IPs permitidas
 
 
 # Application definition
 INSTALLED_APPS = [
+    # Otras aplicaciones de Django
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -53,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'app'
+
 ]
 
 # Middleware definition

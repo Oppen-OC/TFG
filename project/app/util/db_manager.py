@@ -102,8 +102,10 @@ class DBManager:
             for cont, row in enumerate(rows):
                 self.logger.info(f"{cont}- {row}")
             self.logger.info(f"Consulta exitosa, fin de la tabla {table}.")
+            return rows  # Devuelve los datos obtenidos
         except pyodbc.Error as e:
             self.logger.error(f"Error al consultar la tabla {table}: {e}")
+            return None  # Devuelve None en caso de error
 
     def updateObject(self, table, pk_name, pk_value, update_values):
         set_clause = ", ".join([f"{col} = ?" for col in update_values.keys()])
@@ -118,18 +120,22 @@ class DBManager:
         except pyodbc.Error as e:
             self.logger.error(f"Error al actualizar el elemento {pk_value} de la tabla {table}: {e}")
 
-    def searchTable(self, table, search_criteria):
+    def searchTable(self, table, search_criteria) -> list:
         where_clause = " AND ".join([f"{col} = ?" for col in search_criteria.keys()])
         sql = f"SELECT * FROM {table} WHERE {where_clause}"
         try:
             self.cursor.execute(sql, tuple(search_criteria.values()))
-            rows = self.cursor.fetchall()
+            rows = self.cursor.fetchall()[0]
             self.logger.info(f"Resultados de la búsqueda en la tabla {table}: {rows}")
             #for cont, row in enumerate(rows):
                 # self.logger.info(f"{cont}- {row}")
-            return rows
+            return list(rows)
         except pyodbc.Error as e:
             self.logger.error(f"Error al buscar en la tabla {table}: {e}")
+            return []
+        
+        except Exception as e:
+            self.logger.warning(f"No se encontraron resultados en la tabla {table} para los criterios: {search_criteria}")
             return []
 
     def exportToCSV(self, table, filename):
@@ -221,4 +227,4 @@ class DBManager:
 if __name__ == "__main__":   
     db = DBManager()
     db.openConnection()
-    db.viewTable("Anexos")
+    db.viewTable("Licitaciones_test")

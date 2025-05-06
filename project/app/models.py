@@ -1,7 +1,5 @@
 from django.db import models
 
-# Create your models here.
-
 class Licitacion(models.Model):
     cod = models.TextField()
     id_publicacion_ted = models.TextField(blank=True)
@@ -22,22 +20,15 @@ class Licitacion(models.Model):
     resultado = models.TextField()
     adjudicatario = models.TextField()
     num_licitadores_presentados = models.TextField()
-    importe_adjudicacion = models.TextField()
-
+    importe_adjudicacion = models.TextField()    
+    
     def __str__(self):
         return self.cod
 
 class Codigos(models.Model):
     cod = models.TextField()
     url = models.TextField()
-    
+
     def __str__(self):
         return self.cod
 
-class TodoItem(models.Model):
-    title = models.CharField(max_length=255)
-    description = models.TextField(blank=True, null=True)
-    completed = models.BooleanField(default=False)
-
-    def __str__(self):
-        return self.title

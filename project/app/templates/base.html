@@ -1,35 +1,60 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>
-      {% block title %}
-        Django App
-      {% endblock %}
-    </title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"  rel="stylesheet" />
+    <title>{% block title %}Dashboard{% endblock %}</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+      body {
+        background-color: #f9fafb;
+      }
+      .sidebar {
+        width: 250px;
+        height: 100vh;
+        background: #ffffff;
+        box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+        position: fixed;
+      }
+      .sidebar .nav-link.active {
+        background-color: #6f42c1;
+        color: white !important;
+      }
+      .content {
+        margin-left: 260px;
+        padding: 2rem;
+      }
+      .status-badge {
+        padding: 0.3rem 0.6rem;
+        border-radius: 0.5rem;
+        font-size: 0.85rem;
+        color: white;
+      }
+      .status-active { background-color: #34d399; }
+      .status-inactive { background-color: #f87171; }
+    </style>
   </head>
   <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-      <a class="navbar-brand" href="#">My Django App</a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav">
-          <li class="nav-item active">
-            <a class="nav-link" href="#">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">About</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Contact</a>
-          </li>
-        </ul>
+    <div class="sidebar d-flex flex-column p-3">
+      <h4>Dashboard.v01</h4>
+      <hr />
+      <ul class="nav nav-pills flex-column">
+        <li><a href="" class="nav-link {% if request.path == '/estadisticas/' %}active{% endif %}">📊 Estadísticas</a></li>
+        <li><a href="{% url 'app:licitaciones' %}" class="nav-link {% if request.path == '/licitaciones/' %}active{% endif %}">📁 Licitaciones</a></li>
+        <li><a href="" class="nav-link {% if request.path == '/chatbot/' %}active{% endif %}">🐱‍👤 Chatbot</a></li>
+        <li><a href="" class="nav-link {% if request.path == '/help/' %}active{% endif %}">❓ Help</a></li>
+      </ul>
+      <hr />
+      <div class="mt-auto">
+        <strong>Evano</strong><br />
+        <small class="text-muted">Project Manager</small>
       </div>
-    </nav>
-    <div class="container">{% block content %} {% endblock %}</div>
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js" ></script>
+    </div>
+
+    <div class="content">
+      {% block content %}{% endblock %}
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
   </body>
 </html>

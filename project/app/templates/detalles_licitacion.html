@@ -1,0 +1,168 @@
+{% extends 'base.html' %}
+
+{% block title %}Detalles de la Licitación{% endblock %}
+
+{% block content %}
+<h2 class="mb-4">Detalles de la Licitación</h2>
+
+<table class="table table-bordered">
+  <tr>
+    <th>Código</th>
+    <td>{{ licitacion.COD }}</td>
+  </tr>
+  <tr>
+    <th>ID Publicación TED</th>
+    <td>{{ licitacion.ID_publicacion_TED }}</td>
+  </tr>
+  <tr>
+    <th>Órgano de Contratación</th>
+    <td>{{ licitacion.Organo_Contratacion }}</td>
+  </tr>
+  <tr>
+    <th>ID Órgano de Contratación</th>
+    <td>{{ licitacion.ID_Organo_contratacion }}</td>
+  </tr>
+  <tr>
+    <th>Estado de la Licitación</th>
+    <td>{{ licitacion.Estado_Licitacion }}</td>
+  </tr>
+  <tr>
+    <th>Objeto del Contrato</th>
+    <td>{{ licitacion.Objeto_contrato }}</td>
+  </tr>
+  <tr>
+    <th>Financiación UE</th>
+    <td>{{ licitacion.Financiacion_UE }}</td>
+  </tr>
+  <tr>
+    <th>Presupuesto Base</th>
+    <td>{{ licitacion.Presupuesto_base }}</td>
+  </tr>
+  <tr>
+    <th>Valor Estimado del Contrato</th>
+    <td>{{ licitacion.Valor_Estimado_Contrato }}</td>
+  </tr>
+  <tr>
+    <th>Tipo de Contrato</th>
+    <td>{{ licitacion.Tipo_contrato }}</td>
+  </tr>
+  <tr>
+    <th>Código CPV</th>
+    <td>{{ licitacion.Codigo_CPV }}</td>
+  </tr>
+  <tr>
+    <th>Lugar de Ejecución</th>
+    <td>{{ licitacion.Lugar_ejecucion }}</td>
+  </tr>
+  <tr>
+    <th>Sistema de Contratación</th>
+    <td>{{ licitacion.Sistema_contratacion }}</td>
+  </tr>
+  <tr>
+    <th>Procedimiento de Contratación</th>
+    <td>{{ licitacion.Procedimiento_contratacion }}</td>
+  </tr>
+  <tr>
+    <th>Tipo de Contratación</th>
+    <td>{{ licitacion.Tipo_contratacion }}</td>
+  </tr>
+  <tr>
+    <th>Método de Presentación de Oferta</th>
+    <td>{{ licitacion.Metodo_presentacion_oferta }}</td>
+  </tr>
+  <tr>
+    <th>Resultado</th>
+    <td>{{ licitacion.Resultado }}</td>
+  </tr>
+  <tr>
+    <th>Adjudicatario</th>
+    <td>{{ licitacion.Adjudicatario }}</td>
+  </tr>
+  <tr>
+    <th>Número de Licitaciones Presentadas</th>
+    <td>{{ licitacion.Numero_licitaciones_presentadas }}</td>
+  </tr>
+  <tr>
+    <th>Importe de Adjudicación</th>
+    <td>{{ licitacion.Importe_adjudicacion }}</td>
+  </tr>
+</table>
+
+<!-- Enlaces a los documentos -->
+<h3 class="mt-5">Documentos Relacionados</h3>
+<ul>
+  {% if pliego_administrativo %}
+  <li><a href="{{ pliego_administrativo_url}}" target="_blank">📄 Pliego Administrativo</a></li>
+  {% else %}
+  <li>📄 Pliego Administrativo: No disponible</li>
+  {% endif %}
+
+  {% if anexo %}
+  <li><a href="{{ anexo_url }}" target="_blank">📄 {{ titulo_anexo }}</a></li>
+  {% else %}
+  <li>📄 Anexo: No disponible</li>
+  {% endif %}
+</ul>
+
+{% if anexo %}
+<h3 class="mt-5">Detalles del Anexo</h3>
+<table class="table table-bordered">
+  <tr>
+    <th>Código</th>
+    <td>{{ anexo.COD }}</td>
+  </tr>
+  <tr>
+    <th>Regulación Armonizada</th>
+    <td>{{ anexo.Regulacion_armonizada }}</td>
+  </tr>
+  <tr>
+    <th>Sometido a Recurso Especial</th>
+    <td>{{ anexo.Sometido_recurso_especial }}</td>
+  </tr>
+  <tr>
+    <th>Expediente</th>
+    <td>{{ anexo.Expediente }}</td>
+  </tr>
+  <tr>
+    <th>Objeto</th>
+    <td>{{ anexo.Objeto }}</td>
+  </tr>
+  <tr>
+    <th>Tipo de Tramitación</th>
+    <td>{{ anexo.Tipo_Tramitacion }}</td>
+  </tr>
+  <tr>
+    <th>Tipo de Gasto</th>
+    <td>{{ anexo.Tipo_gasto }}</td>
+  </tr>
+  <tr>
+    <th>Órgano</th>
+    <td>{{ anexo.Organo }}</td>
+  </tr>
+  <tr>
+    <th>Clasificación de Obra</th>
+    <td>{{ anexo.Clasificación_obra }}</td>
+  </tr>
+  <tr>
+    <th>Nomenclatura</th>
+    <td>{{ anexo.Nomenclatura }}</td>
+  </tr>
+  <tr>
+    <th>Plazo de Ejecución</th>
+    <td>{{ anexo.Plazo_ejecución }}</td>
+  </tr>
+  <tr>
+    <th>Presupuesto sin IVA</th>
+    <td>{{ anexo.Presupuesto_sinIVA }}</td>
+  </tr>
+</table>
+{% endif %}
+
+{% if anexo is none %}
+<div class="mt-5 text-center">
+  <a href="{% url 'app:cargar_licitacion' %}" class="btn btn-warning">Cargar Licitación</a>
+</div>
+{% endif %}
+
+<a href="{% url 'app:licitaciones' %}">Volver a licitaciones</a>
+{% endblock %}

@@ -1,33 +1,42 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Licitaciones</title>
-</head>
-<body>
-    <h1>Tabla de Licitaciones</h1>
-    <table border="1">
-        <thead>
-            <tr>
-                <th>#</th>
-                <th>Columna 1</th>
-                <th>Columna 2</th>
-                <th>Columna 3</th>
-                <!-- Agrega más encabezados según las columnas de tu tabla -->
-            </tr>
-        </thead>
-        <tbody>
-            {% for row in licitaciones %}
-            <tr>
-                <td>{{ forloop.counter }}</td>
-                <td>{{ row.0 }}</td>
-                <td>{{ row.1 }}</td>
-                <td>{{ row.2 }}</td>
-                <!-- Agrega más celdas según las columnas de tu tabla -->
-            </tr>
-            {% endfor %}
-        </tbody>
-    </table>
-</body>
-</html>
+{% extends 'base.html' %}
+
+{% block title %}Licitaciones{% endblock %}
+
+{% block content %}
+<h2 class="mb-4">Licitaciones</h2>
+
+<!-- Cuadro con el número de licitaciones y el total de euros -->
+<div class="alert alert-info d-flex justify-content-between align-items-center" role="alert">
+  <span>Número de licitaciones cargadas: <strong>{{ num_licitaciones }}</strong></span>
+  <span>Total en euros: <strong>{{ total_euros }}</strong> €</span>
+</div>
+
+<table class="table table-hover bg-white rounded shadow-sm">
+  <thead class="thead-light">
+    <tr>
+      <th>Expediente</th>
+      <th>Organo</th>
+      <th>Estado</th>
+      <th>Presupuesto base</th>
+      <th>Valor estimado</th>
+      <th>Lugar de ejecucion</th>
+      <th>Acciones</th> <!-- Nueva columna para el enlace -->
+    </tr>
+  </thead>
+  <tbody>
+    {% for licitacion in licitaciones %}
+    <tr>
+      <td>{{ licitacion.COD }}</td>
+      <td>{{ licitacion.Organo_Contratacion }}</td>
+      <td>{{ licitacion.Estado_Licitacion }}</td>
+      <td>{{ licitacion.Presupuesto_Base_Licitacion }}</td>
+      <td>{{ licitacion.Valor_Estimado_Contrato }}</td>
+      <td>{{ licitacion.Lugar_Ejecucion }}</td>
+      <td>
+        <a href="{% url 'app:detalles_licitacion' licitacion.COD|urlencode %}" class="btn btn-primary btn-sm">Detalles</a>
+      </td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+{% endblock %}
