@@ -1,10 +1,14 @@
-from .document_handler import download_to_json, idDocType
+from .document_handler import download_to_json
 from .rag_operations import main as rag_main
+from .db_manager import DBManager
 
-def main(link):
-    doc_type = idDocType()
-    download_to_json(link, doc_type)
-    rag_main()
-
-if __name__ == "__main__":
-    main()
+def main(cod):
+    db = DBManager()
+    db.openConnection()
+    data = db.searchTable("Documentos", {"COD": cod})
+    if data[1] == "":
+        download_to_json(data[2])
+    else: 
+        download_to_json(data[1])
+    
+    rag_main(cod)

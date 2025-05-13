@@ -6,18 +6,20 @@ import json
 import logging
 import numpy as np
 from tqdm import tqdm
-import numpy as np
-import math
 from pydantic import BaseModel
-from typing import List, Optional
+from typing import List
 import re
 from db_manager import DBManager
+from concurrent.futures import ThreadPoolExecutor, as_completed
+from threading import Lock
 
 load_dotenv()
 
+"""
 class Chunk(BaseModel):
     text: str
     score: Optional[float] = None
+"""
 
 class Prompt(BaseModel):
     prompt_key: str
@@ -39,68 +41,87 @@ class RAG:
     log_file_path = os.path.join(logs_dir, 'rag.log')
     rag_logger = logging.getLogger("rag_logger")
     rag_logger.setLevel(logging.INFO)
-    rag_handler = logging.FileHandler(log_file_path, mode='w', encoding='utf-8')
+    rag_handler = logging.FileHandler(log_file_path, mode='a', encoding='utf-8')
     rag_handler.setLevel(logging.INFO)
     rag_formatter = logging.Formatter("%(asctime)s - %(levelname)s - %(message)s")
     rag_handler.setFormatter(rag_formatter)
     rag_logger.addHandler(rag_handler)
     rag_logger.propagate = False
 
+    # Archivo JSON con los chunks procesados
+    file_path = os.path.join(base_dir, 'temp_files', 'temp_document.json')  
+
+    with open(file_path, 'r', encoding='utf-8') as f:
+        file = json.load(f)
+        
+    # Archivo JSON donde se guardan las instrucciones para el RAG
+    jsonFile = os.path.join(base_dir, 'JSON', 'Strings.json') 
+
+    with open(jsonFile, 'r', encoding='utf-8') as f:
+        strings = json.load(f)
+
     def __init__(self, 
-                 file = None,
-                 jsonFile = None,
-                 embedding_model = "nomic-embed-text", #SentenceTransformer("all-MiniLM-L6-v2")  
-                 client = openai.OpenAI(api_key=os.getenv("UPV_API_KEY"), base_url="https://api.poligpt.upv.es"),
+                 embedding_model = "nomic-embed-text",
+                 base_url = "https://api.poligpt.upv.es",
+                 api_key = os.getenv("UPV_API_KEY"),
+                 llm_model = "llama3.3:70b",
                  min_score = 0.60
                  ):
         
-        with open(jsonFile, 'r', encoding='utf-8') as f:
-            strings = json.load(f)
+        # Cliente de OpenAI
+        client = openai.OpenAI(api_key=api_key, base_url=base_url)
+        strings = RAG.strings
+
         self.prompts = strings["Prompts"]["Ajuntament"]  
         self.semantics = strings["Prompts"]["Semantic"] 
-        self.tokens = strings["Prompts"]["Max_tokens"]
         self.format = strings["Prompts"]["Ajuntament_formato"]
         self.sections = strings["Prompts"]["Common_sections"]
         
-        self.key = ""
-        self.file = file                # Ruta al archivo JSON con los chunks
-        self.prompt_count = 0           # Contador de prompts, ayuda a llevar la cuenta
-        self.faiss_path = RAG.temp_files_dir + "/embeddings_index.faiss"
-        self.embedding_model = embedding_model
-        self.client = client            # Cliente de OpenAI
-        self.logger = RAG.rag_logger
-        self.chunks = []
-        self.metadata = []
-        
-        self.min_score = min_score
+        self.llm_model = llm_model                  # Modelo de LLM a usar  
+        self.min_score = min_score                  # Umbral mínimo de score para considerar un chunk como relevante
+        self.embedding_model = embedding_model      # Modelo de embedding a usar
+        self.client = client                        # Cliente de OpenAI
+
+        self.logger = RAG.rag_logger            # Logger para el RAG
+        self.file = RAG.file                    # Ruta al archivo JSON con los chunks
+        # self.jsonFile = RAG.jsonFile          # Ruta al archivo JSON con las instrucciones
+        self.faiss_path = RAG.temp_files_dir + "/embeddings_index.faiss"        # Ruta al índice FAISS
+        self.log_path = RAG.log_file_path       # Ruta al archivo de log
+
+        self.chunks = []          # Lista para almacenar los chunks de texto, extraido del JSON
+        self.metadata = []        # Lista para almacenar la página y seccioens de un chunk
+        self.prompt_count = 0     # Contador de prompts, ayuda a llevar la cuenta
+        self.key = ""             # Clave del prompt actual, valor auxiliar
 
         if os.path.exists(self.faiss_path):
-                os.remove(self.faiss_path)
-                self.logger.info(f"Previous FAISS index deleted: {self.faiss_path}")
+            os.remove(self.faiss_path)
+            self.logger.info(f"Previous FAISS index deleted: {self.faiss_path}")
 
-        self.logger.info("RAG object initialized.")
-        print("RAG object initialized.")
+        self.deleteLog()
+        self.logger.info("Objeto RAG inicializado.")
+        print("Objeto RAG inicializado.")
+
+        self.load_chunks()
+        self.embed_json()
 
     def normalize_chunk(self, chunk):
         """
-        Normaliza un chunk de texto para facilitar su procesamiento.
-        :param chunk: Texto del chunk a normalizar.
-        :return: Texto normalizado.
+        Normaliza un chunk de texto:
+        - Convierte a minúsculas.
+        - Reemplaza caracteres especiales.
+        - Lematiza las palabras usando Stanza.
         """
         # Convertir a minúsculas
         chunk = chunk.lower()
 
-        # Reemplazar caracteres especiales o no deseados
+        # Reemplazos básicos
         replacements = {
-            "\n": " ",  # Reemplazar saltos de línea por espacios
-            "\t": " ",  # Reemplazar tabulaciones por espacios
+            "\n": " ", 
+            "\t": " ",  
         }
 
         for old, new in replacements.items():
             chunk = chunk.replace(old, new)
-
-        # Eliminar caracteres no alfanuméricos (excepto espacios y puntuación básica)
-        # chunk = re.sub(r"[^a-z0-9áéíóúüñ.,;:!?()\[\] ]", "", chunk)
 
         # Reemplazar múltiples espacios por uno solo
         chunk = re.sub(r"\s+", " ", chunk).strip()
@@ -109,34 +130,42 @@ class RAG:
 
     def process_response(self, response):        
         response = " ".join(response.split())
+        response = response.replace("[SELECCIONADO]", "")
+        if "no hay información" in response.lower() or "no se menciona" in response.lower():
+            return "" 
+        
         return response
 
     def semantic_search(self, query):
         self.logger.info(f"Performing semantic search for query: {query}")
         keywords = self.semantics[self.key]
+        max_count = 0
+        index = -1
+        best_chunk = None
         for i, chunk in enumerate(self.chunks):
             # Convertir el chunk a minúsculas para coincidencias insensibles a mayúsculas/minúsculas
             chunk_lower = chunk.lower()
             # Contar las apariciones de cada palabra clave en el chunk
-            count = sum(chunk_lower.count(keyword.lower()) for keyword in keywords)
+            count = sum(chunk_lower.count(keyword.lower()) for keyword in keywords if keyword.lower() != "[seleccionado]")
             
-            max_count = 0
-            best_chunk = None
             # Actualizar el mejor chunk si este tiene más coincidencias
             if count > max_count:
                 max_count = count
                 best_chunk = chunk
                 index = i
 
-        if best_chunk is None:
-            self.logger.warning("No matching chunk found.")
+        if best_chunk is None or index == -1:
+            self.logger.warning("No matching chunk found on semantic_search.")
             return "", 0, []
         
         score = self.reranking(0.5, index)
+        if score < self.min_score:
+            self.logger.warning(f"Score {score} for index {index} is below the minimum threshold. Las keywords eran: {keywords}")
+            return "", 0, []
+        
         return self.generate_response_with_context(query, [best_chunk]), score, [index]
 
     def reranking(self, score, indx):
-
         sections = sections = self.metadata[indx][1]
         chunk = self.chunks[indx]
 
@@ -145,20 +174,26 @@ class RAG:
         chunk = chunk.lower()
         matches = sum(1 for string in interesting_strings if string in chunk)
 
+        # Verificar si la única coincidencia es "[seleccionado]"
+        if matches == 1 and ("[seleccionado]" in chunk.lower()) and ("[seleccionado]" in self.key):
+            return 0.0
+        
         # Calcular el nuevo valor usando una función sigmoide
         if matches > 0:
             # Normalizar el número de coincidencias
             normalized_matches = matches / len(interesting_strings)
-            sigmoid_value = 1 / (1 + math.exp(-12 * (normalized_matches - 0.5)))  # Ajusta el factor 12 para controlar la pendiente
-            new_score = score + sigmoid_value * (1 - score)
+            # Introducir un peso dinámico basado en la importancia de las coincidencias
+            weight = len(interesting_strings) / (matches + 1)  # Evitar división por cero
+            new_score = score + (normalized_matches * weight) * (1 - score)
         else:
-            new_score = score -0.1 # Mantener el valor original si no hay coincidencias
+            return 0.0  # Si no hay coincidencias, el score es 0
 
+        # Si se encuentra en la sección esperada aumenta su puntaje
         expected_sections = self.sections[self.key]
         intersection = set(sections) & set(expected_sections)
 
         if intersection:
-            new_score = new_score + 0.1 * (1 - new_score)  # Aumentar el score si hay coincidencias
+            new_score = new_score + 0.3 * (1 - new_score)  # Aumentar el score si hay coincidencias
         
         else:
             new_score = new_score - 0.1 * (1 - new_score)
@@ -168,7 +203,6 @@ class RAG:
 
         return new_score
 
-    #Devuelve los chunks de texto más similares a la consulta
     def retrieve_similar_chunks(self, query):
         # Generar el embedding para la consulta usando la API de OpenAI
         try:
@@ -177,7 +211,6 @@ class RAG:
                 model=self.embedding_model,  # Modelo especificado en la inicialización
             )
             query_embedding = np.array(response.data[0].embedding, dtype='float32').reshape(1, -1)  # Asegurar formato correcto
-        
         except Exception as e:
             self.logger.error(f"Error generating query embedding: {e}")
             return [], 0, []
@@ -194,7 +227,7 @@ class RAG:
         distances = distances.flatten().tolist()
 
         # Usa la distancia para calcular un valor de similitud
-        scores = [abs(distance - 1) for distance in distances]
+        first_scores = [abs(distance - 1) for distance in distances]
 
         # Recuperar los chunks correspondientes
         similar_chunks = []
@@ -202,7 +235,7 @@ class RAG:
         aux_indices = []
         
         for i, indx in enumerate(indices):
-            score = scores[i]
+            score = first_scores[i]
             score = self.reranking(score, indx)
             if score >= self.min_score:
                 # Solo agregar si el score es mayor o igual a min_score
@@ -251,6 +284,8 @@ class RAG:
             "content": """
                 Eres un asistente de IA que responde preguntas sobre un documento.
                 Responde ÚNICAMENTE con la respuesta en el formato dado, nada de texto introductorio.
+                Toda la información extraida debe provenir del contexto proporcionado.
+                En caso de no tener una respuesta clara, responde con "No hay información".
             """
         }
 
@@ -269,18 +304,77 @@ class RAG:
             Respuesta:
             """
         }
-        self.logger.info(f"\nPrompt: {user_message}\n")
+        # self.logger.info(f"\nPrompt: {user_message}\n")
+        self.logger.info(f"\nPrompt enviado para el parametro: {self.key}\n")
 
         # Call the OpenAI API
         response = self.client.chat.completions.create(
-            model="llama3.3:70b",
+            model=self.llm_model,
             messages=[system_message, user_message],
+            temperature=0.1,
         )
 
         answer = response.choices[0].message.content.strip()
         answer = self.process_response(answer)
 
         return answer
+    
+    def QNA_RAG(self, query,top_k=3):
+        try:
+            # Generar el embedding para la consulta
+            response = self.client.embeddings.create(
+                input=query,
+                model=self.embedding_model
+            )
+            query_embedding = np.array(response.data[0].embedding, dtype='float32').reshape(1, -1)
+
+            # Cargar el índice FAISS
+            index = faiss.read_index(self.faiss_path)
+
+            # Buscar los chunks más similares
+            distances, indices = index.search(query_embedding, k=top_k)
+
+            # Convertir los resultados a listas
+            indices = indices.flatten().tolist()
+            distances = distances.flatten().tolist()
+
+            # Calcular las puntuaciones basadas en las distancias
+            scores = [1 - distance for distance in distances]
+
+            # Recuperar los chunks correspondientes
+            similar_chunks = [(self.chunks[i], scores[idx], i) for idx, i in enumerate(indices) if i < len(self.chunks)]
+
+            # Ordenar por puntuación descendente
+            similar_chunks = sorted(similar_chunks, key=lambda x: x[1], reverse=True)
+
+            self.logger.info(f"Chunks similares encontrados: {similar_chunks}")
+
+        except Exception as e:
+            self.logger.error(f"Error al buscar chunks similares: {e}")
+            return []
+
+        system_message = {
+            "role": "system",
+            "content": "Eres un asistente RAG, respondes preguntas de un usuario en base al contexto otorgado."
+        }
+
+        user_message = {
+            "role": "user",
+            "content": f"""
+            Contexto: {similar_chunks}\n
+
+            Pregunta: {query}\n
+
+            Respuesta:
+            """
+        }
+
+        response = self.client.chat.completions.create(
+            model=self.llm_model,
+            messages=[system_message, user_message],
+        )
+
+        return response.choices[0].message.content.strip()
 
     def rag_workflow(self, query, max_attempts=3):
         attempt = 0
@@ -305,16 +399,18 @@ class RAG:
 
         return self.semantic_search(query)
 
-
     def reformulate_query(self, prompt):
         try:
             # Reformula el prompt usando la API de OpenAI
             response = self.client.chat.completions.create(
-                model="llama3.3:70b",
+                model=self.llm_model,
             messages=[
                 {
                     "role": "user",  # Asegúrate de incluir el campo 'role'
-                    "content": f"Reformula el siguiente prompt y responde únicamente con el prompt reformulado: {prompt}"
+                    "content": f"""
+                    Reformula el siguiente prompt y responde únicamente con el prompt reformulado: {prompt},
+                    procura que el nuevo promp tenga las siguintes palabras clave: {self.semantics[self.key]}
+                    """
                 }
                 ],
             )
@@ -392,33 +488,65 @@ class RAG:
                     self.chunks.append(table_string)  # Extract "chunks" field
                     self.metadata.append(meta)  # Extract "metadata" field
 
-def main():
-    base_dir = os.path.dirname(os.path.abspath(__file__))
-    string_path = os.path.join(base_dir, 'JSON', 'Strings.json')
-    output_dir = os.path.join(base_dir, 'temp_files', 'output.json')
-    file_path = os.path.join(base_dir, 'temp_files', 'temp_document.json')  
-    db = DBManager()
-    db.openConnection()
-    
-    with open(file_path, 'r', encoding='utf-8') as f:
-        file = json.load(f)
+    def deleteLog(self):
+        try:
+            if os.path.exists(self.log_path):
+                # Abrir el archivo en modo escritura y reemplazar su contenido con nada
+                with open(self.log_path, 'w', encoding='utf-8') as log_file:
+                    log_file.write("")
+                self.logger.info("Archivo reseteado.")
+            else:
+                print("El archivo de log no existe.")
+        except Exception as e:
+            print(f"Error al intentar limpiar el contenido del archivo de log: {e}")
 
-    rag_object = RAG(file, string_path)
-    rag_object.load_chunks()
-    rag_object.embed_json()
+rag_lock = Lock()
 
-    with open(string_path, 'r', encoding='utf-8') as f:
-        strings_anexo = json.load(f)["Prompts"]
-
-    results = []
-    results_db = []
-
-    # Agregar barra de progreso para los prompts
-    for prompt_key, prompt in tqdm(rag_object.prompts.items(), desc="Processing Prompts", unit="prompt"):
+def process_prompt(rag_object, prompt_key, prompt):
+    """
+    Función auxiliar para procesar un prompt.
+    """
+    with rag_lock:  # Asegurar acceso exclusivo a rag_object
         rag_object.key = prompt_key
         response, score, index = rag_object.rag_workflow(prompt)
-        results.append(Prompt(prompt_key=prompt_key, prompt=prompt, response=response, score=score, index=index))
-        results_db.append(response)
+
+    # Validar que los valores sean strings
+    if not isinstance(prompt, str):
+        raise ValueError(f"El valor de 'prompt' no es un string: {prompt}")
+    if not isinstance(response, str):
+        raise ValueError(f"El valor de 'response' no es un string: {response}")
+
+    return Prompt(prompt_key=prompt_key, prompt=prompt, response=response, score=score, index=index), response
+
+def main(cod):
+    base_dir = os.path.dirname(os.path.abspath(__file__))
+    output_dir = os.path.join(base_dir, 'temp_files', 'output.json')
+
+    db = DBManager()
+    db.openConnection()
+
+    rag_object = RAG()
+
+    results = []
+    results_db = [cod]
+
+    # Paralelizar el procesamiento de los prompts
+    with ThreadPoolExecutor() as executor:
+        # Crear tareas para cada prompt
+        futures = {
+            executor.submit(process_prompt, rag_object, prompt_key, prompt): prompt_key
+            for prompt_key, prompt in rag_object.prompts.items()
+        }
+
+        # Usar tqdm para mostrar el progreso
+        for future in tqdm(as_completed(futures), desc="Processing Prompts", unit="prompt", total=len(futures)):
+            try:
+                result, response = future.result()
+                results.append(result)
+                results_db.append(response)
+
+            except Exception as e:
+                print(f"Error processing prompt: {e}")
 
     db.insertDb("AnexoI", results_db)
 
@@ -430,6 +558,3 @@ def main():
         output_file.write(rag_results.model_dump_json(indent=4))
 
     print(f"Results saved to {output_dir}")
-
-if __name__ == "__main__":
-    main()

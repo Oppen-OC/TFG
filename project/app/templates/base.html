@@ -41,7 +41,7 @@
       <ul class="nav nav-pills flex-column">
         <li><a href="" class="nav-link {% if request.path == '/estadisticas/' %}active{% endif %}">📊 Estadísticas</a></li>
         <li><a href="{% url 'app:licitaciones' %}" class="nav-link {% if request.path == '/licitaciones/' %}active{% endif %}">📁 Licitaciones</a></li>
-        <li><a href="" class="nav-link {% if request.path == '/chatbot/' %}active{% endif %}">🐱‍👤 Chatbot</a></li>
+        <li><a href="{% url 'app:chatbot' %}" class="nav-link {% if request.path == '/chatbot/' %}active{% endif %}">🐱‍👤 Chatbot</a></li>
         <li><a href="" class="nav-link {% if request.path == '/help/' %}active{% endif %}">❓ Help</a></li>
       </ul>
       <hr />

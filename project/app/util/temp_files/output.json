@@ -3,327 +3,362 @@
         {
             "prompt_key": "Regulacion_armonizada",
             "prompt": "Indica si tiene regulación armonizada",
-            "response": "No",
-            "score": 0.4760842302476617,
+            "response": "Si",
+            "score": 0.8833333333333333,
             "index": [
-                73
+                5
             ]
         },
         {
             "prompt_key": "Sometido_recurso_especial",
             "prompt": "Indica si tiene recurso especial",
-            "response": "No",
-            "score": 0.9555576614838744,
+            "response": "Si",
+            "score": 0.825,
             "index": [
-                72
+                40
             ]
-        },
-        {
-            "prompt_key": "Expediente",
-            "prompt": "Obtén el código o número de expediente de contratación",
-            "response": "",
-            "score": 0.0,
-            "index": []
-        },
-        {
-            "prompt_key": "Objeto",
-            "prompt": "Obtén el objeto del contrato",
-            "response": "El objeto del Contrato es la ejecución de la obras: “ESTABILIZACIÓN DE CAJEROS BARRANCO POZALET (CV- 410); DENTRO DE LOS TÉRMINOS MUNICIPALES DE ALDAIA, ALAQUAS Y TORRENT (VALENCIA)”, en las condiciones que se describen en el proyecto de construcción aprobado por el Director General del Agua; dado que no se disponen de medios personales y materiales para llevarlo a cabo por parte de la Administración. El objeto del presente contrato de obras es la ejecución de las obras de construcción que se resumen en las siguientes actuaciones: Regularización de la superficie actual de las secciones trapeciales del cunetón, como apoyo del revestimiento mediante una excavación mínima para conseguir la sección hidráulica deseada, saneo de desprendimientos y refino de taludes, y Revestimiento de las secciones trapeciales del canal mediante una capa de 20 cm de hormigón en masa HM-20.",
-            "score": 0.9697128790844406,
-            "index": [
-                2,
-                62,
-                21
-            ]
-        },
-        {
-            "prompt_key": "Tipo_Tramitacion",
-            "prompt": "Indica el tipo de tramitación de gasto",
-            "response": "Administrativo",
-            "score": 0.46462834646727624,
-            "index": [
-                73
-            ]
-        },
-        {
-            "prompt_key": "Tipo_gasto",
-            "prompt": "Indica el tipo de tramitacion de gasto del contrato",
-            "response": "Procedimiento administrativo común",
-            "score": 0.616580519338579,
-            "index": [
-                73
-            ]
-        },
-        {
-            "prompt_key": "Organo",
-            "prompt": "Indica el órgano de contratación",
-            "response": "Consellera de Agricultura, Desarrollo Rural, Emergencia Climática y Transición Ecológica.",
-            "score": 0.998396051334895,
-            "index": [
-                10,
-                59,
-                73
-            ]
-        },
-        {
-            "prompt_key": "Clasificación_obra",
-            "prompt": "Indica la clasificación de obras",
-            "response": "OBRA",
-            "score": 0.5155616071121647,
-            "index": [
-                73
-            ]
-        },
-        {
-            "prompt_key": "Nomenclatura",
-            "prompt": "Obten la nomenclatura o CPV del contrato, suele ser una lista de códigos acomapada de una descripción",
-            "response": "",
-            "score": 0.0,
-            "index": []
         },
         {
             "prompt_key": "Plazo_ejecución",
             "prompt": "Obten el plazo de ejecución del contrato",
-            "response": "8 meses",
-            "score": 0.9320725032325256,
+            "response": "",
+            "score": 0.7506082132458687,
             "index": [
-                59,
-                68,
-                66
+                43,
+                44,
+                92
             ]
         },
         {
             "prompt_key": "Presupuesto_sinIVA",
-            "prompt": "Ubica el presupuesto sin IVA de la licitación",
-            "response": "1.628.928,18 €",
-            "score": 0.8426497699696277,
+            "prompt": "Ubica el presupuesto sin IVA del documento",
+            "response": "",
+            "score": 0.6547385156154634,
             "index": [
-                22,
-                52
+                34,
+                35,
+                129
             ]
         },
         {
             "prompt_key": "Presupuesto_conIVA",
-            "prompt": "Ubica el presupuesto con IVA de la licitación",
-            "response": "1.971.003,10 €",
-            "score": 0.9244840762124813,
+            "prompt": "Ubica el presupuesto con IVA del documento (presupuesto base)",
+            "response": "",
+            "score": 0.6522829413414002,
             "index": [
-                19,
-                52
+                34,
+                129,
+                33
             ]
         },
         {
             "prompt_key": "Importe_IVA",
-            "prompt": "Ubica el importe del IVA de la licitación",
-            "response": "342.074,92 €",
-            "score": 0.9240863509983487,
+            "prompt": "Ubica el importe del IVA del documento (iva aplicable)",
+            "response": "",
+            "score": 0.7649121960004172,
             "index": [
-                19
+                35,
+                81,
+                89
             ]
         },
         {
             "prompt_key": "Sistema_Retribucion",
             "prompt": "Indica el sistema de retribución del precio",
-            "response": "En función de los pliegos y demás documentación complementaria de la licitación.",
-            "score": 0.8920808957330527,
+            "response": "",
+            "score": 0.725,
             "index": [
-                15
+                74
             ]
         },
         {
             "prompt_key": "Valor_estimado",
             "prompt": "Ubica el valor estimado del contrato, responde únicamente con el valor en euros",
-            "response": "1.628.928,18 €",
-            "score": 0.9906863334609496,
+            "response": "847.000 €",
+            "score": 0.8282895117998124,
             "index": [
-                22,
-                29,
-                28
+                61,
+                62,
+                60
             ]
         },
         {
             "prompt_key": "Revision_precios",
             "prompt": "Indica si existe la revisión de precios",
-            "response": "No, motivación: No procede. Segun lo establecido en el articulo 103 LCSP.",
-            "score": 0.9491135723485771,
+            "response": "No, según el punto 26 del texto, \"Los precios no serán susceptibles de revisión durante la vigencia del contrato\".",
+            "score": 0.7524490674336751,
             "index": [
-                24,
-                22,
-                21
+                108,
+                109,
+                51
             ]
         },
         {
             "prompt_key": "Garantia_definitiva",
             "prompt": "Qué dice sobre la garantía definitiva?",
-            "response": "No se menciona la garantía definitiva en el texto proporcionado, solo se hace referencia a la \"GARANTÍA PROVISIONAL\" y se indica que no se exige según ciertos acuerdos y leyes.",
-            "score": 0.9435694301773705,
+            "response": "Si, la garantía definitiva es equivalente al 5% del presupuesto del contrato y debe ser aportada por el licitador que haya realizado la mejor oferta en el plazo señalado por FRATERNIDAD-MUPRESPA. La garantía se constituirá en cualquiera de las formas previstas en el artículo 108 de la LCSP, con beneficio de excusión, orden y división y con compromiso de pago a primer requerimiento de FRATERNIDAD-MUPRESPA.",
+            "score": 0.7814949333667756,
             "index": [
-                26
+                134,
+                78,
+                39
             ]
         },
         {
             "prompt_key": "Garantia_provisional",
             "prompt": "Qué dice sobre la garantía provisional?",
-            "response": "No se exige conforme al Acuerdo del Consell de 26 de marzo de 2010 así como los artículos 106 y 159.4.b) de la ley 9/2017, No",
-            "score": 0.998920387588756,
+            "response": "No, se solicita la garantía provisional.",
+            "score": 0.7174535363912582,
             "index": [
-                26
+                78,
+                79,
+                39
             ]
         },
         {
             "prompt_key": "Criterio_1",
             "prompt": "Dame detalles sobre el contenido del criterio 1",
-            "response": "DEFINICIÓN: Criterios técnicos cualitativos valuables mediante juicio de valor, CRITERIO DE EVALUACIÓN: Valoración subjetiva, PONDERACIÓN: 25 %",
-            "score": 0.6977888850111778,
+            "response": "",
+            "score": 0.8420608744025231,
             "index": [
-                37
+                21,
+                67,
+                18
             ]
         },
         {
             "prompt_key": "Criterio_2",
             "prompt": "Dame detalles sobre el contenido del criterio 2",
-            "response": "DEFINICIÓN: CRITERIOS TÉCNICOS CUALITATIVOS VALORABLES DE FORMA AUTOMÁTICA O ARITMÉTICA, PONDERACIÓN: 10 %, VALORACIÓN: Valoración objetiva, según fórmula adjunta",
-            "score": 0.8362087083221854,
+            "response": "",
+            "score": 0.7815386717518171,
             "index": [
-                37
+                86,
+                83,
+                111
             ]
         },
         {
             "prompt_key": "Criterio_3",
             "prompt": "Dame detalles sobre el contenido del criterio 3",
-            "response": "DEFINICIÓN: ASPECTOS ECONÓMICOS, PONDERACIÓN: 65 %, VALORACIÓN: Valoración objetiva, según fórmula adjunta",
-            "score": 0.9371494296897465,
+            "response": "",
+            "score": 0.7805982291698456,
             "index": [
-                37
-            ]
-        },
-        {
-            "prompt_key": "Criterios_juiciovalor",
-            "prompt": "Indica si el contrato cuenta con criterios dependientes de un juicio de valor",
-            "response": "No, no hay indicaciones explícitas en el texto sobre la existencia de criterios dependientes de un juicio de valor para el contrato. El documento se enfoca en aspectos como el valor estimado del contrato, el método de cálculo, y la consignación presupuestaria, pero no menciona específicamente la evaluación subjetiva o juicios de valor como parte del proceso de contratación.",
-            "score": 0.8620736636144898,
-            "index": [
-                73,
-                22
+                86
             ]
         },
         {
             "prompt_key": "Admisibilidad_variantes",
-            "prompt": "Indica si el contrato cuenta con admisibilidad de variantes o alternativas",
-            "response": "No",
-            "score": 0.4760842302476617,
+            "prompt": "Indica si el contrato cuenta con admisibilidad de variantes o alternativas, si las admite o no",
+            "response": "No, según el apartado 20 del texto proporcionado, \"No se admite la presentación de variantes ni de alternativas\".",
+            "score": 0.6966252565383911,
             "index": [
-                73
+                1,
+                89
             ]
         },
         {
-            "prompt_key": "Clasificacion_solvencia",
-            "prompt": "Dentro de la sección de solvencia, indica la clasificacion",
-            "response": "No procede según el art. 77.1 de la LCSP.",
-            "score": 0.6345539261897405,
+            "prompt_key": "Clasificacion",
+            "prompt": "Cuál es el valor estimado para el que aplica la clasificación?",
+            "response": "385.000 €",
+            "score": 0.6343670547008514,
             "index": [
-                27,
-                48
+                61
             ]
         },
         {
-            "prompt_key": "Grupo_solvencia",
-            "prompt": "Dentro de la sección de solvencia, indica el grupo al que pertenece",
-            "response": "E",
-            "score": 0.8681890078240567,
+            "prompt_key": "Grupo",
+            "prompt": "Indica el grupo al que pertenece el contrato en función de su valor estimado",
+            "response": "",
+            "score": 0.6347197622060776,
             "index": [
-                27,
-                29
+                13
             ]
         },
         {
-            "prompt_key": "Subgrupo_Solvencia",
-            "prompt": "Dentro de la sección de solvencia, indica el subgrupo al que pertenece",
-            "response": "L Acreditación de Solvencia",
-            "score": 0.6250882476568222,
+            "prompt_key": "Subgrupo",
+            "prompt": "Indica el subgrupo al que pertenece el contrato en función de su valor estimado",
+            "response": "1 Subgrupo 1",
+            "score": 0.788071408867836,
             "index": [
-                27
+                80,
+                78,
+                79
             ]
         },
         {
-            "prompt_key": "Categoria_Solvencia",
-            "prompt": "Dentro de la sección de solvencia, indica la categoria a la que pertenece",
-            "response": "4",
-            "score": 0.8739467895037976,
+            "prompt_key": "Categoria",
+            "prompt": "Indica la categoría a la que pertenece el contrato en función de su valor estimado",
+            "response": "4 Categoría",
+            "score": 0.8333467409014702,
             "index": [
-                27,
-                29
+                80,
+                13,
+                79
             ]
         },
         {
             "prompt_key": "Criterio_Solvencia_economica",
-            "prompt": "Indica el criterio de selección de solvencia económica",
-            "response": "No procede según el art. 77.1 de la LCSP.",
-            "score": 0.7809575649642028,
+            "prompt": "Indica el o los criterios para calcular la solvencia económica y financiera",
+            "response": "La solvencia económica y financiera se acreditará mediante la presentación de la siguiente documentación: - Volumen anual de negocios en el ámbito al que se refiere el contrato, referido al mejor ejercicio dentro de los tres últimos disponibles en función de las fechas de constitución o de inicio de actividades del empresario y de presentación de las ofertas, por importe igual o superior a 385.000 €. Modo de acreditación: Declaración responsable del empresario. FRATERNIDAD- MUPRESPA podrá, en cualquier momento, requerir la documentación que estime necesaria con la finalidad de verificar lo indicado en la declaración aportada por el licitador.",
+            "score": 0.7584529250860215,
             "index": [
-                27,
-                29,
-                28
+                1,
+                80,
+                6
             ]
         },
         {
             "prompt_key": "Criterio_Solvencia_tecnica",
-            "prompt": "Indica el criterio de selección de solvencia técnica",
-            "response": "No se menciona explícitamente el criterio de selección de solvencia técnica en el texto proporcionado, que se centra en aspectos relacionados con la valoración de daños y perjuicios, el control de calidad en contratos de obras, y algunas decisiones administrativas. Por lo tanto, no es posible determinar el criterio de selección de solvencia técnica a partir de la información dada.",
-            "score": 0.4890500105329395,
+            "prompt": "Indica el o los criterios calcular la solvencia técnica o profesional",
+            "response": "La solvencia técnica o profesional de los empresarios deberá apreciarse teniendo en cuenta sus conocimientos técnicos, eficacia, experiencia y fiabilidad, lo que deberá acreditarse por los siguientes medios: - Los licitadores deberán contar con al menos con un departamento o unidad de Calidad. Modo de acreditación: Organigrama y detalle de las funciones y tareas asignadas al departamento o unidad de Calidad.",
+            "score": 0.7087443590164184,
             "index": [
-                73
+                81,
+                1,
+                67
             ]
         },
         {
             "prompt_key": "Condiciones_especiales",
-            "prompt": "Indica si existen condiciones especiales de ejecución",
-            "response": "Si, ya que se establecen varias condiciones como la planificación de acciones a realizar, relación de contenidos de sesiones formativas, informe detallado sobre actuaciones realizadas y se determinan penalizaciones por incumplimiento de estas condiciones.",
-            "score": 0.9699094484517827,
+            "prompt": "Indica si existen condiciones especiales de ejecución y cuales son en caso de haberlas",
+            "response": "Si, las condiciones especiales de ejecución se encuentran detalladas en el punto 27 del índice, denominado \"CONDICIONES DE EJECUCIÓN Y CUMPLIMIENTO DEL CONTRATO\".",
+            "score": 0.6128466844558715,
             "index": [
-                72,
-                65
+                1
             ]
         },
         {
             "prompt_key": "Penalidad_incumplimiento",
             "prompt": "Indica si existen penalidades por incumplimientos",
-            "response": "Si, existen varias penalidades por incumplimiento establecidas en el contrato, como la resolución del contrato en caso de incumplimiento de condiciones esenciales, una penalidad de hasta un 50% del importe del subcontrato por no remitir información sobre subcontratistas, y una penalidad del 5% del precio del contrato por incumplir condiciones medioambientales, sociales o laborales.",
-            "score": 0.9837290825032591,
+            "response": "Si, existen penalidades por incumplimientos, que pueden ser del 10% de la facturación de los servicios sobre los que se ha producido el incumplimiento y un máximo del 25% de la facturación mensual.",
+            "score": 0.7386962532997131,
             "index": [
-                67,
-                66,
-                68
+                96,
+                39,
+                95
             ]
         },
         {
             "prompt_key": "Forma_pago",
             "prompt": "Indica la forma de pago",
-            "response": "Certificación Mensual",
-            "score": 0.9979222827545287,
+            "response": "",
+            "score": 0.6946853379408517,
             "index": [
-                69,
-                59
+                90
             ]
         },
         {
             "prompt_key": "Causas_modificacion",
             "prompt": "Indica si existen causas de modificacion del contrato",
             "response": "No",
-            "score": 0.5713416429299051,
+            "score": 0.6564809203147888,
             "index": [
-                73
+                51
             ]
         },
         {
             "prompt_key": "Plazo_garantia",
             "prompt": "Indica si el contrato cuenta con plazo de garantía",
-            "response": "Si, el contrato cuenta con un plazo de garantía de veinticuatro meses (24).",
-            "score": 0.964728527545884,
+            "response": "Si, según el punto 19 del texto, la garantía se devolverá o cancelará cuando, liquidado el contrato sin que resulten responsabilidades del adjudicatario, haya vencido el plazo de garantía.",
+            "score": 0.7761376102765402,
             "index": [
-                26,
-                59,
+                1,
+                134,
+                79
+            ]
+        },
+        {
+            "prompt_key": "Precio_unit",
+            "prompt": "Indica si el contrato cuenta con precio unitario",
+            "response": "Si, el contrato cuenta con precio unitario ya que se menciona \"Precio unitario, ya con el descuento aplicado y con el IVA incorporado\" como uno de los conceptos a incluir en la factura.",
+            "score": 0.725,
+            "index": [
+                138
+            ]
+        },
+        {
+            "prompt_key": "Tanto_alzado",
+            "prompt": "Indica si el contrato cuenta con tanto alzado",
+            "response": "No",
+            "score": 0.6618596971035005,
+            "index": [
+                52,
+                53,
+                38
+            ]
+        },
+        {
+            "prompt_key": "Tanto_alzado_con",
+            "prompt": "Indica si el contrato cuenta con tanto alzado con precio cerrado",
+            "response": "",
+            "score": 0.7180690944194794,
+            "index": [
+                52,
+                51,
+                53
+            ]
+        },
+        {
+            "prompt_key": "Criterio_juicio_val",
+            "prompt": "Indica la ponderación o puntaje de los criterios evaluables mediante juicio de valor",
+            "response": "40",
+            "score": 0.7453532894452414,
+            "index": [
+                67,
                 68
+            ]
+        },
+        {
+            "prompt_key": "Evaluables_autom",
+            "prompt": "Indica la ponderación o puntaje de los criterios evaluables automáticamente / cualitativos o de calidad",
+            "response": "",
+            "score": 0.6204210609197617,
+            "index": [
+                67,
+                1,
+                81
+            ]
+        },
+        {
+            "prompt_key": "Criterio_ecónomico",
+            "prompt": "Indica la ponderación o puntaje de los criterios económicos",
+            "response": "",
+            "score": 0.6348097890615463,
+            "index": [
+                69,
+                75,
+                72
+            ]
+        },
+        {
+            "prompt_key": "Memoria_constructiva",
+            "prompt": "Qué dice el pliego sobre la memoria constructiva y cual es su puntaje?",
+            "response": "",
+            "score": 0.701911785867479,
+            "index": [
+                69,
+                72
+            ]
+        },
+        {
+            "prompt_key": "Programa_trabajos",
+            "prompt": "Qué dice el pliego sobre el programa de trabajos y cual es su puntaje?",
+            "response": "",
+            "score": 0.709833312034607,
+            "index": [
+                72,
+                75,
+                69
+            ]
+        },
+        {
+            "prompt_key": "Analisis_proyecto",
+            "prompt": "Qué dice el pliego sobre el análisis del proyecto y cual es su puntaje?",
+            "response": "",
+            "score": 0.7035933269394768,
+            "index": [
+                72,
+                75
             ]
         }
     ]

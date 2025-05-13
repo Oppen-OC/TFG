@@ -91,78 +91,187 @@
 <!-- Enlaces a los documentos -->
 <h3 class="mt-5">Documentos Relacionados</h3>
 <ul>
-  {% if pliego_administrativo %}
+  {% if pliego_administrativo_url %}
   <li><a href="{{ pliego_administrativo_url}}" target="_blank">📄 Pliego Administrativo</a></li>
   {% else %}
   <li>📄 Pliego Administrativo: No disponible</li>
   {% endif %}
 
-  {% if anexo %}
+  {% if anexo_url %}
   <li><a href="{{ anexo_url }}" target="_blank">📄 {{ titulo_anexo }}</a></li>
   {% else %}
   <li>📄 Anexo: No disponible</li>
   {% endif %}
 </ul>
 
-{% if anexo %}
+{% if anexoI %}
 <h3 class="mt-5">Detalles del Anexo</h3>
 <table class="table table-bordered">
   <tr>
-    <th>Código</th>
-    <td>{{ anexo.COD }}</td>
-  </tr>
-  <tr>
     <th>Regulación Armonizada</th>
-    <td>{{ anexo.Regulacion_armonizada }}</td>
+    <td>{{ anexoI.Regulacion_armonizada }}</td>
   </tr>
   <tr>
     <th>Sometido a Recurso Especial</th>
-    <td>{{ anexo.Sometido_recurso_especial }}</td>
-  </tr>
-  <tr>
-    <th>Expediente</th>
-    <td>{{ anexo.Expediente }}</td>
-  </tr>
-  <tr>
-    <th>Objeto</th>
-    <td>{{ anexo.Objeto }}</td>
+    <td>{{ anexoI.Sometido_recurso_especial }}</td>
   </tr>
   <tr>
     <th>Tipo de Tramitación</th>
-    <td>{{ anexo.Tipo_Tramitacion }}</td>
+    <td>{{ anexoI.Tipo_Tramitacion }}</td>
   </tr>
   <tr>
     <th>Tipo de Gasto</th>
-    <td>{{ anexo.Tipo_gasto }}</td>
-  </tr>
-  <tr>
-    <th>Órgano</th>
-    <td>{{ anexo.Organo }}</td>
+    <td>{{ anexoI.Tipo_gasto }}</td>
   </tr>
   <tr>
     <th>Clasificación de Obra</th>
-    <td>{{ anexo.Clasificación_obra }}</td>
+    <td>{{ anexoI.Clasificación_obra }}</td>
   </tr>
   <tr>
     <th>Nomenclatura</th>
-    <td>{{ anexo.Nomenclatura }}</td>
+    <td>{{ anexoI.Nomenclatura }}</td>
   </tr>
   <tr>
     <th>Plazo de Ejecución</th>
-    <td>{{ anexo.Plazo_ejecución }}</td>
+    <td>{{ anexoI.Plazo_ejecución }}</td>
   </tr>
   <tr>
     <th>Presupuesto sin IVA</th>
-    <td>{{ anexo.Presupuesto_sinIVA }}</td>
+    <td>{{ anexoI.Presupuesto_sinIVA }}</td>
+  </tr>
+  <tr>
+    <th>Presupuesto con IVA</th>
+    <td>{{ anexoI.Presupuesto_conIVA }}</td>
+  </tr>
+  <tr>
+    <th>Importe IVA</th>
+    <td>{{ anexoI.Importe_IVA }}</td>
+  </tr>
+  <tr>
+    <th>Sistema de Retribución</th>
+    <td>{{ anexoI.Sistema_Retribucion }}</td>
+  </tr>
+  <tr>
+    <th>Valor Estimado</th>
+    <td>{{ anexoI.Valor_estimado }}</td>
+  </tr>
+  <tr>
+    <th>Revisión de Precios</th>
+    <td>{{ anexoI.Revision_precios }}</td>
+  </tr>
+  <tr>
+    <th>Garantía Definitiva</th>
+    <td>{{ anexoI.Garantia_definitiva }}</td>
+  </tr>
+  <tr>
+    <th>Garantía Provisional</th>
+    <td>{{ anexoI.Garantia_provisional }}</td>
+  </tr>
+  <tr>
+    <th>Criterio 1</th>
+    <td>{{ anexoI.Criterio_1 }}</td>
+  </tr>
+  <tr>
+    <th>Criterio 2</th>
+    <td>{{ anexoI.Criterio_2 }}</td>
+  </tr>
+  <tr>
+    <th>Criterio 3</th>
+    <td>{{ anexoI.Criterio_3 }}</td>
+  </tr>
+  <tr>
+    <th>Criterios Juicio de Valor</th>
+    <td>{{ anexoI.Criterios_juiciovalor }}</td>
+  </tr>
+  <tr>
+    <th>Admisibilidad de Variantes</th>
+    <td>{{ anexoI.Admisibilidad_variantes }}</td>
+  </tr>
+  <tr>
+    <th>Clasificación de Solvencia</th>
+    <td>{{ anexoI.Clasificacion }}</td>
+  </tr>
+  <tr>
+    <th>Grupo de Solvencia</th>
+    <td>{{ anexoI.Grupo }}</td>
+  </tr>
+  <tr>
+    <th>Subgrupo de Solvencia</th>
+    <td>{{ anexoI.Subgrupoa }}</td>
+  </tr>
+  <tr>
+    <th>Categoría de Solvencia</th>
+    <td>{{ anexoI.Categoria }}</td>
+  </tr>
+  <tr>
+    <th>Criterio de Solvencia Económica</th>
+    <td>{{ anexoI.Criterio_Solvencia_economica }}</td>
+  </tr>
+  <tr>
+    <th>Criterio de Solvencia Técnica</th>
+    <td>{{ anexoI.Criterio_Solvencia_tecnica }}</td>
+  </tr>
+  <tr>
+    <th>Condiciones Especiales</th>
+    <td>{{ anexoI.Condiciones_especiales }}</td>
+  </tr>
+  <tr>
+    <th>Penalidad por Incumplimiento</th>
+    <td>{{ anexoI.Penalidad_incumplimiento }}</td>
+  </tr>
+  <tr>
+    <th>Forma de Pago</th>
+    <td>{{ anexoI.Forma_pago }}</td>
+  </tr>
+  <tr>
+    <th>Causas de Modificación</th>
+    <td>{{ anexoI.Causas_modificacion }}</td>
+  </tr>
+  <tr>
+    <th>Plazo de Garantía</th>
+    <td>{{ anexoI.Plazo_garantia }}</td>
+  </tr>
+  <tr>
+    <th>Precio Unitario</th>
+    <td>{{ anexoI.Precio_unit }}</td>
+  </tr>
+  <tr>
+    <th>Tanto alzado</th>
+    <td>{{ anexoI.Tanto_alzado }}</td>
+  </tr>
+  <tr>
+    <th>Tanto alzado con</th>
+    <td>{{ anexoI.Tanto_alzado_con }}</td>
+  </tr>
+  <tr>
+    <th>Criterio Juicio de Valor</th>
+    <td>{{ anexoI.Criterio_juicio_val }}</td>
+  </tr>
+  <tr>
+    <th>Evaluables Automáticamente</th>
+    <td>{{ anexoI.Evaluables_autom }}</td>
+  </tr>
+  <tr>
+    <th>Criterio Económico</th>
+    <td>{{ anexoI.Criterio_ecónomico }}</td>
+  </tr>
+  <tr>
+    <th>Memoria Constructiva</th>
+    <td>{{ anexoI.Memoria_constructiva }}</td>
+  </tr>
+  <tr>
+    <th>Programa de Trabajos</th>
+    <td>{{ anexoI.Programa_trabajos }}</td>
+  </tr>
+  <tr>
+    <th>Análisis del Proyecto</th>
+    <td>{{ anexoI.Analisis_proyecto }}</td>
   </tr>
 </table>
-{% endif %}
-
-{% if anexo is none %}
+{% else %}
 <div class="mt-5 text-center">
-  <a href="{% url 'app:cargar_licitacion' %}" class="btn btn-warning">Cargar Licitación</a>
+  <p>No hay información del Anexo I disponible.</p>
 </div>
 {% endif %}
-
-<a href="{% url 'app:licitaciones' %}">Volver a licitaciones</a>
+<a href="{% url 'app:licitaciones' %}" class="btn btn-secondary mt-3">Volver a licitaciones</a>
 {% endblock %}

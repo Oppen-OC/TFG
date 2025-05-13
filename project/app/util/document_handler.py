@@ -14,17 +14,25 @@ def idDocType(title):
     return parts[-1] if parts else None
 
 def preprocess_text(text):
-    replacements = {
-        "☒": "[SELECCIONADO]",
-        "☐": "[NO SELECCIONADO]",
+    replacements_0 = {
         "Nº": "Número",
+        "☒": "[SELECCIONADO]",
         "x□": "[SELECCIONADO]",
-        "□": "[NO SELECCIONADO]"
+        "X□": "[SELECCIONADO]"
     }
-
+        
     # Realizar los reemplazos iniciales
-    for old, new in replacements.items():
-        text = text.replace(old, new)
+    for old, new in replacements_0.items():
+        text = text.replace(old, new)  
+
+    if "[SELECCIONADO]" in text:
+        replacements_1 = {        
+            "□": "[NO SELECCIONADO]",
+            "☐": "[NO SELECCIONADO]"
+        }
+
+        for old, new in replacements_1.items():
+            text = text.replace(old, new)
 
     # Eliminar texto seguido por [NO SELECCIONADO] hasta un salto de línea o [SELECCIONADO]
     pattern = r"\[NO SELECCIONADO\].*?(?=\n|\[SELECCIONADO\])"
@@ -33,6 +41,9 @@ def preprocess_text(text):
     # Eliminar información dentro de paréntesis que contenga "art."
     pattern_art = r"\([^)]*?art\.[^)]*?\)"
     text = re.sub(pattern_art, "", text)
+
+    # Eliminar todos los saltos de línea
+    text = text.replace("\n", " ")
 
     return text
 
@@ -43,7 +54,7 @@ def section_identifier(text, anterior):
     :return: Lista de secciones identificadas.
     """
     # Expresión regular para detectar letras seguidas de ". " o "APARTADO X\n"
-    pattern = r"(?:^|\n)[A-ZÑ]{1}\. |(?:^|\n)APARTADO [A-ZÑ]{1}\n"
+    pattern = r"(?:^|\n)[A-ZÑ]{1}\. |(?:^|\n)APARTADO [A-ZÑ]{1}\n|(?:^|\n)(?:I|II|III|IV|V|VI|VII|VIII|IX|X|XI|XII|XIII|XIV|XV|XVI|XVII|XVIII|XIX|XX|XXI|XXII|XXIII|XXIV|XXV|XXVI|XXVII|XXVIII|XXIX|XXX)\. "    
     secciones = re.findall(pattern, text)  # Encuentra todas las coincidencias
     ans = [anterior] if anterior else []
     
@@ -57,73 +68,14 @@ def section_identifier(text, anterior):
     
     return ans
 
-def spliter(ant, text, size = 1024, overlap=128):
+def spliter(ant, text, size = 1200, overlap=150):
     text_splitter = RecursiveCharacterTextSplitter(chunk_size=size,chunk_overlap=overlap)
     texts = text_splitter.split_text(ant)
     texts[-1] = texts[-1] + text[:overlap]
     return texts
 
-def download_to_text(url, file_type):
-    try:
-        base_dir = os.path.dirname(os.path.abspath(__file__))  # Ruta base del archivo actual
-        output_dir = os.path.join(base_dir, 'temp_files')  # Ruta al directorio de logs
 
-        os.makedirs(output_dir, exist_ok=True)
-
-        # Descargar el documento
-        response = requests.get(url)
-        response.raise_for_status()
-        text = ""
-
-        # Guardar el documento temporalmente
-        temp_doc_path = os.path.join(output_dir, f"temp_document.{file_type}")
-        with open(temp_doc_path, 'wb') as temp_doc_file:
-            temp_doc_file.write(response.content)
-
-        # Convertir el documento a texto
-        if file_type == 'odt':
-            doc = load(temp_doc_path)
-            text = "###\n".join([str(para) for para in doc.getElementsByType(P)])
-
-        elif file_type == 'docx':
-            doc = Document(temp_doc_path)
-            text = "###\n".join([para.text for para in doc.paragraphs])
-
-        if file_type == 'pdf':
-            with pdfplumber.open(temp_doc_path) as pdf:
-                for page in pdf.pages:
-                    # [x0, y0, x1, y1]
-                    size = (0.1 * page.width, 0 * page.height, 0.90 * page.width, 0.90 * page.height)
-                    cropped_page = page.crop(size)
-                    text += cropped_page.extract_text(layout=True) + "\n"
-                    text += f"##PAGINA:{page.page_number}##" + "\n\f\n"
-
-        elif file_type == "zip":
-            print("Compatibilidad con .zip aun no implementada")
-            return None
-        else:
-            print(f"Tipo de archivo no soportado: {file_type}")
-            return None
-
-        # Guardar el texto en un archivo llamado "temp.txt"
-        text_file_path = os.path.join(output_dir, "temp_document.txt")
-        with open(text_file_path, 'w', encoding='utf-8') as text_file:
-            text_file.write(text)
-
-        # Eliminar el archivo temporal
-        # os.remove(temp_doc_path)
-
-        return text_file_path
-
-    except requests.RequestException as e:
-        print(f"Error al descargar el documento: {e}")
-        return None
-    except Exception as e:
-        print(f"Error al convertir el documento a texto: {e}")
-        return None
-
-
-def download_to_json(url, file_type):
+def download_to_json(url):
     try:
         base_dir = os.path.dirname(os.path.abspath(__file__))  # Base directory
         output_dir = os.path.join(base_dir, 'temp_files')  # Output directory
@@ -133,6 +85,14 @@ def download_to_json(url, file_type):
         # Download the document
         response = requests.get(url)
         response.raise_for_status()
+
+        # Obtener el nombre del archivo del encabezado Content-Disposition
+        content_disposition = response.headers.get('Content-Disposition')
+        if content_disposition:
+            # Extraer el nombre del archivo del encabezado
+            filename = content_disposition.split('filename=')[-1].strip('"')
+
+        file_type = idDocType(filename)  # Get the file type from the filename
 
         # Save the document temporarily
         temp_doc_path = os.path.join(output_dir, f"temp_document.{file_type}")
@@ -152,13 +112,14 @@ def download_to_json(url, file_type):
             paragraphs = [para.text for para in doc.paragraphs]
             for i, para in enumerate(paragraphs):
                 data.append({"page": i + 1, "text": para})
+
         elif file_type == 'pdf':
             with pdfplumber.open(temp_doc_path) as pdf:
                 ant_text = ""
                 ant_table = None
                 ant_sec = None
                 for i, page in enumerate(pdf.pages):
-                    size = (0.1 * page.width, 0.1 * page.height, 0.95 * page.width, 0.85 * page.height)
+                    size = (0.1 * page.width, 0.1 * page.height, 0.95 * page.width, 0.90 * page.height)
                     cropped_page = page.crop(size)
                     text = cropped_page.extract_text()
                     text = preprocess_text(text)  # Preprocess the text
@@ -216,7 +177,7 @@ def main():
     docx = "https://contrataciondelestado.es/wps/wcm/connect/PLACE_es/Site/area/docAccCmpnt?srv=cmpnt&cmpntname=GetDocumentsById&source=library&DocumentIdParam=0cf6ca6f-add4-4d37-a48d-9e33e72e2adb"
     #text_file_path_odt = download_and_convert_to_text(odt, "odt")
     # print("odt", text_file_path_odt)
-    download_to_json(pdf_2, "pdf")
+    download_to_json(pdf_2)
     # print("pdf", text_file_path_pdf)
     # text_file_path_docx = download_and_convert_to_text(docx, "docx")
     #print("docx", text_file_path_docx)

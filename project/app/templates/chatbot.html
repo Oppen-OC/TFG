@@ -1,0 +1,249 @@
+{% extends 'base.html' %}
+
+{% block title %}Chatbot{% endblock %}
+
+{% block content %}
+<h1>Bienvenido al Chatbot</h1>
+<p>Aquí estará el chatbot.</p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chatbot</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+        }
+        .main-container {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: flex-start;
+            height: 100%;
+            padding: 20px;
+            gap: 20px; /* Espacio entre el chat y la sección de documentos */
+        }
+        .chat-container {
+            flex: 3; /* Ocupa más espacio que la sección de documentos */
+            display: flex;
+            flex-direction: column;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            overflow: hidden;
+            background-color: #ffffff;
+        }
+        .document-checker-container {
+            flex: 1; /* Ocupa menos espacio que el chat */
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            background-color: #f9f9f9;
+            max-width: 300px; /* Ancho máximo para la sección de documentos */
+        }
+        .chat-messages {
+            flex: 1;
+            padding: 10px;
+            overflow-y: auto;
+            background-color: #f9f9f9;
+        }
+        .message {
+            margin: 10px 0;
+            padding: 10px;
+            border-radius: 10px;
+            max-width: 70%;
+        }
+        .user-message {
+            background-color: #d1e7dd;
+            align-self: flex-end;
+        }
+        .bot-message {
+            background-color: #f8d7da;
+            align-self: flex-start;
+        }
+        .chat-input {
+            display: flex;
+            border-top: 1px solid #ccc;
+            background-color: #fff;
+        }
+        .chat-input input {
+            flex: 1;
+            padding: 10px;
+            border: none;
+            outline: none;
+        }
+        .chat-input button {
+            padding: 10px 20px;
+            border: none;
+            background-color: #007bff;
+            color: white;
+            cursor: pointer;
+        }
+        .chat-input button:hover {
+            background-color: #0056b3;
+        }
+        .document-checker {
+            position: absolute;
+            right: 20px;
+            top: 20px;
+            width: 300px;
+            border: 1px solid #ccc;
+            padding: 20px;
+            border-radius: 10px;
+            background-color: #f9f9f9;
+        }
+        .document-checker input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+        }
+        .document-checker button {
+            width: 100%;
+            padding: 10px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        .document-checker button:hover {
+            background-color: #0056b3;
+        }
+        .document-checker p {
+            margin-top: 10px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="main-container">
+        <!-- Contenedor del chat -->
+        <div class="chat-container">
+            <div class="chat-messages" id="chat-messages">
+                <!-- Mensajes del chat -->
+            </div>
+            <div class="chat-input">
+                <input type="text" id="user-input" placeholder="Escribe tu mensaje...">
+                <button onclick="sendMessage()">Enviar</button>
+            </div>
+        </div>
+
+        <!-- Contenedor para verificar documento -->
+        <div class="document-checker-container">
+            <h3>Cargar Documento</h3>
+            <input type="text" id="document-code" placeholder="Inserta el código">
+            <button onclick="checkDocument()">Verificar</button>
+            <p id="document-result"></p>
+        </div>
+    </div>
+
+    <script>
+        const chatMessages = document.getElementById('chat-messages');
+
+        async function sendMessage() {
+            const userInput = document.getElementById('user-input');
+            const message = userInput.value.trim();
+
+            if (message) {
+                // Mostrar el mensaje del usuario
+                const userMessage = document.createElement('div');
+                userMessage.className = 'message user-message';
+                userMessage.textContent = message;
+                chatMessages.appendChild(userMessage);
+
+                // Enviar el mensaje al servidor
+                try {
+                    const response = await fetch("{% url 'app:chatbot' %}", {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                            'X-CSRFToken': getCookie('csrftoken') // Asegúrate de incluir el token CSRF
+                        },
+                        body: JSON.stringify({ message: message })
+                    });
+
+                    if (response.ok) {
+                        const data = await response.json();
+
+                        // Mostrar la respuesta del chatbot
+                        const botMessage = document.createElement('div');
+                        botMessage.className = 'message bot-message';
+                        botMessage.textContent = data.response;
+                        chatMessages.appendChild(botMessage);
+                    } else {
+                        console.error('Error en la respuesta del servidor');
+                    }
+                } catch (error) {
+                    console.error('Error al enviar el mensaje:', error);
+                }
+
+                // Limpiar el campo de entrada
+                userInput.value = '';
+
+                // Desplazar hacia abajo
+                chatMessages.scrollTop = chatMessages.scrollHeight;
+            }
+        }
+
+        // Función para obtener el token CSRF
+        function getCookie(name) {
+            let cookieValue = null;
+            if (document.cookie && document.cookie !== '') {
+                const cookies = document.cookie.split(';');
+                for (let i = 0; i < cookies.length; i++) {
+                    const cookie = cookies[i].trim();
+                    if (cookie.substring(0, name.length + 1) === (name + '=')) {
+                        cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                        break;
+                    }
+                }
+            }
+            return cookieValue;
+        }
+
+        async function checkDocument() {
+            const documentCode = document.getElementById('document-code').value.trim();
+            const resultElement = document.getElementById('document-result');
+
+            if (documentCode) {
+                try {
+                    const response = await fetch("{% url 'app:check_document' %}", {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                            'X-CSRFToken': getCookie('csrftoken')
+                        },
+                        body: JSON.stringify({ code: documentCode })
+                    });
+
+                    if (response.ok) {
+                        const data = await response.json();
+                        if (data.exists) {
+                            resultElement.textContent = "El documento existe en la base de datos.";
+                            resultElement.style.color = "green";
+                        } else {
+                            resultElement.textContent = "El documento no existe en la base de datos.";
+                            resultElement.style.color = "red";
+                        }
+                    } else {
+                        resultElement.textContent = "Error al verificar el documento.";
+                        resultElement.style.color = "red";
+                    }
+                } catch (error) {
+                    console.error('Error al verificar el documento:', error);
+                    resultElement.textContent = "Error al verificar el documento.";
+                    resultElement.style.color = "red";
+                }
+            } else {
+                resultElement.textContent = "Por favor, ingresa un código.";
+                resultElement.style.color = "orange";
+            }
+        }
+    </script>
+</body>
+</html>
+{% endblock %}

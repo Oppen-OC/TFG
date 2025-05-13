@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block title %}Tabla AnexoI{% endblock %}
+
+{% block content %}
+<h2 class="mb-4">Información de la Tabla AnexoI</h2>
+
+<table class="table table-bordered table-striped">
+    <thead>
+        <tr>
+            {% for columna in columnas %}
+            <th>{{ columna }}</th>
+            {% endfor %}
+        </tr>
+    </thead>
+    <tbody>
+        {% for fila in datos %}
+        <tr>
+            {% for celda in fila %}
+            <td>{{ celda }}</td>
+            {% endfor %}
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

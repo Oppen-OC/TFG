@@ -34,7 +34,7 @@ db_logger = logging.getLogger('db_manager')
 db_logger.setLevel(logging.INFO)
 
 # Configure the file handler to write logs to the logs directory
-db_handler = logging.FileHandler(log_file_path, mode='w')
+db_handler = logging.FileHandler(log_file_path, mode='a')
 db_handler.setLevel(logging.INFO)
 db_formatter = logging.Formatter('%(asctime)s - %(levelname)s - %(message)s')
 db_handler.setFormatter(db_formatter)
@@ -222,6 +222,16 @@ class DBManager:
             exp = self.fetchData("Licitaciones", n)
             if cod[0] != exp[0]:
                 print(f"Error in {n}: {cod[0]} | {exp[0]}")
+
+    def deleteLog(self):
+        try:
+            if os.path.exists(log_file_path):
+                os.remove(log_file_path)
+                self.logger.info("El archivo de log ha sido eliminado manualmente.")
+            else:
+                print("El archivo de log no existe.")
+        except Exception as e:
+            print(f"Error al intentar eliminar el archivo de log: {e}")
 
 
 if __name__ == "__main__":   
