@@ -1,0 +1,174 @@
+[
+    {
+        "key": "Regulacion_armonizada",
+        "prompt": "Indica si tiene regulación armonizada",
+        "response": "No"
+    },
+    {
+        "key": "Sometido_recurso_especial",
+        "prompt": "Indica si tiene recurso especial",
+        "response": ""
+    },
+    {
+        "key": "Plazo_ejecución",
+        "prompt": "Obten el plazo de ejecución del contrato",
+        "response": "12 meses"
+    },
+    {
+        "key": "Presupuesto_sinIVA",
+        "prompt": "Ubica el presupuesto sin IVA del documento",
+        "response": "435.695,83 €"
+    },
+    {
+        "key":  "Presupuesto_conIVA",
+        "prompt": "Ubica el presupuesto con IVA del documento (presupuesto base)",
+        "response": "527.191,95 €"
+    },
+    {
+        "key": "Importe_IVA",
+        "prompt": "Ubica el importe del IVA del documento (iva aplicable)",
+        "response": "91.496,12 €"
+    },
+    {
+        "key": "Sistema_Retribucion",
+        "prompt": "Indica el sistema de retribución del precio",
+        "response": ""
+    },
+    {
+        "key": "Valor_estimado",
+        "prompt": "Ubica el valor estimado del contrato, responde únicamente con el valor en euros",
+        "response": " 435.695,83"
+    },
+    {
+        "key": "Revision_precios",
+        "prompt": "Indica si existe la revisión de precios",
+        "response": "No procede."
+    },
+    {
+        "key": "Garantia_definitiva",
+        "prompt": "Qué dice sobre la garantía definitiva?",
+        "response": "5% del precio final ofertado, IVA excluido."
+    },
+    {
+        "key": "Garantia_provisional",
+        "prompt": "Qué dice sobre la garantía provisional?",
+        "response": "No se exige conforme al artículo 106.1 de la LCSP"
+    },
+    {
+        "key": "Admisibilidad_variantes",
+        "prompt": "Indica si el contrato admite variantes o alternativas",
+        "response": "No"
+    },
+    {
+        "key": "Clasificacion",
+        "prompt": "La clasificación se aplica por debajo de 500.000 €?",
+        "response": "Si"
+    },
+    {
+        "key": "Grupo",
+        "prompt": "Indica el grupo al que pertenece el contrato",
+        "response": "G. Viales y pistas"
+    },
+    {
+        "key": "Subgrupo",
+        "prompt": "Indica el subgrupo al que pertenece el contrato",
+        "response": "4. Con firmes de mezclas bituminosas"
+    },
+    {
+        "key": "Categoria",
+        "prompt": "Indica la categoría a la que pertenece el contrato",
+        "response": "3. Cuantía superior a 360.000 euros e inferior o igual a 840.000 euros"
+    },
+    {
+        "key": "Criterio_Solvencia_economica",
+        "prompt": "Indica si existen criterios para calcular/acreditar la solvencia económica y financiera",
+        "response": "SI"
+    },
+    {
+        "key": "Criterio_Solvencia_tecnica",
+        "prompt": "Indica si existen criterios para calcular/acreditar la solvencia técnica o profesional",
+        "response": "SI"
+    },
+    {
+        "key": "Condiciones_especiales",
+        "prompt": "Indica si existen condiciones especiales de ejecución y cuales son en caso de haberlas",
+        "response": "Si"
+    },
+    {
+        "key": "Penalidad_incumplimiento",
+        "prompt": "Cuenta con penalidades al contratista por incumplimiento?",
+        "response": "no procede"
+    },
+    {
+        "key": "Forma_pago",
+        "prompt": "Indica la forma o régimen de pago",
+        "response": "Los pagos se efectuarán previa presentación de la correspondiente factura reglamentaria."
+    },
+    {
+        "key": "Causas_modificacion",
+        "prompt": "Indica si existen causas de modificacion del contrato",
+        "response": "No" 
+    },
+    {
+        "key":  "Plazo_garantia",
+        "prompt": "Indica si el contrato cuenta con plazo de garantía",
+        "response": " 1 año"
+    },
+    {
+        "key": "Contratacion_precio_unit",
+        "prompt": "Indica si cuenta con contratación a precio unitario",
+        "response": "No"
+    },
+    {
+        "key": "Tanto_alzado",
+        "prompt": "Indica si el contrato cuenta con tanto alzado",
+        "response": "Si"
+    },
+    {
+        "key": "Tanto_alzado_con",
+        "prompt": "Indica si el contrato cuenta con tanto alzado con precio cerrado",
+        "response": "No"
+    },
+    {
+        "key": "Criterio_juicio_val",
+        "prompt": "Indica la ponderación o puntaje de los criterios evaluables mediante juicio de valor",
+        "response": "30"
+    },
+    {
+        "key": "Evaluables_autom",
+        "prompt": "Indica la ponderación o puntaje de los criterios evaluables automáticamente / cualitativos o de calidad",
+        "response": "30"
+    },
+    {
+        "key": "Criterio_ecónomico",
+        "prompt": "Indica la ponderación o puntaje de los criterios económicos",
+        "response": "40"
+    },
+    {
+        "key": "MemoriaConst_ProgramaTrb",
+        "prompt": "Qué dice el pliego sobre la memoria constructiva y programa de trabajo y cuál es su puntaje?",
+        "response": ""
+    },
+    {
+        "key": "Programa_trabajos",
+        "prompt": "Qué dice el pliego sobre el programa de trabajos y cuál es su puntaje?",
+        "response": "Sí. La empresa contratista deberá aportar un programa de trabajo para su aprobación por parte de la Administración. Tiene un valor máximo de 5 puntos"
+    },
+    {
+        "key": "Analisis_proyecto",
+        "prompt": "Qué dice el pliego sobre el análisis del proyecto y cuál es su puntaje?",
+        "response": ""
+    },
+    {
+        "key": "Obligaciones_ambientales",
+        "prompt": "Cumple con las medidas de protección medioambientales?",
+        "response": "No procede"
+    },
+    {
+        "key": "Regimen_penalidades",
+        "prompt": "Indica si existen penalidades por incumplimientos",
+        "response": "1. Penalidades de la cláusula 36.3. 5% del precio del contrato para cada incumplimiento (IVA excluido). 2. Penalidades por incumplimiento parcial de la ejecución en la cláusula 36.1. 5% del precio del contrato para cada incumplimiento (IVA excluido). "
+    }
+
+
+]

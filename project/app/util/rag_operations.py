@@ -12,14 +12,10 @@ import re
 from db_manager import DBManager
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from threading import Lock
+from nltk.stem import WordNetLemmatizer
+
 
 load_dotenv()
-
-"""
-class Chunk(BaseModel):
-    text: str
-    score: Optional[float] = None
-"""
 
 class Prompt(BaseModel):
     prompt_key: str
@@ -125,6 +121,9 @@ class RAG:
 
         # Reemplazar múltiples espacios por uno solo
         chunk = re.sub(r"\s+", " ", chunk).strip()
+
+        # Lematizar cada palabra del chunk
+        chunk = " ".join(WordNetLemmatizer().lemmatize(word) for word in chunk.split())
 
         return chunk
 
@@ -424,7 +423,7 @@ class RAG:
         try:
             # Generate embeddings for each chunk
             embeddings = []
-            for i, chunk in enumerate(self.chunks):
+            for i, chunk in enumerate(tqdm(self.chunks, desc="Generating embeddings", unit="chunk")):
                 try:
                     normalized_chunk = self.normalize_chunk(chunk)
                     response = self.client.embeddings.create(
@@ -488,6 +487,14 @@ class RAG:
                     self.chunks.append(table_string)  # Extract "chunks" field
                     self.metadata.append(meta)  # Extract "metadata" field
 
+                    table_string = ""
+                    for column in table:
+                        cleaned_column = [cell if cell is not None else "" for cell in column]  # Replace None with ""
+                        table_string += ", ".join(cleaned_column) + " "
+                        self.chunks.append(table_string)  # Extract "chunks" field
+                        self.metadata.append(meta)  # Extract "metadata" field
+
+
     def deleteLog(self):
         try:
             if os.path.exists(self.log_path):
@@ -499,6 +506,9 @@ class RAG:
                 print("El archivo de log no existe.")
         except Exception as e:
             print(f"Error al intentar limpiar el contenido del archivo de log: {e}")
+
+    def get_prompt_keys(self):
+        return list(self.prompts.keys())
 
 rag_lock = Lock()
 

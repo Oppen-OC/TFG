@@ -7,22 +7,25 @@ from langchain_text_splitters import RecursiveCharacterTextSplitter
 import os
 import pdfplumber
 import re
-
+from sentence_transformers import SentenceTransformer, util
+from tqdm import tqdm
+import sys
 
 def idDocType(title):
     parts = title.split('.')
     return parts[-1] if parts else None
 
 def preprocess_text(text):
-    replacements_0 = {
+    replacements = {
         "Nº": "Número",
+        "nº": "Número",
         "☒": "[SELECCIONADO]",
         "x□": "[SELECCIONADO]",
         "X□": "[SELECCIONADO]"
     }
         
     # Realizar los reemplazos iniciales
-    for old, new in replacements_0.items():
+    for old, new in replacements.items():
         text = text.replace(old, new)  
 
     if "[SELECCIONADO]" in text:
@@ -68,11 +71,66 @@ def section_identifier(text, anterior):
     
     return ans
 
-def spliter(ant, text, size = 1200, overlap=150):
+def spliter(ant, text, size = 800, overlap=400):
     text_splitter = RecursiveCharacterTextSplitter(chunk_size=size,chunk_overlap=overlap)
     texts = text_splitter.split_text(ant)
     texts[-1] = texts[-1] + text[:overlap]
     return texts
+
+def semantic_chunking(ant_text, text, chunk_size=800, overlap=400, similarity_threshold=0.4):
+    """
+    Realiza chunking semántico considerando el texto de la página actual y el de la siguiente.
+    :param ant_text: Texto de la página anterior.
+    :param text: Texto de la página actual.
+    :param chunk_size: Tamaño máximo de cada chunk.
+    :param overlap: Cantidad de texto superpuesto entre chunks.
+    :param similarity_threshold: Umbral de similitud para agrupar oraciones en un chunk.
+    :return: Lista de chunks semánticos.
+    """
+    model = SentenceTransformer('all-MiniLM-L6-v2')
+
+    # Combinar el texto de la página anterior y la actual
+    combined_text = ant_text + " " + text
+
+    # Dividir el texto combinado en oraciones
+    sentences = combined_text.split(". ")
+    embeddings = model.encode(sentences, convert_to_tensor=True)
+
+    chunks = []
+    current_chunk = []
+    current_embedding = None
+
+    for i, sentence in enumerate(sentences):
+        sentence_embedding = embeddings[i]
+
+        if current_chunk:
+            # Calcular la similitud con el chunk actual
+            similarity = util.cos_sim(current_embedding, sentence_embedding).item()
+
+            # Condiciones para crear un nuevo chunk
+            if similarity < similarity_threshold or len(" ".join(current_chunk)) + len(sentence) > chunk_size:
+                # Si la similitud es baja o el chunk excede el tamaño, crear un nuevo chunk
+                chunks.append(" ".join(current_chunk))
+                current_chunk = [sentence]
+                current_embedding = sentence_embedding
+            else:
+                # Agregar la oración al chunk actual
+                current_chunk.append(sentence)
+                current_embedding = (current_embedding + sentence_embedding) / 2
+        else:
+            # Inicializar el primer chunk
+            current_chunk.append(sentence)
+            current_embedding = sentence_embedding
+
+    # Agregar el último chunk
+    if current_chunk:
+        chunks.append(" ".join(current_chunk))
+
+    # Ajustar el último chunk para incluir el texto de la siguiente página
+    if chunks:
+        chunks[-1] += " " + text[:overlap]
+
+    return chunks
 
 
 def download_to_json(url):
@@ -118,8 +176,8 @@ def download_to_json(url):
                 ant_text = ""
                 ant_table = None
                 ant_sec = None
-                for i, page in enumerate(pdf.pages):
-                    size = (0.1 * page.width, 0.1 * page.height, 0.95 * page.width, 0.90 * page.height)
+                for i, page in enumerate(tqdm(pdf.pages, desc="Processing pages", unit="page")):
+                    size = (0.05 * page.width, 0.05 * page.height, 0.95 * page.width, 0.95 * page.height)
                     cropped_page = page.crop(size)
                     text = cropped_page.extract_text()
                     text = preprocess_text(text)  # Preprocess the text
@@ -131,7 +189,7 @@ def download_to_json(url):
                         sec = section_identifier(text, "None")
 
                     if ant_text != "":
-                        chunks = spliter(ant_text, text)  # Split text into chunks                   
+                        chunks = spliter(ant_text, text)  # Perform semantic chunking                   
                         data.append({"page": page.page_number -1, "chunks": chunks, "text": ant_text, "tables": ant_table,"sections": ant_sec})    
                         ant_text = text       
                         ant_table = cropped_page.extract_table()   
@@ -177,7 +235,19 @@ def main():
     docx = "https://contrataciondelestado.es/wps/wcm/connect/PLACE_es/Site/area/docAccCmpnt?srv=cmpnt&cmpntname=GetDocumentsById&source=library&DocumentIdParam=0cf6ca6f-add4-4d37-a48d-9e33e72e2adb"
     #text_file_path_odt = download_and_convert_to_text(odt, "odt")
     # print("odt", text_file_path_odt)
-    download_to_json(pdf_2)
+    
+    import os
+
+    # Suppress output
+    with open(os.devnull, 'w') as devnull:
+        old_stdout = sys.stdout
+        sys.stdout = devnull
+        try:
+            # Code that generates unwanted output
+            download_to_json(pdf_2)
+        finally:
+            sys.stdout = old_stdout
+
     # print("pdf", text_file_path_pdf)
     # text_file_path_docx = download_and_convert_to_text(docx, "docx")
     #print("docx", text_file_path_docx)
