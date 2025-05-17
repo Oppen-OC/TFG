@@ -5,6 +5,7 @@ import openai
 from dotenv import load_dotenv
 from tqdm import tqdm 
 from pydantic import BaseModel
+import random
 
 load_dotenv()
 
@@ -134,13 +135,62 @@ def generate_questions_from_chunks(corpus_path, output_path, ollama_url="https:/
     except Exception as e:
         print(f"Ocurrió un error: {e}")
 
+def split_questions_train_val(questions_path, output_path, val_ratio=0.2, train_ratio=0.8, seed=42):
+    """
+    Divide el archivo questions.json en datos de entrenamiento y validación.
+    Puedes especificar el porcentaje de validación y entrenamiento.
+    """
+    if abs((val_ratio + train_ratio) - 1.0) > 1e-6:
+        raise ValueError("La suma de val_ratio y train_ratio debe ser 1.0")
+
+    with open(questions_path, 'r', encoding='utf-8') as f:
+        data = json.load(f)
+
+    train_data = {}
+    val_data = {}
+
+    random.seed(seed)
+
+    for doc_code, questions_list in tqdm(data.items(), desc="Dividiendo documentos", unit="documento"):
+        train_data[doc_code] = []
+        val_data[doc_code] = []
+        for item in tqdm(questions_list, desc=f"Chunks de {doc_code}", unit="chunk", leave=False):
+            # item: {"index": ..., "chunk": ..., "questions": {...}}
+            questions_dict = item.get("questions", {})
+            questions_keys = list(questions_dict.keys())
+            random.shuffle(questions_keys)
+            total = len(questions_keys)
+            train_count = int(total * train_ratio)
+            train_questions = {k: questions_dict[k] for k in questions_keys[:train_count]}
+            val_questions = {k: questions_dict[k] for k in questions_keys[train_count:]}
+            # Añadir a los datos de entrenamiento y validación solo si hay preguntas
+            if train_questions:
+                train_data[doc_code].append({
+                    "index": item.get("index"),
+                    "chunk": item.get("chunk"),
+                    "questions": train_questions
+                })
+            if val_questions:
+                val_data[doc_code].append({
+                    "index": item.get("index"),
+                    "chunk": item.get("chunk"),
+                    "questions": val_questions
+                })
+
+    with open(os.path.join(output_path, "training.json"), 'w', encoding='utf-8') as f:
+        json.dump(train_data, f, indent=4, ensure_ascii=False)
+    with open(os.path.join(output_path, "validation.json"), 'w', encoding='utf-8') as f:
+        json.dump(val_data, f, indent=4, ensure_ascii=False)
+
+    print(f"Archivos generados:\nEntrenamiento: {os.path.join(output_path, 'training.json')}\nValidación: {os.path.join(output_path, 'validation.json')}")
+
 if __name__ == "__main__":
     # Ruta al archivo de salida
     base_dir = os.path.dirname(os.path.abspath(__file__))
-    corpus_path = os.path.abspath(os.path.join(base_dir, "Corpus.json"))
+    corpus_path = os.path.abspath(os.path.join(base_dir, "json_files", "Corpus.json"))
     input_path = os.path.abspath(os.path.join(base_dir, "..", "temp_files", "temp_document.json"))
-    questions_path = os.path.abspath(os.path.join(base_dir, "questions.json"))
-
+    questions_path = os.path.abspath(os.path.join(base_dir, "json_files", "questions.json"))
+    """
     # Array de tuplas (url, cod)
     documents = [
         ("https://contrataciondelestado.es/wps/wcm/connect/PLACE_es/Site/area/docAccCmpnt?srv=cmpnt&cmpntname=GetDocumentsById&source=library&DocumentIdParam=0228702d-bab1-4757-8402-1454d0ba3cc2", "CMAYOR/2023/03Y05/19"),
@@ -152,10 +202,11 @@ if __name__ == "__main__":
     ]
 
     # Ejecutar download_to_json() para cada (url, cod)
-    """
+    
     for url, cod in documents:
         download_to_json(url)  # Descargar el documento
         generate_jsonCorpus(input_path, corpus_path, cod)  # Guardar en el JSON
-    """
 
     generate_questions_from_chunks(corpus_path, questions_path)  # Generar preguntas
+    """
+    split_questions_train_val(questions_path, base_dir + "/json_files")
