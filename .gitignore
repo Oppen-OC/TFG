@@ -10,6 +10,7 @@ __pycache__/
 
 # Ignore generated questions file
 project/app/util/testing/questions.json
+project/app/util/testing/json_files
 
 # Distribution / packaging
 .Python
