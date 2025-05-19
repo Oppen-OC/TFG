@@ -1,7 +1,7 @@
 from dotenv import load_dotenv
 import openai
 import os
-import faiss
+import chromadb
 import json
 import logging
 import numpy as np
@@ -9,7 +9,7 @@ from tqdm import tqdm
 from pydantic import BaseModel
 from typing import List
 import re
-from db_manager import DBManager
+from .db_manager import DBManager
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from threading import Lock
 from nltk.stem import WordNetLemmatizer
@@ -81,7 +81,7 @@ class RAG:
         self.logger = RAG.rag_logger            # Logger para el RAG
         self.file = RAG.file                    # Ruta al archivo JSON con los chunks
         # self.jsonFile = RAG.jsonFile          # Ruta al archivo JSON con las instrucciones
-        self.faiss_path = RAG.temp_files_dir + "/embeddings_index.faiss"        # Ruta al índice FAISS
+        self.chroma_path = RAG.temp_files_dir + "\chromadb"        # Ruta al índice chroma
         self.log_path = RAG.log_file_path       # Ruta al archivo de log
 
         self.chunks = []          # Lista para almacenar los chunks de texto, extraido del JSON
@@ -89,9 +89,10 @@ class RAG:
         self.prompt_count = 0     # Contador de prompts, ayuda a llevar la cuenta
         self.key = ""             # Clave del prompt actual, valor auxiliar
 
-        if os.path.exists(self.faiss_path):
-            os.remove(self.faiss_path)
-            self.logger.info(f"Previous FAISS index deleted: {self.faiss_path}")
+        try:
+            self.client.delete_collection(name='licitaciones_collection')
+        except Exception:
+            pass  # Si no existe, ignora el error        
 
         self.deleteLog()
         self.logger.info("Objeto RAG inicializado.")
@@ -209,36 +210,48 @@ class RAG:
                 input=query,
                 model=self.embedding_model,  # Modelo especificado en la inicialización
             )
-            query_embedding = np.array(response.data[0].embedding, dtype='float32').reshape(1, -1)  # Asegurar formato correcto
+            query_embedding = response.data[0].embedding  # Chroma espera una lista de floats
         except Exception as e:
             self.logger.error(f"Error generating query embedding: {e}")
             return [], 0, []
 
-        # Cargar el índice FAISS desde el archivo
-        index = faiss.read_index(self.faiss_path)
+        # Conectar a la colección de ChromaDB
+        chroma_client = chromadb.PersistentClient(path=self.chroma_path)
+        collection_name = "rag_chunks"
+        collection = chroma_client.get_or_create_collection(name=collection_name, metadata={"hnsw:space": "cosine"})
 
-        # Buscar los chunks más similares en el índice FAISS
-        k = min(10, index.ntotal)
-        distances, indices = index.search(query_embedding, k=k)  # Buscar los 10 más similares
+        # Buscar los chunks más similares en ChromaDB
+        try:
+            results = collection.query(
+                query_embeddings=[query_embedding],
+                n_results=10,
+                include=["documents", "distances", "ids"]
+            )
+        except Exception as e:
+            self.logger.error(f"Error querying ChromaDB: {e}")
+            return [], 0, []
 
-        # Convertir los resultados a listas
-        indices = indices.flatten().tolist()
-        distances = distances.flatten().tolist()
+        # Procesar resultados
+        documents = results.get("documents", [[]])[0]
+        distances = results.get("distances", [[]])[0]
+        ids = results.get("ids", [[]])[0]
 
-        # Usa la distancia para calcular un valor de similitud
-        first_scores = [abs(distance - 1) for distance in distances]
+        # Convertir distancias a scores (cuanto menor la distancia, mayor el score)
+        first_scores = [1 - d for d in distances]
 
-        # Recuperar los chunks correspondientes
         similar_chunks = []
         aux_score = []
         aux_indices = []
-        
-        for i, indx in enumerate(indices):
-            score = first_scores[i]
+
+        for i, (doc, score, id_str) in enumerate(zip(documents, first_scores, ids)):
+            # Extraer el índice original del id (asumiendo formato "chunk_{i}")
+            try:
+                indx = int(id_str.split("_")[-1])
+            except Exception:
+                indx = i  # fallback
             score = self.reranking(score, indx)
             if score >= self.min_score:
-                # Solo agregar si el score es mayor o igual a min_score
-                similar_chunks.append(self.chunks[indx])
+                similar_chunks.append(doc)
                 aux_score.append(score)
                 aux_indices.append(indx)
 
@@ -247,7 +260,7 @@ class RAG:
 
         if not zipped_chunks:
             return [], 0, []
-        
+
         # Ordenar la lista de mayor a menor con respecto al score
         zipped_chunks = sorted(zipped_chunks, key=lambda x: x[1], reverse=True)
 
@@ -257,8 +270,7 @@ class RAG:
             similar_chunks = similar_chunks[:3]
             aux_score = aux_score[:3]
             aux_indices = aux_indices[:3]
-        
-        
+
         weights = [1 / (i + 1) for i in range(len(aux_score))]  # Higher weight for earlier elements
         weighted_sum = sum(w * d for w, d in zip(weights, aux_score))
         score = weighted_sum / sum(weights)  # Normalize by the sum of weights
@@ -318,30 +330,36 @@ class RAG:
 
         return answer
     
-    def QNA_RAG(self, query,top_k=3):
+    def QNA_RAG(self, query, top_k=3):
         try:
             # Generar el embedding para la consulta
             response = self.client.embeddings.create(
                 input=query,
                 model=self.embedding_model
             )
-            query_embedding = np.array(response.data[0].embedding, dtype='float32').reshape(1, -1)
+            query_embedding = response.data[0].embedding  # Chroma espera una lista de floats
 
-            # Cargar el índice FAISS
-            index = faiss.read_index(self.faiss_path)
+            # Conectar a la colección de ChromaDB
+            chroma_client = chromadb.PersistentClient(path=self.chroma_path)
+            collection_name = "rag_chunks"
+            collection = chroma_client.get_or_create_collection(name=collection_name, metadata={"hnsw:space": "cosine"})
 
-            # Buscar los chunks más similares
-            distances, indices = index.search(query_embedding, k=top_k)
+            # Buscar los chunks más similares en ChromaDB
+            results = collection.query(
+                query_embeddings=[query_embedding],
+                n_results=top_k,
+                include=["documents", "distances", "ids"]
+            )
 
-            # Convertir los resultados a listas
-            indices = indices.flatten().tolist()
-            distances = distances.flatten().tolist()
+            documents = results.get("documents", [[]])[0]
+            distances = results.get("distances", [[]])[0]
+            ids = results.get("ids", [[]])[0]
 
             # Calcular las puntuaciones basadas en las distancias
             scores = [1 - distance for distance in distances]
 
             # Recuperar los chunks correspondientes
-            similar_chunks = [(self.chunks[i], scores[idx], i) for idx, i in enumerate(indices) if i < len(self.chunks)]
+            similar_chunks = [(documents[i], scores[i], int(ids[i].split("_")[-1])) for i in range(len(documents)) if i < len(documents)]
 
             # Ordenar por puntuación descendente
             similar_chunks = sorted(similar_chunks, key=lambda x: x[1], reverse=True)
@@ -350,7 +368,7 @@ class RAG:
 
         except Exception as e:
             self.logger.error(f"Error al buscar chunks similares: {e}")
-            return []
+            return ""
 
         system_message = {
             "role": "system",
@@ -421,8 +439,17 @@ class RAG:
 
     def embed_json(self):
         try:
-            # Generate embeddings for each chunk
-            embeddings = []
+            # Inicializa el cliente y la colección de ChromaDB
+            chroma_client = chromadb.PersistentClient(path=self.chroma_path)
+            collection_name = "rag_chunks"
+            # Borra la colección si existe para evitar duplicados
+            try:
+                chroma_client.delete_collection(name=collection_name)
+            except Exception:
+                pass
+            collection = chroma_client.get_or_create_collection(name=collection_name, metadata={"hnsw:space": "cosine"})
+
+            # Genera embeddings y añade a la colección
             for i, chunk in enumerate(tqdm(self.chunks, desc="Generating embeddings", unit="chunk")):
                 try:
                     normalized_chunk = self.normalize_chunk(chunk)
@@ -432,28 +459,20 @@ class RAG:
                     )
                     self.logger.info(f"created embedding for chunk {i}: {normalized_chunk}")
                     embedding = response.data[0].embedding
-                    embeddings.append(embedding)      
-                    
+                    # Añade el chunk y su embedding a la colección
+                    collection.add(
+                        documents=[normalized_chunk],
+                        embeddings=[embedding],
+                        ids=[f"chunk_{i}"]
+                    )
                 except Exception as e:
                     self.logger.error(f"Error generating embedding for chunk {i}: {e}")
-                continue           
+                    continue
 
-            self.logger.info(f"Generated: {len(embeddings)} embeddings")
-
-            # Convert embeddings to a NumPy array
-            embeddings_array = np.array(embeddings, dtype='float32')
-
-            # Initialize a FAISS index
-            dimension = embeddings_array.shape[1]
-            index = faiss.IndexFlatL2(dimension)
-            index.add(embeddings_array)
-
-            # Save the FAISS index to disk
-            faiss.write_index(index, self.faiss_path)
-            self.logger.info(f"FAISS index saved to {self.faiss_path}")
+            self.logger.info(f"Added {len(self.chunks)} chunks to ChromaDB collection '{collection_name}'.")
 
         except Exception as e:
-            self.logger.error(f"Error embedding JSON file: {e}")
+            self.logger.error(f"Error embedding JSON file with ChromaDB: {e}")
 
     def load_chunks(self):
         # Debug log to check the state of self.file
@@ -535,7 +554,7 @@ def main(cod):
     db = DBManager()
     db.openConnection()
 
-    rag_object = RAG()
+    rag_object = RAG(embedding_model=r"D:\WINDOWS\Escritorio\TFG\project\app\util\testing\models\linear_adapter_V3_E30_B32_L0.003.pth")
 
     results = []
     results_db = [cod]
@@ -568,3 +587,4 @@ def main(cod):
         output_file.write(rag_results.model_dump_json(indent=4))
 
     print(f"Results saved to {output_dir}")
+

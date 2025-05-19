@@ -73,9 +73,6 @@
             "Criterio_juicio_val": "Indica la ponderación o puntaje de los criterios evaluables mediante juicio de valor",
             "Evaluables_autom": "Indica la ponderación o puntaje de los criterios evaluables automáticamente / cualitativos o de calidad",
             "Criterio_ecónomico": "Indica la ponderación o puntaje de los criterios económicos",
-            "MemoriaConst_ProgramaTrb": "Qué dice el pliego sobre la memoria constructiva y programa de trabajo y cuál es su puntaje?",
-            "Programa_trabajos": "Qué dice el pliego sobre el programa de trabajos y cuál es su puntaje?",
-            "Analisis_proyecto": "Qué dice el pliego sobre el análisis del proyecto y cuál es su puntaje?",
             "Obligaciones_ambientales": "Cuáles son las medidas para garantizar el cumplimiento de obligaciones ambientales?",
             "Regimen_penalidades": "Indica si existen penalidades por incumplimientos"
         },         

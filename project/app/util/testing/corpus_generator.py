@@ -53,11 +53,6 @@ def generate_jsonCorpus(input_path, corpus_path, key):
     except Exception as e:
         print(f"Error generando corpus: {e}")
 
-def process_ans(answer):
-        start = answer.index('{')  # Encuentra la posición del primer '{'
-        end = answer.rindex('}')  # Encuentra la posición del último '}'
-        return answer[start:end + 1]
-
 def generate_questions_from_chunks(corpus_path, output_path, ollama_url="https://api.poligpt.upv.es", model="llama3.3:70b", questions=10):
     try:
         # Leer el archivo JSON de entrada
@@ -155,7 +150,7 @@ def split_questions_train_val(questions_path, output_path, val_ratio=0.2, train_
         train_data[doc_code] = []
         val_data[doc_code] = []
         for item in tqdm(questions_list, desc=f"Chunks de {doc_code}", unit="chunk", leave=False):
-            # item: {"index": ..., "chunk": ..., "questions": {...}}
+            # item: {"chunk": ..., "questions": {...}}
             questions_dict = item.get("questions", {})
             questions_keys = list(questions_dict.keys())
             random.shuffle(questions_keys)
@@ -166,13 +161,11 @@ def split_questions_train_val(questions_path, output_path, val_ratio=0.2, train_
             # Añadir a los datos de entrenamiento y validación solo si hay preguntas
             if train_questions:
                 train_data[doc_code].append({
-                    "index": item.get("index"),
                     "chunk": item.get("chunk"),
                     "questions": train_questions
                 })
             if val_questions:
                 val_data[doc_code].append({
-                    "index": item.get("index"),
                     "chunk": item.get("chunk"),
                     "questions": val_questions
                 })
@@ -183,6 +176,62 @@ def split_questions_train_val(questions_path, output_path, val_ratio=0.2, train_
         json.dump(val_data, f, indent=4, ensure_ascii=False)
 
     print(f"Archivos generados:\nEntrenamiento: {os.path.join(output_path, 'training.json')}\nValidación: {os.path.join(output_path, 'validation.json')}")
+
+
+def split_questions_train_val(questions_path, output_dir, doc_code, val_ratio=0.2, train_ratio=0.8, seed=42):
+    """
+    Exporta las preguntas de un documento en formato plano y las divide en entrenamiento y validación.
+    Cada entrada tendrá: {"chunk", "question"}
+    """
+    if abs((val_ratio + train_ratio) - 1.0) > 1e-6:
+        raise ValueError("La suma de val_ratio y train_ratio debe ser 1.0")
+
+    with open(questions_path, 'r', encoding='utf-8') as f:
+        data = json.load(f)
+
+    if doc_code not in data:
+        print(f"Documento {doc_code} no encontrado en el archivo.")
+        return
+
+    flat_list = []
+    for item in data[doc_code]:
+        chunk = item.get("chunk")
+        questions = item.get("questions", {})
+        for q in questions.values():
+            flat_list.append({
+                "chunk": chunk,
+                "question": q
+            })
+
+    # Mezclar y dividir en train/val
+    random.seed(seed)
+    random.shuffle(flat_list)
+    total = len(flat_list)
+    train_count = int(total * train_ratio)
+    train_list = flat_list[:train_count]
+    val_list = flat_list[train_count:]
+
+    # Guardar archivos
+    train_path = os.path.join(output_dir, f"{doc_code.replace('/', '_')}_train.json")
+    val_path = os.path.join(output_dir, f"{doc_code.replace('/', '_')}_val.json")
+    with open(train_path, 'w', encoding='utf-8') as f:
+        json.dump(train_list, f, indent=4, ensure_ascii=False)
+    with open(val_path, 'w', encoding='utf-8') as f:
+        json.dump(val_list, f, indent=4, ensure_ascii=False)
+    print(f"Archivos exportados:\nEntrenamiento: {train_path}\nValidación: {val_path}")
+
+def merge_json_files(input_files, output_file):
+    """
+    Une varios archivos JSON (listas de diccionarios) en un solo archivo.
+    """
+    merged = []
+    for file_path in input_files:
+        with open(file_path, 'r', encoding='utf-8') as f:
+            data = json.load(f)
+            merged.extend(data)
+    with open(output_file, 'w', encoding='utf-8') as f:
+        json.dump(merged, f, indent=4, ensure_ascii=False)
+    print(f"Archivo combinado guardado en: {output_file}")
 
 if __name__ == "__main__":
     # Ruta al archivo de salida
@@ -209,4 +258,14 @@ if __name__ == "__main__":
 
     generate_questions_from_chunks(corpus_path, questions_path)  # Generar preguntas
     """
-    split_questions_train_val(questions_path, base_dir + "/json_files")
+    train_files = [
+        r"D:\WINDOWS\Escritorio\TFG\project\app\util\testing\json_files\CMAYOR_2022_03Y03_8 _val.json",
+        r"D:\WINDOWS\Escritorio\TFG\project\app\util\testing\json_files\CMAYOR_2022_03Y03_101_val.json",
+        r"D:\WINDOWS\Escritorio\TFG\project\app\util\testing\json_files\CMAYOR_2022_07Y10_44_val.json",
+        r"D:\WINDOWS\Escritorio\TFG\project\app\util\testing\json_files\CMAYOR_2023_03Y05_19_val.json",
+        r"D:\WINDOWS\Escritorio\TFG\project\app\util\testing\json_files\CMAYOR_2023_07Y10_1_val.json"
+    ]
+
+    merge_json_files(train_files, corpus_path)
+
+    split_questions_train_val(questions_path, base_dir + "/json_files", "CMAYOR/2023/07Y10/1")

@@ -4,10 +4,9 @@
             "prompt_key": "Regulacion_armonizada",
             "prompt": "Indica si tiene regulación armonizada",
             "response": "No",
-            "score": 0.8353006919225057,
+            "score": 0.8833333333333333,
             "index": [
-                62,
-                61
+                78
             ]
         },
         {
@@ -20,45 +19,37 @@
         {
             "prompt_key": "Plazo_ejecución",
             "prompt": "Obten el plazo de ejecución del contrato",
-            "response": "12 meses",
-            "score": 0.8362959772348404,
+            "response": "",
+            "score": 0.725,
             "index": [
-                162,
-                163,
-                174
+                117
             ]
         },
         {
             "prompt_key": "Presupuesto_sinIVA",
             "prompt": "Ubica el presupuesto sin IVA del documento",
-            "response": "435.695,83 €",
-            "score": 0.723675400018692,
+            "response": "873.649,86 €",
+            "score": 0.8166666666666665,
             "index": [
-                24,
-                25,
-                23
+                62
             ]
         },
         {
             "prompt_key": "Presupuesto_conIVA",
             "prompt": "Ubica el presupuesto con IVA del documento (presupuesto base)",
-            "response": "527.191,95 €",
-            "score": 0.8293291131655375,
+            "response": "1.057.116,33 €",
+            "score": 0.8625,
             "index": [
-                24,
-                25,
-                26
+                62
             ]
         },
         {
             "prompt_key": "Importe_IVA",
             "prompt": "Ubica el importe del IVA del documento (iva aplicable)",
-            "response": "22.561,98 €",
-            "score": 0.7685392856597901,
+            "response": "183.466,47 €",
+            "score": 0.8625,
             "index": [
-                32,
-                37,
-                33
+                62
             ]
         },
         {
@@ -71,266 +62,217 @@
         {
             "prompt_key": "Valor_estimado",
             "prompt": "Ubica el valor estimado del contrato, responde únicamente con el valor en euros",
-            "response": "435.695,83 €",
-            "score": 0.8800697267055512,
+            "response": "500.000 €",
+            "score": 0.8625,
             "index": [
-                36,
-                52,
-                30
+                93
             ]
         },
         {
             "prompt_key": "Revision_precios",
             "prompt": "Indica si existe la revisión de precios",
-            "response": "No, debido a que el plazo de ejecución de la obra es inferior a dos años.",
-            "score": 0.7336572329203287,
+            "response": "No",
+            "score": 0.8166666666666665,
             "index": [
-                46,
-                43,
-                37
+                79
             ]
         },
         {
             "prompt_key": "Garantia_definitiva",
             "prompt": "Cuenta con garantía definitiva? cuál es su valor en tal caso?",
-            "response": "Si, el valor de la garantía definitiva es del 5% del precio final ofertado, IVA excluido.",
-            "score": 0.725,
+            "response": "Si, el valor de la garantía definitiva es del 5% del precio de adjudicación final ofertado excluido el IVA.",
+            "score": 0.8166666666666665,
             "index": [
-                159
+                169
             ]
         },
         {
             "prompt_key": "Garantia_provisional",
             "prompt": "Cuenta con garantía definitiva? cuál es su valor en tal caso?",
-            "response": "No, según el apartado J del documento, no se exige garantía provisional conforme al artículo 106.1 de la LCSP.",
-            "score": 0.6727719813585281,
+            "response": "No",
+            "score": 0.8166666666666665,
             "index": [
-                46
+                90
             ]
         },
         {
             "prompt_key": "Admisibilidad_variantes",
             "prompt": "Indica si el contrato admite variantes o alternativas",
-            "response": "No, según el APARTADO I ALTERNATIVAS O VARIANTES del documento, se indica que no se admiten alternativas o variantes.",
+            "response": "",
             "score": 0.725,
             "index": [
-                46
+                12
             ]
         },
         {
             "prompt_key": "Clasificacion",
             "prompt": "La clasificación se aplica por debajo de 500.000 €?",
-            "response": "No",
-            "score": 0.777780787150065,
+            "response": "Si",
+            "score": 0.8166666666666665,
             "index": [
-                58,
-                57
+                93
             ]
         },
         {
             "prompt_key": "Grupo",
             "prompt": "Según la clasificación, indica el grupo al que pertenece el contrato",
             "response": "",
-            "score": 0.0,
-            "index": []
+            "score": 0.725,
+            "index": [
+                85
+            ]
         },
         {
             "prompt_key": "Subgrupo",
             "prompt": "Según la clasificación, indica el subgrupo al que pertenece el contrato",
             "response": "",
-            "score": 0.0,
-            "index": []
+            "score": 0.725,
+            "index": [
+                85
+            ]
         },
         {
             "prompt_key": "Categoria",
             "prompt": "Según la clasificación, indica la categoría a la que pertenece el contrato",
-            "response": "",
-            "score": 0.0,
-            "index": []
+            "response": "Categoría El marco del Programa de Desarrollo Rural de la Comunitat Valenciana 2014-2020",
+            "score": 0.725,
+            "index": [
+                85
+            ]
         },
         {
             "prompt_key": "Criterio_Solvencia_economica",
             "prompt": "Indica si existen criterios para calcular/acreditar la solvencia económica y financiera",
-            "response": "Si",
-            "score": 0.8266860753297806,
+            "response": "No",
+            "score": 0.8625,
             "index": [
-                63,
-                48,
-                114
+                93
             ]
         },
         {
             "prompt_key": "Criterio_Solvencia_tecnica",
             "prompt": "Indica si existen criterios para calcular/acreditar la solvencia técnica o profesional",
-            "response": "Si",
-            "score": 0.6933232545852661,
+            "response": "No",
+            "score": 0.8166666666666665,
             "index": [
-                96,
-                98,
-                99
+                93
             ]
         },
         {
             "prompt_key": "Condiciones_especiales",
             "prompt": "Indica si existen condiciones especiales de ejecución y cuales son en caso de haberlas",
-            "response": "Si, las condiciones especiales de ejecución para el proyecto incluyen que la empresa adjudicataria deberá desarrollar del proyecto de construcción aprobado, hacerse cargo de todo tipo de permisos, licencias, autorizaciones necesarias para la ejecución de las obras y redactar los documentos técnicos necesarios. Además, se ha calculado un coeficiente de actualización (CA=1,15) debido a la pandemia COVID-19 para ajustar el presupuesto del proyecto a las condiciones económicas actuales del mercado. Estas condiciones pueden influir en el desarrollo del proyecto al requerir una planificación y ejecución más detallada y flexible para adaptarse a los cambios en el entorno económico y regulatorio.",
-            "score": 0.7549166649580001,
+            "response": "Si, las condiciones especiales de ejecución consisten en que la empresa adjudicataria y cualquier subcontratista deben cumplir con las obligaciones medioambientales, sociales o laborales durante la ejecución del contrato, sometiéndose a inspecciones y comprobaciones por parte de la Conselleria d´Agricultura, Desenvolupament Rural, Emergència Climàtica i Transició Ecològica.",
+            "score": 0.8625,
             "index": [
-                177,
-                28,
-                27
+                191
             ]
         },
         {
             "prompt_key": "Penalidad_incumplimiento",
             "prompt": "Indica si existe penalidad por incumplimiento al contratista",
-            "response": "Si, existen varias penalidades por incumplimiento del contratista, como un 5% mensual del precio del subcontrato (IVA excluido) en caso de impago a subcontratistas o suministradores, y también se mencionan penalidades específicas por incumplimientos en materia medioambiental, social y laboral, así como por cumplimiento defectuoso o retrasos en la ejecución del contrato.",
-            "score": 0.8035145223140715,
-            "index": [
-                172,
-                169,
-                171
-            ]
-        },
-        {
-            "prompt_key": "Forma_pago",
-            "prompt": "Indica la forma o régimen de pago",
-            "response": "Mensual, en función de las certificaciones expedidas por la Dirección Facultativa de las obras.",
-            "score": 0.725,
+            "response": "Si, existen penalidades por incumplimiento parcial de la ejecución del contrato, que consisten en una penalización del 10% del precio, IVA excluido, de la parte del contrato afectada por el incumplimiento.",
+            "score": 0.8166666666666665,
             "index": [
                 175
             ]
         },
         {
+            "prompt_key": "Forma_pago",
+            "prompt": "Indica la forma o régimen de pago",
+            "response": "Certificaciones mensuales",
+            "score": 0.725,
+            "index": [
+                187
+            ]
+        },
+        {
             "prompt_key": "Causas_modificacion",
             "prompt": "Indica si existen causas de modificacion del contrato",
-            "response": "Si, el órgano de contratación puede imponer la introducción de modificaciones o el cumplimiento de determinadas prescripciones en el programa de trabajo presentado por el contratista.",
-            "score": 0.7909917632738749,
+            "response": "No, según el texto \"al no preverse modificaciones, ni prórrogas\".",
+            "score": 0.8625,
             "index": [
-                163
+                79
             ]
         },
         {
             "prompt_key": "Plazo_garantia",
             "prompt": "Indica si el contrato cuenta con plazo de garantía",
-            "response": "Si, el plazo de garantía de las obras será de UN (1) año, a contar desde la fecha de su recepción.",
-            "score": 0.7778530399004618,
+            "response": "No",
+            "score": 0.8166666666666665,
             "index": [
-                162,
-                127,
-                128
+                169
             ]
         },
         {
             "prompt_key": "Contratacion_precio_unit",
             "prompt": "Indica si cuenta con contratación a precio unitario",
-            "response": "No, según el texto se indica que la CONTRATACIÓN DE OBRAS A PRECIOS UNITARIOS está marcada como \"□ No\".",
-            "score": 0.6659316718578339,
+            "response": "Si, los precios están reflejados a los distintos componentes de la prestación según los precios proyectos aprobados.",
+            "score": 0.8166666666666665,
             "index": [
-                30
+                79
             ]
         },
         {
             "prompt_key": "Tanto_alzado",
             "prompt": "Indica si el contrato cuenta con tanto alzado",
-            "response": "No, según el texto se indica que la CONTRATACIÓN DE OBRAS A TANTO ALZADO está marcada como \"□ Sí\" pero luego se menciona \"CONTRATACIÓN DE OBRAS A TANTO ALZADO CON PRECIO CERRADO: □ No\", lo que sugiere que el contrato no cuenta con un precio cerrado, pero sí se indica que es a tanto alzado en general. Sin embargo, considerando la estructura de la pregunta y las opciones dadas, la respuesta más adecuada sería \"Si\" debido a que efectivamente se menciona que el contrato es a tanto alzado, aunque con una especificación adicional sobre el precio cerrado. Respuesta corregida: Si, según el texto el contrato es de obras a tanto alzado.",
-            "score": 0.6484799444675445,
+            "response": "No, según el texto \"CONTRATACIÓN DE OBRAS A TANTO ALZADO:  NO\" y también se menciona que es por precios unitarios.",
+            "score": 0.8166666666666665,
             "index": [
-                30
+                79
             ]
         },
         {
             "prompt_key": "Tanto_alzado_con",
             "prompt": "Indica si el contrato cuenta con tanto alzado con precio cerrado",
-            "response": "No, según el texto proporcionado, en la sección \"CONTRATACIÓN DE OBRAS A TANTO ALZADO CON PRECIO CERRADO\" aparece un □ No, lo que indica que el contrato no cuenta con este tipo de contratación.",
-            "score": 0.7944407284259795,
+            "response": "No, según el texto \"CONTRATACIÓN DE OBRAS A TANTO ALZADO CON PRECIO CERRADO:  NO\" indica que el contrato no cuenta con tanto alzado con precio cerrado.",
+            "score": 0.8625,
             "index": [
-                36,
-                30
+                79
             ]
         },
         {
             "prompt_key": "Criterio_juicio_val",
             "prompt": "Indica la ponderación o puntaje de los criterios evaluables mediante juicio de valor",
-            "response": "30",
-            "score": 0.7432032704353333,
+            "response": "15",
+            "score": 0.8166666666666665,
             "index": [
-                96,
-                65,
-                66
+                108
             ]
         },
         {
             "prompt_key": "Evaluables_autom",
             "prompt": "Indica la ponderación o puntaje de los criterios evaluables automáticamente / cualitativos o de calidad",
-            "response": "20",
-            "score": 0.6460016051928202,
+            "response": "30 %",
+            "score": 0.8166666666666665,
             "index": [
-                97,
-                96
+                108
             ]
         },
         {
             "prompt_key": "Criterio_ecónomico",
             "prompt": "Indica la ponderación o puntaje de los criterios económicos",
-            "response": "",
-            "score": 0.7837762117385864,
+            "response": "70",
+            "score": 0.725,
             "index": [
-                77,
-                75,
-                71
-            ]
-        },
-        {
-            "prompt_key": "MemoriaConst_ProgramaTrb",
-            "prompt": "Qué dice el pliego sobre la memoria constructiva y programa de trabajo y cuál es su puntaje?",
-            "response": "La memoria deberá abordar los siguientes aspectos en cuanto al procedimiento constructivo, como la concepción completa de la obra, descripción de la metodología de trabajo y planificación de la obra por fases. Además, se valorará la programación de la obra con un enfoque en la organización y secuencia lógica de las actividades. 12.5",
-            "score": 0.7415904551744461,
-            "index": [
-                72,
-                67,
-                68
-            ]
-        },
-        {
-            "prompt_key": "Programa_trabajos",
-            "prompt": "Qué dice el pliego sobre el programa de trabajos y cuál es su puntaje?",
-            "response": "El pliego establece que el Programa de Trabajo debe contener una planificación de la ejecución de la obra en tiempo y en costes, incluyendo relación de actividades, análisis de condicionantes externos y climatológicos, red de precedencias múltiples entre actividades, duración estimada de cada actividad, comienzo y finalización más pronta y más tardía, holgura total de cada actividad y cualquier otro tipo de holgura justificada. El puntaje para este apartado se realizará según los criterios recogidos constructivo propuesto y los medios de ejecución, en un enfoque realista del plazo de ejecución. 4 ≤ P ≤ 5 si el Programa de Trabajo es muy detallado y coherente, 2 ≤ P < 4 si es coherente pero con algunas deficiencias o incoherencias, y 0 ≤ P < 2 si contiene incoherencias o está insuficientemente descrito. [El programa de trabajo debe ser coherente y detallado] [0 ≤ P ≤ 5]",
-            "score": 0.7700491110483805,
-            "index": [
-                164,
-                92,
-                163
-            ]
-        },
-        {
-            "prompt_key": "Analisis_proyecto",
-            "prompt": "Qué dice el pliego sobre el análisis del proyecto y cuál es su puntaje?",
-            "response": "La concepción global de la obra demuestra un conocimiento claro del objeto de la actuación, se exponen de forma muy completa y detallada la metodología de trabajo, planificación y organización propuestas, identificando condicionantes y problemática asociados a cada fase del proyecto. 5 puntos",
-            "score": 0.6613926649093628,
-            "index": [
-                78,
-                74
+                108
             ]
         },
         {
             "prompt_key": "Obligaciones_ambientales",
             "prompt": "Cuáles son las medidas para garantizar el cumplimiento de obligaciones ambientales?",
-            "response": "Si, se deben aplicar los procedimientos del certificado ISO 14001 o equivalente.",
-            "score": 0.6859384059906006,
+            "response": "Si, se establecen medidas como someterse a inspecciones y comprobaciones por parte de la Conselleria d´Agricultura, Desenvolupament Rural, Emergència Climàtica i Transició Ecològica.",
+            "score": 0.725,
             "index": [
-                178
+                191
             ]
         },
         {
             "prompt_key": "Regimen_penalidades",
             "prompt": "Indica si existen penalidades por incumplimientos",
-            "response": "- Penalidades de la cláusula 36.3: 5% del precio del contrato para cada incumplimiento (IVA excluido) - Penalidades por incumplimiento parcial de la ejecución en la cláusula 36.1: 5% del precio del contrato para cada incumplimiento (IVA excluido) - Penalidades por incumplimiento del plazo total por el contratista: Diariamente 0,60 € por cada 1.000 € del precio del contrato (IVA excluido) - Penalidades por incumplimiento de plazos parciales por el contratista: Diariamente 0,60 € por cada 1.000 € del precio del contrato (IVA excluido) - Penalidades en caso de incumplimiento de las condiciones de la oferta: Imposición al contratista de una penalidad de un 5% mensual del precio del subcontrato (IVA excluido) - Penalidades de la cláusula 40.1 por incumplimiento de las obligaciones en materia medioambiental, social y laboral: 5% del precio del contrato para cada incumplimiento (IVA excluido)",
-            "score": 0.7211819052696229,
+            "response": "- Sí, existen penalidades por incumplimiento parcial de la ejecución del contrato. - El porcentaje de penalización es del 10% del precio, IVA excluido, de la parte del contrato afectada por el incumplimiento. - Estas penalidades son acumulativas si el contratista no corrige el incumplimiento en el plazo de 1 mes después de ser requerido.",
+            "score": 0.8166666666666665,
             "index": [
-                169,
-                172,
-                168
+                175
             ]
         }
     ]
