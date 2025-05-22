@@ -2,11 +2,15 @@
 \usepackage{graphicx}
 \graphicspath{{images/}}
 \usepackage{changepage}
- \usepackage{float}
- 
+\usepackage{float}
+\usepackage{caption} % en el preámbulo
+\usepackage{textcomp}
+\usepackage{amssymb}
+
 % Language setting
 % Replace `english' with e.g. `spanish' to change the document language
 \usepackage[spanish]{babel}
+\selectlanguage{spanish}
 
 % Set page size and margins
 % Replace `letterpaper' with `a4paper' for UK/EU standard size
@@ -88,7 +92,7 @@ Eros sociis dictumst auctor habitasse libero molestie nascetur laoreet sodales, 
 
 {\bfseries Palabras clave \par}
 \vspace{0.25cm}
-LLM • RAG • NLP • SQL • Base vectorial • Query • Prompt • Scrapper • GPQA
+LLM • RAG • NLP • SQL • Base vectorial • Query • Prompt • Scrapper • GPQA • Búsqueda semántica
 \newpage
 
 \addtocontents{toc}{\protect\enlargethispage{\baselineskip}}
@@ -124,7 +128,7 @@ En la actualidad (año 2025), los LLM han alcanzado niveles de sofisticación si
 
 \subsection{LLMs}
 \textbf{Para empezar, ¿exactamente qué es un LLM?} \\
-Un LLM (por sus siglas en inglés, Large Language Model) es un modelo de aprendizaje profundo basado en redes neuronales que ha sido entrenado con enormes cantidades de texto. Gracias a este entrenamiento, es capaz de identificar patrones, relaciones entre palabras y generar respuestas basadas en probabilidades. Sin embargo, es importante destacar que un LLM no "entiende" el contenido que genera en el sentido humano, sino que produce respuestas basadas en la información con la que ha sido entrenado; en base a esta información, crea matrices con miles de millones de parámetros que contienen la probabilidad de que una palabra esté seguida por otra. \\
+Un LLM (por sus siglas en inglés, Large Language Model) es un modelo de aprendizaje profundo basado en redes neuronales que ha sido entrenado con enormes cantidades de texto. Gracias a este entrenamiento, es capaz de identificar patrones, relaciones entre palabras y generar respuestas basadas en probabilidades. Sin embargo, es importante destacar que un LLM no <<entiende>> el contenido que genera en el sentido humano, sino que produce respuestas basadas en la información con la que ha sido entrenado; en base a esta información, crea matrices con miles de millones de parámetros que contienen la probabilidad de que una palabra esté seguida por otra. \\
 
 \begin{center}
 \includegraphics[width=12cm]{llm_probability}
@@ -145,93 +149,419 @@ Un LLM (por sus siglas en inglés, Large Language Model) es un modelo de aprendi
 Como se puede ver en la figura 1, al momento de redactar este documento, los LLMs que lideran el mercado son: \textbf{ChatGPT-o3}, \textbf{Claude 3.7 Sonnet} y \textbf{Grok-3}; cada uno con un puntaje GPQA del \textbf{87.7\%}, \textbf{84.8\%} y \textbf{84.6\%} respectivamente. Este porcentaje corresponde al resultado de una serie de pruebas realizadas por Google para evaluar la fiabilidad de cada modelo en la resolución de problemas y consultas en áreas como física, química, programación, entre otras.
 Sin embargo -y aunque pueda parecer contraproducente- el LLM elegido para sobrellevar el procesamiento computacional de este proyecto fue \textbf{Llama 3.3 70B Instruct}, por razones que se discutirán en la sección \ref{LLM}.
 
+\newpage
 
 \subsection{Herramientas similares} 
-  \subsubsection{Infoconcurso.com:} Infoconcurso es un buscador de concursos, licitaciones y adjudicaciones públicas en España. Ofrece un servicio diario de alertas personalizado para empresas, facilitando el acceso a información actualizada sobre contratos del sector público. Permite búsquedas específicas y configuración según criterios de interés.
-  \cite{infoconcurso}
-  
-  \subsubsection{Licitaciones.es:} Este servicio está centrado en ayudar a las empresas a aumentar sus ventas mediante el acceso a licitaciones públicas activas e históricas. Ofrece alertas personalizadas, panel de control, flujos de trabajo y consultoría especializada para optimizar la participación en concursos. Incluye informes, análisis de competencia y mercado, así como la posibilidad de anticiparse a licitaciones futuras. Todo está orientado a facilitar la toma de decisiones, ahorrar tiempo y mejorar la posición. 
-  \cite{licitaciones}
-  
-  \subsubsection{Gobierto.es:} Gobierto ofrece dos productos principales: Gobierto Transparencia  y Gobierto Contratación, para gestionar la contratación pública. Esta herramienta permite buscar y analizar licitaciones y adjudicaciones públicas con múltiples funcionalidades orientadas a empresas y profesionales: búsqueda avanzada, consulta de pliegos, gestión de proveedores, alertas personalizadas, seguimiento de competencia, monitorización de adjudicaciones, análisis de competencia, informes analíticos, exportación de datos y API.
-  \cite{Gobierto}
+  \subsubsection{DoubleTrade}
+  DoubleTrade es una plataforma especializada en la monitorización y gestión de oportunidades de negocio en los sectores de la licitación pública y la construcción, tanto en España como en Francia. Esta compañía ofrece soluciones para empresas que buscan optimizar su participación en concursos públicos, privados y proyectos de obra.
 
-  \subsubsection{Tenders4U:} Plataforma británica especializada en la búsqueda y notificación de licitaciones públicas y privadas, enfocada en el Reino Unido y la Unión Europea. Su principal función es enviar alertas diarias personalizadas a empresas sobre oportunidades de contratación que se ajusten a su perfil, ayudándolas a identificar rápidamente los concursos que más les interesan.
+\begin{enumerate}
+    \item \textbf{Monitorización de licitaciones y adjudicaciones}
+    \newline
+        Permite acceso a información detallada y actualizada sobre licitaciones, adjudicaciones, pliegos, acuerdos marco y vencimientos, tanto en España como en Francia, con alertas personalizadas por sector, importe, ubicación, CPV, palabra clave, entre otros.
+    
+    \item \textbf{Plataforma de gestión de licitaciones}
+        \newline
+        Cuenta con herramientras capaces de organizar y asignar licitaciones a equipos internos, archivar y dar seguimiento a oportunidades en un entorno colaborativo, e integrar con CRM o recibir datos vía SFTP (protocolo de transferéncia de archivos).
 
-La plataforma ofrece herramientas de búsqueda avanzada por ubicación, categoría y palabras clave, además de un sistema intuitivo para guardar, seguir y compartir licitaciones. También está optimizada para dispositivos móviles, permitiendo acceder a la información desde cualquier lugar. Tenders4U incluye soporte al cliente ilimitado y una gestión sencilla de las oportunidades detectadas.
+    \item \textbf{Análisis con inteligencia artificial}
+    \newline
+        Tiene la capacidad de realizar el procesamiento y análisis de pliegos en segundos, destacando criterios clave, además de enviar alertas de vencimientos y nuevas convocatorias.
+
+    \item \textbf{Herramientas de Business Intelligence (BI)}
+    \newline
+        Realiza estudios estratégicos sobre mercado, tendencias y competencia.
+        además de opciones de visualización de datos como: volumen de negocio, materiales prescritos, distribución geográfica.
+
+    \item \textbf{Bases de datos especializadas}
+    \newline
+        Cuenta con información sobre empresas del sector de construcción y licitaciones públicas, datos financieros, legales y de contacto de adjudicatarios.
+
+    \item \textbf{Cobertura sectorial amplia}
+    \newline
+        Cubre los siguientes sectores: construcción, sanidad, TIC, facility management, entre otros. Además, cuenta con información tanto de proyectos públicos como privados.
+
+\end{enumerate}
+
+  \subsubsection{Licitaciones.es:} 
+  Licitaciones.es es una plataforma especializada en la identificación y gestión de oportunidades de negocio en el ámbito de la contratación pública. Ofrece servicios que permiten a las empresas acceder a información detallada sobre licitaciones públicas, facilitando su participación en concursos y mejorando su competitividad en el mercado.
+
+  \begin{enumerate}
+    \item \textbf{Servicio de Alertas de Licitaciones}
+    \newline
+        Recibe información sobre nuevas oportunidades de negocio, cuenta con la opcion de personalizar perfiles de búsqueda según sector, ubicación y otros criterios, puede visualizar y organizar licitaciones relevantes en un panel de control y recibir notificaciones directas por correo electrónico o teléfono móvil.
+
+    \item \textbf{Informes Personalizados}
+    \newline
+        Puede elaborar informes de licitación personalizados por expertos, proporcionar informes continuos como herramienta de control y seguimiento, y ofrecer acceso a datos históricos para análisis detallado.
+
+    \item \textbf{Análisis de Competencia y Mercado}
+    \newline
+        Tiene la capacidad de estudiar patrones de compra de entidades adjudicadoras, analizar la competencia y sus ofertas presentadas, e identificar clientes potenciales y tendencias de mercado.
+        
+    \item \textbf{Licitaciones Futuras}
+    \newline
+        Cuenta con detección anticipada de oportunidades de negocio mediante análisis de datos históricos, preparando a la empresa con antelación para futuras licitaciones.
+
+    \item \textbf{Servicios de Consultoría y Asesoramiento}
+    \newline
+        Ofrece asesoramiento personalizado para optimizar la participación en licitaciones, brinda soporte en la elaboración y presentación de ofertas competitivas, y desarrolla estrategias para mejorar la tasa de éxito en concursos públicos.
+        
+    \end{enumerate}
+    \cite{licitaciones}
+  
+  \subsubsection{Telecit@:} 
+  Telicit@ es una solución tecnológica desarrollada por Tesera de Hospitalidad que facilita a las organizaciones la gestión integral de licitaciones públicas. Permite mantener un repositorio único de información accesible para toda la organización, optimizando el proceso de contratación pública. 
+  Sus características principales son: 
+\begin{enumerate}
+    \item \textbf{Parametrización dinámica del contenido de la documentación del expediente}  
+    \newline
+    Ofrece un sistema flexible para predefinir la configuración del sistema documental y permite adaptar la documentación a las necesidades específicas de cada expediente.
+    
+    \item \textbf{Sistema de mensajería para envío de notificaciones}  
+    \newline
+    Gestiona envíos de información internos y envía notificaciones automáticas sobre cambios en las licitaciones.
+    
+    \item \textbf{Gestión y seguimiento de expedientes, ofertas, contratos y acuerdos marco}  
+    \newline
+    Realiza un seguimiento detallado de ofertas, contratos y acuerdos marco, y gestiona cambios de precios, discontinuidad de productos, prórrogas y vencimientos.
+    
+    \item \textbf{Herramientas para comparar resultados con la competencia}  
+    \newline
+    Captura resultados de adjudicaciones, precios y puntuaciones de criterios, y apoya la toma de decisiones estratégicas mediante análisis comparativos.
+    
+    \item \textbf{Accesibilidad y disponibilidad}  
+    \newline
+    Permite el acceso desde cualquier lugar y en cualquier momento, sin requerir instalaciones locales, sólo un ordenador con acceso a Internet.
+    
+    \item \textbf{Soporte y seguridad}  
+    \newline
+    Ofrece respaldo de Tesera de Hospitalidad, empresa líder en gestión de procesos de contratación pública, garantiza la seguridad y confidencialidad de los datos con copias de seguridad periódicas, y proporciona servicio de soporte telefónico y actualizaciones ante cambios legislativos.
+\end{enumerate}
+
+  \subsubsection{Tendios:} 
+  Tendios es una plataforma digital especializada en contratación pública que facilita el proceso de licitación a empresas, entidades públicas y profesionales. Utiliza inteligencia artificial para ayudar a encontrar, analizar, gestionar y ganar licitaciones públicas, ofreciendo una interfaz intuitiva y funcionalidades avanzadas.
+  Sus principales caracteristicas son:
+
+\begin{enumerate}
+\item \textbf{Búsqueda y filtrado de licitaciones}  
+\newline
+Permite el acceso a licitaciones y adjudicaciones de múltiples fuentes oficiales en tiempo real, esto con la ayuda de filtros avanzados por palabras clave, códigos CPV, ubicación y otros criterios, además de búsqueda semántica e inteligencia artificial.
+
+\item \textbf{Alertas personalizadas}  
+\newline
+Ofrece notificaciones configurables según las necesidades del usuario y permite la recepción de alertas por correo electrónico sobre licitaciones relevantes.
+
+\item \textbf{Análisis de mercado y analítica predictiva}  
+\newline
+Proporciona dashboards con datos de expedientes de contratación por sector, empresa, cliente o región, y predice ofertantes y precios en nuevas licitaciones.
+
+\item \textbf{Gestión de tareas y oportunidades}  
+\newline
+Facilita la coordinación de equipos en la preparación de ofertas y permite el control de fechas y el seguimiento de licitaciones asignadas.
+
+\item \textbf{Generación de documentos}  
+\newline
+Permite la creación de borradores de pliegos técnicos y administrativos a partir de plantillas, y el entrenamiento sobre parámetros de contratación pública e históricos de adjudicaciones.
+
+\item \textbf{Integración con otros sistemas}  
+\newline
+Ofrece una API para la transmisión de datos a CRMs como Salesforce o Hubspot, e integración con herramientas de análisis como PowerBI.
+
+\item \textbf{Interfaz de usuario intuitiva}  
+\newline
+Presenta un diseño sencillo y fácil de usar, accesible para usuarios con distintos niveles técnicos, con navegación clara y funcionalidades bien organizadas.
+
+\item \textbf{Soporte y recursos educativos}  
+\newline
+Proporciona un servicio al cliente dedicado para resolver problemas y responder consultas, además de recursos educativos como blogs y guías para mejorar el conocimiento sobre procesos de licitación.
+\end{enumerate}
+
+  \subsubsection{Oclem:} 
+  Oclem es una empresa consultora en la gestión de licitaciones públicas en España. Ofrece una plataforma avanzada que centraliza y filtra licitaciones según las preferencias de cada empresa, además de proporcionar servicios de consultoría integral para optimizar la participación en concursos públicos. Sus principales características son: 
+
+\begin{enumerate}
+    \item \textbf{Plataforma de licitaciones}
+    \newline
+    Centraliza todas las ofertas publicadas por las Administraciones Públicas, permite el filtrado personalizado por ubicación, sector o tipo de servicio, realiza un seguimiento exhaustivo de licitaciones en las que se participa, proporciona actualizaciones en tiempo real sobre nuevas licitaciones y cambios en convocatorias, y cuenta con una interfaz intuitiva para facilitar la navegación y gestión.
+
+    \item \textbf{Consultoría especializada}  
+    \newline
+    Ofrece asesoramiento personalizado por consultores especializados, analiza la viabilidad de expedientes según características empresariales, prepara documentación técnica y económica para ofertas, y gestiona la presentación y seguimiento de ofertas.
+    
+    \item \textbf{Análisis competitivo}  
+    \newline
+    Evalúa el posicionamiento frente a otros licitadores e identifica puntos de mejora para futuras convocatorias.
+    
+    \item \textbf{Clasificación empresarial}  
+    \newline
+    Asiste en la obtención y renovación de la clasificación necesaria para participar en contratos públicos.
+    
+    \item \textbf{Soporte y formación}  
+    \newline
+    Proporciona consultas en línea con diferentes departamentos y ofrece formación para mejorar las habilidades en la preparación de licitaciones.
+\end{enumerate}
+
+\subsubsection{Gobierto:} 
+Gobierto es una plataforma desarrollada por la empresa Populate que se centra en mejorar la transparencia, la participación ciudadana y el análisis de datos en el ámbito del sector público. Su objetivo principal es facilitar el acceso y comprensión de la información pública tanto para administraciones como para ciudadanos. Sus principales características son:
+
+\begin{enumerate}
+
+    \item \textbf{Busca licitaciones de forma natural}
+    \newline
+    Utiliza palabras clave y/o CPVs, excluye determinados términos, y combina criterios de búsqueda para obtener resultados más precisos. Nuestro buscador es muy rápido y te permite realizar búsquedas complejas de forma sencilla y rápida.
+    
+    \item \textbf{Configura alertas}
+    \newline
+    Crea alertas personalizadas para recibir un resumen de las nuevas licitaciones y las adjudicaciones. Cada persona de tu equipo podrá suscribirse a las alertas que necesite, y en cualquier momento podrás consultar búsquedas guardadas de tus colegas.
+    
+    \item \textbf{Refina tu búsqueda con facilidad}
+    \newline
+    Ajusta y refina tu búsqueda con facilidad y agilidad. De esta forma podrás iterar en la definición de tu búsqueda para contemplar todas las palabras clave que necesitas, allá donde los CPVs no son suficientes para monitorizar todas las licitaciones que necesitas.
+    
+    \item \textbf{Analiza a tu competencia}
+    \newline
+    Extrae de forma automática una lista de las empresas con las que compites en base a las licitaciones que han ganado. Analiza los precios que han ofertado y entiende cómo se están comportando en cuanto a las bajas históricas y recientes. Identifica sus principales clientes para desarrollar tu estrategia comercial.
+    
+    \item \textbf{Genera informes}
+    \newline
+    Nuestra herramienta te permite generar informes detallados basados en tus búsquedas y análisis. Estos informes te proporcionarán una visión clara y comprensible de los datos, lo que te permitirá tomar decisiones informadas y estratégicas.
+    
+    \item \textbf{Consulta el detalle de licitaciones y adjudicaciones}
+    \newline
+    Accede a información detallada de cada licitación y adjudicación. Esto incluye el título de la licitación, el CPV, el tipo de contrato, la empresa ganadora, el monto ofertado, entre otros datos. Esta información detallada te ayudará a entender mejor el mercado y a tomar decisiones más informadas.
+
+    \item \textbf{Portal unificado}
+    \newline
+    Ofrece un entorno web centralizado para acceder a toda la información pública, mejorando la organización y accesibilidad de contenidos como contratos, presupuestos, normativas y resultados de gestión.
+\end{enumerate}
+
   
 \subsection{Crítica al estado del arte}
-Habiendo expuesto ya varias alternativas a la problemática planteada, es necesario diferenciar la solución que brinda este TFG  con las ya existentes; para ello, se hará de dos tablas, una con valores tecnicos y otra con valores funcionales. 
-
+1.- Presencia internacional, 2.- Servicio gratuito, 3.- Asesoramiento profesional, 4.- Notificaciones, 5.- Exportación de datos, 6.- Código abierto, 7.- API, 8.- Búsqueda semántica, 9.- Herramientas IA
 \begin{table}[H]
 \centering
 \resizebox{\linewidth}{!}{%
-\begin{tabular}{|l|c|c|c|c|c|}
+\begin{tabular}{|l|c|c|c|c|c|c|c|}
 \hline
-\textbf{Característica} & \textbf{Infoconcurso} & \textbf{Licitaciones} & \textbf{Gobierto} & \textbf{Tender4U} & \textbf{Mi TFG} \\
-\hline
-Tipo & Buscador/Servicio & Servicio & Servicio & Plataforma & App Web \\
-Análisis de datos & No & Sí & Sí & No & Sí \\
-Descarga de datos & No & No & No & No & Sí \\
-API & No & No & Sí & No & No \\
-Código abierto & No & No & No & No & Sí \\
-Gratuito & Si/No & No & No & No & Sí \\
-Ayuda profesional & Sí & Sí & Sí & Si & No \\
-Utiliza LLMs & No & No & No & No & Si \\
-Parám. extraidos & Aprox. 12 & Aprox. 15 & Aprox. 15 & Aprox. 10 & Aprox. 60 \\
-\hline
-\end{tabular}
-}
-\caption{Comparativa entre herramientas similares para licitaciones públicas}
-\label{tab:comparativa_1}
-\end{table}\begin{table}[H]
+\textbf{ } & \textbf{DoubleTrade} & \textbf{Licitaciones} & \textbf{Telecit@} & \textbf{Tendios} & \textbf{Oclem} & \textbf{Gobierto} & \textbf{Mi TFG} \\
+\hline 
+\multicolumn{8}{|c|}{\textbf{Herramientas útiles}} \\
 
-\centering
-\resizebox{\linewidth}{!}{%
-\begin{tabular}{|l|c|c|c|c|c|}
 \hline
-\textbf{Característica} & \textbf{Infoconcurso} & \textbf{Licitaciones} & \textbf{Gobierto} & \textbf{Tender4U} & \textbf{Mi TFG} \\
+1 & Si & Si/No & Si & Si/No & Si & No & No\\
+2 & No & No & No & No & No & No & Si\\
+3 & No & Si & No & No & Si & No & No\\
+4 & Si & Si & Si & Si & No & Si & ""\\
+
 \hline
-Gratuito & Si/No & No & No & No & Sí \\
-Soporte técnico & Sí & Sí & Si & Si & Si \\
-Notificaciones & Sí & Si & Si & Si & No \\
-Público objetivo & Cualquiera & Cualquiera & Cualquiera & Empresas & Cualquiera \\
+\multicolumn{8}{|c|}{\textbf{Indicadores técnicos y de innovación}} \\
 \hline
+5 & No & No & No & Si & No & Si & Si\\
+6 & No & No & No & No & No & No & Si\\
+7 & No & No & No & Si & No & Si & ""\\
+8 & Si & Si & Si & Si & No & Si & Si \\
+9 & Si & No & No & Si & No & Si & Si\\
+
+\hline
+
 \end{tabular}
 }
-\caption{Comparativa entre herramientas similares para licitaciones públicas}
+\captionsetup{justification=centering}
+\caption{Comparativa útil y técnica entre herramientas similares para licitaciones públicas}
+
 \label{tab:Copmarativa_2}
 \end{table}
 
-Si bien queda claro que las opciones son amplias y variadas, siguen existiendo carencias las cuales este proyecto pretende abordar:
+\subsubsection{Soluciones con IA}
+\begin{enumerate}
+    \item \textbf{Doubletrade:} DoubleTrade utiliza inteligencia artificial para optimizar la participación en licitaciones públicas, ofreciendo recomendaciones personalizadas basadas en el perfil de cada empresa, análisis detallado de pliegos y documentos, asistencia en la redacción de propuestas, estrategias de precios competitivos mediante modelos predictivos, y gestión automatizada de documentación para garantizar el cumplimiento legal y técnico.
+    \newline
+    \item \textbf{Tendios:}
+    Tendios cuenta con una plataforma basada en inteligencia artificial, la cual optimiza la gestión de licitaciones públicas para empresas y entidades. Integra funcionalidades como interacción en lenguaje natural para consultar pliegos, búsqueda y filtrado inteligente de licitaciones relevantes, análisis predictivo con dashboards de mercado, generación automática de documentos, y conexión con sistemas externos como CRMs y herramientas de análisis.
+    \newline
+    \item \textbf{Gobierto:} 
+    Gobierto utiliza inteligencia artificial para optimizar la contratación pública mediante modelos predictivos que estiman el número de ofertas para licitaciones, extracción y clasificación automática de texto en pliegos, y herramientas como Gobierto Redactor, un editor colaborativo asistido por IA para redactar cláusulas. Además, ofrece Gobierto Asistente, un chatbot especializado en contratación pública que responde preguntas basándose en fuentes oficiales, junto con funciones de NLP como recomendación de CPVs, resúmenes automáticos y sistemas de preguntas-respuestas sobre normativa.
+    \item \textbf{Mi TFG:} 
+    La herramienta emplea la técnica RAG para extraer datos importantes del documento y mostrarlos de manera organizada en tablas, además de mostrar las fuentes de estos datos para garantizar su fiabilidad. 
+
+\end{enumerate}
+
+
+Si bien queda claro que las opciones son amplias y variadas, siguen existiendo carencias, las cuales este proyecto pretende abordar:
 
 \begin{itemize}
-\item{Uso de tecnologías punteras:}
-Los servicios listados basan su tecnología en busquedas semánticas, scrappers y asesoramiento profesional, todos metodos perfectamente válidos, pero la aparición de los LLM abre una ventana de oportunidad que es dificil de obviar, ya que nos da la capacidad de procesar grandes cantidades de información de la misma forma en la que la haría un humano, pero con un coste económico y temporal considerablemente menor. 
-
-\item{Visualización de la información:}
-La mayoría de los servicios actuales ofrecen formas claras y cómodas de visualizar la información que extraen. No obstante, esta herramienta no solo iguala esa capacidad de visualización, sino que además proporciona un volumen de datos considerablemente mayor. A esto se suma una funcionalidad especialmente destacada: la posibilidad de descargar los datos en plantillas CSV, una opción que, de momento, solo ofrece OpenPLACSP.
 
 \item{Transparencia de los datos:}
 Otras herramientas o no validan su información o simplemente citan el documento completo de donde han extraido la información, este programa cuenta con la capacidad de citar directamente las fuentes de donde ha obtenido la información, especificando la página o páginas que ha utilizado para formular su respuesta.
 
-\item{Automatizacion de procesos:}
-A diferencia de otros servicios, donde para acceder a la información de una licitación concreta suele ser necesario realizar peticiones específicas o esperar a que se completen ciertos procesos, este programa permite consultar directamente cualquier licitación listada en la página de \href{contratacionesdelestado.es}, actualizando diariamente y de forma automática la base de datos, permitiendo la visualización inmediata de casi cualquier licitación.
+\item{Código abierto:}
+Todos los programas y servicios listados privatizan por completo el uso de sus herramientas, mientras que la funcionalidad de mi herramienta es completamente transparente y maleable para cualquier programador que quiera hacer uso de ella.
 
 \item{Precio:}
 La mayoría de herramientas listadas no permiten un acceso total a sus funcionalidades a menos de que se pague una cuota (que en algunos casos puede llegar a los miles de euros), en cambio, esta herramienta es completamente gratiuta y de código abierto, democratizando asi el acceso a la información.
 
 \end{itemize}
 
-\newpage
-
-\section{Propuesta}
+\subsection{Propuesta}
 Lorem ipsum dolor sit amet consectetur adipiscing elit, duis nostra sagittis nunc class mauris fermentum, semper lobortis eu dui per ridiculus. Sodales augue ad neque lobortis taciti facilisi, nec cum vehicula scelerisque senectus ante, inceptos massa maecenas vel natoque. Faucibus sem mattis sociosqu tempor proin sapien egestas tempus, purus condimentum ligula tellus libero penatibus mauris tortor, sagittis cum aenean nunc rutrum odio habitasse.
 
 Eros sociis dictumst auctor habitasse libero molestie nascetur laoreet sodales, a vitae cubilia sollicitudin hendrerit elementum neque ullamcorper, mollis ultrices felis enim conubia lacus scelerisque mi. Semper orci nisl aliquam imperdiet viverra ac, molestie litora penatibus aliquet himenaeos feugiat conubia, habitasse eu leo volutpat curae. Quam parturient purus accumsan eu dui curae torquent porta ligula, nibh ornare augue aenean mus sem iaculis arcu, et sapien eros volutpat enim feugiat ac metus.
 
-\subsection{Análisis del problema}
+\newpage
+
+
+\section{Análisis del problema}
+Una vez concluido el estudio del estado del arte, resulta fundamental realizar un análisis detallado del problema específico que aborda este proyecto. El objetivo de esta sección es ofrecer una visión clara y profunda de los retos asociados a la extracción, procesamiento y presentación de información contenida en documentos PDF y HTML, utilizando técnicas avanzadas de procesamiento de lenguaje natural y modelos de lenguaje (LLM).
+
+En este contexto, se identifican los principales desafíos relacionados con la heterogeneidad de los formatos documentales, la complejidad estructural de los archivos PDF y HTML, y la necesidad de transformar dicha información en datos estructurados y útiles para el usuario final. Se establecerán los requisitos funcionales y no funcionales que debe cumplir la solución, así como los criterios de calidad y eficiencia que guiarán su desarrollo.
+
+Además, se modelará conceptualmente la arquitectura del sistema, detallando los procesos de extracción, segmentación y almacenamiento de la información, así como los mecanismos para su posterior consulta y visualización. Este análisis permitirá anticipar posibles dificultades técnicas y sentar las bases para la implementación de una solución robusta, escalable y capaz de incorporar futuras mejoras e innovaciones en el ámbito del procesamiento automático de documentos.
+
 \subsection{Identificación y análisis de soluciones posibles}
+A groso modo, la herramienta pretende identificar ciertos expedientes de la página de contrataciondelestado.es y extraer información de los mismos, abordando este problema se han manifestado las siguientes problemáticas: 
+\subsubsection{Problemáticas:}
+\begin{enumerate}
+    \item \textbf{Volumen y almacenamiento de datos:}
+    Actualmente solo en la comunidad valenciana existen cerca de 13.000 expedientes listados en la plataforma de contrataciondelestado.es.    
+    \item \textbf{Varianza interna:}
+    Dentro de la propia plataforma (donde existe un formato relativamente estandarizado) hay muchas variables a tomar en cuenta, por ejemplo, dentro de la página de cada expediente el número de secciones que contienen información varía, normalmente suele aparecer primero un resumen con los campos más generales del contrato, luego  un área relacionada con el proceso de contratación en si y por último un área donde se listan documentos relacionados.
+    \newline Esta es la estructura estándar con la que la herramienta pretende trabajar, pero rápidamente aparecen varios problemas: 
+    \newline 1.- El número de áreas varía a conveniencia de cada caso, normalmente la información listada anteriormente  aparece de manera mas o menos <<predecible>>, pero para su funcionamiento correcto hay que saber descartar las secciones inesperadas 
+    \newline 2.- No todos los campos listados en cada área tienen por que contener información, es normal que hayan casillas en blanco
+    \newline 3.- La sección donde se listan los documentos puede no contener la información que necesita el programa y en caso de contenerla es importante discriminar la versión actualizada de la antigua.
+    \newline 4.- Ya habiendo identificado el hipervínculo correcto donde se contienen todos los documentos que busca el programa nos encontramos con una de las mayores problemáticas de la plataforma, la estandarización del Anexo I. Una licitación SIEMPRE debe contener este documento, ya que es el que (de manera relativamente estandarizada) contiene gran parte de la información relevante de cada proyecto, el problema viene a la hora de identificarlo. Suele ubicarse de dos formas: dentro del pliego administrativo (el cual es un documento con mucha información ajena al programa la cual hay que filtrar) o bajo el nombre de Anexo I; la forma mas eficiente de obtener este documento es buscando directamente el archivo con el nombre de Anexo I, sin embargo esta es otra área que no está estandarizada, ya que existen muchos casos en los que el archivo bajo ese nombre no es el esperado, y la única forma de identificarlo con seguridad es accediendo directamente al archivo, complicando aun más el proceso. 
+    \newline 5.- La última problemática relacionada con la obtención del Anexo I es el formato del archivo en si, el programa toma en cuenta archivos .docx, odt y pdf, queda como trabajo futuro poder procesar archivos .zip o casos aun no contemplados.
+    
+    \item \textbf{Estructura y vocabulario:} 
+    Cada documento de Anexo I cuenta con una estructura y un vocabulario completamente distintos dependiendo de la entidad emisora, si bien en muchas ocasiones contienen información similar, la forma en la que se presenta esta información tiene tantas variables que representa un reto enorme clasificar e identificar correctamente cada campo.
+    
+    \item \textbf{Factores externos:} 
+    Toda la extracción y recopilación de información depende de un agente externo como lo es la página de contrataciondelestado.es, en caso de que esta falle o tarde demasiado en procesar las peticiones es razonable asumir un fallo de parte del programa.
+    
+\end{enumerate}
+
+\subsubsection{Soluciones propuestas}
+\begin{enumerate}
+    \begin{table}[h!]
+    \centering
+    \begin{tabular}{|p{6cm}|p{6cm}|}
+    \hline
+    \textbf{MongoDB (NoSQL)} & \textbf{SQL} \\
+    \hline
+    \textbf{Pros:}
+    \begin{itemize}
+        \item Esquema flexible, ideal para datos no estructurados o cambiantes.
+        \item Escalabilidad horizontal sencilla.
+        \item Buen rendimiento para grandes volúmenes de datos y escritura rápida.
+        \item Fácil integración con aplicaciones modernas y JSON.
+    \end{itemize}
+    &
+    \textbf{Pros:}
+    \begin{itemize}
+        \item Integridad y consistencia de los datos gracias a transacciones ACID.
+        \item Ideal para datos estructurados y relaciones complejas.
+        \item Potente lenguaje de consultas (SQL) para búsquedas y análisis complejos.
+        \item Amplio soporte, madurez y herramientas de administración.
+    \end{itemize}
+    \\
+    \hline
+    \textbf{Contras:}
+    \begin{itemize}
+        \item No garantiza consistencia fuerte por defecto (eventual consistency).
+        \item Consultas complejas y relaciones entre datos menos eficientes.
+        \item Menor soporte para transacciones complejas.
+        \item Menos maduro para integridad referencial.
+    \end{itemize}
+    &
+    \textbf{Contras:}
+    \begin{itemize}
+        \item Esquema rígido, menos flexible ante cambios frecuentes en la estructura.
+        \item Escalabilidad horizontal más compleja.
+        \item Puede ser menos eficiente para grandes volúmenes de datos no estructurados.
+        \item Requiere definir relaciones y tipos de datos desde el inicio.
+    \end{itemize}
+    \\
+    \hline
+    \end{tabular}
+    \caption{Comparativa de pros y contras entre MongoDB (NoSQL) y SQL}
+    \end{table}
+    
+    \textbf{Justificación de la elección:}
+    
+    La base de datos seleccionada fue SQL porque la información a almacenar es estructurada, requiere integridad y relaciones claras entre entidades, y es fundamental poder realizar consultas complejas y precisas. SQL proporciona un entorno robusto y seguro para garantizar la consistencia de los datos, lo que es esencial para la trazabilidad y fiabilidad del sistema. Aunque MongoDB ofrece ventajas en flexibilidad y escalabilidad, las necesidades del proyecto se alinean mejor con las fortalezas de una base de datos relacional.
+
+    \item  \textbf{Tecnología de extracción:} \newline 
+    El código utiliza la librería de Python \texttt{playwright}, una de las más populares y actualizadas para la automatización y scraping de páginas web. Se compara aquí con \texttt{Beautiful Soup}, una alternativa clásica para el procesamiento de HTML.
+    
+    \begin{tabular}{p{7cm} p{7cm}}
+    \textbf{Playwright} & \textbf{Beautiful Soup} \\
+    \textbf{Pros:}
+    \begin{itemize}
+        \item Consistencia: Permite interactuar con páginas web dinámicas, ejecutando JavaScript y accediendo a elementos generados en tiempo real.
+        \item Facilidad de uso: Proporciona una API moderna y completa para navegar, hacer clic, rellenar formularios y esperar eventos.
+        \item Automatización avanzada: Puede simular acciones de usuario y manejar múltiples pestañas o contextos.
+    \end{itemize}
+    &
+    \textbf{Pros:}
+    \begin{itemize}
+        \item Simplicidad: Muy fácil de aprender y usar para extraer información de HTML estático.
+        \item Ligereza: Requiere pocos recursos y no necesita un navegador real para funcionar.
+        \item Rápida para tareas sencillas: Ideal para scraping de páginas simples y bien estructuradas.
+    \end{itemize}
+    \\
+    \textbf{Contras:}
+    \begin{itemize}
+        \item Requiere más recursos: Necesita instalar navegadores y puede consumir más memoria y CPU.
+        \item Dependencia de la estructura: Cambios en el HTML pueden romper los selectores.
+        \item Más compleja de instalar y configurar que Beautiful Soup.
+    \end{itemize}
+    &
+    \textbf{Contras:}
+    \begin{itemize}
+        \item No ejecuta JavaScript: Solo puede analizar el HTML recibido, por lo que no accede a contenido dinámico generado en el navegador.
+        \item Limitada para páginas modernas: No puede interactuar con formularios, botones o eventos de usuario.
+        \item Menos robusta ante cambios en la estructura de la web.
+    \end{itemize}
+    \\
+    \end{tabular}
+    
+    \textbf{Justificación de la elección:} \newline
+    Se ha optado por \texttt{playwright} porque el proyecto requiere extraer información de páginas web con contenido dinámico y estructuras complejas, donde Beautiful Soup no sería suficiente. Playwright permite simular la interacción real de un usuario y acceder a todos los elementos de la página, garantizando una mayor robustez y flexibilidad en el scraping.
+
+
+    
+    \item  \textbf{Estructura y vocabulario:}
+    Búsqueda semántica, RAG, modelo entrenado
+    \textbf{Pros:} 
+    \begin{itemize}
+    \item Replicabilidad: 
+    \item Escalabilidad: 
+    \item Independencia de la estructura: 
+    \end{itemize}
+    \textbf{Contras:} 
+    \begin{itemize}
+    \item Posibilidad de fallo:
+    \item Coste computacional: 
+    \end{itemize}
+    
+    \item  \textbf{Factores externos:} \newline{}
+    Al no existir garantías de servicio de parte de la web, se han incluido diversas técnicas de reconocimiento y tratamiento de errores dentro del programa.
+    \newline{}
+    \textbf{Pros:} 
+    \begin{itemize}
+    \item Recuperación: En ya mayoría de casos de error identificados existen protocolos para identificar, tratar y solucionar los errores manifestados.    \item Loggings: Todas las funciones que dependen de un servidor externo están contenidas en bloques de código que capturan correctamente el error y lo guardan en un archivo con fecha, hora, ubicación y causa del mismo, facilitando el trabajo de la persona asignada al mantenimiento.
+    \end{itemize}
+    \textbf{Contras:} 
+    \begin{itemize}
+    \item Fallos totales: En caso de que la web deje de entregar servicio es imposible extraer nuevos expedientes
+    \end{itemize}
+    
+
+\end{enumerate}
+
+
+
 \subsection{Solución propuesta}
 \subsection{Plan de Trabajo}
 \subsection{Diseño de la solución}

@@ -45,9 +45,6 @@ def preprocess_text(text):
     pattern_art = r"\([^)]*?art\.[^)]*?\)"
     text = re.sub(pattern_art, "", text)
 
-    # Eliminar todos los saltos de línea
-    text = text.replace("\n", " ")
-
     return text
 
 def section_identifier(text, anterior):

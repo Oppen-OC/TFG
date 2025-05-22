@@ -28,7 +28,7 @@ scrapper_handler.setFormatter(scrapper_formatter)
 scrapper_logger.addHandler(scrapper_handler)
 scrapper_logger.propagate = False
 
-# Verifica que el procedimiento de la licitacion sea abiertop o abierto simplificado 
+# Verifica que el procedimiento de la licitacion sea abierto o abierto simplificado 
 async def checkProcedimiento(db, id):
     tabla = "Licitaciones_test"
     fila = await asyncio.to_thread(db.searchTable, tabla, {"COD": id})
@@ -64,7 +64,7 @@ async def poblar_db():
     strings = strings["Formulario"]
 
     async with async_playwright() as p:
-        browser = await p.chromium.launch(headless=True)
+        browser = await p.chromium.launch(headless=False)
         context = await browser.new_context()
         page = await context.new_page()
 
@@ -81,6 +81,16 @@ async def poblar_db():
             await page.click(strings["Nuts"])
             await page.select_option(strings["Valencia"], "ES52 Comunitat Valenciana")
             await page.click(strings["NutsClose"])
+            await page.click(strings["BusquedaAvanzada"])
+            await page.click(strings["Organizacion"])
+            await page.click('#maceoArbol > div.tafelTree_root > div:nth-child(3) img.tafelTreeopenable')
+            await page.click('#tafelTree_maceoArbol_id_16')
+
+            # Build the full selector for the button inside the container
+            button_selector = r'#viewns_Z7_AVEQAI930OBRD02JPMTPG21004\:form1\:botonAnadirMostrarPopUpArbolEO'
+
+            # Click the button
+            await page.click(button_selector)
             await page.click(strings["Buscar"], timeout = 60000)
             await page.wait_for_load_state("load")
 
@@ -96,7 +106,7 @@ async def poblar_db():
         db = DBManager()
         db.openConnection()
         # Limpia previamente la tabla de codigos
-        # await asyncio.to_thread(db.truncateTable, "Codigos")
+        await asyncio.to_thread(db.truncateTable, "Codigos_test")
         
         while True:
             try:
@@ -259,7 +269,7 @@ async def scratchUrls():
     db = DBManager()
     db.openConnection()
 
-    await asyncio.to_thread(db.truncateTable, "Licitaciones_test")
+    # await asyncio.to_thread(db.truncateTable, "Licitaciones_test")
 
     async with async_playwright() as p:
         browser = await p.chromium.launch(headless=False)
@@ -519,7 +529,7 @@ async def test_scratchPliego(url):
     
 def main():
     # Carga los códigos de página
-    # asyncio.run(poblar_db())
+    asyncio.run(poblar_db())
     asyncio.run(scratchUrls())
     asyncio.run(scratchAnexo())
     # asyncio.run(scratchAnexoParallel())

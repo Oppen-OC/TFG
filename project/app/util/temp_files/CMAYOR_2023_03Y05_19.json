@@ -1,0 +1,329 @@
+{
+    "prompts": [
+        {
+            "prompt_key": "Regulacion_armonizada",
+            "prompt": "Indica si tiene regulación armonizada",
+            "response": "No",
+            "score": 0.956060606060606,
+            "index": [
+                60,
+                4,
+                59
+            ]
+        },
+        {
+            "prompt_key": "Sometido_recurso_especial",
+            "prompt": "Indica si tiene recurso especial",
+            "response": "",
+            "score": 0.0,
+            "index": []
+        },
+        {
+            "prompt_key": "Plazo_ejecución",
+            "prompt": "Obten el plazo de ejecución del contrato",
+            "response": "12 meses",
+            "score": 0.9681818181818183,
+            "index": [
+                160,
+                161,
+                37
+            ]
+        },
+        {
+            "prompt_key": "Presupuesto_sinIVA",
+            "prompt": "Ubica el presupuesto sin IVA del documento",
+            "response": "435.695,83 €",
+            "score": 0.9621212121212123,
+            "index": [
+                36,
+                37,
+                111
+            ]
+        },
+        {
+            "prompt_key": "Presupuesto_conIVA",
+            "prompt": "Ubica el presupuesto con IVA del documento (presupuesto base)",
+            "response": "527.191,95 €",
+            "score": 0.9621212121212123,
+            "index": [
+                24,
+                25,
+                111
+            ]
+        },
+        {
+            "prompt_key": "Importe_IVA",
+            "prompt": "Ubica el importe del IVA del documento (iva aplicable)",
+            "response": "91.496,12 €",
+            "score": 0.956060606060606,
+            "index": [
+                24,
+                111,
+                112
+            ]
+        },
+        {
+            "prompt_key": "Sistema_Retribucion",
+            "prompt": "Indica el sistema de retribución del precio",
+            "response": "",
+            "score": 0.0,
+            "index": []
+        },
+        {
+            "prompt_key": "Valor_estimado",
+            "prompt": "Indica el total del valor estimado del contrato, responde únicamente con el valor en euros",
+            "response": "527.191,95 €",
+            "score": 0.9681818181818183,
+            "index": [
+                24,
+                25,
+                30
+            ]
+        },
+        {
+            "prompt_key": "Revision_precios",
+            "prompt": "Indica si existe la revisión de precios",
+            "response": "No, debido a que el plazo de ejecución de la obra es inferior a dos años, no se establece el derecho a revisión periódica y predeterminada de precios del presente proyecto.",
+            "score": 0.9500000000000001,
+            "index": [
+                37,
+                26,
+                27
+            ]
+        },
+        {
+            "prompt_key": "Garantia_definitiva",
+            "prompt": "Cuenta con garantía definitiva? cuál es su valor en tal caso?",
+            "response": "Si, el valor de la garantía definitiva es del 5% del precio final ofertado, IVA excluido.",
+            "score": 0.9681818181818183,
+            "index": [
+                157,
+                158
+            ]
+        },
+        {
+            "prompt_key": "Garantia_provisional",
+            "prompt": "Cuenta con garantía provisional? cuál es su valor en tal caso?",
+            "response": "No, según el apartado J, no se exige garantía provisional conforme al artículo 106.1 de la LCSP.",
+            "score": 0.9681818181818183,
+            "index": [
+                46,
+                47
+            ]
+        },
+        {
+            "prompt_key": "Admisibilidad_variantes",
+            "prompt": "Indica si el contrato admite variantes o alternativas",
+            "response": "No, según el apartado I del documento, no se contemplan alternativas o variantes.",
+            "score": 0.9681818181818183,
+            "index": [
+                46,
+                47
+            ]
+        },
+        {
+            "prompt_key": "Clasificacion",
+            "prompt": "La clasificación se aplica por debajo de 500.000 €?",
+            "response": "Si",
+            "score": 0.9681818181818183,
+            "index": [
+                51,
+                55,
+                56
+            ]
+        },
+        {
+            "prompt_key": "Grupo",
+            "prompt": "Según las características de la obra, indica el grupo al que pertenece el contrato",
+            "response": "Grupo G",
+            "score": 0.9681818181818183,
+            "index": [
+                55,
+                58,
+                51
+            ]
+        },
+        {
+            "prompt_key": "Subgrupo",
+            "prompt": "Según las características de la obra, indica el subgrupo al que pertenece el contrato",
+            "response": "Subgrupo 4",
+            "score": 0.9681818181818183,
+            "index": [
+                55,
+                58,
+                51
+            ]
+        },
+        {
+            "prompt_key": "Categoria",
+            "prompt": "Según las características de la obra, indica la categoría a la que pertenece el contrato",
+            "response": "Categoría 3",
+            "score": 0.9681818181818183,
+            "index": [
+                55,
+                58,
+                51
+            ]
+        },
+        {
+            "prompt_key": "Criterio_Solvencia_economica",
+            "prompt": "Indica si existen criterios para calcular/acreditar la solvencia económica y financiera",
+            "response": "Si",
+            "score": 0.9681818181818183,
+            "index": [
+                63,
+                48,
+                61
+            ]
+        },
+        {
+            "prompt_key": "Criterio_Solvencia_tecnica",
+            "prompt": "Indica si existen criterios para calcular/acreditar la solvencia técnica o profesional",
+            "response": "Si",
+            "score": 0.9681818181818183,
+            "index": [
+                63,
+                64,
+                113
+            ]
+        },
+        {
+            "prompt_key": "Condiciones_especiales",
+            "prompt": "Indica si existen condiciones especiales de ejecución y cuales son en caso de haberlas",
+            "response": "Si, las condiciones especiales de ejecución establecidas incluyen la recogida selectiva de residuos y la gestión de los residuos generados consecuencia de la prestación del objeto del contrato, para lo cual la empresa adjudicataria deberá presentar informes cada seis meses y una declaración responsable de cumplimiento al final del contrato.",
+            "score": 0.9621212121212123,
+            "index": [
+                180,
+                181,
+                158
+            ]
+        },
+        {
+            "prompt_key": "Penalidad_incumplimiento",
+            "prompt": "Indica si existe penalidad por incumplimiento al contratista",
+            "response": "No, según el texto proporcionado, en los apartados S y T se indica \"□ No procede\" en relación con las penalidades al contratista para el supuesto de incumplimiento por el mismo de la obligación de subrogación prevista en esa cláusula.",
+            "score": 0.9590909090909092,
+            "index": [
+                163,
+                164
+            ]
+        },
+        {
+            "prompt_key": "Forma_pago",
+            "prompt": "Indica la forma o régimen de pago",
+            "response": "Mensual, previa presentación de factura reglamentaria y certificación expedida por la Dirección Facultativa de las obras.",
+            "score": 0.9681818181818183,
+            "index": [
+                173,
+                174
+            ]
+        },
+        {
+            "prompt_key": "Causas_modificacion",
+            "prompt": "Indica si existen causas de modificacion del contrato",
+            "response": "No",
+            "score": 0.9500000000000001,
+            "index": [
+                36,
+                37,
+                38
+            ]
+        },
+        {
+            "prompt_key": "Plazo_garantia",
+            "prompt": "Indica cuál es el plazo de garantía de las obras",
+            "response": "1 año",
+            "score": 0.9621212121212123,
+            "index": [
+                173,
+                174,
+                157
+            ]
+        },
+        {
+            "prompt_key": "Contratacion_precio_unit",
+            "prompt": "Indica si cuenta con contratación a precio unitario",
+            "response": "No, según el texto proporcionado, la opción \"CONTRATACIÓN DE OBRAS A PRECIOS UNITARIOS\" está marcada como \"□ No\", lo que indica que no cuenta con contratación a precio unitario. En su lugar, se menciona \"CONTRATACIÓN DE OBRAS A TANTO ALZADO: □ Sí\", lo que sugiere que el contrato se basa en un precio fijo o total por la obra realizada.",
+            "score": 0.9621212121212123,
+            "index": [
+                30,
+                175,
+                26
+            ]
+        },
+        {
+            "prompt_key": "Tanto_alzado",
+            "prompt": "Indica si el contrato cuenta con contratación de obras a tanto alzado",
+            "response": "Si, según el texto \"CONTRATACIÓN DE OBRAS A TANTO ALZADO: □ Sí\" indica que el contrato cuenta con contratación de obras a tanto alzado.",
+            "score": 0.9681818181818183,
+            "index": [
+                30,
+                36
+            ]
+        },
+        {
+            "prompt_key": "Tanto_alzado_con",
+            "prompt": "Indica si el contrato cuenta con contratación de obras a tanto alzado con precio cerrado",
+            "response": "No, según el texto proporcionado, en la sección \"DETERMINACIÓN DEL PRECIO\" se indica que la \"CONTRATACIÓN DE OBRAS A TANTO ALZADO CON PRECIO CERRADO\" está marcada como \"□ No\".",
+            "score": 0.9681818181818183,
+            "index": [
+                30,
+                36
+            ]
+        },
+        {
+            "prompt_key": "Criterio_juicio_val",
+            "prompt": "Indica la ponderación o puntaje de los criterios evaluables mediante juicio de valor",
+            "response": "30",
+            "score": 0.9500000000000001,
+            "index": [
+                64,
+                63,
+                69
+            ]
+        },
+        {
+            "prompt_key": "Evaluables_autom",
+            "prompt": "Indica la ponderación o puntaje de los criterios evaluables automáticamente mediante fórmulas",
+            "response": "30",
+            "score": 0.9500000000000001,
+            "index": [
+                63,
+                64,
+                69
+            ]
+        },
+        {
+            "prompt_key": "Criterio_ecónomico",
+            "prompt": "Indica la ponderación o puntaje de los criterios económicos / criterio precio",
+            "response": "40",
+            "score": 0.9500000000000001,
+            "index": [
+                63,
+                64,
+                69
+            ]
+        },
+        {
+            "prompt_key": "Obligaciones_ambientales",
+            "prompt": "Cuáles son las medidas para garantizar el cumplimiento de obligaciones ambientales?",
+            "response": "Si, se establecen condiciones especiales de ejecución que incluyen la aplicación de procedimientos dispuestos por el certificado ISO 14001 o equivalente para garantizar el cumplimiento de las obligaciones medioambientales.",
+            "score": 0.9681818181818183,
+            "index": [
+                176,
+                177
+            ]
+        },
+        {
+            "prompt_key": "Regimen_penalidades",
+            "prompt": "Indica si existen penalidades por incumplimientos",
+            "response": "- Penalidades de la cláusula 36.3: 5% del precio del contrato para cada incumplimiento (IVA excluido) - Penalidades por incumplimiento parcial de la ejecución en la cláusula 36.1: 5% del precio del contrato para cada incumplimiento (IVA excluido) - Penalidades por incumplimiento del plazo total por el contratista: diariamente 0,60 € por cada 1.000 € del precio del contrato (IVA excluido) - Penalidades por incumplimiento de plazos parciales por el contratista: diariamente 0,60 € por cada 1.000 € del precio del contrato (IVA excluido) - Penalidades en caso de incumplimiento de las condiciones de la oferta: hasta un 25% del precio del subcontrato (IVA excluido) - Penalidades de la cláusula 36.3 en los supuestos de comprobación obligatoria de los pagos a los subcontratistas: 5% del precio del contrato para cada incumplimiento (IVA excluido) - Penalidades al contratista por impago a un subcontratista o suministrador vinculado a la ejecución del contrato",
+            "score": 0.9681818181818183,
+            "index": [
+                166,
+                167,
+                168
+            ]
+        }
+    ]
+}
