@@ -14,7 +14,6 @@ import torch
 from rank_bm25 import BM25Okapi
 import traceback
 import spacy
-from concurrent.futures import ThreadPoolExecutor, as_completed
 
 from db_manager import DBManager
 
@@ -515,7 +514,10 @@ class RAG:
                         documents=[normalized_chunk],
                         embeddings=[embedding],
                         ids=[f"chunk_{i}"],
-                        metadatas={"page": self.metadata[i][0], "sections": self.metadata[i][1]}
+                        metadatas=[{
+                            "page": self.metadata[i][0],
+                            "sections": ", ".join(self.metadata[i][1])  # convierte ['None', 'A'] en 'None, A'
+                        }]
                     )
                 except Exception as e:
                     self.logger.error(f"Error generating embedding for chunk {i}: {e}")
