@@ -41,7 +41,7 @@ class LinearAdapter(nn.Module):
 class RAG:
     # Configuración del logger específico para el RAG y archivos temporales
     base_dir = os.path.dirname(os.path.abspath(__file__))  # Ruta base del archivo actual
-    logs_dir = os.path.join(base_dir, 'logs')  # Ruta al directorio de logs
+    logs_dir = os.path.join(base_dir, 'logs')  # Ruta al directorio de log
     temp_files_dir = os.path.join(base_dir, 'temp_files')
 
     # Ruta del archivo de log
