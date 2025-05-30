@@ -1,0 +1,373 @@
+{
+    "prompts": [
+        {
+            "prompt_key": "Regulacion_armonizada",
+            "prompt": "Indica si tiene regulación armonizada",
+            "response": "",
+            "score": 0.7606667935848236,
+            "index": [
+                8,
+                5,
+                2,
+                6
+            ]
+        },
+        {
+            "prompt_key": "Sometido_recurso_especial",
+            "prompt": "Indica si tiene recurso especial",
+            "response": "No",
+            "score": 0.7586601659655571,
+            "index": [
+                5,
+                6,
+                7,
+                2
+            ]
+        },
+        {
+            "prompt_key": "Plazo_ejecución",
+            "prompt": "Obten el plazo de ejecución del contrato",
+            "response": "8 meses",
+            "score": 0.8712423243768075,
+            "index": [
+                142,
+                84,
+                140,
+                1
+            ]
+        },
+        {
+            "prompt_key": "Presupuesto_sinIVA",
+            "prompt": "Ubica el presupuesto sin IVA del documento",
+            "response": "1.628.928,18 €",
+            "score": 0.85,
+            "index": [
+                59,
+                144,
+                145,
+                1
+            ]
+        },
+        {
+            "prompt_key": "Presupuesto_conIVA",
+            "prompt": "Ubica el presupuesto con IVA del documento (presupuesto base)",
+            "response": "1.971.003,10 €",
+            "score": 0.9765499205168965,
+            "index": [
+                59,
+                53,
+                51,
+                2
+            ]
+        },
+        {
+            "prompt_key": "Importe_IVA",
+            "prompt": "Ubica el importe del IVA del documento (iva aplicable)",
+            "response": "342.074,92 €",
+            "score": 0.9552643678160919,
+            "index": [
+                59,
+                51,
+                52,
+                5
+            ]
+        },
+        {
+            "prompt_key": "Sistema_Retribucion",
+            "prompt": "Indica el sistema de retribución del precio",
+            "response": "",
+            "score": 0.6172975824755262,
+            "index": [
+                5,
+                2
+            ]
+        },
+        {
+            "prompt_key": "Valor_estimado",
+            "prompt": "Indica el total del valor estimado del contrato, responde únicamente con el valor en euros",
+            "response": "1.628.928,18 €",
+            "score": 0.8315344601443835,
+            "index": [
+                59,
+                69,
+                70,
+                9
+            ]
+        },
+        {
+            "prompt_key": "Revision_precios",
+            "prompt": "Indica si existe la revisión de precios",
+            "response": "No, motivación: No procede. Segun lo establecido en el articulo 103 LCSP.",
+            "score": 0.87,
+            "index": [
+                63,
+                53,
+                58,
+                6
+            ]
+        },
+        {
+            "prompt_key": "Garantia_definitiva",
+            "prompt": "Cuenta con garantía definitiva? cuál es su valor en tal caso?",
+            "response": "Si, el valor de la garantía definitiva es del 5% del precio final ofertado, excluido el IVA.",
+            "score": 0.861081366688013,
+            "index": [
+                138,
+                139,
+                0,
+                8
+            ]
+        },
+        {
+            "prompt_key": "Garantia_provisional",
+            "prompt": "Cuenta con garantía provisional? cuál es su valor en tal caso?",
+            "response": "No, según el Acuerdo del Consell de 26 de marzo de 2010 y los artículos 106 y 159.4.b) de la ley 9/2017, no se exige garantía provisional.",
+            "score": 0.9,
+            "index": [
+                63,
+                67,
+                0
+            ]
+        },
+        {
+            "prompt_key": "Admisibilidad_variantes",
+            "prompt": "Indica si el contrato admite variantes o alternativas",
+            "response": "No, según el apartado I del documento, se indica que no se admiten alternativas o variantes.",
+            "score": 0.8,
+            "index": [
+                63,
+                0,
+                1,
+                5
+            ]
+        },
+        {
+            "prompt_key": "Clasificacion",
+            "prompt": "La clasificación se aplica por debajo de 500.000 €?",
+            "response": "No",
+            "score": 0.9283354893017096,
+            "index": [
+                70,
+                71,
+                69,
+                6
+            ]
+        },
+        {
+            "prompt_key": "Grupo",
+            "prompt": "Según las características de la obra, indica el grupo al que pertenece el contrato",
+            "response": "Grupo E",
+            "score": 0.9267383173108101,
+            "index": [
+                70,
+                71,
+                76,
+                1
+            ]
+        },
+        {
+            "prompt_key": "Subgrupo",
+            "prompt": "Según las características de la obra, indica el subgrupo al que pertenece el contrato",
+            "response": "Subgrupo 3",
+            "score": 0.9293615609407425,
+            "index": [
+                70,
+                71,
+                76,
+                1
+            ]
+        },
+        {
+            "prompt_key": "Categoria",
+            "prompt": "Según las características de la obra, indica la categoría a la que pertenece el contrato",
+            "response": "Categoría 4",
+            "score": 0.9200282299518585,
+            "index": [
+                70,
+                71,
+                76,
+                1
+            ]
+        },
+        {
+            "prompt_key": "Criterio_Solvencia_economica",
+            "prompt": "Indica si existen criterios para calcular/acreditar la solvencia económica y financiera",
+            "response": "No",
+            "score": 0.95,
+            "index": [
+                68,
+                69,
+                73,
+                3
+            ]
+        },
+        {
+            "prompt_key": "Criterio_Solvencia_tecnica",
+            "prompt": "Indica si existen criterios para calcular/acreditar la solvencia técnica o profesional",
+            "response": "No",
+            "score": 0.9500000000000001,
+            "index": [
+                69,
+                70,
+                71,
+                7
+            ]
+        },
+        {
+            "prompt_key": "Condiciones_especiales",
+            "prompt": "Indica si existen condiciones especiales de ejecución y cuales son en caso de haberlas",
+            "response": "Si, existen condiciones especiales de ejecución de carácter medioambiental, social o laboral establecidas en el apartado X, que incluyen la planificación de acciones a realizar y la relación de contenidos de sesiones formativas, así como un informe detallado sobre las actuaciones realizadas al finalizar el contrato.",
+            "score": 0.95,
+            "index": [
+                152,
+                153,
+                163,
+                4
+            ]
+        },
+        {
+            "prompt_key": "Penalidad_incumplimiento",
+            "prompt": "Indica si existe penalidad por incumplimiento al contratista",
+            "response": "Si, existen penalidades por incumplimiento del contratista, como la ejecución de una medición menor a la establecida en el contrato sin justificación, y se establece que el total de penalidades podrá alcanzar como máximo el 50% del precio del contrato, IVA excluido.",
+            "score": 0.7764779943227768,
+            "index": [
+                143,
+                0,
+                1,
+                5
+            ]
+        },
+        {
+            "prompt_key": "Forma_pago",
+            "prompt": "Indica la forma o régimen de pago",
+            "response": "[TIPO] Certificaciones mensuales, con cargo a los créditos, y previa presentación de la correspondiente factura debidamente conformada por la unidad encargada del seguimiento y ejecución del contrato, a través de la plataforma de facturación estatal FACe.",
+            "score": 0.875,
+            "index": [
+                158,
+                159,
+                0,
+                5
+            ]
+        },
+        {
+            "prompt_key": "Causas_modificacion",
+            "prompt": "Indica si existen causas de modificacion del contrato",
+            "response": "No",
+            "score": 0.8941717700163523,
+            "index": [
+                137,
+                138,
+                59,
+                7
+            ]
+        },
+        {
+            "prompt_key": "Plazo_garantia",
+            "prompt": "Indica cuál es el plazo de garantía de las obras",
+            "response": "24 meses",
+            "score": 0.848,
+            "index": [
+                158,
+                63,
+                67,
+                5
+            ]
+        },
+        {
+            "prompt_key": "Contratacion_precio_unit",
+            "prompt": "Indica si cuenta con contratación a precio unitario",
+            "response": "Si, el contrato está formulado en términos de precios unitarios referidos a las unidades de obra que se ejecutan de acuerdo con lo establecido en el proyecto aprobado.",
+            "score": 0.8701485675367815,
+            "index": [
+                53,
+                58,
+                59,
+                8
+            ]
+        },
+        {
+            "prompt_key": "Tanto_alzado",
+            "prompt": "Indica si el contrato cuenta con contratación de obras a tanto alzado",
+            "response": "No, según el texto proporcionado, la opción \"CONTRATACIÓN DE OBRAS A TANTO ALZADO\" está marcada como \" NO\".",
+            "score": 0.9279913222789764,
+            "index": [
+                53,
+                58,
+                59,
+                1
+            ]
+        },
+        {
+            "prompt_key": "Tanto_alzado_con",
+            "prompt": "Indica si el contrato cuenta con contratación de obras a tanto alzado con precio cerrado",
+            "response": "No, según el texto proporcionado, la opción \"CONTRATACIÓN DE OBRAS A TANTO ALZADO CON PRECIO CERRADO\" está marcada como \" NO\".",
+            "score": 0.9296962773799896,
+            "index": [
+                53,
+                58,
+                59,
+                1
+            ]
+        },
+        {
+            "prompt_key": "Criterio_juicio_val",
+            "prompt": "Indica la ponderación o puntaje máxima de los criterios evaluables mediante juicio de valor",
+            "response": "25 %",
+            "score": 0.9506533644821301,
+            "index": [
+                31,
+                84,
+                85,
+                6
+            ]
+        },
+        {
+            "prompt_key": "Evaluables_autom",
+            "prompt": "Indica la ponderación o puntaje máxima de los criterios cualitativos valorables de forma automática",
+            "response": "10 %",
+            "score": 0.840897914916277,
+            "index": [
+                85,
+                86,
+                0,
+                8
+            ]
+        },
+        {
+            "prompt_key": "Criterio_ecónomico",
+            "prompt": "Indica la ponderación o puntaje máxima de los criterios económicos / criterio precio",
+            "response": "65",
+            "score": 0.95,
+            "index": [
+                113,
+                124,
+                134,
+                1
+            ]
+        },
+        {
+            "prompt_key": "Obligaciones_ambientales",
+            "prompt": "Cuáles son las medidas para garantizar el cumplimiento de obligaciones ambientales?",
+            "response": "Si, se establecen varias medidas para garantizar el cumplimiento de obligaciones ambientales, incluyendo la sometimiento a inspecciones y comprobaciones por parte de la Conselleria de Agricultura, Desarrollo Rural, Emergencia Climática y Transición Ecológica, así como la realización de acciones de formación y sensibilización en materia medioambiental durante la ejecución del contrato.",
+            "score": 0.8387295423448086,
+            "index": [
+                160,
+                161,
+                0,
+                1
+            ]
+        },
+        {
+            "prompt_key": "Regimen_penalidades",
+            "prompt": "Indica si existen penalidades por incumplimientos",
+            "response": "- Penalidades por incumplimiento parcial de la ejecución de las prestaciones. - Penalidades por demora respecto del cumplimiento del plazo total y plazos parciales.",
+            "score": 0.9079029772105949,
+            "index": [
+                143,
+                144,
+                155,
+                4
+            ]
+        }
+    ]
+}

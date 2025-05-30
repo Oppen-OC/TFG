@@ -43,8 +43,10 @@
         "AnexosV": "VALUES(?, ?, ?, ?, ?, ?)",
         "Documentos": "(COD, url_anexo, url_pliego, titulo_anexo, anexo_I, multiples, modificado)",
         "DocumentosV": "VALUES(?, ?, ?, ?, ?, ?, ?)",
-        "AnexoI": "(COD, Regulacion_armonizada, Sometido_recurso_especial, Plazo_ejecución, Presupuesto_sinIVA, Presupuesto_conIVA, Importe_IVA, Sistema_Retribucion, Valor_estimado, Revision_precios, Garantia_definitiva, Garantia_provisional, Admisibilidad_variantes, Clasificacion, Grupo, Subgrupo, Categoria, Criterio_Solvencia_economica, Criterio_Solvencia_tecnica, Condiciones_especiales, Penalidad_incumplimiento, Forma_pago, Causas_modificacion, Plazo_garantia, Precio_unit, Tanto_alzado, Tanto_alzado_con ,Criterio_juicio_val, Evaluables_autom, Criterio_ecónomico, Memoria_constructiva, Programa_trabajos, Analisis_proyecto, Obligaciones_ambientales, Regimen_penalidades)",
-        "AnexoIV": "VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)"
+        "AnexoI": "(COD, Regulacion_armonizada, Sometido_recurso_especial,Plazo_ejecución, Presupuesto_sinIVA, Presupuesto_conIVA, Importe_IVA, Sistema_Retribucion,Valor_estimado, Revision_precios,Garantia_definitiva, Garantia_provisional, Admisibilidad_variantes, Clasificacion, Grupo, Subgrupo, Categoria, Criterio_Solvencia_economica, Criterio_Solvencia_tecnica, Condiciones_especiales, Penalidad_incumplimiento, Forma_pago, Causas_modificacion, Plazo_garantia, Contratacion_precio_unit,Tanto_alzado,Tanto_alzado_con,Criterio_juicio_val,Evaluables_autom,Criterio_ecónomico,Obligaciones_ambientales,Regimen_penalidades)",
+        "AnexoIV": "VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)",
+        "AnexoI_Fuentes": "(COD, Regulacion_armonizada, Sometido_recurso_especial,Plazo_ejecución, Presupuesto_sinIVA, Presupuesto_conIVA, Importe_IVA, Sistema_Retribucion,Valor_estimado, Revision_precios,Garantia_definitiva, Garantia_provisional, Admisibilidad_variantes, Clasificacion, Grupo, Subgrupo, Categoria, Criterio_Solvencia_economica, Criterio_Solvencia_tecnica, Condiciones_especiales, Penalidad_incumplimiento, Forma_pago, Causas_modificacion, Plazo_garantia, Contratacion_precio_unit,Tanto_alzado,Tanto_alzado_con,Criterio_juicio_val,Evaluables_autom,Criterio_ecónomico,Obligaciones_ambientales,Regimen_penalidades)",
+        "AnexoI_FuentesV": "VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)"
     },
 
     "Prompts":{
@@ -72,14 +74,23 @@
             "Forma_pago": "Indica la forma o régimen de pago",
             "Causas_modificacion": "Indica si existen causas de modificacion del contrato",
             "Plazo_garantia": "Indica cuál es el plazo de garantía de las obras",
-            "Contratacion_precio_unit": "Indica si cuenta con contratación a precio unitario",
+            "Contratacion_precio_unit": "Indica si cuenta con contratación de obras a precios unitarios",
             "Tanto_alzado": "Indica si el contrato cuenta con contratación de obras a tanto alzado",
             "Tanto_alzado_con": "Indica si el contrato cuenta con contratación de obras a tanto alzado con precio cerrado",
             "Criterio_juicio_val": "Indica la ponderación o puntaje máxima de los criterios evaluables mediante juicio de valor",
             "Evaluables_autom": "Indica la ponderación o puntaje máxima de los criterios cualitativos valorables de forma automática",
             "Criterio_ecónomico": "Indica la ponderación o puntaje máxima de los criterios económicos / criterio precio",
             "Obligaciones_ambientales": "Cuáles son las medidas para garantizar el cumplimiento de obligaciones ambientales?",
-            "Regimen_penalidades": "Indica si existen penalidades por incumplimientos"
+            "Regimen_penalidades": "Indica si existen penalidades por incumplimientos",
+            "Ambiental": "Enumera los criterios ambientales",
+            "Tecnico": "Enumera los criterios técnicos",
+            "Precio":"Enumera los criterios de precio",
+            "Garantia":"Enumera los criterios de garantía",
+            "Experiencia":"Enumera los criterios de experiencia",
+            "Calidad": "Enumera los criterios de calidad",
+            "Social": "Enumera los criterios sociales",
+            "Seguridad": "Enumera los criterios ambientales",
+            "-": "Enumera los criterios de juicio de valor"
         },         
         
         "Ajuntament_formato": {
@@ -97,8 +108,8 @@
             "Admisibilidad_variantes": "Si [añadir explicación], No",
             "Clasificacion": "Si, No",
             "Grupo":"Grupo [LETRA]",
-            "Subgrupo":"Subgrupo [NUMERO]",
-            "Categoria":"Categoría [NUMERO]",
+            "Subgrupo":"Subgrupo [NUMERO] [CARACTERISTICAS]",
+            "Categoria":"Categoría [NUMERO] [CARACTERISTICAS]",
             "Criterio_Solvencia_economica": "Si, no",
             "Criterio_Solvencia_tecnica": "Si, no",
             "Condiciones_especiales": "Si [añadir explicación], No",
@@ -116,7 +127,16 @@
             "Programa_trabajos": "[PARRAFO] [PUNTAJE]",
             "Analisis_proyecto": "[PARRAFO] [PUNTAJE]",
             "Obligaciones_ambientales": "Si [añadir explicación], No",
-            "Regimen_penalidades": "[LISTADO]"
+            "Regimen_penalidades": "[LISTADO]",
+            "Ambiental": "[LISTADO]",
+            "Tecnico": "[LISTADO]",
+            "Precio": "[LISTADO]",
+            "Garantia": "[LISTADO]",
+            "Experiencia": "[LISTADO]",
+            "Calidad": "[LISTADO]",
+            "Social": "[LISTADO]",
+            "Seguridad": "[LISTADO]",
+            "-": "[LISTADO]"
         },  
 
 
@@ -142,7 +162,7 @@
             "Condiciones_especiales": ["condiciones especiales de ejecución", "[seleccionado]"], 
             "Penalidad_incumplimiento":["supuesto de incumplimiento", "al contratista para el","[seleccionado]"],
             "Forma_pago": ["forma de pago", "régimen de pagos"],
-            "Causas_modificacion": ["causas", "modificacion", "modificaciones", "[seleccionado]"],
+            "Causas_modificacion": ["apartado o", "causas", "modificacion", "modificaciones", "[seleccionado]"],
             "Plazo_garantia":   ["plazo de garantía", "garantía", "[seleccionado]"],
             "Contratacion_precio_unit": ["contratación de obras a precios unitarios", "precio unitario", "precios unitarios", "[seleccionado]"],
             "Tanto_alzado": ["tanto alzado", "[seleccionado]"],
@@ -154,7 +174,17 @@
             "Programa_trabajos": ["programa", "trabajos", "máximo", "puntos"],
             "Analisis_proyecto": ["análisis del proyecto", "máximo", "puntos"],
             "Obligaciones_ambientales": ["obligaciones medioambientales", "sociales o laborables"],
-            "Regimen_penalidades": ["régimen de penalidades", "PCAP", "penalidades"]
+            "Regimen_penalidades": ["régimen de penalidades", "PCAP", "penalidades"],
+            "Ambiental": ["IMPLANTACIÓN DE SISTEMAS DE GESTIÓN MEDIOAMBIENTAL", "GESTIÓN MEDIOAMBIENTAL Y DE RECURSOS", "GESTIÓN MEDIOAMBIENTAL Y DE RESIDUOS", "ASPECTOS DE GESTIÓN MEDIOAMBIENTAL", "CRITERIOS MEDIOAMBIENTALES RELACIONADOS CON LA CALIDAD", "GESTIÓN DE RESIDUOS"],
+            "Tecnico":["CLARIDAD DE LA PROPUESTA", "DEMOSTRACIÓN DEL ESTUDIO DEL PLIEGO", "DEMOSTRACIÓN DEL ESTUDIO DEL PLIEGO", "PROCEDIMIENTOS DE EJECUCIÓN Y PROGRAMACIÓN DE OBRA", "MEMORIA CONSTRUCTIVA Y DE ANÁLISIS DEL PROYECTO", "MEMORIA CONSTRUCTIVA, PROPUESTA ORGANIZATIVA Y PROGRAMA DE TRABAJO", "PROCEDIMIENTO CONSTRUCTIVO", "ANÁLISIS TÉCNICO DEL PROYECTO Y PROCEDIMIENTO CONSTRUCTIVO DE LA INSTALACIÓN", "MEDIDAS PARA REDUCIR EL IMPACTO DE LA ACTUACIÓN CON EL DESARROLLO NORMAL DE LA ACTIVIDAD NORMAL DEL EDIFICIO", "SUMINISTRO DE MATERIALES", "PROPUESTA DE IMPLANTACIÓN Y ORGANIZACIÓN EN LA EJECUCIÓN DE LAS OBRAS", "PROGRAMACIÓN DE LA OBRA", "ANÁLISIS Y CONOCIMIENTO DEL PROYECTO DEFINITORIO DE LAS OBRAS", "INSTALACIONES", "PROGRAMA DE TRABAJO", "PROPUESTA ORGANIZATIVA", "PROGRAMACIÓN Y PLANIFICACIÓN DE LOS TRABAJOS", "ORGANIZACIÓN DE LOS MEDIOS DE EJECUCIÓN", "ORGANIZACIÓN DE LA OBRA", "CALENDARIO Y PROGRAMA DE TRABAJO", "REDUCCIÓN DEL PLAZO DE EJECUCIÓN", "MEMORIA CONSTRUCTIVA", "CONOCIMIENTO DE LAS CONDICIONES ESPECÍFICAS DEL INMUEBLE Y DEL ESPACIO A INTERVENIR Y SU POSIBLE AFECCIÓN EN LA EJECUCIÓN DE LAS OBRAS", "MEMORIA", "PROGRAMACIÓN DE LOS TRABAJOS", "RACIONALIDAD DE LA PROPUESTA", "PROPUESTAS Y PROGRAMACIÓN DE ACTUACIONES"],
+            "Precio":["PRECIO", "PUNTUACIÓN CRITERIOS ECONÓMICOS", "CRITERIOS RELACIONADOS CON LOS COSTES", "PUNTUACIÓN OFERTA ECONÓMICA", "PUNTUACIÓN CRITERIO PRECIO (PCP)", "PUNTUACIÓN PRECIO", "PUNTUACIÓN CRITERIO PRECIO", "CRITERIO PRECIO", "ASPECTOS ECONÓMICOS"],
+            "Garantia":["INCREMENTO DE PLAZO DE GARANTÍA", "AMPLIACIÓN DEL PLAZO DE GARANTÍA", "AMPLIACIÓN DEL PLAZO DE GARANTÍA Y COMPROMISO DE MANTENIMIENTO"],
+            "Experiencia":["MEDIOS DE EJECUCIÓN DE LAS OBRAS Y ORGANIZACIÓN DE LOS TRABAJOS", "EQUIPO PRINCIPAL DE LA OBRA", "EQUIPO DE OBRA", "MEDIOS DE EJECUCIÓN", "INSERCIÓN Y EXPERIENCIA LABORAL"],
+            "Calidad": ["CONTROL DE CALIDAD: DESARROLLO DE UN PLAN DE CALIDAD ESPECÍFICO Y PROPUESTA DEL SISTEMA DE GESTIÓN QUE SE EMPLEARÁ", "CRITERIO RELACIONADO CON LA CALIDAD EVALUABLES DE FORMA AUTOMÁTICA MEDIANTE APLICACIÓN DE FÓRMULAS", "CRITERIOS RELACIONADOS CON LA CALIDAD CUYA CUANTIFICACIÓN DEPENDE DE UN JUICIO DE VALOR", "CRITERIOS RELACIONADOS CON LA CALIDAD EVALUABLES DE FORMA AUTOMÁTICA MEDIANTE APLICACIÓN DE FÓRMULAS (PCF)", "CONTROL DE CALIDAD", "INSPECCIÓN POR ORGANISMO DE CONTROL AUTORIZADO", "AMPLIACIÓN DE RECURSOS PARA EL CONTROL DE CALIDAD DE LAS OBRAS", "CRITERIOS RELACIONADOS CON LA CALIDAD SUYA CUANTIFICACIÓN DEPENDE DE UN JUICIO DE VALOR", "CRITERIOS DE CALIDAD EVALUABLES DE FORMA AUTOMÁTICA", "CRITERIOS RELACIONADOS CON LA CALIDAD EVALUABLES DE FORMA AUTOMÁTICA MEDIANTE APLICACIÓN DE FÓRMULAS", "CRITERIOS RELACIONADOS CON LA CALIDAD CUANTIFICACIÓN DEPENDE DE UN JUICIO DE VALOR", "CRITERIO RELACIONADO CON LA CALIDAD CUYA CUANTIFICACIÓN DEPENDE DE UN JUICIO DE VALOR","CRITERIOS RELACIONADOS CON LA CALIDAD", "CRITERIO CALIDAD", "CRITERIOS RELACIONADOS CON LA CALIDAD CUYA CUANTIFICACIÓN DEPENDE DE UN JUICIO DE VALOR (PCJ)"],
+            "Social": ["ACCESIBILIDAD", "CRITERIOS SOCIALES RELACIONADOS CON LA CALIDAD"],
+            "Seguridad": ["AMPLIACIÓN DE RECURSOS PARA SEGURIDAD Y SALUD", "SEGURIDAD Y SALUD", "AMPLIACIÓN DE RECURSOS PARA LA SEGURIDAD Y SALUD DE LAS OBRAS", "ASPECTOS DE SEGURIDAD Y SALUD", "AMPLIACIÓN DE LOS RECURSOS PARA LA SEGURIDAD Y SALUD DE LAS OBRAS"],
+            "-": ["CRITERIOS CUYA CUANTIFICACIÓN DEPENDE DE UN JUICIO DE VALOR", "CRITERIOS TÉCNICOS CUALITATIVOS VALORABLES MEDIANTE JUICIO DE VALOR", "PUNTUACIÓN", "PUNTUACIÓN JUICIOS DE VALOR", "PUNTUACIÓN INICIAL", "CRITERIO MEDIANTE LA APLICACIÓN DE FÓRMULAS", "CRITERIOS DE VALORACIÓN MEDIANTE JUICIO DE VALOR", "CRITERIOS DE ADJUDICACIÓN RELACIONADOS CON LA CALIDAD CUYA CUANTIFICACIÓN DEPENDE DE UN JUICIO DE VALOR", "JUICIO DE VALOR", "CRITERIOS DE ADJUDICACIÓN SUJETOS A JUICIO DE VALOR", "CRITERIOS CUANTIFICABLES MEDIANTE LA MERA APLICACIÓN DE FÓRMULAS", "CRITERIOS TÉCNICOS CUALITATIVOS VALORABLES DE FORMA AUTOMÁTICA O ARITMÉTICA"]
+
         },
 
         "Common_sections": {
@@ -191,7 +221,16 @@
             "Programa_trabajos": ["LL"],
             "Analisis_proyecto": ["LL"],
             "Obligaciones_ambientales": ["X"],
-            "Regimen_penalidades": ["T"]
+            "Regimen_penalidades": ["T"],
+            "Ambiental": [],
+            "Tecnico": [],
+            "Precio":[],
+            "Garantia":[],
+            "Experiencia":[],
+            "Calidad": [],
+            "Social": [],
+            "Seguridad": [],
+            "-": []
         }
     }
 }

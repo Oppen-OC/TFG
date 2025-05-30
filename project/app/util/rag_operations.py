@@ -8,16 +8,15 @@ from tqdm import tqdm
 from pydantic import BaseModel
 from typing import List
 import re
-from db_manager import DBManager
-from threading import Lock
-from nltk.stem import WordNetLemmatizer
 from sentence_transformers import SentenceTransformer
 from torch import nn
 import torch
 from rank_bm25 import BM25Okapi
 import traceback
+import spacy
+from concurrent.futures import ThreadPoolExecutor, as_completed
 
-
+from db_manager import DBManager
 
 load_dotenv()
 
@@ -27,7 +26,8 @@ class Prompt(BaseModel):
     response: str
     score: float
     index: List[int]
-
+    chunks: List[str]
+# 
 class RAGResult(BaseModel):
     prompts: List[Prompt]
 
@@ -54,13 +54,8 @@ class RAG:
     rag_formatter = logging.Formatter("%(asctime)s - %(levelname)s - %(message)s")
     rag_handler.setFormatter(rag_formatter)
     rag_logger.addHandler(rag_handler)
-    rag_logger.propagate = False
+    rag_logger.propagate = False    
 
-    # Archivo JSON con los chunks procesados
-    file_path = os.path.join(base_dir, 'temp_files', 'temp_document.json')  
-    with open(file_path, 'r', encoding='utf-8') as f:
-        file = json.load(f)
-        
     # Archivo JSON donde se guardan las instrucciones para el RAG
     jsonFile = os.path.join(base_dir, 'JSON', 'Strings.json') 
 
@@ -68,11 +63,12 @@ class RAG:
         strings = json.load(f)
 
     def __init__(self, 
-                 embedding_model = "nomic-embed-text",
                  base_url = "https://api.poligpt.upv.es",
                  api_key = os.getenv("UPV_API_KEY"),
+                 embedding_model = "nomic-embed-text",
                  llm_model = "llama3.3:70b",
-                 min_score = 0.60
+                 min_score = 0.60,
+                 jsonFile = None
                  ):
         
         # Cliente de OpenAI
@@ -86,15 +82,23 @@ class RAG:
         
         self.llm_model = llm_model                  # Modelo de LLM a usar  
         self.min_score = min_score                  # Umbral mínimo de score para considerar un chunk como relevante
-        self.embedding_model = embedding_model      # Modelo de embedding a usar
         self.client = client                        # Cliente de OpenAI
         self.chroma_client = chromadb.PersistentClient(path=os.path.join(RAG.temp_files_dir, "chromadb"))
+        try:
+            self.chroma_client.delete_collection(name="rag_chunks")
+        except Exception as e:
+            pass
         self.collection = self.chroma_client.get_or_create_collection(name="rag_chunks", metadata={"hnsw:space": "cosine"})
 
+        with open(jsonFile, 'r', encoding='utf-8') as f:
+            file = json.load(f)
+            
+
         self.logger = RAG.rag_logger            # Logger para el RAG
-        self.file = RAG.file                    # Ruta al archivo JSON con los chunks
+        self.file = file                    # Ruta al archivo JSON con los chunks
         # self.jsonFile = RAG.jsonFile          # Ruta al archivo JSON con las instrucciones
         self.log_path = RAG.log_file_path       # Ruta al archivo de log
+        self.embedding_model = embedding_model    # Modelo de embedding a usar
 
         self.chunks = []            # Lista para almacenar los chunks de texto, extraido del JSON
         self.metadata = []          # Lista para almacenar la página y seccioens de un chunk
@@ -108,19 +112,16 @@ class RAG:
 
         self.load_chunks()
         self.find_keywords()
-        # self.embed_json()
+        self.embed_json()
 
     def normalize_chunk(self, chunk):
-        """
-        Normaliza un chunk de texto:
-        - Convierte a minúsculas.
-        - Reemplaza caracteres especiales.
-        - Lematiza las palabras usando Stanza.
-        """
-        # Convertir a minúsculas
+        # Load the spaCy model for Spanish
+        nlp = spacy.load("es_core_news_lg")
+
+        # Convert to lowercase
         chunk = chunk.lower()
 
-        # Reemplazos básicos
+        # Basic replacements
         replacements = {
             "\n": " ", 
             "\t": " ",  
@@ -129,14 +130,26 @@ class RAG:
         for old, new in replacements.items():
             chunk = chunk.replace(old, new)
 
-        # Reemplazar múltiples espacios por uno solo
+        # Replace multiple spaces with a single space
         chunk = re.sub(r"\s+", " ", chunk).strip()
 
-        # Lematizar cada palabra del chunk
-        chunk = " ".join(WordNetLemmatizer().lemmatize(word) for word in chunk.split())
+        # Tokenize and process the text with spaCy
+        doc = nlp(chunk)
 
-        return chunk
+        # Process each token
+        tokens = []
+        for token in doc:
+            # Example: Skip stopwords and punctuation
+            if not token.is_stop and not token.is_punct:
+                # Lemmatize the token and add it to the list
+                tokens.append(token.lemma_)
 
+        # Reconstruct the text from tokens
+        normalized_chunk = " ".join(tokens)
+
+        return normalized_chunk
+
+    
     def find_keywords(self):
         keywords = {}
         found = {}
@@ -162,8 +175,8 @@ class RAG:
         
         return response
 
-    def semantic_search(self, query, top_k=3):
-        self.logger.info(f"Performing semantic search for query: {query}")
+    def keyword_search(self, query, top_k=3):
+        self.logger.info(f"Performing keyword search for query: {query}")
         keywords = self.keywords[self.key]
         chunk_vals = []
 
@@ -187,7 +200,7 @@ class RAG:
             chunk_vals.append((chunk, score, i))
 
         if chunk_vals == []:
-            self.logger.warning("No matching chunk found on semantic_search.")
+            self.logger.warning("No matching chunk found on keyword_search.")
             return [], [], []
 
         # Ordenar por número de coincidencias (descendente) y tomar los top_k mejores
@@ -356,10 +369,9 @@ class RAG:
     def generate_response_with_context(self, query, similar_chunks):
         context = " ".join(similar_chunks)
 
-        # Truncar el contexto si es demasiado largo
         max_context_tokens = 3000  # Ajusta según el modelo
         context_tokens = context.split()
-        if len(ensure_list(context_tokens)) > max_context_tokens:
+        if len(context_tokens) > max_context_tokens:  # Truncar el contexto si es demasiado largo
             context = " ".join(context_tokens[:max_context_tokens])
             self.logger.warning("Context truncated to fit token limit.")
 
@@ -369,7 +381,8 @@ class RAG:
                 Eres un asistente de IA que responde preguntas sobre un documento.
                 Responde ÚNICAMENTE con la respuesta en el formato dado, nada de texto introductorio.
                 Toda la información extraida debe provenir del contexto proporcionado.
-                En caso de no tener una respuesta clara, responde con "No hay información".
+                Si el texto no contiene información directamente relacionada con la pregunta responde con "No hay información".
+                Si el contexto con tiene '[SELECCIONADO] Si' asume que la respuesta es si, lo mismo en caso de '[SELECCIONADO] No'.
             """
         }
 
@@ -382,7 +395,7 @@ class RAG:
             Pregunta: 
             {query}\n
 
-            Formato respuesta: 
+            Formato respuesta esperado: 
             {self.format[self.key]}\n
 
             Respuesta:
@@ -484,40 +497,28 @@ class RAG:
 
     def embed_json(self):
         try:
-            # Inicializa el cliente y la colección de ChromaDB
-            collection_name = "rag_chunks"
-            # Borra la colección si existe para evitar duplicados
-            try:
-                self.chroma_client.delete_collection(name=collection_name)
-            except Exception:
-                pass
-            # Genera embeddings y añade a la colección
-            for i, chunk in enumerate(tqdm(self.chunks, desc="Generating embeddings", unit="chunk")):
+            # Procesar cada chunk de forma secuencial
+            for i, chunk in enumerate(self.chunks):
                 try:
-                    # normalized_chunk = self.normalize_chunk(chunk)
-                    normalized_chunk = chunk
-                    
+                    normalized_chunk = self.normalize_chunk(chunk)
                     response = self.client.embeddings.create(
                         input=normalized_chunk,
                         model=self.embedding_model
                     )
-                    
-                    self.logger.info(f"created embedding for chunk {i}: {normalized_chunk}")
                     embedding = response.data[0].embedding
-                    # embedding = self.encode_query_custom(normalized_chunk)
-                    # Añade el chunk y su embedding a la colección
-                    
+
+                    # Log the embedding creation
+                    self.logger.info(f"Created embedding for chunk {i}: {normalized_chunk}")
+
+                    # Agregar el embedding a la colección
                     self.collection.add(
                         documents=[normalized_chunk],
                         embeddings=[embedding],
-                        ids=[f"chunk_{i}"]
+                        ids=[f"chunk_{i}"],
+                        metadatas={"page": self.metadata[i][0], "sections": self.metadata[i][1]}
                     )
-                    
                 except Exception as e:
                     self.logger.error(f"Error generating embedding for chunk {i}: {e}")
-                    continue
-
-            self.logger.info(f"Added {len(self.chunks)} chunks to ChromaDB collection '{collection_name}'.")
 
         except Exception as e:
             self.logger.error(f"Error embedding JSON file with ChromaDB: {e}")
@@ -573,29 +574,24 @@ class RAG:
         except Exception as e:
             print(f"Error al intentar limpiar el contenido del archivo de log: {e}")
 
-    def get_prompt_keys(self):
-        return list(self.prompts.keys())
 
     def union_top_chunks(self, query, top_n=4):
         # Build a list of (chunk, score, index) for both sources
-        sem_chunks, sem_score, sem_indices = self.semantic_search(query)
+        sem_chunks, sem_score, sem_indices = self.keyword_search(query)
 
         # Add semantic results
         combined = []
-        seen_indices = set()
         if len(sem_chunks) > 0: 
             for i in range(len(sem_chunks)):
                 combined.append((sem_chunks[i], sem_score[i], sem_indices[i]))
-                seen_indices.add(sem_indices[i])
 
         # Get retrieve_similar_chunks results
         sim_chunks, sim_score, sim_indices = self.retrieve_similar_chunks(query, top_n - len(sem_chunks))
 
         # Add similar_chunks results only if not already in seen_indices
         for j in range(len(sim_chunks)):
-            if sim_indices[j] not in seen_indices:
+            if sim_indices[j]:
                 combined.append((sim_chunks[j], sim_score[j], sim_indices[j]))
-        seen_indices.add(sim_indices[j])
 
         # Unpack for return
         final_chunks = [c for c, s, i in combined]
@@ -603,32 +599,43 @@ class RAG:
         final_indices = [i for c, s, i in combined]
 
         # Calcular la media de los scores
-        avg_score = sum(final_scores) / len(final_scores)
-            
-        return final_chunks, avg_score, final_indices
+        if len(final_scores) > 0:
+            avg_score = sum(final_scores) / len(final_scores)
+            return final_chunks, avg_score, final_indices
+        else:
+            self.logger.warning("No chunks found for the query.")
+            return [], 0, []
 
-# rag_lock = Lock()
+    def resultsFuentes(self, cod, results):
+        fuentes = [cod]
+        for i, prompt in enumerate(results):
+            # prompt.chunks es una lista de strings, los unimos en un solo string por prompt
+            indexs = prompt.index
+            aux_res = ""
+            for i in indexs:
+                page = "Page: " + str(self.metadata[i][0])
+                chunks_str = "Chunk: " + self.chunks[i]
+                aux_res += "\n" + page + "\n" + chunks_str
+            fuentes.append(aux_res)
+        return fuentes
 
 def process_prompt(rag_object, prompt_key, prompt):
     rag_object.key = prompt_key
     final_chunks, score, index = rag_object.union_top_chunks(prompt)
     response =  rag_object.generate_response_with_context(prompt, final_chunks)
 
-    return Prompt(prompt_key=prompt_key, prompt=prompt, response=response, score=score, index=index), response
+    return Prompt(prompt_key=prompt_key, prompt=prompt, response=response, score=score, index=index, chunks=final_chunks), response
 
-def ensure_list(x):
-    if isinstance(x, (list, tuple)):
-        return list(x)
-    return [x]
 
 def main(cod):
     base_dir = os.path.dirname(os.path.abspath(__file__))
     output_dir = os.path.join(base_dir, 'temp_files', 'output.json')
+    temp_path = os.path.join(base_dir,"temp_files", "temp_document.json")
 
     db = DBManager()
     db.openConnection()
 
-    rag_object = RAG()
+    rag_object = RAG(jsonFile=temp_path)
 
     results = []
     results_db = [cod]
@@ -644,6 +651,10 @@ def main(cod):
             traceback.print_exc()
 
     db.insertDb("AnexoI", results_db)
+
+    results_fuentes = rag_object.resultsFuentes(cod, results)
+
+    db.insertDb("AnexoI_Fuentes", results_fuentes)
 
     # Validar y guardar los resultados usando Pydantic
     rag_results = RAGResult(prompts=results)

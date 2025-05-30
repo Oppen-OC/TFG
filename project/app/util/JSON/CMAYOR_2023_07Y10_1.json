@@ -1,0 +1,128 @@
+{
+    "prompts": [
+        {
+            "prompt_key": "Regulacion_armonizada",
+            "response": "Si"
+        },
+        {
+            "prompt_key": "Sometido_recurso_especial",
+            "response": ""
+        },
+        {
+            "prompt_key": "Plazo_ejecución",
+            "response": "20 meses"
+        },
+        {
+            "prompt_key": "Presupuesto_sinIVA",
+            "response": "18.752.887,89 €"
+        },
+        {
+            "prompt_key": "Presupuesto_conIVA",
+            "response": "22.690.994,35 €"
+        },
+        {
+            "prompt_key": "Importe_IVA",
+            "response": "3.938.106,46 €"
+        },
+        {
+            "prompt_key": "Sistema_Retribucion",
+            "response": ""
+        },
+        {
+            "prompt_key": "Valor_estimado",
+            "response": "18.752.887,89 €"
+        },
+        {
+            "prompt_key": "Revision_precios",
+            "response": "SI. En el caso de que proceda la revisión excepcional de precios en los términos establecidos en el Real Decreto-ley 3/2022, de 1 de marzo, o normativa que lo sustituya, o por cualquier otra causa que determine la revisión, se aplicara, de entre las formulas contempladas en el RD 1359/2011, la formula tipo 561: Obras hidraulicas: “Alto contenido en siderurgia, cemento y rocas y aridos”. Tipologia mas representativa: Instalaciones y conducciones de abastecimiento y saneamiento."
+        },
+        {
+            "prompt_key": "Garantia_definitiva",
+            "response": "5% del precio final ofertado, excluido el IVA."
+        },
+        {
+            "prompt_key": "Garantia_provisional",
+            "response": "No se exige conforme al Acuerdo del Consell de 26 de marzo de 2010 así como al artículo 106 de la Ley 9/2017."
+        },
+        {
+            "prompt_key": "Admisibilidad_variantes",
+            "response": "No"
+        },
+        {
+            "prompt_key": "Clasificacion",
+            "response": "Superior a 500.000"
+        },
+        {
+            "prompt_key": "Grupo",
+            "response": "E OBRAS HIDRÁULICAS"
+        },
+        {
+            "prompt_key": "Subgrupo",
+            "response": "6 CONDUCCIONES CON TUBERIA DE PRESIÓN DE GRAN DIÁMETRO"
+        },
+        {
+            "prompt_key": "Categoria",
+            "response": "6 (equivalente a la antigua categoría f)."
+        },
+        {
+            "prompt_key": "Criterio_Solvencia_economica",
+            "response": "No"
+        },
+        {
+            "prompt_key": "Criterio_Solvencia_tecnica",
+            "response": "No"
+        },
+        {
+            "prompt_key": "Condiciones_especiales",
+            "response": "Si, definidas en la página 27"
+        },
+        {
+            "prompt_key": "Penalidad_incumplimiento",
+            "response": "No procede"
+        },
+        {
+            "prompt_key": "Forma_pago",
+            "response": "El abono se efectuará mediante certificaciones mensuales"
+        },
+        {
+            "prompt_key": "Causas_modificacion",
+            "response": "No"
+        },
+        {
+            "prompt_key": "Plazo_garantia",
+            "response": "Veinticuatro (24) meses."
+        },
+        {
+            "prompt_key": "Contratacion_precio_unit",
+            "response": "No"
+        },
+        {
+            "prompt_key": "Tanto_alzado",
+            "response": "Si"
+        },
+        {
+            "prompt_key": "Tanto_alzado_con",
+            "response": "No"
+        },
+        {
+            "prompt_key": "Criterio_juicio_val",
+            "response": "45"
+        },
+        {
+            "prompt_key": "Evaluables_autom",
+            "response": "10"
+        },
+        {
+            "prompt_key": "Criterio_ecónomico",
+            "response": "45"
+        },
+        {
+            "prompt_key": "Obligaciones_ambientales",
+            "response": "SI, especificar: ISO 14001"
+        },
+        {
+            "prompt_key": "Regimen_penalidades",
+            "response": "Si, definidas en la página 25"
+        }
+    ]
+}

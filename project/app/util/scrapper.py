@@ -73,7 +73,17 @@ async def poblar_db():
                 raise asyncio.TimeoutError()
 
             await page.click(strings["Licitaciones"], timeout=60000)
-            await page.fill(strings["FechaMin"], "01-01-2020")
+
+            await page.click(strings["BusquedaAvanzada"])
+            await page.click(strings["Organizacion"])
+            await page.click('#maceoArbol > div.tafelTree_root > div:nth-child(3) img.tafelTreeopenable')
+            await page.click('#tafelTree_maceoArbol_id_16')
+            """
+            await asyncio.sleep(0.5)  # Espera de medio segundo antes de hacer click en el botón
+
+            await page.click('#viewns_Z7_AVEQAI930OBRD02JPMTPG21004\\:form1\\:botonAnadirMostrarPopUpArbolEO:enabled')
+
+            await page.fill(strings["FechaMin"], "01-01-2020") steam unlcoek
             await page.fill(strings["FechaMax"], "01-01-2024")
             await page.select_option(strings["Presentacion"], "Electrónica")
             await page.select_option(strings["Tipo"], "Obras")
@@ -81,19 +91,9 @@ async def poblar_db():
             await page.click(strings["Nuts"])
             await page.select_option(strings["Valencia"], "ES52 Comunitat Valenciana")
             await page.click(strings["NutsClose"])
-            await page.click(strings["BusquedaAvanzada"])
-            await page.click(strings["Organizacion"])
-            await page.click('#maceoArbol > div.tafelTree_root > div:nth-child(3) img.tafelTreeopenable')
-            await page.click('#tafelTree_maceoArbol_id_16')
-
-            # Build the full selector for the button inside the container
-            button_selector = r'#viewns_Z7_AVEQAI930OBRD02JPMTPG21004\:form1\:botonAnadirMostrarPopUpArbolEO'
-
-            # Click the button
-            await page.click(button_selector)
             await page.click(strings["Buscar"], timeout = 60000)
             await page.wait_for_load_state("load")
-
+            """
         except Exception as e:
             scrapper_logger.error("No se pudo rellenar el formulario", e)
             await browser.close()
@@ -148,7 +148,7 @@ async def poblar_db():
         scrapper_logger.info("Buscador cerrado corrrectamente")
         await browser.close()
 
-async def scratchAnexoParallel():
+async def scratchAnexoParallel(num_browsers=4):
     """Ejecuta varios navegadores en paralelo para procesar expedientes."""
     scrapper_logger.info("Iniciando scrapper de Documentos en paralelo.")
     with open('code/JSON/Strings.json', 'r', encoding='utf-8') as file:
@@ -160,7 +160,7 @@ async def scratchAnexoParallel():
     await asyncio.to_thread(db.truncateTable, "Documentos")
 
     total_expedientes = db.getTableSize("Codigos_test")
-    num_browsers = 4  # Número de navegadores paralelos
+    num_browsers = num_browsers  # Número de navegadores paralelos
     expedientes_por_browser = total_expedientes // num_browsers
 
     # Crear tareas para cada navegador
@@ -269,7 +269,7 @@ async def scratchUrls():
     db = DBManager()
     db.openConnection()
 
-    # await asyncio.to_thread(db.truncateTable, "Licitaciones_test")
+    await asyncio.to_thread(db.truncateTable, "Licitaciones_test")
 
     async with async_playwright() as p:
         browser = await p.chromium.launch(headless=False)
@@ -529,10 +529,10 @@ async def test_scratchPliego(url):
     
 def main():
     # Carga los códigos de página
-    asyncio.run(poblar_db())
-    asyncio.run(scratchUrls())
-    asyncio.run(scratchAnexo())
-    # asyncio.run(scratchAnexoParallel())
+    # asyncio.run(poblar_db())
+    # asyncio.run(scratchUrls())
+    # asyncio.run(scratchAnexo())
+    asyncio.run(scratchAnexoParallel())
     # CONTIENE
     # asyncio.run(test_scratchPliego("https://contrataciondelestado.es/FileSystem/servlet/GetDocumentByIdServlet?DocumentIdParam=upTP%2BWKezQgrGjlOQ5Wk5bOeZz2dJ1QhGjQ8oNEDLzCAUoQffpeZQ1wH4Ex%2BHJUQfmwwb2f3zxQg9DibGAGMj3vcPSj7iRpSFPmejtp0mXs%3D&cifrado=QUC1GjXXSiLkydRHJBmbpw%3D%3D"))
     # NO CONTIENE

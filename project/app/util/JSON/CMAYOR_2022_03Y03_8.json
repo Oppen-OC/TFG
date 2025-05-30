@@ -1,0 +1,128 @@
+{
+    "prompts": [
+        {
+            "prompt_key": "Regulacion_armonizada",
+            "response": "No"
+        },
+        {
+            "prompt_key": "Sometido_recurso_especial",
+            "response": ""
+        },
+        {
+            "prompt_key": "Plazo_ejecución",
+            "response": "es de 12 meses"
+        },
+        {
+            "prompt_key": "Presupuesto_sinIVA",
+            "response": "2.101.657,65 €"
+        },
+        {
+            "prompt_key": "Presupuesto_conIVA",
+            "response": "2.543.005,76 €"
+        },
+        {
+            "prompt_key": "Importe_IVA",
+            "response": "441.348,11 €"
+        },
+        {
+            "prompt_key": "Sistema_Retribucion",
+            "response": ""
+        },
+        {
+            "prompt_key": "Valor_estimado",
+            "response": "2.101.657,65 €"
+        },
+        {
+            "prompt_key": "Revision_precios",
+            "response": "La duración prevista para la ejecución de la obra es de 12 meses por lo que de acuerdo a lo establecido en LCSP, no procede revisión de precios. No obstante, la fórmula nº 382 Urbanización y viales en entornos urbanos del Real Decreto 1359/2011, por el que se aprueba la relación de materiales básicos y las fórmulas-tipo generales de revisión de precios de los contratos de obras y de contratos de suministro de fabricación de armamento y equipamiento de las Administraciones Públicas, resulta adecuada a este contrato de obras, según su naturaleza."
+        },
+        {
+            "prompt_key": "Garantia_definitiva",
+            "response": "5% del presupuesto base de licitación, IVA excluido"
+        },
+        {
+            "prompt_key": "Garantia_provisional",
+            "response": "No se exige conforme al art. 106.1 de la LCSP."
+        },
+        {
+            "prompt_key": "Admisibilidad_variantes",
+            "response": ""
+        },
+        {
+            "prompt_key": "Clasificacion",
+            "response": " No"
+        },
+        {
+            "prompt_key": "Grupo",
+            "response": "C - Edificaciones"
+        },
+        {
+            "prompt_key": "Subgrupo",
+            "response": "2 – Estructuras de fábrica u hormigón"
+        },
+        {
+            "prompt_key": "Categoria",
+            "response": "4 - por disponer de un valor estimado entre 840.000 € y 2.400.000 €"
+        },
+        {
+            "prompt_key": "Criterio_Solvencia_economica",
+            "response": "Si"
+        },
+        {
+            "prompt_key": "Criterio_Solvencia_tecnica",
+            "response": "Si"
+        },
+        {
+            "prompt_key": "Condiciones_especiales",
+            "response": "La empresa adjudicataria deberá desarrollar todos los trabajos objeto del presente contrato aplicando los procedimientos que dispone el certificado ISO 14001 o certificado equivalente. Esta exigencia garantiza la calidad ambiental de todos los trabajos incluidos en el contrato. Asimismo, en todas las etapas de la ejecución de las obras se adoptará un Sistema de Gestión de la Accesibilidad de acuerdo con la norma UNE/ISO 17001. Esta exigencia garantiza la accesibilidad a largo de todas las etapas de desarrollo -incluidas las situaciones provisionales- de los trabajos incluidos en el contrato."
+        },
+        {
+            "prompt_key": "Penalidad_incumplimiento",
+            "response": " No procede"
+        },
+        {
+            "prompt_key": "Forma_pago",
+            "response": "Los pagos se efectuarán previa presentación de la correspondiente factura reglamentaria. El abono durante la ejecución de las obras será mensual"
+        },
+        {
+            "prompt_key": "Causas_modificacion",
+            "response": "No se contemplan"
+        },
+        {
+            "prompt_key": "Plazo_garantia",
+            "response": "El plazo de garantía de las obras será de UN (1) año, a contar desde la fecha de su recepción."
+        },
+        {
+            "prompt_key": "Contratacion_precio_unit",
+            "response": ""
+        },
+        {
+            "prompt_key": "Tanto_alzado",
+            "response": ""
+        },
+        {
+            "prompt_key": "Tanto_alzado_con",
+            "response": ""
+        },
+        {
+            "prompt_key": "Criterio_juicio_val",
+            "response": "hasta 45 puntos."
+        },
+        {
+            "prompt_key": "Evaluables_autom",
+            "response": ""
+        },
+        {
+            "prompt_key": "Criterio_ecónomico",
+            "response": "Criterio precio (PCP): hasta 55 puntos."
+        },
+        {
+            "prompt_key": "Obligaciones_ambientales",
+            "response": ""
+        },
+        {
+            "prompt_key": "Regimen_penalidades",
+            "response": "Si, definidas en la página 22"
+        }
+    ]
+}

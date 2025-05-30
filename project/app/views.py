@@ -52,27 +52,35 @@ def check_document_view(request):
     return JsonResponse({'error': 'Método no permitido'}, status=405)
 
 def licitaciones_view(request):
-    # Crear una instancia de DBManager
+
     db = DBManager()
-    
-    # Abrir la conexión a la base de datos
     db.openConnection()
-    
-    # Obtener los datos de la tabla "Licitaciones_test"
     data = db.viewTable("Licitaciones_test")
-    
-    # Cerrar la conexión a la base de datos
     db.closeConnection()
     
     # Procesar los datos para que coincidan con el formato esperado
     licitaciones = [
         {
-            'COD': row[0].replace("/", "-"),  # Ajusta los índices según las columnas de tu tabla
+            'COD': row[0].replace("/", "_"),
+            'ID_Publicacion_TED': row[1],
             'Organo_Contratacion': row[2],
+            'ID_Organo_Contratacion': row[3],
             'Estado_Licitacion': row[4],
+            'Objeto_Contrato': row[5],
+            'Financiacion_UE': row[6],
             'Presupuesto_Base_Licitacion': row[7],
             'Valor_Estimado_Contrato': row[8],
-            'Lugar_Ejecucion': row[5],
+            'Tipo_Contrato': row[9],
+            'Codigo_CPV': row[10],
+            'Lugar_Ejecucion': row[11],
+            'Sistema_Contratacion': row[12],
+            'Procedimiento_Contratacion': row[13],
+            'Tipo_Tramitacion': row[14],
+            'Metodo_Presentacion_Oferta': row[15],
+            'Resultado': row[16],
+            'Adjudicatario': row[17],
+            'Num_Licitadores_Presentados': row[18],
+            'Importe_Adjudicacion': row[19],
         }
         for row in data
     ]
@@ -99,11 +107,14 @@ def mostrar_anexo_i(cod):
     db.openConnection()
 
     data = db.searchTable("AnexoI", {"COD": cod})
-    print(data)
+    data1 = db.searchTable("anexoI_fuentes", {"COD": cod})
+
+    #print(data)
     if data == []:
         # Carga el anexo I a la base de datos
         util_main(cod) 
         data = db.searchTable("AnexoI", {"COD": cod})
+        data1 = db.searchTable("anexoI_fuentes", {"COD": cod})
 
     if not data:
         return JsonResponse({'error': 'Licitación no encontrada'}, status=404)
@@ -111,37 +122,73 @@ def mostrar_anexo_i(cod):
     db.closeConnection()
 
     anexoI = {
-            "Regulacion_armonizada": data[1],	
-            "Sometido_recurso_especial": data[2],
-            "Tipo_Tramitacion": data[3],
-            "Clasificación_obra": data[4],
-            "Nomenclatura": data[5],
-            "Plazo_ejecución": data[6],
-            "Presupuesto_sinIVA": data[7],
-            "Presupuesto_conIVA": data[8],
-            "Importe_IVA": data[9],
-            "Valor_estimado": data[10],
-            "Revision_precios": data[11],
-            "Garantia_definitiva": data[12],
-            "Garantia_provisional": data[13],
-            "Criterio_1": data[14],
-            "Criterio_2": data[15],
-            "Criterio_3": data[16],
-            "Admisibilidad_variantes": data[17],
-            "Clasificacion": data[18],
-            "Grupo": data[19],
-            "Subgrupo": data[20],
-            "Categoria": data[24],
-            "Criterio_Solvencia_economica": data[25],
-            "Criterio_Solvencia_tecnica": data[26],
-            "Condiciones_especiales": data[27],
-            "Penalidad_incumplimiento": data[28],
-            "Forma_pago": data[29],
-            "Causas_modificacion": data[30],
-            "Plazo_garantia": data[31]
+        "Regulacion_armonizada": data[1],
+        "Sometido_recurso_especial": data[2],
+        "Plazo_ejecución": data[3],
+        "Presupuesto_sinIVA": data[4],
+        "Presupuesto_conIVA": data[5],
+        "Importe_IVA": data[6],
+        "Sistema_Retribucion": data[7],
+        "Valor_estimado": data[8],
+        "Revision_precios": data[9],
+        "Garantia_definitiva": data[10],
+        "Garantia_provisional": data[11],
+        "Admisibilidad_variantes": data[12],
+        "Clasificacion": data[13],
+        "Grupo": data[14],
+        "Subgrupo": data[15],
+        "Categoria": data[16],
+        "Criterio_Solvencia_economica": data[17],
+        "Criterio_Solvencia_tecnica": data[18],
+        "Condiciones_especiales": data[19],
+        "Penalidad_incumplimiento": data[20],
+        "Forma_pago": data[21],
+        "Causas_modificacion": data[22],
+        "Plazo_garantia": data[23],
+        "Contratacion_precio_unit": data[24],
+        "Tanto_alzado": data[25],
+        "Tanto_alzado_con": data[26],
+        "Criterio_juicio_val": data[27],
+        "Evaluables_autom": data[28],
+        "Criterio_ecónomico": data[29],
+        "Obligaciones_ambientales": data[30],
+        "Regimen_penalidades": data[31],
+    }    
+    anexoI_fuentes = {
+        "Regulacion_armonizada": data1[1],
+        "Sometido_recurso_especial": data1[2],
+        "Plazo_ejecución": data1[3],
+        "Presupuesto_sinIVA": data1[4],
+        "Presupuesto_conIVA": data1[5],
+        "Importe_IVA": data1[6],
+        "Sistema_Retribucion": data1[7],
+        "Valor_estimado": data1[8],
+        "Revision_precios": data1[9],
+        "Garantia_definitiva": data1[10],
+        "Garantia_provisional": data1[11],
+        "Admisibilidad_variantes": data1[12],
+        "Clasificacion": data1[13],
+        "Grupo": data1[14],
+        "Subgrupo": data1[15],
+        "Categoria": data1[16],
+        "Criterio_Solvencia_economica": data1[17],
+        "Criterio_Solvencia_tecnica": data1[18],
+        "Condiciones_especiales": data1[19],
+        "Penalidad_incumplimiento": data1[20],
+        "Forma_pago": data1[21],
+        "Causas_modificacion": data1[22],
+        "Plazo_garantia": data1[23],
+        "Contratacion_precio_unit": data1[24],
+        "Tanto_alzado": data1[25],
+        "Tanto_alzado_con": data1[26],
+        "Criterio_juicio_val": data1[27],
+        "Evaluables_autom": data1[28],
+        "Criterio_ecónomico": data1[29],
+        "Obligaciones_ambientales": data1[30],
+        "Regimen_penalidades": data1[31],
     }
 
-    return anexoI
+    return anexoI, anexoI_fuentes
 
 def chatbot(request):   
     return True
@@ -152,7 +199,10 @@ def detalles_licitacion(request, cod):
 
     # Reemplazar "-" por "/" en el código, sino no funciona bien el url
     cod = cod.replace("-", "/")
-
+    cod = cod.replace("%", "/")
+    cod = cod.replace(" ", "/")
+    cod = cod.replace("_", "/")
+    print(cod)
     # Obtener los datos de la licitación
     data = db.searchTable("Licitaciones_test", {"COD": cod})
 
@@ -183,7 +233,7 @@ def detalles_licitacion(request, cod):
         'Adjudicatario': data[17],
         'Numero_licitaciones_presentadas': data[18],
         'Importe_adjudicacion': data[19],
-    }
+    }    
 
     # Obtener los documentos relacionados desde la tabla "Documentos"
     documentos = db.searchTable("Documentos", {"COD": cod})
@@ -192,18 +242,19 @@ def detalles_licitacion(request, cod):
 
     if len(anexo) == 0: anexo = None
 
-    print(documentos)
     # Procesar los documentos
     pliego_administrativo_url = documentos[1]
     anexo_url = documentos[2]
     titulo_anexo = documentos[3]
-    anexoI = mostrar_anexo_i(cod)
-    # Renderizar la plantilla con los datos
-    return render(request, 'detalles_licitacion.html', {
+    anexoI, anexoI_fuentes = mostrar_anexo_i(cod)
+
+    context = {
         'licitacion': licitacion,
         'pliego_administrativo_url': pliego_administrativo_url,
         'anexo_url': anexo_url,
         'titulo_anexo': titulo_anexo,
         'anexo': anexo,
         'anexoI': anexoI,
-    })
+        'anexoI_fuentes': json.dumps(anexoI_fuentes or {}),
+    }
+    return render(request, 'detalles_licitacion.html', context)

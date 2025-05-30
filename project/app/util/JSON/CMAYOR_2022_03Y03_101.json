@@ -1,0 +1,128 @@
+{
+    "prompts": [
+        {
+            "prompt_key": "Regulacion_armonizada",
+            "response": "No"
+        },
+        {
+            "prompt_key": "Sometido_recurso_especial",
+            "response": ""
+        },
+        {
+            "prompt_key": "Plazo_ejecución",
+            "response": "48 meses"
+        },
+        {
+            "prompt_key": "Presupuesto_sinIVA",
+            "response": "4.909.596,51 €"
+        },
+        {
+            "prompt_key": "Presupuesto_conIVA",
+            "response": "5.940.611,78 €"
+        },
+        {
+            "prompt_key": "Importe_IVA",
+            "response": "1.031.015,27 €"
+        },
+        {
+            "prompt_key": "Sistema_Retribucion",
+            "response": ""
+        },
+        {
+            "prompt_key": "Valor_estimado",
+            "response": "4.909.596,51 €"
+        },
+        {
+            "prompt_key": "Revision_precios",
+            "response": " No se establece el derecho a revisión periódica y predeterminada de precios. No obstante, si durante la vigencia del contrato se produjeran las condiciones establecidas en los RDL 3/22 y 6/22, RDL a los que la Generalitat se adhirió mediante Acuerdo de 1 de abril de 2022, del Consell, que dieran lugar a la práctica de la revisión extraordinaria de precios, la fórmula utilizada será la fórmula n.º 381, de “Urbanización y viales en entornos portuarios” del Real Decreto 1359/2011, de 7 de octubre, por el que se aprueba la Relación de materiales básicos y las fórmulas-tipo generales de revisión de precios de los contratos de obras y de contratos de suministro de fabricación de armamento y equipamiento de las Administraciones Públicas."
+        },
+        {
+            "prompt_key": "Garantia_definitiva",
+            "response": "5% del precio final ofertado, IVA excluido."
+        },
+        {
+            "prompt_key": "Garantia_provisional",
+            "response": "No se exige conforme al art. 106.1 de la LCSP."
+        },
+        {
+            "prompt_key": "Admisibilidad_variantes",
+            "response": "No"
+        },
+        {
+            "prompt_key": "Clasificacion",
+            "response": ""
+        },
+        {
+            "prompt_key": "Grupo",
+            "response": ""
+        },
+        {
+            "prompt_key": "Subgrupo",
+            "response": ""
+        },
+        {
+            "prompt_key": "Categoria",
+            "response": ""
+        },
+        {
+            "prompt_key": "Criterio_Solvencia_economica",
+            "response": " La empresa licitadora deberá estar en posesión de las siguientes clasificaciones:  Grupo A; subgrupo 01 (desmontes y vaciados); categoría 1. Grupo C; subgrupo 02 (Estructuras de fábrica u hormigón); categoría 2 Grupo E; subgrupo 07 (Obras hidráulicas sin cualificación específica); categoría 1. Grupo G; subgrupo 06 (Obras viales sin cualificación específica); categoría 2."
+        },
+        {
+            "prompt_key": "Criterio_Solvencia_tecnica",
+            "response": " La empresa licitadora deberá estar en posesión de las siguientes clasificaciones:  Grupo A; subgrupo 01 (desmontes y vaciados); categoría 1. Grupo C; subgrupo 02 (Estructuras de fábrica u hormigón); categoría 2 Grupo E; subgrupo 07 (Obras hidráulicas sin cualificación específica); categoría 1. Grupo G; subgrupo 06 (Obras viales sin cualificación específica); categoría 2."
+        },
+        {
+            "prompt_key": "Condiciones_especiales",
+            "response": "La empresa adjudicataria deberá desarrollar todos los trabajos objeto del presente contrato aplicando los procedimientos que dispone el certificado ISO 14001 o certificado equivalente. Esta exigencia garantiza la calidad ambiental de todos los trabajos incluidos en el contrato. Asimismo, en todas las etapas de la ejecución de las obras se adoptará un Sistema de Gestión de la Accesibilidad de acuerdo con la norma UNE/ISO 17001. Esta exigencia garantiza la accesibilidad a largo de todas las etapas de desarrollo -incluidas las situaciones provisionales- de los trabajos incluidos en el contrato."
+        },
+        {
+            "prompt_key": "Penalidad_incumplimiento",
+            "response": " No procede."
+        },
+        {
+            "prompt_key": "Forma_pago",
+            "response": "Los pagos se efectuarán previa presentación de la correspondiente factura reglamentaria."
+        },
+        {
+            "prompt_key": "Causas_modificacion",
+            "response": "No se contemplan, salvo lo dispuesto en el artículo 203 y siguientes de la Ley 9/2017."
+        },
+        {
+            "prompt_key": "Plazo_garantia",
+            "response": "El plazo de garantía de las obras será de UN (1) año, a contar desde la fecha de su recepción."
+        },
+        {
+            "prompt_key": "Contratacion_precio_unit",
+            "response": ""
+        },
+        {
+            "prompt_key": "Tanto_alzado",
+            "response": "El importe del presupuesto de licitación formulado por la Administración se ha determinado según el proyecto técnico redactado al efecto"
+        },
+        {
+            "prompt_key": "Tanto_alzado_con",
+            "response": ""
+        },
+        {
+            "prompt_key": "Criterio_juicio_val",
+            "response": "40"
+        },
+        {
+            "prompt_key": "Evaluables_autom",
+            "response": "5"
+        },
+        {
+            "prompt_key": "Criterio_ecónomico",
+            "response": "55"
+        },
+        {
+            "prompt_key": "Obligaciones_ambientales",
+            "response": "No"
+        },
+        {
+            "prompt_key": "Regimen_penalidades",
+            "response": "Si"
+        }
+    ]
+}

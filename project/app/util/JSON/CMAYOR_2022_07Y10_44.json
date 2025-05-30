@@ -1,0 +1,128 @@
+{
+    "prompts": [
+        {
+            "prompt_key": "Regulacion_armonizada",
+            "response": "Si"
+        },
+        {
+            "prompt_key": "Sometido_recurso_especial",
+            "response": ""
+        },
+        {
+            "prompt_key": "Plazo_ejecución",
+            "response": "Dieciocho (18) meses"
+        },
+        {
+            "prompt_key": "Presupuesto_sinIVA",
+            "response": "9.688.881,66 €"
+        },
+        {
+            "prompt_key": "Presupuesto_conIVA",
+            "response": "11.723.546,81 €"
+        },
+        {
+            "prompt_key": "Importe_IVA",
+            "response": "2.034.665,15 €"
+        },
+        {
+            "prompt_key": "Sistema_Retribucion",
+            "response": ""
+        },
+        {
+            "prompt_key": "Valor_estimado",
+            "response": "9.688.881,66 €"
+        },
+        {
+            "prompt_key": "Revision_precios",
+            "response": "X□ SI, fórmula: contemplada en el RD 1359/2011, la fórmula tipo 561: Obras hidráulicas: “Alto contenido en siderurgia, cemento y rocas y áridos”. Tipología más representativa: Instalaciones y conducciones de abastecimiento y saneamiento."
+        },
+        {
+            "prompt_key": "Garantia_definitiva",
+            "response": "5 por 100 del precio final ofertado, excluido IVA."
+        },
+        {
+            "prompt_key": "Garantia_provisional",
+            "response": "No se exige conforme al Acuerdo del Consell de 26 de marzo de 2010 y art. 106 LCSP."
+        },
+        {
+            "prompt_key": "Admisibilidad_variantes",
+            "response": "X□ NO"
+        },
+        {
+            "prompt_key": "Clasificacion",
+            "response": "Superior a 500.000"
+        },
+        {
+            "prompt_key": "Grupo",
+            "response": "E OBRAS HIDRÁULICAS"
+        },
+        {
+            "prompt_key": "Subgrupo",
+            "response": "1.-ABASTECIMIENTOS Y SANEAMIENTOS"
+        },
+        {
+            "prompt_key": "Categoria",
+            "response": "6 según RD 1098/2001, de conformidad con lo establecido en el (RD 716/2019)"
+        },
+        {
+            "prompt_key": "Criterio_Solvencia_economica",
+            "response": "\"Criterio_Solvencia_economica\": No procede según el art 77.1 de la LCSP"
+        },
+        {
+            "prompt_key": "Criterio_Solvencia_tecnica",
+            "response": "No procede según el art 77.1 de la LCSP"
+        },
+        {
+            "prompt_key": "Condiciones_especiales",
+            "response": "De acuerdo con lo expuesto en la Declaración de Impacto Ambiental y el Proyecto, la cubierta vegetal a retirar del suelo para realizar la excavación de las zanjas y el movimiento de tierra necesario para la obra en general deberá ser repuesta al mismo lugar del que se extrajo, en la medida de lo posible. En todo caso se repondrá siempre con una del mismo tipo, composición, color y tamaño que la retirada."
+        },
+        {
+            "prompt_key": "Penalidad_incumplimiento",
+            "response": "NO PROCEDE"
+        },
+        {
+            "prompt_key": "Forma_pago",
+            "response": "El abono se efectuará mediante certificaciones mensuales"
+        },
+        {
+            "prompt_key": "Causas_modificacion",
+            "response": "X□ NO    Salvo lo dispuesto en el artículo 205 de la Ley 9/2017"
+        },
+        {
+            "prompt_key": "Plazo_garantia",
+            "response": "24 meses"
+        },
+        {
+            "prompt_key": "Contratacion_precio_unit",
+            "response": "X□ SI, los precios están reflejados a los distintos componentes de la prestación según los precios del proyecto aprobado"
+        },
+        {
+            "prompt_key": "Tanto_alzado",
+            "response": "X□ NO"
+        },
+        {
+            "prompt_key": "Tanto_alzado_con",
+            "response": "X□ NO"
+        },
+        {
+            "prompt_key": "Criterio_juicio_val",
+            "response": "Máximo 30 puntos"
+        },
+        {
+            "prompt_key": "Evaluables_autom",
+            "response": "hasta un máximo de 10 puntos"
+        },
+        {
+            "prompt_key": "Criterio_ecónomico",
+            "response": "hasta un máximo de 60 puntos"
+        },
+        {
+            "prompt_key": "Obligaciones_ambientales",
+            "response": "X□ NO"
+        },
+        {
+            "prompt_key": "Regimen_penalidades",
+            "response": "Si, definidas en la página 25"
+        }
+    ]
+}

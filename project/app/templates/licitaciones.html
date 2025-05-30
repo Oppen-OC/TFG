@@ -11,27 +11,78 @@
   <span>Total en euros: <strong>{{ total_euros }}</strong> €</span>
 </div>
 
-<table class="table table-hover bg-white rounded shadow-sm">
+<!-- Buscador en la parte superior derecha -->
+<div class="d-flex justify-content-end mb-3">
+  <input type="text" id="searchInput" class="form-control w-25" placeholder="Buscar licitaciones..." onkeyup="filterTable()">
+</div>
+
+<style>
+.table-responsive {
+  width: 100%;
+  max-width: 100vw;
+  overflow-x: auto;
+}
+.table th, .table td {
+  font-size: 0.95em;
+  vertical-align: top;
+  word-break: break-word;
+  white-space: pre-line;
+  min-width: 140px;      /* Asegura que cada columna tenga un ancho mínimo */
+  padding-top: 0.7em;
+  padding-bottom: 0.7em;
+}
+</style>
+
+<div class="table-responsive">
+<table class="table table-hover bg-white rounded shadow-sm" id="licitacionesTable">
   <thead class="thead-light">
     <tr>
       <th>Expediente</th>
-      <th>Organo</th>
+      <th>ID Publicación TED</th>
+      <th>Órgano de Contratación</th>
+      <th>ID Órgano Contratación</th>
       <th>Estado</th>
+      <th>Objeto del Contrato</th>
+      <th>Financiación UE</th>
       <th>Presupuesto base</th>
       <th>Valor estimado</th>
-      <th>Lugar de ejecucion</th>
-      <th>Acciones</th> <!-- Nueva columna para el enlace -->
+      <th>Tipo de Contrato</th>
+      <th>Código CPV</th>
+      <th>Lugar de Ejecución</th>
+      <th>Sistema de Contratación</th>
+      <th>Procedimiento de Contratación</th>
+      <th>Tipo de Tramitación</th>
+      <th>Método Presentación Oferta</th>
+      <th>Resultado</th>
+      <th>Adjudicatario</th>
+      <th>Nº Licitadores Presentados</th>
+      <th>Importe de Adjudicación</th>
+      <th>Acciones</th>
     </tr>
   </thead>
   <tbody>
     {% for licitacion in licitaciones %}
     <tr>
       <td>{{ licitacion.COD }}</td>
+      <td>{{ licitacion.ID_Publicacion_TED }}</td>
       <td>{{ licitacion.Organo_Contratacion }}</td>
+      <td>{{ licitacion.ID_Organo_Contratacion }}</td>
       <td>{{ licitacion.Estado_Licitacion }}</td>
+      <td>{{ licitacion.Objeto_Contrato }}</td>
+      <td>{{ licitacion.Financiacion_UE }}</td>
       <td>{{ licitacion.Presupuesto_Base_Licitacion }}</td>
       <td>{{ licitacion.Valor_Estimado_Contrato }}</td>
+      <td>{{ licitacion.Tipo_Contrato }}</td>
+      <td>{{ licitacion.Codigo_CPV }}</td>
       <td>{{ licitacion.Lugar_Ejecucion }}</td>
+      <td>{{ licitacion.Sistema_Contratacion }}</td>
+      <td>{{ licitacion.Procedimiento_Contratacion }}</td>
+      <td>{{ licitacion.Tipo_Tramitacion }}</td>
+      <td>{{ licitacion.Metodo_Presentacion_Oferta }}</td>
+      <td>{{ licitacion.Resultado }}</td>
+      <td>{{ licitacion.Adjudicatario }}</td>
+      <td>{{ licitacion.Num_Licitadores_Presentados }}</td>
+      <td>{{ licitacion.Importe_Adjudicacion }}</td>
       <td>
         <a href="{% url 'app:detalles_licitacion' licitacion.COD|urlencode %}" class="btn btn-primary btn-sm">Detalles</a>
       </td>
@@ -39,4 +90,28 @@
     {% endfor %}
   </tbody>
 </table>
+</div>
+
+<script>
+function filterTable() {
+  const input = document.getElementById('searchInput');
+  const filter = input.value.toLowerCase();
+  const table = document.getElementById('licitacionesTable');
+  const rows = table.getElementsByTagName('tr');
+
+  for (let i = 1; i < rows.length; i++) { // Start at 1 to skip the header row
+    const cells = rows[i].getElementsByTagName('td');
+    let match = false;
+
+    for (let j = 0; j < cells.length; j++) {
+      if (cells[j].textContent.toLowerCase().includes(filter)) {
+        match = true;
+        break;
+      }
+    }
+
+    rows[i].style.display = match ? '' : 'none';
+  }
+}
+</script>
 {% endblock %}

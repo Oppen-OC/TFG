@@ -4,341 +4,552 @@
             "prompt_key": "Regulacion_armonizada",
             "prompt": "Indica si tiene regulación armonizada",
             "response": "No",
-            "score": 0.9500000000000001,
+            "score": 0.8906203515587314,
             "index": [
                 38,
                 39,
-                91
+                90,
+                1
+            ],
+            "chunks": [
+                "Direcció General de Ports, CIUTAT ADMINISTRATIVA 9 D'OCTUBRE – TORRE 1\nAeroports i Costes C/ Democràcia, 77 - 46018 VALÈNCIA - Tel. 012\nLa información que vaya a ser objeto de valoración en los criterios de adjudicación\ncuantificables mediante la mera aplicación de fórmulas matemáticas o aritméticas deberá\nincluirse EXCLUSIVAMENTE en el sobre Número3.\nLa documentación incluida en los sobres se presentará en formato pdf y firmada\nelectrónicamente.\nLa inclusión de información relativa a un sobre en otro diferente del que le corresponde según\nlos pliegos, supondrá la exclusión del proceso de licitación por acuerdo del Órgano de\nContratación a propuesta de la Mesa.\nCRITERIOS DE ADJUDICACIÓN DEL PROCEDIMIENTO ABIERTO\n Varios criterios\nSUJETO A REGULACIÓN ARMONIZADA\n No\nSUBASTA ELECTRÓNICA",
+                "electrónicamente.\nLa inclusión de información relativa a un sobre en otro diferente del que le corresponde según\nlos pliegos, supondrá la exclusión del proceso de licitación por acuerdo del Órgano de\nContratación a propuesta de la Mesa.\nCRITERIOS DE ADJUDICACIÓN DEL PROCEDIMIENTO ABIERTO\n Varios criterios\nSUJETO A REGULACIÓN ARMONIZADA\n No\nSUBASTA ELECTRÓNICA\n No\nCARÁCTER VINCULANTE DE LAS RESPUESTAS A LAS SOLICITUDES DE\nACLARACIONES DEL PLIEGO:\n Sí\nMODIFICACION DEL PLAZO DE SOLICITUD DE INFORMACION ADICIONAL O\nDOCUMENTACION COMPLEMENTARIA (ART. 138.3 LCSP):\n No\nLOS INTERCAMBIOS DE INFORMACION PARA LOS QUE NO SE UTILICEN MEDIOS\nELECTRONICOS SE REALIZARA:\n Por correo\nLA PRESENTACION DE PROPOSICIONES PARA LAS QUE NO SE UTILICEN MEDIOS\nELECTRONICOS SE REALIZARA:",
+                "ACREDITACIÓN DE LA SOLVENCIA POR LOS EMPRESARIOS NO ESPAÑOLES DE\nESTADOS MIEMBROS DE LA UNIÓN EUROPEA O DE ESTADOS SIGNATARIOS DEL\nACUERDO SOBRE EL ESPACIO ECONÓMICO EUROPEO:\nMEDIOS DE ACREDITACIÓN: relación de las obras ejecutadas en el curso de los cinco últimos\naños, avalada con certificados de buena ejecución.\nCRITERIOS DE ACREDITACIÓN: que la media anual del importe total de obras de los grupos\nindicados previamente, ejecutadas en el curso de los cinco últimos años, sea superior a\nOCHOCIENTOS MIL EUROS (800.000 €) o que durante al menos tres de los últimos cinco años\nel importe haya sido superior a UN MILLÓN DOSCIENTOS MIL EUROS (1.200.000 €)\nEN CONTRATOS SUJETOS A UNA REGULACION ARMONIZADA, CERTIFICADOS DE\nACREDITACION DEL CUMPLIMIENTO DE LAS NORMAS DE GARANTIA DE CALIDAD:\nNO",
+                "indicados previamente, ejecutadas en el curso de los cinco últimos años, sea superior a\nOCHOCIENTOS MIL EUROS (800.000 €) o que durante al menos tres de los últimos cinco años\nel importe haya sido superior a UN MILLÓN DOSCIENTOS MIL EUROS (1.200.000 €)\nEN CONTRATOS SUJETOS A UNA REGULACION ARMONIZADA, CERTIFICADOS DE\nACREDITACION DEL CUMPLIMIENTO DE LAS NORMAS DE GARANTIA DE CALIDAD:\nNO\nEN CONTRATOS SUJETOS A UNA REGULACION ARMONIZADA, CERTIFICADOS DE\nACREDITACION DEL CUMPLIMIENTO DE LAS NORMAS DE GESTION MEDIOAMBIENTAL:\nNO\nHABILITACION EMPRESARIAL EXIGIBLE PARA LA REALIZACION DE LA ACTIVIDAD O\nPRESTACION QUE CONSTITUYA EL OBJETO DEL CONTRATO EN CASO DE QUE\nPROCEDA:\nNO\nFORMAS DE RESPONSABILIDAD CONJUNTA EN LA EJECUCION DEL CONTRATO PARA"
             ]
         },
         {
             "prompt_key": "Sometido_recurso_especial",
             "prompt": "Indica si tiene recurso especial",
             "response": "",
-            "score": 0.9121212121212121,
+            "score": 0.7407516181468964,
             "index": [
                 7,
-                63,
-                64
+                3,
+                4,
+                3
+            ],
+            "chunks": [
+                "Clave Informática, Clave seguimiento, Expediente MASTIN ",
+                "ANUALIDADES, EJERCICIO, , BASE, IVA (€) (21%), , IMPORTE TOTAL , , , IMPONIBLE (€), , , (€) ",
+                "ANUALIDADES, EJERCICIO, , BASE, IVA (€) (21%), , IMPORTE TOTAL , , , IMPONIBLE (€), , , (€) 1ª Anualidad, 2023, 413.223,14, , 86.776,86, 500.000,  ",
+                "Centro y Sección, , , Programa, , , Económica, Importe (IVA incluido) "
             ]
         },
         {
             "prompt_key": "Plazo_ejecución",
             "prompt": "Obten el plazo de ejecución del contrato",
             "response": "48 meses",
-            "score": 0.9500000000000001,
+            "score": 0.9217405840624934,
             "index": [
-                111,
-                112,
-                200
+                200,
+                201,
+                113,
+                2
+            ],
+            "chunks": [
+                "DE LA APTITUD DEL SUBCONTRATISTA Y LA ACREDITACIÓN DE LAS CONDICIONES DE\nEMERGENCIA O URGENCIA TIENE CARÁCTER DE OBLIGACIONES ESENCIALES:\n No\nTAREAS CRÍTICAS QUE NO PODRÁN SER OBJETO DE SUBCONTRATACIÓN:\n No procede\nPAGOS DIRECTOS A LOS SUBCONTRATISTAS POR PARTE DE LA ADMINISTRACIÓN:\n No\nREMISION AL ÓRGANO DE CONTRATACIÓN, CUANDO ÉSTE LO SOLICITE, DE UNA\nRELACIÓN DETALLADA DE AQUELLOS SUBCONTRATISTAS O SUMINISTRADORES\nQUE PARTICIPEN EN EL CONTRATO CUANDO SE PERFECCIONE SU PARTICIPACIÓN,\n21Direcció General de Ports, CIUTAT ADMINISTRATIVA 9 D'OCTUBRE – TORRE 1\nAeroports i Costes C/ Democràcia, 77 - 46018 VALÈNCIA - Tel. 012\nJUNTO CON AQUELLAS CONDICIONES DE SUBCONTRATACIÓN O SUMINISTRO DE\nCADA UNO DE ELLOS QUE GUARDEN UNA RELACIÓN DIRECTA CON EL PLAZO DE\nPAGO:\n No\nAPARTADO R\nPLAZO DE EJECUCIÓN DEL CONTRATO:\nEl plazo de ejecución es de 48 meses, a partir de la firma del acta de compr",
+                "Direcció General de Ports, CIUTAT ADMINISTRATIVA 9 D'OCTUBRE – TORRE 1\nAeroports i Costes C/ Democràcia, 77 - 46018 VALÈNCIA - Tel. 012\nJUNTO CON AQUELLAS CONDICIONES DE SUBCONTRATACIÓN O SUMINISTRO DE\nCADA UNO DE ELLOS QUE GUARDEN UNA RELACIÓN DIRECTA CON EL PLAZO DE\nPAGO:\n No\nAPARTADO R\nPLAZO DE EJECUCIÓN DEL CONTRATO:\nEl plazo de ejecución es de 48 meses, a partir de la firma del acta de comprobación del replanteo.\nLa finalización del contrato se producirá por agotamiento del plazo o del importe del contrato.\nLa empresa contratista se hará cargo de todo tipo de permisos, licencias, autorizaciones,\netc...que resulten necesarias para la ejecución de las obras, así como de la redacción de los\ndocumentos técnicos necesarios para la obtención de los referidos permisos, autorizaciones,",
+                "rección de Obra, mediante la elaboración de los informes, estudios y proyectos que sean\nnecesarios.\n• La tercera, las actuaciones de adecuación y mejora, a criterio de la Dirección de Obra,\ncomo el acondicionamiento de accesos, o intersecciones, ampliación de aceras … y, en\ngeneral, todas aquellas que pudieran derivarse de necesidades de nuevas instalaciones o\nde mejora de las existentes que debido a que por su estado requieran de una intervención\npor motivos de seguridad, explotación y movilidad.\nPara todas las actuaciones se detallará: la justificación de su necesidad, su forma de ejecu-\nción, el coste estimado, su tipología, el plazo de ejecución y su encaje en la planificación del\nconjunto de los trabajos que componen el presente contrato.",
+                "La finalización del contrato se producirá por agotamiento del plazo o del importe del contrato.\nLa empresa contratista se hará cargo de todo tipo de permisos, licencias, autorizaciones,\netc...que resulten necesarias para la ejecución de las obras, así como de la redacción de los\ndocumentos técnicos necesarios para la obtención de los referidos permisos, autorizaciones,\npuestas en uso, etc.\nINICIO DEL CÓMPUTO:\nLa ejecución del contrato de obras comenzará con el acta de comprobación del replanteo.\nPLAZOS PARCIALES:\nNo.\nOBLIGACIÓN DE PRESENTAR EL PROGRAMA DE TRABAJO:\nNo.\nAPARTADO S\nINFORMACIÓN SOBRE LAS CONDICIONES DE SUBROGACIÓN EN CONTRATOS DE\nTRABAJO, DE ACUERDO CON EL ARTÍCULO 130 DE LA LCSP:\nNo procede.\nPENALIDADES, DENTRO DE LOS LIMITES DEL ART. 192 LCSP, AL CONTRATISTA PARA"
             ]
         },
         {
             "prompt_key": "Presupuesto_sinIVA",
             "prompt": "Ubica el presupuesto sin IVA del documento",
             "response": "4.909.596,51 €",
-            "score": 0.9621212121212123,
+            "score": 1.0,
             "index": [
-                156,
                 45,
-                46
+                46,
+                156
+            ],
+            "chunks": [
+                "APARTADO E\nPRESUPUESTO BASE DE LICITACIÓN DEL CONTRATO:\nTipo de presupuesto:\nEl Presupuesto Base de Licitación del Contrato asciende a CUATRO MILLONES\nNOVECIENTOS NUEVE MIL QUINIENTOS NOVENTA Y SEIS euros con CINCUENTA Y UN\ncéntimos (4.909.596,51 €), más UN MILLÓN TREINTA Y UN MIL QUINCE euros con\nVEINTISIETE céntimos (1.031.015,27 €), en concepto de IVA (21%).\nPresupuesto total (IVA incluido):\nEl Presupuesto Base de Licitación asciende a CINCO MILLONES NOVECIENTOS CUARENTA\nMIL SEISCIENTOS ONCE euros con SETENTA Y OCHO céntimos (5.940.611,78 €), incluido el\nImpuesto del Valor Añadido.\nCONCEPTO IMPORTE (€)\nPresupuesto de Ejecución Material 4.125.711,35 €\nGastos Generales (13%) 536.342,48 €\nBeneficio Industrial (6%) 247.542,68 €\nPresupuesto de licitación IVA excluido 4.909.596,51 €",
+                "El Presupuesto Base de Licitación asciende a CINCO MILLONES NOVECIENTOS CUARENTA\nMIL SEISCIENTOS ONCE euros con SETENTA Y OCHO céntimos (5.940.611,78 €), incluido el\nImpuesto del Valor Añadido.\nCONCEPTO IMPORTE (€)\nPresupuesto de Ejecución Material 4.125.711,35 €\nGastos Generales (13%) 536.342,48 €\nBeneficio Industrial (6%) 247.542,68 €\nPresupuesto de licitación IVA excluido 4.909.596,51 €\nIVA (21%) 1.031.015,27 €\nPresupuesto de licitación IVA incluido 5.940.611,78 €\nDISTRIBUCIÓN DE ANUALIADES:\nEl límite máximo de gasto que en virtud del contrato puede comprometer el órgano de\ncontratación, se distribuye en las siguientes anualidades:\n5Direcció General de Ports, CIUTAT ADMINISTRATIVA 9 D'OCTUBRE – TORRE 1\nAeroports i Costes C/ Democràcia, 77 - 46018 VALÈNCIA - Tel. 012\nBASE IMPORTE TOTAL\nANUALIDADES EJERCICIO IMPONIBLE (€) IVA (€) (21%) (€)\n1ª Anualidad 2023 413.223,14 86.776,86 500.000\n2ª Anualidad 2024 1.652.892,56 347.107,44 2.000.000\n3ª Anualidad 2025 1.652.892,56 347.107,44 2.000.000\n4ª Anualidad 2026 1.190.588,25 250.023,5",
+                "CRITERIO DE ADJUDICACIÓN: PRECIO\nVALORACIÓN\nPara valorar la oferta económica se puntuarán los aspectos que se relacionan seguidamente:\nPara todas las ofertas:\n(𝑂𝑓 −𝑂𝑓 )2\n𝑃𝐶𝑃 = 55⋅[1−\n𝑖 𝑚𝑖𝑛\n]\n1⁄2\n(𝑃𝐵𝐿−𝑂𝑓 )2\n𝑚𝑖𝑛\nSiendo:\nPCP: puntuación obtenida para el criterio precio\nOfi: oferta que se valora, IVA excluido\nOf : oferta mínima, IVA excluido\nmin\nPBL: presupuesto base de licitación, IVA excluido\nSe considera oferta mínima la oferta más baja de las admitidas, no incursa definitivamente en\nanormalidad por su bajo importe, una vez aplicados los criterios establecidos en el apartado M\ndel presente Anexo.\nLa puntuación económica se redondeará al segundo decimal.\nPUNTUACIÓN GLOBAL\nLa puntuación global (PG) relativa a una propuesta será la suma de las puntuaciones siguien-\ntes:\nPG = PCJ + PCF + PCP"
             ]
         },
         {
             "prompt_key": "Presupuesto_conIVA",
             "prompt": "Ubica el presupuesto con IVA del documento (presupuesto base)",
             "response": "5.940.611,78 €",
-            "score": 0.9681818181818183,
+            "score": 0.95,
             "index": [
+                44,
                 45,
                 46,
-                44
+                1
+            ],
+            "chunks": [
+                "Direcció General de Ports, CIUTAT ADMINISTRATIVA 9 D'OCTUBRE – TORRE 1\nAeroports i Costes C/ Democràcia, 77 - 46018 VALÈNCIA - Tel. 012\nelectrónicos:\n No\nAmpliación del plazo de presentación de proposiciones, por necesidad de visitas al\nterreno o consulta ≪in situ≫ de la documentación\n No\nMEDIO DE NOTIFICACIÓN ELECTRÓNICA:\nComparecencia en la sede electrónica\nAPARTADO E\nPRESUPUESTO BASE DE LICITACIÓN DEL CONTRATO:\nTipo de presupuesto:\nEl Presupuesto Base de Licitación del Contrato asciende a CUATRO MILLONES\nNOVECIENTOS NUEVE MIL QUINIENTOS NOVENTA Y SEIS euros con CINCUENTA Y UN\ncéntimos (4.909.596,51 €), más UN MILLÓN TREINTA Y UN MIL QUINCE euros con\nVEINTISIETE céntimos (1.031.015,27 €), en concepto de IVA (21%).\nPresupuesto total (IVA incluido):",
+                "APARTADO E\nPRESUPUESTO BASE DE LICITACIÓN DEL CONTRATO:\nTipo de presupuesto:\nEl Presupuesto Base de Licitación del Contrato asciende a CUATRO MILLONES\nNOVECIENTOS NUEVE MIL QUINIENTOS NOVENTA Y SEIS euros con CINCUENTA Y UN\ncéntimos (4.909.596,51 €), más UN MILLÓN TREINTA Y UN MIL QUINCE euros con\nVEINTISIETE céntimos (1.031.015,27 €), en concepto de IVA (21%).\nPresupuesto total (IVA incluido):\nEl Presupuesto Base de Licitación asciende a CINCO MILLONES NOVECIENTOS CUARENTA\nMIL SEISCIENTOS ONCE euros con SETENTA Y OCHO céntimos (5.940.611,78 €), incluido el\nImpuesto del Valor Añadido.\nCONCEPTO IMPORTE (€)\nPresupuesto de Ejecución Material 4.125.711,35 €\nGastos Generales (13%) 536.342,48 €\nBeneficio Industrial (6%) 247.542,68 €\nPresupuesto de licitación IVA excluido 4.909.596,51 €",
+                "El Presupuesto Base de Licitación asciende a CINCO MILLONES NOVECIENTOS CUARENTA\nMIL SEISCIENTOS ONCE euros con SETENTA Y OCHO céntimos (5.940.611,78 €), incluido el\nImpuesto del Valor Añadido.\nCONCEPTO IMPORTE (€)\nPresupuesto de Ejecución Material 4.125.711,35 €\nGastos Generales (13%) 536.342,48 €\nBeneficio Industrial (6%) 247.542,68 €\nPresupuesto de licitación IVA excluido 4.909.596,51 €\nIVA (21%) 1.031.015,27 €\nPresupuesto de licitación IVA incluido 5.940.611,78 €\nDISTRIBUCIÓN DE ANUALIADES:\nEl límite máximo de gasto que en virtud del contrato puede comprometer el órgano de\ncontratación, se distribuye en las siguientes anualidades:\n5Direcció General de Ports, CIUTAT ADMINISTRATIVA 9 D'OCTUBRE – TORRE 1\nAeroports i Costes C/ Democràcia, 77 - 46018 VALÈNCIA - Tel. 012\nBASE IMPORTE TOTAL\nANUALIDADES EJERCICIO IMPONIBLE (€) IVA (€) (21%) (€)\n1ª Anualidad 2023 413.223,14 86.776,86 500.000\n2ª Anualidad 2024 1.652.892,56 347.107,44 2.000.000\n3ª Anualidad 2025 1.652.892,56 347.107,44 2.000.000\n4ª Anualidad 2026 1.190.588,25 250.023,5",
+                "NECESIDADES A SATISFACER CON LA CELEBRACIÓN DEL CONTRATO:\nMantenimiento de las infraestructuras portuarias para posibilitar el normal desarrollo en\ncondiciones de seguridad de las actividades portuarias.\nDEFINICIÓN CONCRETA DEL OBJETO DEL CONTRATO MIXTO:\nEl presente contrato tiene por objeto lograr la conservación, adecuación, mantenimiento y mejora\nde las infraestructuras de los puertos de gestión directa de la Generalitat.\nSe incluyen entre las actuaciones del contrato: movimiento de tierras, escolleras, muelles,\nelementos de amarre, estructuras, muros y tabiquería, urbanización, redes de saneamiento,\nredes de abastecimiento, instalación eléctrica y alumbrado, pavimentación y obras varias.\nEs objeto del contrato actuaciones de tipo ordinario, extraordinario y actuaciones de adecuación"
             ]
         },
         {
             "prompt_key": "Importe_IVA",
             "prompt": "Ubica el importe del IVA del documento (iva aplicable)",
             "response": "1.031.015,27 €",
-            "score": 0.9681818181818183,
+            "score": 0.9985082628402406,
             "index": [
+                44,
                 45,
                 46,
-                44
+                2
+            ],
+            "chunks": [
+                "Direcció General de Ports, CIUTAT ADMINISTRATIVA 9 D'OCTUBRE – TORRE 1\nAeroports i Costes C/ Democràcia, 77 - 46018 VALÈNCIA - Tel. 012\nelectrónicos:\n No\nAmpliación del plazo de presentación de proposiciones, por necesidad de visitas al\nterreno o consulta ≪in situ≫ de la documentación\n No\nMEDIO DE NOTIFICACIÓN ELECTRÓNICA:\nComparecencia en la sede electrónica\nAPARTADO E\nPRESUPUESTO BASE DE LICITACIÓN DEL CONTRATO:\nTipo de presupuesto:\nEl Presupuesto Base de Licitación del Contrato asciende a CUATRO MILLONES\nNOVECIENTOS NUEVE MIL QUINIENTOS NOVENTA Y SEIS euros con CINCUENTA Y UN\ncéntimos (4.909.596,51 €), más UN MILLÓN TREINTA Y UN MIL QUINCE euros con\nVEINTISIETE céntimos (1.031.015,27 €), en concepto de IVA (21%).\nPresupuesto total (IVA incluido):",
+                "APARTADO E\nPRESUPUESTO BASE DE LICITACIÓN DEL CONTRATO:\nTipo de presupuesto:\nEl Presupuesto Base de Licitación del Contrato asciende a CUATRO MILLONES\nNOVECIENTOS NUEVE MIL QUINIENTOS NOVENTA Y SEIS euros con CINCUENTA Y UN\ncéntimos (4.909.596,51 €), más UN MILLÓN TREINTA Y UN MIL QUINCE euros con\nVEINTISIETE céntimos (1.031.015,27 €), en concepto de IVA (21%).\nPresupuesto total (IVA incluido):\nEl Presupuesto Base de Licitación asciende a CINCO MILLONES NOVECIENTOS CUARENTA\nMIL SEISCIENTOS ONCE euros con SETENTA Y OCHO céntimos (5.940.611,78 €), incluido el\nImpuesto del Valor Añadido.\nCONCEPTO IMPORTE (€)\nPresupuesto de Ejecución Material 4.125.711,35 €\nGastos Generales (13%) 536.342,48 €\nBeneficio Industrial (6%) 247.542,68 €\nPresupuesto de licitación IVA excluido 4.909.596,51 €",
+                "El Presupuesto Base de Licitación asciende a CINCO MILLONES NOVECIENTOS CUARENTA\nMIL SEISCIENTOS ONCE euros con SETENTA Y OCHO céntimos (5.940.611,78 €), incluido el\nImpuesto del Valor Añadido.\nCONCEPTO IMPORTE (€)\nPresupuesto de Ejecución Material 4.125.711,35 €\nGastos Generales (13%) 536.342,48 €\nBeneficio Industrial (6%) 247.542,68 €\nPresupuesto de licitación IVA excluido 4.909.596,51 €\nIVA (21%) 1.031.015,27 €\nPresupuesto de licitación IVA incluido 5.940.611,78 €\nDISTRIBUCIÓN DE ANUALIADES:\nEl límite máximo de gasto que en virtud del contrato puede comprometer el órgano de\ncontratación, se distribuye en las siguientes anualidades:\n5Direcció General de Ports, CIUTAT ADMINISTRATIVA 9 D'OCTUBRE – TORRE 1\nAeroports i Costes C/ Democràcia, 77 - 46018 VALÈNCIA - Tel. 012\nBASE IMPORTE TOTAL\nANUALIDADES EJERCICIO IMPONIBLE (€) IVA (€) (21%) (€)\n1ª Anualidad 2023 413.223,14 86.776,86 500.000\n2ª Anualidad 2024 1.652.892,56 347.107,44 2.000.000\n3ª Anualidad 2025 1.652.892,56 347.107,44 2.000.000\n4ª Anualidad 2026 1.190.588,25 250.023,5",
+                "Se incluyen entre las actuaciones del contrato: movimiento de tierras, escolleras, muelles,\nelementos de amarre, estructuras, muros y tabiquería, urbanización, redes de saneamiento,\nredes de abastecimiento, instalación eléctrica y alumbrado, pavimentación y obras varias.\nEs objeto del contrato actuaciones de tipo ordinario, extraordinario y actuaciones de adecuación\ny mejora.\nLa conservación ordinaria incluye las actuaciones por emergencias de lluvias, temporales,\naccidentes, etc., que requieren respuesta inmediata para el restablecimiento de las condiciones\nde seguridad de la vía), retirada de desprendimientos, reposición de taludes, reparaciones de\ndaños por accidentes, etc.\nEn el caso de la conservación extraordinaria, en función del tipo de actuaciones, se deberá"
             ]
         },
         {
             "prompt_key": "Sistema_Retribucion",
             "prompt": "Indica el sistema de retribución del precio",
-            "response": "En función de un presupuesto base de licitación que asciende a 4.909.596,51 € más IVA (21%) y un total de 5.940.611,78 € incluido el Impuesto del Valor Añadido.",
-            "score": 0.9631837778433656,
+            "response": "",
+            "score": 0.7846078925261054,
             "index": [
-                121,
-                45,
-                42
+                1,
+                2
+            ],
+            "chunks": [
+                "NECESIDADES A SATISFACER CON LA CELEBRACIÓN DEL CONTRATO:\nMantenimiento de las infraestructuras portuarias para posibilitar el normal desarrollo en\ncondiciones de seguridad de las actividades portuarias.\nDEFINICIÓN CONCRETA DEL OBJETO DEL CONTRATO MIXTO:\nEl presente contrato tiene por objeto lograr la conservación, adecuación, mantenimiento y mejora\nde las infraestructuras de los puertos de gestión directa de la Generalitat.\nSe incluyen entre las actuaciones del contrato: movimiento de tierras, escolleras, muelles,\nelementos de amarre, estructuras, muros y tabiquería, urbanización, redes de saneamiento,\nredes de abastecimiento, instalación eléctrica y alumbrado, pavimentación y obras varias.\nEs objeto del contrato actuaciones de tipo ordinario, extraordinario y actuaciones de adecuación",
+                "Se incluyen entre las actuaciones del contrato: movimiento de tierras, escolleras, muelles,\nelementos de amarre, estructuras, muros y tabiquería, urbanización, redes de saneamiento,\nredes de abastecimiento, instalación eléctrica y alumbrado, pavimentación y obras varias.\nEs objeto del contrato actuaciones de tipo ordinario, extraordinario y actuaciones de adecuación\ny mejora.\nLa conservación ordinaria incluye las actuaciones por emergencias de lluvias, temporales,\naccidentes, etc., que requieren respuesta inmediata para el restablecimiento de las condiciones\nde seguridad de la vía), retirada de desprendimientos, reposición de taludes, reparaciones de\ndaños por accidentes, etc.\nEn el caso de la conservación extraordinaria, en función del tipo de actuaciones, se deberá"
             ]
         },
         {
             "prompt_key": "Valor_estimado",
             "prompt": "Indica el total del valor estimado del contrato, responde únicamente con el valor en euros",
             "response": "5.940.611,78 €",
-            "score": 0.9893939393939394,
+            "score": 0.80516867599317,
             "index": [
-                45,
-                91,
-                60
+                60,
+                68,
+                44,
+                5
+            ],
+            "chunks": [
+                "memoria (Trámites y autorizaciones), así como todo aquello que dichos proyectos atribuyan al\ncontratista, como son, entre otras cosas, cualquier tipo de estudio, análisis o valoración\n(estabilidad, cálculos estructurales, diseño y dimensionamiento de drenajes, etc.) que la\nDirección de las Obras requiera.\nVALOR ESTIMADO DEL CONTRATO:\nEl valor estimado del contrato asciende a CUATRO MILLONES NOVECIENTOS NUEVE MIL\nQUINIENTOS NOVENTA Y SEIS euros con CINCUENTA Y UN céntimos (4.909.596,51€), IVA\nexcluido, según el presupuesto del proyecto constructivo aprobado que sirve de base a la\nlicitación, que con IVA asciende a 5.940.611,78 €.\n6Direcció General de Ports, CIUTAT ADMINISTRATIVA 9 D'OCTUBRE – TORRE 1\nAeroports i Costes C/ Democràcia, 77 - 46018 VALÈNCIA - Tel. 012\n Presupuesto de Ejecución Material (PEM): 4.125.711,35 €\n Gastos Generales (GG): 536.342,48 €\n Beneficio Industrial (BI): 247.542,68€\n Modificaciones previstas: 0,00 €\n Valor estimado de las prórrogas: 0,00 €\nAPARTADO F\nPRESUPUESTO BASE DE LICITACIÓN POR LOTE",
+                "Direcció General de Ports, CIUTAT ADMINISTRATIVA 9 D'OCTUBRE – TORRE 1\nAeroports i Costes C/ Democràcia, 77 - 46018 VALÈNCIA - Tel. 012\n Presupuesto de Ejecución Material (PEM): 4.125.711,35 €\n Gastos Generales (GG): 536.342,48 €\n Beneficio Industrial (BI): 247.542,68€\n Modificaciones previstas: 0,00 €\n Valor estimado de las prórrogas: 0,00 €\nAPARTADO F\nPRESUPUESTO BASE DE LICITACIÓN POR LOTES:\nNo procede\nAPARTADO G\nCONSIGNA PRESUPUESTARIA:\nCentro y Sección Programa Económica Importe (IVA incluido)\n08.02.01 51430 60101 5.940.611,78 €\nFINANCIADO POR FONDOS COMUNITARIOS:\n No\nFINANCIADO POR VARIOS DEPARTAMENTOS:\n No\nAPARTADO H\nREVISIÓN DE PRECIOS:\nNo se establece el derecho a revisión periódica y predeterminada de precios, atendiendo a lo",
+                "Direcció General de Ports, CIUTAT ADMINISTRATIVA 9 D'OCTUBRE – TORRE 1\nAeroports i Costes C/ Democràcia, 77 - 46018 VALÈNCIA - Tel. 012\nelectrónicos:\n No\nAmpliación del plazo de presentación de proposiciones, por necesidad de visitas al\nterreno o consulta ≪in situ≫ de la documentación\n No\nMEDIO DE NOTIFICACIÓN ELECTRÓNICA:\nComparecencia en la sede electrónica\nAPARTADO E\nPRESUPUESTO BASE DE LICITACIÓN DEL CONTRATO:\nTipo de presupuesto:\nEl Presupuesto Base de Licitación del Contrato asciende a CUATRO MILLONES\nNOVECIENTOS NUEVE MIL QUINIENTOS NOVENTA Y SEIS euros con CINCUENTA Y UN\ncéntimos (4.909.596,51 €), más UN MILLÓN TREINTA Y UN MIL QUINCE euros con\nVEINTISIETE céntimos (1.031.015,27 €), en concepto de IVA (21%).\nPresupuesto total (IVA incluido):",
+                "APARTADO E\nPRESUPUESTO BASE DE LICITACIÓN DEL CONTRATO:\nTipo de presupuesto:\nEl Presupuesto Base de Licitación del Contrato asciende a CUATRO MILLONES\nNOVECIENTOS NUEVE MIL QUINIENTOS NOVENTA Y SEIS euros con CINCUENTA Y UN\ncéntimos (4.909.596,51 €), más UN MILLÓN TREINTA Y UN MIL QUINCE euros con\nVEINTISIETE céntimos (1.031.015,27 €), en concepto de IVA (21%).\nPresupuesto total (IVA incluido):\nEl Presupuesto Base de Licitación asciende a CINCO MILLONES NOVECIENTOS CUARENTA\nMIL SEISCIENTOS ONCE euros con SETENTA Y OCHO céntimos (5.940.611,78 €), incluido el\nImpuesto del Valor Añadido.\nCONCEPTO IMPORTE (€)\nPresupuesto de Ejecución Material 4.125.711,35 €\nGastos Generales (13%) 536.342,48 €\nBeneficio Industrial (6%) 247.542,68 €\nPresupuesto de licitación IVA excluido 4.909.596,51 €"
             ]
         },
         {
             "prompt_key": "Revision_precios",
             "prompt": "Indica si existe la revisión de precios",
-            "response": "No, aunque se establece que no se establece el derecho a revisión periódica y predeterminada de precios, sí se contempla la posibilidad de una revisión extraordinaria si se producen las condiciones establecidas en los RDL 3/22 y 6/22.",
-            "score": 0.9738234265926687,
+            "response": "No, se establece que no se establece el derecho a revisión periódica y predeterminada de precios, aunque se contempla la posibilidad de una revisión extraordinaria si se producen condiciones específicas durante la vigencia del contrato.",
+            "score": 0.95,
             "index": [
-                70,
+                68,
                 69,
-                68
+                70,
+                3
+            ],
+            "chunks": [
+                "Direcció General de Ports, CIUTAT ADMINISTRATIVA 9 D'OCTUBRE – TORRE 1\nAeroports i Costes C/ Democràcia, 77 - 46018 VALÈNCIA - Tel. 012\n Presupuesto de Ejecución Material (PEM): 4.125.711,35 €\n Gastos Generales (GG): 536.342,48 €\n Beneficio Industrial (BI): 247.542,68€\n Modificaciones previstas: 0,00 €\n Valor estimado de las prórrogas: 0,00 €\nAPARTADO F\nPRESUPUESTO BASE DE LICITACIÓN POR LOTES:\nNo procede\nAPARTADO G\nCONSIGNA PRESUPUESTARIA:\nCentro y Sección Programa Económica Importe (IVA incluido)\n08.02.01 51430 60101 5.940.611,78 €\nFINANCIADO POR FONDOS COMUNITARIOS:\n No\nFINANCIADO POR VARIOS DEPARTAMENTOS:\n No\nAPARTADO H\nREVISIÓN DE PRECIOS:\nNo se establece el derecho a revisión periódica y predeterminada de precios, atendiendo a lo",
+                "PRESUPUESTO BASE DE LICITACIÓN POR LOTES:\nNo procede\nAPARTADO G\nCONSIGNA PRESUPUESTARIA:\nCentro y Sección Programa Económica Importe (IVA incluido)\n08.02.01 51430 60101 5.940.611,78 €\nFINANCIADO POR FONDOS COMUNITARIOS:\n No\nFINANCIADO POR VARIOS DEPARTAMENTOS:\n No\nAPARTADO H\nREVISIÓN DE PRECIOS:\nNo se establece el derecho a revisión periódica y predeterminada de precios, atendiendo a lo\ndispuesto en el apartado 3 del artículo 103 de la Ley 9/2017, donde se establece el carácter\npotestativo de la revisión de precios.\nNo obstante, si durante la vigencia del contrato se produjeran las condiciones establecidas en\nlos RDL 3/22 y 6/22, RDL a los que la Generalitat se adhirió mediante Acuerdo de 1 de abril de",
+                "dispuesto en el apartado 3 del artículo 103 de la Ley 9/2017, donde se establece el carácter\npotestativo de la revisión de precios.\nNo obstante, si durante la vigencia del contrato se produjeran las condiciones establecidas en\nlos RDL 3/22 y 6/22, RDL a los que la Generalitat se adhirió mediante Acuerdo de 1 de abril de\n2022, del Consell, que dieran lugar a la práctica de la revisión extraordinaria de precios, la\nfórmula utilizada será la fórmula n.º 381, de “Urbanización y viales en entornos portuarios” del\nReal Decreto 1359/2011, de 7 de octubre, por el que se aprueba la Relación de materiales\nbásicos y las fórmulas-tipo generales de revisión de precios de los contratos de obras y de\ncontratos de suministro de fabricación de armamento y equipamiento de las Administraciones\nPúblicas.",
+                "La conservación ordinaria incluye las actuaciones por emergencias de lluvias, temporales,\naccidentes, etc., que requieren respuesta inmediata para el restablecimiento de las condiciones\nde seguridad de la vía), retirada de desprendimientos, reposición de taludes, reparaciones de\ndaños por accidentes, etc.\nEn el caso de la conservación extraordinaria, en función del tipo de actuaciones, se deberá\ndefinir las mismas, a criterio de la Dirección de Obra, mediante la elaboración de los informes,\nestudios y proyectos que sean necesarios.\nSe incluyen actuaciones de adecuación y mejora, a criterio de la Dirección de Obra, como el\nacondicionamiento de accesos, o intersecciones, ampliación de aceras … y, en general, todas"
             ]
         },
         {
             "prompt_key": "Garantia_definitiva",
             "prompt": "Cuenta con garantía definitiva? cuál es su valor en tal caso?",
             "response": "Si, el valor de la garantía definitiva es del 5% del precio final ofertado, IVA excluido.",
-            "score": 0.9625538904049784,
+            "score": 0.875,
             "index": [
-                199,
                 198,
-                79
+                199,
+                0,
+                5
+            ],
+            "chunks": [
+                "• Declaración responsable de la persona representante de la empresa o entidad licitadora para\naquellas que cumplan con lo preceptuado en los apartados d), e), f), i) y j).\nAPARTADO Ñ\nCESIÓN\n En los términos previstos en el artículo 214 de la Ley 9/2017 LCSP.\nAPARTADO O\nMODIFICACIONES\n No se contemplan, salvo lo dispuesto en el artículo 203 y siguientes de la Ley 9/2017.\nAPARTADO P\nGARANTÍA DEFINITIVA\n5% del precio final ofertado, IVA excluido.\nEXENCIÓN DE PRESTACIÓN DE GARANTÍA DEFINITIVA:\nNo procede\nCANCELACIÓN O DEVOLUCIÓN PROPORCIONAL DE LA GARANTÍA DEFINITIVA EN\nCASOS DE RECEPCIÓN PARCIAL:\nNo procede\nAPARTADO Q\nOBLIGACIÓN DE INDICAR EN LA OFERTA SI VA A HABER SUBCONTRATACIÓN:\n No procede\nLAS CONDICIONES DE LA OFERTA PARA LA SUBCONTRATACIÓN, LA ACREDITACION",
+                "APARTADO P\nGARANTÍA DEFINITIVA\n5% del precio final ofertado, IVA excluido.\nEXENCIÓN DE PRESTACIÓN DE GARANTÍA DEFINITIVA:\nNo procede\nCANCELACIÓN O DEVOLUCIÓN PROPORCIONAL DE LA GARANTÍA DEFINITIVA EN\nCASOS DE RECEPCIÓN PARCIAL:\nNo procede\nAPARTADO Q\nOBLIGACIÓN DE INDICAR EN LA OFERTA SI VA A HABER SUBCONTRATACIÓN:\n No procede\nLAS CONDICIONES DE LA OFERTA PARA LA SUBCONTRATACIÓN, LA ACREDITACION\nDE LA APTITUD DEL SUBCONTRATISTA Y LA ACREDITACIÓN DE LAS CONDICIONES DE\nEMERGENCIA O URGENCIA TIENE CARÁCTER DE OBLIGACIONES ESENCIALES:\n No\nTAREAS CRÍTICAS QUE NO PODRÁN SER OBJETO DE SUBCONTRATACIÓN:\n No procede\nPAGOS DIRECTOS A LOS SUBCONTRATISTAS POR PARTE DE LA ADMINISTRACIÓN:\n No\nREMISION AL ÓRGANO DE CONTRATACIÓN, CUANDO ÉSTE LO SOLICITE, DE UNA",
+                "Direcció General de Ports, CIUTAT ADMINISTRATIVA 9 D'OCTUBRE – TORRE 1\nAeroports i Costes C/ Democràcia, 77 - 46018 VALÈNCIA - Tel. 012\nANEXO I\nCARACTERÍSTICAS PARTICULARES PARA LA ADJUDICACIÓN DE CONTRATOS\nADMINISTRATIVOS MIXTO MEDIANTE PROCEDIMIENTO ABIERTO\nAPARTADO A\nNúmero DE EXPEDIENTE:\nClave Informática Clave seguimiento Expediente MASTIN\n22-CPTOPM19-03-16-NT-0 SGPAC-13 CMAYOR/2022/03Y03/101\nNECESIDADES A SATISFACER CON LA CELEBRACIÓN DEL CONTRATO:\nMantenimiento de las infraestructuras portuarias para posibilitar el normal desarrollo en\ncondiciones de seguridad de las actividades portuarias.\nDEFINICIÓN CONCRETA DEL OBJETO DEL CONTRATO MIXTO:\nEl presente contrato tiene por objeto lograr la conservación, adecuación, mantenimiento y mejora",
+                "existentes que debido a que por su estado requieran de una intervención por motivos de\nseguridad, explotación y movilidad.\nSe trata de un contrato mixto por contener prestaciones correspondientes a contratos de obras,\nservicios y suministros. Estas prestaciones se encuentran directamente vinculadas entre sí y\nmantienen relaciones de complementariedad, al ser las infraestructuras portuarias concebidas\ncomo una unidad que es necesario mantener y conservar.\nA los efectos de determinar el régimen de adjudicación del contrato, la prestación principal es la\ncorrespondiente a las obras, al ser las que mayor peso tienen en volumen de ejecución y\n1Direcció General de Ports, CIUTAT ADMINISTRATIVA 9 D'OCTUBRE – TORRE 1\nAeroports i Costes C/ Democràcia, 77 - 46018 VALÈNCIA - Tel. 012\npresupuesto asignado en la Memoria de las obras de conservación, reparación, adecuación y\nmejora de las infraestructuras de los puertos de gestión directa de la Generalitat.\nLUGAR DE PRESTACIÓN DEL SERVICIO:\nEn los puertos autonómicos de: Vinarós, Benicarlò, Peñís"
             ]
         },
         {
             "prompt_key": "Garantia_provisional",
             "prompt": "Cuenta con garantía provisional? cuál es su valor en tal caso?",
-            "response": "No, no se exige conforme al art. 106.1 de la LCSP.",
-            "score": 0.9393939393939394,
+            "response": "No, según el APARTADO J, no se exige garantía provisional conforme al art. 106.1 de la LCSP.",
+            "score": 0.875,
             "index": [
                 71,
                 75,
-                45
+                0,
+                2
+            ],
+            "chunks": [
+                "fórmula utilizada será la fórmula n.º 381, de “Urbanización y viales en entornos portuarios” del\nReal Decreto 1359/2011, de 7 de octubre, por el que se aprueba la Relación de materiales\nbásicos y las fórmulas-tipo generales de revisión de precios de los contratos de obras y de\ncontratos de suministro de fabricación de armamento y equipamiento de las Administraciones\nPúblicas.\nAPARTADO I\nALTERNATIVAS O VARIANTES\n7Direcció General de Ports, CIUTAT ADMINISTRATIVA 9 D'OCTUBRE – TORRE 1\nAeroports i Costes C/ Democràcia, 77 - 46018 VALÈNCIA - Tel. 012\n No\nAPARTADO J\nGARANTÍA PROVISIONAL: No se exige conforme al art. 106.1 de la LCSP.\nAPARTADO K\nOBLIGACIONES RELATIVAS A LA FISCALIDAD, A LA PROTECCIÓN DEL MEDIO\nAMBIENTE, Y A LAS DISPOSICIONES VIGENTES EN MATERIA DE PROTECCIÓN DEL\nEMPLEO, IGUALDAD DE GÉNERO, COND",
+                "Direcció General de Ports, CIUTAT ADMINISTRATIVA 9 D'OCTUBRE – TORRE 1\nAeroports i Costes C/ Democràcia, 77 - 46018 VALÈNCIA - Tel. 012\n No\nAPARTADO J\nGARANTÍA PROVISIONAL: No se exige conforme al art. 106.1 de la LCSP.\nAPARTADO K\nOBLIGACIONES RELATIVAS A LA FISCALIDAD, A LA PROTECCIÓN DEL MEDIO\nAMBIENTE, Y A LAS DISPOSICIONES VIGENTES EN MATERIA DE PROTECCIÓN DEL\nEMPLEO, IGUALDAD DE GÉNERO, CONDICIONES DE TRABAJO Y PREVENCIÓN DE\nRIESGOS LABORALES E INSERCIÓN SOCIO LABORAL DE LAS PERSONAS CON\nDISCAPACIDAD, Y A LA OBLIGACIÓN DE CONTRATAR A UN NÚMERO O PORCENTAJE\nESPECÍFICO DE PERSONAS CON DISCAPACIDAD QUE SEAN APLICABLES A LOS\nSERVICIOS PRESTADOS DURANTE LA EJECUCIÓN DEL CONTRATO:\n No\nAPARTADO L\nCRITERIOS PARA ACREDITAR LA SOLVENCIA ECONÓMICA Y FINANCIERA, SEGÚN ART.\n87 LCSP:",
+                "Direcció General de Ports, CIUTAT ADMINISTRATIVA 9 D'OCTUBRE – TORRE 1\nAeroports i Costes C/ Democràcia, 77 - 46018 VALÈNCIA - Tel. 012\nANEXO I\nCARACTERÍSTICAS PARTICULARES PARA LA ADJUDICACIÓN DE CONTRATOS\nADMINISTRATIVOS MIXTO MEDIANTE PROCEDIMIENTO ABIERTO\nAPARTADO A\nNúmero DE EXPEDIENTE:\nClave Informática Clave seguimiento Expediente MASTIN\n22-CPTOPM19-03-16-NT-0 SGPAC-13 CMAYOR/2022/03Y03/101\nNECESIDADES A SATISFACER CON LA CELEBRACIÓN DEL CONTRATO:\nMantenimiento de las infraestructuras portuarias para posibilitar el normal desarrollo en\ncondiciones de seguridad de las actividades portuarias.\nDEFINICIÓN CONCRETA DEL OBJETO DEL CONTRATO MIXTO:\nEl presente contrato tiene por objeto lograr la conservación, adecuación, mantenimiento y mejora",
+                "Se incluyen entre las actuaciones del contrato: movimiento de tierras, escolleras, muelles,\nelementos de amarre, estructuras, muros y tabiquería, urbanización, redes de saneamiento,\nredes de abastecimiento, instalación eléctrica y alumbrado, pavimentación y obras varias.\nEs objeto del contrato actuaciones de tipo ordinario, extraordinario y actuaciones de adecuación\ny mejora.\nLa conservación ordinaria incluye las actuaciones por emergencias de lluvias, temporales,\naccidentes, etc., que requieren respuesta inmediata para el restablecimiento de las condiciones\nde seguridad de la vía), retirada de desprendimientos, reposición de taludes, reparaciones de\ndaños por accidentes, etc.\nEn el caso de la conservación extraordinaria, en función del tipo de actuaciones, se deberá"
             ]
         },
         {
             "prompt_key": "Admisibilidad_variantes",
             "prompt": "Indica si el contrato admite variantes o alternativas",
             "response": "No",
-            "score": 0.9346210056699323,
+            "score": 0.8,
             "index": [
                 71,
-                91,
-                206
+                0,
+                1,
+                3
+            ],
+            "chunks": [
+                "fórmula utilizada será la fórmula n.º 381, de “Urbanización y viales en entornos portuarios” del\nReal Decreto 1359/2011, de 7 de octubre, por el que se aprueba la Relación de materiales\nbásicos y las fórmulas-tipo generales de revisión de precios de los contratos de obras y de\ncontratos de suministro de fabricación de armamento y equipamiento de las Administraciones\nPúblicas.\nAPARTADO I\nALTERNATIVAS O VARIANTES\n7Direcció General de Ports, CIUTAT ADMINISTRATIVA 9 D'OCTUBRE – TORRE 1\nAeroports i Costes C/ Democràcia, 77 - 46018 VALÈNCIA - Tel. 012\n No\nAPARTADO J\nGARANTÍA PROVISIONAL: No se exige conforme al art. 106.1 de la LCSP.\nAPARTADO K\nOBLIGACIONES RELATIVAS A LA FISCALIDAD, A LA PROTECCIÓN DEL MEDIO\nAMBIENTE, Y A LAS DISPOSICIONES VIGENTES EN MATERIA DE PROTECCIÓN DEL\nEMPLEO, IGUALDAD DE GÉNERO, COND",
+                "Direcció General de Ports, CIUTAT ADMINISTRATIVA 9 D'OCTUBRE – TORRE 1\nAeroports i Costes C/ Democràcia, 77 - 46018 VALÈNCIA - Tel. 012\nANEXO I\nCARACTERÍSTICAS PARTICULARES PARA LA ADJUDICACIÓN DE CONTRATOS\nADMINISTRATIVOS MIXTO MEDIANTE PROCEDIMIENTO ABIERTO\nAPARTADO A\nNúmero DE EXPEDIENTE:\nClave Informática Clave seguimiento Expediente MASTIN\n22-CPTOPM19-03-16-NT-0 SGPAC-13 CMAYOR/2022/03Y03/101\nNECESIDADES A SATISFACER CON LA CELEBRACIÓN DEL CONTRATO:\nMantenimiento de las infraestructuras portuarias para posibilitar el normal desarrollo en\ncondiciones de seguridad de las actividades portuarias.\nDEFINICIÓN CONCRETA DEL OBJETO DEL CONTRATO MIXTO:\nEl presente contrato tiene por objeto lograr la conservación, adecuación, mantenimiento y mejora",
+                "NECESIDADES A SATISFACER CON LA CELEBRACIÓN DEL CONTRATO:\nMantenimiento de las infraestructuras portuarias para posibilitar el normal desarrollo en\ncondiciones de seguridad de las actividades portuarias.\nDEFINICIÓN CONCRETA DEL OBJETO DEL CONTRATO MIXTO:\nEl presente contrato tiene por objeto lograr la conservación, adecuación, mantenimiento y mejora\nde las infraestructuras de los puertos de gestión directa de la Generalitat.\nSe incluyen entre las actuaciones del contrato: movimiento de tierras, escolleras, muelles,\nelementos de amarre, estructuras, muros y tabiquería, urbanización, redes de saneamiento,\nredes de abastecimiento, instalación eléctrica y alumbrado, pavimentación y obras varias.\nEs objeto del contrato actuaciones de tipo ordinario, extraordinario y actuaciones de adecuación",
+                "La conservación ordinaria incluye las actuaciones por emergencias de lluvias, temporales,\naccidentes, etc., que requieren respuesta inmediata para el restablecimiento de las condiciones\nde seguridad de la vía), retirada de desprendimientos, reposición de taludes, reparaciones de\ndaños por accidentes, etc.\nEn el caso de la conservación extraordinaria, en función del tipo de actuaciones, se deberá\ndefinir las mismas, a criterio de la Dirección de Obra, mediante la elaboración de los informes,\nestudios y proyectos que sean necesarios.\nSe incluyen actuaciones de adecuación y mejora, a criterio de la Dirección de Obra, como el\nacondicionamiento de accesos, o intersecciones, ampliación de aceras … y, en general, todas"
             ]
         },
         {
             "prompt_key": "Clasificacion",
             "prompt": "La clasificación se aplica por debajo de 500.000 €?",
-            "response": "",
-            "score": 0.9755532045928708,
+            "response": "No",
+            "score": 0.7659117802977562,
             "index": [
-                64,
                 97,
-                65
+                0,
+                1,
+                4
+            ],
+            "chunks": [
+                "se aportará compromiso de responsabilidad solidaria de la empresa que aporta la solvencia.\nPARTES O TRABAJOS CONCRETOS QUE HAN DE SER EJECUTADAS DIRECTAMENTE\nPOR LA PROPIA EMPRESA LICITADORA O, EN EL CASO DE UNA OFERTA PRESENTADA\nPOR UNA UNION DE EMPRESAS, POR UNA PERSONA PARTICIPANTE EN LA MISMA:\n No.\nCRITERIOS DE ACUMULACION DE LA SOLVENCIA EN EL CASO DE UTE\nEn lo que se refiere a la acumulación de la clasificación en el caso de UTE, se estará sujeto a lo\ndispuesto en el artículo 52 del Real Decreto 1098/2001, de 12 de octubre, por el que se aprueba\nel Reglamento general de la Ley de Contratos de las Administraciones Publicas.\nSE EXIGE A LAS PERSONAS JURIDICAS QUE DETALLEN EN LA OFERTA LOS NOMBRES\nY LA CUALIFICACION PROFESIONAL DEL PERSONAL RESPONSABLE DE EJECUTAR LA\nPRESTACION:\n No.",
+                "Direcció General de Ports, CIUTAT ADMINISTRATIVA 9 D'OCTUBRE – TORRE 1\nAeroports i Costes C/ Democràcia, 77 - 46018 VALÈNCIA - Tel. 012\nANEXO I\nCARACTERÍSTICAS PARTICULARES PARA LA ADJUDICACIÓN DE CONTRATOS\nADMINISTRATIVOS MIXTO MEDIANTE PROCEDIMIENTO ABIERTO\nAPARTADO A\nNúmero DE EXPEDIENTE:\nClave Informática Clave seguimiento Expediente MASTIN\n22-CPTOPM19-03-16-NT-0 SGPAC-13 CMAYOR/2022/03Y03/101\nNECESIDADES A SATISFACER CON LA CELEBRACIÓN DEL CONTRATO:\nMantenimiento de las infraestructuras portuarias para posibilitar el normal desarrollo en\ncondiciones de seguridad de las actividades portuarias.\nDEFINICIÓN CONCRETA DEL OBJETO DEL CONTRATO MIXTO:\nEl presente contrato tiene por objeto lograr la conservación, adecuación, mantenimiento y mejora",
+                "NECESIDADES A SATISFACER CON LA CELEBRACIÓN DEL CONTRATO:\nMantenimiento de las infraestructuras portuarias para posibilitar el normal desarrollo en\ncondiciones de seguridad de las actividades portuarias.\nDEFINICIÓN CONCRETA DEL OBJETO DEL CONTRATO MIXTO:\nEl presente contrato tiene por objeto lograr la conservación, adecuación, mantenimiento y mejora\nde las infraestructuras de los puertos de gestión directa de la Generalitat.\nSe incluyen entre las actuaciones del contrato: movimiento de tierras, escolleras, muelles,\nelementos de amarre, estructuras, muros y tabiquería, urbanización, redes de saneamiento,\nredes de abastecimiento, instalación eléctrica y alumbrado, pavimentación y obras varias.\nEs objeto del contrato actuaciones de tipo ordinario, extraordinario y actuaciones de adecuación",
+                "ANUALIDADES, EJERCICIO, , BASE, IVA (€) (21%), , IMPORTE TOTAL , , , IMPONIBLE (€), , , (€) 1ª Anualidad, 2023, 413.223,14, , 86.776,86, 500.000,  "
             ]
         },
         {
             "prompt_key": "Grupo",
             "prompt": "Según las características de la obra, indica el grupo al que pertenece el contrato",
             "response": "Grupo A",
-            "score": 0.9893939393939394,
+            "score": 0.9191723626852035,
             "index": [
-                123,
-                207,
-                76
+                76,
+                77,
+                78,
+                3
+            ],
+            "chunks": [
+                "RIESGOS LABORALES E INSERCIÓN SOCIO LABORAL DE LAS PERSONAS CON\nDISCAPACIDAD, Y A LA OBLIGACIÓN DE CONTRATAR A UN NÚMERO O PORCENTAJE\nESPECÍFICO DE PERSONAS CON DISCAPACIDAD QUE SEAN APLICABLES A LOS\nSERVICIOS PRESTADOS DURANTE LA EJECUCIÓN DEL CONTRATO:\n No\nAPARTADO L\nCRITERIOS PARA ACREDITAR LA SOLVENCIA ECONÓMICA Y FINANCIERA, SEGÚN ART.\n87 LCSP:\nLa empresa licitadora deberá estar en posesión de las siguientes clasificaciones:\nGrupo A; subgrupo 01 (desmontes y vaciados); categoría 1.\nGrupo C; subgrupo 02 (Estructuras de fábrica u hormigón); categoría 2\nGrupo E; subgrupo 07 (Obras hidráulicas sin cualificación específica); categoría 1.\nGrupo G; subgrupo 06 (Obras viales sin cualificación específica); categoría 2.\nMEDIOS PARA ACREDITAR LA SOLVENCIA ECONÓMICA Y FINANCIERA, SEGÚN ART. 87",
+                "Grupo A; subgrupo 01 (desmontes y vaciados); categoría 1.\nGrupo C; subgrupo 02 (Estructuras de fábrica u hormigón); categoría 2\nGrupo E; subgrupo 07 (Obras hidráulicas sin cualificación específica); categoría 1.\nGrupo G; subgrupo 06 (Obras viales sin cualificación específica); categoría 2.\nMEDIOS PARA ACREDITAR LA SOLVENCIA ECONÓMICA Y FINANCIERA, SEGÚN ART. 87\nLCSP:\nAcreditar estar en posesión de las clasificaciones requeridas.\nPara ello se aportará certificado del Registro Oficial de Licitadores y Empresas Calificadas, así\ncomo la declaración responsable de la vigencia de los extremos acreditados en el certificado.\nCRITERIOS PARA ACREDITAR LA SOLVENCIA TÉCNICA O PROFESIONAL, SEGÚN ART.\n88 LCSP:\nLa empresa licitadora deberá estar en posesión de las siguientes clasificaciones:",
+                "Para ello se aportará certificado del Registro Oficial de Licitadores y Empresas Calificadas, así\ncomo la declaración responsable de la vigencia de los extremos acreditados en el certificado.\nCRITERIOS PARA ACREDITAR LA SOLVENCIA TÉCNICA O PROFESIONAL, SEGÚN ART.\n88 LCSP:\nLa empresa licitadora deberá estar en posesión de las siguientes clasificaciones:\nGrupo A; subgrupo 01 (desmontes y vaciados); categoría 1.\nGrupo C; subgrupo 02 (Estructuras de fábrica u hormigón); categoría 2\nGrupo E; subgrupo 07 (Obras hidráulicas sin cualificación específica); categoría 1.\nGrupo G; subgrupo 06 (Obras viales sin cualificación específica); categoría 2.\n8Direcció General de Ports, CIUTAT ADMINISTRATIVA 9 D'OCTUBRE – TORRE 1\nAeroports i Costes C/ Democràcia, 77 - 46018 VALÈNCIA - Tel. 012\nMEDIOS PARA ACREDITAR LA SOLVENCIA TÉCNICA O PROFESIONAL, SEGÚN ART. 88\nLCSP:\nAcreditar estar en posesión de las clasificaciones requeridas.\nPara ello se aportará certificado del Registro Oficial de Licitadores y Empresas Calificadas, así\ncomo la declaración respo",
+                "indicando:\n1. Equipos y disponibilidad\n2. Dedicación porcentual al contrato\nLa puntuación de este apartado se realizará de acuerdo con los criterios recogidos en la tabla:\nPUNTUACIÓN CRITERIOS\n4 ≤ P ≤ 5 Relaciona de forma exhaustiva los medios a utilizar describiendo las carac-\nterísticas de los principales, señalando la disponibilidad de cada uno de\nellos y los que son de propiedad en su caso. Describe los equipos de tra-\nbajo destinados para la ejecución del contrato, su disponibilidad y tareas\nencomendadas, así como aquel personal técnico especializado pertene-\nciente a la empresa que puede tener papel relevante en la ejecución del\ncontrato.\n2 ≤ P < 4 Relaciona los medios a utilizar y describe sus características de forma so-"
             ]
         },
         {
             "prompt_key": "Subgrupo",
             "prompt": "Según las características de la obra, indica el subgrupo al que pertenece el contrato",
-            "response": "Subgrupo 01",
-            "score": 0.9882192453311486,
+            "response": "Subgrupo 01 desmontes y vaciados",
+            "score": 0.9244224560260773,
             "index": [
-                207,
-                202,
-                76
+                76,
+                77,
+                78,
+                2
+            ],
+            "chunks": [
+                "RIESGOS LABORALES E INSERCIÓN SOCIO LABORAL DE LAS PERSONAS CON\nDISCAPACIDAD, Y A LA OBLIGACIÓN DE CONTRATAR A UN NÚMERO O PORCENTAJE\nESPECÍFICO DE PERSONAS CON DISCAPACIDAD QUE SEAN APLICABLES A LOS\nSERVICIOS PRESTADOS DURANTE LA EJECUCIÓN DEL CONTRATO:\n No\nAPARTADO L\nCRITERIOS PARA ACREDITAR LA SOLVENCIA ECONÓMICA Y FINANCIERA, SEGÚN ART.\n87 LCSP:\nLa empresa licitadora deberá estar en posesión de las siguientes clasificaciones:\nGrupo A; subgrupo 01 (desmontes y vaciados); categoría 1.\nGrupo C; subgrupo 02 (Estructuras de fábrica u hormigón); categoría 2\nGrupo E; subgrupo 07 (Obras hidráulicas sin cualificación específica); categoría 1.\nGrupo G; subgrupo 06 (Obras viales sin cualificación específica); categoría 2.\nMEDIOS PARA ACREDITAR LA SOLVENCIA ECONÓMICA Y FINANCIERA, SEGÚN ART. 87",
+                "Grupo A; subgrupo 01 (desmontes y vaciados); categoría 1.\nGrupo C; subgrupo 02 (Estructuras de fábrica u hormigón); categoría 2\nGrupo E; subgrupo 07 (Obras hidráulicas sin cualificación específica); categoría 1.\nGrupo G; subgrupo 06 (Obras viales sin cualificación específica); categoría 2.\nMEDIOS PARA ACREDITAR LA SOLVENCIA ECONÓMICA Y FINANCIERA, SEGÚN ART. 87\nLCSP:\nAcreditar estar en posesión de las clasificaciones requeridas.\nPara ello se aportará certificado del Registro Oficial de Licitadores y Empresas Calificadas, así\ncomo la declaración responsable de la vigencia de los extremos acreditados en el certificado.\nCRITERIOS PARA ACREDITAR LA SOLVENCIA TÉCNICA O PROFESIONAL, SEGÚN ART.\n88 LCSP:\nLa empresa licitadora deberá estar en posesión de las siguientes clasificaciones:",
+                "Para ello se aportará certificado del Registro Oficial de Licitadores y Empresas Calificadas, así\ncomo la declaración responsable de la vigencia de los extremos acreditados en el certificado.\nCRITERIOS PARA ACREDITAR LA SOLVENCIA TÉCNICA O PROFESIONAL, SEGÚN ART.\n88 LCSP:\nLa empresa licitadora deberá estar en posesión de las siguientes clasificaciones:\nGrupo A; subgrupo 01 (desmontes y vaciados); categoría 1.\nGrupo C; subgrupo 02 (Estructuras de fábrica u hormigón); categoría 2\nGrupo E; subgrupo 07 (Obras hidráulicas sin cualificación específica); categoría 1.\nGrupo G; subgrupo 06 (Obras viales sin cualificación específica); categoría 2.\n8Direcció General de Ports, CIUTAT ADMINISTRATIVA 9 D'OCTUBRE – TORRE 1\nAeroports i Costes C/ Democràcia, 77 - 46018 VALÈNCIA - Tel. 012\nMEDIOS PARA ACREDITAR LA SOLVENCIA TÉCNICA O PROFESIONAL, SEGÚN ART. 88\nLCSP:\nAcreditar estar en posesión de las clasificaciones requeridas.\nPara ello se aportará certificado del Registro Oficial de Licitadores y Empresas Calificadas, así\ncomo la declaración respo",
+                "La finalización del contrato se producirá por agotamiento del plazo o del importe del contrato.\nLa empresa contratista se hará cargo de todo tipo de permisos, licencias, autorizaciones,\netc...que resulten necesarias para la ejecución de las obras, así como de la redacción de los\ndocumentos técnicos necesarios para la obtención de los referidos permisos, autorizaciones,\npuestas en uso, etc.\nINICIO DEL CÓMPUTO:\nLa ejecución del contrato de obras comenzará con el acta de comprobación del replanteo.\nPLAZOS PARCIALES:\nNo.\nOBLIGACIÓN DE PRESENTAR EL PROGRAMA DE TRABAJO:\nNo.\nAPARTADO S\nINFORMACIÓN SOBRE LAS CONDICIONES DE SUBROGACIÓN EN CONTRATOS DE\nTRABAJO, DE ACUERDO CON EL ARTÍCULO 130 DE LA LCSP:\nNo procede.\nPENALIDADES, DENTRO DE LOS LIMITES DEL ART. 192 LCSP, AL CONTRATISTA PARA"
             ]
         },
         {
             "prompt_key": "Categoria",
             "prompt": "Según las características de la obra, indica la categoría a la que pertenece el contrato",
-            "response": "",
-            "score": 0.9883942858182656,
+            "response": "Categoría 1 Desmontes y vaciados",
+            "score": 0.9173402571678162,
             "index": [
-                202,
-                123,
-                1
+                76,
+                77,
+                78,
+                3
+            ],
+            "chunks": [
+                "RIESGOS LABORALES E INSERCIÓN SOCIO LABORAL DE LAS PERSONAS CON\nDISCAPACIDAD, Y A LA OBLIGACIÓN DE CONTRATAR A UN NÚMERO O PORCENTAJE\nESPECÍFICO DE PERSONAS CON DISCAPACIDAD QUE SEAN APLICABLES A LOS\nSERVICIOS PRESTADOS DURANTE LA EJECUCIÓN DEL CONTRATO:\n No\nAPARTADO L\nCRITERIOS PARA ACREDITAR LA SOLVENCIA ECONÓMICA Y FINANCIERA, SEGÚN ART.\n87 LCSP:\nLa empresa licitadora deberá estar en posesión de las siguientes clasificaciones:\nGrupo A; subgrupo 01 (desmontes y vaciados); categoría 1.\nGrupo C; subgrupo 02 (Estructuras de fábrica u hormigón); categoría 2\nGrupo E; subgrupo 07 (Obras hidráulicas sin cualificación específica); categoría 1.\nGrupo G; subgrupo 06 (Obras viales sin cualificación específica); categoría 2.\nMEDIOS PARA ACREDITAR LA SOLVENCIA ECONÓMICA Y FINANCIERA, SEGÚN ART. 87",
+                "Grupo A; subgrupo 01 (desmontes y vaciados); categoría 1.\nGrupo C; subgrupo 02 (Estructuras de fábrica u hormigón); categoría 2\nGrupo E; subgrupo 07 (Obras hidráulicas sin cualificación específica); categoría 1.\nGrupo G; subgrupo 06 (Obras viales sin cualificación específica); categoría 2.\nMEDIOS PARA ACREDITAR LA SOLVENCIA ECONÓMICA Y FINANCIERA, SEGÚN ART. 87\nLCSP:\nAcreditar estar en posesión de las clasificaciones requeridas.\nPara ello se aportará certificado del Registro Oficial de Licitadores y Empresas Calificadas, así\ncomo la declaración responsable de la vigencia de los extremos acreditados en el certificado.\nCRITERIOS PARA ACREDITAR LA SOLVENCIA TÉCNICA O PROFESIONAL, SEGÚN ART.\n88 LCSP:\nLa empresa licitadora deberá estar en posesión de las siguientes clasificaciones:",
+                "Para ello se aportará certificado del Registro Oficial de Licitadores y Empresas Calificadas, así\ncomo la declaración responsable de la vigencia de los extremos acreditados en el certificado.\nCRITERIOS PARA ACREDITAR LA SOLVENCIA TÉCNICA O PROFESIONAL, SEGÚN ART.\n88 LCSP:\nLa empresa licitadora deberá estar en posesión de las siguientes clasificaciones:\nGrupo A; subgrupo 01 (desmontes y vaciados); categoría 1.\nGrupo C; subgrupo 02 (Estructuras de fábrica u hormigón); categoría 2\nGrupo E; subgrupo 07 (Obras hidráulicas sin cualificación específica); categoría 1.\nGrupo G; subgrupo 06 (Obras viales sin cualificación específica); categoría 2.\n8Direcció General de Ports, CIUTAT ADMINISTRATIVA 9 D'OCTUBRE – TORRE 1\nAeroports i Costes C/ Democràcia, 77 - 46018 VALÈNCIA - Tel. 012\nMEDIOS PARA ACREDITAR LA SOLVENCIA TÉCNICA O PROFESIONAL, SEGÚN ART. 88\nLCSP:\nAcreditar estar en posesión de las clasificaciones requeridas.\nPara ello se aportará certificado del Registro Oficial de Licitadores y Empresas Calificadas, así\ncomo la declaración respo",
+                "indicando:\n1. Equipos y disponibilidad\n2. Dedicación porcentual al contrato\nLa puntuación de este apartado se realizará de acuerdo con los criterios recogidos en la tabla:\nPUNTUACIÓN CRITERIOS\n4 ≤ P ≤ 5 Relaciona de forma exhaustiva los medios a utilizar describiendo las carac-\nterísticas de los principales, señalando la disponibilidad de cada uno de\nellos y los que son de propiedad en su caso. Describe los equipos de tra-\nbajo destinados para la ejecución del contrato, su disponibilidad y tareas\nencomendadas, así como aquel personal técnico especializado pertene-\nciente a la empresa que puede tener papel relevante en la ejecución del\ncontrato.\n2 ≤ P < 4 Relaciona los medios a utilizar y describe sus características de forma so-"
             ]
         },
         {
             "prompt_key": "Criterio_Solvencia_economica",
             "prompt": "Indica si existen criterios para calcular/acreditar la solvencia económica y financiera",
             "response": "Si",
-            "score": 0.9893939393939394,
+            "score": 0.9065086975045826,
             "index": [
+                75,
                 76,
-                162,
-                99
+                77,
+                3
+            ],
+            "chunks": [
+                "Direcció General de Ports, CIUTAT ADMINISTRATIVA 9 D'OCTUBRE – TORRE 1\nAeroports i Costes C/ Democràcia, 77 - 46018 VALÈNCIA - Tel. 012\n No\nAPARTADO J\nGARANTÍA PROVISIONAL: No se exige conforme al art. 106.1 de la LCSP.\nAPARTADO K\nOBLIGACIONES RELATIVAS A LA FISCALIDAD, A LA PROTECCIÓN DEL MEDIO\nAMBIENTE, Y A LAS DISPOSICIONES VIGENTES EN MATERIA DE PROTECCIÓN DEL\nEMPLEO, IGUALDAD DE GÉNERO, CONDICIONES DE TRABAJO Y PREVENCIÓN DE\nRIESGOS LABORALES E INSERCIÓN SOCIO LABORAL DE LAS PERSONAS CON\nDISCAPACIDAD, Y A LA OBLIGACIÓN DE CONTRATAR A UN NÚMERO O PORCENTAJE\nESPECÍFICO DE PERSONAS CON DISCAPACIDAD QUE SEAN APLICABLES A LOS\nSERVICIOS PRESTADOS DURANTE LA EJECUCIÓN DEL CONTRATO:\n No\nAPARTADO L\nCRITERIOS PARA ACREDITAR LA SOLVENCIA ECONÓMICA Y FINANCIERA, SEGÚN ART.\n87 LCSP:",
+                "RIESGOS LABORALES E INSERCIÓN SOCIO LABORAL DE LAS PERSONAS CON\nDISCAPACIDAD, Y A LA OBLIGACIÓN DE CONTRATAR A UN NÚMERO O PORCENTAJE\nESPECÍFICO DE PERSONAS CON DISCAPACIDAD QUE SEAN APLICABLES A LOS\nSERVICIOS PRESTADOS DURANTE LA EJECUCIÓN DEL CONTRATO:\n No\nAPARTADO L\nCRITERIOS PARA ACREDITAR LA SOLVENCIA ECONÓMICA Y FINANCIERA, SEGÚN ART.\n87 LCSP:\nLa empresa licitadora deberá estar en posesión de las siguientes clasificaciones:\nGrupo A; subgrupo 01 (desmontes y vaciados); categoría 1.\nGrupo C; subgrupo 02 (Estructuras de fábrica u hormigón); categoría 2\nGrupo E; subgrupo 07 (Obras hidráulicas sin cualificación específica); categoría 1.\nGrupo G; subgrupo 06 (Obras viales sin cualificación específica); categoría 2.\nMEDIOS PARA ACREDITAR LA SOLVENCIA ECONÓMICA Y FINANCIERA, SEGÚN ART. 87",
+                "Grupo A; subgrupo 01 (desmontes y vaciados); categoría 1.\nGrupo C; subgrupo 02 (Estructuras de fábrica u hormigón); categoría 2\nGrupo E; subgrupo 07 (Obras hidráulicas sin cualificación específica); categoría 1.\nGrupo G; subgrupo 06 (Obras viales sin cualificación específica); categoría 2.\nMEDIOS PARA ACREDITAR LA SOLVENCIA ECONÓMICA Y FINANCIERA, SEGÚN ART. 87\nLCSP:\nAcreditar estar en posesión de las clasificaciones requeridas.\nPara ello se aportará certificado del Registro Oficial de Licitadores y Empresas Calificadas, así\ncomo la declaración responsable de la vigencia de los extremos acreditados en el certificado.\nCRITERIOS PARA ACREDITAR LA SOLVENCIA TÉCNICA O PROFESIONAL, SEGÚN ART.\n88 LCSP:\nLa empresa licitadora deberá estar en posesión de las siguientes clasificaciones:",
+                "86 del Real Decreto 1098/2001, de 12 de octubre, por el que se aprueba el Reglamento general\nde la Ley de Contratos de las Administraciones Publicas (R.G.L.C.A.P.), en relación con las\nofertas presentadas por empresas de un mismo grupo.\nSiendo:\nBO: Baja de la oferta económica (%)\nBR: Baja de referencia (%), calculada como se indica a continuación\nBM: Baja Media (%), calculada como se indica a continuación\nLa Baja Media (BM) y la Baja de Referencia (BR) se obtendrán, para cualquier numero, n’, de\nofertas “contemplables” del modo:\n𝑂𝐹\n𝑗\n𝐵𝑂 = 100·1−\n𝑗 𝑃𝐵𝐿\n𝑗=𝑛\n1\n𝐵𝑀 = ( )·∑𝐵𝑂\n𝑛 𝑗\n𝑗=1\nSiendo:\nOFj el Importe de la oferta genérica j \"contemplable\" (incluida en el conjunto de las citadas n\nofertas \"contemplables\")\nPBL = Presupuesto base de licitación IVA excluido"
             ]
         },
         {
             "prompt_key": "Criterio_Solvencia_tecnica",
             "prompt": "Indica si existen criterios para calcular/acreditar la solvencia técnica o profesional",
             "response": "Si",
-            "score": 0.9804903000923001,
+            "score": 0.9204271484223696,
             "index": [
-                88,
-                135,
-                99
+                77,
+                78,
+                87,
+                4
+            ],
+            "chunks": [
+                "Grupo A; subgrupo 01 (desmontes y vaciados); categoría 1.\nGrupo C; subgrupo 02 (Estructuras de fábrica u hormigón); categoría 2\nGrupo E; subgrupo 07 (Obras hidráulicas sin cualificación específica); categoría 1.\nGrupo G; subgrupo 06 (Obras viales sin cualificación específica); categoría 2.\nMEDIOS PARA ACREDITAR LA SOLVENCIA ECONÓMICA Y FINANCIERA, SEGÚN ART. 87\nLCSP:\nAcreditar estar en posesión de las clasificaciones requeridas.\nPara ello se aportará certificado del Registro Oficial de Licitadores y Empresas Calificadas, así\ncomo la declaración responsable de la vigencia de los extremos acreditados en el certificado.\nCRITERIOS PARA ACREDITAR LA SOLVENCIA TÉCNICA O PROFESIONAL, SEGÚN ART.\n88 LCSP:\nLa empresa licitadora deberá estar en posesión de las siguientes clasificaciones:",
+                "Para ello se aportará certificado del Registro Oficial de Licitadores y Empresas Calificadas, así\ncomo la declaración responsable de la vigencia de los extremos acreditados en el certificado.\nCRITERIOS PARA ACREDITAR LA SOLVENCIA TÉCNICA O PROFESIONAL, SEGÚN ART.\n88 LCSP:\nLa empresa licitadora deberá estar en posesión de las siguientes clasificaciones:\nGrupo A; subgrupo 01 (desmontes y vaciados); categoría 1.\nGrupo C; subgrupo 02 (Estructuras de fábrica u hormigón); categoría 2\nGrupo E; subgrupo 07 (Obras hidráulicas sin cualificación específica); categoría 1.\nGrupo G; subgrupo 06 (Obras viales sin cualificación específica); categoría 2.\n8Direcció General de Ports, CIUTAT ADMINISTRATIVA 9 D'OCTUBRE – TORRE 1\nAeroports i Costes C/ Democràcia, 77 - 46018 VALÈNCIA - Tel. 012\nMEDIOS PARA ACREDITAR LA SOLVENCIA TÉCNICA O PROFESIONAL, SEGÚN ART. 88\nLCSP:\nAcreditar estar en posesión de las clasificaciones requeridas.\nPara ello se aportará certificado del Registro Oficial de Licitadores y Empresas Calificadas, así\ncomo la declaración respo",
+                "Direcció General de Ports, CIUTAT ADMINISTRATIVA 9 D'OCTUBRE – TORRE 1\nAeroports i Costes C/ Democràcia, 77 - 46018 VALÈNCIA - Tel. 012\nMEDIOS PARA ACREDITAR LA SOLVENCIA TÉCNICA O PROFESIONAL, SEGÚN ART. 88\nLCSP:\nAcreditar estar en posesión de las clasificaciones requeridas.\nPara ello se aportará certificado del Registro Oficial de Licitadores y Empresas Calificadas, así\ncomo la declaración responsable de la vigencia de los extremos acreditados en el certificado.\nCRITERIOS PARA ACREDITAR LA SOLVENCIA TÉCNICA O PROFESIONAL LAS\nEMPRESAS DE NUEVA CREACIÓN SEGÚN ARTÍCULO 88 LCSP\nLa empresa licitadora deberá estar en posesión de las siguientes clasificaciones:\nGrupo A; subgrupo 01 (desmontes y vaciados); categoría 1.\nGrupo C; subgrupo 02 (Estructuras de fábrica u hormigón); categoría 2",
+                "CUALITATIVOS CUYA CUANTIFICACIÓN DEPENDE DE UN JUICIO DE VALOR QUE CADA\nEMPRESA LICITADORA DEBERÁ ALCANZAR PARA QUE PUEDA CONTINUAR EN EL\nPROCESO SELECTIVO ES DE 24 PUNTOS.\nPUNTUACIÓN FINAL DE LOS CRITERIOS DE CALIDAD CUYA CUANTIFICACIÓN\nDEPENDIENTES DE UN JUICIO DE VALOR\nLa puntuación técnica final cuya cuantificación depende de un juicio de valor (PCJ) de cada\noferta se obtendrá del modo:\n1) Las ofertas admitidas administrativamente quedaran encuadradas en dos intervalos:\n• Calidad técnica inaceptable: aquellas cuya puntuación técnica inicial (PTI) sea inferior a 24\npuntos.\n• Calidad técnica suficiente: aquellas cuya puntuación técnica inicial (PTI) sea igual o superior a\n24 puntos.\n2) Las ofertas consideradas de calidad técnica inaceptable no podrán continuar en el proceso\nselectivo."
             ]
         },
         {
             "prompt_key": "Condiciones_especiales",
             "prompt": "Indica si existen condiciones especiales de ejecución y cuales son en caso de haberlas",
-            "response": "Si, las condiciones especiales de ejecución incluyen el desarrollo de todos los trabajos objeto del contrato aplicando los procedimientos que dispone el certificado ISO 14001 o certificado equivalente para garantizar la calidad ambiental, y la adopción de un Sistema de Gestión de la Accesibilidad de acuerdo con la norma UNE/ISO 17001 en todas las etapas de la ejecución de las obras.",
-            "score": 0.9893939393939394,
+            "response": "Si, las condiciones especiales de ejecución incluyen el desarrollo de todos los trabajos objeto del contrato aplicando los procedimientos que dispone el certificado ISO 14001 o certificado equivalente para garantizar la calidad ambiental, y la adopción de un Sistema de Gestión de la Accesibilidad de acuerdo con la norma UNE/ISO 17001 para garantizar la accesibilidad en todas las etapas de desarrollo.",
+            "score": 0.95,
             "index": [
-                63,
-                121,
-                211
+                211,
+                212,
+                213,
+                2
+            ],
+            "chunks": [
+                "Direcció General de Ports, CIUTAT ADMINISTRATIVA 9 D'OCTUBRE – TORRE 1\nAeroports i Costes C/ Democràcia, 77 - 46018 VALÈNCIA - Tel. 012\nABONOS A CUENTA\n No procede\nPREVISIÓN DE PAGO EN METÁLICO Y EN OTROS BIENES EN CONTRATOS DE\nSERVICIOS ACCESORIOS DE SUMINISTROS DE EQUIPOS INFORMÁTICOS (Sólo en los\nsupuestos del Art. 302.4 de la LSCP)\n No procede\nAPARTADO X\nMEDIDAS PARA GARANTIZAR EL CUMPLIMIENTO DE LAS OBLIGACIONES\nMEDIOAMBIENTALES, SOCIALES O LABORALES:\nCONDICIONES ESPECIALES DE EJECUCIÓN A CUMPLIR:\nLa empresa adjudicataria deberá desarrollar todos los trabajos objeto del presente contrato apli-\ncando los procedimientos que dispone el certificado ISO 14001 o certificado equivalente. Esta\nexigencia garantiza la calidad ambiental de todos los trabajos incluidos en el contrato.",
+                "MEDIOAMBIENTALES, SOCIALES O LABORALES:\nCONDICIONES ESPECIALES DE EJECUCIÓN A CUMPLIR:\nLa empresa adjudicataria deberá desarrollar todos los trabajos objeto del presente contrato apli-\ncando los procedimientos que dispone el certificado ISO 14001 o certificado equivalente. Esta\nexigencia garantiza la calidad ambiental de todos los trabajos incluidos en el contrato.\nAsimismo, en todas las etapas de la ejecución de las obras se adoptará un Sistema de Gestión\nde la Accesibilidad de acuerdo con la norma UNE/ISO 17001. Esta exigencia garantiza la acce-\nsibilidad a largo de todas las etapas de desarrollo -incluidas las situaciones provisionales- de los\ntrabajos incluidos en el contrato.\nCONSIDERACIÓN COMO INFRACCIÓN GRAVE DEL INCUMPLIMIENTO DE LAS",
+                "Asimismo, en todas las etapas de la ejecución de las obras se adoptará un Sistema de Gestión\nde la Accesibilidad de acuerdo con la norma UNE/ISO 17001. Esta exigencia garantiza la acce-\nsibilidad a largo de todas las etapas de desarrollo -incluidas las situaciones provisionales- de los\ntrabajos incluidos en el contrato.\nCONSIDERACIÓN COMO INFRACCIÓN GRAVE DEL INCUMPLIMIENTO DE LAS\nCONDICIONES ESPECIALES DE EJECUCIÓN ESTABLECIDAS:\nSí\nAPARTADO Y\nIMPORTE DE GASTOS POR DESISTIMIENTO O RENUNCIA:\nSe aplicarán las normas relativas al régimen de responsabilidad patrimonial de las\nadministraciones públicas al amparo del artículo 152.2 de la LCSP.\nOBSERVACIONES\nCONTRATACIÓN DEL CONTROL DE CALIDAD DE LA OBRA MEDIANTE UN CONTRATO\nINDEPENDIENTE\n☑ No\nINCLUSIÓN DEL CONTROL DE CALIDAD EN LA PROPIA OBRA",
+                "Se incluyen entre las actuaciones del contrato: movimiento de tierras, escolleras, muelles,\nelementos de amarre, estructuras, muros y tabiquería, urbanización, redes de saneamiento,\nredes de abastecimiento, instalación eléctrica y alumbrado, pavimentación y obras varias.\nEs objeto del contrato actuaciones de tipo ordinario, extraordinario y actuaciones de adecuación\ny mejora.\nLa conservación ordinaria incluye las actuaciones por emergencias de lluvias, temporales,\naccidentes, etc., que requieren respuesta inmediata para el restablecimiento de las condiciones\nde seguridad de la vía), retirada de desprendimientos, reposición de taludes, reparaciones de\ndaños por accidentes, etc.\nEn el caso de la conservación extraordinaria, en función del tipo de actuaciones, se deberá"
             ]
         },
         {
             "prompt_key": "Penalidad_incumplimiento",
             "prompt": "Indica si existe penalidad por incumplimiento al contratista",
-            "response": "Si, existe una penalidad del 50% del importe del subcontrato (IVA excluido) en caso de incumplimiento de las condiciones de la oferta, falta de acreditación de la aptitud del subcontratista o incumplimiento de las condiciones de emergencia o urgencia. Además, se establecen penalidades por incumplimiento parcial o cumplimiento defectuoso de la ejecución de las prestaciones (5% del precio del contrato), por incumplimiento de los plazos parciales y totales (diariamente 0,60 € por cada 1.000 € del presupuesto del contrato).",
-            "score": 0.9787878787878789,
+            "response": "Si, existen varias penalidades establecidas para el contratista en caso de incumplimiento, como un 5% del precio del contrato por cada incumplimiento parcial o defectuoso, 0,60 € diarios por cada 1.000 € del presupuesto del contrato por incumplimiento de plazos parciales y totales.",
+            "score": 0.875,
             "index": [
-                206,
                 203,
-                204
+                204,
+                0,
+                5
+            ],
+            "chunks": [
+                "INICIO DEL CÓMPUTO:\nLa ejecución del contrato de obras comenzará con el acta de comprobación del replanteo.\nPLAZOS PARCIALES:\nNo.\nOBLIGACIÓN DE PRESENTAR EL PROGRAMA DE TRABAJO:\nNo.\nAPARTADO S\nINFORMACIÓN SOBRE LAS CONDICIONES DE SUBROGACIÓN EN CONTRATOS DE\nTRABAJO, DE ACUERDO CON EL ARTÍCULO 130 DE LA LCSP:\nNo procede.\nPENALIDADES, DENTRO DE LOS LIMITES DEL ART. 192 LCSP, AL CONTRATISTA PARA\nEL SUPUESTO DE INCUMPLIMIENTO POR EL MISMO DE LA OBLIGACION DE\nINFORMACIÓN SOBRE LAS CONDICIONES DE SUBROGACIÓN PREVISTA EN ESTA\nCLAUSULA:\nNo procede.\nAPARTADO T\nRESPONSABLE DEL CONTRATO:\nEl responsable del contrato será el técnico adscrito a la Subdirección General de Puertos,\nAeropuertos y Costas que sea nombrado al efecto.\nUNIDAD ENCARGADA DEL SEGUIMIENTO Y EJECUCIÓN DEL CONTRATO:",
+                "EL SUPUESTO DE INCUMPLIMIENTO POR EL MISMO DE LA OBLIGACION DE\nINFORMACIÓN SOBRE LAS CONDICIONES DE SUBROGACIÓN PREVISTA EN ESTA\nCLAUSULA:\nNo procede.\nAPARTADO T\nRESPONSABLE DEL CONTRATO:\nEl responsable del contrato será el técnico adscrito a la Subdirección General de Puertos,\nAeropuertos y Costas que sea nombrado al efecto.\nUNIDAD ENCARGADA DEL SEGUIMIENTO Y EJECUCIÓN DEL CONTRATO:\nSubdirección General de Puertos, Aeropuertos y Costas.\nATRIBUCIONES DE LA PERSONA RESPONSABLE DEL CONTRATO:\nLas previstas en el art. 62 de la Ley 9/2017, LCSP\nRÉGIMEN DE PENALIDADES EN LA EJECUCIÓN DEL CONTRATO\n1. Por incumplimiento parcial o cumplimiento defectuoso de la ejecución de las\nprestaciones:\n22Direcció General de Ports, CIUTAT ADMINISTRATIVA 9 D'OCTUBRE – TORRE 1\nAeroports i Costes C/ Democràcia, 77 - 46018 VALÈNCIA - Tel. 012\n5% del precio del contrato (IVA excluido) por cada incumplimiento\n2. Por incumplimiento de los plazos parciales:\nDiariamente 0,60 € por cada 1.000 € del presupuesto del contrato (IVA excluido)\n3. Por incumplimiento de los plazos totales:\nDiariamente 0,60 € por cad",
+                "Direcció General de Ports, CIUTAT ADMINISTRATIVA 9 D'OCTUBRE – TORRE 1\nAeroports i Costes C/ Democràcia, 77 - 46018 VALÈNCIA - Tel. 012\nANEXO I\nCARACTERÍSTICAS PARTICULARES PARA LA ADJUDICACIÓN DE CONTRATOS\nADMINISTRATIVOS MIXTO MEDIANTE PROCEDIMIENTO ABIERTO\nAPARTADO A\nNúmero DE EXPEDIENTE:\nClave Informática Clave seguimiento Expediente MASTIN\n22-CPTOPM19-03-16-NT-0 SGPAC-13 CMAYOR/2022/03Y03/101\nNECESIDADES A SATISFACER CON LA CELEBRACIÓN DEL CONTRATO:\nMantenimiento de las infraestructuras portuarias para posibilitar el normal desarrollo en\ncondiciones de seguridad de las actividades portuarias.\nDEFINICIÓN CONCRETA DEL OBJETO DEL CONTRATO MIXTO:\nEl presente contrato tiene por objeto lograr la conservación, adecuación, mantenimiento y mejora",
+                "existentes que debido a que por su estado requieran de una intervención por motivos de\nseguridad, explotación y movilidad.\nSe trata de un contrato mixto por contener prestaciones correspondientes a contratos de obras,\nservicios y suministros. Estas prestaciones se encuentran directamente vinculadas entre sí y\nmantienen relaciones de complementariedad, al ser las infraestructuras portuarias concebidas\ncomo una unidad que es necesario mantener y conservar.\nA los efectos de determinar el régimen de adjudicación del contrato, la prestación principal es la\ncorrespondiente a las obras, al ser las que mayor peso tienen en volumen de ejecución y\n1Direcció General de Ports, CIUTAT ADMINISTRATIVA 9 D'OCTUBRE – TORRE 1\nAeroports i Costes C/ Democràcia, 77 - 46018 VALÈNCIA - Tel. 012\npresupuesto asignado en la Memoria de las obras de conservación, reparación, adecuación y\nmejora de las infraestructuras de los puertos de gestión directa de la Generalitat.\nLUGAR DE PRESTACIÓN DEL SERVICIO:\nEn los puertos autonómicos de: Vinarós, Benicarlò, Peñís"
             ]
         },
         {
             "prompt_key": "Forma_pago",
             "prompt": "Indica la forma o régimen de pago",
-            "response": "Mensual, en función de las certificaciones expedidas por la Dirección Facultativa de las obras.",
-            "score": 0.9681818181818183,
+            "response": "[TIPO] Los pagos se efectuarán previa presentación de la correspondiente factura reglamentaria. El abono durante la ejecución de las obras será mensual, en función de las certificaciones expedidas por la Dirección Facultativa de las obras.",
+            "score": 0.95,
             "index": [
                 207,
                 208,
-                209
+                209,
+                5
+            ],
+            "chunks": [
+                "□ Resolución del contrato, si se ha declarado obligación esencial\n5. Penalidades en caso de incumplimiento de la obligación de remitir, cuando el\nórgano de contratación lo solicite, la relación detallada de aquellos subcontratistas\no suministradores que participen en el contrato cuando se perfeccione su\nparticipación, de las condiciones de subcontratación o suministro de cada uno de\nlos que guarden una relación directa con el plazo de pago y del justificante de\ncumplimiento de los pagos a los subcontratistas una vez terminada la prestación:\n☑ No\nAPARTADO U\nPLAZO DE RECEPCIÓN: Un mes desde la fecha de finalización de la obra.\nAPARTADO V\nPLAZO DE GARANTÍA\nEl plazo de garantía de las obras será de UN (1) año, a contar desde la fecha de su recepción.\nAPARTADO W\nFORMA DE PAGO:",
+                "los que guarden una relación directa con el plazo de pago y del justificante de\ncumplimiento de los pagos a los subcontratistas una vez terminada la prestación:\n☑ No\nAPARTADO U\nPLAZO DE RECEPCIÓN: Un mes desde la fecha de finalización de la obra.\nAPARTADO V\nPLAZO DE GARANTÍA\nEl plazo de garantía de las obras será de UN (1) año, a contar desde la fecha de su recepción.\nAPARTADO W\nFORMA DE PAGO:\nLos pagos se efectuarán previa presentación de la correspondiente factura reglamentaria.\nEl abono durante la ejecución de las obras será mensual, en función de las certificaciones\nexpedidas por la Dirección Facultativa de las obras, redactadas mensualmente con relación\nvalorada de la obra ejecutada conforme al proyecto según resulte de las mediciones realizadas",
+                "APARTADO W\nFORMA DE PAGO:\nLos pagos se efectuarán previa presentación de la correspondiente factura reglamentaria.\nEl abono durante la ejecución de las obras será mensual, en función de las certificaciones\nexpedidas por la Dirección Facultativa de las obras, redactadas mensualmente con relación\nvalorada de la obra ejecutada conforme al proyecto según resulte de las mediciones realizadas\ny los precios del contrato y serán tramitadas en los primeros diez días siguientes al mes que\ncorrespondan.\nEl abono de las partidas alzadas a justificar se realizará por aplicación de los precios unitarios\nvigentes del proyecto siempre que sea posible. Las unidades para las que no haya precio unitario\nen el proyecto se valorarán a partir de las facturas (IVA excluido) presentadas por los",
+                "existentes que debido a que por su estado requieran de una intervención por motivos de\nseguridad, explotación y movilidad.\nSe trata de un contrato mixto por contener prestaciones correspondientes a contratos de obras,\nservicios y suministros. Estas prestaciones se encuentran directamente vinculadas entre sí y\nmantienen relaciones de complementariedad, al ser las infraestructuras portuarias concebidas\ncomo una unidad que es necesario mantener y conservar.\nA los efectos de determinar el régimen de adjudicación del contrato, la prestación principal es la\ncorrespondiente a las obras, al ser las que mayor peso tienen en volumen de ejecución y\n1Direcció General de Ports, CIUTAT ADMINISTRATIVA 9 D'OCTUBRE – TORRE 1\nAeroports i Costes C/ Democràcia, 77 - 46018 VALÈNCIA - Tel. 012\npresupuesto asignado en la Memoria de las obras de conservación, reparación, adecuación y\nmejora de las infraestructuras de los puertos de gestión directa de la Generalitat.\nLUGAR DE PRESTACIÓN DEL SERVICIO:\nEn los puertos autonómicos de: Vinarós, Benicarlò, Peñís"
             ]
         },
         {
             "prompt_key": "Causas_modificacion",
             "prompt": "Indica si existen causas de modificacion del contrato",
-            "response": "No",
-            "score": 0.9693163069266163,
+            "response": "No, salvo lo dispuesto en el artículo 203 y siguientes de la Ley 9/2017.",
+            "score": 0.8896455433468023,
             "index": [
-                206,
+                197,
+                198,
                 60,
-                68
+                1
+            ],
+            "chunks": [
+                "Direcció General de Ports, CIUTAT ADMINISTRATIVA 9 D'OCTUBRE – TORRE 1\nAeroports i Costes C/ Democràcia, 77 - 46018 VALÈNCIA - Tel. 012\n• Plan de igualdad previamente aprobado por cualquier administración pública u órgano\ncompetente, para la preferencia señalada en el apartado g).\n• Certificado de inscripción en el Registro de Cooperativas de la Comunidad Valenciana, para la\npreferencia indicada en el apartado h).\n• Declaración responsable de la persona representante de la empresa o entidad licitadora para\naquellas que cumplan con lo preceptuado en los apartados d), e), f), i) y j).\nAPARTADO Ñ\nCESIÓN\n En los términos previstos en el artículo 214 de la Ley 9/2017 LCSP.\nAPARTADO O\nMODIFICACIONES\n No se contemplan, salvo lo dispuesto en el artículo 203 y siguientes de la Ley 9/2017.",
+                "• Declaración responsable de la persona representante de la empresa o entidad licitadora para\naquellas que cumplan con lo preceptuado en los apartados d), e), f), i) y j).\nAPARTADO Ñ\nCESIÓN\n En los términos previstos en el artículo 214 de la Ley 9/2017 LCSP.\nAPARTADO O\nMODIFICACIONES\n No se contemplan, salvo lo dispuesto en el artículo 203 y siguientes de la Ley 9/2017.\nAPARTADO P\nGARANTÍA DEFINITIVA\n5% del precio final ofertado, IVA excluido.\nEXENCIÓN DE PRESTACIÓN DE GARANTÍA DEFINITIVA:\nNo procede\nCANCELACIÓN O DEVOLUCIÓN PROPORCIONAL DE LA GARANTÍA DEFINITIVA EN\nCASOS DE RECEPCIÓN PARCIAL:\nNo procede\nAPARTADO Q\nOBLIGACIÓN DE INDICAR EN LA OFERTA SI VA A HABER SUBCONTRATACIÓN:\n No procede\nLAS CONDICIONES DE LA OFERTA PARA LA SUBCONTRATACIÓN, LA ACREDITACION",
+                "memoria (Trámites y autorizaciones), así como todo aquello que dichos proyectos atribuyan al\ncontratista, como son, entre otras cosas, cualquier tipo de estudio, análisis o valoración\n(estabilidad, cálculos estructurales, diseño y dimensionamiento de drenajes, etc.) que la\nDirección de las Obras requiera.\nVALOR ESTIMADO DEL CONTRATO:\nEl valor estimado del contrato asciende a CUATRO MILLONES NOVECIENTOS NUEVE MIL\nQUINIENTOS NOVENTA Y SEIS euros con CINCUENTA Y UN céntimos (4.909.596,51€), IVA\nexcluido, según el presupuesto del proyecto constructivo aprobado que sirve de base a la\nlicitación, que con IVA asciende a 5.940.611,78 €.\n6Direcció General de Ports, CIUTAT ADMINISTRATIVA 9 D'OCTUBRE – TORRE 1\nAeroports i Costes C/ Democràcia, 77 - 46018 VALÈNCIA - Tel. 012\n Presupuesto de Ejecución Material (PEM): 4.125.711,35 €\n Gastos Generales (GG): 536.342,48 €\n Beneficio Industrial (BI): 247.542,68€\n Modificaciones previstas: 0,00 €\n Valor estimado de las prórrogas: 0,00 €\nAPARTADO F\nPRESUPUESTO BASE DE LICITACIÓN POR LOTE",
+                "indicados previamente, ejecutadas en el curso de los cinco últimos años, sea superior a\nOCHOCIENTOS MIL EUROS (800.000 €) o que durante al menos tres de los últimos cinco años\nel importe haya sido superior a UN MILLÓN DOSCIENTOS MIL EUROS (1.200.000 €)\nEN CONTRATOS SUJETOS A UNA REGULACION ARMONIZADA, CERTIFICADOS DE\nACREDITACION DEL CUMPLIMIENTO DE LAS NORMAS DE GARANTIA DE CALIDAD:\nNO\nEN CONTRATOS SUJETOS A UNA REGULACION ARMONIZADA, CERTIFICADOS DE\nACREDITACION DEL CUMPLIMIENTO DE LAS NORMAS DE GESTION MEDIOAMBIENTAL:\nNO\nHABILITACION EMPRESARIAL EXIGIBLE PARA LA REALIZACION DE LA ACTIVIDAD O\nPRESTACION QUE CONSTITUYA EL OBJETO DEL CONTRATO EN CASO DE QUE\nPROCEDA:\nNO\nFORMAS DE RESPONSABILIDAD CONJUNTA EN LA EJECUCION DEL CONTRATO PARA"
             ]
         },
         {
             "prompt_key": "Plazo_garantia",
             "prompt": "Indica cuál es el plazo de garantía de las obras",
             "response": "1 año",
-            "score": 0.9621212121212123,
+            "score": 0.899,
             "index": [
                 207,
                 208,
-                198
+                71,
+                1
+            ],
+            "chunks": [
+                "□ Resolución del contrato, si se ha declarado obligación esencial\n5. Penalidades en caso de incumplimiento de la obligación de remitir, cuando el\nórgano de contratación lo solicite, la relación detallada de aquellos subcontratistas\no suministradores que participen en el contrato cuando se perfeccione su\nparticipación, de las condiciones de subcontratación o suministro de cada uno de\nlos que guarden una relación directa con el plazo de pago y del justificante de\ncumplimiento de los pagos a los subcontratistas una vez terminada la prestación:\n☑ No\nAPARTADO U\nPLAZO DE RECEPCIÓN: Un mes desde la fecha de finalización de la obra.\nAPARTADO V\nPLAZO DE GARANTÍA\nEl plazo de garantía de las obras será de UN (1) año, a contar desde la fecha de su recepción.\nAPARTADO W\nFORMA DE PAGO:",
+                "los que guarden una relación directa con el plazo de pago y del justificante de\ncumplimiento de los pagos a los subcontratistas una vez terminada la prestación:\n☑ No\nAPARTADO U\nPLAZO DE RECEPCIÓN: Un mes desde la fecha de finalización de la obra.\nAPARTADO V\nPLAZO DE GARANTÍA\nEl plazo de garantía de las obras será de UN (1) año, a contar desde la fecha de su recepción.\nAPARTADO W\nFORMA DE PAGO:\nLos pagos se efectuarán previa presentación de la correspondiente factura reglamentaria.\nEl abono durante la ejecución de las obras será mensual, en función de las certificaciones\nexpedidas por la Dirección Facultativa de las obras, redactadas mensualmente con relación\nvalorada de la obra ejecutada conforme al proyecto según resulte de las mediciones realizadas",
+                "fórmula utilizada será la fórmula n.º 381, de “Urbanización y viales en entornos portuarios” del\nReal Decreto 1359/2011, de 7 de octubre, por el que se aprueba la Relación de materiales\nbásicos y las fórmulas-tipo generales de revisión de precios de los contratos de obras y de\ncontratos de suministro de fabricación de armamento y equipamiento de las Administraciones\nPúblicas.\nAPARTADO I\nALTERNATIVAS O VARIANTES\n7Direcció General de Ports, CIUTAT ADMINISTRATIVA 9 D'OCTUBRE – TORRE 1\nAeroports i Costes C/ Democràcia, 77 - 46018 VALÈNCIA - Tel. 012\n No\nAPARTADO J\nGARANTÍA PROVISIONAL: No se exige conforme al art. 106.1 de la LCSP.\nAPARTADO K\nOBLIGACIONES RELATIVAS A LA FISCALIDAD, A LA PROTECCIÓN DEL MEDIO\nAMBIENTE, Y A LAS DISPOSICIONES VIGENTES EN MATERIA DE PROTECCIÓN DEL\nEMPLEO, IGUALDAD DE GÉNERO, COND",
+                "NECESIDADES A SATISFACER CON LA CELEBRACIÓN DEL CONTRATO:\nMantenimiento de las infraestructuras portuarias para posibilitar el normal desarrollo en\ncondiciones de seguridad de las actividades portuarias.\nDEFINICIÓN CONCRETA DEL OBJETO DEL CONTRATO MIXTO:\nEl presente contrato tiene por objeto lograr la conservación, adecuación, mantenimiento y mejora\nde las infraestructuras de los puertos de gestión directa de la Generalitat.\nSe incluyen entre las actuaciones del contrato: movimiento de tierras, escolleras, muelles,\nelementos de amarre, estructuras, muros y tabiquería, urbanización, redes de saneamiento,\nredes de abastecimiento, instalación eléctrica y alumbrado, pavimentación y obras varias.\nEs objeto del contrato actuaciones de tipo ordinario, extraordinario y actuaciones de adecuación"
             ]
         },
         {
             "prompt_key": "Contratacion_precio_unit",
-            "prompt": "Indica si cuenta con contratación a precio unitario",
-            "response": "Si, el texto menciona que \"Dichos precios unitarios presentarán el carácter de ejecución material y la medición se hará por unidades realmente ejecutadas\" y también se habla de \"aplicación de los precios unitarios vigentes del proyecto\", lo que indica que sí cuenta con contratación a precio unitario.",
-            "score": 0.9715724977092758,
+            "prompt": "Indica si cuenta con contratación de obras a precios unitarios",
+            "response": "Si, el contrato se regirá por los precios que corresponden a cada una de las unidades que se contemplan en los Cuadros de Precios del presupuesto del proyecto afectado por el coeficiente de adjudicación.",
+            "score": 0.8807636439800263,
             "index": [
-                16,
-                45,
-                209
+                209,
+                210,
+                57,
+                6
+            ],
+            "chunks": [
+                "APARTADO W\nFORMA DE PAGO:\nLos pagos se efectuarán previa presentación de la correspondiente factura reglamentaria.\nEl abono durante la ejecución de las obras será mensual, en función de las certificaciones\nexpedidas por la Dirección Facultativa de las obras, redactadas mensualmente con relación\nvalorada de la obra ejecutada conforme al proyecto según resulte de las mediciones realizadas\ny los precios del contrato y serán tramitadas en los primeros diez días siguientes al mes que\ncorrespondan.\nEl abono de las partidas alzadas a justificar se realizará por aplicación de los precios unitarios\nvigentes del proyecto siempre que sea posible. Las unidades para las que no haya precio unitario\nen el proyecto se valorarán a partir de las facturas (IVA excluido) presentadas por los",
+                "y los precios del contrato y serán tramitadas en los primeros diez días siguientes al mes que\ncorrespondan.\nEl abono de las partidas alzadas a justificar se realizará por aplicación de los precios unitarios\nvigentes del proyecto siempre que sea posible. Las unidades para las que no haya precio unitario\nen el proyecto se valorarán a partir de las facturas (IVA excluido) presentadas por los\nproveedores, a las que aplicará el coeficiente de adjudicación; este resultado se incrementará\ncon el coeficiente de costes indirectos del proyecto aprobado.\n23Direcció General de Ports, CIUTAT ADMINISTRATIVA 9 D'OCTUBRE – TORRE 1\nAeroports i Costes C/ Democràcia, 77 - 46018 VALÈNCIA - Tel. 012\nABONOS A CUENTA\n No procede\nPREVISIÓN DE PAGO EN METÁLICO Y EN OTROS BIENES EN CONTRATOS DE\nSERVICIOS ACCESORIOS DE SUMINISTROS DE EQUIPOS INFORMÁTICOS (Sólo en los\nsupuestos del Art. 302.4 de la LSCP)\n No procede\nAPARTADO X\nMEDIDAS PARA GARANTIZAR EL CUMPLIMIEN",
+                "En el proyecto técnico se detalla, a título meramente orientativo, los listados de mediciones\nmás representativas que se ha previsto ejecutar en el transcurso de las obras y que, dada la\nnaturaleza de las mismas (OBRAS DE MANTENIMIENTO Y CONSERVACIÓN), están sujetas\na las necesidades que surjan en cada momento, pudiendo coincidir o no con las cantidades\nprevistas en dicho proyecto.\nEl contrato se regirá por los precios que corresponden a cada una de las unidades que se\ncontemplan en los Cuadros de Precios del presupuesto del proyecto afectado por el coeficiente\nde adjudicación, que será el cociente entre el presupuesto ofertado y el presupuesto de licitación.\nDichos precios unitarios presentarán el carácter de ejecución material y la medición se hará por\nunidades realmente ejecutadas.",
+                ", ÓRGANO GESTOR: ÓRGANO DE CONTRATACIÓN, ,  "
             ]
         },
         {
             "prompt_key": "Tanto_alzado",
             "prompt": "Indica si el contrato cuenta con contratación de obras a tanto alzado",
-            "response": "Si, según el documento, en la sección \"DETERMINACIÓN DEL PRECIO\" se indica que el importe del presupuesto de licitación formulado por la Administración se ha determinado según el proyecto técnico redactado al efecto y que el contrato se adjudicará por el total de dicho presupuesto, lo que sugiere que el contrato cuenta con contratación de obras a tanto alzado.",
-            "score": 0.9787878787878789,
+            "response": "Si, según el texto \"DETERMINACIÓN DEL PRECIO: Según Tanto alzado\" lo que indica que el contrato se ejecutará a tanto alzado.",
+            "score": 0.8431996403634548,
             "index": [
-                1,
                 55,
-                56
+                56,
+                0,
+                1
+            ],
+            "chunks": [
+                "Direcció General de Ports, CIUTAT ADMINISTRATIVA 9 D'OCTUBRE – TORRE 1\nAeroports i Costes C/ Democràcia, 77 - 46018 VALÈNCIA - Tel. 012\nBASE IMPORTE TOTAL\nANUALIDADES EJERCICIO IMPONIBLE (€) IVA (€) (21%) (€)\n1ª Anualidad 2023 413.223,14 86.776,86 500.000\n2ª Anualidad 2024 1.652.892,56 347.107,44 2.000.000\n3ª Anualidad 2025 1.652.892,56 347.107,44 2.000.000\n4ª Anualidad 2026 1.190.588,25 250.023,53 1.440.611,78\nLa ejecución del contrato en los años posteriores se subordinará a la existencia de crédito\nadecuado y suficiente en los respectivos presupuestos de la Generalitat.\nDETERMINACIÓN DEL PRECIO:\nSegún Tanto alzado\nEl importe del presupuesto de licitación formulado por la Administración se ha determinado\nsegún el proyecto técnico redactado al efecto.",
+                "La ejecución del contrato en los años posteriores se subordinará a la existencia de crédito\nadecuado y suficiente en los respectivos presupuestos de la Generalitat.\nDETERMINACIÓN DEL PRECIO:\nSegún Tanto alzado\nEl importe del presupuesto de licitación formulado por la Administración se ha determinado\nsegún el proyecto técnico redactado al efecto.\nEl contrato se adjudicará por el total de dicho presupuesto.\nEn el proyecto técnico se detalla, a título meramente orientativo, los listados de mediciones\nmás representativas que se ha previsto ejecutar en el transcurso de las obras y que, dada la\nnaturaleza de las mismas (OBRAS DE MANTENIMIENTO Y CONSERVACIÓN), están sujetas\na las necesidades que surjan en cada momento, pudiendo coincidir o no con las cantidades\nprevistas en dicho proyecto.",
+                "Direcció General de Ports, CIUTAT ADMINISTRATIVA 9 D'OCTUBRE – TORRE 1\nAeroports i Costes C/ Democràcia, 77 - 46018 VALÈNCIA - Tel. 012\nANEXO I\nCARACTERÍSTICAS PARTICULARES PARA LA ADJUDICACIÓN DE CONTRATOS\nADMINISTRATIVOS MIXTO MEDIANTE PROCEDIMIENTO ABIERTO\nAPARTADO A\nNúmero DE EXPEDIENTE:\nClave Informática Clave seguimiento Expediente MASTIN\n22-CPTOPM19-03-16-NT-0 SGPAC-13 CMAYOR/2022/03Y03/101\nNECESIDADES A SATISFACER CON LA CELEBRACIÓN DEL CONTRATO:\nMantenimiento de las infraestructuras portuarias para posibilitar el normal desarrollo en\ncondiciones de seguridad de las actividades portuarias.\nDEFINICIÓN CONCRETA DEL OBJETO DEL CONTRATO MIXTO:\nEl presente contrato tiene por objeto lograr la conservación, adecuación, mantenimiento y mejora",
+                "indicados previamente, ejecutadas en el curso de los cinco últimos años, sea superior a\nOCHOCIENTOS MIL EUROS (800.000 €) o que durante al menos tres de los últimos cinco años\nel importe haya sido superior a UN MILLÓN DOSCIENTOS MIL EUROS (1.200.000 €)\nEN CONTRATOS SUJETOS A UNA REGULACION ARMONIZADA, CERTIFICADOS DE\nACREDITACION DEL CUMPLIMIENTO DE LAS NORMAS DE GARANTIA DE CALIDAD:\nNO\nEN CONTRATOS SUJETOS A UNA REGULACION ARMONIZADA, CERTIFICADOS DE\nACREDITACION DEL CUMPLIMIENTO DE LAS NORMAS DE GESTION MEDIOAMBIENTAL:\nNO\nHABILITACION EMPRESARIAL EXIGIBLE PARA LA REALIZACION DE LA ACTIVIDAD O\nPRESTACION QUE CONSTITUYA EL OBJETO DEL CONTRATO EN CASO DE QUE\nPROCEDA:\nNO\nFORMAS DE RESPONSABILIDAD CONJUNTA EN LA EJECUCION DEL CONTRATO PARA"
             ]
         },
         {
             "prompt_key": "Tanto_alzado_con",
             "prompt": "Indica si el contrato cuenta con contratación de obras a tanto alzado con precio cerrado",
-            "response": "No",
-            "score": 0.9807778746454673,
+            "response": "Si, según el texto \"DETERMINACIÓN DEL PRECIO: Según Tanto alzado\" y \"El contrato se adjudicará por el total de dicho presupuesto\", lo que indica que el contrato cuenta con una contratación de obras a tanto alzado con un precio determinado.",
+            "score": 0.8440098185837269,
             "index": [
-                91,
-                202,
-                1
+                55,
+                56,
+                0,
+                2
+            ],
+            "chunks": [
+                "Direcció General de Ports, CIUTAT ADMINISTRATIVA 9 D'OCTUBRE – TORRE 1\nAeroports i Costes C/ Democràcia, 77 - 46018 VALÈNCIA - Tel. 012\nBASE IMPORTE TOTAL\nANUALIDADES EJERCICIO IMPONIBLE (€) IVA (€) (21%) (€)\n1ª Anualidad 2023 413.223,14 86.776,86 500.000\n2ª Anualidad 2024 1.652.892,56 347.107,44 2.000.000\n3ª Anualidad 2025 1.652.892,56 347.107,44 2.000.000\n4ª Anualidad 2026 1.190.588,25 250.023,53 1.440.611,78\nLa ejecución del contrato en los años posteriores se subordinará a la existencia de crédito\nadecuado y suficiente en los respectivos presupuestos de la Generalitat.\nDETERMINACIÓN DEL PRECIO:\nSegún Tanto alzado\nEl importe del presupuesto de licitación formulado por la Administración se ha determinado\nsegún el proyecto técnico redactado al efecto.",
+                "La ejecución del contrato en los años posteriores se subordinará a la existencia de crédito\nadecuado y suficiente en los respectivos presupuestos de la Generalitat.\nDETERMINACIÓN DEL PRECIO:\nSegún Tanto alzado\nEl importe del presupuesto de licitación formulado por la Administración se ha determinado\nsegún el proyecto técnico redactado al efecto.\nEl contrato se adjudicará por el total de dicho presupuesto.\nEn el proyecto técnico se detalla, a título meramente orientativo, los listados de mediciones\nmás representativas que se ha previsto ejecutar en el transcurso de las obras y que, dada la\nnaturaleza de las mismas (OBRAS DE MANTENIMIENTO Y CONSERVACIÓN), están sujetas\na las necesidades que surjan en cada momento, pudiendo coincidir o no con las cantidades\nprevistas en dicho proyecto.",
+                "Direcció General de Ports, CIUTAT ADMINISTRATIVA 9 D'OCTUBRE – TORRE 1\nAeroports i Costes C/ Democràcia, 77 - 46018 VALÈNCIA - Tel. 012\nANEXO I\nCARACTERÍSTICAS PARTICULARES PARA LA ADJUDICACIÓN DE CONTRATOS\nADMINISTRATIVOS MIXTO MEDIANTE PROCEDIMIENTO ABIERTO\nAPARTADO A\nNúmero DE EXPEDIENTE:\nClave Informática Clave seguimiento Expediente MASTIN\n22-CPTOPM19-03-16-NT-0 SGPAC-13 CMAYOR/2022/03Y03/101\nNECESIDADES A SATISFACER CON LA CELEBRACIÓN DEL CONTRATO:\nMantenimiento de las infraestructuras portuarias para posibilitar el normal desarrollo en\ncondiciones de seguridad de las actividades portuarias.\nDEFINICIÓN CONCRETA DEL OBJETO DEL CONTRATO MIXTO:\nEl presente contrato tiene por objeto lograr la conservación, adecuación, mantenimiento y mejora",
+                "La finalización del contrato se producirá por agotamiento del plazo o del importe del contrato.\nLa empresa contratista se hará cargo de todo tipo de permisos, licencias, autorizaciones,\netc...que resulten necesarias para la ejecución de las obras, así como de la redacción de los\ndocumentos técnicos necesarios para la obtención de los referidos permisos, autorizaciones,\npuestas en uso, etc.\nINICIO DEL CÓMPUTO:\nLa ejecución del contrato de obras comenzará con el acta de comprobación del replanteo.\nPLAZOS PARCIALES:\nNo.\nOBLIGACIÓN DE PRESENTAR EL PROGRAMA DE TRABAJO:\nNo.\nAPARTADO S\nINFORMACIÓN SOBRE LAS CONDICIONES DE SUBROGACIÓN EN CONTRATOS DE\nTRABAJO, DE ACUERDO CON EL ARTÍCULO 130 DE LA LCSP:\nNo procede.\nPENALIDADES, DENTRO DE LOS LIMITES DEL ART. 192 LCSP, AL CONTRATISTA PARA"
             ]
         },
         {
             "prompt_key": "Criterio_juicio_val",
             "prompt": "Indica la ponderación o puntaje máxima de los criterios evaluables mediante juicio de valor",
             "response": "40",
-            "score": 0.9666666666666668,
+            "score": 0.9500000000000001,
             "index": [
-                99,
-                133,
-                134
+                22,
+                23,
+                98,
+                2
+            ],
+            "chunks": [
+                "https://contrataciondelestado.es/wps/portal/plataforma\nAPARTADO D\nNúmero DE SOBRES ELECTRÓNICOS A PRESENTAR POR LAS EMPRESAS LICITADORAS:\n• Sobre Número1: documentación acreditativa del cumplimiento de los requisitos previos\n(Documentación administrativa).\nEn relación con la declaración responsable a incluir en este sobre, las licitadoras se ajustarán\nexactamente al modelo establecido en el Anexo II “MODELO DE DECLARACIÓN\nRESPONSABLE” del PCAP. En caso contrario, la mesa de contratación solicitará la\nsubsanación de este documento.\n• Sobre Número2: documentación relativa a los criterios de adjudicación ponderables mediante un\njuicio de valor.\n• Sobre Número3: proposición económica y documentación relativa a los criterios de adjudicación",
+                "exactamente al modelo establecido en el Anexo II “MODELO DE DECLARACIÓN\nRESPONSABLE” del PCAP. En caso contrario, la mesa de contratación solicitará la\nsubsanación de este documento.\n• Sobre Número2: documentación relativa a los criterios de adjudicación ponderables mediante un\njuicio de valor.\n• Sobre Número3: proposición económica y documentación relativa a los criterios de adjudicación\ncuantificables mediante la mera aplicación de fórmulas matemáticas o aritméticas (Anexo I\nBIS).\n3Direcció General de Ports, CIUTAT ADMINISTRATIVA 9 D'OCTUBRE – TORRE 1\nAeroports i Costes C/ Democràcia, 77 - 46018 VALÈNCIA - Tel. 012\nLa información que vaya a ser objeto de valoración en los criterios de adjudicación\ncuantificables mediante la mera aplicación de fórmulas matemáticas o aritméticas deberá\nincluirse EXCLUSIVAMENTE en el sobre Número3.\nLa documentación incluida en los sobres se pre",
+                "dispuesto en el artículo 52 del Real Decreto 1098/2001, de 12 de octubre, por el que se aprueba\nel Reglamento general de la Ley de Contratos de las Administraciones Publicas.\nSE EXIGE A LAS PERSONAS JURIDICAS QUE DETALLEN EN LA OFERTA LOS NOMBRES\nY LA CUALIFICACION PROFESIONAL DEL PERSONAL RESPONSABLE DE EJECUTAR LA\nPRESTACION:\n No.\nCOMPROMISO DE ADSCRIPCIÓN DE MEDIOS:\n No.\nAPARTADO LL\nCRITERIOS DE ADJUDICACION.\nLos criterios objetivos que han de servir de base para la adjudicación del contrato y su posible\nvaloración máxima son los siguientes:\n1. Criterios relacionados con la calidad cuya cuantificación depende de un juicio de valor (PCJ):\nhasta 40 puntos.\n2. Criterios relacionados con la calidad evaluables de forma automática mediante aplicación de\nfórmulas (PCF): hasta 5 puntos.",
+                "Se incluyen entre las actuaciones del contrato: movimiento de tierras, escolleras, muelles,\nelementos de amarre, estructuras, muros y tabiquería, urbanización, redes de saneamiento,\nredes de abastecimiento, instalación eléctrica y alumbrado, pavimentación y obras varias.\nEs objeto del contrato actuaciones de tipo ordinario, extraordinario y actuaciones de adecuación\ny mejora.\nLa conservación ordinaria incluye las actuaciones por emergencias de lluvias, temporales,\naccidentes, etc., que requieren respuesta inmediata para el restablecimiento de las condiciones\nde seguridad de la vía), retirada de desprendimientos, reposición de taludes, reparaciones de\ndaños por accidentes, etc.\nEn el caso de la conservación extraordinaria, en función del tipo de actuaciones, se deberá"
             ]
         },
         {
             "prompt_key": "Evaluables_autom",
             "prompt": "Indica la ponderación o puntaje máxima de los criterios cualitativos valorables de forma automática",
             "response": "5",
-            "score": 0.9754498110247668,
+            "score": 0.95,
             "index": [
-                157,
-                134,
-                98
+                98,
+                99,
+                141,
+                3
+            ],
+            "chunks": [
+                "dispuesto en el artículo 52 del Real Decreto 1098/2001, de 12 de octubre, por el que se aprueba\nel Reglamento general de la Ley de Contratos de las Administraciones Publicas.\nSE EXIGE A LAS PERSONAS JURIDICAS QUE DETALLEN EN LA OFERTA LOS NOMBRES\nY LA CUALIFICACION PROFESIONAL DEL PERSONAL RESPONSABLE DE EJECUTAR LA\nPRESTACION:\n No.\nCOMPROMISO DE ADSCRIPCIÓN DE MEDIOS:\n No.\nAPARTADO LL\nCRITERIOS DE ADJUDICACION.\nLos criterios objetivos que han de servir de base para la adjudicación del contrato y su posible\nvaloración máxima son los siguientes:\n1. Criterios relacionados con la calidad cuya cuantificación depende de un juicio de valor (PCJ):\nhasta 40 puntos.\n2. Criterios relacionados con la calidad evaluables de forma automática mediante aplicación de\nfórmulas (PCF): hasta 5 puntos.",
+                "Los criterios objetivos que han de servir de base para la adjudicación del contrato y su posible\nvaloración máxima son los siguientes:\n1. Criterios relacionados con la calidad cuya cuantificación depende de un juicio de valor (PCJ):\nhasta 40 puntos.\n2. Criterios relacionados con la calidad evaluables de forma automática mediante aplicación de\nfórmulas (PCF): hasta 5 puntos.\n3. Criterio precio (PCP): hasta 55 puntos.\nCRITERIOS DE ADJUDICACIÓN RELACIONADOS CON LA CALIDAD CUYA\nCUANTIFICACIÓN DEPENDE DE UN JUICIO DE VALOR.\nPUNTUACIÓN INICIAL\nA las ofertas se les asignara una puntuación inicial a partir de los criterios que se describen a\ncontinuación.\nA estos efectos las empresas licitadoras deben presentar una memoria estructurada en los 4",
+                "Direcció General de Ports, CIUTAT ADMINISTRATIVA 9 D'OCTUBRE – TORRE 1\nAeroports i Costes C/ Democràcia, 77 - 46018 VALÈNCIA - Tel. 012\nventajosa, por lo que en el caso de no existir ofertas consideradas de calidad técnica suficiente,\nse procederá a declarar desierta la licitación.\n4) La puntuación final (PCJ), de cada una de las ofertas de calidad técnica suficiente se obtendrá\naplicando la siguiente fórmula:\n𝑃𝑇𝐼\n𝑃𝐶𝐽 = 40∗ ( )\n𝑃𝑇𝐼𝑚á𝑥\nSiendo PTImáx la mayor puntuación técnica inicial de las ofertas presentadas.\nEl resultado de la puntuación técnica se redondeará al segundo decimal.\nCRITERIOS DE ADJUDICACIÓN RELACIONADOS CON LA CALIDAD EVALUABLES DE\nFORMA AUTOMÁTICA MEDIANTE FÓRMULAS\nVALORACIÓN\nLa puntuación de criterios relacionados con la calidad evaluables de forma automática mediante",
+                "La conservación ordinaria incluye las actuaciones por emergencias de lluvias, temporales,\naccidentes, etc., que requieren respuesta inmediata para el restablecimiento de las condiciones\nde seguridad de la vía), retirada de desprendimientos, reposición de taludes, reparaciones de\ndaños por accidentes, etc.\nEn el caso de la conservación extraordinaria, en función del tipo de actuaciones, se deberá\ndefinir las mismas, a criterio de la Dirección de Obra, mediante la elaboración de los informes,\nestudios y proyectos que sean necesarios.\nSe incluyen actuaciones de adecuación y mejora, a criterio de la Dirección de Obra, como el\nacondicionamiento de accesos, o intersecciones, ampliación de aceras … y, en general, todas"
             ]
         },
         {
             "prompt_key": "Criterio_ecónomico",
             "prompt": "Indica la ponderación o puntaje máxima de los criterios económicos / criterio precio",
             "response": "55",
-            "score": 1.0,
+            "score": 0.9137096774193548,
             "index": [
+                155,
                 156,
                 162,
-                107
+                9
+            ],
+            "chunks": [
+                "Direcció General de Ports, CIUTAT ADMINISTRATIVA 9 D'OCTUBRE – TORRE 1\nAeroports i Costes C/ Democràcia, 77 - 46018 VALÈNCIA - Tel. 012\nserá de 5 puntos. De este modo se obtendrá para cada oferta la valoración de la calidad\nmediante la aplicación de fórmulas, PCF.\nA estos efectos las licitadoras deberán cumplimentar los cuadros de Autobaremación del Anexo\nI Bis, que se incluirán en el sobre n.º 3, junto con la proposición económica.\nCRITERIO DE ADJUDICACIÓN: PRECIO\nVALORACIÓN\nPara valorar la oferta económica se puntuarán los aspectos que se relacionan seguidamente:\nPara todas las ofertas:\n(𝑂𝑓 −𝑂𝑓 )2\n𝑃𝐶𝑃 = 55⋅[1−\n𝑖 𝑚𝑖𝑛\n]\n1⁄2\n(𝑃𝐵𝐿−𝑂𝑓 )2\n𝑚𝑖𝑛\nSiendo:\nPCP: puntuación obtenida para el criterio precio\nOfi: oferta que se valora, IVA excluido\nOf : oferta mínima, IVA excluido\nmin",
+                "CRITERIO DE ADJUDICACIÓN: PRECIO\nVALORACIÓN\nPara valorar la oferta económica se puntuarán los aspectos que se relacionan seguidamente:\nPara todas las ofertas:\n(𝑂𝑓 −𝑂𝑓 )2\n𝑃𝐶𝑃 = 55⋅[1−\n𝑖 𝑚𝑖𝑛\n]\n1⁄2\n(𝑃𝐵𝐿−𝑂𝑓 )2\n𝑚𝑖𝑛\nSiendo:\nPCP: puntuación obtenida para el criterio precio\nOfi: oferta que se valora, IVA excluido\nOf : oferta mínima, IVA excluido\nmin\nPBL: presupuesto base de licitación, IVA excluido\nSe considera oferta mínima la oferta más baja de las admitidas, no incursa definitivamente en\nanormalidad por su bajo importe, una vez aplicados los criterios establecidos en el apartado M\ndel presente Anexo.\nLa puntuación económica se redondeará al segundo decimal.\nPUNTUACIÓN GLOBAL\nLa puntuación global (PG) relativa a una propuesta será la suma de las puntuaciones siguien-\ntes:\nPG = PCJ + PCF + PCP",
+                "a) BO> BR + 5, si el número n de ofertas económicas \"contemplables\" es mayor o igual que cinco\n(5)\nb) BO> BM + 5, si el número n de ofertas económicas \"contemplables\" es menor que cinco (5) y\nmayor que uno (1)\nA estos efectos, se consideran “contemplables” las ofertas admitidas administrativa y\ntécnicamente, una vez excluidas las que no deban ser consideradas, según lo previsto en el art.\n86 del Real Decreto 1098/2001, de 12 de octubre, por el que se aprueba el Reglamento general\nde la Ley de Contratos de las Administraciones Publicas (R.G.L.C.A.P.), en relación con las\nofertas presentadas por empresas de un mismo grupo.\nSiendo:\nBO: Baja de la oferta económica (%)\nBR: Baja de referencia (%), calculada como se indica a continuación",
+                "Direcció General de Ports, CIUTAT ADMINISTRATIVA 9 D'OCTUBRE – TORRE 1\nAeroports i Costes C/ Democràcia, 77 - 46018 VALÈNCIA - Tel. 012\npresupuesto asignado en la Memoria de las obras de conservación, reparación, adecuación y\nmejora de las infraestructuras de los puertos de gestión directa de la Generalitat.\nLUGAR DE PRESTACIÓN DEL SERVICIO:\nEn los puertos autonómicos de: Vinarós, Benicarlò, Peñíscola, Burriana, El Perelló, Cullera,\nDenia, Jávea, Moraira, Calpe, Altea, Benidorm, La Vila Joiosa, El Campello, Tabarca, Santa Pola\ny Torrevieja.\nCÓDIGO C.P.V.:\n45241000-8 Trabajos de construcción de instalaciones portuarias\n45259100-8 Reparación y mantenimiento de instalaciones\n50246000-1 Servicios de mantenimiento de equipo portuario"
             ]
         },
         {
             "prompt_key": "Obligaciones_ambientales",
             "prompt": "Cuáles son las medidas para garantizar el cumplimiento de obligaciones ambientales?",
-            "response": "Si, se valorarán las medidas medioambientales que consigan mejoras en la materia, tales como la reutilización de residuos, reciclados, protección del medio marino o calidad de las aguas.",
-            "score": 0.9455984105236195,
+            "response": "Si, se valorarán las medidas medioambientales que consigan mejoras en la materia, tales como la reutilización de residuos, reciclados, protección del medio marino o calidad de las aguas, y el licitador deberá indicar la relación de actuaciones que prevea ejecutar relacionadas con las mejoras medioambientales.",
+            "score": 0.7479419365525246,
             "index": [
-                131,
-                82,
-                81
+                1,
+                1,
+                2,
+                6
+            ],
+            "chunks": [
+                "OBLIGACIONES RELATIVAS A LA FISCALIDAD, A LA PROTECCIÓN DEL MEDIO AMBIENTE, Y A LAS DISPOSICIONES VIGENTES EN MATERIA DE PROTECCIÓN DEL ",
+                "Apartado d) Medidas ambientales\nSe valorarán las medidas medioambientales que consigan mejoras en la materia, tales como la\nreutilización de residuos, reciclados, protección del medio marino o calidad de las aguas.\nEl licitador indicará la relación de actuaciones que prevea ejecutar relacionadas con las mejoras\nmedioambientales con propuestas concretas de actuación en el desarrollo del contrato,\nvalorándose la justificación de estas mejoras y realizando la comparativa con respecto a las\nsoluciones convencionales.\nLa puntuación de este apartado se realizará de acuerdo con los criterios recogidos en la tabla:\nPUNTUACIÓN CRITERIOS\n4 ≤ P ≤ 5 Relaciona de forma exhaustiva las medidas ambientales a implantar,\ndescribiendo las características principales, indicando claramente dónde se",
+                "OBLIGACIONES RELATIVAS A LA FISCALIDAD, A LA PROTECCIÓN DEL MEDIO AMBIENTE, Y A LAS DISPOSICIONES VIGENTES EN MATERIA DE PROTECCIÓN DEL EMPLEO, IGUALDAD DE GÉNERO, CONDICIONES DE TRABAJO Y PREVENCIÓN DE ",
+                "OBLIGACIONES RELATIVAS A LA FISCALIDAD, A LA PROTECCIÓN DEL MEDIO AMBIENTE, Y A LAS DISPOSICIONES VIGENTES EN MATERIA DE PROTECCIÓN DEL EMPLEO, IGUALDAD DE GÉNERO, CONDICIONES DE TRABAJO Y PREVENCIÓN DE RIESGOS LABORALES E INSERCIÓN SOCIO LABORAL DE LAS PERSONAS CON DISCAPACIDAD, Y A LA OBLIGACIÓN DE CONTRATAR A UN NÚMERO O PORCENTAJE ESPECÍFICO DE PERSONAS CON DISCAPACIDAD QUE SEAN APLICABLES A LOS SERVICIOS PRESTADOS DURANTE LA EJECUCIÓN DEL CONTRATO: "
             ]
         },
         {
             "prompt_key": "Regimen_penalidades",
             "prompt": "Indica si existen penalidades por incumplimientos",
-            "response": "- Por incumplimiento parcial o cumplimiento defectuoso de la ejecución de las prestaciones: 5% del precio del contrato (IVA excluido) por cada incumplimiento - Por incumplimiento de los plazos parciales: Diariamente 0,60 € por cada 1.000 € del presupuesto del contrato (IVA excluido) - Por incumplimiento de los plazos totales: Diariamente 0,60 € por cada 1.000 € del presupuesto del contrato (IVA excluido) - En caso de incumplimiento de las condiciones de la oferta, de la falta de acreditación de la aptitud del subcontratista o de las condiciones de emergencia o urgencia: Hasta un 50% del importe del subcontrato (IVA excluido)",
-            "score": 0.9677477998408107,
+            "response": "[LISTADO] - 5% del precio del contrato (IVA excluido) por cada incumplimiento parcial o cumplimiento defectuoso de la ejecución de las prestaciones - Diariamente 0,60 € por cada 1.000 € del presupuesto del contrato (IVA excluido) por incumplimiento de los plazos parciales - Diariamente 0,60 € por cada incumplimiento de los plazos totales",
+            "score": 0.8364864864864865,
             "index": [
-                206,
                 204,
-                22
+                202,
+                203,
+                4
+            ],
+            "chunks": [
+                "EL SUPUESTO DE INCUMPLIMIENTO POR EL MISMO DE LA OBLIGACION DE\nINFORMACIÓN SOBRE LAS CONDICIONES DE SUBROGACIÓN PREVISTA EN ESTA\nCLAUSULA:\nNo procede.\nAPARTADO T\nRESPONSABLE DEL CONTRATO:\nEl responsable del contrato será el técnico adscrito a la Subdirección General de Puertos,\nAeropuertos y Costas que sea nombrado al efecto.\nUNIDAD ENCARGADA DEL SEGUIMIENTO Y EJECUCIÓN DEL CONTRATO:\nSubdirección General de Puertos, Aeropuertos y Costas.\nATRIBUCIONES DE LA PERSONA RESPONSABLE DEL CONTRATO:\nLas previstas en el art. 62 de la Ley 9/2017, LCSP\nRÉGIMEN DE PENALIDADES EN LA EJECUCIÓN DEL CONTRATO\n1. Por incumplimiento parcial o cumplimiento defectuoso de la ejecución de las\nprestaciones:\n22Direcció General de Ports, CIUTAT ADMINISTRATIVA 9 D'OCTUBRE – TORRE 1\nAeroports i Costes C/ Democràcia, 77 - 46018 VALÈNCIA - Tel. 012\n5% del precio del contrato (IVA excluido) por cada incumplimiento\n2. Por incumplimiento de los plazos parciales:\nDiariamente 0,60 € por cada 1.000 € del presupuesto del contrato (IVA excluido)\n3. Por incumplimiento de los plazos totales:\nDiariamente 0,60 € por cad",
+                "La finalización del contrato se producirá por agotamiento del plazo o del importe del contrato.\nLa empresa contratista se hará cargo de todo tipo de permisos, licencias, autorizaciones,\netc...que resulten necesarias para la ejecución de las obras, así como de la redacción de los\ndocumentos técnicos necesarios para la obtención de los referidos permisos, autorizaciones,\npuestas en uso, etc.\nINICIO DEL CÓMPUTO:\nLa ejecución del contrato de obras comenzará con el acta de comprobación del replanteo.\nPLAZOS PARCIALES:\nNo.\nOBLIGACIÓN DE PRESENTAR EL PROGRAMA DE TRABAJO:\nNo.\nAPARTADO S\nINFORMACIÓN SOBRE LAS CONDICIONES DE SUBROGACIÓN EN CONTRATOS DE\nTRABAJO, DE ACUERDO CON EL ARTÍCULO 130 DE LA LCSP:\nNo procede.\nPENALIDADES, DENTRO DE LOS LIMITES DEL ART. 192 LCSP, AL CONTRATISTA PARA",
+                "INICIO DEL CÓMPUTO:\nLa ejecución del contrato de obras comenzará con el acta de comprobación del replanteo.\nPLAZOS PARCIALES:\nNo.\nOBLIGACIÓN DE PRESENTAR EL PROGRAMA DE TRABAJO:\nNo.\nAPARTADO S\nINFORMACIÓN SOBRE LAS CONDICIONES DE SUBROGACIÓN EN CONTRATOS DE\nTRABAJO, DE ACUERDO CON EL ARTÍCULO 130 DE LA LCSP:\nNo procede.\nPENALIDADES, DENTRO DE LOS LIMITES DEL ART. 192 LCSP, AL CONTRATISTA PARA\nEL SUPUESTO DE INCUMPLIMIENTO POR EL MISMO DE LA OBLIGACION DE\nINFORMACIÓN SOBRE LAS CONDICIONES DE SUBROGACIÓN PREVISTA EN ESTA\nCLAUSULA:\nNo procede.\nAPARTADO T\nRESPONSABLE DEL CONTRATO:\nEl responsable del contrato será el técnico adscrito a la Subdirección General de Puertos,\nAeropuertos y Costas que sea nombrado al efecto.\nUNIDAD ENCARGADA DEL SEGUIMIENTO Y EJECUCIÓN DEL CONTRATO:",
+                "definir las mismas, a criterio de la Dirección de Obra, mediante la elaboración de los informes,\nestudios y proyectos que sean necesarios.\nSe incluyen actuaciones de adecuación y mejora, a criterio de la Dirección de Obra, como el\nacondicionamiento de accesos, o intersecciones, ampliación de aceras … y, en general, todas\naquellas que pudieran derivarse de necesidades de nuevas instalaciones o de mejora de las\nexistentes que debido a que por su estado requieran de una intervención por motivos de\nseguridad, explotación y movilidad.\nSe trata de un contrato mixto por contener prestaciones correspondientes a contratos de obras,\nservicios y suministros. Estas prestaciones se encuentran directamente vinculadas entre sí y"
             ]
         }
     ]

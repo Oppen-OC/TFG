@@ -1,0 +1,128 @@
+{
+    "prompts": [
+        {
+            "prompt_key": "Regulacion_armonizada",
+            "response": ""
+        },
+        {
+            "prompt_key": "Sometido_recurso_especial",
+            "response": ""
+        },
+        {
+            "prompt_key": "Plazo_ejecución",
+            "response": "OCHO (8) meses."
+        },
+        {
+            "prompt_key": "Presupuesto_sinIVA",
+            "response": "1.628.928,18 euros"
+        },
+        {
+            "prompt_key": "Presupuesto_conIVA",
+            "response": "1.971.003,10 €"
+        },
+        {
+            "prompt_key": "Importe_IVA",
+            "response": "342.074,92 €"
+        },
+        {
+            "prompt_key": "Sistema_Retribucion",
+            "response": ""
+        },
+        {
+            "prompt_key": "Valor_estimado",
+            "response": "1.628.928,18 euros"
+        },
+        {
+            "prompt_key": "Revision_precios",
+            "response": " x□ NO, motivación: No procede. Segun lo establecido en el articulo 103 LCSP."
+        },
+        {
+            "prompt_key": "Garantia_definitiva",
+            "response": "5% del precio final ofertado, excluido el IVA."
+        },
+        {
+            "prompt_key": "Garantia_provisional",
+            "response": "No se exige conforme al Acuerdo del Consell de 26 de marzo de 2010 así como los artículos 106 y 159.4.b)  de la ley 9/2017."
+        },
+        {
+            "prompt_key": "Admisibilidad_variantes",
+            "response": "x□ NO"
+        },
+        {
+            "prompt_key": "Clasificacion",
+            "response": "Superior a 500.00"
+        },
+        {
+            "prompt_key": "Grupo",
+            "response": "E (Obras hidráulicas)"
+        },
+        {
+            "prompt_key": "Subgrupo",
+            "response": "3 (Canales)"
+        },
+        {
+            "prompt_key": "Categoria",
+            "response": "4 (equivalente a la antigua categoría e): Anualidad media entre 840.000 y 2.400.000 euros."
+        },
+        {
+            "prompt_key": "Criterio_Solvencia_economica",
+            "response": "No procede según el art. 77.1 de la LCSP."
+        },
+        {
+            "prompt_key": "Criterio_Solvencia_tecnica",
+            "response": "NO PROCEDE."
+        },
+        {
+            "prompt_key": "Condiciones_especiales",
+            "response": "(se mencionan pero no se especifican)"
+        },
+        {
+            "prompt_key": "Penalidad_incumplimiento",
+            "response": " No procede"
+        },
+        {
+            "prompt_key": "Forma_pago",
+            "response": "El abono se efectuará mediante certificaciones mensuales,"
+        },
+        {
+            "prompt_key": "Causas_modificacion",
+            "response": "x□ NO"
+        },
+        {
+            "prompt_key": "Plazo_garantia",
+            "response": "Veinticuatro meses (24)"
+        },
+        {
+            "prompt_key": "Contratacion_precio_unit",
+            "response": " x□ SI"
+        },
+        {
+            "prompt_key": "Tanto_alzado",
+            "response": " x□ NO"
+        },
+        {
+            "prompt_key": "Tanto_alzado_con",
+            "response": "x□ NO"
+        },
+        {
+            "prompt_key": "Criterio_juicio_val",
+            "response": "25%"
+        },
+        {
+            "prompt_key": "Evaluables_autom",
+            "response": "10%"
+        },
+        {
+            "prompt_key": "Criterio_ecónomico",
+            "response": "65%"
+        },
+        {
+            "prompt_key": "Obligaciones_ambientales",
+            "response": ""
+        },
+        {
+            "prompt_key": "Regimen_penalidades",
+            "response": "Si"
+        }
+    ]
+}

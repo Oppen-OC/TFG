@@ -1,0 +1,128 @@
+{
+    "prompts": [
+        {
+            "prompt_key": "Regulacion_armonizada",
+            "response": "No"
+        },
+        {
+            "prompt_key": "Sometido_recurso_especial",
+            "response": ""
+        },
+        {
+            "prompt_key": "Plazo_ejecución",
+            "response": "El plazo de ejecución es de doce (12) meses"
+        },
+        {
+            "prompt_key": "Presupuesto_sinIVA",
+            "response": "435.695,83 €"
+        },
+        {
+            "prompt_key": "Presupuesto_conIVA",
+            "response": "527.191,95 €"
+        },
+        {
+            "prompt_key": "Importe_IVA",
+            "response": "91.496,12 €"
+        },
+        {
+            "prompt_key": "Sistema_Retribucion",
+            "response": ""
+        },
+        {
+            "prompt_key": "Valor_estimado",
+            "response": "435.695,83"
+        },
+        {
+            "prompt_key": "Revision_precios",
+            "response": "No procede."
+        },
+        {
+            "prompt_key": "Garantia_definitiva",
+            "response": "5% del precio final ofertado, IVA excluido."
+        },
+        {
+            "prompt_key": "Garantia_provisional",
+            "response": "No se exige conforme al artículo 106.1 de la LCSP"
+        },
+        {
+            "prompt_key": "Admisibilidad_variantes",
+            "response": "No"
+        },
+        {
+            "prompt_key": "Clasificacion",
+            "response": "Inferior a 500.000 euros"
+        },
+        {
+            "prompt_key": "Grupo",
+            "response": "G. Viales y pistas"
+        },
+        {
+            "prompt_key": "Subgrupo",
+            "response": "4. Con firmes de mezclas bituminosas"
+        },
+        {
+            "prompt_key": "Categoria",
+            "response": "3. Cuantía superior a 360.000 euros e inferior o igual a 840.000 euros"
+        },
+        {
+            "prompt_key": "Criterio_Solvencia_economica",
+            "response": "SI"
+        },
+        {
+            "prompt_key": "Criterio_Solvencia_tecnica",
+            "response": "SI"
+        },
+        {
+            "prompt_key": "Condiciones_especiales",
+            "response": "SI"
+        },
+        {
+            "prompt_key": "Penalidad_incumplimiento",
+            "response": "no procede"
+        },
+        {
+            "prompt_key": "Forma_pago",
+            "response": "Los pagos se efectuarán previa presentación de la correspondiente factura reglamentaria."
+        },
+        {
+            "prompt_key": "Causas_modificacion",
+            "response": "No"
+        },
+        {
+            "prompt_key": "Plazo_garantia",
+            "response": "1 año"
+        },
+        {
+            "prompt_key": "Contratacion_precio_unit",
+            "response": "No"
+        },
+        {
+            "prompt_key": "Tanto_alzado",
+            "response": "Si"
+        },
+        {
+            "prompt_key": "Tanto_alzado_con",
+            "response": "No"
+        },
+        {
+            "prompt_key": "Criterio_juicio_val",
+            "response": "30"
+        },
+        {
+            "prompt_key": "Evaluables_autom",
+            "response": "30"
+        },
+        {
+            "prompt_key": "Criterio_ecónomico",
+            "response": "40"
+        },
+        {
+            "prompt_key": "Obligaciones_ambientales",
+            "response": "No procede"
+        },
+        {
+            "prompt_key": "Regimen_penalidades",
+            "response": "Si"
+        }
+    ]
+}

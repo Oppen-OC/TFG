@@ -6,11 +6,13 @@
 \usepackage{caption} % en el preámbulo
 \usepackage{textcomp}
 \usepackage{amssymb}
-
+\usepackage{enumitem}
+\usepackage[most]{tcolorbox}
 % Language setting
 % Replace `english' with e.g. `spanish' to change the document language
 \usepackage[spanish]{babel}
 \selectlanguage{spanish}
+\usepackage{adjustbox}
 
 % Set page size and margins
 % Replace `letterpaper' with `a4paper' for UK/EU standard size
@@ -123,33 +125,11 @@ La forma de trabajo con la que se llevó a cabo este proyecto fue por medio de r
 \newpage
 
 \section{Estado del arte}
-En los últimos años, el mundo ha experimentado una transformación acelerada debido a la democratización de diversos modelos generativos de inteligencia artificial. Un hito clave en este proceso fue el lanzamiento de ChatGPT el 30 de noviembre de 2022 por la empresa estadounidense OpenAI, lo que marcó el inicio de una de las mayores revoluciones tecnológicas del siglo. Como prueba de su impacto, esta plataforma alcanzó 100 millones de usuarios activos en menos de dos meses, un crecimiento significativamente más rápido que el de aplicaciones como Instagram, que tardó más de dos años en lograr la misma cifra. Desde entonces, la popularidad de los modelos de lenguaje ha seguido en ascenso, generando un cambio radical en múltiples industrias. Un ejemplo de ello se evidenció en mayo de 2024, cuando la empresa china DeepSeek lanzó su propio LLM, lo que ocasionó pérdidas multimillonarias en la bolsa de valores estadounidense. \\
-En la actualidad (año 2025), los LLM han alcanzado niveles de sofisticación sin precedentes, al punto de superar pruebas como el test de Turing. Existen cientos de modelos distintos y una amplia gama de tecnologías que aprovechan su capacidad de razonamiento y procesamiento del lenguaje natural, incluyendo traductores en tiempo real, imitadores de voz, generadores de código y asistentes virtuales, entre otros. Sin embargo, ante la gran cantidad de información y herramientas disponibles, puede resultar abrumador identificar la solución adecuada para un problema específico; no obstante, a continuación una serie de tecnologías y herramientas (no todas relacionadas con LLM's) que han demostrado ser útiles para este caso concreto:
+En el contexto actual de la administración pública en España, la digitalización y la transparencia en los procesos de contratación han impulsado la publicación de licitaciones a través de plataformas electrónicas. Sin embargo, el acceso eficiente, centralizado y estructurado a esta información sigue siendo un desafío tanto para ciudadanos como para empresas interesadas en participar en procesos de contratación pública.
 
-\subsection{LLMs}
-\textbf{Para empezar, ¿exactamente qué es un LLM?} \\
-Un LLM (por sus siglas en inglés, Large Language Model) es un modelo de aprendizaje profundo basado en redes neuronales que ha sido entrenado con enormes cantidades de texto. Gracias a este entrenamiento, es capaz de identificar patrones, relaciones entre palabras y generar respuestas basadas en probabilidades. Sin embargo, es importante destacar que un LLM no <<entiende>> el contenido que genera en el sentido humano, sino que produce respuestas basadas en la información con la que ha sido entrenado; en base a esta información, crea matrices con miles de millones de parámetros que contienen la probabilidad de que una palabra esté seguida por otra. \\
+Este Trabajo de Fin de Grado se enmarca en la creación de una herramienta informática capaz de buscar, listar y extraer datos relevantes de licitaciones públicas en España. Para ello, resulta fundamental realizar un análisis detallado del estado del arte, que permita identificar las tecnologías, herramientas y enfoques existentes en el ámbito de la recopilación automatizada de datos (web scraping), el tratamiento de información estructurada y semiestructurada, así como las plataformas oficiales de publicación de licitaciones en el país.
 
-\begin{center}
-\includegraphics[width=12cm]{llm_probability}
-\end{center}
-
-\setlength{\parindent}{10pt} % Sangria
-\textbf{¿Cuales son los mejores LLM?}  \\
-
-
-\begin{figure}[H] % o [htbp] según prefieras
-\centering
-\includegraphics[width=15cm]{LLM_Graph.png}
-\caption{Gráfico que compara el desempeño de diversos LLMs a fecha de hoy} 
-\cite{llm-stats}
-\label{tab:LLM_Graph}
-\end{figure}
-
-Como se puede ver en la figura 1, al momento de redactar este documento, los LLMs que lideran el mercado son: \textbf{ChatGPT-o3}, \textbf{Claude 3.7 Sonnet} y \textbf{Grok-3}; cada uno con un puntaje GPQA del \textbf{87.7\%}, \textbf{84.8\%} y \textbf{84.6\%} respectivamente. Este porcentaje corresponde al resultado de una serie de pruebas realizadas por Google para evaluar la fiabilidad de cada modelo en la resolución de problemas y consultas en áreas como física, química, programación, entre otras.
-Sin embargo -y aunque pueda parecer contraproducente- el LLM elegido para sobrellevar el procesamiento computacional de este proyecto fue \textbf{Llama 3.3 70B Instruct}, por razones que se discutirán en la sección \ref{LLM}.
-
-\newpage
+Este apartado presenta una revisión crítica de los sistemas actuales, tanto institucionales como privados, junto con las metodologías utilizadas para la extracción y procesamiento de información relacionada con las contrataciones públicas. Asimismo, se examinan las limitaciones de las soluciones existentes y se justifica la necesidad de una herramienta específica que optimice la búsqueda y el análisis de estas licitaciones.
 
 \subsection{Herramientas similares} 
   \subsubsection{DoubleTrade}
@@ -352,14 +332,14 @@ Gobierto es una plataforma desarrollada por la empresa Populate que se centra en
 1 & Si & Si/No & Si & Si/No & Si & No & No\\
 2 & No & No & No & No & No & No & Si\\
 3 & No & Si & No & No & Si & No & No\\
-4 & Si & Si & Si & Si & No & Si & ""\\
+4 & Si & Si & Si & Si & No & Si & Si\\
 
 \hline
 \multicolumn{8}{|c|}{\textbf{Indicadores técnicos y de innovación}} \\
 \hline
 5 & No & No & No & Si & No & Si & Si\\
 6 & No & No & No & No & No & No & Si\\
-7 & No & No & No & Si & No & Si & ""\\
+7 & No & No & No & Si & No & Si & No\\
 8 & Si & Si & Si & Si & No & Si & Si \\
 9 & Si & No & No & Si & No & Si & Si\\
 
@@ -376,17 +356,16 @@ Gobierto es una plataforma desarrollada por la empresa Populate que se centra en
 \subsubsection{Soluciones con IA}
 \begin{enumerate}
     \item \textbf{Doubletrade:} DoubleTrade utiliza inteligencia artificial para optimizar la participación en licitaciones públicas, ofreciendo recomendaciones personalizadas basadas en el perfil de cada empresa, análisis detallado de pliegos y documentos, asistencia en la redacción de propuestas, estrategias de precios competitivos mediante modelos predictivos, y gestión automatizada de documentación para garantizar el cumplimiento legal y técnico.
-    \newline
-    \item \textbf{Tendios:}
-    Tendios cuenta con una plataforma basada en inteligencia artificial, la cual optimiza la gestión de licitaciones públicas para empresas y entidades. Integra funcionalidades como interacción en lenguaje natural para consultar pliegos, búsqueda y filtrado inteligente de licitaciones relevantes, análisis predictivo con dashboards de mercado, generación automática de documentos, y conexión con sistemas externos como CRMs y herramientas de análisis.
-    \newline
+
+    \item \textbf{Tendios:} Tendios cuenta con una plataforma basada en inteligencia artificial, la cual optimiza la gestión de licitaciones públicas para empresas y entidades. Integra funcionalidades como interacción en lenguaje natural para consultar pliegos, búsqueda y filtrado inteligente de licitaciones relevantes, análisis predictivo con dashboards de mercado, generación automática de documentos, y conexión con sistemas externos como CRMs y herramientas de análisis.
+    
     \item \textbf{Gobierto:} 
     Gobierto utiliza inteligencia artificial para optimizar la contratación pública mediante modelos predictivos que estiman el número de ofertas para licitaciones, extracción y clasificación automática de texto en pliegos, y herramientas como Gobierto Redactor, un editor colaborativo asistido por IA para redactar cláusulas. Además, ofrece Gobierto Asistente, un chatbot especializado en contratación pública que responde preguntas basándose en fuentes oficiales, junto con funciones de NLP como recomendación de CPVs, resúmenes automáticos y sistemas de preguntas-respuestas sobre normativa.
+    
     \item \textbf{Mi TFG:} 
     La herramienta emplea la técnica RAG para extraer datos importantes del documento y mostrarlos de manera organizada en tablas, además de mostrar las fuentes de estos datos para garantizar su fiabilidad. 
 
 \end{enumerate}
-
 
 Si bien queda claro que las opciones son amplias y variadas, siguen existiendo carencias, las cuales este proyecto pretende abordar:
 
@@ -401,12 +380,17 @@ Todos los programas y servicios listados privatizan por completo el uso de sus h
 \item{Precio:}
 La mayoría de herramientas listadas no permiten un acceso total a sus funcionalidades a menos de que se pague una cuota (que en algunos casos puede llegar a los miles de euros), en cambio, esta herramienta es completamente gratiuta y de código abierto, democratizando asi el acceso a la información.
 
+\item{Automatización:} 
+A diferencia de otras soluciones que requieren interacción manual o no actualizan frecuentemente la información, esta herramienta puede programarse para realizar búsquedas y extracciones automáticas a intervalos definidos, lo cual reduce el esfuerzo del usuario y garantiza acceso constante a datos actualizados.
+
 \end{itemize}
 
 \subsection{Propuesta}
-Lorem ipsum dolor sit amet consectetur adipiscing elit, duis nostra sagittis nunc class mauris fermentum, semper lobortis eu dui per ridiculus. Sodales augue ad neque lobortis taciti facilisi, nec cum vehicula scelerisque senectus ante, inceptos massa maecenas vel natoque. Faucibus sem mattis sociosqu tempor proin sapien egestas tempus, purus condimentum ligula tellus libero penatibus mauris tortor, sagittis cum aenean nunc rutrum odio habitasse.
+La propuesta de este Trabajo de fin de grado es la de desarrollar una herramienta automática basada en el enfoque Retrieval-Augmented Generation (RAG) para la búsqueda, extracción y presentación de información relacionada con licitaciones públicas en España. A través de la integración de técnicas de recuperación de información y generación de texto, la herramienta permitirá formular consultas en lenguaje natural y obtener respuestas claras, precisas y directamente vinculadas a sus fuentes originales.
 
-Eros sociis dictumst auctor habitasse libero molestie nascetur laoreet sodales, a vitae cubilia sollicitudin hendrerit elementum neque ullamcorper, mollis ultrices felis enim conubia lacus scelerisque mi. Semper orci nisl aliquam imperdiet viverra ac, molestie litora penatibus aliquet himenaeos feugiat conubia, habitasse eu leo volutpat curae. Quam parturient purus accumsan eu dui curae torquent porta ligula, nibh ornare augue aenean mus sem iaculis arcu, et sapien eros volutpat enim feugiat ac metus.
+La propuesta se diferencia de soluciones existentes por su enfoque en la transparencia informativa, ya que no solo responde a las consultas, sino que especifica con exactitud el origen de cada dato utilizado, incluyendo enlaces y referencias precisas a los documentos oficiales. Además, la herramienta será completamente gratuita y de código abierto, lo que contrasta con la mayoría de las alternativas comerciales del sector, habitualmente privativas y de alto coste.
+
+Otra característica clave será su capacidad de automatización, permitiendo la actualización periódica y desatendida de la base de conocimiento, lo que garantiza que los datos ofrecidos estén siempre actualizados. Esto la convierte en una solución eficiente, accesible y abierta que contribuye a facilitar el acceso a la información pública y a fomentar su reutilización en beneficio de ciudadanos, profesionales y empresas.
 
 \newpage
 
@@ -423,32 +407,33 @@ A groso modo, la herramienta pretende identificar ciertos expedientes de la pág
 \subsubsection{Problemáticas:}
 \begin{enumerate}
     \item \textbf{Volumen y almacenamiento de datos:}
-    Actualmente solo en la comunidad valenciana existen cerca de 13.000 expedientes listados en la plataforma de contrataciondelestado.es.    
+    Actualmente solo en la comunidad valenciana existen cerca de 13.000 expedientes listados en la plataforma de contrataciondelestado.es.
     \item \textbf{Varianza interna:}
-    Dentro de la propia plataforma (donde existe un formato relativamente estandarizado) hay muchas variables a tomar en cuenta, por ejemplo, dentro de la página de cada expediente el número de secciones que contienen información varía, normalmente suele aparecer primero un resumen con los campos más generales del contrato, luego  un área relacionada con el proceso de contratación en si y por último un área donde se listan documentos relacionados.
-    \newline Esta es la estructura estándar con la que la herramienta pretende trabajar, pero rápidamente aparecen varios problemas: 
-    \newline 1.- El número de áreas varía a conveniencia de cada caso, normalmente la información listada anteriormente  aparece de manera mas o menos <<predecible>>, pero para su funcionamiento correcto hay que saber descartar las secciones inesperadas 
-    \newline 2.- No todos los campos listados en cada área tienen por que contener información, es normal que hayan casillas en blanco
-    \newline 3.- La sección donde se listan los documentos puede no contener la información que necesita el programa y en caso de contenerla es importante discriminar la versión actualizada de la antigua.
-    \newline 4.- Ya habiendo identificado el hipervínculo correcto donde se contienen todos los documentos que busca el programa nos encontramos con una de las mayores problemáticas de la plataforma, la estandarización del Anexo I. Una licitación SIEMPRE debe contener este documento, ya que es el que (de manera relativamente estandarizada) contiene gran parte de la información relevante de cada proyecto, el problema viene a la hora de identificarlo. Suele ubicarse de dos formas: dentro del pliego administrativo (el cual es un documento con mucha información ajena al programa la cual hay que filtrar) o bajo el nombre de Anexo I; la forma mas eficiente de obtener este documento es buscando directamente el archivo con el nombre de Anexo I, sin embargo esta es otra área que no está estandarizada, ya que existen muchos casos en los que el archivo bajo ese nombre no es el esperado, y la única forma de identificarlo con seguridad es accediendo directamente al archivo, complicando aun más el proceso. 
-    \newline 5.- La última problemática relacionada con la obtención del Anexo I es el formato del archivo en si, el programa toma en cuenta archivos .docx, odt y pdf, queda como trabajo futuro poder procesar archivos .zip o casos aun no contemplados.
+    Dentro de la propia plataforma, aunque existe un formato relativamente estandarizado, la estructura y el contenido de cada expediente pueden variar considerablemente. Por lo general, se presenta un resumen con los datos principales del contrato, seguido de información sobre el proceso de contratación y una sección de documentos relacionados. Sin embargo, el número y el orden de estas áreas no siempre es el mismo, pueden aparecer secciones inesperadas, y no todos los campos contienen necesariamente información útil. Además, la sección de documentos puede carecer de los archivos requeridos o incluir varias versiones, lo que obliga a identificar la más actual. En particular, localizar el Anexo I resulta especialmente complejo, ya que puede estar mal clasificado, tener nombres diferentes o encontrarse dentro de otros archivos, por lo que a menudo es necesario descargar y revisar los documentos para asegurarse de su contenido. Finalmente, los archivos pueden estar en distintos formatos, lo que requiere adaptar el procesamiento a cada caso.
     
     \item \textbf{Estructura y vocabulario:} 
-    Cada documento de Anexo I cuenta con una estructura y un vocabulario completamente distintos dependiendo de la entidad emisora, si bien en muchas ocasiones contienen información similar, la forma en la que se presenta esta información tiene tantas variables que representa un reto enorme clasificar e identificar correctamente cada campo.
+    Los documentos de los que se pretende extraer la información cuentan con una estructura y un vocabulario completamente distintos dependiendo de la entidad emisora, si bien en muchas ocasiones contienen información similar, la forma en la que se presenta esta información tiene tantas variables que representa un reto enorme clasificar e identificar correctamente cada campo.
+    
+    \item \textbf{Visualización de datos:} 
+    El programa lidia con volúmenes de información elevados, sin una forma cómoda de poder visualizarlos la herramienta pierde sentido de cara al usuario. 
     
     \item \textbf{Factores externos:} 
     Toda la extracción y recopilación de información depende de un agente externo como lo es la página de contrataciondelestado.es, en caso de que esta falle o tarde demasiado en procesar las peticiones es razonable asumir un fallo de parte del programa.
-    
+
+
 \end{enumerate}
 
 \subsubsection{Soluciones propuestas}
 \begin{enumerate}
+\item \textbf{Volumen y almacenamiento de datos} \newline{}
+Habiendo puesto en contexto el volumen de los datos que se pretende abarcar, la utilización de una base de datos es indudable, pero durante el proceso de elección fue importante valorar la mejor opción entre una base de datos SQL y una NoSQL: 
     \begin{table}[h!]
     \centering
-    \begin{tabular}{|p{6cm}|p{6cm}|}
-    \hline
+    \begin{tabular}{p{7cm}|p{7cm}}
     \textbf{MongoDB (NoSQL)} & \textbf{SQL} \\
     \hline
+    \vspace{0.025cm}
+
     \textbf{Pros:}
     \begin{itemize}
         \item Esquema flexible, ideal para datos no estructurados o cambiantes.
@@ -456,7 +441,16 @@ A groso modo, la herramienta pretende identificar ciertos expedientes de la pág
         \item Buen rendimiento para grandes volúmenes de datos y escritura rápida.
         \item Fácil integración con aplicaciones modernas y JSON.
     \end{itemize}
+    \textbf{Contras:}
+    \begin{itemize}
+        \item Esquema rígido, menos flexible ante cambios frecuentes en la estructura.
+        \item Escalabilidad horizontal más compleja.
+        \item Puede ser menos eficiente para grandes volúmenes de datos no estructurados.
+        \item Requiere definir relaciones y tipos de datos desde el inicio.
+        \item Inexperiencia personal previa con el programa
+    \end{itemize}
     &
+    \vspace{0.025cm}
     \textbf{Pros:}
     \begin{itemize}
         \item Integridad y consistencia de los datos gracias a transacciones ACID.
@@ -464,8 +458,6 @@ A groso modo, la herramienta pretende identificar ciertos expedientes de la pág
         \item Potente lenguaje de consultas (SQL) para búsquedas y análisis complejos.
         \item Amplio soporte, madurez y herramientas de administración.
     \end{itemize}
-    \\
-    \hline
     \textbf{Contras:}
     \begin{itemize}
         \item No garantiza consistencia fuerte por defecto (eventual consistency).
@@ -473,141 +465,636 @@ A groso modo, la herramienta pretende identificar ciertos expedientes de la pág
         \item Menor soporte para transacciones complejas.
         \item Menos maduro para integridad referencial.
     \end{itemize}
-    &
-    \textbf{Contras:}
-    \begin{itemize}
-        \item Esquema rígido, menos flexible ante cambios frecuentes en la estructura.
-        \item Escalabilidad horizontal más compleja.
-        \item Puede ser menos eficiente para grandes volúmenes de datos no estructurados.
-        \item Requiere definir relaciones y tipos de datos desde el inicio.
-    \end{itemize}
+
     \\
-    \hline
     \end{tabular}
     \caption{Comparativa de pros y contras entre MongoDB (NoSQL) y SQL}
     \end{table}
     
-    \textbf{Justificación de la elección:}
-    
-    La base de datos seleccionada fue SQL porque la información a almacenar es estructurada, requiere integridad y relaciones claras entre entidades, y es fundamental poder realizar consultas complejas y precisas. SQL proporciona un entorno robusto y seguro para garantizar la consistencia de los datos, lo que es esencial para la trazabilidad y fiabilidad del sistema. Aunque MongoDB ofrece ventajas en flexibilidad y escalabilidad, las necesidades del proyecto se alinean mejor con las fortalezas de una base de datos relacional.
+    \textbf{Justificación de la elección:} \newline
+    La elección que mejor se acopla a este proyecto es una base de datos SQL ya que la información a almacenar es estructurada, requiere integridad y relaciones claras entre entidades, y es fundamental poder realizar consultas complejas y precisas. SQL proporciona un entorno robusto y seguro para garantizar la consistencia de los datos, lo que es esencial para la trazabilidad y fiabilidad del sistema. Aunque MongoDB ofrece ventajas en flexibilidad y escalabilidad, las necesidades del proyecto se alinean mejor con las fortalezas de una base de datos relacional. 
 
-    \item  \textbf{Tecnología de extracción:} \newline 
-    El código utiliza la librería de Python \texttt{playwright}, una de las más populares y actualizadas para la automatización y scraping de páginas web. Se compara aquí con \texttt{Beautiful Soup}, una alternativa clásica para el procesamiento de HTML.
+    \item  \textbf{Varianza interna} \newline 
+    Para la extracción de datos a partir de la página web se concluyó que la forma mas lógica de hacerlo sería mediante un web scrapper, sabiendo esto es importante valorar los siguientes puntos:
     
-    \begin{tabular}{p{7cm} p{7cm}}
-    \textbf{Playwright} & \textbf{Beautiful Soup} \\
+    \textbf{Ventajas:}
+    \begin{enumerate}[label=\arabic*.]
+        \item Permite automatizar la extracción de grandes volúmenes de información de forma rápida y eficiente.
+        \item Facilita la recolección de datos de fuentes que no ofrecen APIs públicas o exportaciones directas.
+        \item Puede adaptarse a diferentes estructuras y formatos de páginas web.
+        \item Reduce el trabajo manual y el riesgo de errores humanos en la recopilación de datos.
+        \item Permite actualizar la información de manera periódica y programada.
+    \end{enumerate}
+    
+    \textbf{Desventajas:}
+    \begin{enumerate}[label=\arabic*.]
+        \item Es sensible a cambios en la estructura de las páginas web, lo que puede requerir mantenimiento frecuente.
+        \item Puede enfrentar limitaciones legales o restricciones de acceso impuestas por los sitios web.
+        \item El scraping masivo puede ser detectado y bloqueado por mecanismos anti-bots.
+        \item La calidad y consistencia de los datos extraídos depende del diseño y limpieza de la web origen.
+        \item Puede requerir una inversión inicial significativa en desarrollo y pruebas para asegurar la robustez del sistema.
+    \end{enumerate}
+
+    \textbf{Justificación de elección:} 
+    
+    Siendo conscientes de las ventajas y desventajas, se tiene que aceptar que no existe una alternativa mejor para obtener datos de una página web de forma automatizada y masiva. 
+    
+    \item  \textbf{Estructura y vocabulario}
+    
+        Con la extracción y almacenamiento de los datos ya cubiertas, llega el tratamiento de los mismo, para ello es útil útil dividir esta sección en dos partes, clasificación / recuperación de datos y generación de respuestas.
+        
+    \textbf{Clasificación y Recuperación}
+    \begin{table}[H]
+    \centering
+    \begin{tabular}{p{4.5cm}|p{4.5cm}|p{4.5cm}}
+    \textbf{Por palabras clave} & \textbf{Base de datos vectorial} & \textbf{Modelo de fine-tuning} \\
+    \hline
+    \vspace{0.025cm}
     \textbf{Pros:}
-    \begin{itemize}
-        \item Consistencia: Permite interactuar con páginas web dinámicas, ejecutando JavaScript y accediendo a elementos generados en tiempo real.
-        \item Facilidad de uso: Proporciona una API moderna y completa para navegar, hacer clic, rellenar formularios y esperar eventos.
-        \item Automatización avanzada: Puede simular acciones de usuario y manejar múltiples pestañas o contextos.
+    \begin{itemize}[left=0.15pt]
+        \item Fácil de implementar.
+        \item Adaptable a cualquier estructura de datos
+        \item Computacionalmente barato.
+    \end{itemize}
+    \textbf{Contras:}
+    \begin{itemize}[left=0.15pt]
+        \item Por su cuenta es poco flexible.
+        \item Malo encontrando conjugaciones/variaciones de una misma palabra.
+        \item Puede fallar si cambia mucho el léxico de documento a documento.
     \end{itemize}
     &
+    \vspace{0.025cm}
     \textbf{Pros:}
-    \begin{itemize}
-        \item Simplicidad: Muy fácil de aprender y usar para extraer información de HTML estático.
-        \item Ligereza: Requiere pocos recursos y no necesita un navegador real para funcionar.
-        \item Rápida para tareas sencillas: Ideal para scraping de páginas simples y bien estructuradas.
+    \begin{itemize}[left=0.15pt]
+        \item Combina la recuperación de información con generación de texto, mejorando la precisión y contextualización de las respuestas.
+        \item Escalable y adaptable a diferentes dominios y estructuras documentales.
+        \item Fácil de implementar
     \end{itemize}
-    \\
     \textbf{Contras:}
-    \begin{itemize}
-        \item Requiere más recursos: Necesita instalar navegadores y puede consumir más memoria y CPU.
-        \item Dependencia de la estructura: Cambios en el HTML pueden romper los selectores.
-        \item Más compleja de instalar y configurar que Beautiful Soup.
+    \begin{itemize}[left=0.15pt]
+        \item Más difícil de depurar.
+        \item Es más costoso computacional y temporalmente que la búsqueda semántica simple.
     \end{itemize}
     &
+    \vspace{0.025cm}
+    \textbf{Pros:}
+    \begin{itemize}[left=0.15pt]
+        \item Modelo adaptado específicamente a la estructura y necesidades del proyecto.
+        \item Puede mejorar mucho la precisión en entornos definidos.
+    \end{itemize}
     \textbf{Contras:}
-    \begin{itemize}
-        \item No ejecuta JavaScript: Solo puede analizar el HTML recibido, por lo que no accede a contenido dinámico generado en el navegador.
-        \item Limitada para páginas modernas: No puede interactuar con formularios, botones o eventos de usuario.
-        \item Menos robusta ante cambios en la estructura de la web.
+    \begin{itemize}[left=0.15pt]
+        \item Requiere muchos datos etiquetados para su entrenamiento.
+        \item Es la alternativa mas costosa computacional y temporalmente.
+        \item Dependiente de una estructura de datos específica.
     \end{itemize}
     \\
     \end{tabular}
+    \caption{Comparativa de métodos para procesar información con estructuras distintas}
+    \end{table}
     
+    \textbf{Justificación de la elección:}
+    
+    Se ha optado por combinar las técnicas de base de datos vectorial y búsqueda por palabras clave debido a las ventajas complementarias que ofrecen en el contexto del proyecto. Por una parte, una base de datos vectorial permite trabajar sobre cualquier tipo de datos, ya que facilita la recuperación eficiente de información relevante a partir de grandes volúmenes de documentos heterogéneos, ofreciendo así una gran flexibilidad y capacidad de adaptación a diferentes formatos y estructuras.
+    
+    Por otro lado, la búsqueda por palabras clave aporta la capacidad de localizar información precisa y relevante dentro de los documentos. Esto permite obtener respuestas concretas y, en muchos casos, más confiables, ya que se basa en la similitud conceptual entre la consulta y el contenido almacenado. Además, la búsqueda palabras clave es eficiente desde el punto de vista computacional y puede servir como base para filtrar o priorizar la información que posteriormente será utilizada por la base de datos vectorial para ofrecer resultados más completos y contextualizados.
+    
+    En conjunto, la combinación de ambas técnicas permite aprovechar la robustez y precisión de la búsqueda semántica junto con la versatilidad y escalabilidad de las bases de datos vectoriales, logrando así un sistema capaz de responder de manera efectiva y fiable a consultas sobre datos complejos y variados.
+    
+    \textbf{Clasificación y Recuperación}
+    
+    Disponer de los documentos correctamente clasificados no es suficiente para poder mostrar la información de la manera deseada, es necesario utilizar técnicas de procesamiento de lenguaje natural para extraer únicamente los datos que se necesitan en el formato deseado, para ello es importante valorar el uso de LLMs dentro de este proyecto. 
+
+    \begin{table}[H]
+    \centering
+    \begin{tabular}{p{6.75cm}|p{6.75cm}}
+    \textbf{Ventajas} & \textbf{Desventajas} \\
+    \hline
+    \begin{itemize}[left=0.15pt]
+        \item Permite interpretar y extraer información relevante de textos no estructurados o con formatos variables.
+        \item Facilita la comprensión semántica, identificando relaciones y conceptos aunque estén expresados de manera diferente.
+        \item Puede automatizar tareas complejas como el resumen, la clasificación o la generación de respuestas.
+        \item Reduce la necesidad de reglas manuales o procesamiento específico para cada tipo de documento.
+        \item Es escalable y puede aplicarse a grandes volúmenes de información con mínima intervención humana.
+    \end{itemize}
+    &
+    \begin{itemize}[left=0.15pt]
+        \item Requiere recursos computacionales elevados, especialmente para modelos grandes y procesamiento en tiempo real.
+        \item Puede generar errores o interpretaciones incorrectas si el contexto no está bien definido o si los datos de entrada son ambiguos.
+        \item La transparencia y explicabilidad de las decisiones del modelo pueden ser limitadas, dificultando la auditoría de resultados.
+        \item Puede necesitar ajustes o fine-tuning para adaptarse a dominios muy específicos o vocabulario técnico.
+        \item El coste de uso (infraestructura, licencias, entrenamiento) puede ser significativo en comparación con soluciones más simples.
+    \end{itemize}
+    \end{tabular}
+    \caption{Ventajas y desventajas de utilizar un LLM para procesar la información}
+    \end{table}
+
+    \item \textbf{Visualización de datos:}
+    
+    Es fundamental disponer de un medio para mostrar los datos, ya que la utilidad real de cualquier sistema de extracción y procesamiento de información depende en gran medida de la capacidad de los usuarios para acceder, interpretar y analizar los resultados obtenidos. Una herramienta de visualización permite transformar grandes volúmenes de datos en información comprensible y útil, facilitando la toma de decisiones, la identificación de patrones y la detección de posibles errores o inconsistencias en el proceso de scraping. Además, una interfaz adecuada mejora la experiencia del usuario, reduce la barrera técnica para acceder a los datos y posibilita la colaboración entre distintos perfiles profesionales. Es por todo esto que es tan importante elegir un medio que se adapte correctamente al usuario final. Para ello se valoraron las siguientes alternativas
+    \vspace{0.2cm}
+    
+    \begin{enumerate}[label=\arabic*.]
+    
+    \item \textbf{Aplicación móvil}
+    
+    Permite acceder a los datos desde cualquier lugar y aprovechar funcionalidades propias del dispositivo, como notificaciones push y sensores, además de ofrecer una experiencia adaptada a pantallas pequeñas y uso táctil.
+    
+    \medskip
+    \begin{tabular}{p{6.5cm}  p{6.5cm}}
+    \hline
+    \textbf{Pros} & \textbf{Contras} \\
+    \hline
+        Acceso desde cualquier lugar. & Requiere desarrollo para varias plataformas \\
+        Notificaciones push y sensores. & Distribución por tiendas de apps. \\
+        Experiencia adaptada a móviles. & Limitaciones de hardware y menor potencia. \\    
+        \hline
+
+    \end{tabular}
+    
+    \medskip
+    
+    \vspace{0.2cm}
+    \item \textbf{Aplicación web}
+    
+    Es accesible desde cualquier dispositivo con navegador y no requiere instalación, lo que facilita la actualización y el mantenimiento centralizado. Es ideal para escenarios colaborativos y multiusuario.
+    
+    \medskip
+    
+    \begin{tabular}{p{6.5cm} p{6.5cm}}
+    \hline
+    \textbf{Pros} & \textbf{Contras} \\
+    \hline
+    Accesible desde cualquier navegador. & Depende de conexión a internet. \\
+    Fácil de actualizar y mantener. & Menos eficiente para tareas intensivas. \\
+    Ideal para colaboración. & Seguridad depende del servidor. \\
+    No requiere instalación. &   \\
+
+    \hline
+    \end{tabular}
+    \medskip
+    
+    \vspace{0.2cm}
+    
+    \item \textbf{API}
+    
+    Facilita la integración con otros sistemas y aplicaciones, permitiendo el acceso programático y automatizado a los datos. Es una solución escalable y reutilizable, que puede servir de base para construir diferentes tipos de aplicaciones.
+    \vspace{0.2cm}
+    
+    \begin{tabular}{p{6.5cm} p{6.5cm}}
+    \hline
+    \textbf{Pros} & \textbf{Contras} \\
+    \hline
+    Facilita integración con otros sistemas. & No es interfaz visual para usuarios finales. \\
+    Permite acceso programático y automatización. & Requiere conocimientos técnicos. \\
+    Escalable y reutilizable. & Necesita documentación y gestión de versiones. \\
+    \hline
+    \end{tabular}
+    \medskip
+    
+    \vspace{0.2cm}
+    \item \textbf{Aplicación de escritorio}
+    
+    Ofrece el mejor rendimiento para tareas pesadas y acceso directo a los recursos del sistema, además de poder funcionar sin conexión a internet y permitir interfaces ricas y personalizadas.
+    
+    \medskip
+    
+    \begin{tabular}{p{6.5cm} p{6.5cm}}
+    \hline
+    \textbf{Pros} & \textbf{Contras} \\
+    \hline
+    Mejor rendimiento para tareas pesadas. & Requiere instalación en cada equipo. \\
+    Acceso directo a recursos del sistema. & Menos accesible desde diferentes dispositivos. \\
+    Puede funcionar sin conexión. & Actualizaciones más complejas. \\
+    Interfaz personalizada y rica. & Menor facilidad para colaboración en tiempo real. \\
+    \hline
+    \end{tabular}
+    \end{enumerate}
+    \end{enumerate}
+
     \textbf{Justificación de la elección:} \newline
-    Se ha optado por \texttt{playwright} porque el proyecto requiere extraer información de páginas web con contenido dinámico y estructuras complejas, donde Beautiful Soup no sería suficiente. Playwright permite simular la interacción real de un usuario y acceder a todos los elementos de la página, garantizando una mayor robustez y flexibilidad en el scraping.
-
-
+    Tomando en cuenta el tipo de información que se intenta visualizar y el tipo de usuario que va a acceder a ella, una aplicación web resulta la opción mas acertada por las facilidades que conlleva. 
     
-    \item  \textbf{Estructura y vocabulario:}
-    Búsqueda semántica, RAG, modelo entrenado
-    \textbf{Pros:} 
-    \begin{itemize}
-    \item Replicabilidad: 
-    \item Escalabilidad: 
-    \item Independencia de la estructura: 
-    \end{itemize}
-    \textbf{Contras:} 
-    \begin{itemize}
-    \item Posibilidad de fallo:
-    \item Coste computacional: 
-    \end{itemize}
-    
-    \item  \textbf{Factores externos:} \newline{}
-    Al no existir garantías de servicio de parte de la web, se han incluido diversas técnicas de reconocimiento y tratamiento de errores dentro del programa.
-    \newline{}
-    \textbf{Pros:} 
-    \begin{itemize}
-    \item Recuperación: En ya mayoría de casos de error identificados existen protocolos para identificar, tratar y solucionar los errores manifestados.    \item Loggings: Todas las funciones que dependen de un servidor externo están contenidas en bloques de código que capturan correctamente el error y lo guardan en un archivo con fecha, hora, ubicación y causa del mismo, facilitando el trabajo de la persona asignada al mantenimiento.
-    \end{itemize}
-    \textbf{Contras:} 
-    \begin{itemize}
-    \item Fallos totales: En caso de que la web deje de entregar servicio es imposible extraer nuevos expedientes
-    \end{itemize}
-    
-
-\end{enumerate}
-
-
-
 \subsection{Solución propuesta}
-\subsection{Plan de Trabajo}
-\subsection{Diseño de la solución}
-\subsubsection{Arquitectura del Sistema}
-\subsubsection{Diseño Detallado}
-\subsection{Tecnología Utilizada}
+En esta sección se presenta la solución desarrollada para abordar el problema planteado en este trabajo de fin de grado. Se describen las decisiones de diseño, las herramientas seleccionadas y la arquitectura general del sistema, justificando cada elección en función de los requisitos y retos identificados en la sección anterior. El objetivo es ofrecer una visión clara y estructurada del proceso seguido para extraer, procesar y visualizar la información relevante, así como de los mecanismos implementados para garantizar la robustez, escalabilidad y facilidad de uso de la solución.
 
-\subsubsection{RAG}
+\subsubsection{Diseño de la solución}
+La estructura del proyecto se ha diseñado para facilitar la modularidad, el mantenimiento y la escalabilidad del sistema. En primer lugar, se cuenta con un módulo principal encargado de la configuración y gestión de logs, lo que permite registrar de manera detallada el funcionamiento y posibles incidencias durante la ejecución. El núcleo funcional se divide en varios componentes: por un lado, los scripts de scraping, que se encargan de la navegación automática por la plataforma de contratación, la extracción de información relevante y la descarga de documentos asociados a cada expediente; por otro, el módulo de gestión de base de datos, que centraliza todas las operaciones de almacenamiento, consulta y actualización de los datos extraídos. Además, se han implementado funciones específicas para el tratamiento de errores y la validación de los datos, así como utilidades para el procesamiento paralelo y la optimización del rendimiento en tareas intensivas. Esta organización permite separar claramente las responsabilidades de cada parte del sistema, facilitando tanto el desarrollo como futuras ampliaciones o modificaciones.
+
+\subsubsection{Desarrollo e implementación}
+
+El desarrollo del sistema se ha realizado siguiendo una metodología modular, dividiendo el proceso en varias fases diferenciadas para facilitar su mantenimiento y escalabilidad. En primer lugar, se implementó el módulo de scraping, encargado de la navegación automática por la plataforma de contratación y la extracción de los datos relevantes de cada expediente. Para ello, se utilizó la librería Playwright en modo asíncrono, lo que permite gestionar múltiples navegadores y optimizar el tiempo de ejecución.
+
+Una vez extraída la información, se diseñó un sistema de procesamiento y limpieza de datos, que normaliza los textos obtenidos, elimina caracteres no deseados y gestiona los casos en los que los campos pueden estar vacíos o contener información irrelevante. Posteriormente, los datos se almacenan en una base de datos relacional mediante un módulo específico, que centraliza las operaciones de inserción, consulta y actualización, garantizando la integridad y trazabilidad de la información.
+
+El sistema también incorpora mecanismos de gestión de errores y robustez, como reintentos automáticos ante fallos de conexión, logs detallados de cada operación y validaciones para asegurar que los expedientes procesados cumplen los criterios definidos. Además, se han implementado utilidades para el procesamiento paralelo de expedientes y la optimización del rendimiento en tareas intensivas, permitiendo escalar el sistema según las necesidades del proyecto.
+
+Esta estructura modular y robusta facilita tanto el desarrollo como la futura ampliación del sistema, permitiendo adaptar el proceso de extracción y procesamiento de datos a posibles cambios en la plataforma de origen o en los requisitos del proyecto.
+
+
+\subsubsection{Visualización y acceso a los datos}
+Para facilitar el acceso y la interpretación de la información extraída, se ha desarrollado una interfaz web utilizando el framework Django. Esta interfaz permite a los usuarios consultar los expedientes almacenados en la base de datos de manera sencilla e intuitiva, presentando los datos de forma estructurada y visualmente clara. A través de distintos apartados y filtros, el usuario puede buscar expedientes concretos, visualizar los detalles de cada uno, acceder a los documentos asociados y analizar la información relevante sin necesidad de conocimientos técnicos avanzados. Además, la integración con Django proporciona mecanismos de autenticación y control de acceso, garantizando la seguridad y privacidad de los datos. Esta solución no solo mejora la experiencia del usuario final, sino que también facilita la explotación y el análisis de la información recopilada por el sistema.
+
+\subsubsection{Pruebas y validación}
+Para comprobar el correcto funcionamiento del sistema, se han realizado pruebas exhaustivas en cada uno de los módulos desarrollados. En primer lugar, se verificó que el proceso de scraping fuera capaz de navegar por la plataforma de contratación, localizar los expedientes y extraer correctamente la información relevante, incluso en casos donde la estructura de la página presentaba variaciones o campos vacíos. Se utilizó como métrica principal el porcentaje de expedientes correctamente procesados respecto al total de expedientes disponibles, así como el número de errores registrados en el log del sistema.
+
+En la fase de procesamiento y almacenamiento, se comprobó que los datos extraídos se insertaran en la base de datos sin pérdidas ni duplicidades, y que las relaciones entre tablas se mantuvieran íntegras. Para ello, se realizaron consultas de validación y se revisó manualmente una muestra significativa de registros.
+
+En cuanto a la visualización y acceso a los datos, se evaluó la interfaz desarrollada con Django para asegurar que los usuarios pudieran consultar y analizar la información de manera sencilla y sin incidencias. Se realizaron pruebas funcionales sobre los filtros de búsqueda, la visualización de detalles de expedientes y el acceso a los documentos asociados.
+
+Los resultados obtenidos muestran que el sistema es capaz de procesar y almacenar correctamente la gran mayoría de los expedientes. Los errores detectados se deben principalmente a cambios inesperados en la estructura de algunas páginas o a la ausencia de ciertos documentos, situaciones que han sido registradas y gestionadas mediante los mecanismos de control de errores implementados. En conjunto, el sistema ha demostrado ser robusto, fiable y adecuado para los objetivos planteados en el proyecto.
+
+Frontend
+Backend
+Capa de persistencia
+Pruebas unitarias
+
+
+
+\subsection{Plan de Trabajo}
+El desarrollo de este trabajo comenzó con una fase de toma de contacto en la que se analizó en profundidad el objetivo principal del proyecto, comprendiendo la importancia de automatizar la extracción y gestión de información relevante de expedientes de licitación. A partir de este análisis inicial, se procedió a la identificación de los objetivos clave, definiendo de manera clara las metas a alcanzar y los requisitos funcionales y técnicos que debía cumplir la solución propuesta.
+
+Una vez establecidos los objetivos, se dedicó un tiempo considerable a la familiarización con el entorno de las licitaciones públicas, explorando tanto la estructura de la plataforma de contratación como la naturaleza y variedad de los expedientes y documentos disponibles. Este proceso fue fundamental para entender las particularidades del dominio y anticipar los retos técnicos asociados al scraping y procesamiento de datos.
+
+Durante todo el desarrollo del proyecto, se mantuvo una comunicación constante y fluida con las responsables del trabajo. Las reuniones periódicas y el canal abierto de comunicación permitieron recibir retroalimentación continua, resolver dudas de manera ágil y ajustar el enfoque del desarrollo según las necesidades y recomendaciones planteadas. Esta colaboración estrecha fue clave para garantizar el avance ordenado del proyecto y la consecución de los objetivos marcados.
+
+\subsection{Presupuesto} REVISAR
+
+\section{Diseño de la solución}
+
+\subsection{Arquitectura del Sistema}
+
+La arquitectura del sistema se ha diseñado siguiendo un enfoque modular, dividiendo la solución en varios bloques funcionales claramente diferenciados que interactúan entre sí para cumplir con los objetivos del proyecto. En un primer nivel de abstracción, la solución propuesta se compone de los siguientes subsistemas principales:
+
+\begin{itemize} 
+\item \textbf{Módulo de extracción de datos (scraper):} Encargado de la navegación automática por la plataforma de contratación, la localización de expedientes y la extracción de información relevante y documentos asociados. \item \textbf{Base de datos SQL:} Sistema centralizado para el almacenamiento estructurado de los datos extraídos, permitiendo su consulta, actualización y gestión eficiente. 
+\item \textbf{Backend (Django):} Responsable de la lógica de negocio, la gestión de la base de datos y la exposición de los datos a través de una API o vistas web. 
+\item \textbf{Frontend (interfaz web):} Proporciona una interfaz gráfica amigable para que los usuarios puedan consultar, filtrar y analizar la información almacenada en el sistema. 
+\item \textbf{Sistema de logs y monitorización:} Permite registrar la actividad del sistema, detectar errores y facilitar el mantenimiento y la trazabilidad de las operaciones. 
+\item \textbf{Módulo de testing:} Compila diversas herramientas que de testeo orientadas a la obtención de métricas que justifican el correcto funcionamiento del programa, orientado para el uso único y exclusivo de la persona encargada del mantenimiento/implementación del programa. 
+\end{itemize}
+
+Estos componentes se comunican principalmente a través de la base de datos y de llamadas internas entre módulos. El scraper alimenta la base de datos con la información extraída, el backend gestiona el acceso y la lógica de negocio, y el frontend permite la visualización y consulta de los datos por parte del usuario final.
+
+A continuación, se presenta un diagrama de bloques que ilustra la arquitectura general del sistema y la interacción entre sus principales componentes:
+
+REVISAR, INSERTAR AQUÍ UN DIAGRAMA DEL PROYECTO
+
+Esta arquitectura modular facilita la escalabilidad, el mantenimiento y la futura ampliación del sistema, permitiendo adaptar o sustituir componentes de manera independiente según evolucionen los requisitos del proyecto.
+
+\subsection{Diseño Detallado}
+
+\section{Tecnología Utilizada}
+
+\subsection{RAG}
+Retrieval Augmented Generation (RAG) es una técnica que mejora las respuestas de los modelos generativos al incorporar información externa relevante en tiempo real, extraída de archivos o fuentes conectadas. Esto permite que el modelo no dependa únicamente de su conocimiento pre-entrenado, sino que pueda responder con datos actualizados o específicos, como documentación interna o eventos recientes.
+
+RAG es especialmente útil cuando el modelo generativo debe responder sobre información que no está en sus datos de entrenamiento, como manuales de empresa o tickets de soporte internos. Por ejemplo, un modelo para soporte técnico puede usar RAG para consultar archivos internos y responder preguntas sobre productos o procesos específicos.
+
+La búsqueda semántica permite al modelo generativo encontrar información relevante en los archivos subidos, no solo por coincidencia de palabras clave, sino por similitud conceptual. Esto se logra convirtiendo textos y preguntas en vectores numéricos (\textit{embeddings}) y comparándolos para encontrar los fragmentos más pertinentes.
 
 \begin{figure}[h!]
 \centering
 \includegraphics[width=15cm]{RAG_flow}
-\caption{Imagen ilustrativa sobre el funcionamiento del RAG. Fuente: \url{https://www.gobierto.es/}}
+\caption{Imagen ilustrativa sobre el funcionamiento del RAG. Fuente: \url{https://medium.com/@gargishika1998/rag-838ba02fda03}}
 \label{fig:RAG_flow}
 \end{figure}
 
-\subsubsection{Base Vectorial} 
-\subsubsection{LLM} \label{LLM}
-Como ya se mencionó anteriormente, el LLM elegido para este proyecto fue \textbf{Llama 3.3 70B Instruct}, esto debido principalmente a su buen desempeño como LLM de código abierto y la disponibilidad de recursos otorgados por la universidad. 
-Según \cite{llm-stats}, este modelo se sitúa globalmente en el puesto 21 como uno de los mejores actualmente, pero si decidimos filtrar este número por modelos de código abierto, lo situamos en el puesto número 6, por detrás de modelos como \textbf{DeepSeek-R1}, \textbf{QwQ-32B} o \textbf{Phi-4}, para analizar la capacidad de este modelo, podemos hacer uso de la siguiente tabla comparandolo con el \textit{'estado del arte'} de los LLM de código abierto. 
+El proceso de recuperación de conocimiento en GPT funciona de la siguiente manera:
+\begin{enumerate}
+    \item Los archivos subidos se dividen en fragmentos.
+    \item Cada fragmento se convierte en un embedding.
+    \item Los embeddings se almacenan en una base de datos vectorial interna.
+    \item Cuando el usuario hace una pregunta, se busca la información más relevante mediante comparación de vectores.
+    \item Los fragmentos recuperados se usan como contexto para generar una respuesta más precisa.
+\end{enumerate}
+
+Este es un proceso completamente automático, requiriendo únicamente el diseño del prompt y la subida de los archivos que se deseen procesar.
+
+RAG ha demostrado ser especialmente útil en tareas como respuesta a preguntas, generación de resúmenes y asistencia conversacional, donde la precisión y la actualización de la información son críticas. Además, facilita la actualización del conocimiento del sistema sin necesidad de reentrenar completamente el modelo generativo, simplemente actualizando la base de datos de recuperación.
+
+\cite{openai}
+
+\subsection{Base Vectorial}
+\textbf{¿Qué es una base de datos vectorial?} 
+
+Una base de datos vectorial es un sistema persistente de almacenamiento de datos que guarda y gestiona datos como vectores de alta dimensión, permitiendo búsquedas rápidas por similitud. Este tipo de base es ideal para aplicaciones de inteligencia artificial (como es el nuestro caso), ya que facilita consultas eficientes y es cada vez más utilizada en el sector empresarial.
+
+\begin{figure}[h!]
+\centering
+\includegraphics[width=15cm]{chromadb}
+\caption{Imagen ilustrativa sobre el funcionamiento del RAG. Fuente: \url{https://docs.trychroma.com/docs/overview/introduction}}
+\label{fig:chromadb}
+\end{figure}
+
+\vspace{0.4cm}
+\textbf{¿En qué se diferencia de una base de datos típica?} 
+
+A diferencia de las bases de datos tradicionales, que almacenan datos en filas y columnas y funcionan bien con información estructurada, las bases de datos vectoriales representan los datos como vectores de alta dimensión, lo que les permite manejar datos no estructurados como texto, imágenes o audio. Mientras que las búsquedas tradicionales se basan en coincidencias exactas de palabras clave, las bases vectoriales permiten búsquedas por similitud semántica, encontrando resultados relacionados aunque no sean idénticos. Esto es posible gracias a las incrustaciones vectoriales, que capturan patrones y relaciones ocultas en los datos. 
+
+\vspace{0.4cm}
+\textbf{¿Qué es un vector?}
+
+Un vector es un tipo de tensor unidimensional que agrupa varios números, cada uno representando una característica de los datos. En machine learning, los vectores permiten representar información compleja como texto, imágenes o audio en forma numérica, facilitando su procesamiento por modelos de IA.
+
+\vspace{0.4cm}
+\textbf{¿Cómo se utilizan las bases de datos vectoriales?}
+
+\begin{enumerate}
+\item{Almacenamiento vectorial:}
+Se almacenan los vectores generados en forma de embeddings.
+
+\item{Indexación vectorial:}
+Los vectores almacenados se indexan utilizando algoritmos especializados (HNSW, LSH o PQ), creando estructuras que permiten encontrar rápidamente los vectores más similares entre millones de datos, optimizando así el rendimiento en consultas de alta dimensión.
+
+\item{Búsqueda semántica:}
+Cuando se realiza una consulta, esta se transforma en un vector y se compara con los vectores almacenados usando métricas de similitud (por ejemplo, similitud coseno). Así, la base de datos devuelve los resultados más parecidos en significado.
+
+\end{enumerate}
+
+\cite{ibm}
+
+\vspace{0.5cm}
+\textbf{¿Cuáles son las mejores bases de datos vectoriales?}
+
+Utilizar una base de datos vectorial ya creada es mejor opción porque estas soluciones han sido desarrolladas, optimizadas y probadas por comunidades amplias y equipos expertos, lo que garantiza mayor robustez, rendimiento y seguridad. Además, ofrecen soporte para múltiples algoritmos de indexación, escalabilidad, documentación extensa y comunidades activas para resolver dudas o problemas. Crear una base de datos vectorial desde cero requiere mucho tiempo, recursos y conocimientos avanzados, y es probable que el resultado no iguale la eficiencia ni las funcionalidades de las opciones existentes. Por eso, aprovechar una solución ya establecida permite centrarse en el desarrollo de la aplicación y no en reinventar componentes críticos. Habiendo aclarado esto aquí un cuadro comparativo de los modelos más populares actualmente:
+
+\renewcommand{\arraystretch}{1.5}
+\begin{table}[h!]
+\centering
+\begin{tabular}{|p{2.5cm}@{\hspace{0.3cm}}|p{4cm}@{\hspace{0.3cm}}|p{4cm}@{\hspace{0.3cm}}|p{4cm}|}
+\hline
+\textbf{Base de datos} & \textbf{Descripción} & \textbf{Características clave} & \textbf{Comunidad} \\
+\hline
+Qdrant & Base de datos vectorial rápida y eficiente, enfocada en el rendimiento y la escalabilidad. & Búsqueda de alto rendimiento, capacidades de filtrado, API REST. & Comunidad activa en Discord y GitHub. \\
+\hline
+Faiss & Biblioteca desarrollada por Facebook AI Research para búsqueda eficiente de similitud y agrupamiento. & Excelente rendimiento, aceleración por GPU, soporte para varios algoritmos de indexación. & Comunidad grande y activa con amplia documentación y recursos. \\
+\hline
+Chroma & Base de datos de embeddings de código abierto enfocada en la facilidad de uso. & Orientada a Python, soporta cualquier modelo de embeddings vectoriales, soporte integrado para LangChain. & Comunidad en crecimiento con más de 9,000 estrellas en GitHub y un canal activo en Discord. \\
+\hline
+\end{tabular}
+\caption{Comparación de algunas de las mejores bases de datos vectoriales de código abierto}
+\end{table}
+
+\vspace{0.5cm}
+
+\textbf{¿Cuál es la mejor base de datos para este proyecto?}
+
+Inicialmente FAISS fue la opción elegida debido a su popularidad, facilidad de uso y promesas de un funcionamiento mas eficiente, pero durante el desarrollo del programa surgieron imprevistos que la documentación de FAISS no supo responder claramente, por lo que se determinó que
+ChromaDB era la mejor opción para este proyecto porque es una base de datos vectorial de código abierto diseñada para ser fácil de usar y altamente compatible con Python, el lenguaje principal del proyecto. Ofrece integración nativa con frameworks populares como LangChain y soporta cualquier modelo de embeddings, lo que facilita la experimentación y adaptación a diferentes necesidades. Además, su comunidad activa y en crecimiento garantiza soporte y actualizaciones constantes. Gracias a su sencillez de implementación, buen rendimiento y flexibilidad, ChromaDB permitió acelerar el desarrollo y centrarse en la lógica del sistema sin preocuparse por la gestión compleja de los vectores.
+
+\subsection{Búsqueda semántica}
+ Es una técnica avanzada de recuperación de información dentro de bases de datos vectoriales que, a diferencia de la búsqueda tradicional por palabras clave, permite encontrar contenido relevante basado en el significado y contexto de las consultas, no sólo en coincidencias literales de texto. Esto se logra mediante el uso de modelos de lenguaje y representaciones vectoriales (\textit{embeddings}), que convierten tanto los documentos como las preguntas en vectores numéricos que capturan su significado. Al comparar estos vectores, es posible identificar fragmentos conceptualmente similares, aunque no compartan exactamente las mismas palabras.
+
+En este proyecto, la búsqueda semántica ha sido fundamental para mejorar la localización y extracción de documentos relevantes (como anexos, pliegos y modificaciones) dentro de grandes volúmenes de expedientes administrativos. Gracias a esta técnica, el sistema puede identificar y recuperar documentos aunque estén nombrados o estructurados de manera diferente, o aunque el usuario no conozca el término exacto utilizado en el expediente. Por ejemplo, permite encontrar un ``Anexo I'' aunque en el documento se utilicen variantes como ``anexo i'', ``anexo\_i'', ``anexo-i'', o incluso traducciones y abreviaturas.
+
+Esto ha permitido automatizar y robustecer el proceso de scraping y análisis, reduciendo errores y omisiones que serían frecuentes con una búsqueda basada únicamente en palabras clave. Además, la búsqueda semántica ha facilitado la adaptación del sistema a diferentes formatos y estilos de documentación, haciendo el proceso más flexible y eficiente.
+
+\begin{figure}[H] % o [htbp] según prefieras
+\centering
+\includegraphics[width=10cm]{vectores.png}
+\caption{Representación gráfica simplificada de un espacio vectorial, Fuente:} 
+\url{https://crayonconsulting.medium.com/the-rise-of-vector-databases-in-ai-and-beyond-04d82d378d60}
+\label{tab:Vectores}
+\end{figure}
+
+\textbf{¿Cómo funciona una búsqueda semántica?}
+
+La búsqueda semántica en una base de datos vectorial como Chroma se fundamenta en la representación matemática de los textos mediante \textit{embeddings} (vectores en un espacio de alta dimensión generados por modelos de lenguaje). Tanto los documentos como las consultas se transforman en estos vectores, de modo que textos con significado similar quedan próximos entre sí en el espacio vectorial. La comparación entre la consulta y los documentos almacenados se realiza utilizando métricas como la distancia coseno o la distancia euclidiana. Formalmente, si $\mathbf{q}$ es el embedding de la consulta y $\mathbf{d}_i$ el embedding de un documento, la similitud se puede calcular, por ejemplo, mediante la distancia coseno:
+
+\begin{equation}
+\text{sim}(\mathbf{q}, \mathbf{d}_i) = 1 - \frac{\mathbf{q} \cdot \mathbf{d}_i}{\left\| \mathbf{q} \right\| \left\| \mathbf{d}_i \right\|}
+\end{equation}
+
+La base de datos vectorial recupera los $k$ documentos cuyos embeddings son más cercanos al de la consulta según esta métrica, permitiendo así búsquedas basadas en el significado y no solo en coincidencias exactas de palabras clave.
+
+\subsection{LLM} \label{LLM} 
+
+\textbf{¿Exactamente qué es un LLM?} 
+
+Un LLM (por sus siglas en inglés, Large Language Model) es un modelo de aprendizaje profundo basado en redes neuronales que ha sido entrenado con enormes cantidades de texto. Gracias a este entrenamiento, es capaz de identificar patrones, relaciones entre palabras y generar respuestas basadas en probabilidades. Sin embargo, es importante destacar que un LLM no ''entiende'' el contenido que genera en el sentido humano, sino que produce respuestas basadas en la información con la que ha sido entrenado; en base a esta información, crea matrices con miles de millones de parámetros que contienen la probabilidad de que una palabra esté seguida por otra. \\
+
+
+\begin{figure}[H] % o [htbp] según prefieras
+\centering
+\includegraphics[width=15cm]{llm_probability.png}
+\caption{Gráfico de flujo del funcionamiento típico de un LLM} 
+\cite{llm-stats}
+\label{tab:LLM_Graph}
+\end{figure}
+
+\textbf{¿Cuál ha sido su impacto económico?} 
+
+Los modelos de lenguaje de gran tamaño (LLMs), como GPT, han comenzado a transformar significativamente la economía global. Su capacidad para automatizar tareas cognitivas complejas —como redacción de textos, generación de código, análisis de datos y atención al cliente— está aumentando la productividad en sectores clave como la tecnología, la educación, el marketing, la consultoría y los servicios financieros. Grandes empresas están invirtiendo miles de millones en integrar estas herramientas en sus procesos, mientras que nuevas startups están emergiendo alrededor de aplicaciones específicas basadas en LLMs.
+
+Además, los LLMs están redefiniendo el mercado laboral: reducen la necesidad de ciertos perfiles operativos mientras incrementan la demanda de profesionales capacitados en IA, ingeniería de prompts, y supervisión de sistemas automatizados. Aunque también plantean retos en términos de regulación, privacidad y desplazamiento laboral, el consenso general es que su adopción tendrá un impacto económico netamente positivo, favoreciendo la innovación y el crecimiento en los próximos años.
+
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=12cm]{stock.png}
+\caption{Impacto económico de Deepseek}
+\url{https://medium.com/@frackers/wall-street-panic-over-deepseek-exaggerated-8f8b7faff1f6}
+\label{tab:LLM_Graph}
+\end{figure}
+
+Citando ejemplos recientes del impacto real que tiene esta tecnología en el mundo nos remontamos a enero del 2025, fecha del lanzamiento del modelo DeepSeek-R1, un LLM chino revolucionario y de bajo coste, provocó una reacción histórica en Wall Street, con caídas récord en el sector tecnológico y, especialmente, en las empresas de semiconductores. Nvidia perdió un 16,9\% de su valor bursátil (593.000 millones de dólares), Broadcom un 17,3\%, AMD un 6,3\%, TSMC un 13,2\% y Arm un 10,2\%. Los inversores temen que la estrategia estadounidense de invertir masivamente en hardware para IA quede obsoleta ante modelos eficientes y baratos como DeepSeek-R1, que ofrece capacidades similares a ChatGPT o Claude pero a una fracción del coste. Aunque las grandes tecnológicas seguirán dependiendo de chips avanzados y no se prevén cancelaciones inmediatas de pedidos a Nvidia, la irrupción de DeepSeek ha generado incertidumbre sobre el futuro del mercado y ha puesto en evidencia la vulnerabilidad de Wall Street ante innovaciones disruptivas provenientes de China.
+
+\vspace{0.4cm}
+\textbf{¿Por qué son tan útiles los llm?} 
+
+Los LLMs son herramientas revolucionarias en el ámbito de la inteligencia artificial debido a su capacidad para procesar, comprender y generar texto de manera altamente sofisticada, infiltrándose en caso todos los aspectos de la vida moderna. Esto se debe a varias razones fundamentales:
+
+\begin{itemize}
+    \item \textbf{Procesamiento del lenguaje natural (NLP):} Los LLMs están diseñados para trabajar con texto en lenguaje natural, lo que les permite realizar tareas como responder preguntas, generar contenido coherente, traducir idiomas y resumir documentos.
+
+    \item \textbf{Entrenamiento en grandes cantidades de datos:} Estos modelos han sido entrenados con enormes volúmenes de texto (llegando incluso a los petabytes), lo que les permite identificar patrones, relaciones entre palabras y comprender el contexto de frases y párrafos. Esto les otorga una capacidad única para adaptarse a diferentes estilos y temas.
+
+    \item \textbf{Versatilidad:} Los LLMs pueden ser aplicados en una amplia variedad de áreas, como educación, negocios, investigación y desarrollo de software. Su capacidad para adaptarse a diferentes dominios los convierte en herramientas universales.
+
+    \item \textbf{Capacidad predictiva:} Los LLMs generan texto basado en probabilidades, lo que les permite predecir la siguiente palabra o frase en un contexto dado. Esto los hace ideales para tareas como generación de contenido, escritura asistida y creación de código.
+
+    \item \textbf{Adaptabilidad:} Pueden ser ajustados (\textit{fine-tuned}) para tareas específicas, como procesamiento de documentos legales, análisis de datos científicos o generación de código, lo que los hace altamente personalizables.
+
+    \item \textbf{Automatización y eficiencia:} Los LLMs reducen el tiempo y esfuerzo necesario para realizar tareas repetitivas relacionadas con texto, mejorando la productividad y optimizando procesos en múltiples industrias.
+
+\end{itemize}
+
+\textbf{¿Cuáles son los mejores LLMs?} 
+
+\begin{figure}[H] % o [htbp] según prefieras
+\centering
+\includegraphics[width=15cm]{LLM_Graph.png}
+\caption{Gráfico que compara el desempeño de diversos LLMs a fecha de hoy} 
+\cite{llm-stats}
+\label{tab:LLM_Graph}
+\end{figure}
+
+Como se puede ver en la figura 1, al momento de redactar este documento, los LLMs que lideran el mercado son: \textbf{ChatGPT-o3}, \textbf{Claude 3.7 Sonnet} y \textbf{Grok-3}; cada uno con un puntaje GPQA del \textbf{87.7\%}, \textbf{84.8\%} y \textbf{84.6\%} respectivamente. Este porcentaje corresponde al resultado de una serie de pruebas realizadas por Google para evaluar la fiabilidad de cada modelo en la resolución de problemas y consultas en áreas como física, química, programación, entre otras.
+Sin embargo (y aunque pueda parecer contraproducente) el LLM elegido para sobrellevar el procesamiento computacional de este proyecto fue \textbf{Llama 3.3 70B Instruct} esto se debe principalmente a su buen desempeño como LLM de código abierto y a la disponibilidad de recursos otorgados por la universidad. 
+Según \cite{llm-stats}, este modelo se sitúa globalmente en el puesto 21 como uno de los mejores actualmente, pero si decidimos filtrar este número por modelos de código abierto, lo situamos en el puesto número 6, por detrás de modelos como \textbf{DeepSeek-R1}, \textbf{QwQ-32B} o \textbf{Phi-4}, para analizar la capacidad de este modelo, podemos hacer uso de la siguiente tabla, comparándolo con el \textit{'estado del arte'} de los LLM de código abierto. 
 
 \begin{table}[H]
 \centering
 \resizebox{\linewidth}{!}{%
-\begin{tabular}{|l|c|c|}
+\begin{scriptsize} % Cambia el tamaño del texto
+\begin{tabular}{|l|c|c|c|c|}
 \hline
-\textbf{Característica} & \textbf{DeepSeek-R1}  & \textbf{Llama 3.3 70B Instruct} \\
+\textbf{Característica} & \textbf{DeepSeek-R1} & \textbf{Llama 3.3 70B Instruct} & \textbf{QwQ-32B} & \textbf{Phi-4} \\
 \hline
-Parametros & 671 & 70 \\
-Contexto & 131.072 & 128.000 \\
-1M input/\$ & \$0.55 & \$0.20 \\
-1M output/\$ & \$2.19 & \$0.20 \\
-GPQA & 71.5\% & 50.5\% \\
-MMLU & 90.8\% & 86.0\% \\
-
+Parámetros & 671B & 70B & 32B & 14B \\
+Contexto & 128.000 & 128.000 & 16.000 & 16.000 \\
+1M input/\$ & \$0.55 & \$0.20 & \$0.30 & \$0.15 \\
+1M output/\$ & \$2.19 & \$0.20 & \$0.50 & \$0.10 \\
+GPQA & 71.5\% & 49.1\% & 65.0\% & 56.1\% \\
+MMLU & 90.8\% & 86.3\% & 88.5\% & 84.8\% \\
 \hline
 \end{tabular}
+\end{scriptsize}
 }
-\caption{Comparativa}
+\caption{Comparativa entre modelos de lenguaje de gran tamaño (LLMs)}
 \label{tab:comparativa_llm}
 \end{table}
 
-\subsubsection{Scrapper}
-\subsubsection{SQLServer}
-\subsubsection{Python}
-\subsubsection{Django}
+\begin{itemize}
+    \item \textbf{Parámetros:} Indica el número de parámetros del modelo, normalmente se miden en miles de millones. Los parámetros son valores ajustables dentro de la red neuronal que determinan cómo el modelo procesa y genera texto. Un mayor número de parámetros generalmente implica mayor capacidad para capturar patrones complejos, aunque también aumenta los requisitos computacionales.
+
+    \item \textbf{Contexto:} Representa el tamaño máximo del contexto que el modelo puede manejar, es decir, la cantidad de tokens (palabras o fragmentos de texto) que el modelo puede procesar simultáneamente. Un contexto más grande permite al modelo trabajar con textos más extensos y mantener coherencia en respuestas largas.
+
+    \item \textbf{1M input/\$:} Indica el costo por procesar un millón de tokens de entrada. Esto refleja el precio de usar el modelo para analizar o interpretar texto.
+
+    \item \textbf{1M output/\$:} Indica el costo por generar un millón de tokens de salida. Esto refleja el precio de usar el modelo para producir texto.
+
+    \item \textbf{GPQA:} Representa el porcentaje de precisión en la métrica \textit{General Purpose Question Answering}. Esta métrica evalúa la capacidad del modelo para responder preguntas generales en diversas áreas como ciencia, matemáticas, programación, entre otras.
+
+    \item \textbf{MMLU:} Representa el porcentaje de precisión en la métrica \textit{Massive Multitask Language Understanding}. Esta métrica evalúa la capacidad del modelo para realizar tareas de comprensión en múltiples dominios y niveles de dificultad.
+\end{itemize}
+
+Como se observa en la tabla comparativa, Llama 3.3 70B Instruct destaca como una opción sólida para este trabajo por su excelente equilibrio entre coste, rendimiento y capacidad. Ofrece un contexto amplio de 128.000 tokens, lo que permite procesar documentos extensos o mantener conversaciones largas, y presenta un coste por millón de tokens significativamente bajo tanto para entrada como para salida (\$0.20), facilitando su uso en aplicaciones con grandes volúmenes de datos. Además, sus resultados en benchmarks como MMLU (86.3\%) y GPQA (49.1\%) son competitivos frente a modelos mucho más grandes y costosos, lo que demuestra su eficiencia y calidad.
+
+\subsection*{Consideraciones éticas en el uso de Modelos de Lenguaje Grande (LLMs)}
+
+El uso y despliegue de modelos de lenguaje de gran tamaño (LLMs) plantea múltiples desafíos éticos, que pueden clasificarse en dos grandes categorías: \textbf{problemas persistentes} (ya conocidos en la comunidad de IA antes de los LLMs) y \textbf{problemas emergentes} (surgidos a raíz de su uso intensivo y generalizado). Esta clasificación, basada en el artículo \emph{Deconstructing the Ethics of Large Language Models} (Deng et al., 2024), permite organizar las preocupaciones y estrategias de mitigación de forma sistemática.
+
+\subsubsection*{1. Problemas éticos persistentes}
+
+\subsubsection*{1.1 Privacidad de los datos}
+Los LLMs requieren enormes volúmenes de datos para su entrenamiento, muchos de los cuales pueden contener información personal o sensible. Esto plantea riesgos como:
+\begin{itemize}
+    \item \textbf{Memorización involuntaria}: los modelos pueden recordar y reproducir fragmentos exactos de los datos de entrenamiento, comprometiendo la confidencialidad.
+    \item \textbf{Ataques de privacidad}
+    \begin{itemize}
+        \item \emph{Membership Inference Attacks (MIA)}: inferir si ciertos datos formaron parte del entrenamiento.
+        \item \emph{Training Data Extraction}: reconstrucción de datos sensibles a partir del modelo entrenado.
+        \item \emph{Attribute Inference}: inferencia de atributos personales (edad, género, ubicación) a partir de texto generado.
+    \end{itemize}
+\end{itemize}
+
+\textbf{Estrategias de mitigación:}
+\begin{itemize}[leftmargin=3.5em]
+    \item \emph{Privacidad diferencial (DP)}: técnicas como DP-SGD añaden ruido a los gradientes durante el entrenamiento, dificultando la reidentificación de datos individuales.
+    \item \emph{Aprendizaje federado}: los datos se mantienen en dispositivos locales y solo se comparten los modelos, reduciendo el riesgo de exposición.
+    \item \emph{Unlearning y sanitización de datos}: permiten borrar información específica del modelo sin necesidad de reentrenarlo desde cero.
+    \item \emph{Cálculo multipartito seguro (SMPC)}: técnicas criptográficas que permiten procesar datos cifrados sin descifrarlos, aunque con costes computacionales elevados.
+\end{itemize}
+
+\subsubsection*{1.2 Derechos de autor}
+Los LLMs pueden generar contenido basado en obras protegidas por copyright o entrenarse con datos sin el debido consentimiento.
+
+\textbf{Riesgos:}
+\begin{itemize}[leftmargin=3.5em]
+    \item Reutilización no autorizada de material protegido.
+    \item Plagio o generación de contenido difícil de atribuir correctamente.
+\end{itemize}
+
+\textbf{Técnicas de protección:}
+\begin{itemize}[leftmargin=3.5em]
+    \item \emph{Watermarking}: inserción de marcas invisibles en texto generado para rastrear su origen.
+    \item \emph{Backdoors como marca de agua}: técnicas de envenenamiento controlado del modelo para establecer propiedad intelectual.
+    \item \emph{Protección de prompts y datasets}: uso de firmas digitales o mecanismos de trazabilidad sobre entradas y conjuntos de datos usados.
+\end{itemize}
+
+\subsubsection* {1.3 Equidad y sesgos}
+Los LLMs reflejan y amplifican sesgos presentes en sus datos de entrenamiento, lo que puede resultar en resultados injustos o discriminatorios hacia ciertos grupos sociales.
+
+\textbf{Tipos de sesgo:}
+\begin{itemize}[leftmargin=3.5em]
+    \item Grupal: disparidad entre grupos sociales en los resultados.
+    \item Individual: individuos similares tratados de manera desigual.
+    \item Social: perpetuación de estereotipos históricos.
+\end{itemize}
+
+\textbf{Técnicas de mitigación:}
+\begin{itemize} [leftmargin=3.5em]
+    \item Preprocesamiento: balanceo y enriquecimiento de datos para representar a todos los grupos.
+    \item Durante el entrenamiento (\emph{in-training}): modificación de arquitecturas y funciones de pérdida para reducir sesgos.
+    \item Inferencia (\emph{intra-processing}): técnicas que ajustan el comportamiento del modelo en tiempo real.
+    \item Postprocesamiento: filtrado o reescritura del texto generado para mitigar contenido sesgado.
+\end{itemize}
+
+\textbf{Evaluación de la equidad:}
+\begin{itemize}[leftmargin=3.5em]
+    \item Métricas basadas en embeddings (distancia entre conceptos).
+    \item Probabilidades condicionadas a distintos grupos sociales.
+    \item Análisis del texto generado (frecuencia de términos, clasificadores auxiliares, listas de términos sensibles).
+\end{itemize}
+
+\subsection*{2. Problemas éticos emergentes}
+
+\subsubsection* {2.1 Veracidad (Truthfulness)}
+Los LLMs pueden generar información incorrecta, lo que afecta gravemente su confiabilidad, especialmente en contextos críticos (salud, derecho, educación).
+
+\textbf{Principales riesgos:}
+\begin{itemize} [leftmargin=3.5em]
+    \item Alucinaciones: generación de contenido falso o inexacto que parece plausible.
+    \item Sicofancia: tendencia del modelo a estar de acuerdo con el usuario, incluso cuando este se equivoca.
+\end{itemize}
+
+\textbf{Causas:}
+\begin{itemize} [leftmargin=3.5em]
+    \item Datos de entrenamiento incompletos o sesgados.
+    \item Arquitecturas que privilegian la coherencia sobre la precisión factual.
+    \item Aprendizaje por refuerzo (RLHF) mal calibrado que favorece la complacencia.
+\end{itemize}
+
+\textbf{Mitigaciones:}
+\begin{itemize} [leftmargin=3.5em]
+    \item Centradas en datos: curación y verificación de datasets, uso de fuentes fiables.
+    \item Centradas en el modelo: detección de baja confianza, edición directa de parámetros, mecanismos de autocorrección.
+\end{itemize}
+
+\subsubsection* {2.2 Normas sociales y toxicidad}
+Los LLMs pueden producir contenido ofensivo o tóxico (odio, insultos, discriminación), lo que plantea riesgos reputacionales, sociales y legales.
+
+\textbf{Solución principal:} alineación del modelo (\emph{alignment}): adaptar el comportamiento del modelo para que respete los valores humanos.
+
+\textbf{Técnicas:} \emph{Supervised Fine-Tuning (SFT)} y \emph{Reinforcement Learning from Human Feedback (RLHF)}.
+
+\textbf{Principio HHH:} Respuestas deben ser útiles, honestas y no dañinas (\emph{Helpful, Honest, Harmless}).
+
+\subsubsection* {2.3 Cumplimiento legal y normativo}
+La falta de un marco regulatorio claro dificulta la aplicación legal de LLMs. A nivel internacional, se están proponiendo leyes como:
+\begin{itemize}
+    \item \textbf{GDPR (UE):} protección de datos personales, afecta al entrenamiento con datos sensibles.
+    \item \textbf{AI Act (UE):} regula el uso de sistemas de IA según niveles de riesgo.
+    \item Suspensiones y sanciones: como el caso de ChatGPT en Italia por violación de normas de privacidad.
+\end{itemize}
+
+\textbf{Desafíos:}
+\begin{itemize}[leftmargin=3.5em]
+    \item Definición de IA de propósito general (GPAIS).
+    \item Evaluación del impacto y mitigación de riesgos.
+    \item Cumplimiento con normas específicas de dominios como salud o derecho.
+\end{itemize}
+
+\cite{Eticos}
+
+\subsection{Scrapper}
+\subsection{Base Vectorial}
+\subsection{Cliente Ollama}
+\subsection{SQLServer}
+\subsection{Python}
+\subsection{Django}
 
 \subsection{Desarrollo de la solución propuesta}
 \newpage
@@ -662,7 +1149,6 @@ Eros sociis dictumst auctor habitasse libero molestie nascetur laoreet sodales, 
 \newpage
 
 \section{Referencias}
-\cite{3blue1brown}
 \printbibliography
 
 \newpage
