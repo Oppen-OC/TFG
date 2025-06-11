@@ -1,6 +1,6 @@
 import os
 import sys
-from rag_evaluator import RAGEvaluator
+from project.app.util.testing.rag_evaluator_llm import RAGEvaluator
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 from rag_operations import main as rag_main
 from document_handler import download_to_json

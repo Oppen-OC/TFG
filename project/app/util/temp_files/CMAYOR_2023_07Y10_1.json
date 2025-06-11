@@ -4,330 +4,521 @@
             "prompt_key": "Regulacion_armonizada",
             "prompt": "Indica si tiene regulación armonizada",
             "response": "Si",
-            "score": 0.935702041387558,
+            "score": 0.935686551630497,
             "index": [
                 13,
                 14,
                 83,
                 4
-            ]
+            ],
+            "chunks": [
+                "• Instalaciones eléctricas; en baja tensión y con instalaciones de generación fotovoltaica y\nminihidráulica.\n• Sistema de protección catódica para la tubería de acero.\n• Equipos de telecontrol y telemando\n• Reposiciones de vallados, cerramientos, tuberías de riego, caminos, muros, casetas, tuberías agua\npotable, etc\nCÓDIGO / CÓDIGOS C.P.V.:\n45232121-6 Trabajos de construcción de canalizaciones de riego\n45231100-6 Trabajos generales de construcción de tuberías\n45231110-9 Trabajos de construcción de tendidos de tuberías\nSUJETO A REGULACIÓN ARMONIZADA:\n□ NO\nX □ SI\nAPARTADO B\nDIVISIÓN EN LOTES:\nX □ NO, motivos de justificación (los contenidos en el expediente):\nLas actuaciones incluidas en el proyecto son las definidas en el objeto del contrato. Como puede",
+                "45231100-6 Trabajos generales de construcción de tuberías\n45231110-9 Trabajos de construcción de tendidos de tuberías\nSUJETO A REGULACIÓN ARMONIZADA:\n□ NO\nX □ SI\nAPARTADO B\nDIVISIÓN EN LOTES:\nX □ NO, motivos de justificación (los contenidos en el expediente):\nLas actuaciones incluidas en el proyecto son las definidas en el objeto del contrato. Como puede\nverse todas estas actuaciones están íntimamente relacionadas, de manera que forman un todo\ndefinido en un único proyecto, por lo que la ejecución independiente de estas prestaciones\nimplicaría un alto riesgo de incorrecta ejecución desde el punto de vista técnico, siendo necesaria la\ncoordinación de su ejecución para conseguir la adecuada ejecución del proyecto.",
+                "Cartografía o Ingeniero Técnico Topógrafo.\n• Respecto al Coordinador de Seguridad y Salud deberá ser un Técnico competente en materia de\nSeguridad y Salud en obras de construcción.\nSe considera Técnico Competente, a los efectos de interpretar el art. 2.1 e) y f), del Real Decreto\n1627/97, aquellas personas que posean titulaciones académicas y profesionales habilitantes, así\ncomo conocimientos en actividades de Construcción y de Prevención de Riesgos Laborales, acordes\ncon las funciones que fija el Real Decreto, que serán las titulaciones de arquitecto, arquitecto\ntécnico, ingeniero e ingeniero técnico.\n2. MATERIALES. No procede\nEN CONTRATOS SUJETOS A UNA REGULACIÓN ARMONIZADA, CERTIFICADOS DE ACREDITACIÓN DEL\nCUMPLIMIENTO DE LAS NORMAS DE GARANTÍA DE CALIDAD:",
+                "importe gasto desistimiento renuncia criterio valoración empleado cálculo responsabilidad patrimonial administración trámite procedimiento administrativo común observación contratación control calidad obra contrato independiente seleccionado inclusión control calidad obra seleccionado honorable sra consellera agricultura desarrollo rural emergéncia climático transición ecológico 28"
+            ],
+            "format": "Responde únicamente con Si o No"
         },
         {
             "prompt_key": "Sometido_recurso_especial",
             "prompt": "Indica si tiene recurso especial",
             "response": "No",
-            "score": 0.7402380883693696,
+            "score": 0.7492859701315563,
             "index": [
                 1,
+                0,
                 2
-            ]
+            ],
+            "chunks": [
+                "anualidad importe iva excluido importe iva incluido 2023 4386196.96 € 5307298.32 € 2024 10838509.58 € 13114596.60 € 2025 3.528.181,35 € 4269099.43 €",
+                "anualidad importe iva excluido importe iva incluido 2023 4386196.96 € 5307298.32 € 2024 10838509.58 € 13114596.60 €",
+                "material empleado recurso utilizado agua energía aspecto significativo función naturaleza distinto trabajo ejecución obra indicar detalle medida previsto proyecto declaración impacto ambiental medida adicional complementar previsto programa detallado seguimiento grado cumplimiento dicho medida ejecución obra atribucion carácter obligación esencial condición especial ejecución establecido seleccionado"
+            ],
+            "format": "Responde únicamente con Si o No"
         },
         {
             "prompt_key": "Plazo_ejecución",
             "prompt": "Obten el plazo de ejecución del contrato",
             "response": "20 meses",
-            "score": 0.8262274253193069,
+            "score": 0.7858805828059421,
             "index": [
                 157,
                 156,
                 161,
-                7
-            ]
+                1
+            ],
+            "chunks": [
+                "[SELECCIONADO] NO\n\nREMISIÓN AL ÓRGANO DE CONTRATACIÓN, CUANDO ÉSTE LO SOLICITE, DE UNA RELACIÓN DETALLADA DE\nAQUELLOS SUBCONTRATISTAS O SUMINISTRADORES QUE PARTICIPEN EN EL CONTRATO CUANDO SE\nPERFECCIONE SU PARTICIPACIÓN, JUNTO CON AQUELLAS CONDICIONES DE SUBCONTRATACIÓN O\nSUMINISTRO DE CADA UNO DE ELLOS QUE GUARDEN UNA RELACIÓN DIRECTA CON EL PLAZO DE PAGO:\n\nX SI\nAPARTADO R\nPLAZO DE EJECUCIÓN DEL CONTRATO: 20 meses (pruebas y puesta en funcionamiento incluidas).\nINICIO DEL CÓMPUTO: El día siguiente a la firma del acta de comprobación de replanteo, en el plazo de un\nmes a contar desde la fecha de formalización del contrato.\nPLAZOS PARCIALES:\nX NO\n\nOBLIGACIÓN DE PRESENTAR EL PROGRAMA DE TRABAJO:",
+                "APARTADO Q\nOBLIGACION DE INDICAR EN LA OFERTA SI VA A HABER SUBCONTRATACIÓN:\n[SELECCIONADO] NO\n\nLAS CONDICIONES DE LA OFERTA PARA LA SUBCONTRATACIÓN, LA ACREDITACION DE LA APTITUD DEL\nSUBCONTRATISTA Y LA ACREDITACIÓN DE LAS CONDICIONES DE EMERGENCIA O URGENCIA TIENE\nCARÁCTER DE OBLIGACIONES ESENCIALES:\n[SELECCIONADO] NO\n\nTAREAS CRÍTICAS QUE NO PODRÁN SER OBJETO DE SUBCONTRATACIÓN:\n[SELECCIONADO] NO\n\nPAGOS DIRECTOS A LOS SUBCONTRATISTAS POR PARTE DE LA ADMINISTRACIÓN:\n23[SELECCIONADO] NO\n\nREMISIÓN AL ÓRGANO DE CONTRATACIÓN, CUANDO ÉSTE LO SOLICITE, DE UNA RELACIÓN DETALLADA DE\nAQUELLOS SUBCONTRATISTAS O SUMINISTRADORES QUE PARTICIPEN EN EL CONTRATO CUANDO SE\nPERFECCIONE SU PARTICIPACIÓN, JUNTO CON AQUELLAS CONDICIONES DE SUBCONTRATACIÓN O\nSUMINISTRO DE CADA UNO DE ELLOS QUE GUARDEN UNA RELACIÓN DIRECTA CON EL PLAZO DE PAGO:\n\nX SI\nAPARTADO R\nPLAZO DE EJECUCIÓN DEL",
+                "adjudicación del contrato por cada tramo de 10% de disminución en el grado de dedicación,\nhasta el máximo legal del 50%. La reiteración en el incumplimiento se considerará como un\nnuevo incumplimiento del contrato.\n2. Penalidades por incumplimiento parcial de la ejecución en la cláusula 36.1\nLas penalidades deberán ser proporcionales a la gravedad del incumplimiento parcial y las cuantías de\ncada una de ellas no podrán ser superiores al 10 por ciento del precio del contrato, IVA excluido, ni el\ntotal de las mismas superar el 50 por cien del precio del contrato.\n3. Penalidades por incumplimiento del plazo total por el contratista en caso de diferir de las previstas\nen la cláusula 36.4\nSe considera que no existen especiales características del contrato que haga necesario establecer",
+                "adjudicación contrato tramo 10% disminución grado dedicación máximo legal 50% reiteración incumplimiento considerar incumplimiento contrato 2 penalidad incumplimiento parcial ejecución cláusula 36.1 penalidad deber proporcional gravedad incumplimiento parcial cuantía superior 10 ciento precio contrato iva excluido superar 50 cien precio contrato 3 penalidad incumplimiento plazo contratista caso diferir previsto cláusula 36.4 especial característica contrato hacer necesario establecer"
+            ],
+            "format": "Responde ÚNICAMENTE con el número de meses o años (específica meses o años)"
         },
         {
             "prompt_key": "Presupuesto_sinIVA",
             "prompt": "Ubica el presupuesto sin IVA del documento",
             "response": "18.752.887,89 €",
-            "score": 0.8659090909090909,
+            "score": 0.8378787878787879,
             "index": [
                 47,
                 161,
                 162,
-                8
-            ]
+                7
+            ],
+            "chunks": [
+                "[SELECCIONADO] Por combinación de los dos sistemas anteriores\nPLAZO PARA LA PRESENTACIÓN DE PROPOSICIONES:\nAmpliación en cinco días del plazo de presentación de proposiciones, por acceso a los pliegos y demás\ndocumentación complementaria de la licitación a través de medios no electrónicos:\n[SELECCIONADO] NO\n\nAmpliación del plazo de presentación de proposiciones, por necesidad de visitas al terreno o consulta\n«in situ» de la documentación:\n[SELECCIONADO] NO\n\nMEDIO DE NOTIFICACIÓN ELECTRÓNICA:\n\n[SELECCIONADO] Comparecencia en la sede electrónica\nAPARTADO E\nPRESUPUESTO BASE DE LICITACIÓN DEL CONTRATO:\nTipo de presupuesto:\nEl Presupuesto Base de Licitación del Contrato asciende a 18.752.887,89 €, más 3.938.106,46 €, en\nconcepto de IVA.\n6Presupuesto total (IVA incluido): 22.690.994,35 €\nEsta cantidad obedece al siguiente desglose:\n\n- Costes directos………………………………………….…… 14.866.725,77 €\n- Costes indirectos………..………………………………... 892.003,55 €\n\n\n\n\n\nDISTRIBUCIÓN ANUALIDADES\nAnualidad Importe (IVA excluido) Importe (IVA Incluido)\n2023 4.386.196,96 € 5.307.298,32 €\n2024 10.838.509,58 € 13.114.596,60 €\n2025 3.528.181,35 € 4.269.099,43 €\nDETER",
+                "adjudicación del contrato por cada tramo de 10% de disminución en el grado de dedicación,\nhasta el máximo legal del 50%. La reiteración en el incumplimiento se considerará como un\nnuevo incumplimiento del contrato.\n2. Penalidades por incumplimiento parcial de la ejecución en la cláusula 36.1\nLas penalidades deberán ser proporcionales a la gravedad del incumplimiento parcial y las cuantías de\ncada una de ellas no podrán ser superiores al 10 por ciento del precio del contrato, IVA excluido, ni el\ntotal de las mismas superar el 50 por cien del precio del contrato.\n3. Penalidades por incumplimiento del plazo total por el contratista en caso de diferir de las previstas\nen la cláusula 36.4\nSe considera que no existen especiales características del contrato que haga necesario establecer",
+                "cada una de ellas no podrán ser superiores al 10 por ciento del precio del contrato, IVA excluido, ni el\ntotal de las mismas superar el 50 por cien del precio del contrato.\n3. Penalidades por incumplimiento del plazo total por el contratista en caso de diferir de las previstas\nen la cláusula 36.4\nSe considera que no existen especiales características del contrato que haga necesario establecer\npenalidades por demora distintas a las enumeradas en la cláusula 36.4 del PCAP.\n4. Penalidades por incumplimiento de plazos parciales por el contratista en caso de diferir de las\nprevistas en la cláusula 36.4 en relación con la cláusula 36.6.\nSe considera que no existen especiales características del contrato que haga necesario establecer",
+                "que se aprueba el Plan de Obras de Interés General de las conducciones de transporte y abastecimiento\nde agua a las comarcas del Vinalopó y L’Alacantí (Alicante), estas obras tienen la consideración de interés\ngeneral de la Comunidad Valenciana. El plan hidrológico vigente en el ámbito de la Demarcación\nHidrográfica del Júcar define el postrasvase como infraestructura estratégica y cataloga las obras de la\nmargen izquierda que se llevan a cabo con este proyecto como una medida a ejecutar por la Generalitat\nValenciana. Este tipo de medidas son de obligado cumplimiento a efectos de la Directiva 2006/60/CE,\nconocida como Directiva Marco del Agua.\nDEFINICIÓN CONCRETA DEL OBJETO DEL CONTRATO DE OBRAS:"
+            ],
+            "format": "Responde ÚNICAMENTE con la cantidad en euros"
         },
         {
             "prompt_key": "Presupuesto_conIVA",
             "prompt": "Ubica el presupuesto con IVA del documento (presupuesto base)",
             "response": "22.690.994,35 €",
-            "score": 0.8613636363636363,
+            "score": 0.8318181818181818,
             "index": [
                 47,
                 56,
                 62,
-                9
-            ]
+                6
+            ],
+            "chunks": [
+                "[SELECCIONADO] Por combinación de los dos sistemas anteriores\nPLAZO PARA LA PRESENTACIÓN DE PROPOSICIONES:\nAmpliación en cinco días del plazo de presentación de proposiciones, por acceso a los pliegos y demás\ndocumentación complementaria de la licitación a través de medios no electrónicos:\n[SELECCIONADO] NO\n\nAmpliación del plazo de presentación de proposiciones, por necesidad de visitas al terreno o consulta\n«in situ» de la documentación:\n[SELECCIONADO] NO\n\nMEDIO DE NOTIFICACIÓN ELECTRÓNICA:\n\n[SELECCIONADO] Comparecencia en la sede electrónica\nAPARTADO E\nPRESUPUESTO BASE DE LICITACIÓN DEL CONTRATO:\nTipo de presupuesto:\nEl Presupuesto Base de Licitación del Contrato asciende a 18.752.887,89 €, más 3.938.106,46 €, en\nconcepto de IVA.\n6Presupuesto total (IVA incluido): 22.690.994,35 €\nEsta cantidad obedece al siguiente desglose:\n\n- Costes directos………………………………………….…… 14.866.725,77 €\n- Costes indirectos………..………………………………... 892.003,55 €\n\n\n\n\n\nDISTRIBUCIÓN ANUALIDADES\nAnualidad Importe (IVA excluido) Importe (IVA Incluido)\n2023 4.386.196,96 € 5.307.298,32 €\n2024 10.838.509,58 € 13.114.596,60 €\n2025 3.528.181,35 € 4.269.099,43 €\nDETER",
+                "CONTRATACIÓN DE OBRAS A TANTO ALZADO:\n\nx SI El precio del contrato esta formulado con los precios de las unidades de obra que se\nejecutan de acuerdo con lo establecido en el proyecto de construcción aprobado.\nCONTRATACIÓN DE OBRAS A TANTO ALZADO CON PRECIO CERRADO:\n[SELECCIONADO] NO\n\nprecios unitarios:\n\n\nVALOR ESTIMADO DEL CONTRATO: 18.752.887,89 €\n7El valor estimado del contrato coincide con el presupuesto base de licitación del proyecto de la\nobra, sin IVA, al no existir prórrogas ni modificaciones previstas, ni ningún otro gasto que no sea a\ncargo del adjudicatario.\nAPARTADO F\nPRESUPUESTO BASE DE LICITACIÓN POR LOTES: No procede.\nVALOR ESTIMADO DE CADA LOTE: No procede.\nAPARTADO G\nCONSIGNACIÓN PRESUPUESTARIA:\nCentro y Sección Programa Econ",
+                "El valor estimado del contrato coincide con el presupuesto base de licitación del proyecto de la\nobra, sin IVA, al no existir prórrogas ni modificaciones previstas, ni ningún otro gasto que no sea a\ncargo del adjudicatario.\nAPARTADO F\nPRESUPUESTO BASE DE LICITACIÓN POR LOTES: No procede.\nVALOR ESTIMADO DE CADA LOTE: No procede.\nAPARTADO G\nCONSIGNACIÓN PRESUPUESTARIA:\nCentro y Sección Programa Económica\n12.03.03 512.10 601.01 FN790\nFINANCIADO POR FONDOS COMUNITARIOS:\n[SELECCIONADO] NO\n\nPorcentaje Categoría Programa operativo\nFINANCIADO POR VARIOS DEPARTAMENTOS:\n[SELECCIONADO] NO\n\nAPARTADO H\nREVISIÓN DE PRECIOS:",
+                "celebración del presente contrato es competencia de esta Dirección General, de acuerdo con las\natribuciones que le confiere el artículo 49.13 del Estatuto de Autonomía Valenciana, que determina la\ncompetencia exclusiva de la Generalitat sobre aquellas obras que no tengan la calificación de interés\nGeneral del Estado.\nMediante la Orden de 22 de marzo 2006 de la Conselleria de Agricultura, Pesca y Alimentación, por la\nque se aprueba el Plan de Obras de Interés General de las conducciones de transporte y abastecimiento\nde agua a las comarcas del Vinalopó y L’Alacantí (Alicante), estas obras tienen la consideración de interés\ngeneral de la Comunidad Valenciana. El plan hidrológico vigente en el ámbito de la Demarcación"
+            ],
+            "format": "Responde ÚNICAMENTE con la cantidad en euros"
         },
         {
             "prompt_key": "Importe_IVA",
             "prompt": "Ubica el importe del IVA del documento (iva aplicable)",
             "response": "3.938.106,46 €",
-            "score": 0.8710896732807158,
+            "score": 0.8477830952107906,
             "index": [
                 47,
                 56,
                 62,
                 5
-            ]
+            ],
+            "chunks": [
+                "[SELECCIONADO] Por combinación de los dos sistemas anteriores\nPLAZO PARA LA PRESENTACIÓN DE PROPOSICIONES:\nAmpliación en cinco días del plazo de presentación de proposiciones, por acceso a los pliegos y demás\ndocumentación complementaria de la licitación a través de medios no electrónicos:\n[SELECCIONADO] NO\n\nAmpliación del plazo de presentación de proposiciones, por necesidad de visitas al terreno o consulta\n«in situ» de la documentación:\n[SELECCIONADO] NO\n\nMEDIO DE NOTIFICACIÓN ELECTRÓNICA:\n\n[SELECCIONADO] Comparecencia en la sede electrónica\nAPARTADO E\nPRESUPUESTO BASE DE LICITACIÓN DEL CONTRATO:\nTipo de presupuesto:\nEl Presupuesto Base de Licitación del Contrato asciende a 18.752.887,89 €, más 3.938.106,46 €, en\nconcepto de IVA.\n6Presupuesto total (IVA incluido): 22.690.994,35 €\nEsta cantidad obedece al siguiente desglose:\n\n- Costes directos………………………………………….…… 14.866.725,77 €\n- Costes indirectos………..………………………………... 892.003,55 €\n\n\n\n\n\nDISTRIBUCIÓN ANUALIDADES\nAnualidad Importe (IVA excluido) Importe (IVA Incluido)\n2023 4.386.196,96 € 5.307.298,32 €\n2024 10.838.509,58 € 13.114.596,60 €\n2025 3.528.181,35 € 4.269.099,43 €\nDETER",
+                "CONTRATACIÓN DE OBRAS A TANTO ALZADO:\n\nx SI El precio del contrato esta formulado con los precios de las unidades de obra que se\nejecutan de acuerdo con lo establecido en el proyecto de construcción aprobado.\nCONTRATACIÓN DE OBRAS A TANTO ALZADO CON PRECIO CERRADO:\n[SELECCIONADO] NO\n\nprecios unitarios:\n\n\nVALOR ESTIMADO DEL CONTRATO: 18.752.887,89 €\n7El valor estimado del contrato coincide con el presupuesto base de licitación del proyecto de la\nobra, sin IVA, al no existir prórrogas ni modificaciones previstas, ni ningún otro gasto que no sea a\ncargo del adjudicatario.\nAPARTADO F\nPRESUPUESTO BASE DE LICITACIÓN POR LOTES: No procede.\nVALOR ESTIMADO DE CADA LOTE: No procede.\nAPARTADO G\nCONSIGNACIÓN PRESUPUESTARIA:\nCentro y Sección Programa Econ",
+                "El valor estimado del contrato coincide con el presupuesto base de licitación del proyecto de la\nobra, sin IVA, al no existir prórrogas ni modificaciones previstas, ni ningún otro gasto que no sea a\ncargo del adjudicatario.\nAPARTADO F\nPRESUPUESTO BASE DE LICITACIÓN POR LOTES: No procede.\nVALOR ESTIMADO DE CADA LOTE: No procede.\nAPARTADO G\nCONSIGNACIÓN PRESUPUESTARIA:\nCentro y Sección Programa Económica\n12.03.03 512.10 601.01 FN790\nFINANCIADO POR FONDOS COMUNITARIOS:\n[SELECCIONADO] NO\n\nPorcentaje Categoría Programa operativo\nFINANCIADO POR VARIOS DEPARTAMENTOS:\n[SELECCIONADO] NO\n\nAPARTADO H\nREVISIÓN DE PRECIOS:",
+                "presupuesto iva incluido 22690994.35 € cantidad obedecer desglose coste directo 14866725.77 € coste indirecto 892003.55 € distribución anualidades anualidad importe iva excluido importe iva incluido 2023 4386196.96 € 5307298.32 € 2024 10838509.58 € 13114596.60 € 2025 3528181.35 € 4269099.43 € determinación precio contratación obra precio unitario x contratación obra alzado x precio contrato formulado precio unidad obra ejecutar establecido proyecto construcción aprobado contratación obra alzado precio cerrado seleccionado precio unitario"
+            ],
+            "format": "Responde ÚNICAMENTE con la cantidad en euros"
         },
         {
             "prompt_key": "Sistema_Retribucion",
             "prompt": "Indica el sistema de retribución del precio",
             "response": "",
-            "score": 0.7983875357200985,
+            "score": 0.8,
             "index": [
-                8,
-                7
-            ]
+                8
+            ],
+            "chunks": [
+                "margen izquierda que se llevan a cabo con este proyecto como una medida a ejecutar por la Generalitat\nValenciana. Este tipo de medidas son de obligado cumplimiento a efectos de la Directiva 2006/60/CE,\nconocida como Directiva Marco del Agua.\nDEFINICIÓN CONCRETA DEL OBJETO DEL CONTRATO DE OBRAS:\nEl objeto es la ejecución de la obra para trasegar las aguas trasvasadas desde el Júcar, partiendo del\nembalse del Toscar, hacia la margen izquierda del Vinalopó, hasta las balsas existentes en la margen\nizquierda. Para una mejor distribución de los recursos de la Dirección General del Agua, se ha decidido la\nrealización de la conducción en diferentes fases. Esta fase comienza en el PK 10,464 y termina en el 23,137,\nen la balsa denominada Moclem, en el T.M. de Agost.\nDescripción de las obras:"
+            ],
+            "format": "En función de [TEXTO]"
         },
         {
             "prompt_key": "Valor_estimado",
             "prompt": "Indica el total del valor estimado del contrato, responde únicamente con el valor en euros",
-            "response": "18.752.887,89 €",
-            "score": 0.8715735077857971,
+            "response": "18752887.89 €",
+            "score": 0.8561179614563783,
             "index": [
                 56,
                 62,
                 69,
                 6
-            ]
+            ],
+            "chunks": [
+                "CONTRATACIÓN DE OBRAS A TANTO ALZADO:\n\nx SI El precio del contrato esta formulado con los precios de las unidades de obra que se\nejecutan de acuerdo con lo establecido en el proyecto de construcción aprobado.\nCONTRATACIÓN DE OBRAS A TANTO ALZADO CON PRECIO CERRADO:\n[SELECCIONADO] NO\n\nprecios unitarios:\n\n\nVALOR ESTIMADO DEL CONTRATO: 18.752.887,89 €\n7El valor estimado del contrato coincide con el presupuesto base de licitación del proyecto de la\nobra, sin IVA, al no existir prórrogas ni modificaciones previstas, ni ningún otro gasto que no sea a\ncargo del adjudicatario.\nAPARTADO F\nPRESUPUESTO BASE DE LICITACIÓN POR LOTES: No procede.\nVALOR ESTIMADO DE CADA LOTE: No procede.\nAPARTADO G\nCONSIGNACIÓN PRESUPUESTARIA:\nCentro y Sección Programa Econ",
+                "El valor estimado del contrato coincide con el presupuesto base de licitación del proyecto de la\nobra, sin IVA, al no existir prórrogas ni modificaciones previstas, ni ningún otro gasto que no sea a\ncargo del adjudicatario.\nAPARTADO F\nPRESUPUESTO BASE DE LICITACIÓN POR LOTES: No procede.\nVALOR ESTIMADO DE CADA LOTE: No procede.\nAPARTADO G\nCONSIGNACIÓN PRESUPUESTARIA:\nCentro y Sección Programa Económica\n12.03.03 512.10 601.01 FN790\nFINANCIADO POR FONDOS COMUNITARIOS:\n[SELECCIONADO] NO\n\nPorcentaje Categoría Programa operativo\nFINANCIADO POR VARIOS DEPARTAMENTOS:\n[SELECCIONADO] NO\n\nAPARTADO H\nREVISIÓN DE PRECIOS:",
+                "APARTADO L\nCRITERIOS PARA ACREDITAR LA SOLVENCIA ECONÓMICA Y FINANCIERA, SEGÚN ART. 87 LCSP:\nNo procede según el art 77.1 de la LCSP.\nMEDIOS PARA ACREDITAR LA SOLVENCIA ECONÓMICA Y FINANCIERA, SEGÚN ART. 87 LCSP:\nNo procede según el art 77.1 de la LCSP.\nCRITERIOS PARA ACREDITAR LA SOLVENCIA TÉCNICA PARA CONTRATOS DE OBRAS CON VALOR ESTIMADO\nINFERIOR A 500.000 €, SEGÚN ART. 88 LCSP:\nNo procede.\nMEDIOS PARA ACREDITAR LA SOLVENCIA TÉCNICA PARA CONTRATOS DE OBRAS CON VALOR ESTIMADO\nINFERIOR A 500.000 €, SEGÚN ART. 88 LCSP:\nNo procede.\n9CLASIFICACIÓN SUSTITUTIVA PARA LOS CONTRATOS DE OBRAS DE VALOR ESTIMADO INFERIOR A\n500.000€: No procede.\nGRUPO:\nSUBGRUPO:\nCATEGORÍA:\nCRITERIOS PARA ACREDITAR LA SOLVENCIA TÉCNICA PARA CONTRATOS DE OBRAS CON VALOR ESTIMADO\nINFERIOR A 500.000 €, CUANDO SE TRATE DE EMPRESAS DE NUEVA CREACIÓN:\nNo procede.\nMEDIOS PARA ACREDITAR LA SOLVENCIA TÉCNICA PARA CONTRATOS DE OBRAS CON VALOR ESTIMADO\nINFERIOR A ",
+                "contratación obra alzado x precio contrato formulado precio unidad obra ejecutar establecido proyecto construcción aprobado contratación obra alzado precio cerrado seleccionado precio unitario valor estimado contrato 18752887.89 € 7el valor estimado contrato coincidir presupuesto base licitación proyecto obra iva existir prórroga modificación previsto gasto cargo adjudicatario apartado f presupuesto base licitación lote proceder valor estimado lote proceder apartado g consignación presupuestario centro sección programa econ"
+            ],
+            "format": "Responde ÚNICAMENTE con la cantidad en euros"
         },
         {
             "prompt_key": "Revision_precios",
             "prompt": "Indica si existe la revisión de precios",
-            "response": "Si, se aplicará la fórmula tipo 561 para obras hidráulicas en caso de que proceda la revisión excepcional de precios.",
-            "score": 0.915,
+            "response": "Si, según lo establecido en el APARTADO H del documento, se indica que \" SI\" para la revisión de precios.",
+            "score": 0.9033333333333333,
             "index": [
                 62,
                 63,
                 85,
                 6
-            ]
+            ],
+            "chunks": [
+                "El valor estimado del contrato coincide con el presupuesto base de licitación del proyecto de la\nobra, sin IVA, al no existir prórrogas ni modificaciones previstas, ni ningún otro gasto que no sea a\ncargo del adjudicatario.\nAPARTADO F\nPRESUPUESTO BASE DE LICITACIÓN POR LOTES: No procede.\nVALOR ESTIMADO DE CADA LOTE: No procede.\nAPARTADO G\nCONSIGNACIÓN PRESUPUESTARIA:\nCentro y Sección Programa Económica\n12.03.03 512.10 601.01 FN790\nFINANCIADO POR FONDOS COMUNITARIOS:\n[SELECCIONADO] NO\n\nPorcentaje Categoría Programa operativo\nFINANCIADO POR VARIOS DEPARTAMENTOS:\n[SELECCIONADO] NO\n\nAPARTADO H\nREVISIÓN DE PRECIOS:",
+                "Porcentaje Categoría Programa operativo\nFINANCIADO POR VARIOS DEPARTAMENTOS:\n[SELECCIONADO] NO\n\nAPARTADO H\nREVISIÓN DE PRECIOS:\n\n[SELECCIONADO] SI. En el caso de que proceda la revisión excepcional de precios en los términos establecidos\nen el Real Decreto-ley 3/2022, de 1 de marzo, o normativa que lo sustituya, o por cualquier otra\ncausa que determine la revisión, se aplicara, de entre las formulas contempladas en el RD\n1359/2011, la formula tipo 561: Obras hidraulicas: “Alto contenido en siderurgia, cemento y\nrocas y aridos”. Tipologia mas representativa: Instalaciones y conducciones de abastecimiento y\nsaneamiento.\n8Kt= 0,10·Ct/Co+0,05·Et/Eo+0,02 Pt/Po+0,08 Rt/Ro+0,28 St/So+0,01 Tt/To+0,46.\nAPARTADO I\nALTERNATIVAS O VARIANTES:\n[SELECCIONADO] NO\n\nAPARTADO J\nGARANTÍA PROVISIONAL: No se exige conforme al Acuerdo del Consell de 26 de marzo de 2010 así como al\nartículo 106 de la Ley 9/2017.\nAPARTADO K\nORGANISMOS QUE FACILITAN INFORMACIÓN RELATIVA A LAS OBLIGACIONES RELATIVAS A LA\nFISCALIDAD, A LA PROTECCIÓN DEL ME",
+                "APARTADO LL\nCRITERIOS DE ADJUDICACIÓN SUJETOS A JUICIO DE VALOR.\n1.- CRITERIOS CUALITATIVOS BASADOS EN JUICIOS DE VALOR, CUYA DOCUMENTACIÓN DEBERÁ INCLUIRSE\nEN EL SOBRE 2 (MÁXIMO 45 PUNTOS).\nPara valorar la calidad técnica de una propuesta se analizarán y puntuarán los apartados de la misma, que\nse relacionan seguidamente:\nA) Memoria Constructiva y Programa de Trabajos. 15 puntos (Factor ponderación = 1,5).\nB) Equipo principal. 15 puntos (Fp = 1,5).\nC) Control de Calidad. 8 puntos (Fp = 0,8).\nD) Revisión y análisis del proyecto y seguimiento de la DIA. 5 puntos (Fp = 0,5).\nE) Memoria de Seguridad y Salud. 2 puntos (Fp = 0,2).\nEl contenido recogido en cada propuesta, formulada por cada licitador, se considerará que forma parte de la",
+                "celebración del presente contrato es competencia de esta Dirección General, de acuerdo con las\natribuciones que le confiere el artículo 49.13 del Estatuto de Autonomía Valenciana, que determina la\ncompetencia exclusiva de la Generalitat sobre aquellas obras que no tengan la calificación de interés\nGeneral del Estado.\nMediante la Orden de 22 de marzo 2006 de la Conselleria de Agricultura, Pesca y Alimentación, por la\nque se aprueba el Plan de Obras de Interés General de las conducciones de transporte y abastecimiento\nde agua a las comarcas del Vinalopó y L’Alacantí (Alicante), estas obras tienen la consideración de interés\ngeneral de la Comunidad Valenciana. El plan hidrológico vigente en el ámbito de la Demarcación"
+            ],
+            "format": "Responde con Si o No, añadiendo explicación si es necesario"
         },
         {
             "prompt_key": "Garantia_definitiva",
             "prompt": "Cuenta con garantía definitiva? cuál es su valor en tal caso?",
             "response": "Si, el valor de la garantía definitiva es del 5% del precio final ofertado, excluido el IVA.",
-            "score": 0.9909401431359792,
+            "score": 0.8113602209091186,
             "index": [
                 154,
                 155,
                 0,
-                5
-            ]
+                7
+            ],
+            "chunks": [
+                "APARTADO Ñ\n22CESIÓN DEL CONTRATO:\n\n[SELECCIONADO] SI\nAPARTADO O\nMODIFICACIONES:\n[SELECCIONADO] NO\n\nAPARTADO P\nGARANTÍA DEFINITIVA: 5% del precio final ofertado, excluido el IVA.\n\nX NO\n\n[SELECCIONADO] Supuestos especiales de prestación de garantía complementaria y porcentaje: 5 por 100 del\nprecio final sin IVA ofertado por el licitador, que presentó la mejor oferta de relación calidad/precio y\nque habiendo esta",
+                "CESIÓN DEL CONTRATO:\n\n[SELECCIONADO] SI\nAPARTADO O\nMODIFICACIONES:\n[SELECCIONADO] NO\n\nAPARTADO P\nGARANTÍA DEFINITIVA: 5% del precio final ofertado, excluido el IVA.\n\nX NO\n\n[SELECCIONADO] Supuestos especiales de prestación de garantía complementaria y porcentaje: 5 por 100 del\nprecio final sin IVA ofertado por el licitador, que presentó la mejor oferta de relación calidad/precio y\nque habiendo estado en presunción de anormalidad por su bajo precio, haya sido finalmente\naceptada.\nCANCELACIÓN O DEVOLUCIÓN PROPORCIONAL DE LA GARANTÍA DEFINITIVA EN CASOS DE RECEPCIÓN\nPARCIAL:\n[SELECCIONADO] NO\n\nAPARTADO Q\nOBLIGACION DE INDICAR EN LA OFERTA SI VA A HABER SUBCONTRATACIÓN:\n[SELECCIONADO] NO",
+                "Anexo I\nCUADRO DE CARACTERÍSTICAS PARTICULARES PARA EL SERVICIO DE INFRAESTRUCTURAS HIDRÁULICAS\nURBANAS PARA LA ADJUDICACIÓN DEL CONTRATO ADMINISTRATIVO DE LAS OBRAS “NUEVA\nCONDUCCIÓN DE LA MARGEN IZQUIERDA DEL POSTRASVASE JÚCAR-VINALOPÓ, TRAMO II (Rio Vinalopó –\nBalsa Moclem)”, MEDIANTE PROCEDIMIENTO ABIERTO.\nAPARTADO A\nNúmero DE EXPEDIENTE: CMAYOR/2023/07Y10/1\nNECESIDADES A SATISFACER CON LA CELEBRACIÓN DEL CONTRATO:\na) Necesidades a satisfacer:\nLa mejora de la calidad ambiental de los acuíferos del Vinalopó, mediante el cese de extracción para\nriego de aguas subterráneas de los mismos y su sustitución por aguas superficiales. Para ello, en el\npresente contrato se ejecutarán las obras de una nueva tubería que distribuya las aguas provenientes del",
+                "4.- valoración oferta valoración oferta vo suma valor anterior"
+            ],
+            "format": "Responde con Si o No, añadiendo explicación si es necesario"
         },
         {
             "prompt_key": "Garantia_provisional",
             "prompt": "Cuenta con garantía provisional? cuál es su valor en tal caso?",
-            "response": "No, según el Acuerdo del Consell de 26 de marzo de 2010 y el artículo 106 de la Ley 9/2017, no se exige garantía provisional.",
-            "score": 0.9,
+            "response": "No, no se exige garantía provisional conforme al Acuerdo del Consell de 26 de marzo de 2010 así como al artículo 106 de la Ley 9/2017.",
+            "score": 0.8807903878929464,
             "index": [
                 63,
                 68,
-                0
-            ]
+                0,
+                9
+            ],
+            "chunks": [
+                "Porcentaje Categoría Programa operativo\nFINANCIADO POR VARIOS DEPARTAMENTOS:\n[SELECCIONADO] NO\n\nAPARTADO H\nREVISIÓN DE PRECIOS:\n\n[SELECCIONADO] SI. En el caso de que proceda la revisión excepcional de precios en los términos establecidos\nen el Real Decreto-ley 3/2022, de 1 de marzo, o normativa que lo sustituya, o por cualquier otra\ncausa que determine la revisión, se aplicara, de entre las formulas contempladas en el RD\n1359/2011, la formula tipo 561: Obras hidraulicas: “Alto contenido en siderurgia, cemento y\nrocas y aridos”. Tipologia mas representativa: Instalaciones y conducciones de abastecimiento y\nsaneamiento.\n8Kt= 0,10·Ct/Co+0,05·Et/Eo+0,02 Pt/Po+0,08 Rt/Ro+0,28 St/So+0,01 Tt/To+0,46.\nAPARTADO I\nALTERNATIVAS O VARIANTES:\n[SELECCIONADO] NO\n\nAPARTADO J\nGARANTÍA PROVISIONAL: No se exige conforme al Acuerdo del Consell de 26 de marzo de 2010 así como al\nartículo 106 de la Ley 9/2017.\nAPARTADO K\nORGANISMOS QUE FACILITAN INFORMACIÓN RELATIVA A LAS OBLIGACIONES RELATIVAS A LA\nFISCALIDAD, A LA PROTECCIÓN DEL ME",
+                "APARTADO J\nGARANTÍA PROVISIONAL: No se exige conforme al Acuerdo del Consell de 26 de marzo de 2010 así como al\nartículo 106 de la Ley 9/2017.\nAPARTADO K\nORGANISMOS QUE FACILITAN INFORMACIÓN RELATIVA A LAS OBLIGACIONES RELATIVAS A LA\nFISCALIDAD, A LA PROTECCIÓN DEL MEDIO AMBIENTE, Y A LAS DISPOSICIONES VIGENTES EN MATERIA DE\nPROTECCIÓN DEL EMPLEO, IGUALDAD DE GÉNERO, CONDICIONES DE TRABAJO Y PREVENCIÓN DE\nRIESGOS LABORALES E INSERCIÓN SOCIOLABORAL DE LAS PERSONAS CON DISCAPACIDAD, Y A LA\nOBLIGACIÓN DE CONTRATAR A UN NÚMERO O PORCENTAJE ESPECÍFICO DE PERSONAS CON\nDISCAPACIDAD QUE SEAN APLICABLES A LOS SERVICIOS PRESTADOS DURANTE LA EJECUCIÓN DEL\nCONTRATO:\n[SELECCIONADO] NO",
+                "Anexo I\nCUADRO DE CARACTERÍSTICAS PARTICULARES PARA EL SERVICIO DE INFRAESTRUCTURAS HIDRÁULICAS\nURBANAS PARA LA ADJUDICACIÓN DEL CONTRATO ADMINISTRATIVO DE LAS OBRAS “NUEVA\nCONDUCCIÓN DE LA MARGEN IZQUIERDA DEL POSTRASVASE JÚCAR-VINALOPÓ, TRAMO II (Rio Vinalopó –\nBalsa Moclem)”, MEDIANTE PROCEDIMIENTO ABIERTO.\nAPARTADO A\nNúmero DE EXPEDIENTE: CMAYOR/2023/07Y10/1\nNECESIDADES A SATISFACER CON LA CELEBRACIÓN DEL CONTRATO:\na) Necesidades a satisfacer:\nLa mejora de la calidad ambiental de los acuíferos del Vinalopó, mediante el cese de extracción para\nriego de aguas subterráneas de los mismos y su sustitución por aguas superficiales. Para ello, en el\npresente contrato se ejecutarán las obras de una nueva tubería que distribuya las aguas provenientes del",
+                "embalse del Toscar, hacia la margen izquierda del Vinalopó, hasta las balsas existentes en la margen\nizquierda. Para una mejor distribución de los recursos de la Dirección General del Agua, se ha decidido la\nrealización de la conducción en diferentes fases. Esta fase comienza en el PK 10,464 y termina en el 23,137,\nen la balsa denominada Moclem, en el T.M. de Agost.\nDescripción de las obras:\nInstalación de una nueva conducción principal desde el Pk 10+464 al Pk 23+137, del conjunto de actuación.\nDesde el pK 10+464 al pK 22+450, la tubería será de acero helicosoldado de diámetro nominal constante de\n1.400 mm y espesor de 10, 14 y 16 mm con revestimiento exterior de polietileno y revestimiento interior"
+            ],
+            "format": "Responde con Si o No, añadiendo explicación si es necesario"
         },
         {
             "prompt_key": "Admisibilidad_variantes",
             "prompt": "Indica si el contrato admite variantes o alternativas",
-            "response": "No, según el APARTADO I del documento, se indica que no se admiten alternativas o variantes.",
-            "score": 0.875,
+            "response": "No, según el APARTADO I del documento, se indica \" NO\" para alternativas o variantes.",
+            "score": 0.85,
             "index": [
                 63,
                 67,
                 0,
-                7
-            ]
+                9
+            ],
+            "chunks": [
+                "Porcentaje Categoría Programa operativo\nFINANCIADO POR VARIOS DEPARTAMENTOS:\n[SELECCIONADO] NO\n\nAPARTADO H\nREVISIÓN DE PRECIOS:\n\n[SELECCIONADO] SI. En el caso de que proceda la revisión excepcional de precios en los términos establecidos\nen el Real Decreto-ley 3/2022, de 1 de marzo, o normativa que lo sustituya, o por cualquier otra\ncausa que determine la revisión, se aplicara, de entre las formulas contempladas en el RD\n1359/2011, la formula tipo 561: Obras hidraulicas: “Alto contenido en siderurgia, cemento y\nrocas y aridos”. Tipologia mas representativa: Instalaciones y conducciones de abastecimiento y\nsaneamiento.\n8Kt= 0,10·Ct/Co+0,05·Et/Eo+0,02 Pt/Po+0,08 Rt/Ro+0,28 St/So+0,01 Tt/To+0,46.\nAPARTADO I\nALTERNATIVAS O VARIANTES:\n[SELECCIONADO] NO\n\nAPARTADO J\nGARANTÍA PROVISIONAL: No se exige conforme al Acuerdo del Consell de 26 de marzo de 2010 así como al\nartículo 106 de la Ley 9/2017.\nAPARTADO K\nORGANISMOS QUE FACILITAN INFORMACIÓN RELATIVA A LAS OBLIGACIONES RELATIVAS A LA\nFISCALIDAD, A LA PROTECCIÓN DEL ME",
+                "Kt= 0,10·Ct/Co+0,05·Et/Eo+0,02 Pt/Po+0,08 Rt/Ro+0,28 St/So+0,01 Tt/To+0,46.\nAPARTADO I\nALTERNATIVAS O VARIANTES:\n[SELECCIONADO] NO",
+                "Anexo I\nCUADRO DE CARACTERÍSTICAS PARTICULARES PARA EL SERVICIO DE INFRAESTRUCTURAS HIDRÁULICAS\nURBANAS PARA LA ADJUDICACIÓN DEL CONTRATO ADMINISTRATIVO DE LAS OBRAS “NUEVA\nCONDUCCIÓN DE LA MARGEN IZQUIERDA DEL POSTRASVASE JÚCAR-VINALOPÓ, TRAMO II (Rio Vinalopó –\nBalsa Moclem)”, MEDIANTE PROCEDIMIENTO ABIERTO.\nAPARTADO A\nNúmero DE EXPEDIENTE: CMAYOR/2023/07Y10/1\nNECESIDADES A SATISFACER CON LA CELEBRACIÓN DEL CONTRATO:\na) Necesidades a satisfacer:\nLa mejora de la calidad ambiental de los acuíferos del Vinalopó, mediante el cese de extracción para\nriego de aguas subterráneas de los mismos y su sustitución por aguas superficiales. Para ello, en el\npresente contrato se ejecutarán las obras de una nueva tubería que distribuya las aguas provenientes del",
+                "embalse del Toscar, hacia la margen izquierda del Vinalopó, hasta las balsas existentes en la margen\nizquierda. Para una mejor distribución de los recursos de la Dirección General del Agua, se ha decidido la\nrealización de la conducción en diferentes fases. Esta fase comienza en el PK 10,464 y termina en el 23,137,\nen la balsa denominada Moclem, en el T.M. de Agost.\nDescripción de las obras:\nInstalación de una nueva conducción principal desde el Pk 10+464 al Pk 23+137, del conjunto de actuación.\nDesde el pK 10+464 al pK 22+450, la tubería será de acero helicosoldado de diámetro nominal constante de\n1.400 mm y espesor de 10, 14 y 16 mm con revestimiento exterior de polietileno y revestimiento interior"
+            ],
+            "format": "Responde con Si o No, añadiendo explicación si es necesario"
         },
         {
             "prompt_key": "Clasificacion",
             "prompt": "La clasificación se aplica por debajo de 500.000 €?",
             "response": "No",
-            "score": 0.9642056019894345,
+            "score": 0.95,
             "index": [
                 69,
                 70,
                 71,
-                5
-            ]
+                9
+            ],
+            "chunks": [
+                "APARTADO L\nCRITERIOS PARA ACREDITAR LA SOLVENCIA ECONÓMICA Y FINANCIERA, SEGÚN ART. 87 LCSP:\nNo procede según el art 77.1 de la LCSP.\nMEDIOS PARA ACREDITAR LA SOLVENCIA ECONÓMICA Y FINANCIERA, SEGÚN ART. 87 LCSP:\nNo procede según el art 77.1 de la LCSP.\nCRITERIOS PARA ACREDITAR LA SOLVENCIA TÉCNICA PARA CONTRATOS DE OBRAS CON VALOR ESTIMADO\nINFERIOR A 500.000 €, SEGÚN ART. 88 LCSP:\nNo procede.\nMEDIOS PARA ACREDITAR LA SOLVENCIA TÉCNICA PARA CONTRATOS DE OBRAS CON VALOR ESTIMADO\nINFERIOR A 500.000 €, SEGÚN ART. 88 LCSP:\nNo procede.\n9CLASIFICACIÓN SUSTITUTIVA PARA LOS CONTRATOS DE OBRAS DE VALOR ESTIMADO INFERIOR A\n500.000€: No procede.\nGRUPO:\nSUBGRUPO:\nCATEGORÍA:\nCRITERIOS PARA ACREDITAR LA SOLVENCIA TÉCNICA PARA CONTRATOS DE OBRAS CON VALOR ESTIMADO\nINFERIOR A 500.000 €, CUANDO SE TRATE DE EMPRESAS DE NUEVA CREACIÓN:\nNo procede.\nMEDIOS PARA ACREDITAR LA SOLVENCIA TÉCNICA PARA CONTRATOS DE OBRAS CON VALOR ESTIMADO\nINFERIOR A ",
+                "CLASIFICACIÓN SUSTITUTIVA PARA LOS CONTRATOS DE OBRAS DE VALOR ESTIMADO INFERIOR A\n500.000€: No procede.\nGRUPO:\nSUBGRUPO:\nCATEGORÍA:\nCRITERIOS PARA ACREDITAR LA SOLVENCIA TÉCNICA PARA CONTRATOS DE OBRAS CON VALOR ESTIMADO\nINFERIOR A 500.000 €, CUANDO SE TRATE DE EMPRESAS DE NUEVA CREACIÓN:\nNo procede.\nMEDIOS PARA ACREDITAR LA SOLVENCIA TÉCNICA PARA CONTRATOS DE OBRAS CON VALOR ESTIMADO\nINFERIOR A 500.000 €, CUANDO SE TRATE DE EMPRESAS DE NUEVA CREACIÓN:\nNo procede.\nCLASIFICACIÓN PARA CONTRATOS DE OBRAS CON VALOR ESTIMADO IGUAL O SUPERIOR A 500.000 €\nGRUPO: E OBRAS HIDRÁULICAS\nSUBGRUPO: 6 CONDUCCIONES CON TUBERIA DE PRESIÓN DE GRAN DIÁMETRO\nCATEGORÍA: 6 (equivalente a la antigua categoría f).\nACREDITACIÓN DE LA SOLVENCIA POR LOS EMPRESARIOS NO ESPAÑOLES DE ESTADOS MIEMBROS DE LA",
+                "INFERIOR A 500.000 €, CUANDO SE TRATE DE EMPRESAS DE NUEVA CREACIÓN:\nNo procede.\nCLASIFICACIÓN PARA CONTRATOS DE OBRAS CON VALOR ESTIMADO IGUAL O SUPERIOR A 500.000 €\nGRUPO: E OBRAS HIDRÁULICAS\nSUBGRUPO: 6 CONDUCCIONES CON TUBERIA DE PRESIÓN DE GRAN DIÁMETRO\nCATEGORÍA: 6 (equivalente a la antigua categoría f).\nACREDITACIÓN DE LA SOLVENCIA POR LOS EMPRESARIOS NO ESPAÑOLES DE ESTADOS MIEMBROS DE LA\nUNIÓN EUROPEA O DE ESTADOS SIGNATARIOS DEL ACUERDO SOBRE EL ESPACIO ECONÓMICO EUROPEO:\nDeberán acreditar que, en el Estado en que estén establecidas, se encuentren habilitadas para realizar la\nprestación de que se trate y, en su caso, conforme a la legislación de dicho Estado, cuentan con la\nautorización especial exigible o pertenecen a la organización correspondiente (artículo 67 LCSP). Lo mismo",
+                "embalse del Toscar, hacia la margen izquierda del Vinalopó, hasta las balsas existentes en la margen\nizquierda. Para una mejor distribución de los recursos de la Dirección General del Agua, se ha decidido la\nrealización de la conducción en diferentes fases. Esta fase comienza en el PK 10,464 y termina en el 23,137,\nen la balsa denominada Moclem, en el T.M. de Agost.\nDescripción de las obras:\nInstalación de una nueva conducción principal desde el Pk 10+464 al Pk 23+137, del conjunto de actuación.\nDesde el pK 10+464 al pK 22+450, la tubería será de acero helicosoldado de diámetro nominal constante de\n1.400 mm y espesor de 10, 14 y 16 mm con revestimiento exterior de polietileno y revestimiento interior"
+            ],
+            "format": "Responde únicamente con Si o No"
         },
         {
             "prompt_key": "Grupo",
             "prompt": "Según las características de la obra, indica el grupo al que pertenece el contrato",
             "response": "Grupo E",
-            "score": 0.9176234787702561,
-            "index": [
-                69,
-                70,
-                71,
-                6
-            ]
-        },
-        {
-            "prompt_key": "Subgrupo",
-            "prompt": "Según las características de la obra, indica el subgrupo al que pertenece el contrato",
-            "response": "Subgrupo 6",
-            "score": 0.9213683938980103,
-            "index": [
-                69,
-                70,
-                71,
-                4
-            ]
-        },
-        {
-            "prompt_key": "Categoria",
-            "prompt": "Según las características de la obra, indica la categoría a la que pertenece el contrato",
-            "response": "Categoría 6",
-            "score": 0.9153990316390991,
+            "score": 0.9135024493932724,
             "index": [
                 69,
                 70,
                 71,
                 1
-            ]
+            ],
+            "chunks": [
+                "APARTADO L\nCRITERIOS PARA ACREDITAR LA SOLVENCIA ECONÓMICA Y FINANCIERA, SEGÚN ART. 87 LCSP:\nNo procede según el art 77.1 de la LCSP.\nMEDIOS PARA ACREDITAR LA SOLVENCIA ECONÓMICA Y FINANCIERA, SEGÚN ART. 87 LCSP:\nNo procede según el art 77.1 de la LCSP.\nCRITERIOS PARA ACREDITAR LA SOLVENCIA TÉCNICA PARA CONTRATOS DE OBRAS CON VALOR ESTIMADO\nINFERIOR A 500.000 €, SEGÚN ART. 88 LCSP:\nNo procede.\nMEDIOS PARA ACREDITAR LA SOLVENCIA TÉCNICA PARA CONTRATOS DE OBRAS CON VALOR ESTIMADO\nINFERIOR A 500.000 €, SEGÚN ART. 88 LCSP:\nNo procede.\n9CLASIFICACIÓN SUSTITUTIVA PARA LOS CONTRATOS DE OBRAS DE VALOR ESTIMADO INFERIOR A\n500.000€: No procede.\nGRUPO:\nSUBGRUPO:\nCATEGORÍA:\nCRITERIOS PARA ACREDITAR LA SOLVENCIA TÉCNICA PARA CONTRATOS DE OBRAS CON VALOR ESTIMADO\nINFERIOR A 500.000 €, CUANDO SE TRATE DE EMPRESAS DE NUEVA CREACIÓN:\nNo procede.\nMEDIOS PARA ACREDITAR LA SOLVENCIA TÉCNICA PARA CONTRATOS DE OBRAS CON VALOR ESTIMADO\nINFERIOR A ",
+                "CLASIFICACIÓN SUSTITUTIVA PARA LOS CONTRATOS DE OBRAS DE VALOR ESTIMADO INFERIOR A\n500.000€: No procede.\nGRUPO:\nSUBGRUPO:\nCATEGORÍA:\nCRITERIOS PARA ACREDITAR LA SOLVENCIA TÉCNICA PARA CONTRATOS DE OBRAS CON VALOR ESTIMADO\nINFERIOR A 500.000 €, CUANDO SE TRATE DE EMPRESAS DE NUEVA CREACIÓN:\nNo procede.\nMEDIOS PARA ACREDITAR LA SOLVENCIA TÉCNICA PARA CONTRATOS DE OBRAS CON VALOR ESTIMADO\nINFERIOR A 500.000 €, CUANDO SE TRATE DE EMPRESAS DE NUEVA CREACIÓN:\nNo procede.\nCLASIFICACIÓN PARA CONTRATOS DE OBRAS CON VALOR ESTIMADO IGUAL O SUPERIOR A 500.000 €\nGRUPO: E OBRAS HIDRÁULICAS\nSUBGRUPO: 6 CONDUCCIONES CON TUBERIA DE PRESIÓN DE GRAN DIÁMETRO\nCATEGORÍA: 6 (equivalente a la antigua categoría f).\nACREDITACIÓN DE LA SOLVENCIA POR LOS EMPRESARIOS NO ESPAÑOLES DE ESTADOS MIEMBROS DE LA",
+                "INFERIOR A 500.000 €, CUANDO SE TRATE DE EMPRESAS DE NUEVA CREACIÓN:\nNo procede.\nCLASIFICACIÓN PARA CONTRATOS DE OBRAS CON VALOR ESTIMADO IGUAL O SUPERIOR A 500.000 €\nGRUPO: E OBRAS HIDRÁULICAS\nSUBGRUPO: 6 CONDUCCIONES CON TUBERIA DE PRESIÓN DE GRAN DIÁMETRO\nCATEGORÍA: 6 (equivalente a la antigua categoría f).\nACREDITACIÓN DE LA SOLVENCIA POR LOS EMPRESARIOS NO ESPAÑOLES DE ESTADOS MIEMBROS DE LA\nUNIÓN EUROPEA O DE ESTADOS SIGNATARIOS DEL ACUERDO SOBRE EL ESPACIO ECONÓMICO EUROPEO:\nDeberán acreditar que, en el Estado en que estén establecidas, se encuentren habilitadas para realizar la\nprestación de que se trate y, en su caso, conforme a la legislación de dicho Estado, cuentan con la\nautorización especial exigible o pertenecen a la organización correspondiente (artículo 67 LCSP). Lo mismo",
+                "adjudicación contrato tramo 10% disminución grado dedicación máximo legal 50% reiteración incumplimiento considerar incumplimiento contrato 2 penalidad incumplimiento parcial ejecución cláusula 36.1 penalidad deber proporcional gravedad incumplimiento parcial cuantía superior 10 ciento precio contrato iva excluido superar 50 cien precio contrato 3 penalidad incumplimiento plazo contratista caso diferir previsto cláusula 36.4 especial característica contrato hacer necesario establecer"
+            ],
+            "format": "Responde ÚNICAMENTE con: Grupo [LETRA] (cambia la letra por la que corresponda)"
+        },
+        {
+            "prompt_key": "Subgrupo",
+            "prompt": "Según las características de la obra, indica el subgrupo al que pertenece el contrato",
+            "response": "Subgrupo 6 CONDUCCIONES CON TUBERIA DE PRESIÓN DE GRAN DIÁMETRO",
+            "score": 0.9193315351009369,
+            "index": [
+                69,
+                70,
+                71,
+                0
+            ],
+            "chunks": [
+                "APARTADO L\nCRITERIOS PARA ACREDITAR LA SOLVENCIA ECONÓMICA Y FINANCIERA, SEGÚN ART. 87 LCSP:\nNo procede según el art 77.1 de la LCSP.\nMEDIOS PARA ACREDITAR LA SOLVENCIA ECONÓMICA Y FINANCIERA, SEGÚN ART. 87 LCSP:\nNo procede según el art 77.1 de la LCSP.\nCRITERIOS PARA ACREDITAR LA SOLVENCIA TÉCNICA PARA CONTRATOS DE OBRAS CON VALOR ESTIMADO\nINFERIOR A 500.000 €, SEGÚN ART. 88 LCSP:\nNo procede.\nMEDIOS PARA ACREDITAR LA SOLVENCIA TÉCNICA PARA CONTRATOS DE OBRAS CON VALOR ESTIMADO\nINFERIOR A 500.000 €, SEGÚN ART. 88 LCSP:\nNo procede.\n9CLASIFICACIÓN SUSTITUTIVA PARA LOS CONTRATOS DE OBRAS DE VALOR ESTIMADO INFERIOR A\n500.000€: No procede.\nGRUPO:\nSUBGRUPO:\nCATEGORÍA:\nCRITERIOS PARA ACREDITAR LA SOLVENCIA TÉCNICA PARA CONTRATOS DE OBRAS CON VALOR ESTIMADO\nINFERIOR A 500.000 €, CUANDO SE TRATE DE EMPRESAS DE NUEVA CREACIÓN:\nNo procede.\nMEDIOS PARA ACREDITAR LA SOLVENCIA TÉCNICA PARA CONTRATOS DE OBRAS CON VALOR ESTIMADO\nINFERIOR A ",
+                "CLASIFICACIÓN SUSTITUTIVA PARA LOS CONTRATOS DE OBRAS DE VALOR ESTIMADO INFERIOR A\n500.000€: No procede.\nGRUPO:\nSUBGRUPO:\nCATEGORÍA:\nCRITERIOS PARA ACREDITAR LA SOLVENCIA TÉCNICA PARA CONTRATOS DE OBRAS CON VALOR ESTIMADO\nINFERIOR A 500.000 €, CUANDO SE TRATE DE EMPRESAS DE NUEVA CREACIÓN:\nNo procede.\nMEDIOS PARA ACREDITAR LA SOLVENCIA TÉCNICA PARA CONTRATOS DE OBRAS CON VALOR ESTIMADO\nINFERIOR A 500.000 €, CUANDO SE TRATE DE EMPRESAS DE NUEVA CREACIÓN:\nNo procede.\nCLASIFICACIÓN PARA CONTRATOS DE OBRAS CON VALOR ESTIMADO IGUAL O SUPERIOR A 500.000 €\nGRUPO: E OBRAS HIDRÁULICAS\nSUBGRUPO: 6 CONDUCCIONES CON TUBERIA DE PRESIÓN DE GRAN DIÁMETRO\nCATEGORÍA: 6 (equivalente a la antigua categoría f).\nACREDITACIÓN DE LA SOLVENCIA POR LOS EMPRESARIOS NO ESPAÑOLES DE ESTADOS MIEMBROS DE LA",
+                "INFERIOR A 500.000 €, CUANDO SE TRATE DE EMPRESAS DE NUEVA CREACIÓN:\nNo procede.\nCLASIFICACIÓN PARA CONTRATOS DE OBRAS CON VALOR ESTIMADO IGUAL O SUPERIOR A 500.000 €\nGRUPO: E OBRAS HIDRÁULICAS\nSUBGRUPO: 6 CONDUCCIONES CON TUBERIA DE PRESIÓN DE GRAN DIÁMETRO\nCATEGORÍA: 6 (equivalente a la antigua categoría f).\nACREDITACIÓN DE LA SOLVENCIA POR LOS EMPRESARIOS NO ESPAÑOLES DE ESTADOS MIEMBROS DE LA\nUNIÓN EUROPEA O DE ESTADOS SIGNATARIOS DEL ACUERDO SOBRE EL ESPACIO ECONÓMICO EUROPEO:\nDeberán acreditar que, en el Estado en que estén establecidas, se encuentren habilitadas para realizar la\nprestación de que se trate y, en su caso, conforme a la legislación de dicho Estado, cuentan con la\nautorización especial exigible o pertenecen a la organización correspondiente (artículo 67 LCSP). Lo mismo",
+                "contrato compromiso incumplido máximo legal 50% reiteración incumplimiento considerar incumplimiento contrato incumplimiento grado dedicación incluido oferta componente equipo principal complementario regla general cuantía 5% importe adjudicación contrato tramo 10% disminución grado dedicación máximo legal 50% reiteración incumplimiento considerar incumplimiento contrato 2 penalidad incumplimiento parcial ejecución cláusula 36.1 penalidad deber proporcional gravedad incumplimiento parcial cuantía"
+            ],
+            "format": "Responde ÚNICAMENTE con: Subgrupo [NUMERO] [CARACTERISTICAS] (cambia el número y las características por las que correspondan)"
+        },
+        {
+            "prompt_key": "Categoria",
+            "prompt": "Según las características de la obra, indica la categoría a la que pertenece el contrato",
+            "response": "Categoría 6 (equivalente a la antigua categoría f)",
+            "score": 0.91202846378088,
+            "index": [
+                69,
+                70,
+                71,
+                1
+            ],
+            "chunks": [
+                "APARTADO L\nCRITERIOS PARA ACREDITAR LA SOLVENCIA ECONÓMICA Y FINANCIERA, SEGÚN ART. 87 LCSP:\nNo procede según el art 77.1 de la LCSP.\nMEDIOS PARA ACREDITAR LA SOLVENCIA ECONÓMICA Y FINANCIERA, SEGÚN ART. 87 LCSP:\nNo procede según el art 77.1 de la LCSP.\nCRITERIOS PARA ACREDITAR LA SOLVENCIA TÉCNICA PARA CONTRATOS DE OBRAS CON VALOR ESTIMADO\nINFERIOR A 500.000 €, SEGÚN ART. 88 LCSP:\nNo procede.\nMEDIOS PARA ACREDITAR LA SOLVENCIA TÉCNICA PARA CONTRATOS DE OBRAS CON VALOR ESTIMADO\nINFERIOR A 500.000 €, SEGÚN ART. 88 LCSP:\nNo procede.\n9CLASIFICACIÓN SUSTITUTIVA PARA LOS CONTRATOS DE OBRAS DE VALOR ESTIMADO INFERIOR A\n500.000€: No procede.\nGRUPO:\nSUBGRUPO:\nCATEGORÍA:\nCRITERIOS PARA ACREDITAR LA SOLVENCIA TÉCNICA PARA CONTRATOS DE OBRAS CON VALOR ESTIMADO\nINFERIOR A 500.000 €, CUANDO SE TRATE DE EMPRESAS DE NUEVA CREACIÓN:\nNo procede.\nMEDIOS PARA ACREDITAR LA SOLVENCIA TÉCNICA PARA CONTRATOS DE OBRAS CON VALOR ESTIMADO\nINFERIOR A ",
+                "CLASIFICACIÓN SUSTITUTIVA PARA LOS CONTRATOS DE OBRAS DE VALOR ESTIMADO INFERIOR A\n500.000€: No procede.\nGRUPO:\nSUBGRUPO:\nCATEGORÍA:\nCRITERIOS PARA ACREDITAR LA SOLVENCIA TÉCNICA PARA CONTRATOS DE OBRAS CON VALOR ESTIMADO\nINFERIOR A 500.000 €, CUANDO SE TRATE DE EMPRESAS DE NUEVA CREACIÓN:\nNo procede.\nMEDIOS PARA ACREDITAR LA SOLVENCIA TÉCNICA PARA CONTRATOS DE OBRAS CON VALOR ESTIMADO\nINFERIOR A 500.000 €, CUANDO SE TRATE DE EMPRESAS DE NUEVA CREACIÓN:\nNo procede.\nCLASIFICACIÓN PARA CONTRATOS DE OBRAS CON VALOR ESTIMADO IGUAL O SUPERIOR A 500.000 €\nGRUPO: E OBRAS HIDRÁULICAS\nSUBGRUPO: 6 CONDUCCIONES CON TUBERIA DE PRESIÓN DE GRAN DIÁMETRO\nCATEGORÍA: 6 (equivalente a la antigua categoría f).\nACREDITACIÓN DE LA SOLVENCIA POR LOS EMPRESARIOS NO ESPAÑOLES DE ESTADOS MIEMBROS DE LA",
+                "INFERIOR A 500.000 €, CUANDO SE TRATE DE EMPRESAS DE NUEVA CREACIÓN:\nNo procede.\nCLASIFICACIÓN PARA CONTRATOS DE OBRAS CON VALOR ESTIMADO IGUAL O SUPERIOR A 500.000 €\nGRUPO: E OBRAS HIDRÁULICAS\nSUBGRUPO: 6 CONDUCCIONES CON TUBERIA DE PRESIÓN DE GRAN DIÁMETRO\nCATEGORÍA: 6 (equivalente a la antigua categoría f).\nACREDITACIÓN DE LA SOLVENCIA POR LOS EMPRESARIOS NO ESPAÑOLES DE ESTADOS MIEMBROS DE LA\nUNIÓN EUROPEA O DE ESTADOS SIGNATARIOS DEL ACUERDO SOBRE EL ESPACIO ECONÓMICO EUROPEO:\nDeberán acreditar que, en el Estado en que estén establecidas, se encuentren habilitadas para realizar la\nprestación de que se trate y, en su caso, conforme a la legislación de dicho Estado, cuentan con la\nautorización especial exigible o pertenecen a la organización correspondiente (artículo 67 LCSP). Lo mismo",
+                "adjudicación contrato tramo 10% disminución grado dedicación máximo legal 50% reiteración incumplimiento considerar incumplimiento contrato 2 penalidad incumplimiento parcial ejecución cláusula 36.1 penalidad deber proporcional gravedad incumplimiento parcial cuantía superior 10 ciento precio contrato iva excluido superar 50 cien precio contrato 3 penalidad incumplimiento plazo contratista caso diferir previsto cláusula 36.4 especial característica contrato hacer necesario establecer"
+            ],
+            "format": "Responde ÚNICAMENTE con: Categoría [NUMERO] [CARACTERISTICAS] (cambia el número y las características por las que correspondan)"
         },
         {
             "prompt_key": "Criterio_Solvencia_economica",
             "prompt": "Indica si existen criterios para calcular/acreditar la solvencia económica y financiera",
             "response": "No",
-            "score": 0.8733695652173913,
+            "score": 0.8478260869565217,
             "index": [
                 69,
                 74,
                 126,
                 4
-            ]
+            ],
+            "chunks": [
+                "APARTADO L\nCRITERIOS PARA ACREDITAR LA SOLVENCIA ECONÓMICA Y FINANCIERA, SEGÚN ART. 87 LCSP:\nNo procede según el art 77.1 de la LCSP.\nMEDIOS PARA ACREDITAR LA SOLVENCIA ECONÓMICA Y FINANCIERA, SEGÚN ART. 87 LCSP:\nNo procede según el art 77.1 de la LCSP.\nCRITERIOS PARA ACREDITAR LA SOLVENCIA TÉCNICA PARA CONTRATOS DE OBRAS CON VALOR ESTIMADO\nINFERIOR A 500.000 €, SEGÚN ART. 88 LCSP:\nNo procede.\nMEDIOS PARA ACREDITAR LA SOLVENCIA TÉCNICA PARA CONTRATOS DE OBRAS CON VALOR ESTIMADO\nINFERIOR A 500.000 €, SEGÚN ART. 88 LCSP:\nNo procede.\n9CLASIFICACIÓN SUSTITUTIVA PARA LOS CONTRATOS DE OBRAS DE VALOR ESTIMADO INFERIOR A\n500.000€: No procede.\nGRUPO:\nSUBGRUPO:\nCATEGORÍA:\nCRITERIOS PARA ACREDITAR LA SOLVENCIA TÉCNICA PARA CONTRATOS DE OBRAS CON VALOR ESTIMADO\nINFERIOR A 500.000 €, CUANDO SE TRATE DE EMPRESAS DE NUEVA CREACIÓN:\nNo procede.\nMEDIOS PARA ACREDITAR LA SOLVENCIA TÉCNICA PARA CONTRATOS DE OBRAS CON VALOR ESTIMADO\nINFERIOR A ",
+                "FORMAS DE RESPONSABILIDAD CONJUNTA EN LA EJECUCIÓN DEL CONTRATO PARA LOS CASOS EN QUE\nUNA EMPRESA RECURRA A LAS CAPACIDADES DE OTRAS ENTIDADES EN LO QUE RESPECTA A LOS\nCRITERIOS RELATIVOS A LA SOLVENCIA ECONÓMICA Y FINANCIERA:\n10\n[SELECCIONADO] SI, CUÁL: En el caso de que la entidad adjudicataria recurra a las capacidades de otras entidades\npara acreditar los requisitos mínimos de solvencia, el licitador deberá acreditar que por parte de la\nentidad que aporta el complemento de capacidad se asume con carácter solidario, frente a la\nAdministración, el cumplimiento de las obligaciones que se deriven del contrato. La aportaci",
+                "[SELECCIONADO] OTROS, especificar:\n2.- CRITERIOS CUALITATIVOS VALORABLES DE FORMA AUTOMÁTICA O ARITMÉTICA a incluir en SOBRE 3\n(hasta un máximo de 10 puntos)\nEn este apartado, la Valoración Aspectos Técnicos Cualitativos (VTo), se valorará con el siguiente criterio de\ncalidad:\n18Criterios Valoración Técnica Objetiva (VTo)\nCompromiso de implantar en obra una instalación de selección y\ncribado de material procedente de acopios o de la propia NO 0 puntos\nexcavación, capaz de separar en tamaños superior e inferior a 10\ncm, así como de implantar junto a la anterior una instalación de\nmachaqueo de áridos procedente de la excavación o acopios para\nSI 3 puntos\nobtener gravas entr",
+                "gestión de las cuencas internas de la comunidad Valenciana, reutilización y ahorro del agua; control y\nprotección de la calidad del agua, (...)”.\nAdemás, y según prosigue el citado artículo, la Dirección General del Agua tiene atribuidas, entre otras,\nel desarrollo de las funciones correspondientes a “La totalidad de las Infraestructuras Hidráulicas,\nconsistente en dirigir, controlar y gestionar los proyectos y demás documentos técnicos de\ninfraestructuras hidráulicas, planificación, proyecto, construcción, conservación y explotación de las\ninfraestructuras hidráulicas para uso urbano, agrícola y aquellas actuaciones de competencia de la\nGeneralitat declaradas de interés medioambiental; (…);.dirigir, supervisar y controlar, y certificar y"
+            ],
+            "format": "Responde únicamente con Si o No"
         },
         {
             "prompt_key": "Criterio_Solvencia_tecnica",
             "prompt": "Indica si existen criterios para calcular/acreditar la solvencia técnica o profesional",
             "response": "No",
-            "score": 0.8970588235294117,
+            "score": 0.8470588235294118,
             "index": [
                 69,
                 70,
-                126
-            ]
+                126,
+                0
+            ],
+            "chunks": [
+                "APARTADO L\nCRITERIOS PARA ACREDITAR LA SOLVENCIA ECONÓMICA Y FINANCIERA, SEGÚN ART. 87 LCSP:\nNo procede según el art 77.1 de la LCSP.\nMEDIOS PARA ACREDITAR LA SOLVENCIA ECONÓMICA Y FINANCIERA, SEGÚN ART. 87 LCSP:\nNo procede según el art 77.1 de la LCSP.\nCRITERIOS PARA ACREDITAR LA SOLVENCIA TÉCNICA PARA CONTRATOS DE OBRAS CON VALOR ESTIMADO\nINFERIOR A 500.000 €, SEGÚN ART. 88 LCSP:\nNo procede.\nMEDIOS PARA ACREDITAR LA SOLVENCIA TÉCNICA PARA CONTRATOS DE OBRAS CON VALOR ESTIMADO\nINFERIOR A 500.000 €, SEGÚN ART. 88 LCSP:\nNo procede.\n9CLASIFICACIÓN SUSTITUTIVA PARA LOS CONTRATOS DE OBRAS DE VALOR ESTIMADO INFERIOR A\n500.000€: No procede.\nGRUPO:\nSUBGRUPO:\nCATEGORÍA:\nCRITERIOS PARA ACREDITAR LA SOLVENCIA TÉCNICA PARA CONTRATOS DE OBRAS CON VALOR ESTIMADO\nINFERIOR A 500.000 €, CUANDO SE TRATE DE EMPRESAS DE NUEVA CREACIÓN:\nNo procede.\nMEDIOS PARA ACREDITAR LA SOLVENCIA TÉCNICA PARA CONTRATOS DE OBRAS CON VALOR ESTIMADO\nINFERIOR A ",
+                "CLASIFICACIÓN SUSTITUTIVA PARA LOS CONTRATOS DE OBRAS DE VALOR ESTIMADO INFERIOR A\n500.000€: No procede.\nGRUPO:\nSUBGRUPO:\nCATEGORÍA:\nCRITERIOS PARA ACREDITAR LA SOLVENCIA TÉCNICA PARA CONTRATOS DE OBRAS CON VALOR ESTIMADO\nINFERIOR A 500.000 €, CUANDO SE TRATE DE EMPRESAS DE NUEVA CREACIÓN:\nNo procede.\nMEDIOS PARA ACREDITAR LA SOLVENCIA TÉCNICA PARA CONTRATOS DE OBRAS CON VALOR ESTIMADO\nINFERIOR A 500.000 €, CUANDO SE TRATE DE EMPRESAS DE NUEVA CREACIÓN:\nNo procede.\nCLASIFICACIÓN PARA CONTRATOS DE OBRAS CON VALOR ESTIMADO IGUAL O SUPERIOR A 500.000 €\nGRUPO: E OBRAS HIDRÁULICAS\nSUBGRUPO: 6 CONDUCCIONES CON TUBERIA DE PRESIÓN DE GRAN DIÁMETRO\nCATEGORÍA: 6 (equivalente a la antigua categoría f).\nACREDITACIÓN DE LA SOLVENCIA POR LOS EMPRESARIOS NO ESPAÑOLES DE ESTADOS MIEMBROS DE LA",
+                "[SELECCIONADO] OTROS, especificar:\n2.- CRITERIOS CUALITATIVOS VALORABLES DE FORMA AUTOMÁTICA O ARITMÉTICA a incluir en SOBRE 3\n(hasta un máximo de 10 puntos)\nEn este apartado, la Valoración Aspectos Técnicos Cualitativos (VTo), se valorará con el siguiente criterio de\ncalidad:\n18Criterios Valoración Técnica Objetiva (VTo)\nCompromiso de implantar en obra una instalación de selección y\ncribado de material procedente de acopios o de la propia NO 0 puntos\nexcavación, capaz de separar en tamaños superior e inferior a 10\ncm, así como de implantar junto a la anterior una instalación de\nmachaqueo de áridos procedente de la excavación o acopios para\nSI 3 puntos\nobtener gravas entr",
+                "Anexo I\nCUADRO DE CARACTERÍSTICAS PARTICULARES PARA EL SERVICIO DE INFRAESTRUCTURAS HIDRÁULICAS\nURBANAS PARA LA ADJUDICACIÓN DEL CONTRATO ADMINISTRATIVO DE LAS OBRAS “NUEVA\nCONDUCCIÓN DE LA MARGEN IZQUIERDA DEL POSTRASVASE JÚCAR-VINALOPÓ, TRAMO II (Rio Vinalopó –\nBalsa Moclem)”, MEDIANTE PROCEDIMIENTO ABIERTO.\nAPARTADO A\nNúmero DE EXPEDIENTE: CMAYOR/2023/07Y10/1\nNECESIDADES A SATISFACER CON LA CELEBRACIÓN DEL CONTRATO:\na) Necesidades a satisfacer:\nLa mejora de la calidad ambiental de los acuíferos del Vinalopó, mediante el cese de extracción para\nriego de aguas subterráneas de los mismos y su sustitución por aguas superficiales. Para ello, en el\npresente contrato se ejecutarán las obras de una nueva tubería que distribuya las aguas provenientes del"
+            ],
+            "format": "Responde únicamente con Si o No"
         },
         {
             "prompt_key": "Condiciones_especiales",
             "prompt": "Indica si existen condiciones especiales de ejecución y cuales son en caso de haberlas",
-            "response": "Si, existen condiciones especiales de ejecución que deben ser cumplidas por la empresa adjudicataria, entre las cuales se incluye la redacción de un plan de calidad medioambiental para minimizar el impacto ambiental de la obra, con medidas específicas relacionadas con el entorno, equipamiento, materiales empleados, recursos utilizados y otros aspectos significativos. Además, se deben indicar medidas previstas en el proyecto y en la Declaración de impacto ambiental, así como un programa detallado del seguimiento y grado de cumplimiento de dichas medidas durante la ejecución de las obras.",
+            "response": "Si, existen condiciones especiales de ejecución, específicamente de carácter medioambiental, que incluyen la redacción de un plan de calidad medioambiental para minimizar el impacto ambiental de la obra, con medidas relacionadas al entorno, equipamiento, materiales empleados, recursos utilizados y otros aspectos significativos.",
             "score": 0.95,
             "index": [
                 170,
                 171,
                 172,
                 8
-            ]
+            ],
+            "chunks": [
+                "Contratos de las Administraciones Públicas.\nSegún aprobación y comprobación del Director de la Obra con un máximo del 10% del Presupuesto Base de\nLicitación del Contrato.\nAPARTADO X\nMEDIDAS PARA GARANTIZAR EL CUMPLIMIENTO DE LAS OBLIGACIONES MEDIOAMBIENTALES, SOCIALES\nO LABORALES:\nLa empresa adjudicataria deberá someterse a las actuaciones de inspección y comprobación de la\nConselleria de Agricultura, Desarrollo Rural, Emergencia Climática i Transición Ecológica.\nCONDICIONES ESPECIALES DE EJECUCIÓN A CUMPLIR: (AL MENOS UNA DE ENTRE LAS PREVISTAS EN EL\n202.2 ES OBLIGATORIA):\nDe carácter medioambiental. La empresa adjudicataria redactara con carácter previo al inicio de las\nobras, un plan de calidad medioambiental que recoja medidas para minimizar el impacto ambiental de",
+                "CONDICIONES ESPECIALES DE EJECUCIÓN A CUMPLIR: (AL MENOS UNA DE ENTRE LAS PREVISTAS EN EL\n202.2 ES OBLIGATORIA):\nDe carácter medioambiental. La empresa adjudicataria redactara con carácter previo al inicio de las\nobras, un plan de calidad medioambiental que recoja medidas para minimizar el impacto ambiental de\nla obra, con requisitos y criterios ambientales a seguir con relación al entorno, al equipamiento y los\nmateriales empleados, los recursos utilizados (agua, energía...) y cualquier otro aspecto significativo en\nfunción de la naturaleza de los distintos trabajos a realizar durante la ejecución de las obras. Se\nindicaran con detalle las medidas previstas en el proyecto y en la Declaración de impacto ambiental por",
+                "materiales empleados, los recursos utilizados (agua, energía...) y cualquier otro aspecto significativo en\nfunción de la naturaleza de los distintos trabajos a realizar durante la ejecución de las obras. Se\nindicaran con detalle las medidas previstas en el proyecto y en la Declaración de impacto ambiental por\nuna parte y, por otra, medidas adicionales que complementen las ya previstas, así como un programa\ndetallado del seguimiento y grado de cumplimiento de dichas medidas durante la ejecución de las\nobras\nATRIBUCION DE CARÁCTER DE OBLIGACIÓN ESENCIAL A LAS CONDICIONES ESPECIALES DE EJECUCIÓN\nESTABLECIDAS:\n[SELECCIONADO] NO",
+                "margen izquierda que se llevan a cabo con este proyecto como una medida a ejecutar por la Generalitat\nValenciana. Este tipo de medidas son de obligado cumplimiento a efectos de la Directiva 2006/60/CE,\nconocida como Directiva Marco del Agua.\nDEFINICIÓN CONCRETA DEL OBJETO DEL CONTRATO DE OBRAS:\nEl objeto es la ejecución de la obra para trasegar las aguas trasvasadas desde el Júcar, partiendo del\nembalse del Toscar, hacia la margen izquierda del Vinalopó, hasta las balsas existentes en la margen\nizquierda. Para una mejor distribución de los recursos de la Dirección General del Agua, se ha decidido la\nrealización de la conducción en diferentes fases. Esta fase comienza en el PK 10,464 y termina en el 23,137,\nen la balsa denominada Moclem, en el T.M. de Agost.\nDescripción de las obras:"
+            ],
+            "format": "Responde con Si o No, añadiendo explicación si es necesario"
         },
         {
             "prompt_key": "Penalidad_incumplimiento",
             "prompt": "Indica si existe penalidad por incumplimiento al contratista",
-            "response": "Si, la penalidad puede ser de hasta un 10% del importe de adjudicación del contrato por cada compromiso incumplido, hasta el máximo legal del 50%. La reiteración en el incumplimiento se considerará como un nuevo incumplimiento del contrato.",
-            "score": 0.7764986571669579,
+            "response": "Si, existen penalidades para el contratista en caso de incumplimiento, específicamente se menciona en la cláusula 36.3 y se detalla en el régimen de penalidades en la ejecución del contrato, incluyendo la sustitución de personal sin consentimiento expreso del Director de la Obra.",
+            "score": 0.7333333333333334,
             "index": [
                 158,
                 0,
-                1,
-                6
-            ]
+                1
+            ],
+            "chunks": [
+                "OBLIGACIÓN DE PRESENTAR EL PROGRAMA DE TRABAJO:\n\nX SI\nAPARTADO S\nINFORMACIÓN SOBRE LAS CONDICIONES DE SUBROGACIÓN EN CONTRATOS DE TRABAJO, DE ACUERDO\nCON EL ARTÍCULO 130 DE LA LCSP: NO PROCEDE\nPENALIDADES, DENTRO DE LOS LIMITES DEL ART. 192 LCSP, AL CONTRATISTA PARA EL SUPUESTO DE\nINCUMPLIMIENTO POR EL MISMO DE LA OBLIGACIÓN DE SUBROGACIÓN PREVISTA EN ESTA CLÁUSULA:\nNO PROCEDE\nAPARTADO T\nUNIDAD ENCARGADA DEL SEGUIMIENTO Y EJECUCIÓN DEL CONTRATO:\nServicio de Infraestructuras Hidráulicas Urbanas.\nDIRECTOR FACULTATIVO DE LA OBRA: El Ingeniero del Servicio de Infraestructuras Hidráulicas Urbanas.\nRÉGIMEN DE PENALIDADES EN LA EJECUCIÓN DEL CONTRATO\n241. Penalidades de la cláusula 36.3.\nSi durante la ejecución del contrato o al tiempo de su recepción se aprecia que, por causas\nimputables al contratista, se ha incumplido alguno o algunos de los compromisos asumidos en su\noferta, en especial:\n• Sustitución de persona/s del equipo principal y/o complementario, sin el consentimiento\nexpreso del Director de la Obra. Como regla general su cuantía ser",
+                "Anexo I\nCUADRO DE CARACTERÍSTICAS PARTICULARES PARA EL SERVICIO DE INFRAESTRUCTURAS HIDRÁULICAS\nURBANAS PARA LA ADJUDICACIÓN DEL CONTRATO ADMINISTRATIVO DE LAS OBRAS “NUEVA\nCONDUCCIÓN DE LA MARGEN IZQUIERDA DEL POSTRASVASE JÚCAR-VINALOPÓ, TRAMO II (Rio Vinalopó –\nBalsa Moclem)”, MEDIANTE PROCEDIMIENTO ABIERTO.\nAPARTADO A\nNúmero DE EXPEDIENTE: CMAYOR/2023/07Y10/1\nNECESIDADES A SATISFACER CON LA CELEBRACIÓN DEL CONTRATO:\na) Necesidades a satisfacer:\nLa mejora de la calidad ambiental de los acuíferos del Vinalopó, mediante el cese de extracción para\nriego de aguas subterráneas de los mismos y su sustitución por aguas superficiales. Para ello, en el\npresente contrato se ejecutarán las obras de una nueva tubería que distribuya las aguas provenientes del",
+                "NECESIDADES A SATISFACER CON LA CELEBRACIÓN DEL CONTRATO:\na) Necesidades a satisfacer:\nLa mejora de la calidad ambiental de los acuíferos del Vinalopó, mediante el cese de extracción para\nriego de aguas subterráneas de los mismos y su sustitución por aguas superficiales. Para ello, en el\npresente contrato se ejecutarán las obras de una nueva tubería que distribuya las aguas provenientes del\nTrasvase Júcar – Vinalopó, a las entidades de riego existentes en la Margen Izquierda del Vinalopó en un\ntercer tramo de la conducción (Tramo “II”) que se corresponde con los Pk 10+464 hasta el pK 23+137.\nb) Vinculación a los fines concretos de la dirección general proponente:\nEl artículo 14 del Reglamento Orgánico y Funcional de la Conselleria de Agricultura, Medio Ambiente,"
+            ],
+            "format": "Responde con Si, No o No procede, añadiendo explicación si es necesario"
         },
         {
             "prompt_key": "Forma_pago",
             "prompt": "Indica la forma o régimen de pago",
-            "response": "[TIPO] El abono se efectuará mediante certificaciones mensuales, con cargo a los créditos, y previa presentación de la correspondiente factura debidamente conformada por la unidad encargada del seguimiento y ejecución del contrato, a través de la plataforma de facturación estatal FACe.",
-            "score": 0.8,
+            "response": "Certificaciones mensuales a través de la plataforma de facturación estatal FACe",
+            "score": 0.75,
             "index": [
                 167,
                 0,
                 1,
                 8
-            ]
+            ],
+            "chunks": [
+                "[SELECCIONADO] SI\nAPARTADO U\nPLAZO DE RECEPCIÓN: 1 mes desde la finalización de las obras.\nRECEPCIÓN PARCIAL:\n[SELECCIONADO] NO\n\nESTABLECIMIENTO DE PLAZO SUPERIOR A TRES MESES PARA LA APROBACIÓN DE LA CERTIFICACIÓN FINAL\nEN CONTRATOS ESPECIALMENTE COMPLEJOS Y DE MÁS DE 12 MILLONES DE EUROS:\n[SELECCIONADO] NO\n\nAPARTADO V\nPLAZO DE GARANTÍA: Veinticuatro (24) meses.\nAPARTADO W\nFORMA DE PAGO: El abono se efectuará mediante certificaciones mensuales, con cargo a los créditos, y\nprevia presentación de la correspondiente factura debidamente conformada por la unidad encargada del\nseguimiento y ejecución del contrato, a través de la plataforma de facturación estatal FACe, con el siguiente\ncódigo: https.//www.face.gob.es.\nABONOS A CUENTA:\n\n[SELECCIONADO] SI, según art. 240 de la LCSP.\n26SE MODIFICA EL RÉGIMEN GENERAL DE LAS CERTIFICACIONES:\n[SELECCIONADO] NO\n\nCONDICIONES DE LOS ABONOS A CUENTA SOBRE SU IMPORTE POR LAS OPERACIONES PREPARATORIAS\nREALIZADAS COMO INSTALACIONES Y ACOPIO DE MATERIALES O EQUIPOS DE MAQUINARIA PESADA\nADSCRITOS A LA OBRA:\nDe acuerdo con las condiciones establecidas en el artículo 240 de la Ley 9/2017 de Contratos del Sector\nPúblico y los artículos 155 a 1",
+                "Anexo I\nCUADRO DE CARACTERÍSTICAS PARTICULARES PARA EL SERVICIO DE INFRAESTRUCTURAS HIDRÁULICAS\nURBANAS PARA LA ADJUDICACIÓN DEL CONTRATO ADMINISTRATIVO DE LAS OBRAS “NUEVA\nCONDUCCIÓN DE LA MARGEN IZQUIERDA DEL POSTRASVASE JÚCAR-VINALOPÓ, TRAMO II (Rio Vinalopó –\nBalsa Moclem)”, MEDIANTE PROCEDIMIENTO ABIERTO.\nAPARTADO A\nNúmero DE EXPEDIENTE: CMAYOR/2023/07Y10/1\nNECESIDADES A SATISFACER CON LA CELEBRACIÓN DEL CONTRATO:\na) Necesidades a satisfacer:\nLa mejora de la calidad ambiental de los acuíferos del Vinalopó, mediante el cese de extracción para\nriego de aguas subterráneas de los mismos y su sustitución por aguas superficiales. Para ello, en el\npresente contrato se ejecutarán las obras de una nueva tubería que distribuya las aguas provenientes del",
+                "NECESIDADES A SATISFACER CON LA CELEBRACIÓN DEL CONTRATO:\na) Necesidades a satisfacer:\nLa mejora de la calidad ambiental de los acuíferos del Vinalopó, mediante el cese de extracción para\nriego de aguas subterráneas de los mismos y su sustitución por aguas superficiales. Para ello, en el\npresente contrato se ejecutarán las obras de una nueva tubería que distribuya las aguas provenientes del\nTrasvase Júcar – Vinalopó, a las entidades de riego existentes en la Margen Izquierda del Vinalopó en un\ntercer tramo de la conducción (Tramo “II”) que se corresponde con los Pk 10+464 hasta el pK 23+137.\nb) Vinculación a los fines concretos de la dirección general proponente:\nEl artículo 14 del Reglamento Orgánico y Funcional de la Conselleria de Agricultura, Medio Ambiente,",
+                "margen izquierda que se llevan a cabo con este proyecto como una medida a ejecutar por la Generalitat\nValenciana. Este tipo de medidas son de obligado cumplimiento a efectos de la Directiva 2006/60/CE,\nconocida como Directiva Marco del Agua.\nDEFINICIÓN CONCRETA DEL OBJETO DEL CONTRATO DE OBRAS:\nEl objeto es la ejecución de la obra para trasegar las aguas trasvasadas desde el Júcar, partiendo del\nembalse del Toscar, hacia la margen izquierda del Vinalopó, hasta las balsas existentes en la margen\nizquierda. Para una mejor distribución de los recursos de la Dirección General del Agua, se ha decidido la\nrealización de la conducción en diferentes fases. Esta fase comienza en el PK 10,464 y termina en el 23,137,\nen la balsa denominada Moclem, en el T.M. de Agost.\nDescripción de las obras:"
+            ],
+            "format": "Responde ÚNICAMENTE con el tipo de forma de pago"
         },
         {
             "prompt_key": "Causas_modificacion",
             "prompt": "Indica si existen causas de modificacion del contrato",
-            "response": "No",
-            "score": 0.8623463217914105,
+            "response": "",
+            "score": 0.8833333333333333,
             "index": [
                 154,
                 155,
                 56,
-                4
-            ]
+                3
+            ],
+            "chunks": [
+                "APARTADO Ñ\n22CESIÓN DEL CONTRATO:\n\n[SELECCIONADO] SI\nAPARTADO O\nMODIFICACIONES:\n[SELECCIONADO] NO\n\nAPARTADO P\nGARANTÍA DEFINITIVA: 5% del precio final ofertado, excluido el IVA.\n\nX NO\n\n[SELECCIONADO] Supuestos especiales de prestación de garantía complementaria y porcentaje: 5 por 100 del\nprecio final sin IVA ofertado por el licitador, que presentó la mejor oferta de relación calidad/precio y\nque habiendo esta",
+                "CESIÓN DEL CONTRATO:\n\n[SELECCIONADO] SI\nAPARTADO O\nMODIFICACIONES:\n[SELECCIONADO] NO\n\nAPARTADO P\nGARANTÍA DEFINITIVA: 5% del precio final ofertado, excluido el IVA.\n\nX NO\n\n[SELECCIONADO] Supuestos especiales de prestación de garantía complementaria y porcentaje: 5 por 100 del\nprecio final sin IVA ofertado por el licitador, que presentó la mejor oferta de relación calidad/precio y\nque habiendo estado en presunción de anormalidad por su bajo precio, haya sido finalmente\naceptada.\nCANCELACIÓN O DEVOLUCIÓN PROPORCIONAL DE LA GARANTÍA DEFINITIVA EN CASOS DE RECEPCIÓN\nPARCIAL:\n[SELECCIONADO] NO\n\nAPARTADO Q\nOBLIGACION DE INDICAR EN LA OFERTA SI VA A HABER SUBCONTRATACIÓN:\n[SELECCIONADO] NO",
+                "CONTRATACIÓN DE OBRAS A TANTO ALZADO:\n\nx SI El precio del contrato esta formulado con los precios de las unidades de obra que se\nejecutan de acuerdo con lo establecido en el proyecto de construcción aprobado.\nCONTRATACIÓN DE OBRAS A TANTO ALZADO CON PRECIO CERRADO:\n[SELECCIONADO] NO\n\nprecios unitarios:\n\n\nVALOR ESTIMADO DEL CONTRATO: 18.752.887,89 €\n7El valor estimado del contrato coincide con el presupuesto base de licitación del proyecto de la\nobra, sin IVA, al no existir prórrogas ni modificaciones previstas, ni ningún otro gasto que no sea a\ncargo del adjudicatario.\nAPARTADO F\nPRESUPUESTO BASE DE LICITACIÓN POR LOTES: No procede.\nVALOR ESTIMADO DE CADA LOTE: No procede.\nAPARTADO G\nCONSIGNACIÓN PRESUPUESTARIA:\nCentro y Sección Programa Econ",
+                "Cambio Climático y Desarrollo Rural (Decreto 176/2020, de 30 de octubre del Consell), asigna a la\nDirección General del Agua como el Órgano Directivo que ejerce las funciones “en materia de\nplanificación, gestión y protección de recursos hídricos; proyectos de infraestructuras hidráulicas en la\nComunidad Valenciana, construcción y explotación de infraestructuras hidráulicas, planificiación y\ngestión de las cuencas internas de la comunidad Valenciana, reutilización y ahorro del agua; control y\nprotección de la calidad del agua, (...)”.\nAdemás, y según prosigue el citado artículo, la Dirección General del Agua tiene atribuidas, entre otras,\nel desarrollo de las funciones correspondientes a “La totalidad de las Infraestructuras Hidráulicas,"
+            ],
+            "format": "Responde con Si o No, añadiendo explicación si es necesario"
         },
         {
             "prompt_key": "Plazo_garantia",
             "prompt": "Indica cuál es el plazo de garantía de las obras",
             "response": "24 meses",
-            "score": 0.848,
+            "score": 0.8140000000000001,
             "index": [
                 167,
                 63,
                 68,
                 6
-            ]
+            ],
+            "chunks": [
+                "[SELECCIONADO] SI\nAPARTADO U\nPLAZO DE RECEPCIÓN: 1 mes desde la finalización de las obras.\nRECEPCIÓN PARCIAL:\n[SELECCIONADO] NO\n\nESTABLECIMIENTO DE PLAZO SUPERIOR A TRES MESES PARA LA APROBACIÓN DE LA CERTIFICACIÓN FINAL\nEN CONTRATOS ESPECIALMENTE COMPLEJOS Y DE MÁS DE 12 MILLONES DE EUROS:\n[SELECCIONADO] NO\n\nAPARTADO V\nPLAZO DE GARANTÍA: Veinticuatro (24) meses.\nAPARTADO W\nFORMA DE PAGO: El abono se efectuará mediante certificaciones mensuales, con cargo a los créditos, y\nprevia presentación de la correspondiente factura debidamente conformada por la unidad encargada del\nseguimiento y ejecución del contrato, a través de la plataforma de facturación estatal FACe, con el siguiente\ncódigo: https.//www.face.gob.es.\nABONOS A CUENTA:\n\n[SELECCIONADO] SI, según art. 240 de la LCSP.\n26SE MODIFICA EL RÉGIMEN GENERAL DE LAS CERTIFICACIONES:\n[SELECCIONADO] NO\n\nCONDICIONES DE LOS ABONOS A CUENTA SOBRE SU IMPORTE POR LAS OPERACIONES PREPARATORIAS\nREALIZADAS COMO INSTALACIONES Y ACOPIO DE MATERIALES O EQUIPOS DE MAQUINARIA PESADA\nADSCRITOS A LA OBRA:\nDe acuerdo con las condiciones establecidas en el artículo 240 de la Ley 9/2017 de Contratos del Sector\nPúblico y los artículos 155 a 1",
+                "Porcentaje Categoría Programa operativo\nFINANCIADO POR VARIOS DEPARTAMENTOS:\n[SELECCIONADO] NO\n\nAPARTADO H\nREVISIÓN DE PRECIOS:\n\n[SELECCIONADO] SI. En el caso de que proceda la revisión excepcional de precios en los términos establecidos\nen el Real Decreto-ley 3/2022, de 1 de marzo, o normativa que lo sustituya, o por cualquier otra\ncausa que determine la revisión, se aplicara, de entre las formulas contempladas en el RD\n1359/2011, la formula tipo 561: Obras hidraulicas: “Alto contenido en siderurgia, cemento y\nrocas y aridos”. Tipologia mas representativa: Instalaciones y conducciones de abastecimiento y\nsaneamiento.\n8Kt= 0,10·Ct/Co+0,05·Et/Eo+0,02 Pt/Po+0,08 Rt/Ro+0,28 St/So+0,01 Tt/To+0,46.\nAPARTADO I\nALTERNATIVAS O VARIANTES:\n[SELECCIONADO] NO\n\nAPARTADO J\nGARANTÍA PROVISIONAL: No se exige conforme al Acuerdo del Consell de 26 de marzo de 2010 así como al\nartículo 106 de la Ley 9/2017.\nAPARTADO K\nORGANISMOS QUE FACILITAN INFORMACIÓN RELATIVA A LAS OBLIGACIONES RELATIVAS A LA\nFISCALIDAD, A LA PROTECCIÓN DEL ME",
+                "APARTADO J\nGARANTÍA PROVISIONAL: No se exige conforme al Acuerdo del Consell de 26 de marzo de 2010 así como al\nartículo 106 de la Ley 9/2017.\nAPARTADO K\nORGANISMOS QUE FACILITAN INFORMACIÓN RELATIVA A LAS OBLIGACIONES RELATIVAS A LA\nFISCALIDAD, A LA PROTECCIÓN DEL MEDIO AMBIENTE, Y A LAS DISPOSICIONES VIGENTES EN MATERIA DE\nPROTECCIÓN DEL EMPLEO, IGUALDAD DE GÉNERO, CONDICIONES DE TRABAJO Y PREVENCIÓN DE\nRIESGOS LABORALES E INSERCIÓN SOCIOLABORAL DE LAS PERSONAS CON DISCAPACIDAD, Y A LA\nOBLIGACIÓN DE CONTRATAR A UN NÚMERO O PORCENTAJE ESPECÍFICO DE PERSONAS CON\nDISCAPACIDAD QUE SEAN APLICABLES A LOS SERVICIOS PRESTADOS DURANTE LA EJECUCIÓN DEL\nCONTRATO:\n[SELECCIONADO] NO",
+                "celebración del presente contrato es competencia de esta Dirección General, de acuerdo con las\natribuciones que le confiere el artículo 49.13 del Estatuto de Autonomía Valenciana, que determina la\ncompetencia exclusiva de la Generalitat sobre aquellas obras que no tengan la calificación de interés\nGeneral del Estado.\nMediante la Orden de 22 de marzo 2006 de la Conselleria de Agricultura, Pesca y Alimentación, por la\nque se aprueba el Plan de Obras de Interés General de las conducciones de transporte y abastecimiento\nde agua a las comarcas del Vinalopó y L’Alacantí (Alicante), estas obras tienen la consideración de interés\ngeneral de la Comunidad Valenciana. El plan hidrológico vigente en el ámbito de la Demarcación"
+            ],
+            "format": "Responde ÚNICAMENTE con el número de meses o años (específica meses o años)"
         },
         {
             "prompt_key": "Contratacion_precio_unit",
-            "prompt": "Indica si cuenta con contratación a precio unitario",
-            "response": "No, según el texto proporcionado, la contratación de obras es a tanto alzado y no a precios unitarios, ya que se indica \"CONTRATACIÓN DE OBRAS A PRECIOS UNITARIOS: x NO\" y \"CONTRATACIÓN DE OBRAS A TANTO ALZADO: x SI\".",
-            "score": 0.8525329747117879,
+            "prompt": "Indica si cuenta con contratación de obras a precios unitarios",
+            "response": "No, según el texto \"CONTRATACIÓN DE OBRAS A PRECIOS UNITARIOS: x NO\"",
+            "score": 0.7749639555760499,
             "index": [
                 55,
                 56,
                 131,
-                2
-            ]
+                5
+            ],
+            "chunks": [
+                "Presupuesto total (IVA incluido): 22.690.994,35 €\nEsta cantidad obedece al siguiente desglose:\n\n- Costes directos………………………………………….…… 14.866.725,77 €\n- Costes indirectos………..………………………………... 892.003,55 €\n\n\n\n\n\nDISTRIBUCIÓN ANUALIDADES\nAnualidad Importe (IVA excluido) Importe (IVA Incluido)\n2023 4.386.196,96 € 5.307.298,32 €\n2024 10.838.509,58 € 13.114.596,60 €\n2025 3.528.181,35 € 4.269.099,43 €\nDETERMINACIÓN DEL PRECIO:\nCONTRATACIÓN DE OBRAS A PRECIOS UNITARIOS:\nx NO\n\nCONTRATACIÓN DE OBRAS A TANTO ALZADO:\n\nx SI El precio del contrato esta formulado con los precios de las unidades de obra que se\nejecutan de acuerdo con lo establecido en el proyecto de construcción aprobado.\nCONTRATACIÓN DE OBRAS A TANTO ALZADO CON PRECIO CERRADO:\n[SELECCIONADO] NO\n\nprecios unitarios:",
+                "CONTRATACIÓN DE OBRAS A TANTO ALZADO:\n\nx SI El precio del contrato esta formulado con los precios de las unidades de obra que se\nejecutan de acuerdo con lo establecido en el proyecto de construcción aprobado.\nCONTRATACIÓN DE OBRAS A TANTO ALZADO CON PRECIO CERRADO:\n[SELECCIONADO] NO\n\nprecios unitarios:\n\n\nVALOR ESTIMADO DEL CONTRATO: 18.752.887,89 €\n7El valor estimado del contrato coincide con el presupuesto base de licitación del proyecto de la\nobra, sin IVA, al no existir prórrogas ni modificaciones previstas, ni ningún otro gasto que no sea a\ncargo del adjudicatario.\nAPARTADO F\nPRESUPUESTO BASE DE LICITACIÓN POR LOTES: No procede.\nVALOR ESTIMADO DE CADA LOTE: No procede.\nAPARTADO G\nCONSIGNACIÓN PRESUPUESTARIA:\nCentro y Sección Programa Econ",
+                "necesarios para su correcto y legal funcionamiento. Deberán encontrarse en uso tan pronto como sea\nnecesario según el plan de obra presentado.\nVALORACIÓN TÉCNICA CRITERIOS CUALITATIVOS\nLa valoración técnica final de cada licitador se obtiene de la suma de las dos valoraciones anteriores.\nVT = VTs + VTo\n3.- VALORACIÓN DE LA OFERTA ECONÓMICA (HASTA UN MÁXIMO DE 45 PUNTOS) , CUYA DOCUMENTACIÓN\nDEBERÁ INCLUIRSE EN EL SOBRE 3 .\nLas ofertas económicas se efectuarán sobre el total del contrato, no sobre los precios unitarios.\nLas ofertas económicas que no hayan sido previamente excluidas, se valorarán del siguiente modo:\n19Fórmula 2, parabólica: Se le dará valor máximo a la mejor oferta económica, asignando al resto de las\nofertas el valor que resulte de aplicarle la siguiente fórmula:\nValoración económica VE:\n[ (OV−OE) 2 ]\nVE=45− ∗45\n(PBL−OE) 2\nDonde:\n• PBL: Presupuesto Base de Licitación del Contrato que figura en el Apartado E (sin IVA).\n• OV: Importe de la oferta económica (sin IVA) que se está valorando (inclui",
+                "presupuesto iva incluido 22690994.35 € cantidad obedecer desglose coste directo 14866725.77 € coste indirecto 892003.55 € distribución anualidades anualidad importe iva excluido importe iva incluido 2023 4386196.96 € 5307298.32 € 2024 10838509.58 € 13114596.60 € 2025 3528181.35 € 4269099.43 € determinación precio contratación obra precio unitario x contratación obra alzado x precio contrato formulado precio unidad obra ejecutar establecido proyecto construcción aprobado contratación obra alzado precio cerrado seleccionado precio unitario"
+            ],
+            "format": "Responde con Si o No, añadiendo explicación si es necesario"
         },
         {
             "prompt_key": "Tanto_alzado",
             "prompt": "Indica si el contrato cuenta con contratación de obras a tanto alzado",
-            "response": "Si, el contrato cuenta con contratación de obras a tanto alzado, ya que se indica explícitamente \"CONTRATACIÓN DE OBRAS A TANTO ALZADO: x SI\" en el texto proporcionado. Además, se menciona que \"El precio del contrato esta formulado con los precios de las unidades de obra que se ejecutan de acuerdo con lo establecido en el proyecto de construcción aprobado\".",
-            "score": 0.8514367046952247,
+            "response": "Si, según el texto \"CONTRATACIÓN DE OBRAS A TANTO ALZADO: x SI\" indica que el contrato cuenta con contratación de obras a tanto alzado.",
+            "score": 0.8145998159050941,
             "index": [
                 55,
                 56,
                 0,
-                6
-            ]
+                9
+            ],
+            "chunks": [
+                "Presupuesto total (IVA incluido): 22.690.994,35 €\nEsta cantidad obedece al siguiente desglose:\n\n- Costes directos………………………………………….…… 14.866.725,77 €\n- Costes indirectos………..………………………………... 892.003,55 €\n\n\n\n\n\nDISTRIBUCIÓN ANUALIDADES\nAnualidad Importe (IVA excluido) Importe (IVA Incluido)\n2023 4.386.196,96 € 5.307.298,32 €\n2024 10.838.509,58 € 13.114.596,60 €\n2025 3.528.181,35 € 4.269.099,43 €\nDETERMINACIÓN DEL PRECIO:\nCONTRATACIÓN DE OBRAS A PRECIOS UNITARIOS:\nx NO\n\nCONTRATACIÓN DE OBRAS A TANTO ALZADO:\n\nx SI El precio del contrato esta formulado con los precios de las unidades de obra que se\nejecutan de acuerdo con lo establecido en el proyecto de construcción aprobado.\nCONTRATACIÓN DE OBRAS A TANTO ALZADO CON PRECIO CERRADO:\n[SELECCIONADO] NO\n\nprecios unitarios:",
+                "CONTRATACIÓN DE OBRAS A TANTO ALZADO:\n\nx SI El precio del contrato esta formulado con los precios de las unidades de obra que se\nejecutan de acuerdo con lo establecido en el proyecto de construcción aprobado.\nCONTRATACIÓN DE OBRAS A TANTO ALZADO CON PRECIO CERRADO:\n[SELECCIONADO] NO\n\nprecios unitarios:\n\n\nVALOR ESTIMADO DEL CONTRATO: 18.752.887,89 €\n7El valor estimado del contrato coincide con el presupuesto base de licitación del proyecto de la\nobra, sin IVA, al no existir prórrogas ni modificaciones previstas, ni ningún otro gasto que no sea a\ncargo del adjudicatario.\nAPARTADO F\nPRESUPUESTO BASE DE LICITACIÓN POR LOTES: No procede.\nVALOR ESTIMADO DE CADA LOTE: No procede.\nAPARTADO G\nCONSIGNACIÓN PRESUPUESTARIA:\nCentro y Sección Programa Econ",
+                "Anexo I\nCUADRO DE CARACTERÍSTICAS PARTICULARES PARA EL SERVICIO DE INFRAESTRUCTURAS HIDRÁULICAS\nURBANAS PARA LA ADJUDICACIÓN DEL CONTRATO ADMINISTRATIVO DE LAS OBRAS “NUEVA\nCONDUCCIÓN DE LA MARGEN IZQUIERDA DEL POSTRASVASE JÚCAR-VINALOPÓ, TRAMO II (Rio Vinalopó –\nBalsa Moclem)”, MEDIANTE PROCEDIMIENTO ABIERTO.\nAPARTADO A\nNúmero DE EXPEDIENTE: CMAYOR/2023/07Y10/1\nNECESIDADES A SATISFACER CON LA CELEBRACIÓN DEL CONTRATO:\na) Necesidades a satisfacer:\nLa mejora de la calidad ambiental de los acuíferos del Vinalopó, mediante el cese de extracción para\nriego de aguas subterráneas de los mismos y su sustitución por aguas superficiales. Para ello, en el\npresente contrato se ejecutarán las obras de una nueva tubería que distribuya las aguas provenientes del",
+                "condición abono importe operación preparatorio realizado instalación acopio material equipo maquinaria pesado adscrito obra condición establecido artículo 240 ley 9/2017 contrato sector público artículo 155 157 real decreto 1098/2001 aprobar reglamento ley contrato administración público aprobación comprobación director obra máximo 10% presupuesto base licitación contrato apartado x medida garantizar cumplimiento obligación medioambiental social laboral empresa adjudicatario deber someter él actuación inspección comprobación"
+            ],
+            "format": "Responde con Si o No, añadiendo explicación si es necesario"
         },
         {
             "prompt_key": "Tanto_alzado_con",
             "prompt": "Indica si el contrato cuenta con contratación de obras a tanto alzado con precio cerrado",
-            "response": "No, según el texto proporcionado, la opción \"CONTRATACIÓN DE OBRAS A TANTO ALZADO CON PRECIO CERRADO\" está marcada como \" NO\".",
-            "score": 0.8586233897507191,
+            "response": "No, porque en el texto se indica que la \"CONTRATACIÓN DE OBRAS A TANTO ALZADO CON PRECIO CERRADO\" tiene seleccionado \" NO\".",
+            "score": 0.8233817951381206,
             "index": [
                 55,
                 56,
                 0,
                 6
-            ]
+            ],
+            "chunks": [
+                "Presupuesto total (IVA incluido): 22.690.994,35 €\nEsta cantidad obedece al siguiente desglose:\n\n- Costes directos………………………………………….…… 14.866.725,77 €\n- Costes indirectos………..………………………………... 892.003,55 €\n\n\n\n\n\nDISTRIBUCIÓN ANUALIDADES\nAnualidad Importe (IVA excluido) Importe (IVA Incluido)\n2023 4.386.196,96 € 5.307.298,32 €\n2024 10.838.509,58 € 13.114.596,60 €\n2025 3.528.181,35 € 4.269.099,43 €\nDETERMINACIÓN DEL PRECIO:\nCONTRATACIÓN DE OBRAS A PRECIOS UNITARIOS:\nx NO\n\nCONTRATACIÓN DE OBRAS A TANTO ALZADO:\n\nx SI El precio del contrato esta formulado con los precios de las unidades de obra que se\nejecutan de acuerdo con lo establecido en el proyecto de construcción aprobado.\nCONTRATACIÓN DE OBRAS A TANTO ALZADO CON PRECIO CERRADO:\n[SELECCIONADO] NO\n\nprecios unitarios:",
+                "CONTRATACIÓN DE OBRAS A TANTO ALZADO:\n\nx SI El precio del contrato esta formulado con los precios de las unidades de obra que se\nejecutan de acuerdo con lo establecido en el proyecto de construcción aprobado.\nCONTRATACIÓN DE OBRAS A TANTO ALZADO CON PRECIO CERRADO:\n[SELECCIONADO] NO\n\nprecios unitarios:\n\n\nVALOR ESTIMADO DEL CONTRATO: 18.752.887,89 €\n7El valor estimado del contrato coincide con el presupuesto base de licitación del proyecto de la\nobra, sin IVA, al no existir prórrogas ni modificaciones previstas, ni ningún otro gasto que no sea a\ncargo del adjudicatario.\nAPARTADO F\nPRESUPUESTO BASE DE LICITACIÓN POR LOTES: No procede.\nVALOR ESTIMADO DE CADA LOTE: No procede.\nAPARTADO G\nCONSIGNACIÓN PRESUPUESTARIA:\nCentro y Sección Programa Econ",
+                "Anexo I\nCUADRO DE CARACTERÍSTICAS PARTICULARES PARA EL SERVICIO DE INFRAESTRUCTURAS HIDRÁULICAS\nURBANAS PARA LA ADJUDICACIÓN DEL CONTRATO ADMINISTRATIVO DE LAS OBRAS “NUEVA\nCONDUCCIÓN DE LA MARGEN IZQUIERDA DEL POSTRASVASE JÚCAR-VINALOPÓ, TRAMO II (Rio Vinalopó –\nBalsa Moclem)”, MEDIANTE PROCEDIMIENTO ABIERTO.\nAPARTADO A\nNúmero DE EXPEDIENTE: CMAYOR/2023/07Y10/1\nNECESIDADES A SATISFACER CON LA CELEBRACIÓN DEL CONTRATO:\na) Necesidades a satisfacer:\nLa mejora de la calidad ambiental de los acuíferos del Vinalopó, mediante el cese de extracción para\nriego de aguas subterráneas de los mismos y su sustitución por aguas superficiales. Para ello, en el\npresente contrato se ejecutarán las obras de una nueva tubería que distribuya las aguas provenientes del",
+                "contratación obra alzado x precio contrato formulado precio unidad obra ejecutar establecido proyecto construcción aprobado contratación obra alzado precio cerrado seleccionado precio unitario valor estimado contrato 18752887.89 € 7el valor estimado contrato coincidir presupuesto base licitación proyecto obra iva existir prórroga modificación previsto gasto cargo adjudicatario apartado f presupuesto base licitación lote proceder valor estimado lote proceder apartado g consignación presupuestario centro sección programa econ"
+            ],
+            "format": "Responde con Si o No, añadiendo explicación si es necesario"
         },
         {
             "prompt_key": "Criterio_juicio_val",
             "prompt": "Indica la ponderación o puntaje máxima de los criterios evaluables mediante juicio de valor",
             "response": "45",
-            "score": 0.9,
+            "score": 0.8666666666666667,
             "index": [
                 84,
                 85,
                 0
-            ]
+            ],
+            "chunks": [
+                "[SELECCIONADO] SI, especificar: ISO 9001.\nEN CONTRATOS SUJETOS A UNA REGULACIÓN ARMONIZADA, CERTIFICADOS DE ACREDITACIÓN DEL\nCUMPLIMIENTO DE LAS NORMAS DE GESTIÓN MEDIOAMBIENTAL:\n\n[SELECCIONADO] SI, especificar: ISO 14001\n12APARTADO LL\nCRITERIOS DE ADJUDICACIÓN SUJETOS A JUICIO DE VALOR.\n1.- CRITERIOS CUALITATIVOS BASADOS EN JUICIOS DE VALOR, CUYA DOCUMENTACIÓN DEBERÁ INCLUIRSE\nEN EL SOBRE 2 (MÁXIMO 45 PUNTOS).\nPara valorar la calidad técnica de una propuesta se analizarán y puntuarán los apartados de la misma, que\nse relacionan seguidamente:\nA) Memoria Constructiva y Programa de Trabajos. 15 puntos (Factor ponderaci",
+                "APARTADO LL\nCRITERIOS DE ADJUDICACIÓN SUJETOS A JUICIO DE VALOR.\n1.- CRITERIOS CUALITATIVOS BASADOS EN JUICIOS DE VALOR, CUYA DOCUMENTACIÓN DEBERÁ INCLUIRSE\nEN EL SOBRE 2 (MÁXIMO 45 PUNTOS).\nPara valorar la calidad técnica de una propuesta se analizarán y puntuarán los apartados de la misma, que\nse relacionan seguidamente:\nA) Memoria Constructiva y Programa de Trabajos. 15 puntos (Factor ponderación = 1,5).\nB) Equipo principal. 15 puntos (Fp = 1,5).\nC) Control de Calidad. 8 puntos (Fp = 0,8).\nD) Revisión y análisis del proyecto y seguimiento de la DIA. 5 puntos (Fp = 0,5).\nE) Memoria de Seguridad y Salud. 2 puntos (Fp = 0,2).\nEl contenido recogido en cada propuesta, formulada por cada licitador, se considerará que forma parte de la",
+                "Anexo I\nCUADRO DE CARACTERÍSTICAS PARTICULARES PARA EL SERVICIO DE INFRAESTRUCTURAS HIDRÁULICAS\nURBANAS PARA LA ADJUDICACIÓN DEL CONTRATO ADMINISTRATIVO DE LAS OBRAS “NUEVA\nCONDUCCIÓN DE LA MARGEN IZQUIERDA DEL POSTRASVASE JÚCAR-VINALOPÓ, TRAMO II (Rio Vinalopó –\nBalsa Moclem)”, MEDIANTE PROCEDIMIENTO ABIERTO.\nAPARTADO A\nNúmero DE EXPEDIENTE: CMAYOR/2023/07Y10/1\nNECESIDADES A SATISFACER CON LA CELEBRACIÓN DEL CONTRATO:\na) Necesidades a satisfacer:\nLa mejora de la calidad ambiental de los acuíferos del Vinalopó, mediante el cese de extracción para\nriego de aguas subterráneas de los mismos y su sustitución por aguas superficiales. Para ello, en el\npresente contrato se ejecutarán las obras de una nueva tubería que distribuya las aguas provenientes del"
+            ],
+            "format": "Responde ÚNICAMENTE con el número de puntos o porcentaje"
         },
         {
             "prompt_key": "Evaluables_autom",
             "prompt": "Indica la ponderación o puntaje máxima de los criterios cualitativos valorables de forma automática",
             "response": "10 puntos",
-            "score": 0.8,
+            "score": 0.75,
             "index": [
                 126,
                 0,
                 1,
-                1
-            ]
+                5
+            ],
+            "chunks": [
+                "[SELECCIONADO] OTROS, especificar:\n2.- CRITERIOS CUALITATIVOS VALORABLES DE FORMA AUTOMÁTICA O ARITMÉTICA a incluir en SOBRE 3\n(hasta un máximo de 10 puntos)\nEn este apartado, la Valoración Aspectos Técnicos Cualitativos (VTo), se valorará con el siguiente criterio de\ncalidad:\n18Criterios Valoración Técnica Objetiva (VTo)\nCompromiso de implantar en obra una instalación de selección y\ncribado de material procedente de acopios o de la propia NO 0 puntos\nexcavación, capaz de separar en tamaños superior e inferior a 10\ncm, así como de implantar junto a la anterior una instalación de\nmachaqueo de áridos procedente de la excavación o acopios para\nSI 3 puntos\nobtener gravas entr",
+                "Anexo I\nCUADRO DE CARACTERÍSTICAS PARTICULARES PARA EL SERVICIO DE INFRAESTRUCTURAS HIDRÁULICAS\nURBANAS PARA LA ADJUDICACIÓN DEL CONTRATO ADMINISTRATIVO DE LAS OBRAS “NUEVA\nCONDUCCIÓN DE LA MARGEN IZQUIERDA DEL POSTRASVASE JÚCAR-VINALOPÓ, TRAMO II (Rio Vinalopó –\nBalsa Moclem)”, MEDIANTE PROCEDIMIENTO ABIERTO.\nAPARTADO A\nNúmero DE EXPEDIENTE: CMAYOR/2023/07Y10/1\nNECESIDADES A SATISFACER CON LA CELEBRACIÓN DEL CONTRATO:\na) Necesidades a satisfacer:\nLa mejora de la calidad ambiental de los acuíferos del Vinalopó, mediante el cese de extracción para\nriego de aguas subterráneas de los mismos y su sustitución por aguas superficiales. Para ello, en el\npresente contrato se ejecutarán las obras de una nueva tubería que distribuya las aguas provenientes del",
+                "NECESIDADES A SATISFACER CON LA CELEBRACIÓN DEL CONTRATO:\na) Necesidades a satisfacer:\nLa mejora de la calidad ambiental de los acuíferos del Vinalopó, mediante el cese de extracción para\nriego de aguas subterráneas de los mismos y su sustitución por aguas superficiales. Para ello, en el\npresente contrato se ejecutarán las obras de una nueva tubería que distribuya las aguas provenientes del\nTrasvase Júcar – Vinalopó, a las entidades de riego existentes en la Margen Izquierda del Vinalopó en un\ntercer tramo de la conducción (Tramo “II”) que se corresponde con los Pk 10+464 hasta el pK 23+137.\nb) Vinculación a los fines concretos de la dirección general proponente:\nEl artículo 14 del Reglamento Orgánico y Funcional de la Conselleria de Agricultura, Medio Ambiente,",
+                "consistente en dirigir, controlar y gestionar los proyectos y demás documentos técnicos de\ninfraestructuras hidráulicas, planificación, proyecto, construcción, conservación y explotación de las\ninfraestructuras hidráulicas para uso urbano, agrícola y aquellas actuaciones de competencia de la\nGeneralitat declaradas de interés medioambiental; (…);.dirigir, supervisar y controlar, y certificar y\nproponer la modificación, en su caso, de las obras de infraestructuras hidráulicas que le sean asignadas\n(…), y la redacción de los documentos técnico-administrativos necesarios para las contrataciones\ncorrespondientes”.\nc) Competencia Administrativa:\nEn cumplimiento de lo establecido en el art. 28 de la Ley de Contratos del Sector Público (LCSP), la\n1celebración del presente contrato es competencia de esta Dirección General, de acuerdo con las\natribuciones que le confiere el artículo 49.13 del Estatuto de Autonomía Valenciana, que determina la\ncompetencia exclusiva de la Generalitat sobre aquellas obras que no tengan la calificación de interés\nGeneral del Estado.\nMediante la Orden de 22 de marzo 2006 de la Conselleria de Agricultura, Pesca y A"
+            ],
+            "format": "Responde ÚNICAMENTE con el número de puntos o porcentaje"
         },
         {
             "prompt_key": "Criterio_ecónomico",
@@ -339,30 +530,257 @@
                 131,
                 140,
                 1
-            ]
+            ],
+            "chunks": [
+                "comunicación en cada tramo.\nLa suma de los puntos así obtenidos constituyen la Valoración Aspectos Técnicos Cualitativos objetivos de la\noferta del licitador (VTo).\nDOCUMENTACIÓN:\nEl compromiso de llevar a cabo las instalaciones mencionadas comprenderá los permisos y autorizaciones\nque sean precisos, así como todos aquellos materiales, maquinaria, personal, energía y elementos que sean\nnecesarios para su correcto y legal funcionamiento. Deberán encontrarse en uso tan pronto como sea\nnecesario según el plan de obra presentado.\nVALORACIÓN TÉCNICA CRITERIOS CUALITATIVOS\nLa valoración técnica final de cada licitador se obtiene de la suma de las dos valoraciones anteriores.\nVT = VTs + VTo\n3.- VALORACIÓN DE LA OFERTA ECONÓMICA (HASTA UN MÁXIMO DE 45 PUNTOS) , CUYA DOCUMENTACIÓN",
+                "necesarios para su correcto y legal funcionamiento. Deberán encontrarse en uso tan pronto como sea\nnecesario según el plan de obra presentado.\nVALORACIÓN TÉCNICA CRITERIOS CUALITATIVOS\nLa valoración técnica final de cada licitador se obtiene de la suma de las dos valoraciones anteriores.\nVT = VTs + VTo\n3.- VALORACIÓN DE LA OFERTA ECONÓMICA (HASTA UN MÁXIMO DE 45 PUNTOS) , CUYA DOCUMENTACIÓN\nDEBERÁ INCLUIRSE EN EL SOBRE 3 .\nLas ofertas económicas se efectuarán sobre el total del contrato, no sobre los precios unitarios.\nLas ofertas económicas que no hayan sido previamente excluidas, se valorarán del siguiente modo:\n19Fórmula 2, parabólica: Se le dará valor máximo a la mejor oferta económica, asignando al resto de las\nofertas el valor que resulte de aplicarle la siguiente fórmula:\nValoración económica VE:\n[ (OV−OE) 2 ]\nVE=45− ∗45\n(PBL−OE) 2\nDonde:\n• PBL: Presupuesto Base de Licitación del Contrato que figura en el Apartado E (sin IVA).\n• OV: Importe de la oferta económica (sin IVA) que se está valorando (inclui",
+                "Fórmula 2, parabólica: Se le dará valor máximo a la mejor oferta económica, asignando al resto de las\nofertas el valor que resulte de aplicarle la siguiente fórmula:\nValoración económica VE:\n[ (OV−OE) 2 ]\nVE=45− ∗45\n(PBL−OE) 2\nDonde:\n• PBL: Presupuesto Base de Licitación del Contrato que figura en el Apartado E (sin IVA).\n• OV: Importe de la oferta económica (sin IVA) que se está valorando (incluida en el conjunto de las n\nofertas “contemplables”).\n• OE: Importe de la oferta económica (sin IVA) más ventajosa de las “contemplables”.\nSe denominan ofertas económicas \"contemplables\" a las ofertas admitidas administrativa y técnicamente,\nque no estén incursas definitivamente en anormalidad por su bajo importe.",
+                "NECESIDADES A SATISFACER CON LA CELEBRACIÓN DEL CONTRATO:\na) Necesidades a satisfacer:\nLa mejora de la calidad ambiental de los acuíferos del Vinalopó, mediante el cese de extracción para\nriego de aguas subterráneas de los mismos y su sustitución por aguas superficiales. Para ello, en el\npresente contrato se ejecutarán las obras de una nueva tubería que distribuya las aguas provenientes del\nTrasvase Júcar – Vinalopó, a las entidades de riego existentes en la Margen Izquierda del Vinalopó en un\ntercer tramo de la conducción (Tramo “II”) que se corresponde con los Pk 10+464 hasta el pK 23+137.\nb) Vinculación a los fines concretos de la dirección general proponente:\nEl artículo 14 del Reglamento Orgánico y Funcional de la Conselleria de Agricultura, Medio Ambiente,"
+            ],
+            "format": "Responde ÚNICAMENTE con el número de puntos o porcentaje"
         },
         {
             "prompt_key": "Obligaciones_ambientales",
             "prompt": "Cuáles son las medidas para garantizar el cumplimiento de obligaciones ambientales?",
-            "response": "Si, se establecen medidas como la redacción de un plan de calidad medioambiental por parte de la empresa adjudicataria antes del inicio de las obras, que incluya medidas para minimizar el impacto ambiental, así como someterse a inspecciones y comprobaciones por parte de la Conselleria de Agricultura, Desarrollo Rural, Emergencia Climática i Transición Ecológica.",
-            "score": 0.864453431069851,
+            "response": "Si, se establecen varias medidas para garantizar el cumplimiento de las obligaciones medioambientales, sociales o laborales, incluyendo la someterse a inspecciones y comprobaciones por parte de la Conselleria de Agricultura, Desarrollo Rural, Emergencia Climática i Transición Ecológica, y la redacción de un plan de calidad medioambiental para minimizar el impacto ambiental.",
+            "score": 0.85,
             "index": [
                 169,
                 170,
                 0,
-                1
-            ]
+                8
+            ],
+            "chunks": [
+                "CONDICIONES DE LOS ABONOS A CUENTA SOBRE SU IMPORTE POR LAS OPERACIONES PREPARATORIAS\nREALIZADAS COMO INSTALACIONES Y ACOPIO DE MATERIALES O EQUIPOS DE MAQUINARIA PESADA\nADSCRITOS A LA OBRA:\nDe acuerdo con las condiciones establecidas en el artículo 240 de la Ley 9/2017 de Contratos del Sector\nPúblico y los artículos 155 a 157 del Real Decreto 1098/2001 que aprueba el Reglamento de la Ley de\nContratos de las Administraciones Públicas.\nSegún aprobación y comprobación del Director de la Obra con un máximo del 10% del Presupuesto Base de\nLicitación del Contrato.\nAPARTADO X\nMEDIDAS PARA GARANTIZAR EL CUMPLIMIENTO DE LAS OBLIGACIONES MEDIOAMBIENTALES, SOCIALES\nO LABORALES:\nLa empresa adjudicataria deberá someterse a las actuaciones de inspección y comprobación de la",
+                "Contratos de las Administraciones Públicas.\nSegún aprobación y comprobación del Director de la Obra con un máximo del 10% del Presupuesto Base de\nLicitación del Contrato.\nAPARTADO X\nMEDIDAS PARA GARANTIZAR EL CUMPLIMIENTO DE LAS OBLIGACIONES MEDIOAMBIENTALES, SOCIALES\nO LABORALES:\nLa empresa adjudicataria deberá someterse a las actuaciones de inspección y comprobación de la\nConselleria de Agricultura, Desarrollo Rural, Emergencia Climática i Transición Ecológica.\nCONDICIONES ESPECIALES DE EJECUCIÓN A CUMPLIR: (AL MENOS UNA DE ENTRE LAS PREVISTAS EN EL\n202.2 ES OBLIGATORIA):\nDe carácter medioambiental. La empresa adjudicataria redactara con carácter previo al inicio de las\nobras, un plan de calidad medioambiental que recoja medidas para minimizar el impacto ambiental de",
+                "Anexo I\nCUADRO DE CARACTERÍSTICAS PARTICULARES PARA EL SERVICIO DE INFRAESTRUCTURAS HIDRÁULICAS\nURBANAS PARA LA ADJUDICACIÓN DEL CONTRATO ADMINISTRATIVO DE LAS OBRAS “NUEVA\nCONDUCCIÓN DE LA MARGEN IZQUIERDA DEL POSTRASVASE JÚCAR-VINALOPÓ, TRAMO II (Rio Vinalopó –\nBalsa Moclem)”, MEDIANTE PROCEDIMIENTO ABIERTO.\nAPARTADO A\nNúmero DE EXPEDIENTE: CMAYOR/2023/07Y10/1\nNECESIDADES A SATISFACER CON LA CELEBRACIÓN DEL CONTRATO:\na) Necesidades a satisfacer:\nLa mejora de la calidad ambiental de los acuíferos del Vinalopó, mediante el cese de extracción para\nriego de aguas subterráneas de los mismos y su sustitución por aguas superficiales. Para ello, en el\npresente contrato se ejecutarán las obras de una nueva tubería que distribuya las aguas provenientes del",
+                "margen izquierda que se llevan a cabo con este proyecto como una medida a ejecutar por la Generalitat\nValenciana. Este tipo de medidas son de obligado cumplimiento a efectos de la Directiva 2006/60/CE,\nconocida como Directiva Marco del Agua.\nDEFINICIÓN CONCRETA DEL OBJETO DEL CONTRATO DE OBRAS:\nEl objeto es la ejecución de la obra para trasegar las aguas trasvasadas desde el Júcar, partiendo del\nembalse del Toscar, hacia la margen izquierda del Vinalopó, hasta las balsas existentes en la margen\nizquierda. Para una mejor distribución de los recursos de la Dirección General del Agua, se ha decidido la\nrealización de la conducción en diferentes fases. Esta fase comienza en el PK 10,464 y termina en el 23,137,\nen la balsa denominada Moclem, en el T.M. de Agost.\nDescripción de las obras:"
+            ],
+            "format": "Responde con Si o No, añadiendo explicación si es necesario"
         },
         {
             "prompt_key": "Regimen_penalidades",
             "prompt": "Indica si existen penalidades por incumplimientos",
-            "response": "- Penalidades de la cláusula 36.3 por incumplimiento de compromisos asumidos en la oferta - Penalidades por incumplimiento del plazo total por el contratista - Penalidades por incumplimiento de plazos parciales por el contratista - Penalidades en caso de incumplimiento de las condiciones de la oferta - Penalidades por falta de acreditación de la aptitud del subcontratista - Penalidades por incumplimiento de condiciones de emergencia o urgencia",
-            "score": 0.8702702702702703,
+            "response": "* Penalidades de la cláusula 36.3: hasta el 10% del precio del contrato por sustitución de persona/s del equipo principal y/o complementario sin consentimiento expreso. * Penalidades por incumplimiento del plazo total: no se especifican características especiales, pero se refiere a la cláusula 36.4. * Penalidades por incumplimiento de plazos parciales: no se especifican características especiales, pero se refiere a las cláusulas 36.4 y 36.6. * Penalidades en caso de incumplimiento de las condiciones de la oferta: hasta el 5% del importe de adjudicación del contrato por incumplimiento parcial, y hasta el 50% por reiteración de incumplimientos. * Penalidad por incumplimiento parcial de la ejecución (cláusula 36.1): la cuantía deberá ser proporcional a la gravedad del incumplimiento parcial.",
+            "score": 0.7840056724967184,
             "index": [
                 158,
                 162,
-                163
-            ]
+                163,
+                0
+            ],
+            "chunks": [
+                "OBLIGACIÓN DE PRESENTAR EL PROGRAMA DE TRABAJO:\n\nX SI\nAPARTADO S\nINFORMACIÓN SOBRE LAS CONDICIONES DE SUBROGACIÓN EN CONTRATOS DE TRABAJO, DE ACUERDO\nCON EL ARTÍCULO 130 DE LA LCSP: NO PROCEDE\nPENALIDADES, DENTRO DE LOS LIMITES DEL ART. 192 LCSP, AL CONTRATISTA PARA EL SUPUESTO DE\nINCUMPLIMIENTO POR EL MISMO DE LA OBLIGACIÓN DE SUBROGACIÓN PREVISTA EN ESTA CLÁUSULA:\nNO PROCEDE\nAPARTADO T\nUNIDAD ENCARGADA DEL SEGUIMIENTO Y EJECUCIÓN DEL CONTRATO:\nServicio de Infraestructuras Hidráulicas Urbanas.\nDIRECTOR FACULTATIVO DE LA OBRA: El Ingeniero del Servicio de Infraestructuras Hidráulicas Urbanas.\nRÉGIMEN DE PENALIDADES EN LA EJECUCIÓN DEL CONTRATO\n241. Penalidades de la cláusula 36.3.\nSi durante la ejecución del contrato o al tiempo de su recepción se aprecia que, por causas\nimputables al contratista, se ha incumplido alguno o algunos de los compromisos asumidos en su\noferta, en especial:\n• Sustitución de persona/s del equipo principal y/o complementario, sin el consentimiento\nexpreso del Director de la Obra. Como regla general su cuantía ser",
+                "cada una de ellas no podrán ser superiores al 10 por ciento del precio del contrato, IVA excluido, ni el\ntotal de las mismas superar el 50 por cien del precio del contrato.\n3. Penalidades por incumplimiento del plazo total por el contratista en caso de diferir de las previstas\nen la cláusula 36.4\nSe considera que no existen especiales características del contrato que haga necesario establecer\npenalidades por demora distintas a las enumeradas en la cláusula 36.4 del PCAP.\n4. Penalidades por incumplimiento de plazos parciales por el contratista en caso de diferir de las\nprevistas en la cláusula 36.4 en relación con la cláusula 36.6.\nSe considera que no existen especiales características del contrato que haga necesario establecer",
+                "penalidades por demora distintas a las enumeradas en la cláusula 36.4 del PCAP.\n4. Penalidades por incumplimiento de plazos parciales por el contratista en caso de diferir de las\nprevistas en la cláusula 36.4 en relación con la cláusula 36.6.\nSe considera que no existen especiales características del contrato que haga necesario establecer\npenalidades por demora distintas a las enumeradas en la cláusula 36 del PCAP.\n5. Penalidades en caso de incumplimiento de las condiciones de la oferta, de la falta de acreditación de\nla aptitud del subcontratista o de las condiciones de emergencia o urgencia:",
+                "contrato compromiso incumplido máximo legal 50% reiteración incumplimiento considerar incumplimiento contrato incumplimiento grado dedicación incluido oferta componente equipo principal complementario regla general cuantía 5% importe adjudicación contrato tramo 10% disminución grado dedicación máximo legal 50% reiteración incumplimiento considerar incumplimiento contrato 2 penalidad incumplimiento parcial ejecución cláusula 36.1 penalidad deber proporcional gravedad incumplimiento parcial cuantía"
+            ],
+            "format": "Responde con un listado de las penalidades"
+        },
+        {
+            "prompt_key": "Ambiental",
+            "prompt": "Enumera los criterios ambientales y el valor de cada uno",
+            "response": "* Control del Proyecto: 2 puntos * Ensayos y control de materiales: 2 puntos * Control de ejecución: 2 puntos * Control y Gestión de Residuos: 2 puntos",
+            "score": 0.85,
+            "index": [
+                113,
+                114,
+                0,
+                2
+            ],
+            "chunks": [
+                "En caso de simultaneidad de prestaciones en varios contratos, el plazo coincidente solo se contabilizara\nuna sola vez. No se tendrá en cuenta la experiencia de cada actividad propuesta, si no se cumplen los\nrequisitos indicados en este apartado.\nC) Control de calidad. Máximo 8 puntos (Fp = 0,80)\nSe valorará el autocontrol de calidad que los licitadores propongan, como complemento adicional del\ncontrol de calidad previsto en el proyecto, referentes a:\n1. Control del Proyecto.(2 p.)\n2. Ensayos y control de materiales.(2 p.)\n3. Control de ejecución.(2 p.)\n164. Control y Gestión de Residuos.(2 p.)\nLas propuestas realizadas se entienden como un compromiso ineludible de ejecución por el licitador, a su\ncosta, en caso de resultar adjudicatario.\nSe describirá la organización prevista para la Unidad de Aseguramiento de la Calidad y el laboratorio. Se\ndetallarán, expresa y específicamente las medidas que van a aplicarse en la obra para garantizar las\ncalida",
+                "4. Control y Gestión de Residuos.(2 p.)\nLas propuestas realizadas se entienden como un compromiso ineludible de ejecución por el licitador, a su\ncosta, en caso de resultar adjudicatario.\nSe describirá la organización prevista para la Unidad de Aseguramiento de la Calidad y el laboratorio. Se\ndetallarán, expresa y específicamente las medidas que van a aplicarse en la obra para garantizar las\ncalidades de los materiales que se empleen y de los medios que se utilicen. Así mismo se detallarán los\nprocedimientos y los medios utilizados para el control de la ejecución de las obras así como del control y la\ngestión de los residuos generados.\nLa documentación se limitará a un máximo de dieciséis (16) páginas para todos los aspectos de la Memoria",
+                "Anexo I\nCUADRO DE CARACTERÍSTICAS PARTICULARES PARA EL SERVICIO DE INFRAESTRUCTURAS HIDRÁULICAS\nURBANAS PARA LA ADJUDICACIÓN DEL CONTRATO ADMINISTRATIVO DE LAS OBRAS “NUEVA\nCONDUCCIÓN DE LA MARGEN IZQUIERDA DEL POSTRASVASE JÚCAR-VINALOPÓ, TRAMO II (Rio Vinalopó –\nBalsa Moclem)”, MEDIANTE PROCEDIMIENTO ABIERTO.\nAPARTADO A\nNúmero DE EXPEDIENTE: CMAYOR/2023/07Y10/1\nNECESIDADES A SATISFACER CON LA CELEBRACIÓN DEL CONTRATO:\na) Necesidades a satisfacer:\nLa mejora de la calidad ambiental de los acuíferos del Vinalopó, mediante el cese de extracción para\nriego de aguas subterráneas de los mismos y su sustitución por aguas superficiales. Para ello, en el\npresente contrato se ejecutarán las obras de una nueva tubería que distribuya las aguas provenientes del",
+                "Trasvase Júcar – Vinalopó, a las entidades de riego existentes en la Margen Izquierda del Vinalopó en un\ntercer tramo de la conducción (Tramo “II”) que se corresponde con los Pk 10+464 hasta el pK 23+137.\nb) Vinculación a los fines concretos de la dirección general proponente:\nEl artículo 14 del Reglamento Orgánico y Funcional de la Conselleria de Agricultura, Medio Ambiente,\nCambio Climático y Desarrollo Rural (Decreto 176/2020, de 30 de octubre del Consell), asigna a la\nDirección General del Agua como el Órgano Directivo que ejerce las funciones “en materia de\nplanificación, gestión y protección de recursos hídricos; proyectos de infraestructuras hidráulicas en la\nComunidad Valenciana, construcción y explotación de infraestructuras hidráulicas, planificiación y"
+            ],
+            "format": "Responde con un listado de los criterios ambientales y el valor de cada uno"
+        },
+        {
+            "prompt_key": "Tecnico",
+            "prompt": "Enumera los criterios técnicos y el valor de cada uno",
+            "response": "* A) Memoria Constructiva y Programa de Trabajos: 15 puntos * B) Equipo principal: 15 puntos * C) Control de Calidad: 8 puntos * D) Revisión y análisis del proyecto y seguimiento de la DIA: 5 puntos * E) Memoria de Seguridad y Salud: 2 puntos",
+            "score": 0.8428337059560276,
+            "index": [
+                84,
+                85,
+                86,
+                3
+            ],
+            "chunks": [
+                "[SELECCIONADO] SI, especificar: ISO 9001.\nEN CONTRATOS SUJETOS A UNA REGULACIÓN ARMONIZADA, CERTIFICADOS DE ACREDITACIÓN DEL\nCUMPLIMIENTO DE LAS NORMAS DE GESTIÓN MEDIOAMBIENTAL:\n\n[SELECCIONADO] SI, especificar: ISO 14001\n12APARTADO LL\nCRITERIOS DE ADJUDICACIÓN SUJETOS A JUICIO DE VALOR.\n1.- CRITERIOS CUALITATIVOS BASADOS EN JUICIOS DE VALOR, CUYA DOCUMENTACIÓN DEBERÁ INCLUIRSE\nEN EL SOBRE 2 (MÁXIMO 45 PUNTOS).\nPara valorar la calidad técnica de una propuesta se analizarán y puntuarán los apartados de la misma, que\nse relacionan seguidamente:\nA) Memoria Constructiva y Programa de Trabajos. 15 puntos (Factor ponderaci",
+                "APARTADO LL\nCRITERIOS DE ADJUDICACIÓN SUJETOS A JUICIO DE VALOR.\n1.- CRITERIOS CUALITATIVOS BASADOS EN JUICIOS DE VALOR, CUYA DOCUMENTACIÓN DEBERÁ INCLUIRSE\nEN EL SOBRE 2 (MÁXIMO 45 PUNTOS).\nPara valorar la calidad técnica de una propuesta se analizarán y puntuarán los apartados de la misma, que\nse relacionan seguidamente:\nA) Memoria Constructiva y Programa de Trabajos. 15 puntos (Factor ponderación = 1,5).\nB) Equipo principal. 15 puntos (Fp = 1,5).\nC) Control de Calidad. 8 puntos (Fp = 0,8).\nD) Revisión y análisis del proyecto y seguimiento de la DIA. 5 puntos (Fp = 0,5).\nE) Memoria de Seguridad y Salud. 2 puntos (Fp = 0,2).\nEl contenido recogido en cada propuesta, formulada por cada licitador, se considerará que forma parte de la",
+                "B) Equipo principal. 15 puntos (Fp = 1,5).\nC) Control de Calidad. 8 puntos (Fp = 0,8).\nD) Revisión y análisis del proyecto y seguimiento de la DIA. 5 puntos (Fp = 0,5).\nE) Memoria de Seguridad y Salud. 2 puntos (Fp = 0,2).\nEl contenido recogido en cada propuesta, formulada por cada licitador, se considerará que forma parte de la\nmisma y que por tanto supone, salvo indicación expresa por su parte en sentido contrario, su compromiso\nde inclusión y realización durante la ejecución de las obras, sin más remuneración que la considerada en el\nproyecto.\nA) Memoria Constructiva y Programa de Trabajos. Máximo 15 puntos (Fp = 1,5).\nPara la Memoria Constructiva y el Programa de Trabajos cada propuesta se puntuará la metodología",
+                "criterio valoración técnico objetivo vto"
+            ],
+            "format": "Responde con un listado de los criterios técnicos y el valor de cada uno"
+        },
+        {
+            "prompt_key": "Precio",
+            "prompt": "Enumera los criterios de precio y el valor de cada uno",
+            "response": "* Valoración económica (VE): hasta 45 puntos, calculada mediante la fórmula parabólica: VE = 45 - [(OV−OE)² / (PBL−OE)²] * 45 * PBL (Presupuesto Base de Licitación del Contrato): sin IVA * OV (Importe de la oferta económica): sin IVA, incluyendo comunicación en cada tramo.",
+            "score": 0.85,
+            "index": [
+                131,
+                130,
+                39,
+                3
+            ],
+            "chunks": [
+                "necesarios para su correcto y legal funcionamiento. Deberán encontrarse en uso tan pronto como sea\nnecesario según el plan de obra presentado.\nVALORACIÓN TÉCNICA CRITERIOS CUALITATIVOS\nLa valoración técnica final de cada licitador se obtiene de la suma de las dos valoraciones anteriores.\nVT = VTs + VTo\n3.- VALORACIÓN DE LA OFERTA ECONÓMICA (HASTA UN MÁXIMO DE 45 PUNTOS) , CUYA DOCUMENTACIÓN\nDEBERÁ INCLUIRSE EN EL SOBRE 3 .\nLas ofertas económicas se efectuarán sobre el total del contrato, no sobre los precios unitarios.\nLas ofertas económicas que no hayan sido previamente excluidas, se valorarán del siguiente modo:\n19Fórmula 2, parabólica: Se le dará valor máximo a la mejor oferta económica, asignando al resto de las\nofertas el valor que resulte de aplicarle la siguiente fórmula:\nValoración económica VE:\n[ (OV−OE) 2 ]\nVE=45− ∗45\n(PBL−OE) 2\nDonde:\n• PBL: Presupuesto Base de Licitación del Contrato que figura en el Apartado E (sin IVA).\n• OV: Importe de la oferta económica (sin IVA) que se está valorando (inclui",
+                "comunicación en cada tramo.\nLa suma de los puntos así obtenidos constituyen la Valoración Aspectos Técnicos Cualitativos objetivos de la\noferta del licitador (VTo).\nDOCUMENTACIÓN:\nEl compromiso de llevar a cabo las instalaciones mencionadas comprenderá los permisos y autorizaciones\nque sean precisos, así como todos aquellos materiales, maquinaria, personal, energía y elementos que sean\nnecesarios para su correcto y legal funcionamiento. Deberán encontrarse en uso tan pronto como sea\nnecesario según el plan de obra presentado.\nVALORACIÓN TÉCNICA CRITERIOS CUALITATIVOS\nLa valoración técnica final de cada licitador se obtiene de la suma de las dos valoraciones anteriores.\nVT = VTs + VTo\n3.- VALORACIÓN DE LA OFERTA ECONÓMICA (HASTA UN MÁXIMO DE 45 PUNTOS) , CUYA DOCUMENTACIÓN",
+                "[SELECCIONADO] Varios criterios, pluralidad de criterios de adjudicación basados en la mejor relación calidad-\nprecio.\n5SUBASTA ELECTRÓNICA:\n[SELECCIONADO] NO\n\nmínimo la indicada en el artículo 143,4 de la LCSP.\nCARÁCTER VINCULANTE DE LAS RESPUESTAS A LAS SOLICITUDES DE ACLARACIONES DEL PLIEGO:\n\n[SELECCIONADO] SI. Las respuestas a las solicitudes de aclaraciones serán objeto de publicidad en lo términos\nprevistos en el art. 138,3,2º de la LCSP.\nMODIFICACIÓN DEL PLAZO DE SOLICITUD DE INFORMACIÓN ADICIONAL O DOCUMENT",
+                "Cambio Climático y Desarrollo Rural (Decreto 176/2020, de 30 de octubre del Consell), asigna a la\nDirección General del Agua como el Órgano Directivo que ejerce las funciones “en materia de\nplanificación, gestión y protección de recursos hídricos; proyectos de infraestructuras hidráulicas en la\nComunidad Valenciana, construcción y explotación de infraestructuras hidráulicas, planificiación y\ngestión de las cuencas internas de la comunidad Valenciana, reutilización y ahorro del agua; control y\nprotección de la calidad del agua, (...)”.\nAdemás, y según prosigue el citado artículo, la Dirección General del Agua tiene atribuidas, entre otras,\nel desarrollo de las funciones correspondientes a “La totalidad de las Infraestructuras Hidráulicas,"
+            ],
+            "format": "Responde con un listado de los criterios de precio y el valor de cada uno"
+        },
+        {
+            "prompt_key": "Garantia",
+            "prompt": "Enumera los criterios de garantía y el valor de cada uno",
+            "response": "",
+            "score": 0.8164315351973318,
+            "index": [
+                4,
+                5,
+                7
+            ],
+            "chunks": [
+                "gestión de las cuencas internas de la comunidad Valenciana, reutilización y ahorro del agua; control y\nprotección de la calidad del agua, (...)”.\nAdemás, y según prosigue el citado artículo, la Dirección General del Agua tiene atribuidas, entre otras,\nel desarrollo de las funciones correspondientes a “La totalidad de las Infraestructuras Hidráulicas,\nconsistente en dirigir, controlar y gestionar los proyectos y demás documentos técnicos de\ninfraestructuras hidráulicas, planificación, proyecto, construcción, conservación y explotación de las\ninfraestructuras hidráulicas para uso urbano, agrícola y aquellas actuaciones de competencia de la\nGeneralitat declaradas de interés medioambiental; (…);.dirigir, supervisar y controlar, y certificar y",
+                "consistente en dirigir, controlar y gestionar los proyectos y demás documentos técnicos de\ninfraestructuras hidráulicas, planificación, proyecto, construcción, conservación y explotación de las\ninfraestructuras hidráulicas para uso urbano, agrícola y aquellas actuaciones de competencia de la\nGeneralitat declaradas de interés medioambiental; (…);.dirigir, supervisar y controlar, y certificar y\nproponer la modificación, en su caso, de las obras de infraestructuras hidráulicas que le sean asignadas\n(…), y la redacción de los documentos técnico-administrativos necesarios para las contrataciones\ncorrespondientes”.\nc) Competencia Administrativa:\nEn cumplimiento de lo establecido en el art. 28 de la Ley de Contratos del Sector Público (LCSP), la\n1celebración del presente contrato es competencia de esta Dirección General, de acuerdo con las\natribuciones que le confiere el artículo 49.13 del Estatuto de Autonomía Valenciana, que determina la\ncompetencia exclusiva de la Generalitat sobre aquellas obras que no tengan la calificación de interés\nGeneral del Estado.\nMediante la Orden de 22 de marzo 2006 de la Conselleria de Agricultura, Pesca y A",
+                "4.- valoración oferta valoración oferta vo suma valor anterior"
+            ],
+            "format": "Responde con un listado de los criterios de garantía y el valor de cada uno"
+        },
+        {
+            "prompt_key": "Experiencia",
+            "prompt": "Enumera los criterios de experiencia y el valor de cada uno",
+            "response": "* A) Memoria Constructiva y Programa de Trabajos: 15 puntos * B) Equipo principal: 15 puntos * C) Control de Calidad: 8 puntos * D) Revisión y análisis del proyecto y seguimiento de la DIA: 5 puntos * E) Memoria de Seguridad y Salud: 2 puntos",
+            "score": 0.95,
+            "index": [
+                75,
+                76,
+                85,
+                3
+            ],
+            "chunks": [
+                "[SELECCIONADO] SI, CUÁL: En el caso de que la entidad adjudicataria recurra a las capacidades de otras entidades\npara acreditar los requisitos mínimos de solvencia, el licitador deberá acreditar que por parte de la\nentidad que aporta el complemento de capacidad se asume con carácter solidario, frente a la\nAdministración, el cumplimiento de las obligaciones que se deriven del contrato. La aportación de\ndicha declaración o 20 compromiso le será requerido al licitador que presente la mejor oferta, previo\nrequerimiento según el artículo 150.2 de la LCSP.\nSE EXIGE A LAS PERSONAS JURÍDICAS QUE DETALLEN EN LA OFERTA LOS NOMBRES Y LA CUALIFICACIÓN\nPROFESIONAL DEL PERSONAL RESPONSABLE DE EJECUTAR LA PRESTACIÓN:\n\n[SELECCIONADO] SI. Equipo principal de obra .\nCOMPROMISO DE ADSCRIPCIÓN DE MEDIOS:",
+                "[SELECCIONADO] SI, especificar: Las empresas licitadoras deberán presentar compromiso de que cuentan para la\nejecución de este contrato con los requisitos siguientes:\n1.- PERSONALES.\nEl proponente presentará un equipo principal de trabajo para la ejecución de las obras, que debe\nestar compuesto al menos por los siguientes titulados:\n• 1 jefe de obra\n• 1 jefe de producción\n• 1 ingeniero técnico topógrafo.\n• 1 coordinador de seguridad y salud\nTodos los integrantes del equipo contarán con una experiencia mínima de 5 años que pueda\nacreditar en el ejercicio de la profesión en general, habiendo participado bien en redacción de\nproyectos, en dirección y/o gestión de obras formando parte de asistencias técnicas o en\nconstrucción de infraestructuras.",
+                "APARTADO LL\nCRITERIOS DE ADJUDICACIÓN SUJETOS A JUICIO DE VALOR.\n1.- CRITERIOS CUALITATIVOS BASADOS EN JUICIOS DE VALOR, CUYA DOCUMENTACIÓN DEBERÁ INCLUIRSE\nEN EL SOBRE 2 (MÁXIMO 45 PUNTOS).\nPara valorar la calidad técnica de una propuesta se analizarán y puntuarán los apartados de la misma, que\nse relacionan seguidamente:\nA) Memoria Constructiva y Programa de Trabajos. 15 puntos (Factor ponderación = 1,5).\nB) Equipo principal. 15 puntos (Fp = 1,5).\nC) Control de Calidad. 8 puntos (Fp = 0,8).\nD) Revisión y análisis del proyecto y seguimiento de la DIA. 5 puntos (Fp = 0,5).\nE) Memoria de Seguridad y Salud. 2 puntos (Fp = 0,2).\nEl contenido recogido en cada propuesta, formulada por cada licitador, se considerará que forma parte de la",
+                "Cambio Climático y Desarrollo Rural (Decreto 176/2020, de 30 de octubre del Consell), asigna a la\nDirección General del Agua como el Órgano Directivo que ejerce las funciones “en materia de\nplanificación, gestión y protección de recursos hídricos; proyectos de infraestructuras hidráulicas en la\nComunidad Valenciana, construcción y explotación de infraestructuras hidráulicas, planificiación y\ngestión de las cuencas internas de la comunidad Valenciana, reutilización y ahorro del agua; control y\nprotección de la calidad del agua, (...)”.\nAdemás, y según prosigue el citado artículo, la Dirección General del Agua tiene atribuidas, entre otras,\nel desarrollo de las funciones correspondientes a “La totalidad de las Infraestructuras Hidráulicas,"
+            ],
+            "format": "Responde con un listado de los criterios de experiencia y el valor de cada uno"
+        },
+        {
+            "prompt_key": "Calidad",
+            "prompt": "Enumera los criterios de calidad y el valor de cada uno",
+            "response": "* A) Memoria Constructiva y Programa de Trabajos: 15 puntos * B) Equipo principal: 15 puntos * C) Control de Calidad: 8 puntos * D) Revisión y análisis del proyecto y seguimiento de la DIA: 5 puntos * E) Memoria de Seguridad y Salud: 2 puntos",
+            "score": 0.8659999999999999,
+            "index": [
+                85,
+                86,
+                89,
+                4
+            ],
+            "chunks": [
+                "APARTADO LL\nCRITERIOS DE ADJUDICACIÓN SUJETOS A JUICIO DE VALOR.\n1.- CRITERIOS CUALITATIVOS BASADOS EN JUICIOS DE VALOR, CUYA DOCUMENTACIÓN DEBERÁ INCLUIRSE\nEN EL SOBRE 2 (MÁXIMO 45 PUNTOS).\nPara valorar la calidad técnica de una propuesta se analizarán y puntuarán los apartados de la misma, que\nse relacionan seguidamente:\nA) Memoria Constructiva y Programa de Trabajos. 15 puntos (Factor ponderación = 1,5).\nB) Equipo principal. 15 puntos (Fp = 1,5).\nC) Control de Calidad. 8 puntos (Fp = 0,8).\nD) Revisión y análisis del proyecto y seguimiento de la DIA. 5 puntos (Fp = 0,5).\nE) Memoria de Seguridad y Salud. 2 puntos (Fp = 0,2).\nEl contenido recogido en cada propuesta, formulada por cada licitador, se considerará que forma parte de la",
+                "B) Equipo principal. 15 puntos (Fp = 1,5).\nC) Control de Calidad. 8 puntos (Fp = 0,8).\nD) Revisión y análisis del proyecto y seguimiento de la DIA. 5 puntos (Fp = 0,5).\nE) Memoria de Seguridad y Salud. 2 puntos (Fp = 0,2).\nEl contenido recogido en cada propuesta, formulada por cada licitador, se considerará que forma parte de la\nmisma y que por tanto supone, salvo indicación expresa por su parte en sentido contrario, su compromiso\nde inclusión y realización durante la ejecución de las obras, sin más remuneración que la considerada en el\nproyecto.\nA) Memoria Constructiva y Programa de Trabajos. Máximo 15 puntos (Fp = 1,5).\nPara la Memoria Constructiva y el Programa de Trabajos cada propuesta se puntuará la metodología",
+                "Para la valoración de los aspectos indicados respecto de Memoria Constructiva se evaluará la siguiente\ndocumentación:\n1. Concepción global de la obra. (5 puntos).\nDescripción general del proceso constructivo y de las unidades singulares. Se valorará la coherencia\nentre lo expresado en la Memoria Constructiva, lo expresado en el Programa de Trabajos y en el\nPlan de Control de Calidad así como las mejoras introducidas en la ejecución de las obras, medios\nempleados, calidad, etc. (distintas a los aspectos técnicos cualitativos valorables de forma\nautomática en el sobre 3) que estén debidamente justificadas y que no supongan incremento de\ncoste alguno ni alteración de otro tipo.\nAnálisis y soluciones propuestas de la organización física de la obra, instalaciones auxiliares, acopios",
+                "gestión de las cuencas internas de la comunidad Valenciana, reutilización y ahorro del agua; control y\nprotección de la calidad del agua, (...)”.\nAdemás, y según prosigue el citado artículo, la Dirección General del Agua tiene atribuidas, entre otras,\nel desarrollo de las funciones correspondientes a “La totalidad de las Infraestructuras Hidráulicas,\nconsistente en dirigir, controlar y gestionar los proyectos y demás documentos técnicos de\ninfraestructuras hidráulicas, planificación, proyecto, construcción, conservación y explotación de las\ninfraestructuras hidráulicas para uso urbano, agrícola y aquellas actuaciones de competencia de la\nGeneralitat declaradas de interés medioambiental; (…);.dirigir, supervisar y controlar, y certificar y"
+            ],
+            "format": "Responde con un listado de los criterios de calidad y el valor de cada uno"
+        },
+        {
+            "prompt_key": "Social",
+            "prompt": "Enumera los criterios sociales y el valor de cada uno",
+            "response": "",
+            "score": 0.709968364812745,
+            "index": [
+                4,
+                5,
+                7,
+                6
+            ],
+            "chunks": [
+                "gestión de las cuencas internas de la comunidad Valenciana, reutilización y ahorro del agua; control y\nprotección de la calidad del agua, (...)”.\nAdemás, y según prosigue el citado artículo, la Dirección General del Agua tiene atribuidas, entre otras,\nel desarrollo de las funciones correspondientes a “La totalidad de las Infraestructuras Hidráulicas,\nconsistente en dirigir, controlar y gestionar los proyectos y demás documentos técnicos de\ninfraestructuras hidráulicas, planificación, proyecto, construcción, conservación y explotación de las\ninfraestructuras hidráulicas para uso urbano, agrícola y aquellas actuaciones de competencia de la\nGeneralitat declaradas de interés medioambiental; (…);.dirigir, supervisar y controlar, y certificar y",
+                "consistente en dirigir, controlar y gestionar los proyectos y demás documentos técnicos de\ninfraestructuras hidráulicas, planificación, proyecto, construcción, conservación y explotación de las\ninfraestructuras hidráulicas para uso urbano, agrícola y aquellas actuaciones de competencia de la\nGeneralitat declaradas de interés medioambiental; (…);.dirigir, supervisar y controlar, y certificar y\nproponer la modificación, en su caso, de las obras de infraestructuras hidráulicas que le sean asignadas\n(…), y la redacción de los documentos técnico-administrativos necesarios para las contrataciones\ncorrespondientes”.\nc) Competencia Administrativa:\nEn cumplimiento de lo establecido en el art. 28 de la Ley de Contratos del Sector Público (LCSP), la\n1celebración del presente contrato es competencia de esta Dirección General, de acuerdo con las\natribuciones que le confiere el artículo 49.13 del Estatuto de Autonomía Valenciana, que determina la\ncompetencia exclusiva de la Generalitat sobre aquellas obras que no tengan la calificación de interés\nGeneral del Estado.\nMediante la Orden de 22 de marzo 2006 de la Conselleria de Agricultura, Pesca y A",
+                "4.- valoración oferta valoración oferta vo suma valor anterior",
+                "4.- valoración oferta"
+            ],
+            "format": "Responde con un listado de los criterios sociales y el valor de cada uno"
+        },
+        {
+            "prompt_key": "Seguridad",
+            "prompt": "Enumera los criterios ambientalesy el valor de cada uno ",
+            "response": "* A) Memoria Constructiva y Programa de Trabajos: 15 puntos (Fp = 1,5) * B) Equipo principal: 15 puntos (Fp = 1,5) * C) Control de Calidad: 8 puntos (Fp = 0,8) * D) Revisión y análisis del proyecto y seguimiento de la DIA: 5 puntos (Fp = 0,5) * E) Memoria de Seguridad y Salud: 2 puntos (Fp = 0,2)",
+            "score": 0.95,
+            "index": [
+                85,
+                86,
+                118,
+                1
+            ],
+            "chunks": [
+                "APARTADO LL\nCRITERIOS DE ADJUDICACIÓN SUJETOS A JUICIO DE VALOR.\n1.- CRITERIOS CUALITATIVOS BASADOS EN JUICIOS DE VALOR, CUYA DOCUMENTACIÓN DEBERÁ INCLUIRSE\nEN EL SOBRE 2 (MÁXIMO 45 PUNTOS).\nPara valorar la calidad técnica de una propuesta se analizarán y puntuarán los apartados de la misma, que\nse relacionan seguidamente:\nA) Memoria Constructiva y Programa de Trabajos. 15 puntos (Factor ponderación = 1,5).\nB) Equipo principal. 15 puntos (Fp = 1,5).\nC) Control de Calidad. 8 puntos (Fp = 0,8).\nD) Revisión y análisis del proyecto y seguimiento de la DIA. 5 puntos (Fp = 0,5).\nE) Memoria de Seguridad y Salud. 2 puntos (Fp = 0,2).\nEl contenido recogido en cada propuesta, formulada por cada licitador, se considerará que forma parte de la",
+                "B) Equipo principal. 15 puntos (Fp = 1,5).\nC) Control de Calidad. 8 puntos (Fp = 0,8).\nD) Revisión y análisis del proyecto y seguimiento de la DIA. 5 puntos (Fp = 0,5).\nE) Memoria de Seguridad y Salud. 2 puntos (Fp = 0,2).\nEl contenido recogido en cada propuesta, formulada por cada licitador, se considerará que forma parte de la\nmisma y que por tanto supone, salvo indicación expresa por su parte en sentido contrario, su compromiso\nde inclusión y realización durante la ejecución de las obras, sin más remuneración que la considerada en el\nproyecto.\nA) Memoria Constructiva y Programa de Trabajos. Máximo 15 puntos (Fp = 1,5).\nPara la Memoria Constructiva y el Programa de Trabajos cada propuesta se puntuará la metodología",
+                "la Dirección General de Medio Rural y Evaluación Ambiental y su documento complementario de 15 de\njunio de 2020.\nSe valorará hasta un máximo de 2,5 puntos por las deficiencias, omisiones detectadas y el análisis de las\ninterferencias y afecciones que incidan en las obras.\nSe valorarán hasta un máximo de 2,5 puntos las medidas propuestas para el seguimiento de la DIA.\nLa documentación se limitará a un máximo de veinte (20) páginas para todos los aspectos de la Revisión,\nAnálisis y Propuesta de Seguimiento. El formato del documento será obligatoriamente el mismo que en el\napartado A).\nE) Memoria de Seguridad y Salud . Máximo 2 puntos (Fp = 0,20)\nSe valorarán los sistemas de participación del personal, los procesos de formación e información, que con",
+                "NECESIDADES A SATISFACER CON LA CELEBRACIÓN DEL CONTRATO:\na) Necesidades a satisfacer:\nLa mejora de la calidad ambiental de los acuíferos del Vinalopó, mediante el cese de extracción para\nriego de aguas subterráneas de los mismos y su sustitución por aguas superficiales. Para ello, en el\npresente contrato se ejecutarán las obras de una nueva tubería que distribuya las aguas provenientes del\nTrasvase Júcar – Vinalopó, a las entidades de riego existentes en la Margen Izquierda del Vinalopó en un\ntercer tramo de la conducción (Tramo “II”) que se corresponde con los Pk 10+464 hasta el pK 23+137.\nb) Vinculación a los fines concretos de la dirección general proponente:\nEl artículo 14 del Reglamento Orgánico y Funcional de la Conselleria de Agricultura, Medio Ambiente,"
+            ],
+            "format": "Responde con un listado de los criterios de seguridad y el valor de cada uno"
+        },
+        {
+            "prompt_key": "-",
+            "prompt": "Enumera los criterios de juicio de valor y el valor de cada uno",
+            "response": "* A) Memoria Constructiva y Programa de Trabajos: 15 puntos * B) Equipo principal: 15 puntos * C) Control de Calidad: 8 puntos * D) Revisión y análisis del proyecto y seguimiento de la DIA: 5 puntos * E) Memoria de Seguridad y Salud: 2 puntos",
+            "score": 0.8368421052631579,
+            "index": [
+                84,
+                85,
+                101,
+                1
+            ],
+            "chunks": [
+                "[SELECCIONADO] SI, especificar: ISO 9001.\nEN CONTRATOS SUJETOS A UNA REGULACIÓN ARMONIZADA, CERTIFICADOS DE ACREDITACIÓN DEL\nCUMPLIMIENTO DE LAS NORMAS DE GESTIÓN MEDIOAMBIENTAL:\n\n[SELECCIONADO] SI, especificar: ISO 14001\n12APARTADO LL\nCRITERIOS DE ADJUDICACIÓN SUJETOS A JUICIO DE VALOR.\n1.- CRITERIOS CUALITATIVOS BASADOS EN JUICIOS DE VALOR, CUYA DOCUMENTACIÓN DEBERÁ INCLUIRSE\nEN EL SOBRE 2 (MÁXIMO 45 PUNTOS).\nPara valorar la calidad técnica de una propuesta se analizarán y puntuarán los apartados de la misma, que\nse relacionan seguidamente:\nA) Memoria Constructiva y Programa de Trabajos. 15 puntos (Factor ponderaci",
+                "APARTADO LL\nCRITERIOS DE ADJUDICACIÓN SUJETOS A JUICIO DE VALOR.\n1.- CRITERIOS CUALITATIVOS BASADOS EN JUICIOS DE VALOR, CUYA DOCUMENTACIÓN DEBERÁ INCLUIRSE\nEN EL SOBRE 2 (MÁXIMO 45 PUNTOS).\nPara valorar la calidad técnica de una propuesta se analizarán y puntuarán los apartados de la misma, que\nse relacionan seguidamente:\nA) Memoria Constructiva y Programa de Trabajos. 15 puntos (Factor ponderación = 1,5).\nB) Equipo principal. 15 puntos (Fp = 1,5).\nC) Control de Calidad. 8 puntos (Fp = 0,8).\nD) Revisión y análisis del proyecto y seguimiento de la DIA. 5 puntos (Fp = 0,5).\nE) Memoria de Seguridad y Salud. 2 puntos (Fp = 0,2).\nEl contenido recogido en cada propuesta, formulada por cada licitador, se considerará que forma parte de la",
+                "disponibilidad al contrato, así como carga de trabajo en el momento de presentación de la\noferta.\n• El historial profesional de los titulados del equipo principal y complementario.\n• Los certificados o documentación que acrediten su experiencia.\nA este último efecto, los currículums aportados constarán de un máximo de cuatro (4) páginas para\ncada currículum, con el formato indicado en el apartado anterior con independencia de los\ncertificados y su hoja resumen.\nNo se deberán proponer equipos alternativos ó aportar currículums de técnicos que no figuren en\nel equipo propuesto.\nVALORACIÓN\nB.1) Puntuación del JEFE DE OBRA:\n• 0,5 puntos, hasta un máximo de 5, por año completo de experiencia adicional a 5 años que",
+                "NECESIDADES A SATISFACER CON LA CELEBRACIÓN DEL CONTRATO:\na) Necesidades a satisfacer:\nLa mejora de la calidad ambiental de los acuíferos del Vinalopó, mediante el cese de extracción para\nriego de aguas subterráneas de los mismos y su sustitución por aguas superficiales. Para ello, en el\npresente contrato se ejecutarán las obras de una nueva tubería que distribuya las aguas provenientes del\nTrasvase Júcar – Vinalopó, a las entidades de riego existentes en la Margen Izquierda del Vinalopó en un\ntercer tramo de la conducción (Tramo “II”) que se corresponde con los Pk 10+464 hasta el pK 23+137.\nb) Vinculación a los fines concretos de la dirección general proponente:\nEl artículo 14 del Reglamento Orgánico y Funcional de la Conselleria de Agricultura, Medio Ambiente,"
+            ],
+            "format": "Responde con un listado de los criterios de juicio de valor y el valor de cada uno"
+        },
+        {
+            "prompt_key": "Formula_precio",
+            "prompt": "Indica la formula para puntuar la oferta económica",
+            "response": "VE = 45 - ((OV−OE)² / (PBL−OE)²) * 45",
+            "score": 0.8346153846153846,
+            "index": [
+                131,
+                130,
+                23,
+                1
+            ],
+            "chunks": [
+                "necesarios para su correcto y legal funcionamiento. Deberán encontrarse en uso tan pronto como sea\nnecesario según el plan de obra presentado.\nVALORACIÓN TÉCNICA CRITERIOS CUALITATIVOS\nLa valoración técnica final de cada licitador se obtiene de la suma de las dos valoraciones anteriores.\nVT = VTs + VTo\n3.- VALORACIÓN DE LA OFERTA ECONÓMICA (HASTA UN MÁXIMO DE 45 PUNTOS) , CUYA DOCUMENTACIÓN\nDEBERÁ INCLUIRSE EN EL SOBRE 3 .\nLas ofertas económicas se efectuarán sobre el total del contrato, no sobre los precios unitarios.\nLas ofertas económicas que no hayan sido previamente excluidas, se valorarán del siguiente modo:\n19Fórmula 2, parabólica: Se le dará valor máximo a la mejor oferta económica, asignando al resto de las\nofertas el valor que resulte de aplicarle la siguiente fórmula:\nValoración económica VE:\n[ (OV−OE) 2 ]\nVE=45− ∗45\n(PBL−OE) 2\nDonde:\n• PBL: Presupuesto Base de Licitación del Contrato que figura en el Apartado E (sin IVA).\n• OV: Importe de la oferta económica (sin IVA) que se está valorando (inclui",
+                "comunicación en cada tramo.\nLa suma de los puntos así obtenidos constituyen la Valoración Aspectos Técnicos Cualitativos objetivos de la\noferta del licitador (VTo).\nDOCUMENTACIÓN:\nEl compromiso de llevar a cabo las instalaciones mencionadas comprenderá los permisos y autorizaciones\nque sean precisos, así como todos aquellos materiales, maquinaria, personal, energía y elementos que sean\nnecesarios para su correcto y legal funcionamiento. Deberán encontrarse en uso tan pronto como sea\nnecesario según el plan de obra presentado.\nVALORACIÓN TÉCNICA CRITERIOS CUALITATIVOS\nLa valoración técnica final de cada licitador se obtiene de la suma de las dos valoraciones anteriores.\nVT = VTs + VTo\n3.- VALORACIÓN DE LA OFERTA ECONÓMICA (HASTA UN MÁXIMO DE 45 PUNTOS) , CUYA DOCUMENTACIÓN",
+                "CÓDIGO DIR3 A10017551\nDIRECCIÓN POSTAL Complejo Administrativo 9 de Octubre, EDIFICIO B4.\nC/ Democracia, 77. 46018 Valencia\nUNIDAD TRAMITADORA: CENTRO DIRECTIVO PROMOTOR DEL CONTRATO\nDENOMINACIÓN Subdirección General de Planificación e Infraestructura\nHidráulica\nCÓDIGO DIR3 A10017870\nDIRECCIÓN POSTAL Complejo Administrativo 9 de Octubre, Torre1-6º Planta.\nC/ Democracia, 77. 46018 Valencia\nOFICINA CONTABLE: ÓRGANO QUE TIENE ATRIBUIDA LA FUNCIÓN DE CONTABILIDAD\nDENOMINACIÓN INTERVENCIÓN GENERAL\nCÓDIGO DIR3 GE0006297\n4DIRECCIÓN POSTAL Complejo Administrativo 9 de Octubre, EDIFICIO B4.\nC/ Democracia, 77. 46018 Valencia\nÓRGANO DESTINATARIO DEL OBJETO DEL CONTRATO\nDENOMINACIÓN Subdirección General de Planificación e Infraestructura\nHidráulica\nDIRECCIÓN POSTAL Complejo Administrativo 9 de Octubre, Torre1-6º Planta.\nC/ Democracia, 77. 46018 Valencia\nTRAMITACIÓN:\n\n\nX \nsuficiente una vez aprobado el presupuesto de la ",
+                "NECESIDADES A SATISFACER CON LA CELEBRACIÓN DEL CONTRATO:\na) Necesidades a satisfacer:\nLa mejora de la calidad ambiental de los acuíferos del Vinalopó, mediante el cese de extracción para\nriego de aguas subterráneas de los mismos y su sustitución por aguas superficiales. Para ello, en el\npresente contrato se ejecutarán las obras de una nueva tubería que distribuya las aguas provenientes del\nTrasvase Júcar – Vinalopó, a las entidades de riego existentes en la Margen Izquierda del Vinalopó en un\ntercer tramo de la conducción (Tramo “II”) que se corresponde con los Pk 10+464 hasta el pK 23+137.\nb) Vinculación a los fines concretos de la dirección general proponente:\nEl artículo 14 del Reglamento Orgánico y Funcional de la Conselleria de Agricultura, Medio Ambiente,"
+            ],
+            "format": "Responde con la fórmula para puntuar la oferta económica"
+        },
+        {
+            "prompt_key": "Formula_JuicioValor",
+            "prompt": "Indica la formula para obtejer la puntuación final  de juicio de valor",
+            "response": "",
+            "score": 0.8666666666666667,
+            "index": [
+                156,
+                163,
+                0
+            ],
+            "chunks": [
+                "APARTADO Q\nOBLIGACION DE INDICAR EN LA OFERTA SI VA A HABER SUBCONTRATACIÓN:\n[SELECCIONADO] NO\n\nLAS CONDICIONES DE LA OFERTA PARA LA SUBCONTRATACIÓN, LA ACREDITACION DE LA APTITUD DEL\nSUBCONTRATISTA Y LA ACREDITACIÓN DE LAS CONDICIONES DE EMERGENCIA O URGENCIA TIENE\nCARÁCTER DE OBLIGACIONES ESENCIALES:\n[SELECCIONADO] NO\n\nTAREAS CRÍTICAS QUE NO PODRÁN SER OBJETO DE SUBCONTRATACIÓN:\n[SELECCIONADO] NO\n\nPAGOS DIRECTOS A LOS SUBCONTRATISTAS POR PARTE DE LA ADMINISTRACIÓN:\n23[SELECCIONADO] NO\n\nREMISIÓN AL ÓRGANO DE CONTRATACIÓN, CUANDO ÉSTE LO SOLICITE, DE UNA RELACIÓN DETALLADA DE\nAQUELLOS SUBCONTRATISTAS O SUMINISTRADORES QUE PARTICIPEN EN EL CONTRATO CUANDO SE\nPERFECCIONE SU PARTICIPACIÓN, JUNTO CON AQUELLAS CONDICIONES DE SUBCONTRATACIÓN O\nSUMINISTRO DE CADA UNO DE ELLOS QUE GUARDEN UNA RELACIÓN DIRECTA CON EL PLAZO DE PAGO:\n\nX SI\nAPARTADO R\nPLAZO DE EJECUCIÓN DEL",
+                "penalidades por demora distintas a las enumeradas en la cláusula 36.4 del PCAP.\n4. Penalidades por incumplimiento de plazos parciales por el contratista en caso de diferir de las\nprevistas en la cláusula 36.4 en relación con la cláusula 36.6.\nSe considera que no existen especiales características del contrato que haga necesario establecer\npenalidades por demora distintas a las enumeradas en la cláusula 36 del PCAP.\n5. Penalidades en caso de incumplimiento de las condiciones de la oferta, de la falta de acreditación de\nla aptitud del subcontratista o de las condiciones de emergencia o urgencia:",
+                "Anexo I\nCUADRO DE CARACTERÍSTICAS PARTICULARES PARA EL SERVICIO DE INFRAESTRUCTURAS HIDRÁULICAS\nURBANAS PARA LA ADJUDICACIÓN DEL CONTRATO ADMINISTRATIVO DE LAS OBRAS “NUEVA\nCONDUCCIÓN DE LA MARGEN IZQUIERDA DEL POSTRASVASE JÚCAR-VINALOPÓ, TRAMO II (Rio Vinalopó –\nBalsa Moclem)”, MEDIANTE PROCEDIMIENTO ABIERTO.\nAPARTADO A\nNúmero DE EXPEDIENTE: CMAYOR/2023/07Y10/1\nNECESIDADES A SATISFACER CON LA CELEBRACIÓN DEL CONTRATO:\na) Necesidades a satisfacer:\nLa mejora de la calidad ambiental de los acuíferos del Vinalopó, mediante el cese de extracción para\nriego de aguas subterráneas de los mismos y su sustitución por aguas superficiales. Para ello, en el\npresente contrato se ejecutarán las obras de una nueva tubería que distribuya las aguas provenientes del"
+            ],
+            "format": "Responde con la fórmula para obtener la puntuación final de juicio de valor"
         }
     ]
 }

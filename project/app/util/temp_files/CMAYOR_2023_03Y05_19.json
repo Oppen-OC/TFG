@@ -4,307 +4,489 @@
             "prompt_key": "Regulacion_armonizada",
             "prompt": "Indica si tiene regulación armonizada",
             "response": "No",
-            "score": 0.933580105304718,
+            "score": 0.9341385053098201,
             "index": [
                 4,
                 59,
                 60,
                 6
-            ]
+            ],
+            "chunks": [
+                "118/2022, de 5 de agosto, del Consell, por el que se regula la inclusión de cláusulas de responsabilidad social\nen la contratación pública, que desarrolla lo previsto en el artículo 13.4 de la ley 18/2018, de 13 de julio, para el\nfomento de la responsabilidad social.\nCÓDIGO C.P.V.:\n45233140-2 Obras Viales\n45233120-6 Trabajos de construcción de carreteras\n45233141-9 Trabajos de mantenimiento de carreteras\n45233125-1 Trabajos de construcción de intersecciones de carreteras\nSUJETO A REGULACIÓN ARMONIZADA:\n□ NoAPARTADO B.\nDIVISIÓN EN LOTES:\n□ NO. Motivos de justificación:\nLa división en lotes de los trabajos correspondientes al contrato de ejecución de obras dificultaría la\ncoordinación de los distintos lotes, imposibilitaría una única organización coherente, responsabilidad única, e\ninterlocución unificada, lo que lleva a plantear como óptima su ejecución unitaria (Art. 99.3 de la Ley 9/2017 de\n8 de no",
+                "se menciona a continuación, y con categoría igual o superior a la exigida para el contrato, acreditará sus\ncondiciones de solvencia para contratar.\nGrupo G. Viales y pistas\nSubgrupo 4. Con firmes de mezclas bituminosas\nCategoría 3. Cuantía superior a 360.000 euros e inferior o igual a 840.000 euros\nHABILITACIÓN EMPRESARIAL EXIGIBLE PARA LA REALIZACIÓN DE LA ACTIVIDAD O PRESTACIÓN QUE\nCONSTITUYA EL OBJETO DEL CONTRATO EN CASO DE QUE PROCEDA:\n□ No\nSE EXIGE A LAS PERSONAS JURÍDICAS QUE DETALLEN EN LA OFERTA LOS NOMBRES Y LA\nCUALIFICACIÓN PROFESIONAL DEL PERSONAL RESPONSABLE DE EJECUTAR LA PRESTACIÓN:\n□ No\nCOMPROMISO DE ADSCRIPCIÓN DE MEDIOS:\n□ No\nEN CONTRATOS SUJETOS A UNA REGULACIÓN ARMONIZADA, CERTIFICADOS DE ACREDITACIÓN DEL\nCUMPLIMIENTO DE LAS NORMAS DE GARANTÍA DE CALIDAD:\n□ No procede",
+                "□ No\nSE EXIGE A LAS PERSONAS JURÍDICAS QUE DETALLEN EN LA OFERTA LOS NOMBRES Y LA\nCUALIFICACIÓN PROFESIONAL DEL PERSONAL RESPONSABLE DE EJECUTAR LA PRESTACIÓN:\n□ No\nCOMPROMISO DE ADSCRIPCIÓN DE MEDIOS:\n□ No\nEN CONTRATOS SUJETOS A UNA REGULACIÓN ARMONIZADA, CERTIFICADOS DE ACREDITACIÓN DEL\nCUMPLIMIENTO DE LAS NORMAS DE GARANTÍA DE CALIDAD:\n□ No procede\nEN CONTRATOS SUJETOS A UNA REGULACIÓN ARMONIZADA, CERTIFICADOS DE ACREDITACIÓN DEL\nCUMPLIMIENTO DE LAS NORMAS DE GESTIÓN MEDIOAMBIENTAL:\n□ No procede\nFORMAS DE RESPONSABILIDAD CONJUNTA EN LA EJECUCIÓN DEL CONTRATO PARA LOS CASOS EN\nQUE UNA EMPRESA RECURRA A LAS CAPACIDADES DE OTRAS ENTIDADES EN LO QUE RESPECTA A LOS\nCRITERIOS RELATIVOS A LA SOLVENCIA ECONÓMICA Y FINANCIERA:",
+                "asimismo ejercer función seguimiento cumplimiento obligación contractual establecido artículo 14 decreto 118/2022 5 agosto consell régimen penalidad ejecución contrato procedimiento imposición penalidad seguir dispuesto artículo 97 rgcap artículo 191 lcsp 1 penalidad cláusula 36.3 5% precio contrato incumplimiento iva excluido 2 penalidad incumplimiento parcial ejecución cláusula 36.1 5% precio contrato incumplimiento iva excluido 3 penalidad incumplimiento plazo contratista caso diferir previsto"
+            ],
+            "format": "Responde únicamente con Si o No"
         },
         {
             "prompt_key": "Sometido_recurso_especial",
             "prompt": "Indica si tiene recurso especial",
             "response": "",
-            "score": 0.7394037693738937,
+            "score": 0.7367552955945333,
             "index": [
-                6,
                 5,
                 2,
-                3
-            ]
+                1
+            ],
+            "chunks": [
+                "ofj importe oferta genérico j contemplable incluir conjunto citado n oferta contemplabl pbl = presupuesto base licitación iva excluido caso n≥5 obtener baja referencia br n oferta of h cumplir baja medio bm baja referencia br utilizar determinar límite presunción anormalidad garantía complementario caso oferta económico presunción anormalidad importe relación prestación recabar información necesario órgano contratación valorar efectivamente oferta resultar anormalmente bajo relación prestación rechazar",
+                "análisis operación simple formar actividad desvío provisional reposición servicio aspecto complementario secundario análisis necesidad acopio instalación auxiliar estudio medio transporte planta producción material suministro zona previsto préstamo vertedero descripción prueba puesta servicio obra análisis estudio seguridad salud anejo control calidad estudio gestión residuo anejo medida corrector impacto ambiental puntuación aspecto incluido memoria depender aspecto",
+                "electrónico resumen correspondiente oferta disponer plazo 24 hora remitir oferta completo órgano asistencia texto completo guía servicio licitación electrónico preparación presentación oferta disponible plataforma contratación obtener justificante presentación compruebir contener término huella electrónico recibir justificante tipología responsabilidad exclusivo completar oferta plazo 24 hora recaer únicamente licitador caso necesario remitir oferta margen plataforma deber seguir previsto guía servicio licitación electrónico preparación presentación oferta"
+            ],
+            "format": "Responde únicamente con Si o No"
         },
         {
             "prompt_key": "Plazo_ejecución",
             "prompt": "Obten el plazo de ejecución del contrato",
             "response": "12 meses",
-            "score": 0.888235294117647,
+            "score": 0.8268171714684542,
             "index": [
                 160,
                 161,
-                37
-            ]
+                37,
+                0
+            ],
+            "chunks": [
+                "GUARDEN UNA RELACIÓN DIRECTA CON EL PLAZO DE PAGO:\n□ Sí. Aportar, a solicitud del órgano de contratación, justificante de cumplimiento de los pagos a aquellos, una\nvez terminada la prestación, dentro de los plazos de pago legalmente establecidos en la LCSP y en la ley\n3/2004, de 29 de diciembre, por la que se establecen medidas de lucha contra la morosidad en las operaciones\ncomerciales, en lo que le sea de aplicación.\nCOMPROBACION DE LOS PAGOS A LOS SUBCONTRATISTAS EN TODO CASO\n□ No\nAPARTADO R\nPLAZO DE EJECUCIÓN DEL CONTRATO:\nEl plazo de ejecución es de doce (12) meses.\nINICIO DEL CÓMPUTO:\nA la firma del acta de comprobación del replanteo.\nPLAZOS PARCIALES:\n□ Sí. La ejecución del contrato está sujeta a los plazos parciales del programa de trabajo que debe presentar\nel contratista.",
+                "COMPROBACION DE LOS PAGOS A LOS SUBCONTRATISTAS EN TODO CASO\n□ No\nAPARTADO R\nPLAZO DE EJECUCIÓN DEL CONTRATO:\nEl plazo de ejecución es de doce (12) meses.\nINICIO DEL CÓMPUTO:\nA la firma del acta de comprobación del replanteo.\nPLAZOS PARCIALES:\n□ Sí. La ejecución del contrato está sujeta a los plazos parciales del programa de trabajo que debe presentar\nel contratista.\nOBLIGACIÓN DE PRESENTACIÓN DE PROGRAMA DE TRABAJO\n□ Sí. La empresa contratista deberá aportar un programa de trabajo para su aprobación por parte de la\nAdministración.\nEl órgano de contratación resolverá sobre el programa de trabajo dentro de los quince días siguientes a su\npresentación, pudiendo imponer la introducción de modificaciones o el cumplimiento de determinadas",
+                "CONCEPTO IMPORTE (€)\n435.695,83\nImporte Base de Licitación (IVA excluido)\nModificaciones Previstas (IVA excluido) 0,00\nPrórrogas (IVA excluido) 0,00\nRevisión de precios (IVA excluido) 0,00\nOtros Conceptos (IVA excluido) 0,00\n435.695,83\nTotal Valor Estimado\nEl presupuesto de la ejecución de la obra será el que resulte al aplicar la baja de adjudicación al Presupuesto Base\nde Licitación.\nAPARTADO F\nPRESUPUESTO BASE DE LICITACIÓN POR LOTES:\nNo procede\nVALOR ESTIMADO DE CADA LOTE:\nNo procede\nAPARTADO G\nCONSIGNACIÓN PRESUPUESTARIA:\nCentro y Sección Programa Económica Importe (IVA Incl.)\n08.02.02 51310 60101 527.191,95€\nFinanciado por fondos provenientes del Ministerio de Transportes, Movilidad y Agenda Urbana (Mitma).\nFINANCIADO POR FONDOS COMUNITARIOS\n□ No\n6FINANCIADO POR VARIOS DEPARTAMENTOS:\n□ No\nAPARTADO H\nREVISIÓN DE PRECIOS\nNo procede. Debido a que el plazo de ejecución de la obra es inferior a dos años, no se establece el derecho\na revisión periódica y predeterminada de precios del presente proyecto, según lo establecido en el artículo 103\nde la Ley 9/2017 de Contratos del Sector Público, que a su vez remite a la Ley 2/2015, de 30 de marzo, de\n",
+                "guarden relación directo plazo pago □ aportar solicitud órgano contratación justificante cumplimiento pago terminar prestación plazo pago legalmente establecido lcsp ley 3/2004 29 diciembre establecer medida lucha morosidad operación comercial aplicación comprobacion pago subcontratista caso □ apartado r plazo ejecución contrato plazo ejecución 12 mes inicio cómputo firma acta comprobación replanteo plazo parcial □ ejecución contrato sujeto plazo parcial programa trabajo presentar contratista"
+            ],
+            "format": "Responde ÚNICAMENTE con el número de meses o años (específica meses o años)"
         },
         {
             "prompt_key": "Presupuesto_sinIVA",
             "prompt": "Ubica el presupuesto sin IVA del documento",
-            "response": "435.695,83 €",
-            "score": 0.9185073472559452,
+            "response": "435.695,83",
+            "score": 0.95,
             "index": [
                 36,
                 111,
                 112,
-                4
-            ]
+                3
+            ],
+            "chunks": [
+                "CONTRATACIÓN DE OBRAS A TANTO ALZADO CON PRECIO CERRADO:\n□ No\nVALOR ESTIMADO DEL CONTRATO:\nEl valor estimado del contrato asciende a CUATROCIENTOS TREINTA Y CINCO MIL SEISCIENTOS NOVENTA\nY CINCO EUROS CON OCHENTA Y TRES CÉNTIMOS (435.695,83 €), IVA excluido, según el presupuesto del\nproyecto constructivo aprobado que sirve de base a la licitación.\nEsta cantidad obedece al siguiente desglose:\nCONCEPTO IMPORTE (€)\n435.695,83\nImporte Base de Licitación (IVA excluido)\nModificaciones Previstas (IVA excluido) 0,00\nPrórrogas (IVA excluido) 0,00\nRevisión de precios (IVA excluido) 0,00\nOtros Conceptos (IVA excluido) 0,00\n435.695,83\nTotal Valor Estimado\nEl presupuesto de la ejecución de la obra será el que resulte al aplicar la baja de adjudicación al Presupuesto Base\nde Licitación.\nAPARTADO F",
+                "Las ofertas cuya valoración en este apartado sea inferior a 10 puntos no serán tomadas en consideración para\nel cálculo de las ofertas anormalmente bajas ni para la determinación de la oferta más ventajosa.\nDe este modo se obtendrá para cada oferta la valoración de la calidad mediante la aplicación de fórmulas, PCF.\nA estos efectos las licitadoras deberán cumplimentar los cuadros de Autobaremación del Anexo I Bis, que se\nincluirán en el sobre n.º 3, junto con la proposición económica.\n15CRITERIO DE ADJUDICACIÓN: PRECIO\nVALORACIÓN\nPara valorar la oferta económica se puntuarán los aspectos que se relacionan seguidamente:\nPara todas las ofertas:\n(Of −Of )2\nPP =40⋅[1− i min ](1⁄2)\n(PBL−Of )2\nmin\nsiendo:\nPP: puntuación obtenida para el criterio precio\nOf\ni\n: oferta que se valora, IVA excluido\nOfmin: oferta mínima, IVA excluido\nPBL: presupuesto base de licitación, IVA excluido\nSe consi",
+                "CRITERIO DE ADJUDICACIÓN: PRECIO\nVALORACIÓN\nPara valorar la oferta económica se puntuarán los aspectos que se relacionan seguidamente:\nPara todas las ofertas:\n(Of −Of )2\nPP =40⋅[1− i min ](1⁄2)\n(PBL−Of )2\nmin\nsiendo:\nPP: puntuación obtenida para el criterio precio\nOf\ni\n: oferta que se valora, IVA excluido\nOfmin: oferta mínima, IVA excluido\nPBL: presupuesto base de licitación, IVA excluido\nSe considera oferta mínima la de menor importe de las admitidas, no incursa definitivamente en anormalidad\npor su bajo importe, una vez aplicados los criterios establecidos en el apartado M del presente Anexo.\nLa puntuación económica se redondeará al segundo decimal.\nPUNTUACIÓN GLOBAL\nLa puntuación global (PG) relativa a una propuesta será la suma de las puntuaciones siguientes:\nPG=PCJ+PCF+PP\nsiendo:",
+                "“MEJORA DE LA SEGURIDAD VIAL EN LA INTERSECCIÓN PREVIA A LA ENTRADA A CHELVA POR EL\nNORTE”.\nPara ello, se prevén distintas actuaciones atendiendo a las características y condicionantes de cada tramo. Se\nrealizarán entre otros:\n• Despeje de terreno.\n• Excavaciones y rellenos en la zona de construcción de la nueva rotonda.\n• Construcción de la glorieta y los accesos.\nEn este contrato se incluyen cláusulas de responsabilidad social y ambiental, de acuerdo con el Decreto\n118/2022, de 5 de agosto, del Consell, por el que se regula la inclusión de cláusulas de responsabilidad social\nen la contratación pública, que desarrolla lo previsto en el artículo 13.4 de la ley 18/2018, de 13 de julio, para el\nfomento de la responsabilidad social.\nCÓDIGO C.P.V.:\n45233140-2 Obras Viales"
+            ],
+            "format": "Responde ÚNICAMENTE con la cantidad en euros"
         },
         {
             "prompt_key": "Presupuesto_conIVA",
             "prompt": "Ubica el presupuesto con IVA del documento (presupuesto base)",
             "response": "527.191,95 €",
-            "score": 0.8876863708685745,
+            "score": 0.8760018268679127,
             "index": [
                 24,
                 25,
                 36,
                 4
-            ]
+            ],
+            "chunks": [
+                "«in situ» de la documentación\n□ No\nMEDIO DE NOTIFICACIÓN ELECTRÓNICA:\nComparecencia en la sede electrónica\nAPARTADO E\nPRESUPUESTO BASE DE LICITACIÓN DEL CONTRATO:\nTipo de presupuesto:\nEl Presupuesto Base de Licitación del Contrato asciende a CUATROCIENTOS TREINTA Y CINCO MIL\nSEISCIENTOS NOVENTA Y CINCO EUROS CON OCHENTA Y TRES CÉNTIMOS (435.695,83 €), más\nNOVENTA Y UN MIL CUATROCIENTOS NOVENTA Y SEIS EUROS CON DOCE CÉNTIMOS (91.496,12 €), en\nconcepto de IVA (21%).\nEl Presupuesto Base de Licitación asciende a QUINIENTOS VEINTISIETE MIL CIENTO NOVENTA Y UN\nEUROS CON NOVENTA Y CINCO CÉNTIMOS (527.191,95 €), incluido el Impuesto del Valor Añadido.\n4Presupuesto total (IVA incluido):\nEl Presupuesto Base de Licitación asciende a QUINIENTOS VEINTISIETE MIL CIENTO NOVENTA Y UN\nEUROS CON NOVENTA Y CINCO CÉNTIMOS (527.191,95 €), incluido el Impuesto del Valor Añadido.\nEsta cantidad obedece al siguiente desglose:\nPresupuesto Ejecución Material Obra (P.E.M.): 318.374,74 €\nGastos Generales: 41.388,72 €\nBeneficio Industrial: 19.102,48 €\nPresupuesto bas",
+                "Presupuesto total (IVA incluido):\nEl Presupuesto Base de Licitación asciende a QUINIENTOS VEINTISIETE MIL CIENTO NOVENTA Y UN\nEUROS CON NOVENTA Y CINCO CÉNTIMOS (527.191,95 €), incluido el Impuesto del Valor Añadido.\nEsta cantidad obedece al siguiente desglose:\nPresupuesto Ejecución Material Obra (P.E.M.): 318.374,74 €\nGastos Generales: 41.388,72 €\nBeneficio Industrial: 19.102,48 €\nPresupuesto base de licitación antes de la actualización de precios: 378.865,94 €\nPresupuesto base de licitación (después de aplicar CA= 1,15): 435.695,83 €\nEl presupuesto de ejecución material se ha obtenido aplicando a los precios de las distintas unidades de obra\nlas correspondientes mediciones del proyecto constructivo aprobado y que sirve de base a la licitación. Los",
+                "CONTRATACIÓN DE OBRAS A TANTO ALZADO CON PRECIO CERRADO:\n□ No\nVALOR ESTIMADO DEL CONTRATO:\nEl valor estimado del contrato asciende a CUATROCIENTOS TREINTA Y CINCO MIL SEISCIENTOS NOVENTA\nY CINCO EUROS CON OCHENTA Y TRES CÉNTIMOS (435.695,83 €), IVA excluido, según el presupuesto del\nproyecto constructivo aprobado que sirve de base a la licitación.\nEsta cantidad obedece al siguiente desglose:\nCONCEPTO IMPORTE (€)\n435.695,83\nImporte Base de Licitación (IVA excluido)\nModificaciones Previstas (IVA excluido) 0,00\nPrórrogas (IVA excluido) 0,00\nRevisión de precios (IVA excluido) 0,00\nOtros Conceptos (IVA excluido) 0,00\n435.695,83\nTotal Valor Estimado\nEl presupuesto de la ejecución de la obra será el que resulte al aplicar la baja de adjudicación al Presupuesto Base\nde Licitación.\nAPARTADO F",
+                "in situ documentación □ notificación electrónico comparecenciar sede electrónico apartado presupuesto base licitación contrato tipo presupuesto presupuesto base licitación contrato ascender cuatrocientos treinta mil seiscientos noventa euros ochenta céntimo 435695.83 € noventa mil cuatrocientos noventa euros céntimo 91496.12 € concepto iva 21% presupuesto base licitación ascender quinientos veintisiete mil ciento noventa euros noventa céntimo 527191.95 € incluir impuesto valor añadido 4presupuesto iva incluido presupuesto base licitación ascender quinientos veintisiete mil ciento noventa euros noventa céntimo 527191.95 € incluir impuesto valor añadido cantidad obedecer desglose presupuesto ejecución material obra p.e.m 318374.74 € gasto general 41388.72 € beneficio industrial 19102.48 € presupuesto bas"
+            ],
+            "format": "Responde ÚNICAMENTE con la cantidad en euros"
         },
         {
             "prompt_key": "Importe_IVA",
             "prompt": "Ubica el importe del IVA del documento (iva aplicable)",
             "response": "91.496,12 €",
-            "score": 0.9024311120808124,
+            "score": 0.8959335365891457,
             "index": [
                 24,
                 36,
                 111,
                 3
-            ]
+            ],
+            "chunks": [
+                "«in situ» de la documentación\n□ No\nMEDIO DE NOTIFICACIÓN ELECTRÓNICA:\nComparecencia en la sede electrónica\nAPARTADO E\nPRESUPUESTO BASE DE LICITACIÓN DEL CONTRATO:\nTipo de presupuesto:\nEl Presupuesto Base de Licitación del Contrato asciende a CUATROCIENTOS TREINTA Y CINCO MIL\nSEISCIENTOS NOVENTA Y CINCO EUROS CON OCHENTA Y TRES CÉNTIMOS (435.695,83 €), más\nNOVENTA Y UN MIL CUATROCIENTOS NOVENTA Y SEIS EUROS CON DOCE CÉNTIMOS (91.496,12 €), en\nconcepto de IVA (21%).\nEl Presupuesto Base de Licitación asciende a QUINIENTOS VEINTISIETE MIL CIENTO NOVENTA Y UN\nEUROS CON NOVENTA Y CINCO CÉNTIMOS (527.191,95 €), incluido el Impuesto del Valor Añadido.\n4Presupuesto total (IVA incluido):\nEl Presupuesto Base de Licitación asciende a QUINIENTOS VEINTISIETE MIL CIENTO NOVENTA Y UN\nEUROS CON NOVENTA Y CINCO CÉNTIMOS (527.191,95 €), incluido el Impuesto del Valor Añadido.\nEsta cantidad obedece al siguiente desglose:\nPresupuesto Ejecución Material Obra (P.E.M.): 318.374,74 €\nGastos Generales: 41.388,72 €\nBeneficio Industrial: 19.102,48 €\nPresupuesto bas",
+                "CONTRATACIÓN DE OBRAS A TANTO ALZADO CON PRECIO CERRADO:\n□ No\nVALOR ESTIMADO DEL CONTRATO:\nEl valor estimado del contrato asciende a CUATROCIENTOS TREINTA Y CINCO MIL SEISCIENTOS NOVENTA\nY CINCO EUROS CON OCHENTA Y TRES CÉNTIMOS (435.695,83 €), IVA excluido, según el presupuesto del\nproyecto constructivo aprobado que sirve de base a la licitación.\nEsta cantidad obedece al siguiente desglose:\nCONCEPTO IMPORTE (€)\n435.695,83\nImporte Base de Licitación (IVA excluido)\nModificaciones Previstas (IVA excluido) 0,00\nPrórrogas (IVA excluido) 0,00\nRevisión de precios (IVA excluido) 0,00\nOtros Conceptos (IVA excluido) 0,00\n435.695,83\nTotal Valor Estimado\nEl presupuesto de la ejecución de la obra será el que resulte al aplicar la baja de adjudicación al Presupuesto Base\nde Licitación.\nAPARTADO F",
+                "Las ofertas cuya valoración en este apartado sea inferior a 10 puntos no serán tomadas en consideración para\nel cálculo de las ofertas anormalmente bajas ni para la determinación de la oferta más ventajosa.\nDe este modo se obtendrá para cada oferta la valoración de la calidad mediante la aplicación de fórmulas, PCF.\nA estos efectos las licitadoras deberán cumplimentar los cuadros de Autobaremación del Anexo I Bis, que se\nincluirán en el sobre n.º 3, junto con la proposición económica.\n15CRITERIO DE ADJUDICACIÓN: PRECIO\nVALORACIÓN\nPara valorar la oferta económica se puntuarán los aspectos que se relacionan seguidamente:\nPara todas las ofertas:\n(Of −Of )2\nPP =40⋅[1− i min ](1⁄2)\n(PBL−Of )2\nmin\nsiendo:\nPP: puntuación obtenida para el criterio precio\nOf\ni\n: oferta que se valora, IVA excluido\nOfmin: oferta mínima, IVA excluido\nPBL: presupuesto base de licitación, IVA excluido\nSe consi",
+                "concepto importe € importe base licitación iva excluido 435695.83 modificación previsto iva excluido 0.00 prórroga iva excluido 0.00 revisión precio iva excluido 0.00"
+            ],
+            "format": "Responde ÚNICAMENTE con la cantidad en euros"
         },
         {
             "prompt_key": "Sistema_Retribucion",
             "prompt": "Indica el sistema de retribución del precio",
             "response": "",
-            "score": 0.8000000000000002,
+            "score": 0.7933133445869203,
             "index": [
                 2,
-                2
-            ]
+                1
+            ],
+            "chunks": [
+                "un mecanismo atenuador de velocidad de los vehículos que circulan por el trazado principal desde Tuéjar hacia\nel sur, por la travesía de la CV-35 a su paso por Chelva.\nSe construirá una glorieta que permita todos los movimientos de entrada, salida y cambio de sentido, de manera\nsegura.\nDEFINICIÓN CONCRETA DEL OBJETO DEL CONTRATO DE OBRAS:\nEl objeto del contrato es la ejecución y puesta en servicio de las obras contempladas en el proyecto de\n“MEJORA DE LA SEGURIDAD VIAL EN LA INTERSECCIÓN PREVIA A LA ENTRADA A CHELVA POR EL\nNORTE”.\nPara ello, se prevén distintas actuaciones atendiendo a las características y condicionantes de cada tramo. Se\nrealizarán entre otros:\n• Despeje de terreno.\n• Excavaciones y rellenos en la zona de construcción de la nueva rotonda.",
+                "de Chelva, a fin de dotar a ese punto de un elemento de autorregulación del tráfico, de manera que se permita\nuna conexión de la citada vía con una serie de caminos rurales a los que proporciona servicio.\nActualmente, las conexiones se producen mediante intersecciones en forma de T, que comunican con caminos\nque dan acceso a edificaciones y parcelas privadas, como el acceso al Camino del Murte. Por tanto, se necesita\nun mecanismo atenuador de velocidad de los vehículos que circulan por el trazado principal desde Tuéjar hacia\nel sur, por la travesía de la CV-35 a su paso por Chelva.\nSe construirá una glorieta que permita todos los movimientos de entrada, salida y cambio de sentido, de manera\nsegura.\nDEFINICIÓN CONCRETA DEL OBJETO DEL CONTRATO DE OBRAS:"
+            ],
+            "format": "En función de [TEXTO]"
         },
         {
             "prompt_key": "Valor_estimado",
             "prompt": "Indica el total del valor estimado del contrato, responde únicamente con el valor en euros",
-            "response": "527.191,95 €",
-            "score": 0.9237470009922981,
+            "response": "527.191,95",
+            "score": 0.9281167417764664,
             "index": [
                 30,
                 36,
                 48,
                 6
-            ]
+            ],
+            "chunks": [
+                "DISTRIBUCIÓN ANUALIDADES\nEl límite máximo de gasto que en virtud del contrato puede comprometer el órgano de contratación, se distribuye\nsegún las anualidades siguientes:\nBASE IMPONIBLE IVA (21%) IMPORTE TOTAL\nANUALIDADES EJERCICIO\n(€) (€) (€)\n1ª Anualidad 2024 107.438,02 22.561,98 130.000,00\n2ª Anualidad 2025 328.257,81 68.934,14 397.191,95\nTotal 435.695,83 91.496,12 527.191,95\nEn los casos de gastos plurianuales, si según este Apartado fueran varias las anualidades previstas, la\nejecución del contrato en los años posteriores se subordinará a la existencia de crédito adecuado y suficiente\nen los respectivos presupuestos de la Generalitat.\nDETERMINACIÓN DEL PRECIO\nCONTRATACIÓN DE OBRAS A PRECIOS UNITARIOS:\n□ No\nCONTRATACIÓN DE OBRAS A TANTO ALZADO:\n□ Sí\n5CONTRATACIÓN DE OBRAS A TANTO ALZADO CON PRECIO CERRADO:\n□ No\nVALOR ESTIMADO DEL CONTRATO:\nEl valor estimado del contrato asciende a CUATROCIENTOS TREINTA Y CINCO MIL SEISCIENTOS NOVENTA\nY CINCO EUROS CON OCHENTA Y TRES CÉNTIMOS (435.695,83 €), IVA excluido, según el presupuesto del\nproyecto constructivo aprobado que sirve de base a la licitación.\nEsta cantidad obedece al siguiente desglose:\nCONCE",
+                "CONTRATACIÓN DE OBRAS A TANTO ALZADO CON PRECIO CERRADO:\n□ No\nVALOR ESTIMADO DEL CONTRATO:\nEl valor estimado del contrato asciende a CUATROCIENTOS TREINTA Y CINCO MIL SEISCIENTOS NOVENTA\nY CINCO EUROS CON OCHENTA Y TRES CÉNTIMOS (435.695,83 €), IVA excluido, según el presupuesto del\nproyecto constructivo aprobado que sirve de base a la licitación.\nEsta cantidad obedece al siguiente desglose:\nCONCEPTO IMPORTE (€)\n435.695,83\nImporte Base de Licitación (IVA excluido)\nModificaciones Previstas (IVA excluido) 0,00\nPrórrogas (IVA excluido) 0,00\nRevisión de precios (IVA excluido) 0,00\nOtros Conceptos (IVA excluido) 0,00\n435.695,83\nTotal Valor Estimado\nEl presupuesto de la ejecución de la obra será el que resulte al aplicar la baja de adjudicación al Presupuesto Base\nde Licitación.\nAPARTADO F",
+                "DE GÉNERO, CONDICIONES DE TRABAJO Y PREVENCIÓN DE RIESGOS LABORALES E INSERCIÓN\nSOCIOLABORAL DE LAS PERSONAS CON DISCAPACIDAD, Y A LA OBLIGACIÓN DE CONTRATAR A UN\nNÚMERO O PORCENTAJE ESPECÍFICO DE PERSONAS CON DISCAPACIDAD QUE SEAN APLICABLES A\nLOS SERVICIOS PRESTADOS DURANTE LA EJECUCIÓN DEL CONTRATO:\n□ No\nAPARTADO L\nCRITERIOS PARA ACREDITAR LA SOLVENCIA ECONÓMICA Y FINANCIERA, SEGÚN ARTÍCULO 87 LCSP:\nSe exige que el volumen anual de negocios de la empresa licitadora sea como mínimo de 304.987,08 €, IVA\nexcluido (igual al setenta por ciento [70%] del valor estimado del contrato), referido al mejor ejercicio dentro de\nlos tres últimos disponibles.\nMEDIOS PARA ACREDITAR LA SOLVENCIA ECONÓMICA Y FINANCIERA, SEGÚN ARTÍCULO 87 LCSP:",
+                "contratación obra alzado precio cerrado □ir valor estimado contrato valor estimado contrato ascender cuatrocientos treinta mil seiscientos noventa euros ochenta céntimo 435695.83 € iva excluido presupuesto proyecto constructivo aprobado servir base licitación cantidad obedecer desglose concepto importe € 435695.83 importe base licitación iva excluido modificación previsto iva excluido 0.00 prórroga iva excluido 0.00 revisión precio iva excluido 0.00 concepto iva excluido 0.00 435695.83 valor estimado presupuesto ejecución obra resultar aplicar baja adjudicación presupuesto base licitación apartado f"
+            ],
+            "format": "Responde ÚNICAMENTE con la cantidad en euros"
         },
         {
             "prompt_key": "Revision_precios",
             "prompt": "Indica si existe la revisión de precios",
-            "response": "No, debido a que el plazo de ejecución de la obra es inferior a dos años.",
+            "response": "No, debido a que el plazo de ejecución de la obra es inferior a dos años, no se establece el derecho a revisión periódica y predeterminada de precios del presente proyecto.",
             "score": 0.95,
             "index": [
                 36,
                 37,
                 38,
                 3
-            ]
+            ],
+            "chunks": [
+                "CONTRATACIÓN DE OBRAS A TANTO ALZADO CON PRECIO CERRADO:\n□ No\nVALOR ESTIMADO DEL CONTRATO:\nEl valor estimado del contrato asciende a CUATROCIENTOS TREINTA Y CINCO MIL SEISCIENTOS NOVENTA\nY CINCO EUROS CON OCHENTA Y TRES CÉNTIMOS (435.695,83 €), IVA excluido, según el presupuesto del\nproyecto constructivo aprobado que sirve de base a la licitación.\nEsta cantidad obedece al siguiente desglose:\nCONCEPTO IMPORTE (€)\n435.695,83\nImporte Base de Licitación (IVA excluido)\nModificaciones Previstas (IVA excluido) 0,00\nPrórrogas (IVA excluido) 0,00\nRevisión de precios (IVA excluido) 0,00\nOtros Conceptos (IVA excluido) 0,00\n435.695,83\nTotal Valor Estimado\nEl presupuesto de la ejecución de la obra será el que resulte al aplicar la baja de adjudicación al Presupuesto Base\nde Licitación.\nAPARTADO F",
+                "CONCEPTO IMPORTE (€)\n435.695,83\nImporte Base de Licitación (IVA excluido)\nModificaciones Previstas (IVA excluido) 0,00\nPrórrogas (IVA excluido) 0,00\nRevisión de precios (IVA excluido) 0,00\nOtros Conceptos (IVA excluido) 0,00\n435.695,83\nTotal Valor Estimado\nEl presupuesto de la ejecución de la obra será el que resulte al aplicar la baja de adjudicación al Presupuesto Base\nde Licitación.\nAPARTADO F\nPRESUPUESTO BASE DE LICITACIÓN POR LOTES:\nNo procede\nVALOR ESTIMADO DE CADA LOTE:\nNo procede\nAPARTADO G\nCONSIGNACIÓN PRESUPUESTARIA:\nCentro y Sección Programa Económica Importe (IVA Incl.)\n08.02.02 51310 60101 527.191,95€\nFinanciado por fondos provenientes del Ministerio de Transportes, Movilidad y Agenda Urbana (Mitma).\nFINANCIADO POR FONDOS COMUNITARIOS\n□ No\n6FINANCIADO POR VARIOS DEPARTAMENTOS:\n□ No\nAPARTADO H\nREVISIÓN DE PRECIOS\nNo procede. Debido a que el plazo de ejecución de la obra es inferior a dos años, no se establece el derecho\na revisión periódica y predeterminada de precios del presente proyecto, según lo establecido en el artículo 103\nde la Ley 9/2017 de Contratos del Sector Público, que a su vez remite a la Ley 2/2015, de 30 de marzo, de\n",
+                "CONCEPTO, Importe Base de Licitación (IVA excluido), Modificaciones Previstas (IVA excluido), Prórrogas (IVA excluido), Revisión de precios (IVA excluido), Otros Conceptos (IVA excluido), Total Valor Estimado IMPORTE (€), 435.695,83, 0,00, 0,00, 0,00, 0,00, 435.695,83 ",
+                "“MEJORA DE LA SEGURIDAD VIAL EN LA INTERSECCIÓN PREVIA A LA ENTRADA A CHELVA POR EL\nNORTE”.\nPara ello, se prevén distintas actuaciones atendiendo a las características y condicionantes de cada tramo. Se\nrealizarán entre otros:\n• Despeje de terreno.\n• Excavaciones y rellenos en la zona de construcción de la nueva rotonda.\n• Construcción de la glorieta y los accesos.\nEn este contrato se incluyen cláusulas de responsabilidad social y ambiental, de acuerdo con el Decreto\n118/2022, de 5 de agosto, del Consell, por el que se regula la inclusión de cláusulas de responsabilidad social\nen la contratación pública, que desarrolla lo previsto en el artículo 13.4 de la ley 18/2018, de 13 de julio, para el\nfomento de la responsabilidad social.\nCÓDIGO C.P.V.:\n45233140-2 Obras Viales"
+            ],
+            "format": "Responde con Si o No, añadiendo explicación si es necesario"
         },
         {
             "prompt_key": "Garantia_definitiva",
             "prompt": "Cuenta con garantía definitiva? cuál es su valor en tal caso?",
             "response": "Si, el valor de la garantía definitiva es del 5% del precio final ofertado, IVA excluido.",
-            "score": 0.8353734348714352,
+            "score": 0.8122038635611534,
             "index": [
                 157,
                 158,
                 0,
-                7
-            ]
+                9
+            ],
+            "chunks": [
+                "• Plan de igualdad previamente aprobado por cualquier administración pública u órgano competente, para\nla preferencia señalada en el apartado g).\n• Certificado de inscripción en el Registro de Cooperativas de la Comunidad Valenciana, para la\npreferencia indicada en el apartado h).\n• Declaración responsable del representante de la empresa o entidad licitadora para aquellas que cumplan\ncon lo preceptuado en los apartados d), e), i) y j).\nAPARTADO Ñ\nCESIÓN\n□ Sí, en los términos previstos en el artículo 214 de la Ley 9/2017 LCSP.\nAPARTADO O\nMODIFICACIONES\n□ No\nAPARTADO P\nGARANTÍA DEFINITIVA\n5% del precio final ofertado, IVA excluido.\nCANCELACIÓN O DEVOLUCIÓN PROPORCIONAL DE LA GARANTÍA DEFINITIVA EN CASOS DE\nRECEPCIÓN PARCIAL:\n□ No\nAPARTADO Q",
+                "con lo preceptuado en los apartados d), e), i) y j).\nAPARTADO Ñ\nCESIÓN\n□ Sí, en los términos previstos en el artículo 214 de la Ley 9/2017 LCSP.\nAPARTADO O\nMODIFICACIONES\n□ No\nAPARTADO P\nGARANTÍA DEFINITIVA\n5% del precio final ofertado, IVA excluido.\nCANCELACIÓN O DEVOLUCIÓN PROPORCIONAL DE LA GARANTÍA DEFINITIVA EN CASOS DE\nRECEPCIÓN PARCIAL:\n□ No\nAPARTADO Q\nOBLIGACIÓN DE INDICAR EN LA OFERTA SI VA A HABER SUBCONTRATACIÓN\n□ Si\nLAS CONDICIONES DE LA OFERTA PARA LA SUBCONTRATACIÓN, LA ACREDITACIÓN DE LA\nAPTITUD DE LA EMPRESA SUBCONTRATISTA Y LA ACREDITACIÓN DE LAS CONDICIONES DE\nEMERGENCIA O URGENCIA TIENE CARÁCTER DE OBLIGACIONES ESENCIALES\n□ No\nTAREAS CRÍTICAS QUE NO PODRÁN SER OBJETO DE SUBCONTRATACIÓN\n□ No\n21PAGOS DIRECTOS A LAS EMPRESAS SUBCONTRATISTAS POR PARTE DE LA ADMINISTRACIÓN:\n□ No\nREMISIÓN AL ÓRGANO DE CONTRATACIÓN, CUANDO ESTE LO SOLICITE, DE RELACIÓN\nDETALLADA DE AQUELLAS EMPRESAS SUBCONTRATISTAS O SUMINISTRADORAS QUE\nPARTICIPEN EN EL CONTRATO CUANDO SE PERFECCIONE SU PARTICIPACIÓN, JUNTO CON\nAQUELLAS CONDICIONES DE SUBCONTRATACIÓN O SUMINISTRO DE CADA UNO DE ELLOS QUE\nGUARDEN UNA RELACIÓN ",
+                "ANEXO I\nCARACTERÍSTICAS PARTICULARES PARA LA ADJUDICACIÓN DE CONTRATOS ADMINISTRATIVOS DE\nOBRAS MEDIANTE PROCEDIMIENTO ABIERTO\nAPARTADO A\nNúmero DE EXPEDIENTE:\nCLAVE DG: Número EXPTE CONTRATACIÓN: C.I.:\n2747-STV CMAYOR/2023/03Y05/19 23 CPTOPM19 05 18 PP0\nNECESIDADES A SATISFACER CON LA CELEBRACIÓN DEL CONTRATO:\nLa actuación consiste en mejorar la seguridad vial de la carretera CV-35, en la entrada por el norte a la población\nde Chelva, a fin de dotar a ese punto de un elemento de autorregulación del tráfico, de manera que se permita\nuna conexión de la citada vía con una serie de caminos rurales a los que proporciona servicio.\nActualmente, las conexiones se producen mediante intersecciones en forma de T, que comunican con caminos",
+                "valoración aceptación oferta rechazo oferta efecto determinación baja medio admitido justificación órgano contratación proceder evaluar oferta económico admitido haber incursar inicialmente presunción anormalidad importe forma acabar describir empresa grupo efecto establecer baja medio bm baja referencia br empresa perteneciente grupo presentar distinto proposición concurrir u.t.e adjudicación contrato únicamente considerar oferta menor importe grupo"
+            ],
+            "format": "Responde con Si o No, añadiendo explicación si es necesario"
         },
         {
             "prompt_key": "Garantia_provisional",
             "prompt": "Cuenta con garantía provisional? cuál es su valor en tal caso?",
-            "response": "No, según el apartado J del documento, no se exige garantía provisional conforme al artículo 106.1 de la LCSP.",
-            "score": 0.8344118914008141,
+            "response": "No, no se exige garantía provisional conforme al artículo 106.1 de la LCSP.",
+            "score": 0.8108665484189987,
             "index": [
                 46,
                 47,
                 0,
-                7
-            ]
+                9
+            ],
+            "chunks": [
+                "FINANCIADO POR VARIOS DEPARTAMENTOS:\n□ No\nAPARTADO H\nREVISIÓN DE PRECIOS\nNo procede. Debido a que el plazo de ejecución de la obra es inferior a dos años, no se establece el derecho\na revisión periódica y predeterminada de precios del presente proyecto, según lo establecido en el artículo 103\nde la Ley 9/2017 de Contratos del Sector Público, que a su vez remite a la Ley 2/2015, de 30 de marzo, de\ndesindexación de la economía española, cuyo desarrollo establece el R.D. 55/2017 de 3 de febrero.\nAPARTADO I\nALTERNATIVAS O VARIANTES\n□ No\nAPARTADO J\nGARANTÍA PROVISIONAL:\nNo se exige conforme al artículo 106.1 de la LCSP.\nAPARTADO K\nINFORMACIÓN SOBRE LAS OBLIGACIONES RELATIVAS A LA FISCALIDAD, A LA PROTECCIÓN DEL MEDIO",
+                "desindexación de la economía española, cuyo desarrollo establece el R.D. 55/2017 de 3 de febrero.\nAPARTADO I\nALTERNATIVAS O VARIANTES\n□ No\nAPARTADO J\nGARANTÍA PROVISIONAL:\nNo se exige conforme al artículo 106.1 de la LCSP.\nAPARTADO K\nINFORMACIÓN SOBRE LAS OBLIGACIONES RELATIVAS A LA FISCALIDAD, A LA PROTECCIÓN DEL MEDIO\nAMBIENTE, Y A LAS DISPOSICIONES VIGENTES EN MATERIA DE PROTECCIÓN DEL EMPLEO, IGUALDAD\nDE GÉNERO, CONDICIONES DE TRABAJO Y PREVENCIÓN DE RIESGOS LABORALES E INSERCIÓN\nSOCIOLABORAL DE LAS PERSONAS CON DISCAPACIDAD, Y A LA OBLIGACIÓN DE CONTRATAR A UN\nNÚMERO O PORCENTAJE ESPECÍFICO DE PERSONAS CON DISCAPACIDAD QUE SEAN APLICABLES A\nLOS SERVICIOS PRESTADOS DURANTE LA EJECUCIÓN DEL CONTRATO:\n□ No\nAPARTADO L",
+                "ANEXO I\nCARACTERÍSTICAS PARTICULARES PARA LA ADJUDICACIÓN DE CONTRATOS ADMINISTRATIVOS DE\nOBRAS MEDIANTE PROCEDIMIENTO ABIERTO\nAPARTADO A\nNúmero DE EXPEDIENTE:\nCLAVE DG: Número EXPTE CONTRATACIÓN: C.I.:\n2747-STV CMAYOR/2023/03Y05/19 23 CPTOPM19 05 18 PP0\nNECESIDADES A SATISFACER CON LA CELEBRACIÓN DEL CONTRATO:\nLa actuación consiste en mejorar la seguridad vial de la carretera CV-35, en la entrada por el norte a la población\nde Chelva, a fin de dotar a ese punto de un elemento de autorregulación del tráfico, de manera que se permita\nuna conexión de la citada vía con una serie de caminos rurales a los que proporciona servicio.\nActualmente, las conexiones se producen mediante intersecciones en forma de T, que comunican con caminos",
+                "mencionar continuación categoría superior exigido contrato acreditar condición solvencia contratar grupo g. vial pista subgrupo 4 firme mezcla bituminosa categoría 3 cuantía superior 360000 euros inferior 840000 euros habilitación empresarial exigible realización actividad prestación constituir objeto contrato caso proceder □ir exigir persona jurídico detallar oferta nombre cualificación profesional personal responsable ejecutar prestación □ compromiso adscripción medio □ contrato sujeto regulación armonizado certificado acreditación cumplimiento norma garantía calidad □ proceder"
+            ],
+            "format": "Responde con Si o No, añadiendo explicación si es necesario"
         },
         {
             "prompt_key": "Admisibilidad_variantes",
             "prompt": "Indica si el contrato admite variantes o alternativas",
-            "response": "No",
-            "score": 0.875,
+            "response": "No, según el apartado I del documento, se indica \"□ No\" en relación a alternativas o variantes.",
+            "score": 0.85,
             "index": [
                 46,
                 47,
                 0,
                 1
-            ]
+            ],
+            "chunks": [
+                "FINANCIADO POR VARIOS DEPARTAMENTOS:\n□ No\nAPARTADO H\nREVISIÓN DE PRECIOS\nNo procede. Debido a que el plazo de ejecución de la obra es inferior a dos años, no se establece el derecho\na revisión periódica y predeterminada de precios del presente proyecto, según lo establecido en el artículo 103\nde la Ley 9/2017 de Contratos del Sector Público, que a su vez remite a la Ley 2/2015, de 30 de marzo, de\ndesindexación de la economía española, cuyo desarrollo establece el R.D. 55/2017 de 3 de febrero.\nAPARTADO I\nALTERNATIVAS O VARIANTES\n□ No\nAPARTADO J\nGARANTÍA PROVISIONAL:\nNo se exige conforme al artículo 106.1 de la LCSP.\nAPARTADO K\nINFORMACIÓN SOBRE LAS OBLIGACIONES RELATIVAS A LA FISCALIDAD, A LA PROTECCIÓN DEL MEDIO",
+                "desindexación de la economía española, cuyo desarrollo establece el R.D. 55/2017 de 3 de febrero.\nAPARTADO I\nALTERNATIVAS O VARIANTES\n□ No\nAPARTADO J\nGARANTÍA PROVISIONAL:\nNo se exige conforme al artículo 106.1 de la LCSP.\nAPARTADO K\nINFORMACIÓN SOBRE LAS OBLIGACIONES RELATIVAS A LA FISCALIDAD, A LA PROTECCIÓN DEL MEDIO\nAMBIENTE, Y A LAS DISPOSICIONES VIGENTES EN MATERIA DE PROTECCIÓN DEL EMPLEO, IGUALDAD\nDE GÉNERO, CONDICIONES DE TRABAJO Y PREVENCIÓN DE RIESGOS LABORALES E INSERCIÓN\nSOCIOLABORAL DE LAS PERSONAS CON DISCAPACIDAD, Y A LA OBLIGACIÓN DE CONTRATAR A UN\nNÚMERO O PORCENTAJE ESPECÍFICO DE PERSONAS CON DISCAPACIDAD QUE SEAN APLICABLES A\nLOS SERVICIOS PRESTADOS DURANTE LA EJECUCIÓN DEL CONTRATO:\n□ No\nAPARTADO L",
+                "ANEXO I\nCARACTERÍSTICAS PARTICULARES PARA LA ADJUDICACIÓN DE CONTRATOS ADMINISTRATIVOS DE\nOBRAS MEDIANTE PROCEDIMIENTO ABIERTO\nAPARTADO A\nNúmero DE EXPEDIENTE:\nCLAVE DG: Número EXPTE CONTRATACIÓN: C.I.:\n2747-STV CMAYOR/2023/03Y05/19 23 CPTOPM19 05 18 PP0\nNECESIDADES A SATISFACER CON LA CELEBRACIÓN DEL CONTRATO:\nLa actuación consiste en mejorar la seguridad vial de la carretera CV-35, en la entrada por el norte a la población\nde Chelva, a fin de dotar a ese punto de un elemento de autorregulación del tráfico, de manera que se permita\nuna conexión de la citada vía con una serie de caminos rurales a los que proporciona servicio.\nActualmente, las conexiones se producen mediante intersecciones en forma de T, que comunican con caminos",
+                "de Chelva, a fin de dotar a ese punto de un elemento de autorregulación del tráfico, de manera que se permita\nuna conexión de la citada vía con una serie de caminos rurales a los que proporciona servicio.\nActualmente, las conexiones se producen mediante intersecciones en forma de T, que comunican con caminos\nque dan acceso a edificaciones y parcelas privadas, como el acceso al Camino del Murte. Por tanto, se necesita\nun mecanismo atenuador de velocidad de los vehículos que circulan por el trazado principal desde Tuéjar hacia\nel sur, por la travesía de la CV-35 a su paso por Chelva.\nSe construirá una glorieta que permita todos los movimientos de entrada, salida y cambio de sentido, de manera\nsegura.\nDEFINICIÓN CONCRETA DEL OBJETO DEL CONTRATO DE OBRAS:"
+            ],
+            "format": "Responde con Si o No, añadiendo explicación si es necesario"
         },
         {
             "prompt_key": "Clasificacion",
             "prompt": "La clasificación se aplica por debajo de 500.000 €?",
             "response": "Si",
-            "score": 1.0,
+            "score": 0.9145325985550881,
             "index": [
                 50,
                 51,
-                52
-            ]
+                52,
+                5
+            ],
+            "chunks": [
+                "aprobadas y depositadas en el Registro Mercantil, si el empresario estuviese inscrito en dicho Registro, y en\ncaso contrario por las depositadas en el registro oficial en que deba estar inscrito. Los empresarios individuales\nno inscritos en el Registro Mercantil acreditaran su volumen anual de negocio mediante sus libros de inventarios\ny cuentas anuales legalizados por el Registro Mercantil.\n7CRITERIOS PARA ACREDITAR LA SOLVENCIA TÉCNICA PARA CONTRATOS DE OBRAS CON VALOR\nESTIMADO INFERIOR A 500.000 €, SEGÚN ART. 88 LCSP:\nHaber ejecutado, en los últimos cinco años, obras que sean del mismo grupo o subgrupo de clasificación que\nel correspondiente al contrato, cuyo importe anual acumulado en el año de mayor ejecución sea igual o superior\na 217.847,92 €, IVA excluido (50 por ciento del val",
+                "CRITERIOS PARA ACREDITAR LA SOLVENCIA TÉCNICA PARA CONTRATOS DE OBRAS CON VALOR\nESTIMADO INFERIOR A 500.000 €, SEGÚN ART. 88 LCSP:\nHaber ejecutado, en los últimos cinco años, obras que sean del mismo grupo o subgrupo de clasificación que\nel correspondiente al contrato, cuyo importe anual acumulado en el año de mayor ejecución sea igual o superior\na 217.847,92 €, IVA excluido (50 por ciento del valor estimado del contrato).\nMEDIOS PARA ACREDITAR LA SOLVENCIA TÉCNICA PARA CONTRATOS DE OBRAS CON VALOR ESTIMADO\nINFERIOR A 500.000 €, SEGÚN ART. 88 LCSP:\nRelación de las obras ejecutadas en el curso de los cinco últimos años pertenecientes al mismo grupo o\nsubgrupo de clasificación que el correspondiente al contrato, avalada por certificados de buena ejecución; estos",
+                "MEDIOS PARA ACREDITAR LA SOLVENCIA TÉCNICA PARA CONTRATOS DE OBRAS CON VALOR ESTIMADO\nINFERIOR A 500.000 €, SEGÚN ART. 88 LCSP:\nRelación de las obras ejecutadas en el curso de los cinco últimos años pertenecientes al mismo grupo o\nsubgrupo de clasificación que el correspondiente al contrato, avalada por certificados de buena ejecución; estos\ncertificados indicarán el importe, las fechas y el lugar de ejecución de las obras y se precisará si se realizaron\nsegún las reglas por las que se rige la profesión y se llevaron normalmente a buen término; en su caso, dichos\ncertificados serán comunicados directamente al órgano de contratación por la autoridad competente.\nA estos efectos, las obras ejecutadas por una sociedad extranjera filial del contratista de obras tendrán la misma",
+                "clasificación sustitutivo contrato obra valor estimado inferior 500000 € ver característica obra clasificación correspondiente contrato grupo g. vial pista subgrupo 4 firme mezcla bituminosa categoría 3 cuantía superior 360000 euros inferior 840000 euros clasificación empresa licitadoro grupo subgrupo categoría superior exigido contrato acreditar condición solvencia contratar criterio acreditar solvencia técnico contrato obra valor estimado inferior 500000 € tratar empresa creación"
+            ],
+            "format": "Responde únicamente con Si o No"
         },
         {
             "prompt_key": "Grupo",
             "prompt": "Según las características de la obra, indica el grupo al que pertenece el contrato",
             "response": "Grupo G",
-            "score": 0.920587298721075,
+            "score": 0.9156237445771694,
             "index": [
                 54,
                 55,
                 56,
                 6
-            ]
+            ],
+            "chunks": [
+                "o indirectamente el control de aquella en los términos establecidos en el artículo 42 del Código de Comercio.\nCuando se trate de obras ejecutadas por una sociedad extranjera participada por el contratista sin que se\ncumpla dicha condición, solo se reconocerá como experiencia atribuible al contratista la obra ejecutada por la\nsociedad participada en la proporción de la participación de aquel en el capital social de esta.\nCLASIFICACIÓN SUSTITUTIVA PARA LOS CONTRATOS DE OBRAS DE VALOR ESTIMADO INFERIOR A\n500.000€\nVistas las características de las obras a realizar se considera que la clasificación correspondiente a este contrato\nsería:\nGrupo G. Viales y pistas\nSubgrupo 4. Con firmes de mezclas bituminosas\nCategoría 3. Cuantía superior a 360.000 euros e inferior o igual a 840.000 euros",
+                "CLASIFICACIÓN SUSTITUTIVA PARA LOS CONTRATOS DE OBRAS DE VALOR ESTIMADO INFERIOR A\n500.000€\nVistas las características de las obras a realizar se considera que la clasificación correspondiente a este contrato\nsería:\nGrupo G. Viales y pistas\nSubgrupo 4. Con firmes de mezclas bituminosas\nCategoría 3. Cuantía superior a 360.000 euros e inferior o igual a 840.000 euros\nLa clasificación de la empresa licitadora en este grupo y subgrupo y con categoría igual o superior a la exigida\npara el contrato, acreditará sus condiciones de solvencia para contratar.\nCRITERIOS PARA ACREDITAR LA SOLVENCIA TÉCNICA PARA CONTRATOS DE OBRAS CON VALOR\nESTIMADO INFERIOR A 500.000 €, CUANDO SE TRATE DE EMPRESAS DE NUEVA CREACIÓN:",
+                "La clasificación de la empresa licitadora en este grupo y subgrupo y con categoría igual o superior a la exigida\npara el contrato, acreditará sus condiciones de solvencia para contratar.\nCRITERIOS PARA ACREDITAR LA SOLVENCIA TÉCNICA PARA CONTRATOS DE OBRAS CON VALOR\nESTIMADO INFERIOR A 500.000 €, CUANDO SE TRATE DE EMPRESAS DE NUEVA CREACIÓN:\nLa media de la suma anual de los componentes de la plantilla de la empresa, incluidos los directivos, y\nconsiderando los tres últimos años, en los términos previstos en el apartado 1 e del citado artículo, ascenderá\na un total de tres trabajadores como mínimo.\nMEDIOS PARA ACREDITAR LA SOLVENCIA TÉCNICA PARA CONTRATOS DE OBRAS CON VALOR ESTIMADO\nINFERIOR A 500.000 €, CUANDO SE TRATE DE EMPRESAS DE NUEVA CREACIÓN:",
+                "asimismo ejercer función seguimiento cumplimiento obligación contractual establecido artículo 14 decreto 118/2022 5 agosto consell régimen penalidad ejecución contrato procedimiento imposición penalidad seguir dispuesto artículo 97 rgcap artículo 191 lcsp 1 penalidad cláusula 36.3 5% precio contrato incumplimiento iva excluido 2 penalidad incumplimiento parcial ejecución cláusula 36.1 5% precio contrato incumplimiento iva excluido 3 penalidad incumplimiento plazo contratista caso diferir previsto"
+            ],
+            "format": "Responde ÚNICAMENTE con: Grupo [LETRA] (cambia la letra por la que corresponda)"
         },
         {
             "prompt_key": "Subgrupo",
             "prompt": "Según las características de la obra, indica el subgrupo al que pertenece el contrato",
-            "response": "Subgrupo 4",
-            "score": 0.9247981736063957,
+            "response": "Subgrupo 4. Con firmes de mezclas bituminosas",
+            "score": 0.9197664284706115,
             "index": [
                 54,
                 55,
                 56,
-                6
-            ]
+                4
+            ],
+            "chunks": [
+                "o indirectamente el control de aquella en los términos establecidos en el artículo 42 del Código de Comercio.\nCuando se trate de obras ejecutadas por una sociedad extranjera participada por el contratista sin que se\ncumpla dicha condición, solo se reconocerá como experiencia atribuible al contratista la obra ejecutada por la\nsociedad participada en la proporción de la participación de aquel en el capital social de esta.\nCLASIFICACIÓN SUSTITUTIVA PARA LOS CONTRATOS DE OBRAS DE VALOR ESTIMADO INFERIOR A\n500.000€\nVistas las características de las obras a realizar se considera que la clasificación correspondiente a este contrato\nsería:\nGrupo G. Viales y pistas\nSubgrupo 4. Con firmes de mezclas bituminosas\nCategoría 3. Cuantía superior a 360.000 euros e inferior o igual a 840.000 euros",
+                "CLASIFICACIÓN SUSTITUTIVA PARA LOS CONTRATOS DE OBRAS DE VALOR ESTIMADO INFERIOR A\n500.000€\nVistas las características de las obras a realizar se considera que la clasificación correspondiente a este contrato\nsería:\nGrupo G. Viales y pistas\nSubgrupo 4. Con firmes de mezclas bituminosas\nCategoría 3. Cuantía superior a 360.000 euros e inferior o igual a 840.000 euros\nLa clasificación de la empresa licitadora en este grupo y subgrupo y con categoría igual o superior a la exigida\npara el contrato, acreditará sus condiciones de solvencia para contratar.\nCRITERIOS PARA ACREDITAR LA SOLVENCIA TÉCNICA PARA CONTRATOS DE OBRAS CON VALOR\nESTIMADO INFERIOR A 500.000 €, CUANDO SE TRATE DE EMPRESAS DE NUEVA CREACIÓN:",
+                "La clasificación de la empresa licitadora en este grupo y subgrupo y con categoría igual o superior a la exigida\npara el contrato, acreditará sus condiciones de solvencia para contratar.\nCRITERIOS PARA ACREDITAR LA SOLVENCIA TÉCNICA PARA CONTRATOS DE OBRAS CON VALOR\nESTIMADO INFERIOR A 500.000 €, CUANDO SE TRATE DE EMPRESAS DE NUEVA CREACIÓN:\nLa media de la suma anual de los componentes de la plantilla de la empresa, incluidos los directivos, y\nconsiderando los tres últimos años, en los términos previstos en el apartado 1 e del citado artículo, ascenderá\na un total de tres trabajadores como mínimo.\nMEDIOS PARA ACREDITAR LA SOLVENCIA TÉCNICA PARA CONTRATOS DE OBRAS CON VALOR ESTIMADO\nINFERIOR A 500.000 €, CUANDO SE TRATE DE EMPRESAS DE NUEVA CREACIÓN:",
+                "apartado s información condición subrogación contrato trabajo artículo 130 lcsp □ proceder penalidad límite artículo 192 lcsp contratista incumplimiento obligación subrogación previsto cláusula □ proceder apartado t unidad encargado seguimiento ejecución contrato subdirección general movilidad persona encargado seguimiento cláusula responsabilidad social cumplimentar responsable contrato director facultativo obra responsable contrato director directora contrato responsable nombrado dirección general"
+            ],
+            "format": "Responde ÚNICAMENTE con: Subgrupo [NUMERO] [CARACTERISTICAS] (cambia el número y las características por las que correspondan)"
         },
         {
             "prompt_key": "Categoria",
             "prompt": "Según las características de la obra, indica la categoría a la que pertenece el contrato",
-            "response": "Categoría 3",
-            "score": 0.9212206527590752,
+            "response": "Categoría 3. Cuantía superior a 360.000 euros e inferior o igual a 840.000 euros",
+            "score": 0.9136450518667698,
             "index": [
                 54,
                 55,
                 56,
                 6
-            ]
+            ],
+            "chunks": [
+                "o indirectamente el control de aquella en los términos establecidos en el artículo 42 del Código de Comercio.\nCuando se trate de obras ejecutadas por una sociedad extranjera participada por el contratista sin que se\ncumpla dicha condición, solo se reconocerá como experiencia atribuible al contratista la obra ejecutada por la\nsociedad participada en la proporción de la participación de aquel en el capital social de esta.\nCLASIFICACIÓN SUSTITUTIVA PARA LOS CONTRATOS DE OBRAS DE VALOR ESTIMADO INFERIOR A\n500.000€\nVistas las características de las obras a realizar se considera que la clasificación correspondiente a este contrato\nsería:\nGrupo G. Viales y pistas\nSubgrupo 4. Con firmes de mezclas bituminosas\nCategoría 3. Cuantía superior a 360.000 euros e inferior o igual a 840.000 euros",
+                "CLASIFICACIÓN SUSTITUTIVA PARA LOS CONTRATOS DE OBRAS DE VALOR ESTIMADO INFERIOR A\n500.000€\nVistas las características de las obras a realizar se considera que la clasificación correspondiente a este contrato\nsería:\nGrupo G. Viales y pistas\nSubgrupo 4. Con firmes de mezclas bituminosas\nCategoría 3. Cuantía superior a 360.000 euros e inferior o igual a 840.000 euros\nLa clasificación de la empresa licitadora en este grupo y subgrupo y con categoría igual o superior a la exigida\npara el contrato, acreditará sus condiciones de solvencia para contratar.\nCRITERIOS PARA ACREDITAR LA SOLVENCIA TÉCNICA PARA CONTRATOS DE OBRAS CON VALOR\nESTIMADO INFERIOR A 500.000 €, CUANDO SE TRATE DE EMPRESAS DE NUEVA CREACIÓN:",
+                "La clasificación de la empresa licitadora en este grupo y subgrupo y con categoría igual o superior a la exigida\npara el contrato, acreditará sus condiciones de solvencia para contratar.\nCRITERIOS PARA ACREDITAR LA SOLVENCIA TÉCNICA PARA CONTRATOS DE OBRAS CON VALOR\nESTIMADO INFERIOR A 500.000 €, CUANDO SE TRATE DE EMPRESAS DE NUEVA CREACIÓN:\nLa media de la suma anual de los componentes de la plantilla de la empresa, incluidos los directivos, y\nconsiderando los tres últimos años, en los términos previstos en el apartado 1 e del citado artículo, ascenderá\na un total de tres trabajadores como mínimo.\nMEDIOS PARA ACREDITAR LA SOLVENCIA TÉCNICA PARA CONTRATOS DE OBRAS CON VALOR ESTIMADO\nINFERIOR A 500.000 €, CUANDO SE TRATE DE EMPRESAS DE NUEVA CREACIÓN:",
+                "asimismo ejercer función seguimiento cumplimiento obligación contractual establecido artículo 14 decreto 118/2022 5 agosto consell régimen penalidad ejecución contrato procedimiento imposición penalidad seguir dispuesto artículo 97 rgcap artículo 191 lcsp 1 penalidad cláusula 36.3 5% precio contrato incumplimiento iva excluido 2 penalidad incumplimiento parcial ejecución cláusula 36.1 5% precio contrato incumplimiento iva excluido 3 penalidad incumplimiento plazo contratista caso diferir previsto"
+            ],
+            "format": "Responde ÚNICAMENTE con: Categoría [NUMERO] [CARACTERISTICAS] (cambia el número y las características por las que correspondan)"
         },
         {
             "prompt_key": "Criterio_Solvencia_economica",
             "prompt": "Indica si existen criterios para calcular/acreditar la solvencia económica y financiera",
             "response": "Si",
-            "score": 0.9059782608695652,
+            "score": 0.8913043478260869,
             "index": [
                 48,
                 57,
                 58,
-                3
-            ]
+                2
+            ],
+            "chunks": [
+                "DE GÉNERO, CONDICIONES DE TRABAJO Y PREVENCIÓN DE RIESGOS LABORALES E INSERCIÓN\nSOCIOLABORAL DE LAS PERSONAS CON DISCAPACIDAD, Y A LA OBLIGACIÓN DE CONTRATAR A UN\nNÚMERO O PORCENTAJE ESPECÍFICO DE PERSONAS CON DISCAPACIDAD QUE SEAN APLICABLES A\nLOS SERVICIOS PRESTADOS DURANTE LA EJECUCIÓN DEL CONTRATO:\n□ No\nAPARTADO L\nCRITERIOS PARA ACREDITAR LA SOLVENCIA ECONÓMICA Y FINANCIERA, SEGÚN ARTÍCULO 87 LCSP:\nSe exige que el volumen anual de negocios de la empresa licitadora sea como mínimo de 304.987,08 €, IVA\nexcluido (igual al setenta por ciento [70%] del valor estimado del contrato), referido al mejor ejercicio dentro de\nlos tres últimos disponibles.\nMEDIOS PARA ACREDITAR LA SOLVENCIA ECONÓMICA Y FINANCIERA, SEGÚN ARTÍCULO 87 LCSP:",
+                "considerando los tres últimos años, en los términos previstos en el apartado 1 e del citado artículo, ascenderá\na un total de tres trabajadores como mínimo.\nMEDIOS PARA ACREDITAR LA SOLVENCIA TÉCNICA PARA CONTRATOS DE OBRAS CON VALOR ESTIMADO\nINFERIOR A 500.000 €, CUANDO SE TRATE DE EMPRESAS DE NUEVA CREACIÓN:\nDeclaración de la plantilla media anual de la empresa, incluido el número de directivos, considerados los tres\núltimos años, acompañada de la documentación justificativa correspondiente, encaso de resultar adjudicataria.\nCLASIFICACION PARA CONTRATOS DE OBRAS CON VALOR ESTIMADO IGUAL O SUPERIOR A 500.000€\nNo procede\n8ACREDITACION DE LA SOLVENCIA POR LOS EMPRESARIOS NO ESPAÑOLES DE ESTADOS MIEMBROS DE\nLA UNION EUROPEA O DE ESTADOS SIGNATARIOS DEL ACUERDO SOBRE EL ESPACIO ECONOMICO\nEUROPEO:\nSe aplicarán, tanto para la solvencia económica y financiera como para la técnica y profesional, los mismos\ncriterios y medios exigidos a las empresas españolas.\nLa clasificación equivalente en el país de origen de la empresa",
+                "ACREDITACION DE LA SOLVENCIA POR LOS EMPRESARIOS NO ESPAÑOLES DE ESTADOS MIEMBROS DE\nLA UNION EUROPEA O DE ESTADOS SIGNATARIOS DEL ACUERDO SOBRE EL ESPACIO ECONOMICO\nEUROPEO:\nSe aplicarán, tanto para la solvencia económica y financiera como para la técnica y profesional, los mismos\ncriterios y medios exigidos a las empresas españolas.\nLa clasificación equivalente en el país de origen de la empresa licitadora en el siguiente grupo y subgrupo que\nse menciona a continuación, y con categoría igual o superior a la exigida para el contrato, acreditará sus\ncondiciones de solvencia para contratar.\nGrupo G. Viales y pistas\nSubgrupo 4. Con firmes de mezclas bituminosas\nCategoría 3. Cuantía superior a 360.000 euros e inferior o igual a 840.000 euros",
+                "un mecanismo atenuador de velocidad de los vehículos que circulan por el trazado principal desde Tuéjar hacia\nel sur, por la travesía de la CV-35 a su paso por Chelva.\nSe construirá una glorieta que permita todos los movimientos de entrada, salida y cambio de sentido, de manera\nsegura.\nDEFINICIÓN CONCRETA DEL OBJETO DEL CONTRATO DE OBRAS:\nEl objeto del contrato es la ejecución y puesta en servicio de las obras contempladas en el proyecto de\n“MEJORA DE LA SEGURIDAD VIAL EN LA INTERSECCIÓN PREVIA A LA ENTRADA A CHELVA POR EL\nNORTE”.\nPara ello, se prevén distintas actuaciones atendiendo a las características y condicionantes de cada tramo. Se\nrealizarán entre otros:\n• Despeje de terreno.\n• Excavaciones y rellenos en la zona de construcción de la nueva rotonda."
+            ],
+            "format": "Responde únicamente con Si o No"
         },
         {
             "prompt_key": "Criterio_Solvencia_tecnica",
             "prompt": "Indica si existen criterios para calcular/acreditar la solvencia técnica o profesional",
             "response": "Si",
-            "score": 0.8904411764705882,
+            "score": 0.8705882352941177,
             "index": [
                 50,
                 51,
                 55,
-                2
-            ]
+                3
+            ],
+            "chunks": [
+                "aprobadas y depositadas en el Registro Mercantil, si el empresario estuviese inscrito en dicho Registro, y en\ncaso contrario por las depositadas en el registro oficial en que deba estar inscrito. Los empresarios individuales\nno inscritos en el Registro Mercantil acreditaran su volumen anual de negocio mediante sus libros de inventarios\ny cuentas anuales legalizados por el Registro Mercantil.\n7CRITERIOS PARA ACREDITAR LA SOLVENCIA TÉCNICA PARA CONTRATOS DE OBRAS CON VALOR\nESTIMADO INFERIOR A 500.000 €, SEGÚN ART. 88 LCSP:\nHaber ejecutado, en los últimos cinco años, obras que sean del mismo grupo o subgrupo de clasificación que\nel correspondiente al contrato, cuyo importe anual acumulado en el año de mayor ejecución sea igual o superior\na 217.847,92 €, IVA excluido (50 por ciento del val",
+                "CRITERIOS PARA ACREDITAR LA SOLVENCIA TÉCNICA PARA CONTRATOS DE OBRAS CON VALOR\nESTIMADO INFERIOR A 500.000 €, SEGÚN ART. 88 LCSP:\nHaber ejecutado, en los últimos cinco años, obras que sean del mismo grupo o subgrupo de clasificación que\nel correspondiente al contrato, cuyo importe anual acumulado en el año de mayor ejecución sea igual o superior\na 217.847,92 €, IVA excluido (50 por ciento del valor estimado del contrato).\nMEDIOS PARA ACREDITAR LA SOLVENCIA TÉCNICA PARA CONTRATOS DE OBRAS CON VALOR ESTIMADO\nINFERIOR A 500.000 €, SEGÚN ART. 88 LCSP:\nRelación de las obras ejecutadas en el curso de los cinco últimos años pertenecientes al mismo grupo o\nsubgrupo de clasificación que el correspondiente al contrato, avalada por certificados de buena ejecución; estos",
+                "CLASIFICACIÓN SUSTITUTIVA PARA LOS CONTRATOS DE OBRAS DE VALOR ESTIMADO INFERIOR A\n500.000€\nVistas las características de las obras a realizar se considera que la clasificación correspondiente a este contrato\nsería:\nGrupo G. Viales y pistas\nSubgrupo 4. Con firmes de mezclas bituminosas\nCategoría 3. Cuantía superior a 360.000 euros e inferior o igual a 840.000 euros\nLa clasificación de la empresa licitadora en este grupo y subgrupo y con categoría igual o superior a la exigida\npara el contrato, acreditará sus condiciones de solvencia para contratar.\nCRITERIOS PARA ACREDITAR LA SOLVENCIA TÉCNICA PARA CONTRATOS DE OBRAS CON VALOR\nESTIMADO INFERIOR A 500.000 €, CUANDO SE TRATE DE EMPRESAS DE NUEVA CREACIÓN:",
+                "“MEJORA DE LA SEGURIDAD VIAL EN LA INTERSECCIÓN PREVIA A LA ENTRADA A CHELVA POR EL\nNORTE”.\nPara ello, se prevén distintas actuaciones atendiendo a las características y condicionantes de cada tramo. Se\nrealizarán entre otros:\n• Despeje de terreno.\n• Excavaciones y rellenos en la zona de construcción de la nueva rotonda.\n• Construcción de la glorieta y los accesos.\nEn este contrato se incluyen cláusulas de responsabilidad social y ambiental, de acuerdo con el Decreto\n118/2022, de 5 de agosto, del Consell, por el que se regula la inclusión de cláusulas de responsabilidad social\nen la contratación pública, que desarrolla lo previsto en el artículo 13.4 de la ley 18/2018, de 13 de julio, para el\nfomento de la responsabilidad social.\nCÓDIGO C.P.V.:\n45233140-2 Obras Viales"
+            ],
+            "format": "Responde únicamente con Si o No"
         },
         {
             "prompt_key": "Condiciones_especiales",
             "prompt": "Indica si existen condiciones especiales de ejecución y cuales son en caso de haberlas",
-            "response": "Si, las condiciones especiales de ejecución incluyen el desarrollo de trabajos aplicando procedimientos del certificado ISO 14001 o equivalente, un sistema de Gestión de la Accesibilidad según la norma UNE/ISO 17001 o equivalente, uso de medios electrónicos y tipo de papel, recogida selectiva de residuos con un plan de gestión de los residuos generados, y presentación de informes cada seis meses sobre el cumplimiento de estas condiciones.",
+            "response": "Si, las condiciones especiales de ejecución incluyen el desarrollo de trabajos aplicando procedimientos del certificado ISO 14001 o equivalente, un sistema de Gestión de la Accesibilidad según la norma UNE/ISO 17001 o equivalente, uso de medios electrónicos y tipo de papel, recogida selectiva de residuos con un plan de gestión de los mismos, y presentación de informes cada seis meses sobre el cumplimiento de estas condiciones.",
             "score": 0.95,
             "index": [
                 176,
                 177,
                 180,
                 7
-            ]
+            ],
+            "chunks": [
+                "a partir de las facturas (IVA excluido) presentadas por los proveedores, a las que aplicará el coeficiente de\nadjudicación; este resultado se incrementará con el coeficiente de costes indirectos del proyecto aprobado.\nABONOS A CUENTA:\n□ No\nSE MODIFICA EL RÉGIMEN GENERAL DE LAS CERTIFICACIONES\n□ No\nCONDICIONES DE LOS ABONOS A CUENTA SOBRE SU IMPORTE POR LAS OPERACIONES\nPREPARATORIAS REALIZADAS COMO INSTALACIONES Y ACOPIO DE MATERIALES O EQUIPOS DE\nMAQUINARIA PESADA ADSCRITOS A LA OBRA:\n□ No procede\nAPARTADO X\nMEDIDAS PARA GARANTIZAR EL CUMPLIMIENTO DE LAS OBLIGACIONES MEDIOAMBIENTALES,\nSOCIALES O LABORALES:\nCONDICIONES ESPECIALES DE EJECUCIÓN A CUMPLIR:\nLa empresa adjudicataria deberá desarrollar todos los trabajos objeto del presente contrato aplicando los",
+                "PREPARATORIAS REALIZADAS COMO INSTALACIONES Y ACOPIO DE MATERIALES O EQUIPOS DE\nMAQUINARIA PESADA ADSCRITOS A LA OBRA:\n□ No procede\nAPARTADO X\nMEDIDAS PARA GARANTIZAR EL CUMPLIMIENTO DE LAS OBLIGACIONES MEDIOAMBIENTALES,\nSOCIALES O LABORALES:\nCONDICIONES ESPECIALES DE EJECUCIÓN A CUMPLIR:\nLa empresa adjudicataria deberá desarrollar todos los trabajos objeto del presente contrato aplicando los\nprocedimientos que dispone el certificado ISO 14001 o certificado equivalente.\nAsimismo, en todas las etapas de ejecución de las obras se adoptará un sistema de Gestión de la Accesibilidad\nde acuerdo con la norma UNE/ISO 17001 o certificado equivalente.\nAdemás, la empresa adjudicataria deberá cumplir las siguientes condiciones:\n• Uso de medios electrónicos y tipo de papel",
+                "• Recogida selectiva de residuos\nLa empresa adjudicataria deberá contar con un plan de recogida selectiva y gestión de los residuos\ngenerados consecuencia de la prestación del objeto del contrato.\nLa empresa adjudicataria deberá presentar cada seis meses un informe relativo al cumplimiento de\ndichas condiciones, tanto por parte de ella como por parte de las entidades con las que subcontrate\nprestaciones del contrato, acompañado de una declaración responsable de veracidad.\n25Igualmente, al final del contrato, la adjudicataria aportará una declaración responsable de cumplimiento\nde estas condiciones especiales de ejecución.\nATRIBUCIÓN DE CARÁCTER DE OBLIGACIÓN ESENCIAL A LAS CONDICIONES ESPECIALES DE\nEJECUCIÓN ESTABLECIDAS:\n□ No\nAPARTADO Y\nIMPORTE DE LOS GASTOS POR DESISTIMIENTO O RENUNCIA:\nSe aplicarán las normas relativas al régimen de responsabilidad patrimonial de ",
+                "APARTADO B.\nDIVISIÓN EN LOTES:\n□ NO. Motivos de justificación:\nLa división en lotes de los trabajos correspondientes al contrato de ejecución de obras dificultaría la\ncoordinación de los distintos lotes, imposibilitaría una única organización coherente, responsabilidad única, e\ninterlocución unificada, lo que lleva a plantear como óptima su ejecución unitaria (Art. 99.3 de la Ley 9/2017 de\n8 de noviembre de Contratos del Sector Público (en adelante LCSP).\nLIMITACIONES RESPECTO DE LOS LOTES PREVISTOS:\n□ No se prevé división en lotes.\nSE CONSIDERA CANDIDATO O LICITADOR A EFECTOS DE LAS LIMITACIONES:\n□ No se prevé división en lotes.\nEN RELACION CON CENTROS ESPECIALES DE EMPLEO DE INICIATIVA SOCIAL O EMPRESAS DE INSER-\nCION:\n□ No se reservan lotes.\nAPARTADO C"
+            ],
+            "format": "Responde con Si o No, añadiendo explicación si es necesario"
         },
         {
             "prompt_key": "Penalidad_incumplimiento",
             "prompt": "Indica si existe penalidad por incumplimiento al contratista",
-            "response": "No procede",
-            "score": 0.875,
+            "response": "No, porque en el texto se indica \"□ No procede\" en la sección referida a penalidades dentro de los límites del artículo 192 LCSP, al contratista para el supuesto de incumplimiento por el mismo de la obligación de subrogación prevista en esta cláusula.",
+            "score": 0.85,
             "index": [
                 163,
                 164,
                 0,
-                2
-            ]
+                4
+            ],
+            "chunks": [
+                "prescripciones, siempre que no contravengan las cláusulas del contrato.\nEl director de la obra podrá acordar no dar curso a las certificaciones hasta que el contratista haya\npresentado en debida forma el programa de trabajo cuando éste sea obligatorio, sin derecho a intereses de\ndemora, en su caso, por retraso en el pago de estas certificaciones.\nCualquier modificación al programa de trabajo deberá venir determinada por necesidades técnicas o\ndisponibilidad de equipo u obtención de permisos y deberá ser aprobado por la Administración, previo\ninforme de la Dirección Facultativa de las obras.\n22APARTADO S\nINFORMACIÓN SOBRE LAS CONDICIONES DE SUBROGACIÓN EN CONTRATOS DE TRABAJO, DE\nACUERDO CON EL ARTÍCULO 130 DE LA LCSP.\n□ No procede\nPENALIDADES, DENTRO DE LOS LÍMITES DEL ARTÍCULO 192 LCSP, AL CONTRATISTA PARA EL\nSUPUESTO DE INCUMPLIMIENTO POR EL MISMO DE LA OBLIGACIÓN DE SUBROGACIÓN PREVISTA\nEN ESTA CLÁUSULA:\n□ No procede\nAPARTADO T\nUNIDAD ENCARGADA DEL SEGUIMIENTO Y EJECUCIÓN DEL CONTRA",
+                "APARTADO S\nINFORMACIÓN SOBRE LAS CONDICIONES DE SUBROGACIÓN EN CONTRATOS DE TRABAJO, DE\nACUERDO CON EL ARTÍCULO 130 DE LA LCSP.\n□ No procede\nPENALIDADES, DENTRO DE LOS LÍMITES DEL ARTÍCULO 192 LCSP, AL CONTRATISTA PARA EL\nSUPUESTO DE INCUMPLIMIENTO POR EL MISMO DE LA OBLIGACIÓN DE SUBROGACIÓN PREVISTA\nEN ESTA CLÁUSULA:\n□ No procede\nAPARTADO T\nUNIDAD ENCARGADA DEL SEGUIMIENTO Y EJECUCIÓN DEL CONTRATO:\nSubdirección General de Movilidad.\nPERSONA ENCARGADA DE DEL SEGUIMIENTO DE LAS CLÁUSULAS DE RESPONSABILIDAD SOCIAL\n(CUMPLIMENTAR CUANDO NO SEA EL PROPIO RESPONSABLE DEL CONTRATO)\nDIRECTOR FACULTATIVO DE LA OBRA Y RESPONSABLE DEL CONTRATO:\nEl director o directora del contrato y responsable del mismo, será el nombrado por la Dirección General.",
+                "ANEXO I\nCARACTERÍSTICAS PARTICULARES PARA LA ADJUDICACIÓN DE CONTRATOS ADMINISTRATIVOS DE\nOBRAS MEDIANTE PROCEDIMIENTO ABIERTO\nAPARTADO A\nNúmero DE EXPEDIENTE:\nCLAVE DG: Número EXPTE CONTRATACIÓN: C.I.:\n2747-STV CMAYOR/2023/03Y05/19 23 CPTOPM19 05 18 PP0\nNECESIDADES A SATISFACER CON LA CELEBRACIÓN DEL CONTRATO:\nLa actuación consiste en mejorar la seguridad vial de la carretera CV-35, en la entrada por el norte a la población\nde Chelva, a fin de dotar a ese punto de un elemento de autorregulación del tráfico, de manera que se permita\nuna conexión de la citada vía con una serie de caminos rurales a los que proporciona servicio.\nActualmente, las conexiones se producen mediante intersecciones en forma de T, que comunican con caminos",
+                "118/2022, de 5 de agosto, del Consell, por el que se regula la inclusión de cláusulas de responsabilidad social\nen la contratación pública, que desarrolla lo previsto en el artículo 13.4 de la ley 18/2018, de 13 de julio, para el\nfomento de la responsabilidad social.\nCÓDIGO C.P.V.:\n45233140-2 Obras Viales\n45233120-6 Trabajos de construcción de carreteras\n45233141-9 Trabajos de mantenimiento de carreteras\n45233125-1 Trabajos de construcción de intersecciones de carreteras\nSUJETO A REGULACIÓN ARMONIZADA:\n□ NoAPARTADO B.\nDIVISIÓN EN LOTES:\n□ NO. Motivos de justificación:\nLa división en lotes de los trabajos correspondientes al contrato de ejecución de obras dificultaría la\ncoordinación de los distintos lotes, imposibilitaría una única organización coherente, responsabilidad única, e\ninterlocución unificada, lo que lleva a plantear como óptima su ejecución unitaria (Art. 99.3 de la Ley 9/2017 de\n8 de no"
+            ],
+            "format": "Responde con Si, No o No procede, añadiendo explicación si es necesario"
         },
         {
             "prompt_key": "Forma_pago",
             "prompt": "Indica la forma o régimen de pago",
-            "response": "Los pagos se efectuarán previa presentación de la correspondiente factura reglamentaria. El abono durante la ejecución de las obras será mensual, en función de las certificaciones expedidas por la Dirección Facultativa de las obras.",
-            "score": 0.9,
+            "response": "Los pagos se efectuarán previa presentación de la correspondiente factura reglamentaria, siendo el abono durante la ejecución de las obras mensual, en función de las certificaciones expedidas por la Dirección Facultativa de las obras.",
+            "score": 0.85,
             "index": [
                 173,
                 174,
-                0
-            ]
+                0,
+                7
+            ],
+            "chunks": [
+                "empresa o entidad adjudicataria: 5% del precio del contrato para cada incumplimiento (IVA excluido).\nCONSIDERACIÓN COMO INFRACCIÓN GRAVE DEL INCUMPLIMIENTO DE LAS CONDICIONES\nESPECIALES DE EJECUCIÓN ESTABLECIDAS:\n□ No\nAPARTADO U\nPLAZO DE RECEPCIÓN:\nUn mes desde la fecha de finalización de la obra.\nRECEPCIÓN PARCIAL:\n□ No\nESTABLECIMIENTO DE PLAZO SUPERIOR A TRES MESES PARA LA APROBACION DE LA\nCERTIFICACION FINALEN CONTRATOS ESPECIALMENTE COMPLEJOS Y DE MAS DE 12 MILLONES\nDE EUROS:\n□ No\nAPARTADO V\nPLAZO DE GARANTÍA:\nEl plazo de garantía de las obras será de UN (1) año, a contar desde la fecha de su recepción.\nAPARTADO W\nFORMA DE PAGO:\nLos pagos se efectuarán previa presentación de la correspondiente factura reglamentaria.",
+                "CERTIFICACION FINALEN CONTRATOS ESPECIALMENTE COMPLEJOS Y DE MAS DE 12 MILLONES\nDE EUROS:\n□ No\nAPARTADO V\nPLAZO DE GARANTÍA:\nEl plazo de garantía de las obras será de UN (1) año, a contar desde la fecha de su recepción.\nAPARTADO W\nFORMA DE PAGO:\nLos pagos se efectuarán previa presentación de la correspondiente factura reglamentaria.\nEl abono durante la ejecución de las obras será mensual, en función de las certificaciones expedidas por la\n24Dirección Facultativa de las obras, redactadas mensualmente con relación valorada de la obra ejecutada\nconforme al proyecto según resulte de las mediciones realizadas y los precios del contrato y serán tramitadas\nen los primeros diez días siguientes al mes que correspondan.\nEl abono de las partidas alzadas a justificar se realizará por aplicación de los precios unitarios vigentes del\nproyecto siem",
+                "ANEXO I\nCARACTERÍSTICAS PARTICULARES PARA LA ADJUDICACIÓN DE CONTRATOS ADMINISTRATIVOS DE\nOBRAS MEDIANTE PROCEDIMIENTO ABIERTO\nAPARTADO A\nNúmero DE EXPEDIENTE:\nCLAVE DG: Número EXPTE CONTRATACIÓN: C.I.:\n2747-STV CMAYOR/2023/03Y05/19 23 CPTOPM19 05 18 PP0\nNECESIDADES A SATISFACER CON LA CELEBRACIÓN DEL CONTRATO:\nLa actuación consiste en mejorar la seguridad vial de la carretera CV-35, en la entrada por el norte a la población\nde Chelva, a fin de dotar a ese punto de un elemento de autorregulación del tráfico, de manera que se permita\nuna conexión de la citada vía con una serie de caminos rurales a los que proporciona servicio.\nActualmente, las conexiones se producen mediante intersecciones en forma de T, que comunican con caminos",
+                "APARTADO B.\nDIVISIÓN EN LOTES:\n□ NO. Motivos de justificación:\nLa división en lotes de los trabajos correspondientes al contrato de ejecución de obras dificultaría la\ncoordinación de los distintos lotes, imposibilitaría una única organización coherente, responsabilidad única, e\ninterlocución unificada, lo que lleva a plantear como óptima su ejecución unitaria (Art. 99.3 de la Ley 9/2017 de\n8 de noviembre de Contratos del Sector Público (en adelante LCSP).\nLIMITACIONES RESPECTO DE LOS LOTES PREVISTOS:\n□ No se prevé división en lotes.\nSE CONSIDERA CANDIDATO O LICITADOR A EFECTOS DE LAS LIMITACIONES:\n□ No se prevé división en lotes.\nEN RELACION CON CENTROS ESPECIALES DE EMPLEO DE INICIATIVA SOCIAL O EMPRESAS DE INSER-\nCION:\n□ No se reservan lotes.\nAPARTADO C"
+            ],
+            "format": "Responde ÚNICAMENTE con el tipo de forma de pago"
         },
         {
             "prompt_key": "Causas_modificacion",
             "prompt": "Indica si existen causas de modificacion del contrato",
-            "response": "No",
-            "score": 0.8949447154502074,
+            "response": "No, según el apartado O, no hay modificaciones previstas. Además, en el desglose del valor estimado del contrato, se indica que \"Modificaciones Previstas (IVA excluido)\" es 0,00 euros, lo que sugiere que no se esperan cambios en el contrato.",
+            "score": 0.9222222222222223,
             "index": [
                 157,
                 158,
                 36,
-                6
-            ]
+                1
+            ],
+            "chunks": [
+                "• Plan de igualdad previamente aprobado por cualquier administración pública u órgano competente, para\nla preferencia señalada en el apartado g).\n• Certificado de inscripción en el Registro de Cooperativas de la Comunidad Valenciana, para la\npreferencia indicada en el apartado h).\n• Declaración responsable del representante de la empresa o entidad licitadora para aquellas que cumplan\ncon lo preceptuado en los apartados d), e), i) y j).\nAPARTADO Ñ\nCESIÓN\n□ Sí, en los términos previstos en el artículo 214 de la Ley 9/2017 LCSP.\nAPARTADO O\nMODIFICACIONES\n□ No\nAPARTADO P\nGARANTÍA DEFINITIVA\n5% del precio final ofertado, IVA excluido.\nCANCELACIÓN O DEVOLUCIÓN PROPORCIONAL DE LA GARANTÍA DEFINITIVA EN CASOS DE\nRECEPCIÓN PARCIAL:\n□ No\nAPARTADO Q",
+                "con lo preceptuado en los apartados d), e), i) y j).\nAPARTADO Ñ\nCESIÓN\n□ Sí, en los términos previstos en el artículo 214 de la Ley 9/2017 LCSP.\nAPARTADO O\nMODIFICACIONES\n□ No\nAPARTADO P\nGARANTÍA DEFINITIVA\n5% del precio final ofertado, IVA excluido.\nCANCELACIÓN O DEVOLUCIÓN PROPORCIONAL DE LA GARANTÍA DEFINITIVA EN CASOS DE\nRECEPCIÓN PARCIAL:\n□ No\nAPARTADO Q\nOBLIGACIÓN DE INDICAR EN LA OFERTA SI VA A HABER SUBCONTRATACIÓN\n□ Si\nLAS CONDICIONES DE LA OFERTA PARA LA SUBCONTRATACIÓN, LA ACREDITACIÓN DE LA\nAPTITUD DE LA EMPRESA SUBCONTRATISTA Y LA ACREDITACIÓN DE LAS CONDICIONES DE\nEMERGENCIA O URGENCIA TIENE CARÁCTER DE OBLIGACIONES ESENCIALES\n□ No\nTAREAS CRÍTICAS QUE NO PODRÁN SER OBJETO DE SUBCONTRATACIÓN\n□ No\n21PAGOS DIRECTOS A LAS EMPRESAS SUBCONTRATISTAS POR PARTE DE LA ADMINISTRACIÓN:\n□ No\nREMISIÓN AL ÓRGANO DE CONTRATACIÓN, CUANDO ESTE LO SOLICITE, DE RELACIÓN\nDETALLADA DE AQUELLAS EMPRESAS SUBCONTRATISTAS O SUMINISTRADORAS QUE\nPARTICIPEN EN EL CONTRATO CUANDO SE PERFECCIONE SU PARTICIPACIÓN, JUNTO CON\nAQUELLAS CONDICIONES DE SUBCONTRATACIÓN O SUMINISTRO DE CADA UNO DE ELLOS QUE\nGUARDEN UNA RELACIÓN ",
+                "CONTRATACIÓN DE OBRAS A TANTO ALZADO CON PRECIO CERRADO:\n□ No\nVALOR ESTIMADO DEL CONTRATO:\nEl valor estimado del contrato asciende a CUATROCIENTOS TREINTA Y CINCO MIL SEISCIENTOS NOVENTA\nY CINCO EUROS CON OCHENTA Y TRES CÉNTIMOS (435.695,83 €), IVA excluido, según el presupuesto del\nproyecto constructivo aprobado que sirve de base a la licitación.\nEsta cantidad obedece al siguiente desglose:\nCONCEPTO IMPORTE (€)\n435.695,83\nImporte Base de Licitación (IVA excluido)\nModificaciones Previstas (IVA excluido) 0,00\nPrórrogas (IVA excluido) 0,00\nRevisión de precios (IVA excluido) 0,00\nOtros Conceptos (IVA excluido) 0,00\n435.695,83\nTotal Valor Estimado\nEl presupuesto de la ejecución de la obra será el que resulte al aplicar la baja de adjudicación al Presupuesto Base\nde Licitación.\nAPARTADO F",
+                "de Chelva, a fin de dotar a ese punto de un elemento de autorregulación del tráfico, de manera que se permita\nuna conexión de la citada vía con una serie de caminos rurales a los que proporciona servicio.\nActualmente, las conexiones se producen mediante intersecciones en forma de T, que comunican con caminos\nque dan acceso a edificaciones y parcelas privadas, como el acceso al Camino del Murte. Por tanto, se necesita\nun mecanismo atenuador de velocidad de los vehículos que circulan por el trazado principal desde Tuéjar hacia\nel sur, por la travesía de la CV-35 a su paso por Chelva.\nSe construirá una glorieta que permita todos los movimientos de entrada, salida y cambio de sentido, de manera\nsegura.\nDEFINICIÓN CONCRETA DEL OBJETO DEL CONTRATO DE OBRAS:"
+            ],
+            "format": "Responde con Si o No, añadiendo explicación si es necesario"
         },
         {
             "prompt_key": "Plazo_garantia",
             "prompt": "Indica cuál es el plazo de garantía de las obras",
             "response": "1 año",
-            "score": 0.899,
+            "score": 0.882,
             "index": [
                 173,
                 174,
                 46,
-                2
-            ]
+                3
+            ],
+            "chunks": [
+                "empresa o entidad adjudicataria: 5% del precio del contrato para cada incumplimiento (IVA excluido).\nCONSIDERACIÓN COMO INFRACCIÓN GRAVE DEL INCUMPLIMIENTO DE LAS CONDICIONES\nESPECIALES DE EJECUCIÓN ESTABLECIDAS:\n□ No\nAPARTADO U\nPLAZO DE RECEPCIÓN:\nUn mes desde la fecha de finalización de la obra.\nRECEPCIÓN PARCIAL:\n□ No\nESTABLECIMIENTO DE PLAZO SUPERIOR A TRES MESES PARA LA APROBACION DE LA\nCERTIFICACION FINALEN CONTRATOS ESPECIALMENTE COMPLEJOS Y DE MAS DE 12 MILLONES\nDE EUROS:\n□ No\nAPARTADO V\nPLAZO DE GARANTÍA:\nEl plazo de garantía de las obras será de UN (1) año, a contar desde la fecha de su recepción.\nAPARTADO W\nFORMA DE PAGO:\nLos pagos se efectuarán previa presentación de la correspondiente factura reglamentaria.",
+                "CERTIFICACION FINALEN CONTRATOS ESPECIALMENTE COMPLEJOS Y DE MAS DE 12 MILLONES\nDE EUROS:\n□ No\nAPARTADO V\nPLAZO DE GARANTÍA:\nEl plazo de garantía de las obras será de UN (1) año, a contar desde la fecha de su recepción.\nAPARTADO W\nFORMA DE PAGO:\nLos pagos se efectuarán previa presentación de la correspondiente factura reglamentaria.\nEl abono durante la ejecución de las obras será mensual, en función de las certificaciones expedidas por la\n24Dirección Facultativa de las obras, redactadas mensualmente con relación valorada de la obra ejecutada\nconforme al proyecto según resulte de las mediciones realizadas y los precios del contrato y serán tramitadas\nen los primeros diez días siguientes al mes que correspondan.\nEl abono de las partidas alzadas a justificar se realizará por aplicación de los precios unitarios vigentes del\nproyecto siem",
+                "FINANCIADO POR VARIOS DEPARTAMENTOS:\n□ No\nAPARTADO H\nREVISIÓN DE PRECIOS\nNo procede. Debido a que el plazo de ejecución de la obra es inferior a dos años, no se establece el derecho\na revisión periódica y predeterminada de precios del presente proyecto, según lo establecido en el artículo 103\nde la Ley 9/2017 de Contratos del Sector Público, que a su vez remite a la Ley 2/2015, de 30 de marzo, de\ndesindexación de la economía española, cuyo desarrollo establece el R.D. 55/2017 de 3 de febrero.\nAPARTADO I\nALTERNATIVAS O VARIANTES\n□ No\nAPARTADO J\nGARANTÍA PROVISIONAL:\nNo se exige conforme al artículo 106.1 de la LCSP.\nAPARTADO K\nINFORMACIÓN SOBRE LAS OBLIGACIONES RELATIVAS A LA FISCALIDAD, A LA PROTECCIÓN DEL MEDIO",
+                "“MEJORA DE LA SEGURIDAD VIAL EN LA INTERSECCIÓN PREVIA A LA ENTRADA A CHELVA POR EL\nNORTE”.\nPara ello, se prevén distintas actuaciones atendiendo a las características y condicionantes de cada tramo. Se\nrealizarán entre otros:\n• Despeje de terreno.\n• Excavaciones y rellenos en la zona de construcción de la nueva rotonda.\n• Construcción de la glorieta y los accesos.\nEn este contrato se incluyen cláusulas de responsabilidad social y ambiental, de acuerdo con el Decreto\n118/2022, de 5 de agosto, del Consell, por el que se regula la inclusión de cláusulas de responsabilidad social\nen la contratación pública, que desarrolla lo previsto en el artículo 13.4 de la ley 18/2018, de 13 de julio, para el\nfomento de la responsabilidad social.\nCÓDIGO C.P.V.:\n45233140-2 Obras Viales"
+            ],
+            "format": "Responde ÚNICAMENTE con el número de meses o años (específica meses o años)"
         },
         {
             "prompt_key": "Contratacion_precio_unit",
-            "prompt": "Indica si cuenta con contratación a precio unitario",
-            "response": "No, según el texto proporcionado, la opción \"CONTRATACIÓN DE OBRAS A PRECIOS UNITARIOS\" está marcada como \"□ No\", lo que indica que no cuenta con contratación a precio unitario. En su lugar, se menciona \"CONTRATACIÓN DE OBRAS A TANTO ALZADO: □ Sí\", lo que sugiere que el contrato se basa en un precio fijo o total por la obra realizada.",
-            "score": 0.8465753424657535,
+            "prompt": "Indica si cuenta con contratación de obras a precios unitarios",
+            "response": "No, según el texto \"CONTRATACIÓN DE OBRAS A PRECIOS UNITARIOS: □ No\" indica que no cuenta con contratación de obras a precios unitarios.",
+            "score": 0.7642199889315318,
             "index": [
                 30,
                 175,
-                26
-            ]
+                26,
+                4
+            ],
+            "chunks": [
+                "DISTRIBUCIÓN ANUALIDADES\nEl límite máximo de gasto que en virtud del contrato puede comprometer el órgano de contratación, se distribuye\nsegún las anualidades siguientes:\nBASE IMPONIBLE IVA (21%) IMPORTE TOTAL\nANUALIDADES EJERCICIO\n(€) (€) (€)\n1ª Anualidad 2024 107.438,02 22.561,98 130.000,00\n2ª Anualidad 2025 328.257,81 68.934,14 397.191,95\nTotal 435.695,83 91.496,12 527.191,95\nEn los casos de gastos plurianuales, si según este Apartado fueran varias las anualidades previstas, la\nejecución del contrato en los años posteriores se subordinará a la existencia de crédito adecuado y suficiente\nen los respectivos presupuestos de la Generalitat.\nDETERMINACIÓN DEL PRECIO\nCONTRATACIÓN DE OBRAS A PRECIOS UNITARIOS:\n□ No\nCONTRATACIÓN DE OBRAS A TANTO ALZADO:\n□ Sí\n5CONTRATACIÓN DE OBRAS A TANTO ALZADO CON PRECIO CERRADO:\n□ No\nVALOR ESTIMADO DEL CONTRATO:\nEl valor estimado del contrato asciende a CUATROCIENTOS TREINTA Y CINCO MIL SEISCIENTOS NOVENTA\nY CINCO EUROS CON OCHENTA Y TRES CÉNTIMOS (435.695,83 €), IVA excluido, según el presupuesto del\nproyecto constructivo aprobado que sirve de base a la licitación.\nEsta cantidad obedece al siguiente desglose:\nCONCE",
+                "Dirección Facultativa de las obras, redactadas mensualmente con relación valorada de la obra ejecutada\nconforme al proyecto según resulte de las mediciones realizadas y los precios del contrato y serán tramitadas\nen los primeros diez días siguientes al mes que correspondan.\nEl abono de las partidas alzadas a justificar se realizará por aplicación de los precios unitarios vigentes del\nproyecto siempre que sea posible. Las unidades para las que no haya precio unitario en el proyecto se valorarán\na partir de las facturas (IVA excluido) presentadas por los proveedores, a las que aplicará el coeficiente de\nadjudicación; este resultado se incrementará con el coeficiente de costes indirectos del proyecto aprobado.\nABONOS A CUENTA:\n□ No\nSE MODIFICA EL RÉGIMEN GENERAL DE LAS CERTIFICACIONES\n□ No",
+                "Presupuesto base de licitación antes de la actualización de precios: 378.865,94 €\nPresupuesto base de licitación (después de aplicar CA= 1,15): 435.695,83 €\nEl presupuesto de ejecución material se ha obtenido aplicando a los precios de las distintas unidades de obra\nlas correspondientes mediciones del proyecto constructivo aprobado y que sirve de base a la licitación. Los\nprecios considerados para cada unidad de obra incluyen tanto los costes directos (materiales, maquinaria, mano\nde obra) como los costes indirectos necesarios.\nEl desglose de los precios unitarios en costes directos e indirectos, el convenio colectivo de la construcción que\nha servido de base y los demás aspectos relativos a la obtención de los mismos, se encuentran detallados en el",
+                "división lote trabajo correspondiente contrato ejecución obra dificultar coordinación distinto lote imposibilitacer único organización coherente responsabilidad único interlocución unificado plantear óptimo ejecución unitario art 99.3 ley 9/2017"
+            ],
+            "format": "Responde con Si o No, añadiendo explicación si es necesario"
         },
         {
             "prompt_key": "Tanto_alzado",
             "prompt": "Indica si el contrato cuenta con contratación de obras a tanto alzado",
-            "response": "Si, según el texto \"CONTRATACIÓN DE OBRAS A TANTO ALZADO: □ Sí\" indica que el contrato cuenta con contratación de obras a tanto alzado.",
-            "score": 0.8438106907904148,
+            "response": "Si, según el texto, en la sección \"DETERMINACIÓN DEL PRECIO\" aparece \"CONTRATACIÓN DE OBRAS A TANTO ALZADO: □ Sí\".",
+            "score": 0.8183321458101273,
             "index": [
                 30,
                 36,
                 0,
-                2
-            ]
+                7
+            ],
+            "chunks": [
+                "DISTRIBUCIÓN ANUALIDADES\nEl límite máximo de gasto que en virtud del contrato puede comprometer el órgano de contratación, se distribuye\nsegún las anualidades siguientes:\nBASE IMPONIBLE IVA (21%) IMPORTE TOTAL\nANUALIDADES EJERCICIO\n(€) (€) (€)\n1ª Anualidad 2024 107.438,02 22.561,98 130.000,00\n2ª Anualidad 2025 328.257,81 68.934,14 397.191,95\nTotal 435.695,83 91.496,12 527.191,95\nEn los casos de gastos plurianuales, si según este Apartado fueran varias las anualidades previstas, la\nejecución del contrato en los años posteriores se subordinará a la existencia de crédito adecuado y suficiente\nen los respectivos presupuestos de la Generalitat.\nDETERMINACIÓN DEL PRECIO\nCONTRATACIÓN DE OBRAS A PRECIOS UNITARIOS:\n□ No\nCONTRATACIÓN DE OBRAS A TANTO ALZADO:\n□ Sí\n5CONTRATACIÓN DE OBRAS A TANTO ALZADO CON PRECIO CERRADO:\n□ No\nVALOR ESTIMADO DEL CONTRATO:\nEl valor estimado del contrato asciende a CUATROCIENTOS TREINTA Y CINCO MIL SEISCIENTOS NOVENTA\nY CINCO EUROS CON OCHENTA Y TRES CÉNTIMOS (435.695,83 €), IVA excluido, según el presupuesto del\nproyecto constructivo aprobado que sirve de base a la licitación.\nEsta cantidad obedece al siguiente desglose:\nCONCE",
+                "CONTRATACIÓN DE OBRAS A TANTO ALZADO CON PRECIO CERRADO:\n□ No\nVALOR ESTIMADO DEL CONTRATO:\nEl valor estimado del contrato asciende a CUATROCIENTOS TREINTA Y CINCO MIL SEISCIENTOS NOVENTA\nY CINCO EUROS CON OCHENTA Y TRES CÉNTIMOS (435.695,83 €), IVA excluido, según el presupuesto del\nproyecto constructivo aprobado que sirve de base a la licitación.\nEsta cantidad obedece al siguiente desglose:\nCONCEPTO IMPORTE (€)\n435.695,83\nImporte Base de Licitación (IVA excluido)\nModificaciones Previstas (IVA excluido) 0,00\nPrórrogas (IVA excluido) 0,00\nRevisión de precios (IVA excluido) 0,00\nOtros Conceptos (IVA excluido) 0,00\n435.695,83\nTotal Valor Estimado\nEl presupuesto de la ejecución de la obra será el que resulte al aplicar la baja de adjudicación al Presupuesto Base\nde Licitación.\nAPARTADO F",
+                "ANEXO I\nCARACTERÍSTICAS PARTICULARES PARA LA ADJUDICACIÓN DE CONTRATOS ADMINISTRATIVOS DE\nOBRAS MEDIANTE PROCEDIMIENTO ABIERTO\nAPARTADO A\nNúmero DE EXPEDIENTE:\nCLAVE DG: Número EXPTE CONTRATACIÓN: C.I.:\n2747-STV CMAYOR/2023/03Y05/19 23 CPTOPM19 05 18 PP0\nNECESIDADES A SATISFACER CON LA CELEBRACIÓN DEL CONTRATO:\nLa actuación consiste en mejorar la seguridad vial de la carretera CV-35, en la entrada por el norte a la población\nde Chelva, a fin de dotar a ese punto de un elemento de autorregulación del tráfico, de manera que se permita\nuna conexión de la citada vía con una serie de caminos rurales a los que proporciona servicio.\nActualmente, las conexiones se producen mediante intersecciones en forma de T, que comunican con caminos",
+                "contrario citado oferta resultar anormalmente bajo tomar consideración adjudicar contrato solicitar empresa licitadoro plazo 5 hábil presentar precisión considerar oportuno documento justificativo baja realizado deber presentar él formato pdf firmar electrónicamente transcurrir plazo haber recibir dicho justificación poner conocimiento órgano contratación considerar proposición cumplir empresa quedar excluido procedimiento selección remitir órgano contratación documentación recibido plazo establecido análisis"
+            ],
+            "format": "Responde con Si o No, añadiendo explicación si es necesario"
         },
         {
             "prompt_key": "Tanto_alzado_con",
             "prompt": "Indica si el contrato cuenta con contratación de obras a tanto alzado con precio cerrado",
-            "response": "No, según el texto proporcionado, en la sección \"CONTRATACIÓN DE OBRAS A TANTO ALZADO CON PRECIO CERRADO\" aparece una casilla marcada con \"□ No\", lo que indica que el contrato no cuenta con contratación de obras a tanto alzado con precio cerrado.",
-            "score": 0.8564970460534096,
+            "response": "No, según el texto proporcionado, en la sección \"CONTRATACIÓN DE OBRAS A TANTO ALZADO CON PRECIO CERRADO\" aparece marcada como \"□ No\".",
+            "score": 0.8246377030014992,
             "index": [
                 30,
                 36,
                 0,
                 6
-            ]
+            ],
+            "chunks": [
+                "DISTRIBUCIÓN ANUALIDADES\nEl límite máximo de gasto que en virtud del contrato puede comprometer el órgano de contratación, se distribuye\nsegún las anualidades siguientes:\nBASE IMPONIBLE IVA (21%) IMPORTE TOTAL\nANUALIDADES EJERCICIO\n(€) (€) (€)\n1ª Anualidad 2024 107.438,02 22.561,98 130.000,00\n2ª Anualidad 2025 328.257,81 68.934,14 397.191,95\nTotal 435.695,83 91.496,12 527.191,95\nEn los casos de gastos plurianuales, si según este Apartado fueran varias las anualidades previstas, la\nejecución del contrato en los años posteriores se subordinará a la existencia de crédito adecuado y suficiente\nen los respectivos presupuestos de la Generalitat.\nDETERMINACIÓN DEL PRECIO\nCONTRATACIÓN DE OBRAS A PRECIOS UNITARIOS:\n□ No\nCONTRATACIÓN DE OBRAS A TANTO ALZADO:\n□ Sí\n5CONTRATACIÓN DE OBRAS A TANTO ALZADO CON PRECIO CERRADO:\n□ No\nVALOR ESTIMADO DEL CONTRATO:\nEl valor estimado del contrato asciende a CUATROCIENTOS TREINTA Y CINCO MIL SEISCIENTOS NOVENTA\nY CINCO EUROS CON OCHENTA Y TRES CÉNTIMOS (435.695,83 €), IVA excluido, según el presupuesto del\nproyecto constructivo aprobado que sirve de base a la licitación.\nEsta cantidad obedece al siguiente desglose:\nCONCE",
+                "CONTRATACIÓN DE OBRAS A TANTO ALZADO CON PRECIO CERRADO:\n□ No\nVALOR ESTIMADO DEL CONTRATO:\nEl valor estimado del contrato asciende a CUATROCIENTOS TREINTA Y CINCO MIL SEISCIENTOS NOVENTA\nY CINCO EUROS CON OCHENTA Y TRES CÉNTIMOS (435.695,83 €), IVA excluido, según el presupuesto del\nproyecto constructivo aprobado que sirve de base a la licitación.\nEsta cantidad obedece al siguiente desglose:\nCONCEPTO IMPORTE (€)\n435.695,83\nImporte Base de Licitación (IVA excluido)\nModificaciones Previstas (IVA excluido) 0,00\nPrórrogas (IVA excluido) 0,00\nRevisión de precios (IVA excluido) 0,00\nOtros Conceptos (IVA excluido) 0,00\n435.695,83\nTotal Valor Estimado\nEl presupuesto de la ejecución de la obra será el que resulte al aplicar la baja de adjudicación al Presupuesto Base\nde Licitación.\nAPARTADO F",
+                "ANEXO I\nCARACTERÍSTICAS PARTICULARES PARA LA ADJUDICACIÓN DE CONTRATOS ADMINISTRATIVOS DE\nOBRAS MEDIANTE PROCEDIMIENTO ABIERTO\nAPARTADO A\nNúmero DE EXPEDIENTE:\nCLAVE DG: Número EXPTE CONTRATACIÓN: C.I.:\n2747-STV CMAYOR/2023/03Y05/19 23 CPTOPM19 05 18 PP0\nNECESIDADES A SATISFACER CON LA CELEBRACIÓN DEL CONTRATO:\nLa actuación consiste en mejorar la seguridad vial de la carretera CV-35, en la entrada por el norte a la población\nde Chelva, a fin de dotar a ese punto de un elemento de autorregulación del tráfico, de manera que se permita\nuna conexión de la citada vía con una serie de caminos rurales a los que proporciona servicio.\nActualmente, las conexiones se producen mediante intersecciones en forma de T, que comunican con caminos",
+                "contratación obra alzado precio cerrado □ir valor estimado contrato valor estimado contrato ascender cuatrocientos treinta mil seiscientos noventa euros ochenta céntimo 435695.83 € iva excluido presupuesto proyecto constructivo aprobado servir base licitación cantidad obedecer desglose concepto importe € 435695.83 importe base licitación iva excluido modificación previsto iva excluido 0.00 prórroga iva excluido 0.00 revisión precio iva excluido 0.00 concepto iva excluido 0.00 435695.83 valor estimado presupuesto ejecución obra resultar aplicar baja adjudicación presupuesto base licitación apartado f"
+            ],
+            "format": "Responde con Si o No, añadiendo explicación si es necesario"
         },
         {
             "prompt_key": "Criterio_juicio_val",
@@ -315,56 +497,298 @@
                 17,
                 18,
                 63,
-                1
-            ]
+                7
+            ],
+            "chunks": [
+                "NÚMERO DE SOBRES ELECTRÓNICOS A PRESENTAR POR LAS EMPRESAS LICITADORAS:\n• Sobre Número1: documentación acreditativa del cumplimiento de los requisitos previos (Documentación\nadministrativa).\nEn relación con la declaración responsable a incluir en este sobre, las licitadoras se ajustarán exactamente al\nmodelo establecido en el Anexo II “MODELO DE DECLARACIÓN RESPONSABLE” del PCAP, y en el caso de\nque no lo hagan, la mesa de contratación solicitará, en el plazo legalmente previsto, la subsanación de este\ndocumento.\n• Sobre Número2: documentación relativa a los criterios de adjudicación ponderables mediante un juicio de valor.\n• Sobre Número3: proposición económica y documentación relativa a los criterios de adjudicación cuantificables",
+                "que no lo hagan, la mesa de contratación solicitará, en el plazo legalmente previsto, la subsanación de este\ndocumento.\n• Sobre Número2: documentación relativa a los criterios de adjudicación ponderables mediante un juicio de valor.\n• Sobre Número3: proposición económica y documentación relativa a los criterios de adjudicación cuantificables\nmediante la mera aplicación de fórmulas matemáticas o aritméticas.\nLa documentación incluida en los sobres se presentará en formato pdf y firmada electrónicamente. La\ninclusión de información relativa a un sobre en otro diferente del que le corresponde según los pliegos\nsupondrá la exclusión del proceso de licitación por acuerdo del Órgano de Contratación a propuesta de la\nMesa.\nCRITERIOS DE ADJUDICACIÓN DEL PROCEDIMIENTO ABIERTO\n□ Varios criterios",
+                "CRITERIOS DE ACUMULACIÓN DE LA SOLVENCIA EN EL CASO DE UTE\nEn lo que se refiere a la acumulación de la clasificación en el caso de UTE, se estará sujeto a lo dispuesto en\nel artículo 52 del Real Decreto 1098/2001, de 12 de octubre, por el que se aprueba el Reglamento general de\nla Ley de Contratos de las Administraciones Públicas.\nAPARTADO LL\nCRITERIOS DE ADJUDICACIÓN:\nLos criterios objetivos que han de servir de base para la adjudicación del contrato, y su posible valoración\nmáxima, son los siguientes:\n1.- Criterios relacionados con la calidad cuya cuantificación depende de un juicio de valor (PCJ): hasta 30\npuntos.\n2.- Criterios relacionados con la calidad evaluables de forma automática mediante aplicación de fórmulas (PCF):\nhasta 30 puntos.\n3.- Criterio precio (PP): hasta 40 puntos.",
+                "APARTADO B.\nDIVISIÓN EN LOTES:\n□ NO. Motivos de justificación:\nLa división en lotes de los trabajos correspondientes al contrato de ejecución de obras dificultaría la\ncoordinación de los distintos lotes, imposibilitaría una única organización coherente, responsabilidad única, e\ninterlocución unificada, lo que lleva a plantear como óptima su ejecución unitaria (Art. 99.3 de la Ley 9/2017 de\n8 de noviembre de Contratos del Sector Público (en adelante LCSP).\nLIMITACIONES RESPECTO DE LOS LOTES PREVISTOS:\n□ No se prevé división en lotes.\nSE CONSIDERA CANDIDATO O LICITADOR A EFECTOS DE LAS LIMITACIONES:\n□ No se prevé división en lotes.\nEN RELACION CON CENTROS ESPECIALES DE EMPLEO DE INICIATIVA SOCIAL O EMPRESAS DE INSER-\nCION:\n□ No se reservan lotes.\nAPARTADO C"
+            ],
+            "format": "Responde ÚNICAMENTE con el número de puntos o porcentaje"
         },
         {
             "prompt_key": "Evaluables_autom",
             "prompt": "Indica la ponderación o puntaje máxima de los criterios cualitativos valorables de forma automática",
             "response": "30",
-            "score": 0.9061084868013859,
+            "score": 0.95,
             "index": [
                 63,
                 64,
                 98,
-                6
-            ]
+                4
+            ],
+            "chunks": [
+                "CRITERIOS DE ACUMULACIÓN DE LA SOLVENCIA EN EL CASO DE UTE\nEn lo que se refiere a la acumulación de la clasificación en el caso de UTE, se estará sujeto a lo dispuesto en\nel artículo 52 del Real Decreto 1098/2001, de 12 de octubre, por el que se aprueba el Reglamento general de\nla Ley de Contratos de las Administraciones Públicas.\nAPARTADO LL\nCRITERIOS DE ADJUDICACIÓN:\nLos criterios objetivos que han de servir de base para la adjudicación del contrato, y su posible valoración\nmáxima, son los siguientes:\n1.- Criterios relacionados con la calidad cuya cuantificación depende de un juicio de valor (PCJ): hasta 30\npuntos.\n2.- Criterios relacionados con la calidad evaluables de forma automática mediante aplicación de fórmulas (PCF):\nhasta 30 puntos.\n3.- Criterio precio (PP): hasta 40 puntos.",
+                "máxima, son los siguientes:\n1.- Criterios relacionados con la calidad cuya cuantificación depende de un juicio de valor (PCJ): hasta 30\npuntos.\n2.- Criterios relacionados con la calidad evaluables de forma automática mediante aplicación de fórmulas (PCF):\nhasta 30 puntos.\n3.- Criterio precio (PP): hasta 40 puntos.\nCRITERIOS DE ADJUDICACIÓN RELACIONADOS CON LA CALIDAD CUYA CUANTIFICACIÓN DEPENDE DE\nUN JUICIO DE VALOR (PCJ)\nPUNTUACIÓN INICIAL\nA las ofertas se les asignará una puntuación inicial a partir de los criterios que se describen a continuación.\nA estos efectos las empresas licitadoras deben presentar una memoria estructurada en los 3 apartados que se\nindican (Procedimiento, propuesta organizativa y programación de la obra). Cada apartado será puntuado de",
+                "𝑃𝑇𝐼\n𝑃𝐶𝐽 = 30∗( )\n𝑃𝑇𝐼\n𝑚á𝑥\nSiendo:\nPTI : la mayor puntuación técnica inicial obtenida de entre todas las ofertas presentadas.\nmáx\nPTI: la puntuación técnica inicial de la oferta que se valora.\nEl resultado de la puntuación técnica se redondeará al segundo decimal.\nCRITERIOS DE ADJUDICACIÓN RELACIONADOS CON LA CALIDAD EVALUABLES DE FORMA\nAUTOMÁTICA MEDIANTE FÓRMULAS (PCF)\nVALORACIÓN\nLa puntuación de criterios relacionados con la calidad, evaluables de forma automática mediante aplicación de\nfórmulas (PCF) se determinará del siguiente modo:\n14Criterio 1.- Igualdad\nSe valorará con 10 puntos a las licitadoras que se comprometan a emplear en la plantilla que ejecutará directa\ny materialmente la obra, personal femenino con la titulación de ingeniería de Caminos, Canales y Puertos o\nIngeniería técnica de Obras Públicas (o titulaciones equivalentes que habiliten para el ejercicio de estas\nprofesiones). La presencia de al menos una mujer en l",
+                "118/2022, de 5 de agosto, del Consell, por el que se regula la inclusión de cláusulas de responsabilidad social\nen la contratación pública, que desarrolla lo previsto en el artículo 13.4 de la ley 18/2018, de 13 de julio, para el\nfomento de la responsabilidad social.\nCÓDIGO C.P.V.:\n45233140-2 Obras Viales\n45233120-6 Trabajos de construcción de carreteras\n45233141-9 Trabajos de mantenimiento de carreteras\n45233125-1 Trabajos de construcción de intersecciones de carreteras\nSUJETO A REGULACIÓN ARMONIZADA:\n□ NoAPARTADO B.\nDIVISIÓN EN LOTES:\n□ NO. Motivos de justificación:\nLa división en lotes de los trabajos correspondientes al contrato de ejecución de obras dificultaría la\ncoordinación de los distintos lotes, imposibilitaría una única organización coherente, responsabilidad única, e\ninterlocución unificada, lo que lleva a plantear como óptima su ejecución unitaria (Art. 99.3 de la Ley 9/2017 de\n8 de no"
+            ],
+            "format": "Responde ÚNICAMENTE con el número de puntos o porcentaje"
         },
         {
             "prompt_key": "Criterio_ecónomico",
             "prompt": "Indica la ponderación o puntaje máxima de los criterios económicos / criterio precio",
             "response": "40",
-            "score": 0.9137096774193548,
+            "score": 0.9016129032258065,
             "index": [
                 111,
                 112,
                 116,
-                4
-            ]
+                7
+            ],
+            "chunks": [
+                "Las ofertas cuya valoración en este apartado sea inferior a 10 puntos no serán tomadas en consideración para\nel cálculo de las ofertas anormalmente bajas ni para la determinación de la oferta más ventajosa.\nDe este modo se obtendrá para cada oferta la valoración de la calidad mediante la aplicación de fórmulas, PCF.\nA estos efectos las licitadoras deberán cumplimentar los cuadros de Autobaremación del Anexo I Bis, que se\nincluirán en el sobre n.º 3, junto con la proposición económica.\n15CRITERIO DE ADJUDICACIÓN: PRECIO\nVALORACIÓN\nPara valorar la oferta económica se puntuarán los aspectos que se relacionan seguidamente:\nPara todas las ofertas:\n(Of −Of )2\nPP =40⋅[1− i min ](1⁄2)\n(PBL−Of )2\nmin\nsiendo:\nPP: puntuación obtenida para el criterio precio\nOf\ni\n: oferta que se valora, IVA excluido\nOfmin: oferta mínima, IVA excluido\nPBL: presupuesto base de licitación, IVA excluido\nSe consi",
+                "CRITERIO DE ADJUDICACIÓN: PRECIO\nVALORACIÓN\nPara valorar la oferta económica se puntuarán los aspectos que se relacionan seguidamente:\nPara todas las ofertas:\n(Of −Of )2\nPP =40⋅[1− i min ](1⁄2)\n(PBL−Of )2\nmin\nsiendo:\nPP: puntuación obtenida para el criterio precio\nOf\ni\n: oferta que se valora, IVA excluido\nOfmin: oferta mínima, IVA excluido\nPBL: presupuesto base de licitación, IVA excluido\nSe considera oferta mínima la de menor importe de las admitidas, no incursa definitivamente en anormalidad\npor su bajo importe, una vez aplicados los criterios establecidos en el apartado M del presente Anexo.\nLa puntuación económica se redondeará al segundo decimal.\nPUNTUACIÓN GLOBAL\nLa puntuación global (PG) relativa a una propuesta será la suma de las puntuaciones siguientes:\nPG=PCJ+PCF+PP\nsiendo:",
+                "Se entenderán, como ofertas incursas en presunción de anormalidad por su bajo importe, aquéllas cuyas BO\ncorrespondientes superen los siguientes valores:\na) Para un número n de ofertas económicas \"contemplables\" mayor o igual que cinco (5): BO> BR + 5\nb) Para un número n de ofertas económicas \"contemplables\" entre dos (2) y cuatro (4): BO> BM + 5\nc) En caso de que solo exista una (1) oferta “contemplable” se considerará desproporcionada la oferta que\nsea inferior al presupuesto base de licitación en más de 25 unidades porcentuales.\nSiendo:\nBO: Baja de la oferta económica (%)\nBR: Baja de referencia (%), calculada como se indica a continuación\nBM: Baja Media (%), calculada como se indica a continuación",
+                "APARTADO B.\nDIVISIÓN EN LOTES:\n□ NO. Motivos de justificación:\nLa división en lotes de los trabajos correspondientes al contrato de ejecución de obras dificultaría la\ncoordinación de los distintos lotes, imposibilitaría una única organización coherente, responsabilidad única, e\ninterlocución unificada, lo que lleva a plantear como óptima su ejecución unitaria (Art. 99.3 de la Ley 9/2017 de\n8 de noviembre de Contratos del Sector Público (en adelante LCSP).\nLIMITACIONES RESPECTO DE LOS LOTES PREVISTOS:\n□ No se prevé división en lotes.\nSE CONSIDERA CANDIDATO O LICITADOR A EFECTOS DE LAS LIMITACIONES:\n□ No se prevé división en lotes.\nEN RELACION CON CENTROS ESPECIALES DE EMPLEO DE INICIATIVA SOCIAL O EMPRESAS DE INSER-\nCION:\n□ No se reservan lotes.\nAPARTADO C"
+            ],
+            "format": "Responde ÚNICAMENTE con el número de puntos o porcentaje"
         },
         {
             "prompt_key": "Obligaciones_ambientales",
             "prompt": "Cuáles son las medidas para garantizar el cumplimiento de obligaciones ambientales?",
-            "response": "Si, se establecen condiciones especiales de ejecución que incluyen la aplicación de procedimientos del certificado ISO 14001 o equivalente para garantizar el cumplimiento de las obligaciones medioambientales.",
-            "score": 0.8401594977080822,
+            "response": "Si, se mencionan medidas como aplicar procedimientos del certificado ISO 14001 o equivalente y adoptar un sistema de Gestión de la Accesibilidad según la norma UNE/ISO 17001 o certificado equivalente.",
+            "score": 0.85,
             "index": [
                 176,
                 177,
                 0,
-                7
-            ]
+                3
+            ],
+            "chunks": [
+                "a partir de las facturas (IVA excluido) presentadas por los proveedores, a las que aplicará el coeficiente de\nadjudicación; este resultado se incrementará con el coeficiente de costes indirectos del proyecto aprobado.\nABONOS A CUENTA:\n□ No\nSE MODIFICA EL RÉGIMEN GENERAL DE LAS CERTIFICACIONES\n□ No\nCONDICIONES DE LOS ABONOS A CUENTA SOBRE SU IMPORTE POR LAS OPERACIONES\nPREPARATORIAS REALIZADAS COMO INSTALACIONES Y ACOPIO DE MATERIALES O EQUIPOS DE\nMAQUINARIA PESADA ADSCRITOS A LA OBRA:\n□ No procede\nAPARTADO X\nMEDIDAS PARA GARANTIZAR EL CUMPLIMIENTO DE LAS OBLIGACIONES MEDIOAMBIENTALES,\nSOCIALES O LABORALES:\nCONDICIONES ESPECIALES DE EJECUCIÓN A CUMPLIR:\nLa empresa adjudicataria deberá desarrollar todos los trabajos objeto del presente contrato aplicando los",
+                "PREPARATORIAS REALIZADAS COMO INSTALACIONES Y ACOPIO DE MATERIALES O EQUIPOS DE\nMAQUINARIA PESADA ADSCRITOS A LA OBRA:\n□ No procede\nAPARTADO X\nMEDIDAS PARA GARANTIZAR EL CUMPLIMIENTO DE LAS OBLIGACIONES MEDIOAMBIENTALES,\nSOCIALES O LABORALES:\nCONDICIONES ESPECIALES DE EJECUCIÓN A CUMPLIR:\nLa empresa adjudicataria deberá desarrollar todos los trabajos objeto del presente contrato aplicando los\nprocedimientos que dispone el certificado ISO 14001 o certificado equivalente.\nAsimismo, en todas las etapas de ejecución de las obras se adoptará un sistema de Gestión de la Accesibilidad\nde acuerdo con la norma UNE/ISO 17001 o certificado equivalente.\nAdemás, la empresa adjudicataria deberá cumplir las siguientes condiciones:\n• Uso de medios electrónicos y tipo de papel",
+                "ANEXO I\nCARACTERÍSTICAS PARTICULARES PARA LA ADJUDICACIÓN DE CONTRATOS ADMINISTRATIVOS DE\nOBRAS MEDIANTE PROCEDIMIENTO ABIERTO\nAPARTADO A\nNúmero DE EXPEDIENTE:\nCLAVE DG: Número EXPTE CONTRATACIÓN: C.I.:\n2747-STV CMAYOR/2023/03Y05/19 23 CPTOPM19 05 18 PP0\nNECESIDADES A SATISFACER CON LA CELEBRACIÓN DEL CONTRATO:\nLa actuación consiste en mejorar la seguridad vial de la carretera CV-35, en la entrada por el norte a la población\nde Chelva, a fin de dotar a ese punto de un elemento de autorregulación del tráfico, de manera que se permita\nuna conexión de la citada vía con una serie de caminos rurales a los que proporciona servicio.\nActualmente, las conexiones se producen mediante intersecciones en forma de T, que comunican con caminos",
+                "“MEJORA DE LA SEGURIDAD VIAL EN LA INTERSECCIÓN PREVIA A LA ENTRADA A CHELVA POR EL\nNORTE”.\nPara ello, se prevén distintas actuaciones atendiendo a las características y condicionantes de cada tramo. Se\nrealizarán entre otros:\n• Despeje de terreno.\n• Excavaciones y rellenos en la zona de construcción de la nueva rotonda.\n• Construcción de la glorieta y los accesos.\nEn este contrato se incluyen cláusulas de responsabilidad social y ambiental, de acuerdo con el Decreto\n118/2022, de 5 de agosto, del Consell, por el que se regula la inclusión de cláusulas de responsabilidad social\nen la contratación pública, que desarrolla lo previsto en el artículo 13.4 de la ley 18/2018, de 13 de julio, para el\nfomento de la responsabilidad social.\nCÓDIGO C.P.V.:\n45233140-2 Obras Viales"
+            ],
+            "format": "Responde con Si o No, añadiendo explicación si es necesario"
         },
         {
             "prompt_key": "Regimen_penalidades",
             "prompt": "Indica si existen penalidades por incumplimientos",
-            "response": "- Penalidades de la cláusula 36.3: 5% del precio del contrato para cada incumplimiento (IVA excluido) - Penalidades por incumplimiento parcial de la ejecución en la cláusula 36.1: 5% del precio del contrato para cada incumplimiento (IVA excluido) - Penalidades por incumplimiento del plazo total por el contratista en caso de diferir de las previstas en las prescripciones, siempre que no contravengan las cláusulas del contrato",
-            "score": 0.8810810810810811,
+            "response": "* Penalidades de la cláusula 36.3: 5% del precio del contrato para cada incumplimiento (IVA excluido) * Penalidades por incumplimiento parcial de la ejecución en la cláusula 36.1: 5% del precio del contrato para cada incumplimiento (IVA excluido) * Penalidades por incumplimiento del plazo total por el contratista en caso de diferir de las previstas en la prescripciones, siempre que no contravengan las cláusulas del contrato",
+            "score": 0.8581081081081081,
             "index": [
                 165,
                 166,
                 163,
                 1
-            ]
+            ],
+            "chunks": [
+                "Subdirección General de Movilidad.\nPERSONA ENCARGADA DE DEL SEGUIMIENTO DE LAS CLÁUSULAS DE RESPONSABILIDAD SOCIAL\n(CUMPLIMENTAR CUANDO NO SEA EL PROPIO RESPONSABLE DEL CONTRATO)\nDIRECTOR FACULTATIVO DE LA OBRA Y RESPONSABLE DEL CONTRATO:\nEl director o directora del contrato y responsable del mismo, será el nombrado por la Dirección General.\nAsimismo, ejercerá las funciones de seguimiento del cumplimiento de las obligaciones contractuales, de acuerdo\ncon lo establecido en el artículo 14 del Decreto 118/2022 de 5 de agosto, del Consell.\nRÉGIMEN DE PENALIDADES EN LA EJECUCIÓN DEL CONTRATO\nEn el procedimiento de imposición de penalidades se seguirá lo dispuesto en el artículo 97 del RGCAP y el\nartículo 191 de la LCSP.",
+                "Asimismo, ejercerá las funciones de seguimiento del cumplimiento de las obligaciones contractuales, de acuerdo\ncon lo establecido en el artículo 14 del Decreto 118/2022 de 5 de agosto, del Consell.\nRÉGIMEN DE PENALIDADES EN LA EJECUCIÓN DEL CONTRATO\nEn el procedimiento de imposición de penalidades se seguirá lo dispuesto en el artículo 97 del RGCAP y el\nartículo 191 de la LCSP.\n1. Penalidades de la cláusula 36.3. 5% del precio del contrato para cada incumplimiento (IVA excluido).\n2. Penalidades por incumplimiento parcial de la ejecución en la cláusula 36.1. 5% del precio del contrato para\ncada incumplimiento (IVA excluido).\n3. Penalidades por incumplimiento del plazo total por el contratista en caso de diferir de las previstas en la",
+                "prescripciones, siempre que no contravengan las cláusulas del contrato.\nEl director de la obra podrá acordar no dar curso a las certificaciones hasta que el contratista haya\npresentado en debida forma el programa de trabajo cuando éste sea obligatorio, sin derecho a intereses de\ndemora, en su caso, por retraso en el pago de estas certificaciones.\nCualquier modificación al programa de trabajo deberá venir determinada por necesidades técnicas o\ndisponibilidad de equipo u obtención de permisos y deberá ser aprobado por la Administración, previo\ninforme de la Dirección Facultativa de las obras.\n22APARTADO S\nINFORMACIÓN SOBRE LAS CONDICIONES DE SUBROGACIÓN EN CONTRATOS DE TRABAJO, DE\nACUERDO CON EL ARTÍCULO 130 DE LA LCSP.\n□ No procede\nPENALIDADES, DENTRO DE LOS LÍMITES DEL ARTÍCULO 192 LCSP, AL CONTRATISTA PARA EL\nSUPUESTO DE INCUMPLIMIENTO POR EL MISMO DE LA OBLIGACIÓN DE SUBROGACIÓN PREVISTA\nEN ESTA CLÁUSULA:\n□ No procede\nAPARTADO T\nUNIDAD ENCARGADA DEL SEGUIMIENTO Y EJECUCIÓN DEL CONTRA",
+                "de Chelva, a fin de dotar a ese punto de un elemento de autorregulación del tráfico, de manera que se permita\nuna conexión de la citada vía con una serie de caminos rurales a los que proporciona servicio.\nActualmente, las conexiones se producen mediante intersecciones en forma de T, que comunican con caminos\nque dan acceso a edificaciones y parcelas privadas, como el acceso al Camino del Murte. Por tanto, se necesita\nun mecanismo atenuador de velocidad de los vehículos que circulan por el trazado principal desde Tuéjar hacia\nel sur, por la travesía de la CV-35 a su paso por Chelva.\nSe construirá una glorieta que permita todos los movimientos de entrada, salida y cambio de sentido, de manera\nsegura.\nDEFINICIÓN CONCRETA DEL OBJETO DEL CONTRATO DE OBRAS:"
+            ],
+            "format": "Responde con un listado de las penalidades"
+        },
+        {
+            "prompt_key": "Ambiental",
+            "prompt": "Enumera los criterios ambientales y el valor de cada uno",
+            "response": "",
+            "score": 0.95,
+            "index": [
+                72,
+                73,
+                80,
+                2
+            ],
+            "chunks": [
+                "• Análisis de las operaciones simples que forman parte de cada actividad.\n• Desvíos provisionales y reposiciones de servicios.\nASPECTOS COMPLEMENTARIOS O SECUNDARIOS\n• Análisis de las necesidades de acopios y de instalaciones auxiliares.\n• Estudio de los medios de transporte y de las plantas de producción de materiales.\n• Suministros y zonas previstas para préstamos y vertederos.\n• Descripción de las pruebas para la puesta en servicio de la obra.\n• Análisis del Estudio de Seguridad y Salud, del anejo de Control de Calidad, del Estudio de\nGestión de Residuos y del anejo de Medidas Correctoras de Impacto Ambiental.\nLa puntuación de cada uno de los aspectos incluidos en la memoria dependerá no solo del propio aspecto a",
+                "• Descripción de las pruebas para la puesta en servicio de la obra.\n• Análisis del Estudio de Seguridad y Salud, del anejo de Control de Calidad, del Estudio de\nGestión de Residuos y del anejo de Medidas Correctoras de Impacto Ambiental.\nLa puntuación de cada uno de los aspectos incluidos en la memoria dependerá no solo del propio aspecto a\nvalorar, sino de la coherencia que guarde con otros aspectos de los que dependa directa o indirectamente.\nAdemás, se valorará la detección de omisiones, errores, incoherencias o aspectos que queden insuficientemente\ndesarrollados o confusos en el proyecto y el planteamiento de soluciones.\nEl procedimiento constructivo se puntuará de 0 a 5 puntos atendiendo a lo siguiente.\nApartado a) Procedimiento constructivo. Valoración\nPUNTUACIÓN CRITERIOS\n115 puntos La concepción global de la obra demuestra un conocimiento claro del objeto de la\nactuación.\nLa metodología de trabajo, planificación y organización propuestas se exponen de forma\nmuy completa y detallada y está debidamente justificada. La metodología identifica los\ncondicionantes y la problemática asociados a cada fase del proyecto, y refleja un estudio\nprofundo del proyecto constructivo ",
+                "La propuesta para la organización física de la obra -instalaciones auxiliares, acopios y\naccesos- es clara y coherente.\nLa previsión de medios de transporte se ajusta a las necesidades de las distintas fases\nde la obra. Se detallan las plantas previstas para la producción de materiales.\nSe analizan las distintas alternativas para el suministro de materiales así como para\npréstamos y vertedero. Se justifica su idoneidad y se garantiza su disponibilidad.\nSe realiza una descripción adecuada de las medidas y pruebas para la puesta en servicio\nde la obra.\nSe presenta un análisis detallado del Estudio de Seguridad y Salud, del anejo de Control\nde Calidad, del Estudio de Gestión de Residuos y del anejo de Medidas Correctoras de\nImpacto Ambiental.",
+                "un mecanismo atenuador de velocidad de los vehículos que circulan por el trazado principal desde Tuéjar hacia\nel sur, por la travesía de la CV-35 a su paso por Chelva.\nSe construirá una glorieta que permita todos los movimientos de entrada, salida y cambio de sentido, de manera\nsegura.\nDEFINICIÓN CONCRETA DEL OBJETO DEL CONTRATO DE OBRAS:\nEl objeto del contrato es la ejecución y puesta en servicio de las obras contempladas en el proyecto de\n“MEJORA DE LA SEGURIDAD VIAL EN LA INTERSECCIÓN PREVIA A LA ENTRADA A CHELVA POR EL\nNORTE”.\nPara ello, se prevén distintas actuaciones atendiendo a las características y condicionantes de cada tramo. Se\nrealizarán entre otros:\n• Despeje de terreno.\n• Excavaciones y rellenos en la zona de construcción de la nueva rotonda."
+            ],
+            "format": "Responde con un listado de los criterios ambientales y el valor de cada uno"
+        },
+        {
+            "prompt_key": "Tecnico",
+            "prompt": "Enumera los criterios técnicos y el valor de cada uno",
+            "response": "* Procedimiento constructivo: 12,5 * Propuesta organizativa: 5,0 * Programación de la obra: 12,5",
+            "score": 0.8079617834394904,
+            "index": [
+                70,
+                71,
+                69,
+                2
+            ],
+            "chunks": [
+                "A cada apartado se le asignará una puntuación entre 0 y 5 puntos. Para obtener la puntuación final, la agregación\nutilizará los factores de ponderación que se indican. La máxima puntuación inicial resulta así de 30 puntos.\nAPARTADOS DE LA MEMORIA Puntuación Factor de Puntuación\nponderación máxima\na) Procedimiento constructivo De 0 a 5 2,5 12,5\nb) Propuesta organizativa De 0 a 5 1,0 5,0\nc) Programación de la obra De 0 a 5 2,5 12,5\nMÁXIMA PUNTUACIÓN INICIAL 30,0\na) Procedimiento constructivo.\nLa memoria deberá abordar los siguientes aspectos:\nASPECTOS ESENCIALES\n• Concepción completa de la obra.\n• Descripción de la metodología de trabajo, planificación y organización de la obra por fases.\n• Descripción de las actividades y de los procesos constructivos propuestos.",
+                "c) Programación de la obra De 0 a 5 2,5 12,5\nMÁXIMA PUNTUACIÓN INICIAL 30,0\na) Procedimiento constructivo.\nLa memoria deberá abordar los siguientes aspectos:\nASPECTOS ESENCIALES\n• Concepción completa de la obra.\n• Descripción de la metodología de trabajo, planificación y organización de la obra por fases.\n• Descripción de las actividades y de los procesos constructivos propuestos.\n• Análisis de las operaciones simples que forman parte de cada actividad.\n• Desvíos provisionales y reposiciones de servicios.\nASPECTOS COMPLEMENTARIOS O SECUNDARIOS\n• Análisis de las necesidades de acopios y de instalaciones auxiliares.\n• Estudio de los medios de transporte y de las plantas de producción de materiales.\n• Suministros y zonas previstas para préstamos y vertederos.",
+                "anexos.\nSe utilizará un tipo de letra Arial 11, con interlineado mínimo sencillo. Los márgenes de página serán como\nmínimo de 2,0 cm. El tamaño mínimo de las imágenes será de al menos de 6x8 cm.\nCualquier información que se presente en otro formato o exceda de la extensión indicada no será tenida en\ncuenta para su valoración. Toda la documentación se presentará en formato pdf y firmada electrónicamente.\nContenido de la memoria\n10A cada apartado se le asignará una puntuación entre 0 y 5 puntos. Para obtener la puntuación final, la agregación\nutilizará los factores de ponderación que se indican. La máxima puntuación inicial resulta así de 30 puntos.\nAPARTADOS DE LA MEMORIA Puntuación Factor de Puntuación\nponderación máxima\na) Procedimiento constructivo De 0 a 5 2,5 12,5\nb) Propuesta organizativa De 0 a 5 1,0 5,0\nc) Programa",
+                "un mecanismo atenuador de velocidad de los vehículos que circulan por el trazado principal desde Tuéjar hacia\nel sur, por la travesía de la CV-35 a su paso por Chelva.\nSe construirá una glorieta que permita todos los movimientos de entrada, salida y cambio de sentido, de manera\nsegura.\nDEFINICIÓN CONCRETA DEL OBJETO DEL CONTRATO DE OBRAS:\nEl objeto del contrato es la ejecución y puesta en servicio de las obras contempladas en el proyecto de\n“MEJORA DE LA SEGURIDAD VIAL EN LA INTERSECCIÓN PREVIA A LA ENTRADA A CHELVA POR EL\nNORTE”.\nPara ello, se prevén distintas actuaciones atendiendo a las características y condicionantes de cada tramo. Se\nrealizarán entre otros:\n• Despeje de terreno.\n• Excavaciones y rellenos en la zona de construcción de la nueva rotonda."
+            ],
+            "format": "Responde con un listado de los criterios técnicos y el valor de cada uno"
+        },
+        {
+            "prompt_key": "Precio",
+            "prompt": "Enumera los criterios de precio y el valor de cada uno",
+            "response": "* Criterio precio (PP): hasta 40 puntos * Fórmula para calcular la puntuación del criterio precio: PP = 40⋅[1− ((Of − Ofmin) / (PBL − Ofmin))²]¹/² + Of: oferta que se valora, IVA excluido + Ofmin: oferta mínima, IVA excluido + PBL: presupuesto base de licitación, IVA excluido",
+            "score": 0.95,
+            "index": [
+                63,
+                64,
+                111,
+                3
+            ],
+            "chunks": [
+                "CRITERIOS DE ACUMULACIÓN DE LA SOLVENCIA EN EL CASO DE UTE\nEn lo que se refiere a la acumulación de la clasificación en el caso de UTE, se estará sujeto a lo dispuesto en\nel artículo 52 del Real Decreto 1098/2001, de 12 de octubre, por el que se aprueba el Reglamento general de\nla Ley de Contratos de las Administraciones Públicas.\nAPARTADO LL\nCRITERIOS DE ADJUDICACIÓN:\nLos criterios objetivos que han de servir de base para la adjudicación del contrato, y su posible valoración\nmáxima, son los siguientes:\n1.- Criterios relacionados con la calidad cuya cuantificación depende de un juicio de valor (PCJ): hasta 30\npuntos.\n2.- Criterios relacionados con la calidad evaluables de forma automática mediante aplicación de fórmulas (PCF):\nhasta 30 puntos.\n3.- Criterio precio (PP): hasta 40 puntos.",
+                "máxima, son los siguientes:\n1.- Criterios relacionados con la calidad cuya cuantificación depende de un juicio de valor (PCJ): hasta 30\npuntos.\n2.- Criterios relacionados con la calidad evaluables de forma automática mediante aplicación de fórmulas (PCF):\nhasta 30 puntos.\n3.- Criterio precio (PP): hasta 40 puntos.\nCRITERIOS DE ADJUDICACIÓN RELACIONADOS CON LA CALIDAD CUYA CUANTIFICACIÓN DEPENDE DE\nUN JUICIO DE VALOR (PCJ)\nPUNTUACIÓN INICIAL\nA las ofertas se les asignará una puntuación inicial a partir de los criterios que se describen a continuación.\nA estos efectos las empresas licitadoras deben presentar una memoria estructurada en los 3 apartados que se\nindican (Procedimiento, propuesta organizativa y programación de la obra). Cada apartado será puntuado de",
+                "Las ofertas cuya valoración en este apartado sea inferior a 10 puntos no serán tomadas en consideración para\nel cálculo de las ofertas anormalmente bajas ni para la determinación de la oferta más ventajosa.\nDe este modo se obtendrá para cada oferta la valoración de la calidad mediante la aplicación de fórmulas, PCF.\nA estos efectos las licitadoras deberán cumplimentar los cuadros de Autobaremación del Anexo I Bis, que se\nincluirán en el sobre n.º 3, junto con la proposición económica.\n15CRITERIO DE ADJUDICACIÓN: PRECIO\nVALORACIÓN\nPara valorar la oferta económica se puntuarán los aspectos que se relacionan seguidamente:\nPara todas las ofertas:\n(Of −Of )2\nPP =40⋅[1− i min ](1⁄2)\n(PBL−Of )2\nmin\nsiendo:\nPP: puntuación obtenida para el criterio precio\nOf\ni\n: oferta que se valora, IVA excluido\nOfmin: oferta mínima, IVA excluido\nPBL: presupuesto base de licitación, IVA excluido\nSe consi",
+                "“MEJORA DE LA SEGURIDAD VIAL EN LA INTERSECCIÓN PREVIA A LA ENTRADA A CHELVA POR EL\nNORTE”.\nPara ello, se prevén distintas actuaciones atendiendo a las características y condicionantes de cada tramo. Se\nrealizarán entre otros:\n• Despeje de terreno.\n• Excavaciones y rellenos en la zona de construcción de la nueva rotonda.\n• Construcción de la glorieta y los accesos.\nEn este contrato se incluyen cláusulas de responsabilidad social y ambiental, de acuerdo con el Decreto\n118/2022, de 5 de agosto, del Consell, por el que se regula la inclusión de cláusulas de responsabilidad social\nen la contratación pública, que desarrolla lo previsto en el artículo 13.4 de la ley 18/2018, de 13 de julio, para el\nfomento de la responsabilidad social.\nCÓDIGO C.P.V.:\n45233140-2 Obras Viales"
+            ],
+            "format": "Responde con un listado de los criterios de precio y el valor de cada uno"
+        },
+        {
+            "prompt_key": "Garantia",
+            "prompt": "Enumera los criterios de garantía y el valor de cada uno",
+            "response": "",
+            "score": 0.6214927117029826,
+            "index": [
+                3,
+                4,
+                6
+            ],
+            "chunks": [
+                "calidad insuficiente b propuesto organizativo apartado valorar organización medio material equipo maquinaria personal ejecución prever aportar actividad obra adecuación distinto tarea desarrollar caso valorar medio ejecución organización adecuación distinto actividad previsto apartado deber contener asignación actividad medio personal material considerar necesario ejecución justificación adecuación medio propuesto composición rendimiento relación unidad parte obra realizar subcontratación indicación",
+                "criterio 1.- igualdad valorar 10 punto licitadora comprometer emplear plantilla ejecutar directo materialmente obra personal femenino titulación ingeniería camino canal puerto ingeniería técnico obra público titulación equivalente habilitar ejercicio profesión presencia mujer situación valorar 10 punto comprobación realizar presentación correspondiente contrato trabajo deber disponible inicio obra deber presentar él declaración responsable dedicación personal contrato referencia compromiso mantener contratación finalización",
+                "anormalidad garantía complementario caso oferta económico presunción anormalidad importe relación prestación recabar información necesario órgano contratación valorar efectivamente oferta resultar anormalmente bajo relación prestación rechazar contrario citado oferta resultar anormalmente bajo tomar consideración adjudicar contrato solicitar empresa licitadoro plazo 5 hábil presentar precisión considerar oportuno documento justificativo baja realizado deber presentar él formato pdf firmar electrónicamente"
+            ],
+            "format": "Responde con un listado de los criterios de garantía y el valor de cada uno"
+        },
+        {
+            "prompt_key": "Experiencia",
+            "prompt": "Enumera los criterios de experiencia y el valor de cada uno",
+            "response": "",
+            "score": 0.95,
+            "index": [
+                82,
+                83,
+                85,
+                2
+            ],
+            "chunks": [
+                "4 ≤ P < 5 La oferta recoge los aspectos esenciales con una calidad excelente.\nLos aspectos secundarios se recogen todos, aun con un nivel inferior al de excelencia.\n2 ≤ P < 4 Recoge los aspectos esenciales con una calidad global considerada como adecuada, aun con\nun nivel inferior al de excelencia.\n0 ≤ P < 2 Recoge los aspectos esenciales con deficiencias o errores que supongan considerarlos como\nde calidad insuficiente.\nb) Propuesta organizativa\nEn este apartado se valorará la organización de los medios materiales (equipos y maquinaria) y personales de\nejecución que se prevé aportar a cada una de las actividades de la obra, así como su adecuación a las distintas\ntareas a desarrollar.\nEn ningún caso se valorarán los propios medios de ejecución, solo su organización y adecuación a las",
+                "de calidad insuficiente.\nb) Propuesta organizativa\nEn este apartado se valorará la organización de los medios materiales (equipos y maquinaria) y personales de\nejecución que se prevé aportar a cada una de las actividades de la obra, así como su adecuación a las distintas\ntareas a desarrollar.\nEn ningún caso se valorarán los propios medios de ejecución, solo su organización y adecuación a las\ndistintas actividades previstas.\nEste apartado deberá contener:\n• Asignación a cada una de las actividades de los medios personales y materiales que se consideren necesarios\npara su ejecución.\n• Justificación de la adecuación de los medios propuestos, tanto en composición como en rendimientos.\n• Relación de las unidades o partes de la obra que realizará mediante subcontratación, con indicación en su",
+                "En ningún caso se valorarán los propios medios de ejecución, solo su organización y adecuación a las, distintas actividades previstas. ",
+                "un mecanismo atenuador de velocidad de los vehículos que circulan por el trazado principal desde Tuéjar hacia\nel sur, por la travesía de la CV-35 a su paso por Chelva.\nSe construirá una glorieta que permita todos los movimientos de entrada, salida y cambio de sentido, de manera\nsegura.\nDEFINICIÓN CONCRETA DEL OBJETO DEL CONTRATO DE OBRAS:\nEl objeto del contrato es la ejecución y puesta en servicio de las obras contempladas en el proyecto de\n“MEJORA DE LA SEGURIDAD VIAL EN LA INTERSECCIÓN PREVIA A LA ENTRADA A CHELVA POR EL\nNORTE”.\nPara ello, se prevén distintas actuaciones atendiendo a las características y condicionantes de cada tramo. Se\nrealizarán entre otros:\n• Despeje de terreno.\n• Excavaciones y rellenos en la zona de construcción de la nueva rotonda."
+            ],
+            "format": "Responde con un listado de los criterios de experiencia y el valor de cada uno"
+        },
+        {
+            "prompt_key": "Calidad",
+            "prompt": "Enumera los criterios de calidad y el valor de cada uno",
+            "response": "* Criterios relacionados con la calidad cuya cuantificación depende de un juicio de valor (PCJ): hasta 30 puntos * Criterios relacionados con la calidad evaluables de forma automática mediante aplicación de fórmulas (PCF): hasta 30 puntos * Criterio precio (PP): hasta 40 puntos",
+            "score": 0.83052738336714,
+            "index": [
+                63,
+                64,
+                98,
+                3
+            ],
+            "chunks": [
+                "CRITERIOS DE ACUMULACIÓN DE LA SOLVENCIA EN EL CASO DE UTE\nEn lo que se refiere a la acumulación de la clasificación en el caso de UTE, se estará sujeto a lo dispuesto en\nel artículo 52 del Real Decreto 1098/2001, de 12 de octubre, por el que se aprueba el Reglamento general de\nla Ley de Contratos de las Administraciones Públicas.\nAPARTADO LL\nCRITERIOS DE ADJUDICACIÓN:\nLos criterios objetivos que han de servir de base para la adjudicación del contrato, y su posible valoración\nmáxima, son los siguientes:\n1.- Criterios relacionados con la calidad cuya cuantificación depende de un juicio de valor (PCJ): hasta 30\npuntos.\n2.- Criterios relacionados con la calidad evaluables de forma automática mediante aplicación de fórmulas (PCF):\nhasta 30 puntos.\n3.- Criterio precio (PP): hasta 40 puntos.",
+                "máxima, son los siguientes:\n1.- Criterios relacionados con la calidad cuya cuantificación depende de un juicio de valor (PCJ): hasta 30\npuntos.\n2.- Criterios relacionados con la calidad evaluables de forma automática mediante aplicación de fórmulas (PCF):\nhasta 30 puntos.\n3.- Criterio precio (PP): hasta 40 puntos.\nCRITERIOS DE ADJUDICACIÓN RELACIONADOS CON LA CALIDAD CUYA CUANTIFICACIÓN DEPENDE DE\nUN JUICIO DE VALOR (PCJ)\nPUNTUACIÓN INICIAL\nA las ofertas se les asignará una puntuación inicial a partir de los criterios que se describen a continuación.\nA estos efectos las empresas licitadoras deben presentar una memoria estructurada en los 3 apartados que se\nindican (Procedimiento, propuesta organizativa y programación de la obra). Cada apartado será puntuado de",
+                "𝑃𝑇𝐼\n𝑃𝐶𝐽 = 30∗( )\n𝑃𝑇𝐼\n𝑚á𝑥\nSiendo:\nPTI : la mayor puntuación técnica inicial obtenida de entre todas las ofertas presentadas.\nmáx\nPTI: la puntuación técnica inicial de la oferta que se valora.\nEl resultado de la puntuación técnica se redondeará al segundo decimal.\nCRITERIOS DE ADJUDICACIÓN RELACIONADOS CON LA CALIDAD EVALUABLES DE FORMA\nAUTOMÁTICA MEDIANTE FÓRMULAS (PCF)\nVALORACIÓN\nLa puntuación de criterios relacionados con la calidad, evaluables de forma automática mediante aplicación de\nfórmulas (PCF) se determinará del siguiente modo:\n14Criterio 1.- Igualdad\nSe valorará con 10 puntos a las licitadoras que se comprometan a emplear en la plantilla que ejecutará directa\ny materialmente la obra, personal femenino con la titulación de ingeniería de Caminos, Canales y Puertos o\nIngeniería técnica de Obras Públicas (o titulaciones equivalentes que habiliten para el ejercicio de estas\nprofesiones). La presencia de al menos una mujer en l",
+                "“MEJORA DE LA SEGURIDAD VIAL EN LA INTERSECCIÓN PREVIA A LA ENTRADA A CHELVA POR EL\nNORTE”.\nPara ello, se prevén distintas actuaciones atendiendo a las características y condicionantes de cada tramo. Se\nrealizarán entre otros:\n• Despeje de terreno.\n• Excavaciones y rellenos en la zona de construcción de la nueva rotonda.\n• Construcción de la glorieta y los accesos.\nEn este contrato se incluyen cláusulas de responsabilidad social y ambiental, de acuerdo con el Decreto\n118/2022, de 5 de agosto, del Consell, por el que se regula la inclusión de cláusulas de responsabilidad social\nen la contratación pública, que desarrolla lo previsto en el artículo 13.4 de la ley 18/2018, de 13 de julio, para el\nfomento de la responsabilidad social.\nCÓDIGO C.P.V.:\n45233140-2 Obras Viales"
+            ],
+            "format": "Responde con un listado de los criterios de calidad y el valor de cada uno"
+        },
+        {
+            "prompt_key": "Social",
+            "prompt": "Enumera los criterios sociales y el valor de cada uno",
+            "response": "",
+            "score": 0.85,
+            "index": [
+                177,
+                178,
+                0,
+                3
+            ],
+            "chunks": [
+                "PREPARATORIAS REALIZADAS COMO INSTALACIONES Y ACOPIO DE MATERIALES O EQUIPOS DE\nMAQUINARIA PESADA ADSCRITOS A LA OBRA:\n□ No procede\nAPARTADO X\nMEDIDAS PARA GARANTIZAR EL CUMPLIMIENTO DE LAS OBLIGACIONES MEDIOAMBIENTALES,\nSOCIALES O LABORALES:\nCONDICIONES ESPECIALES DE EJECUCIÓN A CUMPLIR:\nLa empresa adjudicataria deberá desarrollar todos los trabajos objeto del presente contrato aplicando los\nprocedimientos que dispone el certificado ISO 14001 o certificado equivalente.\nAsimismo, en todas las etapas de ejecución de las obras se adoptará un sistema de Gestión de la Accesibilidad\nde acuerdo con la norma UNE/ISO 17001 o certificado equivalente.\nAdemás, la empresa adjudicataria deberá cumplir las siguientes condiciones:\n• Uso de medios electrónicos y tipo de papel",
+                "procedimientos que dispone el certificado ISO 14001 o certificado equivalente.\nAsimismo, en todas las etapas de ejecución de las obras se adoptará un sistema de Gestión de la Accesibilidad\nde acuerdo con la norma UNE/ISO 17001 o certificado equivalente.\nAdemás, la empresa adjudicataria deberá cumplir las siguientes condiciones:\n• Uso de medios electrónicos y tipo de papel\nToda la documentación y trabajos generados en la ejecución del contrato deberá presentarse\npreferentemente por medios electrónicos, y si fuera necesario su impresión en papel, este solo podrá\nser de dos tipos: reciclado, con un mínimo 85 % de fibras reutilizadas y con proceso de blanqueado\ncompletamente libre de cloro, o ecológico.\n• Recogida selectiva de residuos",
+                "ANEXO I\nCARACTERÍSTICAS PARTICULARES PARA LA ADJUDICACIÓN DE CONTRATOS ADMINISTRATIVOS DE\nOBRAS MEDIANTE PROCEDIMIENTO ABIERTO\nAPARTADO A\nNúmero DE EXPEDIENTE:\nCLAVE DG: Número EXPTE CONTRATACIÓN: C.I.:\n2747-STV CMAYOR/2023/03Y05/19 23 CPTOPM19 05 18 PP0\nNECESIDADES A SATISFACER CON LA CELEBRACIÓN DEL CONTRATO:\nLa actuación consiste en mejorar la seguridad vial de la carretera CV-35, en la entrada por el norte a la población\nde Chelva, a fin de dotar a ese punto de un elemento de autorregulación del tráfico, de manera que se permita\nuna conexión de la citada vía con una serie de caminos rurales a los que proporciona servicio.\nActualmente, las conexiones se producen mediante intersecciones en forma de T, que comunican con caminos",
+                "“MEJORA DE LA SEGURIDAD VIAL EN LA INTERSECCIÓN PREVIA A LA ENTRADA A CHELVA POR EL\nNORTE”.\nPara ello, se prevén distintas actuaciones atendiendo a las características y condicionantes de cada tramo. Se\nrealizarán entre otros:\n• Despeje de terreno.\n• Excavaciones y rellenos en la zona de construcción de la nueva rotonda.\n• Construcción de la glorieta y los accesos.\nEn este contrato se incluyen cláusulas de responsabilidad social y ambiental, de acuerdo con el Decreto\n118/2022, de 5 de agosto, del Consell, por el que se regula la inclusión de cláusulas de responsabilidad social\nen la contratación pública, que desarrolla lo previsto en el artículo 13.4 de la ley 18/2018, de 13 de julio, para el\nfomento de la responsabilidad social.\nCÓDIGO C.P.V.:\n45233140-2 Obras Viales"
+            ],
+            "format": "Responde con un listado de los criterios sociales y el valor de cada uno"
+        },
+        {
+            "prompt_key": "Seguridad",
+            "prompt": "Enumera los criterios de seguridad el valor de cada uno ",
+            "response": "",
+            "score": 0.95,
+            "index": [
+                72,
+                73,
+                80,
+                3
+            ],
+            "chunks": [
+                "• Análisis de las operaciones simples que forman parte de cada actividad.\n• Desvíos provisionales y reposiciones de servicios.\nASPECTOS COMPLEMENTARIOS O SECUNDARIOS\n• Análisis de las necesidades de acopios y de instalaciones auxiliares.\n• Estudio de los medios de transporte y de las plantas de producción de materiales.\n• Suministros y zonas previstas para préstamos y vertederos.\n• Descripción de las pruebas para la puesta en servicio de la obra.\n• Análisis del Estudio de Seguridad y Salud, del anejo de Control de Calidad, del Estudio de\nGestión de Residuos y del anejo de Medidas Correctoras de Impacto Ambiental.\nLa puntuación de cada uno de los aspectos incluidos en la memoria dependerá no solo del propio aspecto a",
+                "• Descripción de las pruebas para la puesta en servicio de la obra.\n• Análisis del Estudio de Seguridad y Salud, del anejo de Control de Calidad, del Estudio de\nGestión de Residuos y del anejo de Medidas Correctoras de Impacto Ambiental.\nLa puntuación de cada uno de los aspectos incluidos en la memoria dependerá no solo del propio aspecto a\nvalorar, sino de la coherencia que guarde con otros aspectos de los que dependa directa o indirectamente.\nAdemás, se valorará la detección de omisiones, errores, incoherencias o aspectos que queden insuficientemente\ndesarrollados o confusos en el proyecto y el planteamiento de soluciones.\nEl procedimiento constructivo se puntuará de 0 a 5 puntos atendiendo a lo siguiente.\nApartado a) Procedimiento constructivo. Valoración\nPUNTUACIÓN CRITERIOS\n115 puntos La concepción global de la obra demuestra un conocimiento claro del objeto de la\nactuación.\nLa metodología de trabajo, planificación y organización propuestas se exponen de forma\nmuy completa y detallada y está debidamente justificada. La metodología identifica los\ncondicionantes y la problemática asociados a cada fase del proyecto, y refleja un estudio\nprofundo del proyecto constructivo ",
+                "La propuesta para la organización física de la obra -instalaciones auxiliares, acopios y\naccesos- es clara y coherente.\nLa previsión de medios de transporte se ajusta a las necesidades de las distintas fases\nde la obra. Se detallan las plantas previstas para la producción de materiales.\nSe analizan las distintas alternativas para el suministro de materiales así como para\npréstamos y vertedero. Se justifica su idoneidad y se garantiza su disponibilidad.\nSe realiza una descripción adecuada de las medidas y pruebas para la puesta en servicio\nde la obra.\nSe presenta un análisis detallado del Estudio de Seguridad y Salud, del anejo de Control\nde Calidad, del Estudio de Gestión de Residuos y del anejo de Medidas Correctoras de\nImpacto Ambiental.",
+                "“MEJORA DE LA SEGURIDAD VIAL EN LA INTERSECCIÓN PREVIA A LA ENTRADA A CHELVA POR EL\nNORTE”.\nPara ello, se prevén distintas actuaciones atendiendo a las características y condicionantes de cada tramo. Se\nrealizarán entre otros:\n• Despeje de terreno.\n• Excavaciones y rellenos en la zona de construcción de la nueva rotonda.\n• Construcción de la glorieta y los accesos.\nEn este contrato se incluyen cláusulas de responsabilidad social y ambiental, de acuerdo con el Decreto\n118/2022, de 5 de agosto, del Consell, por el que se regula la inclusión de cláusulas de responsabilidad social\nen la contratación pública, que desarrolla lo previsto en el artículo 13.4 de la ley 18/2018, de 13 de julio, para el\nfomento de la responsabilidad social.\nCÓDIGO C.P.V.:\n45233140-2 Obras Viales"
+            ],
+            "format": "Responde con un listado de los criterios de seguridad y el valor de cada uno"
+        },
+        {
+            "prompt_key": "-",
+            "prompt": "Enumera los criterios de juicio de valor y el valor de cada uno",
+            "response": "1. Criterios relacionados con la calidad cuya cuantificación depende de un juicio de valor (PCJ): hasta 30 puntos. * a) Procedimiento constructivo: De 0 a 5, factor de ponderación 2,5, puntuación máxima 12,5 * b) Propuesta organizativa: De 0 a 5, factor de ponderación 1,0, puntuación máxima 5,0 * c) Programación de la obra: De 0 a 5, sin factor de ponderación explícito, pero se menciona que la máxima puntuación inicial es de 30 puntos. 2. Criterios relacionados con la calidad evaluables de forma automática mediante aplicación de fórmulas (PCF): hasta 30 puntos. 3. Criterio precio (PP): hasta 40 puntos.",
+            "score": 0.9151162790697674,
+            "index": [
+                64,
+                65,
+                69,
+                4
+            ],
+            "chunks": [
+                "máxima, son los siguientes:\n1.- Criterios relacionados con la calidad cuya cuantificación depende de un juicio de valor (PCJ): hasta 30\npuntos.\n2.- Criterios relacionados con la calidad evaluables de forma automática mediante aplicación de fórmulas (PCF):\nhasta 30 puntos.\n3.- Criterio precio (PP): hasta 40 puntos.\nCRITERIOS DE ADJUDICACIÓN RELACIONADOS CON LA CALIDAD CUYA CUANTIFICACIÓN DEPENDE DE\nUN JUICIO DE VALOR (PCJ)\nPUNTUACIÓN INICIAL\nA las ofertas se les asignará una puntuación inicial a partir de los criterios que se describen a continuación.\nA estos efectos las empresas licitadoras deben presentar una memoria estructurada en los 3 apartados que se\nindican (Procedimiento, propuesta organizativa y programación de la obra). Cada apartado será puntuado de",
+                "UN JUICIO DE VALOR (PCJ)\nPUNTUACIÓN INICIAL\nA las ofertas se les asignará una puntuación inicial a partir de los criterios que se describen a continuación.\nA estos efectos las empresas licitadoras deben presentar una memoria estructurada en los 3 apartados que se\nindican (Procedimiento, propuesta organizativa y programación de la obra). Cada apartado será puntuado de\nforma independiente, por lo que deberá contener toda la información que sea relevante para la valoración del\nmismo. La memoria deberá contener además un índice.\nEsta información quedará recogida en el sobre electrónico Número2. No podrá incluirse en este sobre información\nrelativa a aspectos que sean objeto de autobaremación en el sobre electrónico Número3; su inclusión será motivo de",
+                "anexos.\nSe utilizará un tipo de letra Arial 11, con interlineado mínimo sencillo. Los márgenes de página serán como\nmínimo de 2,0 cm. El tamaño mínimo de las imágenes será de al menos de 6x8 cm.\nCualquier información que se presente en otro formato o exceda de la extensión indicada no será tenida en\ncuenta para su valoración. Toda la documentación se presentará en formato pdf y firmada electrónicamente.\nContenido de la memoria\n10A cada apartado se le asignará una puntuación entre 0 y 5 puntos. Para obtener la puntuación final, la agregación\nutilizará los factores de ponderación que se indican. La máxima puntuación inicial resulta así de 30 puntos.\nAPARTADOS DE LA MEMORIA Puntuación Factor de Puntuación\nponderación máxima\na) Procedimiento constructivo De 0 a 5 2,5 12,5\nb) Propuesta organizativa De 0 a 5 1,0 5,0\nc) Programa",
+                "118/2022, de 5 de agosto, del Consell, por el que se regula la inclusión de cláusulas de responsabilidad social\nen la contratación pública, que desarrolla lo previsto en el artículo 13.4 de la ley 18/2018, de 13 de julio, para el\nfomento de la responsabilidad social.\nCÓDIGO C.P.V.:\n45233140-2 Obras Viales\n45233120-6 Trabajos de construcción de carreteras\n45233141-9 Trabajos de mantenimiento de carreteras\n45233125-1 Trabajos de construcción de intersecciones de carreteras\nSUJETO A REGULACIÓN ARMONIZADA:\n□ NoAPARTADO B.\nDIVISIÓN EN LOTES:\n□ NO. Motivos de justificación:\nLa división en lotes de los trabajos correspondientes al contrato de ejecución de obras dificultaría la\ncoordinación de los distintos lotes, imposibilitaría una única organización coherente, responsabilidad única, e\ninterlocución unificada, lo que lleva a plantear como óptima su ejecución unitaria (Art. 99.3 de la Ley 9/2017 de\n8 de no"
+            ],
+            "format": "Responde con un listado de los criterios de juicio de valor y el valor de cada uno"
+        },
+        {
+            "prompt_key": "Formula_precio",
+            "prompt": "Indica la formula para puntuar la oferta económica",
+            "response": "PP =40⋅[1− (Of −Ofmin)² / (PBL−Ofmin)² ]¹/²",
+            "score": 0.8765875064532783,
+            "index": [
+                111,
+                112,
+                9,
+                2
+            ],
+            "chunks": [
+                "Las ofertas cuya valoración en este apartado sea inferior a 10 puntos no serán tomadas en consideración para\nel cálculo de las ofertas anormalmente bajas ni para la determinación de la oferta más ventajosa.\nDe este modo se obtendrá para cada oferta la valoración de la calidad mediante la aplicación de fórmulas, PCF.\nA estos efectos las licitadoras deberán cumplimentar los cuadros de Autobaremación del Anexo I Bis, que se\nincluirán en el sobre n.º 3, junto con la proposición económica.\n15CRITERIO DE ADJUDICACIÓN: PRECIO\nVALORACIÓN\nPara valorar la oferta económica se puntuarán los aspectos que se relacionan seguidamente:\nPara todas las ofertas:\n(Of −Of )2\nPP =40⋅[1− i min ](1⁄2)\n(PBL−Of )2\nmin\nsiendo:\nPP: puntuación obtenida para el criterio precio\nOf\ni\n: oferta que se valora, IVA excluido\nOfmin: oferta mínima, IVA excluido\nPBL: presupuesto base de licitación, IVA excluido\nSe consi",
+                "CRITERIO DE ADJUDICACIÓN: PRECIO\nVALORACIÓN\nPara valorar la oferta económica se puntuarán los aspectos que se relacionan seguidamente:\nPara todas las ofertas:\n(Of −Of )2\nPP =40⋅[1− i min ](1⁄2)\n(PBL−Of )2\nmin\nsiendo:\nPP: puntuación obtenida para el criterio precio\nOf\ni\n: oferta que se valora, IVA excluido\nOfmin: oferta mínima, IVA excluido\nPBL: presupuesto base de licitación, IVA excluido\nSe considera oferta mínima la de menor importe de las admitidas, no incursa definitivamente en anormalidad\npor su bajo importe, una vez aplicados los criterios establecidos en el apartado M del presente Anexo.\nLa puntuación económica se redondeará al segundo decimal.\nPUNTUACIÓN GLOBAL\nLa puntuación global (PG) relativa a una propuesta será la suma de las puntuaciones siguientes:\nPG=PCJ+PCF+PP\nsiendo:",
+                "□ No se reservan lotes.\nAPARTADO C\nÓRGANO DE CONTRATACIÓN Y OTROS ÓRGANOS ADMINISTRATIVOS\nÓRGANO GESTOR: ÓRGANO DE CONTRATACIÓN\nDENOMINACIÓN Consellera Medio Ambiente, Agua, Infraestructuras y Territorio\nCÓDIGO DIR3 A10017554\nDIRECCIÓN POSTAL C/ DE LA DEMOCRACIA, 77. CIUDAD ADVA. 9 DE OCTUBRE\nTORRE 1- 46018 València (València/Valencia)\nUNIDAD TRAMITADORA: CENTRO DIRECTIVO PROMOTOR DEL CONTRATO\nDENOMINACIÓN Dirección General de Infraestructuras y Proyectos Urbanos\nCÓDIGO DIR3 A10017730\nDIRECCIÓN POSTAL C/ DE LA DEMOCRACIA, 77. CIUDAD ADVA. 9 DE OCTUBRE\nTORRE 1- 46018 València (València/Valencia)\nOFICINA CONTABLE: ÓRGANO QUE TIENE ATRIBUIDA LA FUNCIÓN DE CONTABILIDAD\nDENOMINACIÓN Intervención Delegada en Conselleria de Medio Ambiente, Agua,\nInfraestructuras y Territorio",
+                "un mecanismo atenuador de velocidad de los vehículos que circulan por el trazado principal desde Tuéjar hacia\nel sur, por la travesía de la CV-35 a su paso por Chelva.\nSe construirá una glorieta que permita todos los movimientos de entrada, salida y cambio de sentido, de manera\nsegura.\nDEFINICIÓN CONCRETA DEL OBJETO DEL CONTRATO DE OBRAS:\nEl objeto del contrato es la ejecución y puesta en servicio de las obras contempladas en el proyecto de\n“MEJORA DE LA SEGURIDAD VIAL EN LA INTERSECCIÓN PREVIA A LA ENTRADA A CHELVA POR EL\nNORTE”.\nPara ello, se prevén distintas actuaciones atendiendo a las características y condicionantes de cada tramo. Se\nrealizarán entre otros:\n• Despeje de terreno.\n• Excavaciones y rellenos en la zona de construcción de la nueva rotonda."
+            ],
+            "format": "Responde con la fórmula para puntuar la oferta económica"
+        },
+        {
+            "prompt_key": "Formula_JuicioValor",
+            "prompt": "Indica la formula para obtejer la puntuación final  de juicio de valor",
+            "response": "𝑃𝐶𝐽 = 30∗( 𝑃𝑇𝐼 𝑚á𝑥 )",
+            "score": 0.9575171448290348,
+            "index": [
+                95,
+                96,
+                97,
+                4
+            ],
+            "chunks": [
+                "0 ≤ P < 2 El Programa de Trabajos contiene incoherencias en cuanto a la duración o solape entre\nfases, los medios asignados o los condicionantes y duraciones o está insuficientemente\ndescrito.\nPUNTUACIÓN FINAL DE LOS CRITERIOS DE CALIDAD DEPENDIENTES DE UN JUICIO DE VALOR\nLa puntuación técnica final cuya cuantificación depende de un juicio de valor (PCJ) de cada oferta se obtendrá\ndel modo:\n1) Las ofertas admitidas administrativamente quedarán encuadradas en dos intervalos:\n• Calidad técnica inaceptable: aquellas cuya puntuación técnica inicial (PTI) sea inferior a 20 puntos.\n• Calidad técnica suficiente: aquellas cuya puntuación técnica inicial (PTI) sea igual o superior a 20 puntos.\n2) Las ofertas consideradas de calidad técnica inaceptable no podrán continuar en el proceso selectivo.",
+                "• Calidad técnica inaceptable: aquellas cuya puntuación técnica inicial (PTI) sea inferior a 20 puntos.\n• Calidad técnica suficiente: aquellas cuya puntuación técnica inicial (PTI) sea igual o superior a 20 puntos.\n2) Las ofertas consideradas de calidad técnica inaceptable no podrán continuar en el proceso selectivo.\n3) Las ofertas consideradas de calidad técnica inaceptable no serán tomadas en consideración para el cálculo\nde las ofertas anormalmente bajas ni para la determinación de la oferta más ventajosa, por lo que en el caso\nde no existir ofertas consideradas de calidad técnica suficiente, se procederá a declarar desierta la licitación.\n4) La puntuación final (PCJ), de cada una de las ofertas de calidad técnica suficiente se obtendrá aplicando la\nsiguiente fórmula:\n𝑃𝑇𝐼\n𝑃𝐶𝐽 = 30∗( )",
+                "de las ofertas anormalmente bajas ni para la determinación de la oferta más ventajosa, por lo que en el caso\nde no existir ofertas consideradas de calidad técnica suficiente, se procederá a declarar desierta la licitación.\n4) La puntuación final (PCJ), de cada una de las ofertas de calidad técnica suficiente se obtendrá aplicando la\nsiguiente fórmula:\n𝑃𝑇𝐼\n𝑃𝐶𝐽 = 30∗( )\n𝑃𝑇𝐼\n𝑚á𝑥\nSiendo:\nPTI : la mayor puntuación técnica inicial obtenida de entre todas las ofertas presentadas.\nmáx\nPTI: la puntuación técnica inicial de la oferta que se valora.\nEl resultado de la puntuación técnica se redondeará al segundo decimal.\nCRITERIOS DE ADJUDICACIÓN RELACIONADOS CON LA CALIDAD EVALUABLES DE FORMA\nAUTOMÁTICA MEDIANTE FÓRMULAS (PCF)\nVALORACIÓN",
+                "depender juicio valor pcf puntuación obtenido valoración criterio relacionado calidad evaluabl forma automático fórmula pp puntuación obtenido valoración criterio precio umbral inferior 50 ciento puntuacion conjunto criterio cualitativo licitador deberar alcanzar continuar proceso selectivo mejora criterio adjudicación □ comité experto □ organismo técnico especializado □ 16ampliación plazo efectuar adjudicación □ empresa cumunitaria resultar adjudicataria contrato obra exigencia abrir sucursal españa designación apoderado representante operación inscripción registro mercantil □ apartado m parámetro objetivo identificar oferta anormal entender oferta"
+            ],
+            "format": "Responde con la fórmula para obtener la puntuación final de juicio de valor"
         }
     ]
 }

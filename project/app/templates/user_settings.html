@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>Opciones de Usuario</h1>
+<p>Aquí puedes configurar tus opciones de usuario.</p>
+
+<form method="post" action="{% url 'app:user_settings' %}">
+  {% csrf_token %}
+  
+  <!-- Nombre -->
+  <div class="mb-3">
+    <label for="username" class="form-label">Nombre de Usuario</label>
+    <input type="text" class="form-control" id="username" name="username" value="Evano" required>
+  </div>
+  
+  <!-- Correo Electrónico -->
+  <div class="mb-3">
+    <label for="email" class="form-label">Correo Electrónico</label>
+    <input type="email" class="form-control" id="email" name="email" value="evano@example.com" required>
+  </div>
+  
+  <!-- Contraseña -->
+  <div class="mb-3">
+    <label for="password" class="form-label">Contraseña</label>
+    <input type="password" class="form-control" id="password" name="password" placeholder="••••••••" required>
+  </div>
+  
+  <!-- Notificaciones -->
+  <div class="mb-3 form-check">
+    <input type="checkbox" class="form-check-input" id="notifications" name="notifications" checked>
+    <label class="form-check-label" for="notifications">Recibir notificaciones por correo</label>
+  </div>
+  
+  <!-- Botón Guardar -->
+  <button type="submit" class="btn btn-primary">Guardar Cambios</button>
+</form>
+{% endblock %}

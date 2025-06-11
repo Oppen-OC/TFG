@@ -1,0 +1,222 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>Gestión de Alertas</h1>
+<p>Aquí puedes gestionar tus alertas personalizadas.</p>
+
+<!-- Botón para abrir el modal de añadir alerta -->
+<button type="button" class="btn btn-success mb-3" data-bs-toggle="modal" data-bs-target="#modalNuevaAlerta">
+  Añadir Alerta
+</button>
+
+<table class="table table-hover">
+  <thead class="thead-light">
+    <tr>
+      <th>Nombre</th>
+      <th>Activo</th>
+      <th>Frecuencia</th>
+      <th>Última Notificación</th>
+      <th>Acciones</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for alerta in alertas %}
+    <tr>
+      <td>{{ alerta.nombre }}</td>
+      <td>
+        {% if alerta.activo %}
+        <span class="badge bg-success">Sí</span>
+        {% else %}
+        <span class="badge bg-danger">No</span>
+        {% endif %}
+      </td>
+      <td>{{ alerta.frecuencia }}</td>
+      <td>{{ alerta.ultima_notificacion }}</td>
+      <td>
+        <!-- Botón para abrir el modal -->
+        <button type="button" class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#modalAjustar{{ alerta.id }}">
+          Ajustar
+        </button>
+      </td>
+    </tr>
+
+    <!-- Modal para ajustar el filtro -->
+    <div class="modal fade" id="modalAjustar{{ alerta.id }}" tabindex="-1" aria-labelledby="modalAjustarLabel{{ alerta.id }}" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="modalAjustarLabel{{ alerta.id }}">Ajustar Filtro: {{ alerta.nombre }}</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+          </div>
+          <div class="modal-body">
+            <form method="post" class="ajax-form" data-id="{{ alerta.id }}">
+              {% csrf_token %}
+              
+              <!-- Campo para cambiar el nombre -->
+              <div class="mb-3">
+                <label for="nombre{{ alerta.id }}" class="form-label">Nombre</label>
+                <input type="text" class="form-control" id="nombre{{ alerta.id }}" name="nombre" value="{{ alerta.nombre }}" required>
+              </div>
+
+              <!-- Campo para cambiar la frecuencia -->
+              <div class="mb-3">
+                <label for="frecuencia{{ alerta.id }}" class="form-label">Frecuencia</label>
+                <select class="form-select" id="frecuencia{{ alerta.id }}" name="frecuencia">
+                  <option value="Diaria" {% if alerta.frecuencia == "Diaria" %}selected{% endif %}>Diaria</option>
+                  <option value="Semanal" {% if alerta.frecuencia == "Semanal" %}selected{% endif %}>Semanal</option>
+                  <option value="Mensual" {% if alerta.frecuencia == "Mensual" %}selected{% endif %}>Mensual</option>
+                </select>
+              </div>
+
+              <!-- Campo para activar/desactivar la alerta -->
+              <div class="mb-3 form-check">
+                <input type="checkbox" class="form-check-input" id="activo{{ alerta.id }}" name="activo" {% if alerta.activo %}checked{% endif %}>
+                <label class="form-check-label" for="activo{{ alerta.id }}">Activo</label>
+              </div>
+
+              <button type="submit" class="btn btn-primary">Guardar Cambios</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+  </tbody>
+</table>
+
+<!-- Modal para añadir nueva alerta -->
+<div class="modal fade" id="modalNuevaAlerta" tabindex="-1" aria-labelledby="modalNuevaAlertaLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="modalNuevaAlertaLabel">Añadir Nueva Alerta</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+      </div>
+      <div class="modal-body">
+        <form method="post" id="formNuevaAlerta" class="ajax-form-nueva-alerta" action="{% url 'app:crear_alerta' %}">
+          {% csrf_token %}
+          
+          <!-- Campo para el nombre de la nueva alerta -->
+          <div class="mb-3">
+            <label for="nombreNueva" class="form-label">Nombre</label>
+            <input type="text" class="form-control" id="nombreNueva" name="nombre" placeholder="Nombre de la alerta" required>
+          </div>
+
+          <!-- Campo para la frecuencia de la nueva alerta -->
+          <div class="mb-3">
+            <label for="frecuenciaNueva" class="form-label">Frecuencia</label>
+            <select class="form-select" id="frecuenciaNueva" name="frecuencia">
+              <option value="Diaria">Diaria</option>
+              <option value="Semanal">Semanal</option>
+              <option value="Mensual">Mensual</option>
+            </select>
+          </div>
+
+          <!-- Campo para activar la nueva alerta -->
+          <div class="mb-3 form-check">
+            <input type="checkbox" class="form-check-input" id="activoNueva" name="activo" checked>
+            <label class="form-check-label" for="activoNueva">Activo</label>
+          </div>
+
+          <button type="submit" class="btn btn-success">Crear Alerta</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const forms = document.querySelectorAll('.ajax-form');
+
+    forms.forEach(form => {
+      form.addEventListener('submit', function (e) {
+        e.preventDefault(); // Evita el envío normal del formulario
+
+        const formData = new FormData(this);
+        const alertaId = this.getAttribute('data-id');
+        const url = "{% url 'app:ajustar_filtro' filtro_id=0 %}".replace('0', alertaId);
+
+        fetch(url, {
+          method: 'POST',
+          body: formData,
+          headers: {
+            'X-Requested-With': 'XMLHttpRequest',
+          },
+        })
+          .then(response => {
+            if (response.ok) {
+              return response.json();
+            }
+            throw new Error('Error al guardar los cambios.');
+          })
+          .then(data => {
+            // Actualiza la tabla con los nuevos datos
+            const row = document.querySelector(`#modalAjustar${alertaId}`).closest('tr');
+            row.querySelector('td:nth-child(1)').textContent = data.nombre;
+            row.querySelector('td:nth-child(3)').textContent = data.frecuencia;
+            row.querySelector('td:nth-child(2) .badge').textContent = data.activo ? 'Sí' : 'No';
+            row.querySelector('td:nth-child(2) .badge').className = data.activo ? 'badge bg-success' : 'badge bg-danger';
+
+            // Cierra el modal
+            const modal = bootstrap.Modal.getInstance(document.querySelector(`#modalAjustar${alertaId}`));
+            modal.hide();
+          })
+          .catch(error => {
+            console.error(error);
+            alert('Hubo un error al guardar los cambios.');
+          });
+      });
+    });
+
+    // Manejo del formulario para añadir nueva alerta
+    const formNuevaAlerta = document.querySelector('#formNuevaAlerta');
+    formNuevaAlerta.addEventListener('submit', function (e) {
+      e.preventDefault();
+
+      const formData = new FormData(this);
+      const url = "{% url 'app:crear_alerta' %}";
+
+      fetch(url, {
+        method: 'POST',
+        body: formData,
+        headers: {
+          'X-Requested-With': 'XMLHttpRequest',
+        },
+      })
+        .then(response => {
+          if (response.ok) {
+            return response.json();
+          }
+          throw new Error('Error al crear la alerta.');
+        })
+        .then(data => {
+          // Añade la nueva alerta a la tabla
+          const tbody = document.querySelector('table tbody');
+          const nuevaFila = `
+            <tr>
+              <td>${data.nombre}</td>
+              <td><span class="badge ${data.activo ? 'bg-success' : 'bg-danger'}">${data.activo ? 'Sí' : 'No'}</span></td>
+              <td>${data.frecuencia}</td>
+              <td>-</td>
+              <td>
+                <button type="button" class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#modalAjustar${data.id}">
+                  Ajustar
+                </button>
+              </td>
+            </tr>
+          `;
+          tbody.insertAdjacentHTML('beforeend', nuevaFila);
+
+          // Cierra el modal
+          const modal = bootstrap.Modal.getInstance(document.querySelector('#modalNuevaAlerta'));
+          modal.hide();
+        })
+        .catch(error => {
+          console.error(error);
+          alert('Hubo un error al crear la alerta.');
+        });
+    });
+  });
+</script>
+{% endblock %}

@@ -86,6 +86,26 @@
     <th>Importe de Adjudicación</th>
     <td>{{ licitacion.Importe_adjudicacion }}</td>
   </tr>
+  <tr>
+    <th>Fecha de Adjudicación</th>
+    <td>{{ licitacion.Fecha_Adjudicacion }}</td>
+  </tr>
+  <tr>
+    <th>Fecha de Formalización</th>
+    <td>{{ licitacion.Fecha_Formalizacion }}</td>
+  </tr>
+  <tr>
+    <th>Fecha de Desistimiento</th>
+    <td>{{ licitacion.Fecha_Desistimiento }}</td>
+  </tr>
+  <tr>
+    <th>Fecha de Presentación de Oferta</th>
+    <td>{{ licitacion.Fecha_Presentacion_Oferta }}</td>
+  </tr>
+  <tr>
+    <th>Fecha de Presentación de Solicitud</th>
+    <td>{{ licitacion.Fecha_Presentacion_Solicitud }}</td>
+  </tr>
 </table>
 
 <!-- Enlaces a los documentos -->
@@ -108,227 +128,14 @@
   {% endif %}
 </ul>
 
-{% if anexo_url %}
-<h3 class="mt-5">Detalles del Anexo</h3>
-<table class="table table-bordered">
-  <tr>
-    <th>Regulación Armonizada</th>
-    <td>
-      {{ anexoI.Regulacion_armonizada }}
-      <button class="btn btn-outline-info btn-sm float-end" onclick="mostrarUbicacion('Regulacion_armonizada')">Ubicar en el documento</button>
-    </td>
-  </tr>
-  <tr>
-    <th>Sometido a Recurso Especial</th>
-    <td>
-      {{ anexoI.Sometido_recurso_especial }}
-      <button class="btn btn-outline-info btn-sm float-end" onclick="mostrarUbicacion('Sometido_recurso_especial')">Ubicar en el documento</button>
-    </td>
-  </tr>
-  <tr>
-    <th>Plazo de Ejecución</th>
-    <td>
-      {{ anexoI.Plazo_ejecución }}
-      <button class="btn btn-outline-info btn-sm float-end" onclick="mostrarUbicacion('Plazo_ejecución')">Ubicar en el documento</button>
-    </td>
-  </tr>
-  <tr>
-    <th>Presupuesto sin IVA</th>
-    <td>
-      {{ anexoI.Presupuesto_sinIVA }}
-      <button class="btn btn-outline-info btn-sm float-end" onclick="mostrarUbicacion('Presupuesto_sinIVA')">Ubicar en el documento</button>
-    </td>
-  </tr>
-  <tr>
-    <th>Presupuesto con IVA</th>
-    <td>
-      {{ anexoI.Presupuesto_conIVA }}
-      <button class="btn btn-outline-info btn-sm float-end" onclick="mostrarUbicacion('Presupuesto_conIVA')">Ubicar en el documento</button>
-    </td>
-  </tr>
-  <tr>
-    <th>Importe IVA</th>
-    <td>
-      {{ anexoI.Importe_IVA }}
-      <button class="btn btn-outline-info btn-sm float-end" onclick="mostrarUbicacion('Importe_IVA')">Ubicar en el documento</button>
-    </td>
-  </tr>
-  <tr>
-    <th>Sistema de Retribución</th>
-    <td>
-      {{ anexoI.Sistema_Retribucion }}
-      <button class="btn btn-outline-info btn-sm float-end" onclick="mostrarUbicacion('Sistema_Retribucion')">Ubicar en el documento</button>
-    </td>
-  </tr>
-  <tr>
-    <th>Valor Estimado</th>
-    <td>
-      {{ anexoI.Valor_estimado }}
-      <button class="btn btn-outline-info btn-sm float-end" onclick="mostrarUbicacion('Valor_estimado')">Ubicar en el documento</button>
-    </td>
-  </tr>
-  <tr>
-    <th>Revisión de Precios</th>
-    <td>
-      {{ anexoI.Revision_precios }}
-      <button class="btn btn-outline-info btn-sm float-end" onclick="mostrarUbicacion('Revision_precios')">Ubicar en el documento</button>
-    </td>
-  </tr>
-  <tr>
-    <th>Garantía Definitiva</th>
-    <td>
-      {{ anexoI.Garantia_definitiva }}
-      <button class="btn btn-outline-info btn-sm float-end" onclick="mostrarUbicacion('Garantia_definitiva')">Ubicar en el documento</button>
-    </td>
-  </tr>
-  <tr>
-    <th>Garantía Provisional</th>
-    <td>
-      {{ anexoI.Garantia_provisional }}
-      <button class="btn btn-outline-info btn-sm float-end" onclick="mostrarUbicacion('Garantia_provisional')">Ubicar en el documento</button>
-    </td>
-  </tr>
-  <tr>
-    <th>Admisibilidad de Variantes</th>
-    <td>
-      {{ anexoI.Admisibilidad_variantes }}
-      <button class="btn btn-outline-info btn-sm float-end" onclick="mostrarUbicacion('Admisibilidad_variantes')">Ubicar en el documento</button>
-    </td>
-  </tr>
-  <tr>
-    <th>Clasificación</th>
-    <td>
-      {{ anexoI.Clasificacion }}
-      <button class="btn btn-outline-info btn-sm float-end" onclick="mostrarUbicacion('Clasificacion')">Ubicar en el documento</button>
-    </td>
-  </tr>
-  <tr>
-    <th>Grupo</th>
-    <td>
-      {{ anexoI.Grupo }}
-      <button class="btn btn-outline-info btn-sm float-end" onclick="mostrarUbicacion('Grupo')">Ubicar en el documento</button>
-    </td>
-  </tr>
-  <tr>
-    <th>Subgrupo</th>
-    <td>
-      {{ anexoI.Subgrupo }}
-      <button class="btn btn-outline-info btn-sm float-end" onclick="mostrarUbicacion('Subgrupo')">Ubicar en el documento</button>
-    </td>
-  </tr>
-  <tr>
-    <th>Categoría</th>
-    <td>
-      {{ anexoI.Categoria }}
-      <button class="btn btn-outline-info btn-sm float-end" onclick="mostrarUbicacion('Categoria')">Ubicar en el documento</button>
-    </td>
-  </tr>
-  <tr>
-    <th>Criterio de Solvencia Económica</th>
-    <td>
-      {{ anexoI.Criterio_Solvencia_economica }}
-      <button class="btn btn-outline-info btn-sm float-end" onclick="mostrarUbicacion('Criterio_Solvencia_economica')">Ubicar en el documento</button>
-    </td>
-  </tr>
-  <tr>
-    <th>Criterio de Solvencia Técnica</th>
-    <td>
-      {{ anexoI.Criterio_Solvencia_tecnica }}
-      <button class="btn btn-outline-info btn-sm float-end" onclick="mostrarUbicacion('Criterio_Solvencia_tecnica')">Ubicar en el documento</button>
-    </td>
-  </tr>
-  <tr>
-    <th>Condiciones Especiales</th>
-    <td>
-      {{ anexoI.Condiciones_especiales }}
-      <button class="btn btn-outline-info btn-sm float-end" onclick="mostrarUbicacion('Condiciones_especiales')">Ubicar en el documento</button>
-    </td>
-  </tr>
-  <tr>
-    <th>Penalidad por Incumplimiento</th>
-    <td>
-      {{ anexoI.Penalidad_incumplimiento }}
-      <button class="btn btn-outline-info btn-sm float-end" onclick="mostrarUbicacion('Penalidad_incumplimiento')">Ubicar en el documento</button>
-    </td>
-  </tr>
-  <tr>
-    <th>Forma de Pago</th>
-    <td>
-      {{ anexoI.Forma_pago }}
-      <button class="btn btn-outline-info btn-sm float-end" onclick="mostrarUbicacion('Forma_pago')">Ubicar en el documento</button>
-    </td>
-  </tr>
-  <tr>
-    <th>Causas de Modificación</th>
-    <td>
-      {{ anexoI.Causas_modificacion }}
-      <button class="btn btn-outline-info btn-sm float-end" onclick="mostrarUbicacion('Causas_modificacion')">Ubicar en el documento</button>
-    </td>
-  </tr>
-  <tr>
-    <th>Plazo de Garantía</th>
-    <td>
-      {{ anexoI.Plazo_garantia }}
-      <button class="btn btn-outline-info btn-sm float-end" onclick="mostrarUbicacion('Plazo_garantia')">Ubicar en el documento</button>
-    </td>
-  </tr>
-  <tr>
-    <th>Contratación Precio Unitario</th>
-    <td>
-      {{ anexoI.Contratacion_precio_unit }}
-      <button class="btn btn-outline-info btn-sm float-end" onclick="mostrarUbicacion('Contratacion_precio_unit')">Ubicar en el documento</button>
-    </td>
-  </tr>
-  <tr>
-    <th>Tanto alzado</th>
-    <td>
-      {{ anexoI.Tanto_alzado }}
-      <button class="btn btn-outline-info btn-sm float-end" onclick="mostrarUbicacion('Tanto_alzado')">Ubicar en el documento</button>
-    </td>
-  </tr>
-  <tr>
-    <th>Tanto alzado con</th>
-    <td>
-      {{ anexoI.Tanto_alzado_con }}
-      <button class="btn btn-outline-info btn-sm float-end" onclick="mostrarUbicacion('Tanto_alzado_con')">Ubicar en el documento</button>
-    </td>
-  </tr>
-  <tr>
-    <th>Criterio Juicio de Valor</th>
-    <td>
-      {{ anexoI.Criterio_juicio_val }}
-      <button class="btn btn-outline-info btn-sm float-end" onclick="mostrarUbicacion('Criterio_juicio_val')">Ubicar en el documento</button>
-    </td>
-  </tr>
-  <tr>
-    <th>Evaluables Automáticamente</th>
-    <td>
-      {{ anexoI.Evaluables_autom }}
-      <button class="btn btn-outline-info btn-sm float-end" onclick="mostrarUbicacion('Evaluables_autom')">Ubicar en el documento</button>
-    </td>
-  </tr>
-  <tr>
-    <th>Criterio Económico</th>
-    <td>
-      {{ anexoI.Criterio_ecónomico }}
-      <button class="btn btn-outline-info btn-sm float-end" onclick="mostrarUbicacion('Criterio_ecónomico')">Ubicar en el documento</button>
-    </td>
-  </tr>
-  <tr>
-    <th>Obligaciones Ambientales</th>
-    <td>
-      {{ anexoI.Obligaciones_ambientales }}
-      <button class="btn btn-outline-info btn-sm float-end" onclick="mostrarUbicacion('Obligaciones_ambientales')">Ubicar en el documento</button>
-    </td>
-  </tr>
-  <tr>
-    <th>Régimen de Penalidades</th>
-    <td>
-      {{ anexoI.Regimen_penalidades }}
-      <button class="btn btn-outline-info btn-sm float-end" onclick="mostrarUbicacion('Regimen_penalidades')">Ubicar en el documento</button>
-    </td>
-  </tr>
-</table>
+<!-- Botón para cargar el anexo -->
+<button id="cargarAnexoButton" class="btn btn-primary mt-3">Cargar Anexo</button>
+
+<!-- Contenedor del anexo, inicialmente vacío -->
+<div id="anexoContainer" style="display: none;">
+  <h3 class="mt-5">Detalles del Anexo</h3>
+  <div id="anexoContent"></div>
+</div>
 
 <!-- Modal Bootstrap para mostrar la ubicación -->
 <div class="modal fade" id="ubicacionModal" tabindex="-1" aria-labelledby="ubicacionModalLabel" aria-hidden="true">
@@ -368,17 +175,113 @@
     const fuente = anexoI_fuentes[campo];
     console.log("Fuente encontrada:", fuente);
     let mensaje = "Información no disponible.";
+
     if (fuente) {
-      mensaje = fuente;
+        // Add \n before "Page: n" and after the number
+        mensaje = fuente.replace(/Page: (\d+)/g, (match, pageNumber) => {
+            return `\n<strong style="color: #007bff;">Page: ${pageNumber}</strong>\n`;
+        });
+
+        // Highlight "Chunk: n" and keep the rest of the content
+        mensaje = mensaje.replace(/Chunk: (\d+)/g, (match, chunkNumber) => {
+            return `<strong style="color: #28a745;">Chunk: ${chunkNumber}</strong>`;
+        });
     }
-    document.getElementById('ubicacionModalBody').innerHTML = mensaje;
+
+    document.getElementById('ubicacionModalBody').innerHTML = `<div style="white-space: pre-line; line-height: 1.6; font-size: 1rem;">${mensaje}</div>`;
     var myModal = new bootstrap.Modal(document.getElementById('ubicacionModal'));
     myModal.show();
   }
+
+  // Mostrar u ocultar el contenedor del anexo al hacer clic en el botón
+  document.getElementById('cargarAnexoButton').addEventListener('click', function() {
+    const container = document.getElementById('anexoContainer');
+    if (container.style.display === 'none' || container.style.display === '') {
+      container.style.display = 'block';
+      this.textContent = 'Ocultar Anexo';
+    } else {
+      container.style.display = 'none';
+      this.textContent = 'Cargar Anexo';
+    }
+  });
+
+  document.getElementById('cargarAnexoButton').addEventListener('click', function () {
+    const button = this; // Referencia al botón
+    button.disabled = true; // Deshabilitar el botón
+    button.textContent = 'Cargando...'; // Cambiar el texto del botón
+
+    const cod = "{{ licitacion.COD }}"; // Obtén el código de la licitación desde el contexto
+    const anexoContainer = document.getElementById('anexoContainer');
+    const anexoContent = document.getElementById('anexoContent');
+
+    // Realizar la solicitud AJAX
+    fetch('http://127.0.0.1:5000/cargar-anexo', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ cod: cod }),
+    })
+      .then(response => {
+        if (!response.ok) {
+          throw new Error("Error al cargar el anexo");
+        }
+        return response.json();
+      })
+      .then(data => {
+        if (data.error) {
+          alert(data.error);
+          return;
+        }
+
+        // Construir el contenido del anexo
+        const anexoI = data.anexoI;
+        const orderedFields = [
+          "COD", "Regulacion_armonizada", "Sometido_recurso_especial", "Plazo_ejecución",
+          "Presupuesto_sinIVA", "Presupuesto_conIVA", "Importe_IVA", "Sistema_Retribucion",
+          "Valor_estimado", "Revision_precios", "Garantia_definitiva", "Garantia_provisional",
+          "Admisibilidad_variantes", "Clasificacion", "Grupo", "Subgrupo", "Categoria",
+          "Criterio_Solvencia_economica", "Criterio_Solvencia_tecnica", "Condiciones_especiales",
+          "Penalidad_incumplimiento", "Forma_pago", "Causas_modificacion", "Plazo_garantia",
+          "Contratacion_precio_unit", "Tanto_alzado", "Tanto_alzado_con", "Criterio_juicio_val",
+          "Evaluables_autom", "Criterio_ecónomico", "Obligaciones_ambientales", "Regimen_penalidades",
+          "Ambiental", "Tecnico", "Precio", "Garantia", "Experiencia", "Calidad", "Social",
+          "Seguridad", "Juicio_valor", "Formula_precio", "Formula_JuicioValor",
+          "Criterios_valores_anormales", "Infraccion_grave", "Gastos_desistimiento",
+          "Contratacion_control", "Tareas_criticas"
+        ];
+
+        let html = '<table class="table table-bordered">';
+        orderedFields.forEach(key => {
+          html += `
+            <tr>
+              <th>${key.replace(/_/g, ' ')}</th>
+              <td>${anexoI[key] || 'N/A'}</td>
+            </tr>
+          `;
+        });
+        html += '</table>';
+
+        // Mostrar el contenido en el contenedor
+        anexoContent.innerHTML = html;
+        anexoContainer.style.display = 'block';
+
+        // Ocultar el botón
+        button.style.display = 'none';
+      })
+      .catch(error => {
+        console.error(error);
+        alert("Hubo un error al cargar el anexo.");
+      })
+      .finally(() => {
+        button.disabled = false; // Habilitar el botón nuevamente
+        button.textContent = 'Cargar Anexo'; // Restaurar el texto original del botón
+      });
+  });
 </script>
 
+{% if licitacion %}
 <a href="{% url 'app:licitaciones' %}" class="btn btn-secondary mt-3">Volver a licitaciones</a>
-
 {% else %}
 <p class="text-danger">No se encontraron detalles para esta licitación.</p>
 {% endif %}

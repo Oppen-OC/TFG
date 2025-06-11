@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{% block title %}Dashboard{% endblock %}</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
     <style>
       body {
         background-color: #f9fafb;
@@ -42,17 +43,43 @@
         <li><a href="" class="nav-link {% if request.path == '/estadisticas/' %}active{% endif %}">📊 Estadísticas</a></li>
         <li><a href="{% url 'app:licitaciones' %}" class="nav-link {% if request.path == '/licitaciones/' %}active{% endif %}">📁 Licitaciones</a></li>
         <li><a href="{% url 'app:chatbot' %}" class="nav-link {% if request.path == '/chatbot/' %}active{% endif %}">🐱‍👤 Chatbot</a></li>
-        <li><a href="" class="nav-link {% if request.path == '/help/' %}active{% endif %}">❓ Help</a></li>
+        <li><a href="{% url 'app:alertas' %}" class="nav-link {% if request.path == '/alertas/' %}active{% endif %}">⏰ Alertas</a></li>
+        <li><a href="{% url 'app:mis_licitaciones' %}" class="nav-link {% if request.path == '/mis-licitaciones/' %}active{% endif %}">📂 Mis Licitaciones</a></li>
+        <li>
+          <a href="#" class="nav-link" data-bs-toggle="modal" data-bs-target="#helpModal">❓ Help</a>
+        </li>
       </ul>
       <hr />
       <div class="mt-auto">
         <strong>Evano</strong><br />
         <small class="text-muted">Project Manager</small>
+        <a href="{% url 'app:user_settings' %}" class="d-block mt-2 text-muted" title="Opciones de usuario">
+          <i class="bi bi-gear-fill" style="font-size: 1.2rem;"></i> Opciones de Usuario
+        </a>
       </div>
     </div>
 
     <div class="content">
       {% block content %}{% endblock %}
+    </div>
+
+    <!-- Modal para Help -->
+    <div class="modal fade" id="helpModal" tabindex="-1" aria-labelledby="helpModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="helpModalLabel">Información de Contacto</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+          </div>
+          <div class="modal-body">
+            <p>Mi contacto en caso de incidentes o dudas con le programa:</p>
+            <p><strong>Correo:</strong> dalpdel@upv.edu.es</p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+          </div>
+        </div>
+      </div>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>

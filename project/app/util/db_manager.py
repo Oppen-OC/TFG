@@ -34,7 +34,7 @@ db_logger = logging.getLogger('db_manager')
 db_logger.setLevel(logging.INFO)
 
 # Configure the file handler to write logs to the logs directory
-db_handler = logging.FileHandler(log_file_path, mode='a')
+db_handler = logging.FileHandler(log_file_path, mode='a', encoding='utf-8')  # Cambia la codificación a utf-8
 db_handler.setLevel(logging.INFO)
 db_formatter = logging.Formatter('%(asctime)s - %(levelname)s - %(message)s')
 db_handler.setFormatter(db_formatter)
@@ -232,6 +232,37 @@ class DBManager:
                 print("El archivo de log no existe.")
         except Exception as e:
             print(f"Error al intentar eliminar el archivo de log: {e}")
+
+    def intersection(self, table1, table2):
+        sql = f"""
+            SELECT * FROM {table1}
+            INTERSECT
+            SELECT * FROM {table2}
+        """
+        try:
+            self.cursor.execute(sql)
+            rows = self.cursor.fetchall()
+            self.logger.info(f"Intersección entre {table1} y {table2}: {rows}")
+            return rows
+        except pyodbc.Error as e:
+            self.logger.error(f"Error al obtener la intersección entre {table1} y {table2}: {e}")
+            return []
+        
+    def complement_of_intersection(self, table1, table2, pk_column="COD"):
+        sql = f"""
+            SELECT {table1}.{pk_column} FROM {table1}
+            LEFT JOIN {table2}
+            ON TRIM(UPPER({table1}.{pk_column})) = TRIM(UPPER({table2}.{pk_column}))
+            WHERE {table2}.{pk_column} IS NULL
+        """
+        try:
+            self.cursor.execute(sql)
+            rows = self.cursor.fetchall()
+            self.logger.info(f"Complemento de la intersección entre las PK de {table1} y {table2}: {rows}")
+            return [row[0] for row in rows]
+        except Exception as e:
+            self.logger.error(f"Error al obtener el complemento de la intersección entre las PK de {table1} y {table2}: {e}")
+            return []
 
 
 if __name__ == "__main__":   

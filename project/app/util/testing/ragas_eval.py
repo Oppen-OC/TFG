@@ -1,71 +1,89 @@
-import asyncio
-import os
 import json
-from dotenv import load_dotenv
+from openai import OpenAI
 from ragas import SingleTurnSample
-from context_support_metric import ContextSupportMetric  # Importa la métrica personalizada
-import openai
+from ragas.metrics import AspectCritic
+from ragas.llms import LangchainLLMWrapper
+from langchain_openai import ChatOpenAI
+import os
+from dotenv import load_dotenv
+import asyncio
 
-# Configuración del cliente OpenAI
+# Cargar las variables de entorno desde el archivo .env
 load_dotenv()
+
+# Verificar la clave API
 api_key = os.getenv("UPV_API_KEY")
-base_url = "https://api.poligpt.upv.es"
 
-# Configura el LLM usando LangChain y el wrapper de RAGAS
-evaluator_llm = openai.OpenAI(
-        api_key=api_key,
-        base_url=base_url
-    )
+# Configurar el cliente OpenAI
+chat_client = ChatOpenAI(
+    model="llama3.3:70b",
+    api_key=api_key,
+    base_url="https://api.poligpt.upv.es"
+)
 
-async def main():
+evaluator_llm = LangchainLLMWrapper(chat_client)
 
-    # Carga los archivos JSON
-    with open(r'd:\WINDOWS\Escritorio\TFG\project\app\util\temp_files\CMAYOR_2022_03Y03_101.json', encoding='utf-8') as f:
-        output_data = json.load(f)["prompts"]
-    with open(r'd:\WINDOWS\Escritorio\TFG\project\app\util\JSON\CMAYOR_2022_03Y03_101.json', encoding='utf-8') as f:
-        reference_data = json.load(f)["prompts"]
+# Ruta del archivo JSON
+file_path = r"D:\WINDOWS\Escritorio\TFG\project\app\util\temp_files\output.json"
 
-    # Crea un diccionario para buscar la referencia por prompt_key
-    ref_dict = {item["prompt_key"]: item.get("response", "") for item in reference_data}
+# Cargar los datos desde el archivo JSON
+with open(file_path, 'r', encoding='utf-8') as file:
+    test_data = json.load(file)["prompts"]
 
-    # Instancia la métrica personalizada
-    metric = ContextSupportMetric(
+# Configurar las métricas que deseas evaluar
+metrics = [
+    AspectCritic(
+        name="Relevancia del contexto",
         llm=evaluator_llm,
-        name="context_support_metric"
+        definition="Evalúa la calidad de la respuesta generada en relación con el contexto proporcionado."
+    ),
+    AspectCritic(
+        name="Relevancia de la respuesta",
+        llm=evaluator_llm,
+        definition="Evalúa la calidad de la respuesta generada en relación con la pregunta del usuario."
+    ),
+    AspectCritic(
+        name="Formato",
+        llm=evaluator_llm,
+        definition="Evalúa si la respuesta respesta el formato esperado."
     )
+]
 
-    scores = []
-    callbacks = None  # No se utiliza Callbacks en este caso
-    for item in output_data:
-        prompt_key = item["prompt_key"]
-        user_input = item.get("prompt", "")
-        response = item.get("response", "")
-        reference = ref_dict.get(prompt_key, "")
+# Inicializar un diccionario para acumular los puntajes de cada métrica
+metric_totals = {metric.name: 0 for metric in metrics}
+metric_counts = {metric.name: 0 for metric in metrics}  # Para contar las muestras evaluadas
 
+# Iterar sobre todos los elementos de test_data
+for i, prompt_data in enumerate(test_data):
+    # Extraer los datos relevantes del JSON
+    sample_data = {
+        "user_input": prompt_data["prompt"] + prompt_data["format"] ,  # El prompt del usuario
+        "response": prompt_data["response"],  # La respuesta generada
+        "retrieved_contexts": prompt_data["chunks"],  # El contexto asociado (si existe)
+    }
 
-        if not response or not reference:
-            continue  # Omite si faltan datos
+    # Crear una instancia de SingleTurnSample
+    sample = SingleTurnSample(**sample_data)
 
-        sample = SingleTurnSample(
-            user_input=user_input,
-            response=response,
-            reference=reference
-        )
-        score = await metric.single_turn_ascore(sample, callbacks)
-        print()
-        print(f"{prompt_key}: {score}")
-        print("Response:", response)
-        print("Reference:", reference)  
-        # if score == 0:
-            # print(f"Prompt Key: {prompt_key}")
-            # print("Response:", response)
-            # print("Reference:", reference)        
-        scores.append(score)
+    # Evaluar cada métrica para la muestra actual
+    print(f"Context: {prompt_data.get('context', 'No context provided')}")
+    print(f"Prompt: {prompt_data['prompt']}")
+    print(f"Response: {prompt_data['response']}")
+    for metric in metrics:
+        try:
+            score = asyncio.run(metric.single_turn_ascore(sample))
+            print(f"{metric.name} Score for sample {i + 1}: {score}")
+            
+            # Acumular el puntaje y contar la muestra
+            metric_totals[metric.name] += score
+            metric_counts[metric.name] += 1
+        except Exception as e:
+            print(f"Error processing {metric.name} for sample {i + 1}: {e}")
+    print("-" * 50)
 
-    if scores:
-        print(f"\nAverage Context Support score: {sum(scores)/len(scores):.3f}")
-    else:
-        print("No comparable prompts found.")
-
-if __name__ == "__main__":
-    asyncio.run(main())
+# Calcular y mostrar la media de cada métrica
+print("\n=== Average Scores ===")
+for metric_name, total_score in metric_totals.items():
+    count = metric_counts[metric_name]
+    average_score = total_score / count if count > 0 else 0
+    print(f"{metric_name}: {average_score:.2f}")

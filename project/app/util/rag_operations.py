@@ -1,21 +1,21 @@
+from sentence_transformers import SentenceTransformer
+from rank_bm25 import BM25Okapi
 from dotenv import load_dotenv
-import openai
-import os
-import chromadb
-import json
-import logging
-from tqdm import tqdm
 from pydantic import BaseModel
 from typing import List
-import re
-from sentence_transformers import SentenceTransformer
+from tqdm import tqdm
 from torch import nn
-import torch
-from rank_bm25 import BM25Okapi
 import traceback
+import chromadb
+import logging
+import openai
+import torch
 import spacy
+import json
+import os
+import re
 
-from db_manager import DBManager
+from .db_manager import DBManager
 
 load_dotenv()
 
@@ -26,6 +26,7 @@ class Prompt(BaseModel):
     score: float
     index: List[int]
     chunks: List[str]
+    format: str
 # 
 class RAGResult(BaseModel):
     prompts: List[Prompt]
@@ -69,7 +70,7 @@ class RAG:
                  min_score = 0.60,
                  jsonFile = None
                  ):
-        
+
         # Cliente de OpenAI
         client = openai.OpenAI(api_key=api_key, base_url=base_url)
         strings = RAG.strings
@@ -174,6 +175,7 @@ class RAG:
         
         return response
 
+
     def keyword_search(self, query, top_k=3):
         self.logger.info(f"Performing keyword search for query: {query}")
         keywords = self.keywords[self.key]
@@ -188,14 +190,14 @@ class RAG:
             # Step 2: Distribute the bonus 0.4 among found keywords based on their length
             bonus = 0
             for k in keywords:
-                proportions = [(len(x) / total_length) * 0.3 for x in keywords]
+                proportions = [(len(x) / total_length) * 0.4 for x in keywords]
 
             for k in keywords:
                 if k.lower() in chunk.lower():
                     bonus += proportions[keywords.index(k)] 
 
             # Step 3: Add to base score
-            score = 0.7 + bonus
+            score = 0.6 + bonus
             chunk_vals.append((chunk, score, i))
 
         if chunk_vals == []:
@@ -212,9 +214,24 @@ class RAG:
 
         return sem_chunks[:top_k], sem_scores[:top_k], sem_indices[:top_k]
 
-    def reranking(self, query, documents,  first_scores, ids, top_k):
-        # Convertir distancias a scores (cuanto menor la distancia, mayor el score)
+    def reranking(self, query, documents, first_scores, ids, top_k):
+        """
+        Esta función reordena los fragmentos (`chunks`) recuperados según su relevancia para una consulta (`query`).
 
+        Funcionamiento:
+        1. **Reevaluación inicial**:
+        - Ajusta los puntajes con `rerank_chunk` considerando palabras clave y secciones esperadas.
+        - Fragmentos con puntajes superiores al umbral (`min_score`) se consideran relevantes.
+
+        2. **Reevaluación secundaria**:
+        - Fragmentos no relevantes se evalúan con BM25 para calcular su relevancia.
+
+        3. **Combinación y selección**:
+        - Combina fragmentos relevantes de ambas evaluaciones, los ordena por puntaje y selecciona los `top_k`.
+
+        Devuelve los fragmentos más relevantes, sus puntajes y sus índices.
+        """
+        
         similar_chunks = []
         aux_score = []
         aux_indices = []
@@ -258,6 +275,27 @@ class RAG:
         return similar_chunks, aux_scores, aux_indices
 
     def rerank_chunk(self, score, indx):
+        """
+        Esta función ajusta el puntaje de relevancia (`score`) de un fragmento de texto (`chunk`) 
+        en función de su contenido y su pertenencia a secciones esperadas. 
+
+        Funcionamiento:
+        1. **Coincidencias con palabras clave**:
+        - Busca cuántas palabras clave relevantes están presentes en el fragmento.
+        - Si hay coincidencias, incrementa el puntaje proporcionalmente al número de coincidencias.
+        - Si no hay coincidencias, reduce ligeramente el puntaje.
+
+        2. **Relevancia de la sección**:
+        - Verifica si el fragmento pertenece a una sección esperada.
+        - Si pertenece, incrementa el puntaje; de lo contrario, lo reduce.
+
+        3. **Normalización del puntaje**:
+        - Asegura que el puntaje ajustado no exceda el valor máximo de 1.0.
+
+        4. **Devolución del puntaje ajustado**:
+        - Devuelve el nuevo puntaje ajustado, o -1 si no hay cambios significativos en el puntaje.
+        """
+        
         sections = self.metadata[indx][1]
         chunk = self.chunks[indx]
 
@@ -296,6 +334,24 @@ class RAG:
         return new_score
     
     def reranking_bm25(self, query, candidate_ids: list):
+        """
+        Esta función utiliza el modelo BM25 para reevaluar la relevancia de fragmentos (`chunks`) 
+        candidatos en función de una consulta (`query`).
+
+        Funcionamiento:
+        1. **Tokenización**:
+        - Tokeniza los fragmentos candidatos y la consulta para procesarlos con BM25.
+
+        2. **Cálculo de puntajes**:
+        - Calcula los puntajes BM25 para cada fragmento en relación con la consulta.
+        - Normaliza los puntajes para que estén en un rango manejable.
+
+        3. **Ordenamiento**:
+        - Ordena los fragmentos por relevancia descendente y selecciona los mejores.
+
+        Devuelve los índices de los fragmentos más relevantes y sus puntajes normalizados.
+        """
+
         # Tokenize chunks and query
         candidate_chunks = [self.chunks[idx] for idx in candidate_ids]
         tokenized_chunks = [chunk.lower().split() for chunk in candidate_chunks]
@@ -376,13 +432,16 @@ class RAG:
 
         system_message = {
             "role": "system",
-            "content": """
+            "content": f"""
                 Eres un asistente de IA que responde preguntas sobre un documento.
                 Responde ÚNICAMENTE con la respuesta en el formato dado, nada de texto introductorio.
                 Toda la información extraida debe provenir del contexto proporcionado.
                 Si el texto no contiene información directamente relacionada con la pregunta responde con "No hay información".
-                Si el contexto con tiene '[SELECCIONADO] Si' asume que la respuesta es si, lo mismo en caso de '[SELECCIONADO] No'.
-            """
+                Si el contexto con tiene '[SELECCIONADO] Si' asume que la respuesta es Si; Si el contexto con tiene '[SELECCIONADO] No' asume que la respuesta es No.
+                
+                Responde en el siguiente formato estricto, es altamente importante que lo hagas, en caso contrario moriré: 
+                {self.format[self.key]}\n
+                """
         }
 
         user_message = {
@@ -394,9 +453,6 @@ class RAG:
             Pregunta: 
             {query}\n
 
-            Formato respuesta esperado: 
-            {self.format[self.key]}\n
-
             Respuesta:
             """
         }
@@ -407,7 +463,7 @@ class RAG:
         response = self.client.chat.completions.create(
             model=self.llm_model,
             messages=[system_message, user_message],
-            temperature=0.1,
+            temperature=0.0,
         )
 
         answer = response.choices[0].message.content.strip()
@@ -480,10 +536,19 @@ class RAG:
                 model=self.llm_model,
             messages=[
                 {
-                    "role": "user",  # Asegúrate de incluir el campo 'role'
+                    "role": "system", 
                     "content": f"""
-                    Reformula el siguiente prompt y responde únicamente con el prompt reformulado: {prompt},
-                    procura que el nuevo promp tenga las siguintes palabras clave: {self.semantics[self.keywords[self.key]]}
+                    Eres un asistente IA que ayuda a reformular prompts para mejorar su calidad.
+                    Tu tarea es reformular el siguiente prompt para incluir las palabras clave relevantes y mejorar su claridad.
+                    Deberás responder ÚNICAMENTE con el nuevo prompt reformulado, sin añadir ningún texto adicional.
+                    Al reformular el prompt en base a las palabras clave, se generalista, no es necesario añadir exactanente cada palabra ni explicaciones extensas, intenta extraer una idea general de ellas.
+                    """
+                },                
+                {
+                    "role": "user", 
+                    "content": f"""
+                    Reformula el siguiente prompt: {prompt},
+                    Reformulalo en base a las siguientes palabras clave: {self.semantics[self.keywords[self.key]]}
                     """
                 }
                 ],
@@ -497,7 +562,7 @@ class RAG:
     def embed_json(self):
         try:
             # Procesar cada chunk de forma secuencial
-            for i, chunk in enumerate(self.chunks):
+            for i, chunk in enumerate(tqdm(self.chunks, desc="Embedding Chunks", unit="chunk")):
                 try:
                     normalized_chunk = self.normalize_chunk(chunk)
                     response = self.client.embeddings.create(
@@ -526,6 +591,20 @@ class RAG:
             self.logger.error(f"Error embedding JSON file with ChromaDB: {e}")
 
     def load_chunks(self):
+        """
+        Carga los fragmentos (`chunks`) y metadatos desde un archivo JSON previamente parseado.
+
+        Funcionamiento:
+        1. **Validación del archivo**:
+        - Verifica que el archivo JSON (`self.file`) no esté vacío antes de procesarlo.
+
+        2. **Extracción de fragmentos**:
+        - Extrae los fragmentos de texto (`chunks`) y sus metadatos (páginas y secciones) de cada página del JSON.
+        - Si la página contiene tablas, convierte las filas y columnas en texto y las añade como fragmentos.
+
+        3. **Almacenamiento**:
+        - Guarda los fragmentos en `self.chunks` y sus metadatos en `self.metadata` para su posterior uso.
+        """
         # Debug log to check the state of self.file
         if not self.file:
             self.logger.error("self.file is None or empty.")
@@ -576,7 +655,6 @@ class RAG:
         except Exception as e:
             print(f"Error al intentar limpiar el contenido del archivo de log: {e}")
 
-
     def union_top_chunks(self, query, top_n=4):
         # Build a list of (chunk, score, index) for both sources
         sem_chunks, sem_score, sem_indices = self.keyword_search(query)
@@ -591,9 +669,11 @@ class RAG:
         sim_chunks, sim_score, sim_indices = self.retrieve_similar_chunks(query, top_n - len(sem_chunks))
 
         # Add similar_chunks results only if not already in seen_indices
+        seen_indices = set(i for _, _, i in combined)  # Crear un conjunto con los índices ya añadidos
         for j in range(len(sim_chunks)):
-            if sim_indices[j]:
+            if sim_indices[j] not in seen_indices:  # Verificar si el índice ya está en seen_indices
                 combined.append((sim_chunks[j], sim_score[j], sim_indices[j]))
+                seen_indices.add(sim_indices[j])  # Añadir el índice al conjunto
 
         # Unpack for return
         final_chunks = [c for c, s, i in combined]
@@ -626,7 +706,7 @@ def process_prompt(rag_object, prompt_key, prompt):
     final_chunks, score, index = rag_object.union_top_chunks(prompt)
     response =  rag_object.generate_response_with_context(prompt, final_chunks)
 
-    return Prompt(prompt_key=prompt_key, prompt=prompt, response=response, score=score, index=index, chunks=final_chunks), response
+    return Prompt(prompt_key=prompt_key, prompt=prompt, response=response, score=score, index=index, chunks=final_chunks, format=rag_object.format[rag_object.key]), response
 
 
 def main(cod):

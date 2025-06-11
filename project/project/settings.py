@@ -26,8 +26,7 @@ SECRET_KEY = 'django-insecure-e9(*()i)%@#o=i0keu=f_xqi7w(2w=!^#$ong0i7x)s6jan%wn
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []  # Agrega aquí tus dominios o IPs permitidas
-
+ALLOWED_HOSTS = ["*"]
 
 # Application definition
 INSTALLED_APPS = [
@@ -39,7 +38,6 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'app'
-
 ]
 
 # Middleware definition

@@ -21,7 +21,8 @@ def preprocess_text(text):
         "nº": "Número",
         "☒": "[SELECCIONADO]",
         "x□": "[SELECCIONADO]",
-        "X□": "[SELECCIONADO]"
+        "X□": "[SELECCIONADO]",
+        "\nX": "[SELECCIONADO]"
     }
         
     # Realizar los reemplazos iniciales

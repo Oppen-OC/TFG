@@ -8,17 +8,107 @@
 <table class="table table-bordered table-striped">
     <thead>
         <tr>
-            {% for columna in columnas %}
-            <th>{{ columna }}</th>
-            {% endfor %}
+            <th>COD</th>
+            <th>Regulacion_armonizada</th>
+            <th>Sometido_recurso_especial</th>
+            <th>Plazo_ejecución</th>
+            <th>Presupuesto_sinIVA</th>
+            <th>Presupuesto_conIVA</th>
+            <th>Importe_IVA</th>
+            <th>Sistema_Retribucion</th>
+            <th>Valor_estimado</th>
+            <th>Revision_precios</th>
+            <th>Garantia_definitiva</th>
+            <th>Garantia_provisional</th>
+            <th>Admisibilidad_variantes</th>
+            <th>Clasificacion</th>
+            <th>Grupo</th>
+            <th>Subgrupo</th>
+            <th>Categoria</th>
+            <th>Criterio_Solvencia_economica</th>
+            <th>Criterio_Solvencia_tecnica</th>
+            <th>Condiciones_especiales</th>
+            <th>Penalidad_incumplimiento</th>
+            <th>Forma_pago</th>
+            <th>Causas_modificacion</th>
+            <th>Plazo_garantia</th>
+            <th>Contratacion_precio_unit</th>
+            <th>Tanto_alzado</th>
+            <th>Tanto_alzado_con</th>
+            <th>Criterio_juicio_val</th>
+            <th>Evaluables_autom</th>
+            <th>Criterio_ecónomico</th>
+            <th>Obligaciones_ambientales</th>
+            <th>Regimen_penalidades</th>
+            <th>Ambiental</th>
+            <th>Tecnico</th>
+            <th>Precio</th>
+            <th>Garantia</th>
+            <th>Experiencia</th>
+            <th>Calidad</th>
+            <th>Social</th>
+            <th>Seguridad</th>
+            <th>Juicio_valor</th>
+            <th>Formula_precio</th>
+            <th>Formula_JuicioValor</th>
+            <th>Criterios_valores_anormales</th>
+            <th>Infraccion_grave</th>
+            <th>Gastos_desistimiento</th>
+            <th>Contratacion_control</th>
+            <th>Tareas_criticas</th>
         </tr>
     </thead>
     <tbody>
         {% for fila in datos %}
         <tr>
-            {% for celda in fila %}
-            <td>{{ celda }}</td>
-            {% endfor %}
+            <td>{{ fila.0 }}</td>
+            <td>{{ fila.1 }}</td>
+            <td>{{ fila.2 }}</td>
+            <td>{{ fila.3 }}</td>
+            <td>{{ fila.4 }}</td>
+            <td>{{ fila.5 }}</td>
+            <td>{{ fila.6 }}</td>
+            <td>{{ fila.7 }}</td>
+            <td>{{ fila.8 }}</td>
+            <td>{{ fila.9 }}</td>
+            <td>{{ fila.10 }}</td>
+            <td>{{ fila.11 }}</td>
+            <td>{{ fila.12 }}</td>
+            <td>{{ fila.13 }}</td>
+            <td>{{ fila.14 }}</td>
+            <td>{{ fila.15 }}</td>
+            <td>{{ fila.16 }}</td>
+            <td>{{ fila.17 }}</td>
+            <td>{{ fila.18 }}</td>
+            <td>{{ fila.19 }}</td>
+            <td>{{ fila.20 }}</td>
+            <td>{{ fila.21 }}</td>
+            <td>{{ fila.22 }}</td>
+            <td>{{ fila.23 }}</td>
+            <td>{{ fila.24 }}</td>
+            <td>{{ fila.25 }}</td>
+            <td>{{ fila.26 }}</td>
+            <td>{{ fila.27 }}</td>
+            <td>{{ fila.28 }}</td>
+            <td>{{ fila.29 }}</td>
+            <td>{{ fila.30 }}</td>
+            <td>{{ fila.31 }}</td>
+            <td>{{ fila.32 }}</td>
+            <td>{{ fila.33 }}</td>
+            <td>{{ fila.34 }}</td>
+            <td>{{ fila.35 }}</td>
+            <td>{{ fila.36 }}</td>
+            <td>{{ fila.37 }}</td>
+            <td>{{ fila.38 }}</td>
+            <td>{{ fila.39 }}</td>
+            <td>{{ fila.40 }}</td>
+            <td>{{ fila.41 }}</td>
+            <td>{{ fila.42 }}</td>
+            <td>{{ fila.43 }}</td>
+            <td>{{ fila.44 }}</td>
+            <td>{{ fila.45 }}</td>
+            <td>{{ fila.46 }}</td>
+            <td>{{ fila.47 }}</td>
         </tr>
         {% endfor %}
     </tbody>

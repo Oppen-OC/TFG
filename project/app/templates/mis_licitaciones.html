@@ -1,0 +1,229 @@
+{% extends 'base.html' %}
+
+{% block title %}Licitaciones{% endblock %}
+
+{% block content %}
+<h2 class="mb-4">Licitaciones</h2>
+
+<!-- Cuadro con el número de licitaciones y el total de euros -->
+<div class="alert alert-info d-flex justify-content-between align-items-center" role="alert">
+  <span>Número de licitaciones cargadas: <strong>{{ num_licitaciones }}</strong></span>
+  <span>Total en euros: <strong>{{ total_euros }}</strong> €</span>
+</div>
+
+<!-- Buscador en la parte superior derecha -->
+<div class="d-flex justify-content-end mb-3">
+  <input type="text" id="searchInput" class="form-control w-25" placeholder="Buscar licitaciones..." onkeyup="filterTable()">
+</div>
+
+<style>
+.table-responsive {
+  width: 100%;
+  max-width: 100vw;
+  overflow-x: auto; /* Permite el desplazamiento horizontal */
+}
+.table {
+  table-layout: auto; /* Ajusta el tamaño de las columnas al contenido */
+  width: 100%; /* Asegura que la tabla ocupe todo el ancho disponible */
+  border-collapse: collapse; /* Opcional: mejora la apariencia de las celdas */
+}
+.table th, .table td {
+  font-size: 0.95em;
+  vertical-align: top;
+  word-break: break-word;
+  white-space: nowrap;
+  padding-top: 0.7em;
+  padding-bottom: 0.7em;
+  width: auto; /* Ancho inicial automático */
+  transition: width 0.3s ease, visibility 0.3s ease, padding 0.3s ease; /* Transición suave */
+}
+#hiddenColumnsContainer {
+  display: none; /* Ocultar inicialmente */
+  margin-bottom: 1rem;
+}
+#hiddenColumnsList {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex; /* Cambia el diseño a horizontal */
+  flex-wrap: nowrap; /* Evita que los elementos se ajusten a una nueva fila */
+  gap: 10px; /* Espaciado entre los elementos */
+  overflow-x: auto; /* Permite desplazamiento horizontal si no caben en una fila */
+}
+#hiddenColumnsList .list-group-item {
+  cursor: pointer;
+  display: inline-block; /* Asegura que los elementos sean bloques en línea */
+  padding: 5px 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #f8f9fa;
+  transition: background-color 0.3s ease;
+  white-space: nowrap; /* Evita que el texto se divida en varias líneas */
+}
+#hiddenColumnsList .list-group-item:hover {
+  background-color: #e9ecef; /* Cambia el color al pasar el cursor */
+}
+</style>
+
+<div id="hiddenColumnsContainer" class="mb-3">
+  <strong>Columnas ocultas:</strong>
+  <ul id="hiddenColumnsList" class="list-group"></ul>
+</div>
+
+<div class="table-responsive">
+  <table class="table table-hover bg-white rounded shadow-sm" id="licitacionesTable">
+    <thead class="thead-light">
+      <tr>
+        <th onclick="toggleColumn(0)">Expediente</th>
+        <th onclick="toggleColumn(1)">ID Publicación TED</th>
+        <th onclick="toggleColumn(2)">Órgano de Contratación</th>
+        <th onclick="toggleColumn(3)">ID Órgano Contratación</th>
+        <th onclick="toggleColumn(4)">Estado</th>
+        <th onclick="toggleColumn(5)">Objeto del Contrato</th>
+        <th onclick="toggleColumn(6)">Financiación UE</th>
+        <th onclick="toggleColumn(7)">Presupuesto base</th>
+        <th onclick="toggleColumn(8)">Valor estimado</th>
+        <th onclick="toggleColumn(9)">Tipo de Contrato</th>
+        <th onclick="toggleColumn(10)">Código CPV</th>
+        <th onclick="toggleColumn(11)">Lugar de Ejecución</th>
+        <th onclick="toggleColumn(12)">Sistema de Contratación</th>
+        <th onclick="toggleColumn(13)">Procedimiento de Contratación</th>
+        <th onclick="toggleColumn(14)">Tipo de Tramitación</th>
+        <th onclick="toggleColumn(15)">Método Presentación Oferta</th>
+        <th onclick="toggleColumn(16)">Resultado</th>
+        <th onclick="toggleColumn(17)">Adjudicatario</th>
+        <th onclick="toggleColumn(18)">Nº Licitadores Presentados</th>
+        <th onclick="toggleColumn(19)">Importe de Adjudicación</th>
+        <th onclick="toggleColumn(20)">Acciones</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for licitacion in licitaciones %}
+      <tr>
+        <td>{{ licitacion.COD }}</td>
+        <td>{{ licitacion.ID_Publicacion_TED }}</td>
+        <td>{{ licitacion.Organo_Contratacion }}</td>
+        <td>{{ licitacion.ID_Organo_Contratacion }}</td>
+        <td>{{ licitacion.Estado_Licitacion }}</td>
+        <td>{{ licitacion.Objeto_Contrato }}</td>
+        <td>{{ licitacion.Financiacion_UE }}</td>
+        <td>{{ licitacion.Presupuesto_Base_Licitacion }}</td>
+        <td>{{ licitacion.Valor_Estimado_Contrato }}</td>
+        <td>{{ licitacion.Tipo_Contrato }}</td>
+        <td>{{ licitacion.Codigo_CPV }}</td>
+        <td>{{ licitacion.Lugar_Ejecucion }}</td>
+        <td>{{ licitacion.Sistema_Contratacion }}</td>
+        <td>{{ licitacion.Procedimiento_Contratacion }}</td>
+        <td>{{ licitacion.Tipo_Tramitacion }}</td>
+        <td>{{ licitacion.Metodo_Presentacion_Oferta }}</td>
+        <td>{{ licitacion.Resultado }}</td>
+        <td>{{ licitacion.Adjudicatario }}</td>
+        <td>{{ licitacion.Num_Licitadores_Presentados }}</td>
+        <td>{{ licitacion.Importe_Adjudicacion }}</td>
+        <td>
+          <a href="{% url 'app:detalles_licitacion' licitacion.COD|urlencode %}" class="btn btn-primary btn-sm">Detalles</a>
+        </td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+
+<script>
+function filterTable() {
+  const input = document.getElementById('searchInput');
+  const filter = input.value.toLowerCase();
+  const table = document.getElementById('licitacionesTable');
+  const rows = table.getElementsByTagName('tr');
+
+  for (let i = 1; i < rows.length; i++) { // Start at 1 to skip the header row
+    const cells = rows[i].getElementsByTagName('td');
+    let match = false;
+
+    for (let j = 0; j < cells.length; j++) {
+      if (cells[j].textContent.toLowerCase().includes(filter)) {
+        match = true;
+        break;
+      }
+    }
+
+    rows[i].style.display = match ? '' : 'none';
+  }
+}
+
+function toggleColumn(columnIndex) {
+  const table = document.getElementById('licitacionesTable');
+  const rows = table.getElementsByTagName('tr');
+  const hiddenColumnsList = document.getElementById('hiddenColumnsList');
+
+  let isHidden = false;
+
+  for (let i = 0; i < rows.length; i++) {
+    const headers = rows[i].getElementsByTagName('th');
+    const cells = rows[i].getElementsByTagName('td');
+
+    if (i === 0 && headers.length > columnIndex) {
+      // Alternar visibilidad del encabezado
+      const header = headers[columnIndex];
+      if (header.style.display === 'none') {
+        header.style.display = 'table-cell';
+        // Eliminar de la lista de columnas ocultas
+        const listItem = document.querySelector(`#hiddenColumnsList li[data-index="${columnIndex}"]`);
+        if (listItem) listItem.remove();
+      } else {
+        header.style.display = 'none';
+        isHidden = true;
+        // Añadir a la lista de columnas ocultas
+        const listItem = document.createElement('li');
+        listItem.className = 'list-group-item';
+        listItem.textContent = header.textContent;
+        listItem.setAttribute('data-index', columnIndex);
+        listItem.onclick = () => toggleColumn(columnIndex); // Restaurar al hacer clic
+        hiddenColumnsList.appendChild(listItem);
+      }
+    } else if (cells.length > columnIndex) {
+      // Alternar visibilidad de las celdas
+      if (isHidden) {
+        cells[columnIndex].style.display = 'none';
+      } else {
+        cells[columnIndex].style.display = 'table-cell';
+      }
+    }
+  }
+
+  // Actualizar la lista de columnas ocultas
+  updateHiddenColumnsList();
+}
+
+function updateHiddenColumnsList() {
+  const table = document.getElementById('licitacionesTable');
+  const rows = table.getElementsByTagName('tr');
+  const hiddenColumnsList = document.getElementById('hiddenColumnsList');
+
+  // Limpiar la lista actual
+  hiddenColumnsList.innerHTML = '';
+
+  // Recorrer las columnas del encabezado
+  const headers = rows[0].getElementsByTagName('th');
+  for (let i = 0; i < headers.length; i++) {
+    if (headers[i].style.display === 'none') {
+      // Si la columna está oculta, agregarla a la lista
+      const listItem = document.createElement('li');
+      listItem.className = 'list-group-item';
+      listItem.textContent = headers[i].textContent;
+      listItem.setAttribute('data-index', i);
+      listItem.onclick = () => toggleColumn(i); // Restaurar al hacer clic
+      hiddenColumnsList.appendChild(listItem);
+    }
+  }
+
+  updateHiddenColumnsVisibility();
+}
+
+function updateHiddenColumnsVisibility() {
+  const hiddenColumnsContainer = document.getElementById('hiddenColumnsContainer');
+  const hiddenColumnsList = document.getElementById('hiddenColumnsList');
+  hiddenColumnsContainer.style.display = hiddenColumnsList.children.length > 0 ? 'block' : 'none';
+}
+</script>
+{% endblock %}

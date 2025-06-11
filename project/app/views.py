@@ -6,6 +6,8 @@ from django.http import JsonResponse
 from app.util.chatbot import handle_user_input
 from django.views.decorators.csrf import csrf_exempt
 import json
+from django.http import JsonResponse
+from app.util.scrapper import update
 
 cod_documento = ""
 
@@ -55,35 +57,43 @@ def licitaciones_view(request):
 
     db = DBManager()
     db.openConnection()
-    data = db.viewTable("Licitaciones_test")
+    data = db.viewTable("Licitaciones")
     db.closeConnection()
     
     # Procesar los datos para que coincidan con el formato esperado
     licitaciones = [
         {
             'COD': row[0].replace("/", "_"),
-            'ID_Publicacion_TED': row[1],
+            'ID_publicacion_TED': row[1],
             'Organo_Contratacion': row[2],
-            'ID_Organo_Contratacion': row[3],
+            'ID_Organo_contratacion': row[3],
             'Estado_Licitacion': row[4],
-            'Objeto_Contrato': row[5],
+            'Objeto_contrato': row[5],
             'Financiacion_UE': row[6],
-            'Presupuesto_Base_Licitacion': row[7],
+            'Presupuesto_base': row[7],
             'Valor_Estimado_Contrato': row[8],
-            'Tipo_Contrato': row[9],
+            'Tipo_contrato': row[9],
             'Codigo_CPV': row[10],
-            'Lugar_Ejecucion': row[11],
-            'Sistema_Contratacion': row[12],
-            'Procedimiento_Contratacion': row[13],
-            'Tipo_Tramitacion': row[14],
-            'Metodo_Presentacion_Oferta': row[15],
+            'Lugar_ejecucion': row[11],
+            'Sistema_contratacion': row[12],
+            'Procedimiento_contratacion': row[13],
+            'Tipo_contratacion': row[14],
+            'Metodo_presentacion_oferta': data[15],
             'Resultado': row[16],
             'Adjudicatario': row[17],
-            'Num_Licitadores_Presentados': row[18],
-            'Importe_Adjudicacion': row[19],
+            'Numero_licitaciones_presentadas': row[18],
+            'Importe_adjudicacion': row[19],
+            'Fecha_Adjudicacion': row[20],
+            'Fecha_Formalizacion': row[21],
+            'Fecha_Desistimiento': row[22],
+            'Fecha_Presentacion_Oferta': row[23],
+            'Fecha_Presentacion_Solicitud': row[24],
         }
         for row in data
     ]
+
+    for licitacion in licitaciones:
+        licitacion["COD"] = licitacion["COD"].replace("_", "/")
 
     num_licitaciones = len(licitaciones)
 
@@ -122,6 +132,7 @@ def mostrar_anexo_i(cod):
     db.closeConnection()
 
     anexoI = {
+        "COD": data[0],
         "Regulacion_armonizada": data[1],
         "Sometido_recurso_especial": data[2],
         "Plazo_ejecución": data[3],
@@ -153,39 +164,72 @@ def mostrar_anexo_i(cod):
         "Criterio_ecónomico": data[29],
         "Obligaciones_ambientales": data[30],
         "Regimen_penalidades": data[31],
+        "Ambiental": data[32],
+        "Tecnico": data[33],
+        "Precio": data[34],
+        "Garantia": data[35],
+        "Experiencia": data[36],
+        "Calidad": data[37],
+        "Social": data[38],
+        "Seguridad": data[39],
+        "Juicio_valor": data[40],
+        "Formula_precio": data[41],
+        "Formula_JuicioValor": data[42],
+        "Criterios_valores_anormales": data[43],
+        "Infraccion_grave": data[44],
+        "Gastos_desistimiento": data[45],
+        "Contratacion_control": data[46],
+        "Tareas_criticas": data[47]
     }    
     anexoI_fuentes = {
-        "Regulacion_armonizada": data1[1],
-        "Sometido_recurso_especial": data1[2],
-        "Plazo_ejecución": data1[3],
-        "Presupuesto_sinIVA": data1[4],
-        "Presupuesto_conIVA": data1[5],
-        "Importe_IVA": data1[6],
-        "Sistema_Retribucion": data1[7],
-        "Valor_estimado": data1[8],
-        "Revision_precios": data1[9],
-        "Garantia_definitiva": data1[10],
-        "Garantia_provisional": data1[11],
-        "Admisibilidad_variantes": data1[12],
-        "Clasificacion": data1[13],
-        "Grupo": data1[14],
-        "Subgrupo": data1[15],
-        "Categoria": data1[16],
-        "Criterio_Solvencia_economica": data1[17],
-        "Criterio_Solvencia_tecnica": data1[18],
-        "Condiciones_especiales": data1[19],
-        "Penalidad_incumplimiento": data1[20],
-        "Forma_pago": data1[21],
-        "Causas_modificacion": data1[22],
-        "Plazo_garantia": data1[23],
-        "Contratacion_precio_unit": data1[24],
-        "Tanto_alzado": data1[25],
-        "Tanto_alzado_con": data1[26],
-        "Criterio_juicio_val": data1[27],
-        "Evaluables_autom": data1[28],
-        "Criterio_ecónomico": data1[29],
-        "Obligaciones_ambientales": data1[30],
-        "Regimen_penalidades": data1[31],
+        "COD": data[0],
+        "Regulacion_armonizada": data[1],
+        "Sometido_recurso_especial": data[2],
+        "Plazo_ejecución": data[3],
+        "Presupuesto_sinIVA": data[4],
+        "Presupuesto_conIVA": data[5],
+        "Importe_IVA": data[6],
+        "Sistema_Retribucion": data[7],
+        "Valor_estimado": data[8],
+        "Revision_precios": data[9],
+        "Garantia_definitiva": data[10],
+        "Garantia_provisional": data[11],
+        "Admisibilidad_variantes": data[12],
+        "Clasificacion": data[13],
+        "Grupo": data[14],
+        "Subgrupo": data[15],
+        "Categoria": data[16],
+        "Criterio_Solvencia_economica": data[17],
+        "Criterio_Solvencia_tecnica": data[18],
+        "Condiciones_especiales": data[19],
+        "Penalidad_incumplimiento": data[20],
+        "Forma_pago": data[21],
+        "Causas_modificacion": data[22],
+        "Plazo_garantia": data[23],
+        "Contratacion_precio_unit": data[24],
+        "Tanto_alzado": data[25],
+        "Tanto_alzado_con": data[26],
+        "Criterio_juicio_val": data[27],
+        "Evaluables_autom": data[28],
+        "Criterio_ecónomico": data[29],
+        "Obligaciones_ambientales": data[30],
+        "Regimen_penalidades": data[31],
+        "Ambiental": data[32],
+        "Tecnico": data[33],
+        "Precio": data[34],
+        "Garantia": data[35],
+        "Experiencia": data[36],
+        "Calidad": data[37],
+        "Social": data[38],
+        "Seguridad": data[39],
+        "Juicio_valor": data[40],
+        "Formula_precio": data[41],
+        "Formula_JuicioValor": data[42],
+        "Criterios_valores_anormales": data[43],
+        "Infraccion_grave": data[44],
+        "Gastos_desistimiento": data[45],
+        "Contratacion_control": data[46],
+        "Tareas_criticas": data[47]
     }
 
     return anexoI, anexoI_fuentes
@@ -204,7 +248,7 @@ def detalles_licitacion(request, cod):
     cod = cod.replace("_", "/")
     print(cod)
     # Obtener los datos de la licitación
-    data = db.searchTable("Licitaciones_test", {"COD": cod})
+    data = db.searchTable("Licitaciones", {"COD": cod})
 
     # Verificar si se encontró la licitación
     if data is None:
@@ -233,11 +277,17 @@ def detalles_licitacion(request, cod):
         'Adjudicatario': data[17],
         'Numero_licitaciones_presentadas': data[18],
         'Importe_adjudicacion': data[19],
-    }    
+        'Fecha_Adjudicacion': data[20],
+        'Fecha_Formalizacion': data[21],
+        'Fecha_Desistimiento': data[22],
+        'Fecha_Presentacion_Oferta': data[23],
+        'Fecha_Presentacion_Solicitud': data[24],
+    } 
 
     # Obtener los documentos relacionados desde la tabla "Documentos"
     documentos = db.searchTable("Documentos", {"COD": cod})
     anexo = db.searchTable("Anexos", {"COD": cod})
+    url_original = db.searchTable("Codigos", {"COD": cod})[1]
     db.closeConnection()
 
     if len(anexo) == 0: anexo = None
@@ -246,15 +296,104 @@ def detalles_licitacion(request, cod):
     pliego_administrativo_url = documentos[1]
     anexo_url = documentos[2]
     titulo_anexo = documentos[3]
-    anexoI, anexoI_fuentes = mostrar_anexo_i(cod)
+    # anexoI, anexoI_fuentes = mostrar_anexo_i(cod)
 
     context = {
         'licitacion': licitacion,
         'pliego_administrativo_url': pliego_administrativo_url,
         'anexo_url': anexo_url,
         'titulo_anexo': titulo_anexo,
-        'anexo': anexo,
-        'anexoI': anexoI,
-        'anexoI_fuentes': json.dumps(anexoI_fuentes or {}),
+        'pliego_original_url': url_original,
+        'anexo': anexo
     }
+    #'anexoI': anexoI,
+    #'anexoI_fuentes': json.dumps(anexoI_fuentes or {}),
+   
     return render(request, 'detalles_licitacion.html', context)
+
+def user_settings(request):
+    return render(request, 'user_settings.html')
+
+def alertas(request):
+    # Datos de ejemplo, reemplázalos con datos de tu base de datos
+    alertas = [
+        {
+            'id': 1,
+            'nombre': 'Publicaciones en Valencia',
+            'activo': True,
+            'frecuencia': 'Diaria',
+            'ultima_notificacion': '2025-06-01',
+        },
+        {
+            'id': 2,
+            'nombre': 'Contratos mayores a 1M€',
+            'activo': False,
+            'frecuencia': 'Semanal',
+            'ultima_notificacion': '2025-05-28',
+        },
+    ]
+    return render(request, 'alertas.html', {'alertas': alertas})
+
+def ajustar_filtro(request, filtro_id):
+    if request.method == 'POST':
+        # Obtén los datos del formulario
+        nombre = request.POST.get('nombre')
+        frecuencia = request.POST.get('frecuencia')
+        activo = request.POST.get('activo') == 'on'
+
+        # Aquí puedes actualizar la base de datos con los nuevos valores
+        # Por ejemplo:
+        # alerta = Alerta.objects.get(id=filtro_id)
+        # alerta.nombre = nombre
+        # alerta.frecuencia = frecuencia
+        # alerta.activo = activo
+        # alerta.save()
+
+        # Responde con los datos actualizados
+        if request.headers.get('X-Requested-With') == 'XMLHttpRequest':
+            return JsonResponse({
+                'id': filtro_id,
+                'nombre': nombre,
+                'frecuencia': frecuencia,
+                'activo': activo,
+            })
+
+    # Si no es una solicitud AJAX, redirige a la lista de alertas
+    return redirect('app:alertas')
+
+def crear_alerta(request):
+    if request.method == 'POST':
+        nombre = request.POST.get('nombre')
+        frecuencia = request.POST.get('frecuencia')
+        activo = request.POST.get('activo') == 'on'
+
+        # Aquí puedes guardar la nueva alerta en la base de datos
+        # Por ejemplo:
+        # nueva_alerta = Alerta.objects.create(nombre=nombre, frecuencia=frecuencia, activo=activo)
+
+        # Simulación de datos creados
+        nueva_alerta = {
+            'id': 3,  # Cambia esto por el ID generado en la base de datos
+            'nombre': nombre,
+            'frecuencia': frecuencia,
+            'activo': activo,
+        }
+
+        return JsonResponse(nueva_alerta)
+
+    return JsonResponse({'error': 'Método no permitido'}, status=405)
+
+def mis_licitaciones(request):
+    # Aquí puedes pasar datos dinámicos si es necesario
+    return render(request, 'mis_licitaciones.html')
+
+def update_database(request):
+    if request.method == 'POST':
+        try:
+            # Llama a la función `update` en scrapper.py
+            update()
+            return JsonResponse({"message": "Base de datos actualizada correctamente."}, status=200)
+        except Exception as e:
+            return JsonResponse({"error": str(e)}, status=500)
+    else:
+        return JsonResponse({"error": "Método no permitido."}, status=405)

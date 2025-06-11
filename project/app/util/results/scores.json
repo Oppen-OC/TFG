@@ -1,0 +1,140 @@
+[
+    {
+        "prompt_key": "Regulacion_armonizada",
+        "score": 1.0,
+        "response": "No",
+        "reference": "No"
+    },
+    {
+        "prompt_key": "Plazo_ejecución",
+        "score": 1.0,
+        "response": "48 meses",
+        "reference": "48 meses"
+    },
+    {
+        "prompt_key": "Presupuesto_sinIVA",
+        "score": 1.0,
+        "response": "4.909.596,51 €",
+        "reference": "4.909.596,51 €"
+    },
+    {
+        "prompt_key": "Presupuesto_conIVA",
+        "score": 1.0,
+        "response": "5.940.611,78 €",
+        "reference": "5.940.611,78 €"
+    },
+    {
+        "prompt_key": "Importe_IVA",
+        "score": 1.0,
+        "response": "1.031.015,27 €",
+        "reference": "1.031.015,27 €"
+    },
+    {
+        "prompt_key": "Valor_estimado",
+        "score": 0.0,
+        "response": "5.940.611,78 €",
+        "reference": "4.909.596,51 €"
+    },
+    {
+        "prompt_key": "Revision_precios",
+        "score": 1.0,
+        "response": "No, se establece que no se establece el derecho a revisión periódica y predeterminada de precios, aunque se contempla la posibilidad de una revisión extraordinaria si se producen condiciones específicas durante la vigencia del contrato.",
+        "reference": " No se establece el derecho a revisión periódica y predeterminada de precios. No obstante, si durante la vigencia del contrato se produjeran las condiciones establecidas en los RDL 3/22 y 6/22, RDL a los que la Generalitat se adhirió mediante Acuerdo de 1 de abril de 2022, del Consell, que dieran lugar a la práctica de la revisión extraordinaria de precios, la fórmula utilizada será la fórmula n.º 381, de “Urbanización y viales en entornos portuarios” del Real Decreto 1359/2011, de 7 de octubre, por el que se aprueba la Relación de materiales básicos y las fórmulas-tipo generales de revisión de precios de los contratos de obras y de contratos de suministro de fabricación de armamento y equipamiento de las Administraciones Públicas."
+    },
+    {
+        "prompt_key": "Garantia_definitiva",
+        "score": 1.0,
+        "response": "Si, el valor de la garantía definitiva es del 5% del precio final ofertado, IVA excluido.",
+        "reference": "5% del precio final ofertado, IVA excluido."
+    },
+    {
+        "prompt_key": "Garantia_provisional",
+        "score": 1.0,
+        "response": "No, según el APARTADO J, no se exige garantía provisional conforme al art. 106.1 de la LCSP.",
+        "reference": "No se exige conforme al art. 106.1 de la LCSP."
+    },
+    {
+        "prompt_key": "Admisibilidad_variantes",
+        "score": 1.0,
+        "response": "No",
+        "reference": "No"
+    },
+    {
+        "prompt_key": "Criterio_Solvencia_economica",
+        "score": 0.0,
+        "response": "Si",
+        "reference": " La empresa licitadora deberá estar en posesión de las siguientes clasificaciones:  Grupo A; subgrupo 01 (desmontes y vaciados); categoría 1. Grupo C; subgrupo 02 (Estructuras de fábrica u hormigón); categoría 2 Grupo E; subgrupo 07 (Obras hidráulicas sin cualificación específica); categoría 1. Grupo G; subgrupo 06 (Obras viales sin cualificación específica); categoría 2."
+    },
+    {
+        "prompt_key": "Criterio_Solvencia_tecnica",
+        "score": 1.0,
+        "response": "Si",
+        "reference": " La empresa licitadora deberá estar en posesión de las siguientes clasificaciones:  Grupo A; subgrupo 01 (desmontes y vaciados); categoría 1. Grupo C; subgrupo 02 (Estructuras de fábrica u hormigón); categoría 2 Grupo E; subgrupo 07 (Obras hidráulicas sin cualificación específica); categoría 1. Grupo G; subgrupo 06 (Obras viales sin cualificación específica); categoría 2."
+    },
+    {
+        "prompt_key": "Condiciones_especiales",
+        "score": 1.0,
+        "response": "Si, las condiciones especiales de ejecución incluyen el desarrollo de todos los trabajos objeto del contrato aplicando los procedimientos que dispone el certificado ISO 14001 o certificado equivalente para garantizar la calidad ambiental, y la adopción de un Sistema de Gestión de la Accesibilidad de acuerdo con la norma UNE/ISO 17001 para garantizar la accesibilidad en todas las etapas de desarrollo.",
+        "reference": "La empresa adjudicataria deberá desarrollar todos los trabajos objeto del presente contrato aplicando los procedimientos que dispone el certificado ISO 14001 o certificado equivalente. Esta exigencia garantiza la calidad ambiental de todos los trabajos incluidos en el contrato. Asimismo, en todas las etapas de la ejecución de las obras se adoptará un Sistema de Gestión de la Accesibilidad de acuerdo con la norma UNE/ISO 17001. Esta exigencia garantiza la accesibilidad a largo de todas las etapas de desarrollo -incluidas las situaciones provisionales- de los trabajos incluidos en el contrato."
+    },
+    {
+        "prompt_key": "Penalidad_incumplimiento",
+        "score": 0.0,
+        "response": "Si, existen varias penalidades establecidas para el contratista en caso de incumplimiento, como un 5% del precio del contrato por cada incumplimiento parcial o defectuoso, 0,60 € diarios por cada 1.000 € del presupuesto del contrato por incumplimiento de plazos parciales y totales.",
+        "reference": " No procede."
+    },
+    {
+        "prompt_key": "Forma_pago",
+        "score": 1.0,
+        "response": "[TIPO] Los pagos se efectuarán previa presentación de la correspondiente factura reglamentaria. El abono durante la ejecución de las obras será mensual, en función de las certificaciones expedidas por la Dirección Facultativa de las obras.",
+        "reference": "Los pagos se efectuarán previa presentación de la correspondiente factura reglamentaria."
+    },
+    {
+        "prompt_key": "Causas_modificacion",
+        "score": 1.0,
+        "response": "No, salvo lo dispuesto en el artículo 203 y siguientes de la Ley 9/2017.",
+        "reference": "No se contemplan, salvo lo dispuesto en el artículo 203 y siguientes de la Ley 9/2017."
+    },
+    {
+        "prompt_key": "Plazo_garantia",
+        "score": 1.0,
+        "response": "1 año",
+        "reference": "El plazo de garantía de las obras será de UN (1) año, a contar desde la fecha de su recepción."
+    },
+    {
+        "prompt_key": "Tanto_alzado",
+        "score": 0.0,
+        "response": "Si, según el texto \"DETERMINACIÓN DEL PRECIO: Según Tanto alzado\" lo que indica que el contrato se ejecutará a tanto alzado.",
+        "reference": "El importe del presupuesto de licitación formulado por la Administración se ha determinado según el proyecto técnico redactado al efecto"
+    },
+    {
+        "prompt_key": "Criterio_juicio_val",
+        "score": 1.0,
+        "response": "40",
+        "reference": "40"
+    },
+    {
+        "prompt_key": "Evaluables_autom",
+        "score": 1.0,
+        "response": "5",
+        "reference": "5"
+    },
+    {
+        "prompt_key": "Criterio_ecónomico",
+        "score": 1.0,
+        "response": "55",
+        "reference": "55"
+    },
+    {
+        "prompt_key": "Obligaciones_ambientales",
+        "score": 0.0,
+        "response": "Si, se valorarán las medidas medioambientales que consigan mejoras en la materia, tales como la reutilización de residuos, reciclados, protección del medio marino o calidad de las aguas, y el licitador deberá indicar la relación de actuaciones que prevea ejecutar relacionadas con las mejoras medioambientales.",
+        "reference": "No"
+    },
+    {
+        "prompt_key": "Regimen_penalidades",
+        "score": 1.0,
+        "response": "[LISTADO] - 5% del precio del contrato (IVA excluido) por cada incumplimiento parcial o cumplimiento defectuoso de la ejecución de las prestaciones - Diariamente 0,60 € por cada 1.000 € del presupuesto del contrato (IVA excluido) por incumplimiento de los plazos parciales - Diariamente 0,60 € por cada incumplimiento de los plazos totales",
+        "reference": "Si"
+    }
+]
