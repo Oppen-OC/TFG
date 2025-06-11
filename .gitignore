@@ -12,6 +12,8 @@ __pycache__/
 project/app/util/testing/questions.json
 project/app/util/testing/json_files
 project/app/util/JSON/generated_old/chromadb
+project/app/util/JSON/generated_old/chromadb/*.sqlite3
+project/app/util/JSON/generated_old/chromadb/chroma.sqlite3
 
 # Distribution / packaging
 .Python
