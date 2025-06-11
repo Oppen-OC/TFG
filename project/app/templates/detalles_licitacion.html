@@ -112,9 +112,9 @@
 <h3 class="mt-5">Documentos Relacionados</h3>
 <ul>
   {% if pliego_administrativo_url %}
-  <li><a href="{{ pliego_administrativo_url}}" target="_blank">📄 Pliego Administrativo</a></li>
+  <li><a href="{{ pliego_administrativo_url }}" target="_blank">📄 Pliego Administrativo</a></li>
   {% else %}
-  <li>📄 Pliego Administrativo: No disponible</li>
+  <li>📄 Pliego Administrativo: N/A</li>
   {% endif %}
 
   {% if anexo_url %}
@@ -124,7 +124,13 @@
     </a>
   </li>
   {% else %}
-  <li>📄 Anexo: No disponible</li>
+  <li>📄 Anexo: N/A</li>
+  {% endif %}
+
+  {% if pliego_original_url %}
+  <li><a href="{{ pliego_original_url }}" target="_blank">📄 Pliego Original</a></li>
+  {% else %}
+  <li>📄 Pliego Original: N/A</li>
   {% endif %}
 </ul>
 
