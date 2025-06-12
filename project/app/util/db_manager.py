@@ -98,14 +98,31 @@ class DBManager:
         self.cursor.execute(query)
         try:
             rows = self.cursor.fetchall()
-            self.logger.info(f"Elementos de la tabla {table}:")
-            for cont, row in enumerate(rows):
-                self.logger.info(f"{cont}- {row}")
+            self.logger.info(f"{len(rows)} Elementos recuperados:")
             self.logger.info(f"Consulta exitosa, fin de la tabla {table}.")
             return rows  # Devuelve los datos obtenidos
         except pyodbc.Error as e:
             self.logger.error(f"Error al consultar la tabla {table}: {e}")
             return None  # Devuelve None en caso de error
+
+    def getFullTable(self, table_name):
+        """
+        Devuelve todos los registros de una tabla.
+        :param table_name: Nombre de la tabla.
+        :return: Lista de registros de la tabla.
+        """
+        try:
+            # Asegurarse de que la conexión esté activa
+            self.ensure_connection()
+
+            query = f"SELECT * FROM {table_name}"
+            self.cursor.execute(query)
+            rows = self.cursor.fetchall()
+            self.logger.info(f"Se han recuperado {len(rows)} registros de la tabla {table_name}.")
+            return rows
+        except pyodbc.Error as e:
+            self.logger.error(f"Error al obtener los registros de la tabla {table_name}: {e}")
+            return []
 
     def updateObject(self, table, pk_name, pk_value, update_values):
         set_clause = ", ".join([f"{col} = ?" for col in update_values.keys()])
@@ -248,6 +265,38 @@ class DBManager:
             self.logger.error(f"Error al obtener la intersección entre {table1} y {table2}: {e}")
             return []
         
+    def fetchMaxValue(self, table_name, column_name):
+        query = f"SELECT MAX({column_name}) FROM {table_name}"
+        self.cursor.execute(query)
+        result = self.cursor.fetchone()
+        return result[0] if result else None
+
+    def insertNewUpdate(self):
+        try:
+            # Buscar el valor máximo de la columna
+            query_max = f"SELECT MAX(id) FROM actualizaciones"
+            self.cursor.execute(query_max)
+            max_value = self.cursor.fetchone()[0]
+
+            # Calcular el nuevo valor de la clave primaria
+            new_pk = max_value + 1 if max_value is not None else 1
+
+            # Obtener la fecha y hora actual
+            from datetime import datetime
+            current_datetime = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+
+            # Insertar el nuevo registro
+            query_insert = f"INSERT INTO actualizaciones (id, fecha_actualizacion) VALUES (?, ?)"
+            self.cursor.execute(query_insert, (new_pk, current_datetime))
+            self.cnxn.commit()
+
+            self.logger.info(f"Nuevo registro insertado en actualizaciones: id={new_pk}, fecha_actualizacion={current_datetime}")
+            return new_pk, current_datetime
+
+        except Exception as e:
+            self.logger.error(f"Error al insertar un nuevo registro en actualizaciones: {e}")
+            return None, None
+
     def complement_of_intersection(self, table1, table2, pk_column="COD"):
         sql = f"""
             SELECT {table1}.{pk_column} FROM {table1}

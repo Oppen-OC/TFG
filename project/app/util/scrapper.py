@@ -1,6 +1,7 @@
 from .db_manager import DBManager
 
 from playwright.async_api import async_playwright
+from datetime import datetime
 import traceback
 import logging
 import asyncio
@@ -89,7 +90,12 @@ async def poblar_db(truncate = False):
             await page.wait_for_selector('#maceoArbol > div.tafelTree_root > div:nth-child(3) img.tafelTreeopenable')
             await page.click('#maceoArbol > div.tafelTree_root > div:nth-child(3) img.tafelTreeopenable')
             await page.wait_for_selector('#tafelTree_maceoArbol_id_17')
-            await page.click('#tafelTree_maceoArbol_id_17')
+            element_text = await page.inner_text('#tafelTree_maceoArbol_id_17')
+            if "valencia" in element_text.lower():
+                await page.click('#tafelTree_maceoArbol_id_17')
+            else:
+                await page.click('#tafelTree_maceoArbol_id_16')
+
 
             # Esperar y hacer clic en el botón de Valencia
             await page.wait_for_selector('#viewns_Z7_AVEQAI930OBRD02JPMTPG21004_\\:form1\\:botonAnadirMostrarPopUpArbolEO')
@@ -149,6 +155,9 @@ async def poblar_db(truncate = False):
                 filas = await tabla.query_selector_all("tbody tr")
 
                # Parsear las filas y celdas
+                # Inicializar una bandera para verificar si todas las filas están actualizadas
+                all_updated = True
+
                 for fila in filas:
                     # Extrae los códigos de cada expediente
                     celdas = await fila.query_selector_all("td")
@@ -167,8 +176,24 @@ async def poblar_db(truncate = False):
                         # Insertar solo si no existe
                         await asyncio.to_thread(db.insertDb, "Codigos", (expediente, href, fechas))
                         scrapper_logger.info(f"Expediente insertado: {expediente}, Href: {href}")
+                        all_updated = False  # Al menos una fila no estaba actualizada
                     else:
-                        scrapper_logger.info(f"Base de datos actualizada: {expediente}")
+                        # Verificar si el valor de la tercera columna (fechas) es diferente
+                        if existing_record[2] != fechas:
+                            # Actualizar el registro si el valor es diferente
+                            await asyncio.to_thread(db.updateObject, "Codigos", "COD", expediente, {"DIR_URL": href, "Fechas": fechas})
+                            await asyncio.to_thread(db.deleteObject, "Licitaciones", "COD", expediente)
+                            await asyncio.to_thread(db.deleteObject, "Documentos", "COD", expediente)
+                            await asyncio.to_thread(db.deleteObject, "AnexoI", "COD", expediente)
+                            await asyncio.to_thread(db.deleteObject, "AnexoI_Fuentes", "COD", expediente)
+                            scrapper_logger.info(f"Expediente actualizado: {expediente}, Href: {href}, Fechas: {fechas}")
+                            all_updated = False  # Al menos una fila no estaba actualizada
+                        else:
+                            scrapper_logger.info(f"Expediente ya actualizado: {expediente}")
+
+                # Si todas las filas están actualizadas, establece cond como False
+                if all_updated:
+                    cond = False
 
                 # Va a la siguiente página
                 next_page_button = await page.query_selector(strings["SiguientePag"])
@@ -282,7 +307,7 @@ async def process_subgroup(start, end, db, strings):
                     raise Exception(f"No se encontró la casilla de Pliego en el url: {url}")
 
             except Exception as e:
-                scrapper_loggeoor(e)
+                scrapper_logger.error(e)
 
             finally:
                 try:
@@ -359,25 +384,31 @@ async def scratchUrls(truncate=False):
             i = 0
             aux_contents = [""] * 19
 
-            for word in strings["Atributos"]:
-                element_text = await page.inner_text(f"#{word}")
-                element_text = element_text.replace('\n', ' ').replace('\r', ' ').replace(u'\xa0', u' ').strip()
-                if not element_text:
-                    element_text = ""
-                aux_contents[i] = element_text
-                i += 1
+            try:
+                aux_contents = [""] * 19
 
-            for word in strings["Informacion"]:
-                try:
-                    element_text = await page.inner_text(f"#{word}", timeout=1000)
-                except:
-                    element_text = ""
+                for word in strings["Atributos"]:
+                    element_text = await page.inner_text(f"#{word}")
+                    element_text = element_text.replace('\n', ' ').replace('\r', ' ').replace(u'\xa0', u' ').strip()
+                    if not element_text:
+                        element_text = ""
+                    aux_contents[i] = element_text
+                    i += 1
 
-                element_text = element_text.replace('\n', ' ').replace('\r', ' ').replace(u'\xa0', u' ').strip()
-                if not element_text:
-                    element_text = ""
-                aux_contents[i] = element_text
-                i += 1
+                for word in strings["Informacion"]:
+                    try:
+                        element_text = await page.inner_text(f"#{word}", timeout=1000)
+                    except Exception as e:
+                        scrapper_logger.warning(f"Error al obtener el texto del elemento {word}: {e}")
+                        element_text = ""
+
+                    element_text = element_text.replace('\n', ' ').replace('\r', ' ').replace(u'\xa0', u' ').strip()
+                    if not element_text:
+                        element_text = ""
+                    aux_contents[i] = element_text
+                    i += 1
+            except Exception as e:
+                scrapper_logger.error(f"Error procesando atributos e información: {e}")
 
             aux_contents = [cod.strip()] + aux_contents
             aux_contents.extend(fechas)
@@ -593,9 +624,13 @@ def update():
     Actualiza la base de datos con los últimos datos de la web.
     """
     scrapper_logger.info("Iniciando actualización de la base de datos.")
-    # asyncio.run(poblar_db())
-    # asyncio.run(scratchUrls())
+    asyncio.run(poblar_db())
+    asyncio.run(scratchUrls())
     asyncio.run(scratchAnexo())
+    db = DBManager()
+    db.openConnection()
+    db.insertNewUpdate()
+    db.closeConnection()
     scrapper_logger.info("Actualización de la base de datos finalizada.")
     
 def filter(text):

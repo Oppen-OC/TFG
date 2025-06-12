@@ -8,7 +8,8 @@
 <!-- Cuadro con el número de licitaciones y el total de euros -->
 <div class="alert alert-info d-flex justify-content-between align-items-center" role="alert">
   <span>Número de licitaciones cargadas: <strong id="numLicitaciones">0</strong></span>
-  <span>Total en euros: <strong id="totalLicitaciones">0</strong> €</span>
+  <span>Total en euros: <strong id="totalLicitaciones">0</strong></span>
+  <span>Última actualización: <strong id="lastUpdate">{{ last_update }}</strong></span>
 </div>
 
 <!-- Buscador en la parte superior derecha -->
@@ -261,350 +262,709 @@
         </th>        <th>
           <div class="dropdown">
             <button class="btn btn-sm btn-secondary dropdown-toggle" type="button" id="dropdownObjetoIDOrgano" data-bs-toggle="dropdown" aria-expanded="false">
-              🔍
-            </button>
-            <div class="dropdown-menu p-3" aria-labelledby="dropdownObjetoIDOrgano">
-              <input type="text" class="form-control filter-input" placeholder="Buscar..." data-column="4" id="filterIDOrgano">
-              <button class="btn btn-primary btn-sm mt-2" onclick="applyFilter(4)">Filtrar</button>
-              <button class="btn btn-secondary btn-sm mt-2" onclick="clearFilter(4)">Limpiar</button>
-            </div>
-          </div>
-          Objeto del Contrato
-        </th>        <th>
-          <div class="dropdown">
-            <button class="btn btn-sm btn-secondary dropdown-toggle" type="button" id="dropdownEstado" data-bs-toggle="dropdown" aria-expanded="false">
-              🔍
-            </button>
-            <div class="dropdown-menu p-3" aria-labelledby="dropdownObjetoEstado">
-              <input type="text" class="form-control filter-input" placeholder="Buscar..." data-column="5" id="filterObjetoEstado">
-              <button class="btn btn-primary btn-sm mt-2" onclick="applyFilter(5)">Filtrar</button>
-              <button class="btn btn-secondary btn-sm mt-2" onclick="clearFilter(5)">Limpiar</button>
-            </div>
-          </div>
-          Objeto del Contrato
-        </th>        <th>
-          <div class="dropdown">
-            <button class="btn btn-sm btn-secondary dropdown-toggle" type="button" id="dropdownObjetoContrato" data-bs-toggle="dropdown" aria-expanded="false">
-              🔍
-            </button>
-            <div class="dropdown-menu p-3" aria-labelledby="dropdownObjetoContrato">
-              <input type="text" class="form-control filter-input" placeholder="Buscar..." data-column="6" id="filterObjetoContrato">
-              <button class="btn btn-primary btn-sm mt-2" onclick="applyFilter(6)">Filtrar</button>
-              <button class="btn btn-secondary btn-sm mt-2" onclick="clearFilter(6)">Limpiar</button>
-            </div>
-          </div>
-          Objeto del Contrato
-        </th>  
-        <th>
-          <div class="dropdown">
-            <button class="btn btn-sm btn-secondary dropdown-toggle" type="button" id="dropdownFinanciacionUE" data-bs-toggle="dropdown" aria-expanded="false">
-              🔍
-            </button>
-            <div class="dropdown-menu p-3" aria-labelledby="dropdownFinanciacionUE">
-              <input type="text" class="form-control filter-input" placeholder="Buscar..." data-column="7" id="filterFinanciacionUE">
-              <button class="btn btn-primary btn-sm mt-2" onclick="applyFilter(7)">Filtrar</button>
-              <button class="btn btn-secondary btn-sm mt-2" onclick="clearFilter(7)">Limpiar</button>
-            </div>
-          </div>
-          Financiación UE
-        </th>
-        <th>
-          <div class="dropdown">
-            <button class="btn btn-sm btn-secondary dropdown-toggle" type="button" id="dropdownPresupuestoBase" data-bs-toggle="dropdown" aria-expanded="false">
-              🔍
-            </button>
-            <div class="dropdown-menu p-3" aria-labelledby="dropdownPresupuestoBase">
-              <input type="text" class="form-control filter-input" placeholder="Buscar..." data-column="8" id="filterPresupuestoBase">
-              <button class="btn btn-primary btn-sm mt-2" onclick="applyFilter(8)">Filtrar</button>
-              <button class="btn btn-secondary btn-sm mt-2" onclick="clearFilter(8)">Limpiar</button>
-            </div>
-          </div>
-          Presupuesto base
-        </th>
-        <th>
-          <div class="dropdown">
-            <button class="btn btn-sm btn-secondary dropdown-toggle" type="button" id="dropdownValorEstimado" data-bs-toggle="dropdown" aria-expanded="false">
-              🔍
-            </button>
-            <div class="dropdown-menu p-3" aria-labelledby="dropdownValorEstimado">
-              <input type="text" class="form-control filter-input" placeholder="Buscar..." data-column="9" id="filterValorEstimado">
-              <button class="btn btn-primary btn-sm mt-2" onclick="applyFilter(9)">Filtrar</button>
-              <button class="btn btn-secondary btn-sm mt-2" onclick="clearFilter(9)">Limpiar</button>
-            </div>
-          </div>
-          Valor estimado
-        </th>
-        <th>
-          <div class="dropdown">
-            <button class="btn btn-sm btn-secondary dropdown-toggle" type="button" id="dropdownTipoContrato" data-bs-toggle="dropdown" aria-expanded="false">
-              🔍
-            </button>
-            <div class="dropdown-menu p-3" aria-labelledby="dropdownTipoContrato">
-              <input type="text" class="form-control filter-input" placeholder="Buscar..." data-column="10" id="filterTipoContrato">
-              <button class="btn btn-primary btn-sm mt-2" onclick="applyFilter(10)">Filtrar</button>
-              <button class="btn btn-secondary btn-sm mt-2" onclick="clearFilter(10)">Limpiar</button>
-            </div>
-          </div>
-          Tipo de Contrato
-        </th>
-        <th>
-          <div class="dropdown">
-            <button class="btn btn-sm btn-secondary dropdown-toggle" type="button" id="dropdownCodigoCPV" data-bs-toggle="dropdown" aria-expanded="false">
-              🔍
-            </button>
-            <div class="dropdown-menu p-3" aria-labelledby="dropdownCodigoCPV">
-              <input type="text" class="form-control filter-input" placeholder="Buscar..." data-column="11" id="filterCodigoCPV">
-              <button class="btn btn-primary btn-sm mt-2" onclick="applyFilter(11)">Filtrar</button>
-              <button class="btn btn-secondary btn-sm mt-2" onclick="clearFilter(11)">Limpiar</button>
-            </div>
-          </div>
-          Código CPV
-        </th>
-        <th>
-          <div class="dropdown">
-            <button class="btn btn-sm btn-secondary dropdown-toggle" type="button" id="dropdownLugarEjecucion" data-bs-toggle="dropdown" aria-expanded="false">
-              🔍
-            </button>
-            <div class="dropdown-menu p-3" aria-labelledby="dropdownLugarEjecucion">
-              <input type="text" class="form-control filter-input" placeholder="Buscar..." data-column="12" id="filterLugarEjecucion">
-              <button class="btn btn-primary btn-sm mt-2" onclick="applyFilter(12)">Filtrar</button>
-              <button class="btn btn-secondary btn-sm mt-2" onclick="clearFilter(12)">Limpiar</button>
-            </div>
-          </div>
-          Lugar de ejeución
-        </th>
-        <th>
-          <div class="dropdown">
-            <button class="btn btn-sm btn-secondary dropdown-toggle" type="button" id="dropdownSistemaContratacion" data-bs-toggle="dropdown" aria-expanded="false">
-              🔍
-            </button>
-            <div class="dropdown-menu p-3" aria-labelledby="dropdownSistemaContratacion">
-              <input type="text" class="form-control filter-input" placeholder="Buscar..." data-column="13" id="filterSistemaContratacion">
-              <button class="btn btn-primary btn-sm mt-2" onclick="applyFilter(13)">Filtrar</button>
-              <button class="btn btn-secondary btn-sm mt-2" onclick="clearFilter(13)">Limpiar</button>
-            </div>
-          </div>
-          Sistema de Contratación
-        </th>
-        <th>
-          <div class="dropdown">
-            <button class="btn btn-sm btn-secondary dropdown-toggle" type="button" id="dropdownProcedimientoContratacion" data-bs-toggle="dropdown" aria-expanded="false">
-              🔍
-            </button>
-            <div class="dropdown-menu p-3" aria-labelledby="dropdownProcedimientoContratacion">
-              <input type="text" class="form-control filter-input" placeholder="Buscar..." data-column="14" id="filterProcedimientoContratacion">
-              <button class="btn btn-primary btn-sm mt-2" onclick="applyFilter(14)">Filtrar</button>
-              <button class="btn btn-secondary btn-sm mt-2" onclick="clearFilter(14)">Limpiar</button>
-            </div>
-          </div>
-          Procedimiento de Contratación
-        </th>
-        <th>
-          <div class="dropdown">
-            <button class="btn btn-sm btn-secondary dropdown-toggle" type="button" id="dropdownTipoTramitacion" data-bs-toggle="dropdown" aria-expanded="false">
-              🔍
-            </button>
-            <div class="dropdown-menu p-3" aria-labelledby="dropdownTipoTramitacion">
-              <input type="text" class="form-control filter-input" placeholder="Buscar..." data-column="15" id="filterTipoTramitacion">
-              <button class="btn btn-primary btn-sm mt-2" onclick="applyFilter(15)">Filtrar</button>
-              <button class="btn btn-secondary btn-sm mt-2" onclick="clearFilter(15)">Limpiar</button>
-            </div>
-          </div>
-          Tipo de Tramitación
-        </th>
-        <th>
-          <div class="dropdown">
-            <button class="btn btn-sm btn-secondary dropdown-toggle" type="button" id="dropdownMetodoPresentacionOferta" data-bs-toggle="dropdown" aria-expanded="false">
-              🔍
-            </button>
-            <div class="dropdown-menu p-3" aria-labelledby="dropdownMetodoPresentacionOferta">
-              <input type="text" class="form-control filter-input" placeholder="Buscar..." data-column="16" id="filterMetodoPresentacionOferta">
-              <button class="btn btn-primary btn-sm mt-2" onclick="applyFilter(16)">Filtrar</button>
-              <button class="btn btn-secondary btn-sm mt-2" onclick="clearFilter(16)">Limpiar</button>
-            </div>
-          </div>
-          Método Presentación Oferta
-        </th>
-        <th>
-          <div class="dropdown">
-            <button class="btn btn-sm btn-secondary dropdown-toggle" type="button" id="dropdownResultado" data-bs-toggle="dropdown" aria-expanded="false">
-              🔍
-            </button>
-            <div class="dropdown-menu p-3" aria-labelledby="dropdownResultado">
-              <input type="text" class="form-control filter-input" placeholder="Buscar..." data-column="17" id="filterResultado">
-              <button class="btn btn-primary btn-sm mt-2" onclick="applyFilter(17)">Filtrar</button>
-              <button class="btn btn-secondary btn-sm mt-2" onclick="clearFilter(17)">Limpiar</button>
-            </div>
-          </div>
-          Resultado
-        </th>
-        <th>
-          <div class="dropdown">
-            <button class="btn btn-sm btn-secondary dropdown-toggle" type="button" id="dropdownAdjudicatario" data-bs-toggle="dropdown" aria-expanded="false">
-              🔍
-            </button>
-            <div class="dropdown-menu p-3" aria-labelledby="dropdownAdjudicatario">
-              <input type="text" class="form-control filter-input" placeholder="Buscar..." data-column="18" id="filterAdjudicatario">
-              <button class="btn btn-primary btn-sm mt-2" onclick="applyFilter(18)">Filtrar</button>
-              <button class="btn btn-secondary btn-sm mt-2" onclick="clearFilter(18)">Limpiar</button>
-            </div>
-          </div>
-          Adjudicatario
-        </th>
-        <th>
-          <div class="dropdown">
-            <button class="btn btn-sm btn-secondary dropdown-toggle" type="button" id="dropdownNumLicitadoresPresentados" data-bs-toggle="dropdown" aria-expanded="false">
-              🔍
-            </button>
-            <div class="dropdown-menu p-3" aria-labelledby="dropdownNumLicitadoresPresentados">
-              <input type="text" class="form-control filter-input" placeholder="Buscar..." data-column="19" id="filterNumLicitadoresPresentados">
-              <button class="btn btn-primary btn-sm mt-2" onclick="applyFilter(19)">Filtrar</button>
-              <button class="btn btn-secondary btn-sm mt-2" onclick="clearFilter(19)">Limpiar</button>
-            </div>
-          </div>
-          Nº Licitadores Presentados
-        </th>
-        <th>
-          <div class="dropdown">
-            <button class="btn btn-sm btn-secondary dropdown-toggle" type="button" id="dropdownImporteAdjudicacion" data-bs-toggle="dropdown" aria-expanded="false">
-              🔍
-            </button>
-            <div class="dropdown-menu p-3" aria-labelledby="dropdownImporteAdjudicacion">
-              <input type="text" class="form-control filter-input" placeholder="Buscar..." data-column="20" id="filterImporteAdjudicacion">
-              <button class="btn btn-primary btn-sm mt-2" onclick="applyFilter(20)">Filtrar</button>
-              <button class="btn btn-secondary btn-sm mt-2" onclick="clearFilter(20)">Limpiar</button>
-            </div>
-          </div>
-          Importe de Adjudicación
-        </th>
-        <th>
-          <div class="column-header">
-            <span>Fecha Adjudicación</span>
-            <div class="dropdown">
-              <button class="btn btn-sm btn-secondary dropdown-toggle" type="button" id="dropdownFechaAdjudicacion" data-bs-toggle="dropdown" aria-expanded="false">
                 🔍
               </button>
-              <div class="dropdown-menu p-3" aria-labelledby="dropdownFechaAdjudicacion">
-                <label for="fechaInicioAdjudicacion" class="form-label">Fecha Inicial</label>
-                <input type="date" class="form-control" id="fechaInicioAdjudicacion">
-                <label for="fechaFinAdjudicacion" class="form-label mt-2">Fecha Final</label>
-                <input type="date" class="form-control" id="fechaFinAdjudicacion">
-                <button class="btn btn-primary btn-sm mt-2" onclick="applyDateFilter(21)">Filtrar</button>
-                <button class="btn btn-secondary btn-sm mt-2" onclick="clearDateFilter(21)">Limpiar</button>
+              <div class="dropdown-menu p-3" aria-labelledby="dropdownObjetoIDOrgano">
+                <input type="text" class="form-control filter-input" placeholder="Buscar..." data-column="4" id="filterIDOrgano">
+                <button class="btn btn-primary btn-sm mt-2" onclick="applyFilter(4)">Filtrar</button>
+                <button class="btn btn-secondary btn-sm mt-2" onclick="clearFilter(4)">Limpiar</button>
               </div>
             </div>
-          </div>
-        </th>
-       <th>
-          <div class="column-header">
-            <span>Fecha Formalización</span>
+            Objeto del Contrato
+          </th>        <th>
             <div class="dropdown">
-              <button class="btn btn-sm btn-secondary dropdown-toggle" type="button" id="dropdownFechaFormalizacion" data-bs-toggle="dropdown" aria-expanded="false">
+              <button class="btn btn-sm btn-secondary dropdown-toggle" type="button" id="dropdownEstado" data-bs-toggle="dropdown" aria-expanded="false">
                 🔍
               </button>
-              <div class="dropdown-menu p-3" aria-labelledby="dropdownFechaFormalizacion">
-                <label for="fechaInicioFormalizacion" class="form-label">Fecha Inicial</label>
-                <input type="date" class="form-control" id="fechaInicioFormalizacion">
-                <label for="fechaFinFormalizacion" class="form-label mt-2">Fecha Final</label>
-                <input type="date" class="form-control" id="fechaFinFormalizacion">
-                <button class="btn btn-primary btn-sm mt-2" onclick="applyDateFilter(22)">Filtrar</button>
-                <button class="btn btn-secondary btn-sm mt-2" onclick="clearDateFilter(22)">Limpiar</button>
+              <div class="dropdown-menu p-3" aria-labelledby="dropdownObjetoEstado">
+                <input type="text" class="form-control filter-input" placeholder="Buscar..." data-column="5" id="filterObjetoEstado">
+                <button class="btn btn-primary btn-sm mt-2" onclick="applyFilter(5)">Filtrar</button>
+                <button class="btn btn-secondary btn-sm mt-2" onclick="clearFilter(5)">Limpiar</button>
               </div>
             </div>
-          </div>
-        </th>
+            Objeto del Contrato
+          </th>        <th>
+            <div class="dropdown">
+              <button class="btn btn-sm btn-secondary dropdown-toggle" type="button" id="dropdownObjetoContrato" data-bs-toggle="dropdown" aria-expanded="false">
+                🔍
+              </button>
+              <div class="dropdown-menu p-3" aria-labelledby="dropdownObjetoContrato">
+                <input type="text" class="form-control filter-input" placeholder="Buscar..." data-column="6" id="filterObjetoContrato">
+                <button class="btn btn-primary btn-sm mt-2" onclick="applyFilter(6)">Filtrar</button>
+                <button class="btn btn-secondary btn-sm mt-2" onclick="clearFilter(6)">Limpiar</button>
+              </div>
+            </div>
+            Objeto del Contrato
+          </th>  
           <th>
-            <div class="column-header">
-              <span>Fecha Desistimiento</span>
-              <div class="dropdown">
-                <button class="btn btn-sm btn-secondary dropdown-toggle" type="button" id="dropdownFechaDesistimiento" data-bs-toggle="dropdown" aria-expanded="false">
-                  🔍
-                </button>
-                <div class="dropdown-menu p-3" aria-labelledby="dropdownFechaDesistimiento">
-                  <label for="fechaInicioDesistimiento" class="form-label">Fecha Inicial</label>
-                  <input type="date" class="form-control" id="fechaInicioDesistimiento">
-                  <label for="fechaFinDesistimiento" class="form-label mt-2">Fecha Final</label>
-                  <input type="date" class="form-control" id="fechaFinDesistimiento">
-                  <button class="btn btn-primary btn-sm mt-2" onclick="applyDateFilter(23)">Filtrar</button>
-                  <button class="btn btn-secondary btn-sm mt-2" onclick="clearDateFilter(23)">Limpiar</button>
-                </div>
+            <div class="dropdown">
+              <button class="btn btn-sm btn-secondary dropdown-toggle" type="button" id="dropdownFinanciacionUE" data-bs-toggle="dropdown" aria-expanded="false">
+                🔍
+              </button>
+              <div class="dropdown-menu p-3" aria-labelledby="dropdownFinanciacionUE">
+                <input type="text" class="form-control filter-input" placeholder="Buscar..." data-column="7" id="filterFinanciacionUE">
+                <button class="btn btn-primary btn-sm mt-2" onclick="applyFilter(7)">Filtrar</button>
+                <button class="btn btn-secondary btn-sm mt-2" onclick="clearFilter(7)">Limpiar</button>
               </div>
             </div>
+            Financiación UE
+          </th>
+          <th>
+            <div class="dropdown">
+              <button class="btn btn-sm btn-secondary dropdown-toggle" type="button" id="dropdownPresupuestoBase" data-bs-toggle="dropdown" aria-expanded="false">
+                🔍
+              </button>
+              <div class="dropdown-menu p-3" aria-labelledby="dropdownPresupuestoBase">
+                <input type="text" class="form-control filter-input" placeholder="Buscar..." data-column="8" id="filterPresupuestoBase">
+                <button class="btn btn-primary btn-sm mt-2" onclick="applyFilter(8)">Filtrar</button>
+                <button class="btn btn-secondary btn-sm mt-2" onclick="clearFilter(8)">Limpiar</button>
+              </div>
+            </div>
+            Presupuesto base
+          </th>
+          <th>
+            <div class="dropdown">
+              <button class="btn btn-sm btn-secondary dropdown-toggle" type="button" id="dropdownValorEstimado" data-bs-toggle="dropdown" aria-expanded="false">
+                🔍
+              </button>
+              <div class="dropdown-menu p-3" aria-labelledby="dropdownValorEstimado">
+                <input type="text" class="form-control filter-input" placeholder="Buscar..." data-column="9" id="filterValorEstimado">
+                <button class="btn btn-primary btn-sm mt-2" onclick="applyFilter(9)">Filtrar</button>
+                <button class="btn btn-secondary btn-sm mt-2" onclick="clearFilter(9)">Limpiar</button>
+              </div>
+            </div>
+            Valor estimado
+          </th>
+          <th>
+            <div class="dropdown">
+              <button class="btn btn-sm btn-secondary dropdown-toggle" type="button" id="dropdownTipoContrato" data-bs-toggle="dropdown" aria-expanded="false">
+                🔍
+              </button>
+              <div class="dropdown-menu p-3" aria-labelledby="dropdownTipoContrato">
+                <input type="text" class="form-control filter-input" placeholder="Buscar..." data-column="10" id="filterTipoContrato">
+                <button class="btn btn-primary btn-sm mt-2" onclick="applyFilter(10)">Filtrar</button>
+                <button class="btn btn-secondary btn-sm mt-2" onclick="clearFilter(10)">Limpiar</button>
+              </div>
+            </div>
+            Tipo de Contrato
+          </th>
+          <th>
+            <div class="dropdown">
+              <button class="btn btn-sm btn-secondary dropdown-toggle" type="button" id="dropdownCodigoCPV" data-bs-toggle="dropdown" aria-expanded="false">
+                🔍
+              </button>
+              <div class="dropdown-menu p-3" aria-labelledby="dropdownCodigoCPV">
+                <input type="text" class="form-control filter-input" placeholder="Buscar..." data-column="11" id="filterCodigoCPV">
+                <button class="btn btn-primary btn-sm mt-2" onclick="applyFilter(11)">Filtrar</button>
+                <button class="btn btn-secondary btn-sm mt-2" onclick="clearFilter(11)">Limpiar</button>
+              </div>
+            </div>
+            Código CPV
+          </th>
+          <th>
+            <div class="dropdown">
+              <button class="btn btn-sm btn-secondary dropdown-toggle" type="button" id="dropdownLugarEjecucion" data-bs-toggle="dropdown" aria-expanded="false">
+                🔍
+              </button>
+              <div class="dropdown-menu p-3" aria-labelledby="dropdownLugarEjecucion">
+                <input type="text" class="form-control filter-input" placeholder="Buscar..." data-column="12" id="filterLugarEjecucion">
+                <button class="btn btn-primary btn-sm mt-2" onclick="applyFilter(12)">Filtrar</button>
+                <button class="btn btn-secondary btn-sm mt-2" onclick="clearFilter(12)">Limpiar</button>
+              </div>
+            </div>
+            Lugar de ejeución
+          </th>
+          <th>
+            <div class="dropdown">
+              <button class="btn btn-sm btn-secondary dropdown-toggle" type="button" id="dropdownSistemaContratacion" data-bs-toggle="dropdown" aria-expanded="false">
+                🔍
+              </button>
+              <div class="dropdown-menu p-3" aria-labelledby="dropdownSistemaContratacion">
+                <input type="text" class="form-control filter-input" placeholder="Buscar..." data-column="13" id="filterSistemaContratacion">
+                <button class="btn btn-primary btn-sm mt-2" onclick="applyFilter(13)">Filtrar</button>
+                <button class="btn btn-secondary btn-sm mt-2" onclick="clearFilter(13)">Limpiar</button>
+              </div>
+            </div>
+            Sistema de Contratación
+          </th>
+          <th>
+            <div class="dropdown">
+              <button class="btn btn-sm btn-secondary dropdown-toggle" type="button" id="dropdownProcedimientoContratacion" data-bs-toggle="dropdown" aria-expanded="false">
+                🔍
+              </button>
+              <div class="dropdown-menu p-3" aria-labelledby="dropdownProcedimientoContratacion">
+                <input type="text" class="form-control filter-input" placeholder="Buscar..." data-column="14" id="filterProcedimientoContratacion">
+                <button class="btn btn-primary btn-sm mt-2" onclick="applyFilter(14)">Filtrar</button>
+                <button class="btn btn-secondary btn-sm mt-2" onclick="clearFilter(14)">Limpiar</button>
+              </div>
+            </div>
+            Procedimiento de Contratación
+          </th>
+          <th>
+            <div class="dropdown">
+              <button class="btn btn-sm btn-secondary dropdown-toggle" type="button" id="dropdownTipoTramitacion" data-bs-toggle="dropdown" aria-expanded="false">
+                🔍
+              </button>
+              <div class="dropdown-menu p-3" aria-labelledby="dropdownTipoTramitacion">
+                <input type="text" class="form-control filter-input" placeholder="Buscar..." data-column="15" id="filterTipoTramitacion">
+                <button class="btn btn-primary btn-sm mt-2" onclick="applyFilter(15)">Filtrar</button>
+                <button class="btn btn-secondary btn-sm mt-2" onclick="clearFilter(15)">Limpiar</button>
+              </div>
+            </div>
+            Tipo de Tramitación
+          </th>
+          <th>
+            <div class="dropdown">
+              <button class="btn btn-sm btn-secondary dropdown-toggle" type="button" id="dropdownMetodoPresentacionOferta" data-bs-toggle="dropdown" aria-expanded="false">
+                🔍
+              </button>
+              <div class="dropdown-menu p-3" aria-labelledby="dropdownMetodoPresentacionOferta">
+                <input type="text" class="form-control filter-input" placeholder="Buscar..." data-column="16" id="filterMetodoPresentacionOferta">
+                <button class="btn btn-primary btn-sm mt-2" onclick="applyFilter(16)">Filtrar</button>
+                <button class="btn btn-secondary btn-sm mt-2" onclick="clearFilter(16)">Limpiar</button>
+              </div>
+            </div>
+            Método Presentación Oferta
+          </th>
+          <th>
+            <div class="dropdown">
+              <button class="btn btn-sm btn-secondary dropdown-toggle" type="button" id="dropdownResultado" data-bs-toggle="dropdown" aria-expanded="false">
+                🔍
+              </button>
+              <div class="dropdown-menu p-3" aria-labelledby="dropdownResultado">
+                <input type="text" class="form-control filter-input" placeholder="Buscar..." data-column="17" id="filterResultado">
+                <button class="btn btn-primary btn-sm mt-2" onclick="applyFilter(17)">Filtrar</button>
+                <button class="btn btn-secondary btn-sm mt-2" onclick="clearFilter(17)">Limpiar</button>
+              </div>
+            </div>
+            Resultado
+          </th>
+          <th>
+            <div class="dropdown">
+              <button class="btn btn-sm btn-secondary dropdown-toggle" type="button" id="dropdownAdjudicatario" data-bs-toggle="dropdown" aria-expanded="false">
+                🔍
+              </button>
+              <div class="dropdown-menu p-3" aria-labelledby="dropdownAdjudicatario">
+                <input type="text" class="form-control filter-input" placeholder="Buscar..." data-column="18" id="filterAdjudicatario">
+                <button class="btn btn-primary btn-sm mt-2" onclick="applyFilter(18)">Filtrar</button>
+                <button class="btn btn-secondary btn-sm mt-2" onclick="clearFilter(18)">Limpiar</button>
+              </div>
+            </div>
+            Adjudicatario
+          </th>
+          <th>
+            <div class="dropdown">
+              <button class="btn btn-sm btn-secondary dropdown-toggle" type="button" id="dropdownNumLicitadoresPresentados" data-bs-toggle="dropdown" aria-expanded="false">
+                🔍
+              </button>
+              <div class="dropdown-menu p-3" aria-labelledby="dropdownNumLicitadoresPresentados">
+                <input type="text" class="form-control filter-input" placeholder="Buscar..." data-column="19" id="filterNumLicitadoresPresentados">
+                <button class="btn btn-primary btn-sm mt-2" onclick="applyFilter(19)">Filtrar</button>
+                <button class="btn btn-secondary btn-sm mt-2" onclick="clearFilter(19)">Limpiar</button>
+              </div>
+            </div>
+            Nº Licitadores Presentados
+          </th>
+          <th>
+            <div class="dropdown">
+              <button class="btn btn-sm btn-secondary dropdown-toggle" type="button" id="dropdownImporteAdjudicacion" data-bs-toggle="dropdown" aria-expanded="false">
+                🔍
+              </button>
+              <div class="dropdown-menu p-3" aria-labelledby="dropdownImporteAdjudicacion">
+                <input type="text" class="form-control filter-input" placeholder="Buscar..." data-column="20" id="filterImporteAdjudicacion">
+                <button class="btn btn-primary btn-sm mt-2" onclick="applyFilter(20)">Filtrar</button>
+                <button class="btn btn-secondary btn-sm mt-2" onclick="clearFilter(20)">Limpiar</button>
+              </div>
+            </div>
+            Importe de Adjudicación
           </th>
           <th>
             <div class="column-header">
-              <span>Fecha Presentación Oferta</span>
               <div class="dropdown">
-                <button class="btn btn-sm btn-secondary dropdown-toggle" type="button" id="dropdownFechaPresentacionOferta" data-bs-toggle="dropdown" aria-expanded="false">
+                <button class="btn btn-sm btn-secondary dropdown-toggle" type="button" id="dropdownFechaAdjudicacion" data-bs-toggle="dropdown" aria-expanded="false">
                   🔍
                 </button>
-                <div class="dropdown-menu p-3" aria-labelledby="dropdownFechaPresentacionOferta">
-                  <label for="fechaInicioPresentacionOferta" class="form-label">Fecha Inicial</label>
-                  <input type="date" class="form-control" id="fechaInicioPresentacionOferta">
-                  <label for="fechaFinPresentacionOferta" class="form-label mt-2">Fecha Final</label>
-                  <input type="date" class="form-control" id="fechaFinPresentacionOferta">
-                  <button class="btn btn-primary btn-sm mt-2" onclick="applyDateFilter(24)">Filtrar</button>
-                  <button class="btn btn-secondary btn-sm mt-2" onclick="clearDateFilter(24)">Limpiar</button>
+                <div class="dropdown-menu p-3" aria-labelledby="dropdownFechaAdjudicacion">
+                  <label for="fechaInicioAdjudicacion" class="form-label">Fecha Inicial</label>
+                  <input type="date" class="form-control" id="fechaInicioAdjudicacion">
+                  <label for="fechaFinAdjudicacion" class="form-label mt-2">Fecha Final</label>
+                  <input type="date" class="form-control" id="fechaFinAdjudicacion">
+                  <button class="btn btn-primary btn-sm mt-2" onclick="applyDateFilter(21)">Filtrar</button>
+                  <button class="btn btn-secondary btn-sm mt-2" onclick="clearDateFilter(21)">Limpiar</button>
                 </div>
               </div>
+              Fecha Adjudicación
             </div>
           </th>
-          <th>
+         <th>
             <div class="column-header">
-              <span>Fecha Presentación Solicitud</span>
               <div class="dropdown">
-                <button class="btn btn-sm btn-secondary dropdown-toggle" type="button" id="dropdownFechaPresentacionSolicitud" data-bs-toggle="dropdown" aria-expanded="false">
+                <button class="btn btn-sm btn-secondary dropdown-toggle" type="button" id="dropdownFechaFormalizacion" data-bs-toggle="dropdown" aria-expanded="false">
                   🔍
                 </button>
-                <div class="dropdown-menu p-3" aria-labelledby="dropdownFechaPresentacionSolicitud">
-                  <label for="fechaInicioPresentacionSolicitud" class="form-label">Fecha Inicial</label>
-                  <input type="date" class="form-control" id="fechaInicioPresentacionSolicitud">
-                  <label for="fechaFinPresentacionSolicitud" class="form-label mt-2">Fecha Final</label>
-                  <input type="date" class="form-control" id="fechaFinPresentacionSolicitud">
-                  <button class="btn btn-primary btn-sm mt-2" onclick="applyDateFilter(25)">Filtrar</button>
-                  <button class="btn btn-secondary btn-sm mt-2" onclick="clearDateFilter(25)">Limpiar</button>
+                <div class="dropdown-menu p-3" aria-labelledby="dropdownFechaFormalizacion">
+                  <label for="fechaInicioFormalizacion" class="form-label">Fecha Inicial</label>
+                  <input type="date" class="form-control" id="fechaInicioFormalizacion">
+                  <label for="fechaFinFormalizacion" class="form-label mt-2">Fecha Final</label>
+                  <input type="date" class="form-control" id="fechaFinFormalizacion">
+                  <button class="btn btn-primary btn-sm mt-2" onclick="applyDateFilter(22)">Filtrar</button>
+                  <button class="btn btn-secondary btn-sm mt-2" onclick="clearDateFilter(22)">Limpiar</button>
                 </div>
               </div>
+              Fecha Formalización
             </div>
           </th>
-      </tr>
-    </thead>
-    <tbody>
-      {% for licitacion in licitaciones %}
-      <tr>
-        <td>
-          <a href="{% url 'app:detalles_licitacion' licitacion.COD|urlencode %}" class="btn btn-primary btn-sm">Detalles</a>
-        </td>
-        <td>{{ licitacion.COD }}</td>
-        <td>{{ licitacion.ID_Publicacion_TED }}</td>
-        <td>{{ licitacion.Organo_Contratacion }}</td>
-        <td>{{ licitacion.ID_Organo_Contratacion }}</td>        
-        <td>{{ licitacion.Estado_Licitacion }}</td>
-        <td>{{ licitacion.Objeto_Contrato }}</td>
-        <td>{{ licitacion.Financiacion_UE }}</td>
-        <td>{{ licitacion.Presupuesto_Base }}</td>
-        <td>{{ licitacion.Valor_Estimado_Contrato }}</td>
-        <td>{{ licitacion.Tipo_Contrato }}</td>
-        <td>{{ licitacion.Codigo_CPV }}</td>
-        <td>{{ licitacion.Lugar_Ejecucion }}</td>
-        <td>{{ licitacion.Sistema_Contratacion }}</td>
-        <td>{{ licitacion.Procedimiento_Contratacion }}</td>
-        <td>{{ licitacion.Tipo_Tramitacion }}</td>
-        <td>{{ licitacion.Metodo_Presentacion_Oferta }}</td>
-        <td>{{ licitacion.Resultado }}</td>
-        <td>{{ licitacion.Adjudicatario }}</td>
-        <td>{{ licitacion.Numero_Licitaciones_Presentadas }}</td>
-        <td>{{ licitacion.Importe_Adjudicacion }}</td>
-        <td>{{ licitacion.Fecha_Adjudicacion }}</td>
-        <td>{{ licitacion.Fecha_Formalizacion }}</td>
-        <td>{{ licitacion.Fecha_Desistimiento }}</td>
-        <td>{{ licitacion.Fecha_Presentacion_Oferta }}</td>
-        <td>{{ licitacion.Fecha_Presentacion_Solicitud }}</td>
-      </tr>
-      {% endfor %}
-    </tbody>
-  </table>
-</div>
+            <th>
+              <div class="column-header">
+                <div class="dropdown">
+                  <button class="btn btn-sm btn-secondary dropdown-toggle" type="button" id="dropdownFechaDesistimiento" data-bs-toggle="dropdown" aria-expanded="false">
+                    🔍
+                  </button>
+                  <div class="dropdown-menu p-3" aria-labelledby="dropdownFechaDesistimiento">
+                    <label for="fechaInicioDesistimiento" class="form-label">Fecha Inicial</label>
+                    <input type="date" class="form-control" id="fechaInicioDesistimiento">
+                    <label for="fechaFinDesistimiento" class="form-label mt-2">Fecha Final</label>
+                    <input type="date" class="form-control" id="fechaFinDesistimiento">
+                    <button class="btn btn-primary btn-sm mt-2" onclick="applyDateFilter(23)">Filtrar</button>
+                    <button class="btn btn-secondary btn-sm mt-2" onclick="clearDateFilter(23)">Limpiar</button>
+                  </div>
+                </div>
+                Fecha Desistimiento
+              </div>
+            </th>
+            <th>
+              <div class="column-header">
+                <div class="dropdown">
+                  <button class="btn btn-sm btn-secondary dropdown-toggle" type="button" id="dropdownFechaPresentacionOferta" data-bs-toggle="dropdown" aria-expanded="false">
+                    🔍
+                  </button>
+                  <div class="dropdown-menu p-3" aria-labelledby="dropdownFechaPresentacionOferta">
+                    <label for="fechaInicioPresentacionOferta" class="form-label">Fecha Inicial</label>
+                    <input type="date" class="form-control" id="fechaInicioPresentacionOferta">
+                    <label for="fechaFinPresentacionOferta" class="form-label mt-2">Fecha Final</label>
+                    <input type="date" class="form-control" id="fechaFinPresentacionOferta">
+                    <button class="btn btn-primary btn-sm mt-2" onclick="applyDateFilter(24)">Filtrar</button>
+                    <button class="btn btn-secondary btn-sm mt-2" onclick="clearDateFilter(24)">Limpiar</button>
+                  </div>
+                </div>
+                Fecha Presentación Oferta
+              </div>
+            </th>
+            <th>
+              <div class="column-header">
+                <div class="dropdown">
+                  <button class="btn btn-sm btn-secondary dropdown-toggle" type="button" id="dropdownFechaPresentacionSolicitud" data-bs-toggle="dropdown" aria-expanded="false">
+                    🔍
+                  </button>
+                  <div class="dropdown-menu p-3" aria-labelledby="dropdownFechaPresentacionSolicitud">
+                    <label for="fechaInicioPresentacionSolicitud" class="form-label">Fecha Inicial</label>
+                    <input type="date" class="form-control" id="fechaInicioPresentacionSolicitud">
+                    <label for="fechaFinPresentacionSolicitud" class="form-label mt-2">Fecha Final</label>
+                    <input type="date" class="form-control" id="fechaFinPresentacionSolicitud">
+                    <button class="btn btn-primary btn-sm mt-2" onclick="applyDateFilter(25)">Filtrar</button>
+                    <button class="btn btn-secondary btn-sm mt-2" onclick="clearDateFilter(25)">Limpiar</button>
+                  </div>
+                </div>
+                Fecha Presentación Solicitud
+              </div>
+            </th>
+            <th>
+            <div class="dropdown">
+              <button class="btn btn-sm btn-secondary dropdown-toggle" type="button" id="dropdownRegulacion_armonizada" data-bs-toggle="dropdown" aria-expanded="false">
+                🔍
+              </button>
+              <div class="dropdown-menu p-3" aria-labelledby="dropdownRegulacion_armonizada">
+                <input type="text" class="form-control filter-input" placeholder="Buscar..." data-column="26" id="filterRegulacion_armonizada">
+                <button class="btn btn-primary btn-sm mt-2" onclick="applyFilter(26)">Filtrar</button>
+                <button class="btn btn-secondary btn-sm mt-2" onclick="clearFilter(26)">Limpiar</button>
+              </div>
+            </div>
+            Regulacion_armonizada
+          </th>  
+          <th>       
+          <div class="dropdown">
+              <button class="btn btn-sm btn-secondary dropdown-toggle" type="button" id="dropdownSometido_recurso_especial" data-bs-toggle="dropdown" aria-expanded="false">
+                🔍
+              </button>
+              <div class="dropdown-menu p-3" aria-labelledby="dropdownSometido_recurso_especial">
+                <input type="text" class="form-control filter-input" placeholder="Buscar..." data-column="27" id="filterSometido_recurso_especial">
+                <button class="btn btn-primary btn-sm mt-2" onclick="applyFilter(27)">Filtrar</button>
+                <button class="btn btn-secondary btn-sm mt-2" onclick="clearFilter(27)">Limpiar</button>
+              </div>
+            </div>
+            Sometido_recurso_especial
+          </th>    
+          <th>      
+          <div class="dropdown">
+              <button class="btn btn-sm btn-secondary dropdown-toggle" type="button" id="dropdownPlazo_ejecución" data-bs-toggle="dropdown" aria-expanded="false">
+                🔍
+              </button>
+              <div class="dropdown-menu p-3" aria-labelledby="dropdownPlazo_ejecución">
+                <input type="text" class="form-control filter-input" placeholder="Buscar..." data-column="28" id="filterPlazo_ejecución">
+                <button class="btn btn-primary btn-sm mt-2" onclick="applyFilter(28)">Filtrar</button>
+                <button class="btn btn-secondary btn-sm mt-2" onclick="clearFilter(28)">Limpiar</button>
+              </div>
+            </div>
+            Plazo_ejecución
+          </th>  
+          <th>            
+          <div class="dropdown">
+              <button class="btn btn-sm btn-secondary dropdown-toggle" type="button" id="dropdownPresupuesto_sinIVA" data-bs-toggle="dropdown" aria-expanded="false">
+                🔍
+              </button>
+              <div class="dropdown-menu p-3" aria-labelledby="dropdownPresupuesto_sinIVA">
+                <input type="text" class="form-control filter-input" placeholder="Buscar..." data-column="29" id="filterPresupuesto_sinIVA">
+                <button class="btn btn-primary btn-sm mt-2" onclick="applyFilter(29)">Filtrar</button>
+                <button class="btn btn-secondary btn-sm mt-2" onclick="clearFilter(29)">Limpiar</button>
+              </div>
+            </div>
+            Presupuesto_sinIVA
+          </th>   
+          <th>           
+          <div class="dropdown">
+              <button class="btn btn-sm btn-secondary dropdown-toggle" type="button" id="dropdownPresupuesto_sinIVA" data-bs-toggle="dropdown" aria-expanded="false">
+                🔍
+              </button>
+              <div class="dropdown-menu p-3" aria-labelledby="dropdownPresupuesto_sinIVA">
+                <input type="text" class="form-control filter-input" placeholder="Buscar..." data-column="30" id="filterPresupuesto_sinIVA">
+                <button class="btn btn-primary btn-sm mt-2" onclick="applyFilter(30)">Filtrar</button>
+                <button class="btn btn-secondary btn-sm mt-2" onclick="clearFilter(30)">Limpiar</button>
+              </div>
+            </div>
+            Presupuesto_sinIVA
+          </th>            
+          <th>  
+          <div class="dropdown">
+              <button class="btn btn-sm btn-secondary dropdown-toggle" type="button" id="dropdownImporte_IVA " data-bs-toggle="dropdown" aria-expanded="false">
+                🔍
+              </button>
+              <div class="dropdown-menu p-3" aria-labelledby="dropdownImporte_IVA">
+                <input type="text" class="form-control filter-input" placeholder="Buscar..." data-column="31" id="filterImporte_IVA ">
+                <button class="btn btn-primary btn-sm mt-2" onclick="applyFilter(31)">Filtrar</button>
+                <button class="btn btn-secondary btn-sm mt-2" onclick="clearFilter(31)">Limpiar</button>
+              </div>
+            </div>
+            Importe_IVA 
+          </th>            
+          <th>  
+          <div class="dropdown">
+              <button class="btn btn-sm btn-secondary dropdown-toggle" type="button" id="dropdownSistema_Retribucion" data-bs-toggle="dropdown" aria-expanded="false">
+                🔍
+              </button>
+              <div class="dropdown-menu p-3" aria-labelledby="dropdownSistema_Retribucion">
+                <input type="text" class="form-control filter-input" placeholder="Buscar..." data-column="32" id="filterSistema_Retribucion">
+                <button class="btn btn-primary btn-sm mt-2" onclick="applyFilter(32)">Filtrar</button>
+                <button class="btn btn-secondary btn-sm mt-2" onclick="clearFilter(32)">Limpiar</button>
+              </div>
+            </div>
+            Sistema_Retribucion
+          </th>            
+          <th>  
+          <div class="dropdown">
+              <button class="btn btn-sm btn-secondary dropdown-toggle" type="button" id="dropdownRevision_precios" data-bs-toggle="dropdown" aria-expanded="false">
+                🔍
+              </button>
+              <div class="dropdown-menu p-3" aria-labelledby="dropdownRevision_precios">
+                <input type="text" class="form-control filter-input" placeholder="Buscar..." data-column="33" id="filterRevision_precios">
+                <button class="btn btn-primary btn-sm mt-2" onclick="applyFilter(33)">Filtrar</button>
+                <button class="btn btn-secondary btn-sm mt-2" onclick="clearFilter(33)">Limpiar</button>
+              </div>
+            </div>
+            Revision_precios
+          </th>            
+          <th>  
+          <div class="dropdown">
+              <button class="btn btn-sm btn-secondary dropdown-toggle" type="button" id="dropdownGarantia_definitiva" data-bs-toggle="dropdown" aria-expanded="false">
+                🔍
+              </button>
+              <div class="dropdown-menu p-3" aria-labelledby="dropdownGarantia_definitiva">
+                <input type="text" class="form-control filter-input" placeholder="Buscar..." data-column="34" id="filterGarantia_definitiva">
+                <button class="btn btn-primary btn-sm mt-2" onclick="applyFilter(34)">Filtrar</button>
+                <button class="btn btn-secondary btn-sm mt-2" onclick="clearFilter(34)">Limpiar</button>
+              </div>
+            </div>
+            Garantia_definitiva
+          </th>            
+          <th>  
+          <div class="dropdown">
+              <button class="btn btn-sm btn-secondary dropdown-toggle" type="button" id="dropdownGarantia_provisional" data-bs-toggle="dropdown" aria-expanded="false">
+                🔍
+              </button>
+              <div class="dropdown-menu p-3" aria-labelledby="dropdownGarantia_provisional">
+                <input type="text" class="form-control filter-input" placeholder="Buscar..." data-column="35" id="filterGarantia_provisional">
+                <button class="btn btn-primary btn-sm mt-2" onclick="applyFilter(35)">Filtrar</button>
+                <button class="btn btn-secondary btn-sm mt-2" onclick="clearFilter(35)">Limpiar</button>
+              </div>
+            </div>
+            Garantia_provisional
+          </th>            
+          <th>  
+          <div class="dropdown">
+              <button class="btn btn-sm btn-secondary dropdown-toggle" type="button" id="dropdownAdmisibilidad_variantes" data-bs-toggle="dropdown" aria-expanded="false">
+                🔍
+              </button>
+              <div class="dropdown-menu p-3" aria-labelledby="dropdownAdmisibilidad_variantes">
+                <input type="text" class="form-control filter-input" placeholder="Buscar..." data-column="36" id="filterAdmisibilidad_variantes">
+                <button class="btn btn-primary btn-sm mt-2" onclick="applyFilter(36)">Filtrar</button>
+                <button class="btn btn-secondary btn-sm mt-2" onclick="clearFilter(36)">Limpiar</button>
+              </div>
+            </div>
+            Admisibilidad_variantes
+          </th>            
+          <th>  
+          <div class="dropdown">
+              <button class="btn btn-sm btn-secondary dropdown-toggle" type="button" id="dropdownAdmisibilidad_variantes" data-bs-toggle="dropdown" aria-expanded="false">
+                🔍
+              </button>
+              <div class="dropdown-menu p-3" aria-labelledby="dropdownAdmisibilidad_variantes">
+                <input type="text" class="form-control filter-input" placeholder="Buscar..." data-column="37" id="filterAdmisibilidad_variantes">
+                <button class="btn btn-primary btn-sm mt-2" onclick="applyFilter(37)">Filtrar</button>
+                <button class="btn btn-secondary btn-sm mt-2" onclick="clearFilter(37)">Limpiar</button>
+              </div>
+            </div>
+            Admisibilidad_variantes
+          </th>            
+          <th>  
+          <div class="dropdown">
+              <button class="btn btn-sm btn-secondary dropdown-toggle" type="button" id="dropdownGrupo" data-bs-toggle="dropdown" aria-expanded="false">
+                🔍
+              </button>
+              <div class="dropdown-menu p-3" aria-labelledby="dropdownGrupo">
+                <input type="text" class="form-control filter-input" placeholder="Buscar..." data-column="38" id="filterGrupo">
+                <button class="btn btn-primary btn-sm mt-2" onclick="applyFilter(38)">Filtrar</button>
+                <button class="btn btn-secondary btn-sm mt-2" onclick="clearFilter(38)">Limpiar</button>
+              </div>
+            </div>
+            Grupo
+          </th>            
+          <th>  
+          <div class="dropdown">
+              <button class="btn btn-sm btn-secondary dropdown-toggle" type="button" id="dropdownSubgrupo" data-bs-toggle="dropdown" aria-expanded="false">
+                🔍
+              </button>
+              <div class="dropdown-menu p-3" aria-labelledby="dropdownSubgrupo">
+                <input type="text" class="form-control filter-input" placeholder="Buscar..." data-column="39" id="filterSubgrupo">
+                <button class="btn btn-primary btn-sm mt-2" onclick="applyFilter(39)">Filtrar</button>
+                <button class="btn btn-secondary btn-sm mt-2" onclick="clearFilter(39)">Limpiar</button>
+              </div>
+            </div>
+            Subgrupo
+          </th>           
+          <th>  
+          <div class="dropdown">
+              <button class="btn btn-sm btn-secondary dropdown-toggle" type="button" id="dropdownCategoria" data-bs-toggle="dropdown" aria-expanded="false">
+                🔍
+              </button>
+              <div class="dropdown-menu p-3" aria-labelledby="dropdownCategoria">
+                <input type="text" class="form-control filter-input" placeholder="Buscar..." data-column="40" id="filterCategoria">
+                <button class="btn btn-primary btn-sm mt-2" onclick="applyFilter(40)">Filtrar</button>
+                <button class="btn btn-secondary btn-sm mt-2" onclick="clearFilter(40)">Limpiar</button>
+              </div>
+            </div>
+            Categoria
+          </th>            
+          <th>  
+          <div class="dropdown">
+              <button class="btn btn-sm btn-secondary dropdown-toggle" type="button" id="dropdownCriterio_Solvencia_economica" data-bs-toggle="dropdown" aria-expanded="false">
+                🔍
+              </button>
+              <div class="dropdown-menu p-3" aria-labelledby="dropdownCriterio_Solvencia_economica">
+                <input type="text" class="form-control filter-input" placeholder="Buscar..." data-column="41" id="filterCriterio_Solvencia_economica">
+                <button class="btn btn-primary btn-sm mt-2" onclick="applyFilter(41)">Filtrar</button>
+                <button class="btn btn-secondary btn-sm mt-2" onclick="clearFilter(41)">Limpiar</button>
+              </div>
+            </div>
+            Criterio_Solvencia_economica
+          </th>            
+          <th>  
+          <div class="dropdown">
+              <button class="btn btn-sm btn-secondary dropdown-toggle" type="button" id="dropdownCriterio_Solvencia_tecnica" data-bs-toggle="dropdown" aria-expanded="false">
+                🔍
+              </button>
+              <div class="dropdown-menu p-3" aria-labelledby="dropdownCriterio_Solvencia_tecnica">
+                <input type="text" class="form-control filter-input" placeholder="Buscar..." data-column="42" id="filterCriterio_Solvencia_tecnica">
+                <button class="btn btn-primary btn-sm mt-2" onclick="applyFilter(42)">Filtrar</button>
+                <button class="btn btn-secondary btn-sm mt-2" onclick="clearFilter(42)">Limpiar</button>
+              </div>
+            </div>
+            Criterio_Solvencia_tecnica
+          </th>            
+          <th>  
+          <div class="dropdown">
+              <button class="btn btn-sm btn-secondary dropdown-toggle" type="button" id="dropdownCondiciones_especiales" data-bs-toggle="dropdown" aria-expanded="false">
+                🔍
+              </button>
+              <div class="dropdown-menu p-3" aria-labelledby="dropdownCondiciones_especiales">
+                <input type="text" class="form-control filter-input" placeholder="Buscar..." data-column="43" id="filterCondiciones_especiales">
+                <button class="btn btn-primary btn-sm mt-2" onclick="applyFilter(43)">Filtrar</button>
+                <button class="btn btn-secondary btn-sm mt-2" onclick="clearFilter(43)">Limpiar</button>
+              </div>
+            </div>
+            Condiciones_especiales
+          </th>            
+          <th>  
+          <div class="dropdown">
+              <button class="btn btn-sm btn-secondary dropdown-toggle" type="button" id="dropdownPenalidad_incumplimiento" data-bs-toggle="dropdown" aria-expanded="false">
+                🔍
+              </button>
+              <div class="dropdown-menu p-3" aria-labelledby="dropdownPenalidad_incumplimiento">
+                <input type="text" class="form-control filter-input" placeholder="Buscar..." data-column="44" id="filterPenalidad_incumplimiento">
+                <button class="btn btn-primary btn-sm mt-2" onclick="applyFilter(44)">Filtrar</button>
+                <button class="btn btn-secondary btn-sm mt-2" onclick="clearFilter(44)">Limpiar</button>
+              </div>
+            </div>
+            Penalidad_incumplimiento
+          </th>            
+          <th>  
+          <div class="dropdown">
+              <button class="btn btn-sm btn-secondary dropdown-toggle" type="button" id="dropdownForma_pago" data-bs-toggle="dropdown" aria-expanded="false">
+                🔍
+              </button>
+              <div class="dropdown-menu p-3" aria-labelledby="dropdownForma_pago">
+                <input type="text" class="form-control filter-input" placeholder="Buscar..." data-column="45" id="filterForma_pago">
+                <button class="btn btn-primary btn-sm mt-2" onclick="applyFilter(45)">Filtrar</button>
+                <button class="btn btn-secondary btn-sm mt-2" onclick="clearFilter(45)">Limpiar</button>
+              </div>
+            </div>
+            Forma_pago
+          </th>            
+          <th>  
+          <div class="dropdown">
+              <button class="btn btn-sm btn-secondary dropdown-toggle" type="button" id="dropdownCausas_modificacion" data-bs-toggle="dropdown" aria-expanded="false">
+                🔍
+              </button>
+              <div class="dropdown-menu p-3" aria-labelledby="dropdownCausas_modificacion">
+                <input type="text" class="form-control filter-input" placeholder="Buscar..." data-column="46" id="filterCausas_modificacion">
+                <button class="btn btn-primary btn-sm mt-2" onclick="applyFilter(46)">Filtrar</button>
+                <button class="btn btn-secondary btn-sm mt-2" onclick="clearFilter(46)">Limpiar</button>
+              </div>
+            </div>
+            Causas_modificacion
+          </th>            
+          <th>  
+          <div class="dropdown">
+              <button class="btn btn-sm btn-secondary dropdown-toggle" type="button" id="dropdownPlazo_garantia" data-bs-toggle="dropdown" aria-expanded="false">
+                🔍
+              </button>
+              <div class="dropdown-menu p-3" aria-labelledby="dropdownPlazo_garantian">
+                <input type="text" class="form-control filter-input" placeholder="Buscar..." data-column="47" id="filterPlazo_garantia">
+                <button class="btn btn-primary btn-sm mt-2" onclick="applyFilter(47)">Filtrar</button>
+                <button class="btn btn-secondary btn-sm mt-2" onclick="clearFilter(47)">Limpiar</button>
+              </div>
+            </div>
+            Plazo_garantia
+          </th>           
+          <th>  
+          <div class="dropdown">
+              <button class="btn btn-sm btn-secondary dropdown-toggle" type="button" id="dropdownContratacion_precio_unit" data-bs-toggle="dropdown" aria-expanded="false">
+                🔍
+              </button>
+              <div class="dropdown-menu p-3" aria-labelledby="dropdownContratacion_precio_unit">
+                <input type="text" class="form-control filter-input" placeholder="Buscar..." data-column="48" id="filterContratacion_precio_unit">
+                <button class="btn btn-primary btn-sm mt-2" onclick="applyFilter(48)">Filtrar</button>
+                <button class="btn btn-secondary btn-sm mt-2" onclick="clearFilter(48)">Limpiar</button>
+              </div>
+            </div>
+            Contratacion_precio_unit
+          </th>            
+          <th>  
+          <div class="dropdown">
+              <button class="btn btn-sm btn-secondary dropdown-toggle" type="button" id="dropdownTanto_alzado" data-bs-toggle="dropdown" aria-expanded="false">
+                🔍
+              </button>
+              <div class="dropdown-menu p-3" aria-labelledby="dropdownTanto_alzado">
+                <input type="text" class="form-control filter-input" placeholder="Buscar..." data-column="49" id="filterTanto_alzado">
+                <button class="btn btn-primary btn-sm mt-2" onclick="applyFilter(49)">Filtrar</button>
+                <button class="btn btn-secondary btn-sm mt-2" onclick="clearFilter(49)">Limpiar</button>
+              </div>
+            </div>
+            Tanto_alzado
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for licitacion in licitaciones %}
+        <tr>
+          <td>
+            <a href="{% url 'app:detalles_licitacion' licitacion.COD|urlencode %}" class="btn btn-primary btn-sm">Detalles</a>
+          </td>
+          <td>{{ licitacion.COD }}</td>
+          <td>{{ licitacion.ID_Publicacion_TED }}</td>
+          <td>{{ licitacion.Organo_Contratacion }}</td>
+          <td>{{ licitacion.ID_Organo_Contratacion }}</td>        
+          <td>{{ licitacion.Estado_Licitacion }}</td>
+          <td>{{ licitacion.Objeto_Contrato }}</td>
+          <td>{{ licitacion.Financiacion_UE }}</td>
+          <td>{{ licitacion.Presupuesto_Base }}</td>
+          <td>{{ licitacion.Valor_Estimado_Contrato }}</td>
+          <td>{{ licitacion.Tipo_Contrato }}</td>
+          <td>{{ licitacion.Codigo_CPV }}</td>
+          <td>{{ licitacion.Lugar_Ejecucion }}</td>
+          <td>{{ licitacion.Sistema_Contratacion }}</td>
+          <td>{{ licitacion.Procedimiento_Contratacion }}</td>
+          <td>{{ licitacion.Tipo_Tramitacion }}</td>
+          <td>{{ licitacion.Metodo_Presentacion_Oferta }}</td>
+          <td>{{ licitacion.Resultado }}</td>
+          <td>{{ licitacion.Adjudicatario }}</td>
+          <td>{{ licitacion.Numero_Licitaciones_Presentadas }}</td>
+          <td>{{ licitacion.Importe_Adjudicacion }}</td>
+          <td>{{ licitacion.Fecha_Adjudicacion }}</td>
+          <td>{{ licitacion.Fecha_Formalizacion }}</td>
+          <td>{{ licitacion.Fecha_Desistimiento }}</td>
+          <td>{{ licitacion.Fecha_Presentacion_Oferta }}</td>
+          <td>{{ licitacion.Fecha_Presentacion_Solicitud }}</td>
+
+          <td>{{ licitacion.Regulacion_armonizada }}</td>
+          <td>{{ licitacion.Sometido_recurso_especial }}</td>
+          <td>{{ licitacion.Plazo_ejecución }}</td>
+          <td>{{ licitacion.Presupuesto_sinIVA }}</td>
+          <td>{{ licitacion.Presupuesto_conIVA }}</td>
+          <td>{{ licitacion.Importe_IVA }}</td>
+          <td>{{ licitacion.Sistema_Retribucion }}</td>
+          <td>{{ licitacion.Revision_precios }}</td>
+          <td>{{ licitacion.Garantia_definitiva }}</td>
+          <td>{{ licitacion.Garantia_provisional }}</td>
+          <td>{{ licitacion.Admisibilidad_variantes }}</td>
+          <td>{{ licitacion.Clasificacion }}</td>
+          <td>{{ licitacion.Grupo }}</td>
+          <td>{{ licitacion.Subgrupo }}</td>
+          <td>{{ licitacion.Categoria }}</td>
+          <td>{{ licitacion.Criterio_Solvencia_economica }}</td>
+          <td>{{ licitacion.Criterio_Solvencia_tecnica }}</td>
+          <td>{{ licitacion.Condiciones_especiales }}</td>
+          <td>{{ licitacion.Penalidad_incumplimiento }}</td>
+          <td>{{ licitacion.Forma_pago }}</td>
+          <td>{{ licitacion.Causas_modificacion }}</td>
+          <td>{{ licitacion.Plazo_garantia }}</td>
+          <td>{{ licitacion.Contratacion_precio_unit }}</td>
+          <td>{{ licitacion.Tanto_alzado }}</td>
+          <td>{{ licitacion.Tanto_alzado_con }}</td>
+          <td>{{ licitacion.Criterio_juicio_val }}</td>
+          <td>{{ licitacion.Evaluables_autom }}</td>
+          <td>{{ licitacion.Criterio_ecónomico }}</td>
+          <td>{{ licitacion.Obligaciones_ambientales }}</td>
+          <td>{{ licitacion.Regimen_penalidades }}</td>
+          <td>{{ licitacion.Ambiental }}</td>
+          <td>{{ licitacion.Tecnico }}</td>
+          <td>{{ licitacion.Precio }}</td>
+          <td>{{ licitacion.Garantia }}</td>
+          <td>{{ licitacion.Experiencia }}</td>
+          <td>{{ licitacion.Calidad }}</td>
+          <td>{{ licitacion.Social }}</td>
+          <td>{{ licitacion.Seguridad }}</td>
+          <td>{{ licitacion.Juicio_valor }}</td>
+          <td>{{ licitacion.Formula_precio }}</td>
+          <td>{{ licitacion.Formula_JuicioValor }}</td>
+          <td>{{ licitacion.Criterios_valores_anormales }}</td>
+          <td>{{ licitacion.Infraccion_grave }}</td>
+          <td>{{ licitacion.Gastos_desistimiento }}</td>
+          <td>{{ licitacion.Contratacion_control }}</td>
+          <td>{{ licitacion.Tareas_criticas }}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
 
 <!-- Modal para seleccionar columnas -->
 <div class="modal fade" id="columnSelectorModal" tabindex="-1" aria-labelledby="columnSelectorModalLabel" aria-hidden="true">
@@ -836,8 +1196,14 @@ function updateHiddenColumnsVisibility() {
 }
 
 document.getElementById('updateButton').addEventListener('click', async () => {
+  const updateButton = document.getElementById('updateButton');
+  
   if (confirm('¿Estás seguro de que deseas actualizar las licitaciones?')) {
     try {
+      // Deshabilitar el botón
+      updateButton.disabled = true;
+      updateButton.textContent = 'Actualizando...';
+
       const response = await fetch('http://127.0.0.1:5000/update-licitaciones', { // Cambia el puerto si es necesario
         method: 'POST',
         headers: {
@@ -854,6 +1220,10 @@ document.getElementById('updateButton').addEventListener('click', async () => {
       }
     } catch (error) {
       alert('Error al actualizar las licitaciones.');
+    } finally {
+      // Habilitar el botón nuevamente
+      updateButton.disabled = false;
+      updateButton.textContent = 'Actualizar Licitaciones';
     }
   }
 });
