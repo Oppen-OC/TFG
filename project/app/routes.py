@@ -183,3 +183,4 @@ def get_anexoI_data():
     except Exception as e:
         print(f"Error al obtener los datos de anexoI: {e}")
         return jsonify({'error': str(e)}), 500
+

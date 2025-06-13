@@ -81,6 +81,10 @@
   text-align: left;
   vertical-align: top;
   padding: 10px;
+  max-height: 50px; /* Altura máxima para las celdas */
+  overflow: hidden; /* Ocultar contenido que exceda el tamaño */
+  text-overflow: ellipsis; /* Agregar puntos suspensivos */
+  white-space: nowrap; /* Evitar saltos de línea */
 }
 #hiddenColumnsContainer {
   overflow-x: auto;
@@ -208,6 +212,21 @@
   padding: 5px;
   border-radius: 4px;
   border: 1px solid #ccc;
+}
+
+/* Limitar el tamaño máximo de las celdas */
+.table td {
+  max-height: 50px; /* Altura máxima para las celdas */
+  overflow: hidden; /* Ocultar contenido que exceda el tamaño */
+  text-overflow: ellipsis; /* Agregar puntos suspensivos */
+  white-space: nowrap; /* Evitar saltos de línea */
+}
+
+/* Estilo para las filas expandidas */
+.table .expanded td {
+  max-height: none; /* Quitar la restricción de altura */
+  white-space: normal; /* Permitir saltos de línea */
+  overflow: visible; /* Mostrar todo el contenido */
 }
 </style>
 
@@ -989,10 +1008,6 @@
   </div>
 </div>
 
-<!-- Botón para abrir el popup -->
-<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#filterPopup">
-  Filtrar Licitaciones
-</button>
 
 <!-- Modal para el popup -->
 <div class="modal fade" id="filterPopup" tabindex="-1" aria-labelledby="filterPopupLabel" aria-hidden="true">
@@ -1403,6 +1418,9 @@ function applyAllFilters() {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
+
+
+
   const filterIcons = document.querySelectorAll('.filter-icon');
   filterIcons.forEach((icon, index) => {
     icon.addEventListener('click', event => toggleFilterMenu(event, index));
@@ -1558,8 +1576,7 @@ function applyDateFilter(columnIndex) {
   if (columnIndex === 21) {
     startDateInput = document.getElementById('fechaInicioAdjudicacion').value;
     endDateInput = document.getElementById('fechaFinAdjudicacion').value;
-  }
-  else if (columnIndex === 22) {
+  } else if (columnIndex === 22) {
     startDateInput = document.getElementById('fechaInicioFormalizacion').value;
     endDateInput = document.getElementById('fechaFinFormalizacion').value;
   } else if (columnIndex === 23) {
@@ -1623,6 +1640,17 @@ function clearAllFilters() {
   // Recargar la página
   location.reload();
 }
+
+document.addEventListener('DOMContentLoaded', () => {
+  const rows = document.querySelectorAll('#licitacionesTable tbody tr');
+
+  rows.forEach(row => {
+    row.addEventListener('click', () => {
+      // Alternar la clase "expanded" en la fila seleccionada
+      row.classList.toggle('expanded');
+    });
+  });
+});
 </script>
 
 {% endblock %}
