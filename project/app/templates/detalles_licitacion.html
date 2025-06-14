@@ -111,26 +111,16 @@
 <!-- Enlaces a los documentos -->
 <h3 class="mt-5">Documentos Relacionados</h3>
 <ul>
-  {% if pliego_administrativo_url %}
-  <li><a href="{{ pliego_administrativo_url }}" target="_blank">📄 Pliego Administrativo</a></li>
-  {% else %}
-  <li>📄 Pliego Administrativo: N/A</li>
+  {% if pliego_administrativo_url and pliego_administrativo_url|slice:":4" == "http" %}
+    <li><a href="{{ pliego_administrativo_url }}" target="_blank">📄 Pliego Administrativo</a></li>
   {% endif %}
 
-  {% if anexo_url %}
-  <li>
-    <a href="{{ anexo_url }}" target="_blank">
-      📄 {{ titulo_anexo }}
-    </a>
-  </li>
-  {% else %}
-  <li>📄 Anexo: N/A</li>
+  {% if anexo_url and anexo_url|slice:":4" == "http" %}
+    <li><a href="{{ anexo_url }}" target="_blank">📄 Anexo I</a></li>
   {% endif %}
 
   {% if pliego_original_url %}
-  <li><a href="{{ pliego_original_url }}" target="_blank">📄 Pliego Original</a></li>
-  {% else %}
-  <li>📄 Pliego Original: N/A</li>
+    <li><a href="{{ pliego_original_url }}" target="_blank">📄 Pliego Original</a></li>
   {% endif %}
 </ul>
 

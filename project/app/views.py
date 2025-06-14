@@ -242,8 +242,8 @@ def mostrar_anexo_i(cod):
     db = DBManager()
     db.openConnection()
 
-    data = db.searchTable("AnexoI", {"COD": cod})
-    data1 = db.searchTable("anexoI_fuentes", {"COD": cod})
+    data = db.searchTable("AnexoI", {"COD": cod.replace("-", "/")})
+    data1 = db.searchTable("anexoI_fuentes", {"COD":  cod.replace("-", "/")})
 
     #print(data)
     if data == []:
@@ -368,11 +368,11 @@ def detalles_licitacion(request, cod):
     db.openConnection()
 
     # Reemplazar "-" por "/" en el código, sino no funciona bien el url
-    cod = cod.replace("-", "/")
-    cod = cod.replace("%", "/")
-    cod = cod.replace(" ", "/")
-    cod = cod.replace("_", "/")
-    print(cod)
+    # cod = cod.replace("-", "/")
+    # cod = cod.replace("%", "/")
+    # cod = cod.replace(" ", "/")
+    # cod = cod.replace("_", "/")
+    # print(cod)
     # Obtener los datos de la licitación
     data = db.searchTable("Licitaciones", {"COD": cod})
 
