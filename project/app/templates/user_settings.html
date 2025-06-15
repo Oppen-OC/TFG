@@ -4,34 +4,63 @@
 <h1>Opciones de Usuario</h1>
 <p>Aquí puedes configurar tus opciones de usuario.</p>
 
-<form method="post" action="{% url 'app:user_settings' %}">
+<form id="userSettingsForm">
   {% csrf_token %}
   
   <!-- Nombre -->
   <div class="mb-3">
     <label for="username" class="form-label">Nombre de Usuario</label>
-    <input type="text" class="form-control" id="username" name="username" value="Evano" required>
+    <input type="text" class="form-control" id="username" name="username" value="{{ username }}" required>
   </div>
   
   <!-- Correo Electrónico -->
   <div class="mb-3">
     <label for="email" class="form-label">Correo Electrónico</label>
-    <input type="email" class="form-control" id="email" name="email" value="evano@example.com" required>
+    <input type="email" class="form-control" id="email" name="email" value="{{ email }}" required>
   </div>
   
   <!-- Contraseña -->
   <div class="mb-3">
     <label for="password" class="form-label">Contraseña</label>
-    <input type="password" class="form-control" id="password" name="password" placeholder="••••••••" required>
+    <input type="password" class="form-control" id="password" name="password" value="{{ password }}" required>
   </div>
   
   <!-- Notificaciones -->
   <div class="mb-3 form-check">
-    <input type="checkbox" class="form-check-input" id="notifications" name="notifications" checked>
+    <input type="checkbox" class="form-check-input" id="notifications" name="notifications" {% if notifications %}checked{% endif %}>
     <label class="form-check-label" for="notifications">Recibir notificaciones por correo</label>
   </div>
   
+  <input type="hidden" name="username_actual" value="{{ username }}">
   <!-- Botón Guardar -->
   <button type="submit" class="btn btn-primary">Guardar Cambios</button>
 </form>
+
+<script>
+document.getElementById('userSettingsForm').addEventListener('submit', function(e) {
+  e.preventDefault();
+  const formData = new FormData(this);
+
+  fetch('http://127.0.0.1:5000/actualizar-usuario', {
+    method: 'POST',
+    body: formData,
+    headers: {
+      'X-Requested-With': 'XMLHttpRequest',
+    },
+  })
+  .then(response => response.json())
+  .then(data => {
+    if (data.success) {
+      alert('Datos actualizados correctamente.');
+      // Opcional: recargar o actualizar la página
+    } else {
+      alert('Error: ' + (data.error || 'No se pudo actualizar.'));
+    }
+  })
+  .catch(error => {
+    alert('Error de red o servidor.');
+    console.error(error);
+  });
+});
+</script>
 {% endblock %}

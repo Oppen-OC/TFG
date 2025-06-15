@@ -155,10 +155,25 @@ class DBManager:
         except Exception as e:
             self.logger.warning(f"No se encontraron resultados en la tabla {table} para los criterios: {search_criteria}")
             return []
-        
+    """
     def searchAllTable(self, table, search_criteria) -> list:
         where_clause = " AND ".join([f"{col} = ?" for col in search_criteria.keys()])
         sql = f"SELECT * FROM {table} WHERE {where_clause}"
+        try:
+            self.cursor.execute(sql, tuple(search_criteria.values()))
+            rows = self.cursor.fetchall()
+            self.logger.info(f"Resultados de la búsqueda en la tabla {table}: {rows}")
+            return [list(row) for row in rows]
+        except pyodbc.Error as e:
+            self.logger.error(f"Error al buscar en la tabla {table}: {e}")
+            return []
+        except Exception as e:
+            self.logger.warning(f"No se encontraron resultados en la tabla {table} para los criterios: {search_criteria}")
+            return []
+    """
+    def searchAllTable(self, table, search_criteria, columns="*") -> list:
+        where_clause = " AND ".join([f"{col} = ?" for col in search_criteria.keys()])
+        sql = f"SELECT {columns} FROM {table} WHERE {where_clause}"
         try:
             self.cursor.execute(sql, tuple(search_criteria.values()))
             rows = self.cursor.fetchall()

@@ -1,8 +1,8 @@
 import os
 import openai
-from .db_manager import DBManager
-from .document_handler import download_to_json
-from .rag_operations import RAG
+from db_manager import DBManager
+from document_handler import download_to_json
+from rag_operations import RAG
 import logging
 
 # Configuración del logger específico para el chatbot
@@ -28,26 +28,29 @@ rag_object = None
 def chatbot_simple(user_input):
     client = openai.OpenAI(
         api_key=os.getenv("UPV_API_KEY"),
-        base_url="https://api.poligpt.upv.es/v1"
+        base_url="https://api.poligpt.upv.es"
     )
 
     messages = [{"role": "system", "content": "Eres un asistente útil."}]
     messages.append({"role": "user", "content": user_input})
 
     try:
+        print("Usuario:", user_input)
         response = client.chat.completions.create(
             model="llama3.3:70b",  # o el modelo que tengas disponible
             messages=messages
-            )
+        )
         answer = response.choices[0].message.content
         print("Bot:", answer)
         messages.append({"role": "assistant", "content": answer})
 
     except Exception as e:
-        chatbot_logger.error("Error al contactar con la API:", e)
-    
+        chatbot_logger.error("Error al contactar con la API: %s", e)
+        answer = "Lo siento, ha ocurrido un error al procesar tu mensaje."
+
     return answer
 
+"""
 def chatbot_with_context(user_input):     
 
     try:
@@ -59,42 +62,15 @@ def chatbot_with_context(user_input):
     
     return response
 
-def verify_document_code(code):
-    global rag_object
+"""
 
-    db = DBManager()
-    db.openConnection()
-    chatbot_logger.info("Buscando en la base de datos...")
-    data = db.searchTable("Documentos", {"COD": code})
-    db.closeConnection()
+if __name__ == "__main__":
+    while True:
+        user_input = input("Tú: ")
+        if user_input.lower() in ["salir", "exit", "quit"]:
+            break
+        respuesta = chatbot_simple(user_input)
+        print("Bot:", respuesta)
 
-    if len(data) > 0:
-        chatbot_logger.info("Cargando objeto RAG...")
-        try:
-            rag_object = RAG()
-        except Exception as e:
-            chatbot_logger.error("Error al cargar el objeto RAG:", e)
 
-        if data[1]:
-            # Esto es si contiene anexo I
-            download_to_json(data[1])
-        else:
-            # Sino, va directamente al pliego administrativo
-            download_to_json(data[2])
-        
-        return True
-
-    return False
-
-def handle_user_input(user_input, cod_documento):
-
-    if cod_documento == "":
-        chatbot_logger.info("Respondiendo pregunta simple")
-        return chatbot_simple(user_input)
-
-    else:
-        chatbot_logger.info("Documento encontrado")
-        return chatbot_with_context(user_input)
-
-   
 

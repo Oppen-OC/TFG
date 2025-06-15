@@ -5,6 +5,7 @@ from app.util.db_manager import DBManager
 from app.util.scrapper import update
 from app.util.main import main as util_main
 import json
+from app.util.chatbot import chatbot_simple  # Asegúrate de que esta función esté definida en chatbot.py
 
 # Habilitar CORS para toda la aplicación
 CORS(app)
@@ -287,4 +288,63 @@ def guardar_anexo():
         return jsonify({'success': True})
     except Exception as e:
         print("ERROR AL GUARDAR ANEXO:", e)
+        return jsonify({'success': False, 'error': str(e)}), 500
+
+@app.route('/actualizar-usuario', methods=['POST', 'OPTIONS'])
+def actualizar_usuario():
+    if request.method == 'OPTIONS':
+        response = app.make_default_options_response()
+        headers = response.headers
+        headers['Access-Control-Allow-Origin'] = 'http://127.0.0.1:8000'
+        headers['Access-Control-Allow-Methods'] = 'POST, OPTIONS'
+        headers['Access-Control-Allow-Headers'] = 'Content-Type, X-Requested-With'
+        headers['Access-Control-Allow-Credentials'] = 'true'
+        return response
+
+    username_actual = request.form.get('username_actual')  # El nombre de usuario antes del cambio
+    nuevo_username = request.form.get('username')
+    nuevo_email = request.form.get('email')
+    nueva_password = request.form.get('password')
+
+    if not username_actual or not nuevo_username or not nuevo_email or not nueva_password:
+        return jsonify({'success': False, 'error': 'Datos incompletos'}), 400
+
+    try:
+        db = DBManager()
+        db.openConnection()
+        sql = """
+        UPDATE auth_user
+        SET username = ?, email = ?, password = ?
+        WHERE username = ?
+        """
+        db.cursor.execute(sql, (nuevo_username, nuevo_email, nueva_password, username_actual))
+        db.cnxn.commit()
+        db.closeConnection()
+        return jsonify({'success': True})
+    except Exception as e:
+        print("ERROR AL ACTUALIZAR USUARIO:", e)
+        return jsonify({'success': False, 'error': str(e)}), 500
+
+@app.route('/chatbot', methods=['POST', 'OPTIONS'])
+def chatbot_input():
+    if request.method == 'OPTIONS':
+        response = app.make_default_options_response()
+        headers = response.headers
+        headers['Access-Control-Allow-Origin'] = 'http://127.0.0.1:8000'
+        headers['Access-Control-Allow-Methods'] = 'POST, OPTIONS'
+        headers['Access-Control-Allow-Headers'] = 'Content-Type, X-Requested-With'
+        headers['Access-Control-Allow-Credentials'] = 'true'
+        return response
+
+    data = request.get_json()
+    user_message = data.get('message', '')
+
+    if not user_message:
+        return jsonify({'success': False, 'error': 'Mensaje vacío'}), 400
+
+    try:
+        bot_response = chatbot_simple(user_message)
+        return jsonify({'success': True, 'response': bot_response})
+    except Exception as e:
+        print("ERROR EN CHATBOT:", e)
         return jsonify({'success': False, 'error': str(e)}), 500

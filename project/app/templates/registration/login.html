@@ -8,18 +8,34 @@
     <h3 class="mb-4 text-center">Iniciar sesión</h3>
     <form method="post" novalidate>
       {% csrf_token %}
-      {% if form.errors %}
+      {% if form.non_field_errors %}
         <div class="alert alert-danger">
-          Por favor, corrige los errores debajo.
+          {% for error in form.non_field_errors %}
+            {{ error }}<br>
+          {% endfor %}
         </div>
       {% endif %}
       <div class="mb-3">
         <label for="id_username" class="form-label">Usuario</label>
         {{ form.username|add_class:"form-control" }}
+        {% if form.username.errors %}
+          <div class="text-danger small">
+            {% for error in form.username.errors %}
+              {{ error }}<br>
+            {% endfor %}
+          </div>
+        {% endif %}
       </div>
       <div class="mb-3">
         <label for="id_password" class="form-label">Contraseña</label>
         {{ form.password|add_class:"form-control" }}
+        {% if form.password.errors %}
+          <div class="text-danger small">
+            {% for error in form.password.errors %}
+              {{ error }}<br>
+            {% endfor %}
+          </div>
+        {% endif %}
       </div>
       <button type="submit" class="btn btn-primary w-100">Entrar</button>
     </form>

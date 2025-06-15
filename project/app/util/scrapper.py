@@ -216,7 +216,8 @@ async def poblar_db(truncate = False):
 async def scratchAnexoParallel(num_browsers=4):
     """Ejecuta varios navegadores en paralelo para procesar expedientes."""
     scrapper_logger.info("Iniciando scrapper de Documentos en paralelo.")
-    with open(r'D:\WINDOWS\Escritorio\TFG\project\app\util\JSON\Strings.json', 'r', encoding='utf-8') as file:
+    strings_path = os.path.join(os.path.join(base_dir, 'JSON'), 'Strings.json')
+    with open(strings_path, 'r', encoding='utf-8') as file:
         strings = json.load(file)["Anexo"]
 
     db = DBManager()
@@ -343,7 +344,9 @@ def extraer_fechas(texto):
 # Accede a un expediente concreto y extrae la información
 async def scratchUrls(truncate=False):
     scrapper_logger.info("Iniciando scrapper de expedientes.")
-    with open(r"D:\WINDOWS\Escritorio\TFG\project\app\util\JSON\Strings.json", 'r', encoding='utf-8') as f:
+    strings_path = os.path.join(os.path.join(base_dir, 'JSON'), 'Strings.json')
+
+    with open(strings_path, 'r', encoding='utf-8') as f:
         strings = json.load(f)
     
     strings = strings["Expediente"]
@@ -424,7 +427,8 @@ async def scratchUrls(truncate=False):
 # La funcion accede e inserta datos en la base de datos
 async def scratchAnexo(truncate=False, max_retries=3):
     scrapper_logger.info("Iniciando scrapper de Documentos.")
-    with open(r"D:\WINDOWS\Escritorio\TFG\project\app\util\JSON\Strings.json", 'r', encoding='utf-8') as file:
+    strings_path = os.path.join(os.path.join(base_dir, 'JSON'), 'Strings.json')
+    with open(strings_path, 'r', encoding='utf-8') as file:
         strings = json.load(file)
     
     strings = strings["Anexo"]

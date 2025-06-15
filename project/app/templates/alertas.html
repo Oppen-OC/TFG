@@ -180,7 +180,6 @@
 
       const formData = new FormData(this);
       for (let pair of formData.entries()) {
-        console.log(pair[0]+ ': ' + pair[1]); // Verifica los datos enviados
       }
 
       fetch('http://127.0.0.1:5000/crear-alerta', {
@@ -191,14 +190,12 @@
         },
       })
         .then(response => {
-          console.log('Respuesta recibida:', response);
           if (response.ok) {
             return response.json();
           }
           throw new Error('Error al crear la alerta.');
         })
         .then(data => {
-          console.log('Datos recibidos:', data);
           if (!data.success) throw new Error('Error al crear la alerta.');
           // Añade la nueva alerta a la tabla
           const tbody = document.querySelector('table tbody');

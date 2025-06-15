@@ -4,7 +4,6 @@ from app.util.db_manager import DBManager
 from django.shortcuts import redirect
 from app.util.main import main as util_main
 from django.http import JsonResponse
-from app.util.chatbot import handle_user_input
 from django.views.decorators.csrf import csrf_exempt
 import json
 from django.http import JsonResponse
@@ -22,22 +21,8 @@ def home(request):
 
 @csrf_exempt  # Desactiva la protección CSRF para esta vista (solo para desarrollo; usa tokens CSRF en producción)
 def chatbot_view(request):
-    if request.method == 'POST':
-        data = json.loads(request.body)
-        user_message = data.get('message', '')
-
-        # Procesar el mensaje del usuario
-        bot_response = handle_user_input(user_message, cod_documento)
-
-        # Devolver la respuesta como JSON
-        return JsonResponse({'response': bot_response})
-    
-    elif request.method == 'GET':
-        # Renderizar la plantilla del chatbot para solicitudes GET
-        return render(request, 'chatbot.html')
-    
-    # Si el método no es GET ni POST, devolver un error
-    return JsonResponse({'error': 'Método no permitido'}, status=405)
+    # Solo renderiza la plantilla, el procesamiento lo hace Flask
+    return render(request, 'chatbot.html')
 
 @csrf_exempt
 def check_document_view(request):
@@ -241,6 +226,27 @@ def invertir_dia_mes(fecha):
 
     return nueva_fecha
 
+from django.contrib.auth.decorators import login_required
+
+@login_required
+def user_settings(request):
+    db = DBManager()
+    db.openConnection()
+    user = request.user.username
+
+    # Busca los datos del usuario en la tabla usuarios
+    datos = db.searchTable("auth_user", {"username": user})
+
+    db.closeConnection()
+    # Ajusta los índices según el orden de tu tabla usuarios
+    context = {
+        'username': datos[4],      # username
+        'email': datos[7],         # email
+        'password': datos[1],      # password (¡no recomendable mostrarla!)
+    }
+
+    return render(request, 'user_settings.html', context)
+
 def mostrar_anexo_i(cod):
 
     db = DBManager()
@@ -366,7 +372,6 @@ def mostrar_anexo_i(cod):
 
 def chatbot(request):   
     return True
-
 
 
 def detalles_licitacion(request, cod):
@@ -547,8 +552,6 @@ def detalles_licitacion(request, cod):
    
     return render(request, 'detalles_licitacion.html', contexto)
 
-def user_settings(request):
-    return render(request, 'user_settings.html')
 
 import json
 

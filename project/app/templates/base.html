@@ -51,8 +51,8 @@
       </ul>
       <hr />
       <div class="mt-auto">
-        <strong>Evano</strong><br />
-        <small class="text-muted">Project Manager</small>
+        <strong>{{ request.user.username }}</strong><br />
+        <small class="text-muted">Usuario</small>
         <a href="{% url 'app:user_settings' %}" class="d-block mt-2 text-muted" title="Opciones de usuario">
           <i class="bi bi-gear-fill" style="font-size: 1.2rem;"></i> Opciones de Usuario
         </a>

@@ -15,7 +15,7 @@ import json
 import os
 import re
 
-from .db_manager import DBManager
+from db_manager import DBManager
 
 load_dotenv()
 
