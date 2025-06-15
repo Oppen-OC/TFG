@@ -1,10 +1,10 @@
-from flask import jsonify, request
+from flask import jsonify, request, session
 from flask_cors import CORS
 from app import app
 from app.util.db_manager import DBManager
 from app.util.scrapper import update
 from app.util.main import main as util_main
-import sqlite3  # Cambia esto según tu base de datos
+import json
 
 # Habilitar CORS para toda la aplicación
 CORS(app)
@@ -16,6 +16,9 @@ def update_licitaciones():
         return jsonify({'success': True, 'message': 'Licitaciones actualizadas correctamente.'}), 200
     except Exception as e:
         return jsonify({'success': False, 'message': str(e)}), 500
+
+def estadisticas():
+    print("Endpoint /estadisticas fue llamado")
 
 def estadisticas():
     print("Endpoint /estadisticas fue llamado")
@@ -187,3 +190,101 @@ def get_anexoI_data():
         print(f"Error al obtener los datos de anexoI: {e}")
         return jsonify({'error': str(e)}), 500
 
+@app.route('/crear-alerta', methods=['POST', 'OPTIONS'])
+def crear_alerta():
+    print("Endpoint /crear-alerta fue llamado")
+    if request.method == 'OPTIONS':
+        response = app.make_default_options_response()
+        headers = response.headers
+        headers['Access-Control-Allow-Origin'] = 'http://127.0.0.1:8000'
+        headers['Access-Control-Allow-Methods'] = 'POST, OPTIONS'
+        headers['Access-Control-Allow-Headers'] = 'Content-Type, X-Requested-With'
+        headers['Access-Control-Allow-Credentials'] = 'true'
+        return response
+
+    print("FORM DATA:", request.form)
+    print("SESSION:", session)
+    nombre = request.form.get('nombre_alerta')
+    condiciones = request.form.get('condiciones')
+    user = request.form.get('user')
+    print(nombre, condiciones, user)
+
+    if not nombre or not condiciones or not user:
+        return jsonify({'success': False, 'error': 'Datos incompletos'}), 400
+
+    try:
+        condiciones_json = json.loads(condiciones)
+    except Exception:
+        return jsonify({'success': False, 'error': 'Condiciones mal formateadas'}), 400
+
+    try:
+        db = DBManager()
+        db.openConnection()
+        # Prepara los valores en el orden correcto según tu tabla y tu DBManager
+        values = [user, nombre, 1, json.dumps(condiciones_json)]
+        db.insertDb("alertas", values)
+        db.closeConnection()
+        return jsonify({
+            'success': True,
+            'nombre': nombre,
+            'activo': True,
+            'condiciones': condiciones_json
+        })
+    except Exception as e:
+        print("ERROR AL GUARDAR ALERTA:", e)
+        return jsonify({'success': False, 'error': str(e)}), 500
+
+@app.route('/eliminar-alerta', methods=['POST', 'OPTIONS'])
+def eliminar_alerta():
+    if request.method == 'OPTIONS':
+        response = app.make_default_options_response()
+        headers = response.headers
+        headers['Access-Control-Allow-Origin'] = 'http://127.0.0.1:8000'
+        headers['Access-Control-Allow-Methods'] = 'POST, OPTIONS'
+        headers['Access-Control-Allow-Headers'] = 'Content-Type, X-Requested-With'
+        headers['Access-Control-Allow-Credentials'] = 'true'
+        return response
+
+    alerta_id = request.form.get('id')
+
+    if not alerta_id:
+        return jsonify({'success': False, 'error': 'Datos incompletos'}), 400
+
+    try:
+        db = DBManager()
+        db.openConnection()
+        # Usa deleteObject para eliminar por id
+        db.deleteObject("alertas", "id", alerta_id)
+        db.closeConnection()
+        return jsonify({'success': True})
+    except Exception as e:
+        print("ERROR AL ELIMINAR ALERTA:", e)
+        return jsonify({'success': False, 'error': str(e)}), 500
+
+@app.route('/guardar-anexo', methods=['POST', 'OPTIONS'])
+def guardar_anexo():
+    if request.method == 'OPTIONS':
+        response = app.make_default_options_response()
+        headers = response.headers
+        headers['Access-Control-Allow-Origin'] = 'http://127.0.0.1:8000'
+        headers['Access-Control-Allow-Methods'] = 'POST, OPTIONS'
+        headers['Access-Control-Allow-Headers'] = 'Content-Type, X-Requested-With'
+        headers['Access-Control-Allow-Credentials'] = 'true'
+        return response
+
+    cod_licitacion = request.form.get('cod_licitacion')
+    user = request.form.get('user')
+
+    if not cod_licitacion or not user:
+        return jsonify({'success': False, 'error': 'Datos incompletos'}), 400
+
+    try:
+        db = DBManager()
+        db.openConnection()
+        values = [cod_licitacion, user]
+        db.insertDb("anexos_guardados", values)
+        db.closeConnection()
+        return jsonify({'success': True})
+    except Exception as e:
+        print("ERROR AL GUARDAR ANEXO:", e)
+        return jsonify({'success': False, 'error': str(e)}), 500

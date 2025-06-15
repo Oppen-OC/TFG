@@ -66,7 +66,7 @@ async def poblar_db(truncate = False):
     strings = strings["Formulario"]
 
     async with async_playwright() as p:
-        browser = await p.chromium.launch(headless=False)
+        browser = await p.chromium.launch(headless=True)
         context = await browser.new_context()
         page = await context.new_page()
 
@@ -245,7 +245,7 @@ async def scratchAnexoParallel(num_browsers=4):
 async def process_subgroup(start, end, db, strings):
     """Procesa un subconjunto de expedientes en un navegador."""
     async with async_playwright() as p:
-        browser = await p.chromium.launch(headless=False)
+        browser = await p.chromium.launch(headless=True)
         context = await browser.new_context()
         page = await context.new_page()
         page.set_default_timeout(120000)
@@ -358,7 +358,7 @@ async def scratchUrls(truncate=False):
     scrapper_logger.info(f"{len(complement)} documentos en cod y no en licitaciones.")
 
     async with async_playwright() as p:
-        browser = await p.chromium.launch(headless=False)
+        browser = await p.chromium.launch(headless=True)
         context = await browser.new_context()
         page = await context.new_page()
 
@@ -439,7 +439,7 @@ async def scratchAnexo(truncate=False, max_retries=3):
     complement = await asyncio.to_thread(db.complement_of_intersection, "Licitaciones", "Documentos")
 
     async with async_playwright() as p:
-        browser = await p.chromium.launch(headless=False)
+        browser = await p.chromium.launch(headless=True)
         context = await browser.new_context()
         page = await context.new_page()
 
@@ -644,7 +644,7 @@ def filter(text):
 
 async def test_scratchPliego(url):
     async with async_playwright() as p:
-        browser = await p.chromium.launch(headless=False)
+        browser = await p.chromium.launch(headless=True)
         context = await browser.new_context()
         page = await context.new_page()
         await scratchPliego(page, url)

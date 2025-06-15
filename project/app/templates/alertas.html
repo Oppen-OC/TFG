@@ -19,24 +19,15 @@
   </thead>
   <tbody>
     {% for alerta in alertas %}
-      {% if isinstance(alerta, dict) %}
-        {% if not alerta.get('nombre') %}
-          {% set alerta = alerta|merge({'nombre': 'Sin nombre'}) %}
-        {% endif %}
-      {% else %}
-        {% if not getattr(alerta, 'nombre', None) %}
-          {% set alerta = alerta|merge({'nombre': 'Sin nombre'}) %}
-        {% endif %}
-      {% endif %}
-      <tr id="alerta-{{ forloop.counter0 }}">
-        <td>{{ alerta.nombre }}</td>
+      <tr id="alerta-{{ alerta.id }}">
+        <td>{{ alerta.nombre|default:"Sin nombre" }}</td>
         <td>
           {% for condicion in alerta.condiciones %}
             <span class="badge bg-secondary">{{ condicion.campo }}: {{ condicion.valor }}</span>
           {% endfor %}
         </td>
         <td>
-          <button type="button" class="btn btn-danger btn-sm" onclick="eliminarAlerta('alerta-{{ forloop.counter0 }}')">Eliminar</button>
+          <button type="button" class="btn btn-danger btn-sm" onclick="eliminarAlerta('{{ alerta.id }}', '{{ alerta.user }}')">Eliminar</button>
         </td>
       </tr>
     {% empty %}
@@ -51,7 +42,7 @@
 <div class="modal fade" id="modalNuevaAlerta" tabindex="-1" aria-labelledby="modalNuevaAlertaLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
-      <form id="formNuevaAlerta" method="post" action="{% url 'app:crear_alerta' %}">
+      <form id="formNuevaAlerta" method="post" action="/crear-alerta">
         {% csrf_token %}
         <div class="modal-header">
           <h5 class="modal-title" id="modalNuevaAlertaLabel">Añadir Nueva Alerta</h5>
@@ -120,6 +111,7 @@
             </div>
           </div>
           <input type="hidden" name="condiciones" id="condiciones-json-nueva">
+          <input type="hidden" name="user" value="{{ request.user.username }}">
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
@@ -179,10 +171,19 @@
     formNuevaAlerta.addEventListener('submit', function (e) {
       e.preventDefault();
 
-      const formData = new FormData(this);
-      const url = "{% url 'app:crear_alerta' %}";
+      // Validar que haya al menos una condición
+      const condicionesHidden = document.getElementById('condiciones-json-nueva');
+      if (!condicionesHidden.value || condicionesHidden.value === '[]') {
+        alert('Debes añadir al menos una condición a la alerta.');
+        return;
+      }
 
-      fetch(url, {
+      const formData = new FormData(this);
+      for (let pair of formData.entries()) {
+        console.log(pair[0]+ ': ' + pair[1]); // Verifica los datos enviados
+      }
+
+      fetch('http://127.0.0.1:5000/crear-alerta', {
         method: 'POST',
         body: formData,
         headers: {
@@ -190,24 +191,27 @@
         },
       })
         .then(response => {
+          console.log('Respuesta recibida:', response);
           if (response.ok) {
             return response.json();
           }
           throw new Error('Error al crear la alerta.');
         })
         .then(data => {
+          console.log('Datos recibidos:', data);
+          if (!data.success) throw new Error('Error al crear la alerta.');
           // Añade la nueva alerta a la tabla
           const tbody = document.querySelector('table tbody');
+          let condicionesHtml = '';
+          data.condiciones.forEach(cond => {
+            condicionesHtml += `<span class="badge bg-secondary">${cond.campo}: ${cond.valor}</span> `;
+          });
           const nuevaFila = `
             <tr>
               <td>${data.nombre}</td>
-              <td><span class="badge ${data.activo ? 'bg-success' : 'bg-danger'}">${data.activo ? 'Sí' : 'No'}</span></td>
-              <td>${data.frecuencia}</td>
-              <td>-</td>
+              <td>${condicionesHtml}</td>
               <td>
-                <button type="button" class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#modalAjustar${data.id}">
-                  Ajustar
-                </button>
+                <button type="button" class="btn btn-danger btn-sm" onclick="eliminarAlerta('alerta-${data.id}')">Eliminar</button>
               </td>
             </tr>
           `;
@@ -218,7 +222,7 @@
           modal.hide();
         })
         .catch(error => {
-          console.error(error);
+          console.error('Error en fetch:', error);
           alert('Hubo un error al crear la alerta.');
         });
     });
@@ -307,9 +311,34 @@
     });
   }
 
-  function eliminarAlerta(rowId) {
-    const fila = document.getElementById(rowId);
-    if (fila) fila.remove();
+  function eliminarAlerta(alertaId, user) {
+    if (!confirm('¿Seguro que quieres eliminar esta alerta?')) return;
+
+    const formData = new FormData();
+    formData.append('id', alertaId);
+    formData.append('user', user);
+
+    fetch('http://127.0.0.1:5000/eliminar-alerta', {
+      method: 'POST',
+      body: formData,
+      headers: {
+        'X-Requested-With': 'XMLHttpRequest',
+      },
+    })
+      .then(response => response.json())
+      .then(data => {
+        if (data.success) {
+          // Elimina la fila de la tabla
+          const fila = document.getElementById('alerta-' + alertaId);
+          if (fila) fila.remove();
+        } else {
+          alert('No se pudo eliminar la alerta: ' + (data.error || 'Error desconocido'));
+        }
+      })
+      .catch(error => {
+        console.error('Error al eliminar la alerta:', error);
+        alert('Hubo un error al eliminar la alerta.');
+      });
   }
 </script>
 {% endblock %}

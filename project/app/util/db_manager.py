@@ -69,6 +69,7 @@ class DBManager:
         self.logger.info("Desconexión a la base de datos completada.")
 
     def insertDb(self, table, values):
+        query = None  # <-- Añade esto
         if not all(value is not None for value in values):
             self.logger.error(f"Invalid data: {values}")
             return
