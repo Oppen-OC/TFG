@@ -1,0 +1,655 @@
+USE [TFG]
+GO
+/****** Object:  Table [dbo].[actualizaciones]    Script Date: 6/15/2025 10:04:50 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[actualizaciones](
+	[id] [int] NOT NULL,
+	[fecha_actualizacion] [datetime] NOT NULL,
+PRIMARY KEY CLUSTERED 
+(
+	[id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[alertas]    Script Date: 6/15/2025 10:04:50 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[alertas](
+	[id] [int] IDENTITY(1,1) NOT NULL,
+	[user] [varchar](150) NOT NULL,
+	[nombre] [varchar](255) NOT NULL,
+	[activo] [bit] NOT NULL,
+	[condiciones] [nvarchar](max) NOT NULL,
+PRIMARY KEY CLUSTERED 
+(
+	[id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[AnexoI]    Script Date: 6/15/2025 10:04:50 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[AnexoI](
+	[COD] [varchar](255) NOT NULL,
+	[Regulacion_armonizada] [varchar](max) NULL,
+	[Sometido_recurso_especial] [varchar](max) NULL,
+	[Plazo_ejecución] [varchar](max) NULL,
+	[Presupuesto_sinIVA] [varchar](max) NULL,
+	[Presupuesto_conIVA] [varchar](max) NULL,
+	[Importe_IVA] [varchar](max) NULL,
+	[Sistema_Retribucion] [varchar](max) NULL,
+	[Valor_estimado] [varchar](max) NULL,
+	[Revision_precios] [varchar](max) NULL,
+	[Garantia_definitiva] [varchar](max) NULL,
+	[Garantia_provisional] [varchar](max) NULL,
+	[Admisibilidad_variantes] [varchar](max) NULL,
+	[Clasificacion] [varchar](max) NULL,
+	[Grupo] [varchar](max) NULL,
+	[Subgrupo] [varchar](max) NULL,
+	[Categoria] [varchar](max) NULL,
+	[Criterio_Solvencia_economica] [varchar](max) NULL,
+	[Criterio_Solvencia_tecnica] [varchar](max) NULL,
+	[Condiciones_especiales] [varchar](max) NULL,
+	[Penalidad_incumplimiento] [varchar](max) NULL,
+	[Forma_pago] [varchar](max) NULL,
+	[Causas_modificacion] [varchar](max) NULL,
+	[Plazo_garantia] [varchar](max) NULL,
+	[Contratacion_precio_unit] [varchar](max) NULL,
+	[Tanto_alzado] [varchar](max) NULL,
+	[Tanto_alzado_con] [varchar](max) NULL,
+	[Criterio_juicio_val] [varchar](max) NULL,
+	[Evaluables_autom] [varchar](max) NULL,
+	[Criterio_ecónomico] [varchar](max) NULL,
+	[Obligaciones_ambientales] [varchar](max) NULL,
+	[Regimen_penalidades] [varchar](max) NULL,
+	[Ambiental] [varchar](max) NULL,
+	[Tecnico] [varchar](max) NULL,
+	[Precio] [varchar](max) NULL,
+	[Garantia] [varchar](max) NULL,
+	[Experiencia] [varchar](max) NULL,
+	[Calidad] [varchar](max) NULL,
+	[Social] [varchar](max) NULL,
+	[Seguridad] [varchar](max) NULL,
+	[Juicio_valor] [varchar](max) NULL,
+	[Formula_precio] [varchar](max) NULL,
+	[Formula_JuicioValor] [varchar](max) NULL,
+	[Criterios_valores_anormales] [varchar](max) NULL,
+	[Infraccion_grave] [varchar](max) NULL,
+	[Gastos_desistimiento] [varchar](max) NULL,
+	[Contratacion_control] [varchar](max) NULL,
+	[Tareas_criticas] [varchar](max) NULL,
+PRIMARY KEY CLUSTERED 
+(
+	[COD] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[AnexoI_Fuentes]    Script Date: 6/15/2025 10:04:50 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[AnexoI_Fuentes](
+	[COD] [varchar](255) NOT NULL,
+	[Regulacion_armonizada] [varchar](max) NULL,
+	[Sometido_recurso_especial] [varchar](max) NULL,
+	[Plazo_ejecución] [varchar](max) NULL,
+	[Presupuesto_sinIVA] [varchar](max) NULL,
+	[Presupuesto_conIVA] [varchar](max) NULL,
+	[Importe_IVA] [varchar](max) NULL,
+	[Sistema_Retribucion] [varchar](max) NULL,
+	[Valor_estimado] [varchar](max) NULL,
+	[Revision_precios] [varchar](max) NULL,
+	[Garantia_definitiva] [varchar](max) NULL,
+	[Garantia_provisional] [varchar](max) NULL,
+	[Admisibilidad_variantes] [varchar](max) NULL,
+	[Clasificacion] [varchar](max) NULL,
+	[Grupo] [varchar](max) NULL,
+	[Subgrupo] [varchar](max) NULL,
+	[Categoria] [varchar](max) NULL,
+	[Criterio_Solvencia_economica] [varchar](max) NULL,
+	[Criterio_Solvencia_tecnica] [varchar](max) NULL,
+	[Condiciones_especiales] [varchar](max) NULL,
+	[Penalidad_incumplimiento] [varchar](max) NULL,
+	[Forma_pago] [varchar](max) NULL,
+	[Causas_modificacion] [varchar](max) NULL,
+	[Plazo_garantia] [varchar](max) NULL,
+	[Contratacion_precio_unit] [varchar](max) NULL,
+	[Tanto_alzado] [varchar](max) NULL,
+	[Tanto_alzado_con] [varchar](max) NULL,
+	[Criterio_juicio_val] [varchar](max) NULL,
+	[Evaluables_autom] [varchar](max) NULL,
+	[Criterio_ecónomico] [varchar](max) NULL,
+	[Obligaciones_ambientales] [varchar](max) NULL,
+	[Regimen_penalidades] [varchar](max) NULL,
+	[Ambiental] [varchar](max) NULL,
+	[Tecnico] [varchar](max) NULL,
+	[Precio] [varchar](max) NULL,
+	[Garantia] [varchar](max) NULL,
+	[Experiencia] [varchar](max) NULL,
+	[Calidad] [varchar](max) NULL,
+	[Social] [varchar](max) NULL,
+	[Seguridad] [varchar](max) NULL,
+	[Juicio_valor] [varchar](max) NULL,
+	[Formula_precio] [varchar](max) NULL,
+	[Formula_JuicioValor] [varchar](max) NULL,
+	[Criterios_valores_anormales] [varchar](max) NULL,
+	[Infraccion_grave] [varchar](max) NULL,
+	[Gastos_desistimiento] [varchar](max) NULL,
+	[Contratacion_control] [varchar](max) NULL,
+	[Tareas_criticas] [varchar](max) NULL,
+PRIMARY KEY CLUSTERED 
+(
+	[COD] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[AnexoI_Fuentes_test]    Script Date: 6/15/2025 10:04:50 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[AnexoI_Fuentes_test](
+	[COD] [varchar](255) NOT NULL,
+	[Regulacion_armonizada] [varchar](max) NULL,
+	[Sometido_recurso_especial] [varchar](max) NULL,
+	[Plazo_ejecución] [varchar](max) NULL,
+	[Presupuesto_sinIVA] [varchar](max) NULL,
+	[Presupuesto_conIVA] [varchar](max) NULL,
+	[Importe_IVA] [varchar](max) NULL,
+	[Sistema_Retribucion] [varchar](max) NULL,
+	[Valor_estimado] [varchar](max) NULL,
+	[Revision_precios] [varchar](max) NULL,
+	[Garantia_definitiva] [varchar](max) NULL,
+	[Garantia_provisional] [varchar](max) NULL,
+	[Admisibilidad_variantes] [varchar](max) NULL,
+	[Clasificacion] [varchar](max) NULL,
+	[Grupo] [varchar](max) NULL,
+	[Subgrupo] [varchar](max) NULL,
+	[Categoria] [varchar](max) NULL,
+	[Criterio_Solvencia_economica] [varchar](max) NULL,
+	[Criterio_Solvencia_tecnica] [varchar](max) NULL,
+	[Condiciones_especiales] [varchar](max) NULL,
+	[Penalidad_incumplimiento] [varchar](max) NULL,
+	[Forma_pago] [varchar](max) NULL,
+	[Causas_modificacion] [varchar](max) NULL,
+	[Plazo_garantia] [varchar](max) NULL,
+	[Contratacion_precio_unit] [varchar](max) NULL,
+	[Tanto_alzado] [varchar](max) NULL,
+	[Tanto_alzado_con] [varchar](max) NULL,
+	[Criterio_juicio_val] [varchar](max) NULL,
+	[Evaluables_autom] [varchar](max) NULL,
+	[Criterio_ecónomico] [varchar](max) NULL,
+	[Obligaciones_ambientales] [varchar](max) NULL,
+	[Regimen_penalidades] [varchar](max) NULL,
+PRIMARY KEY CLUSTERED 
+(
+	[COD] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[AnexoI_test]    Script Date: 6/15/2025 10:04:50 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[AnexoI_test](
+	[COD] [varchar](255) NOT NULL,
+	[Regulacion_armonizada] [varchar](max) NULL,
+	[Sometido_recurso_especial] [varchar](max) NULL,
+	[Plazo_ejecución] [varchar](max) NULL,
+	[Presupuesto_sinIVA] [varchar](max) NULL,
+	[Presupuesto_conIVA] [varchar](max) NULL,
+	[Importe_IVA] [varchar](max) NULL,
+	[Sistema_Retribucion] [varchar](max) NULL,
+	[Valor_estimado] [varchar](max) NULL,
+	[Revision_precios] [varchar](max) NULL,
+	[Garantia_definitiva] [varchar](max) NULL,
+	[Garantia_provisional] [varchar](max) NULL,
+	[Admisibilidad_variantes] [varchar](max) NULL,
+	[Clasificacion] [varchar](max) NULL,
+	[Grupo] [varchar](max) NULL,
+	[Subgrupo] [varchar](max) NULL,
+	[Categoria] [varchar](max) NULL,
+	[Criterio_Solvencia_economica] [varchar](max) NULL,
+	[Criterio_Solvencia_tecnica] [varchar](max) NULL,
+	[Condiciones_especiales] [varchar](max) NULL,
+	[Penalidad_incumplimiento] [varchar](max) NULL,
+	[Forma_pago] [varchar](max) NULL,
+	[Causas_modificacion] [varchar](max) NULL,
+	[Plazo_garantia] [varchar](max) NULL,
+	[Contratacion_precio_unit] [varchar](max) NULL,
+	[Tanto_alzado] [varchar](max) NULL,
+	[Tanto_alzado_con] [varchar](max) NULL,
+	[Criterio_juicio_val] [varchar](max) NULL,
+	[Evaluables_autom] [varchar](max) NULL,
+	[Criterio_ecónomico] [varchar](max) NULL,
+	[Obligaciones_ambientales] [varchar](max) NULL,
+	[Regimen_penalidades] [varchar](max) NULL,
+PRIMARY KEY CLUSTERED 
+(
+	[COD] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[Anexos]    Script Date: 6/15/2025 10:04:50 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[Anexos](
+	[COD] [varchar](150) NOT NULL,
+	[url_pliego] [varchar](300) NULL,
+	[titulo_pliego] [varchar](200) NULL,
+	[anexo_I] [bit] NULL,
+	[multiples] [bit] NULL,
+	[modificado] [bit] NULL,
+PRIMARY KEY CLUSTERED 
+(
+	[COD] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[anexos_guardados]    Script Date: 6/15/2025 10:04:50 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[anexos_guardados](
+	[id] [int] IDENTITY(1,1) NOT NULL,
+	[cod_licitacion] [varchar](50) NOT NULL,
+	[user] [varchar](150) NOT NULL,
+	[fecha_guardado] [datetime] NULL,
+PRIMARY KEY CLUSTERED 
+(
+	[id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[app_licitacion]    Script Date: 6/15/2025 10:04:50 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[app_licitacion](
+	[id] [bigint] IDENTITY(1,1) NOT NULL,
+	[cod] [nvarchar](255) NOT NULL,
+	[id_publicacion_ted] [nvarchar](max) NULL,
+	[organo_contratacion] [nvarchar](max) NULL,
+	[id_organo_contratacion] [nvarchar](max) NULL,
+	[estado_licitacion] [nvarchar](max) NULL,
+	[objeto_contrato] [nvarchar](max) NULL,
+	[financiacion_ue] [nvarchar](max) NULL,
+	[presupuesto_base_licitacion] [nvarchar](max) NULL,
+	[valor_estimado_contrato] [nvarchar](max) NULL,
+	[tipo_contrato] [nvarchar](max) NULL,
+	[codigo_cpv] [nvarchar](max) NULL,
+	[lugar_ejecucion] [nvarchar](max) NULL,
+	[sistema_contratacion] [nvarchar](max) NULL,
+	[procedimiento_contratacion] [nvarchar](max) NULL,
+	[tipo_tramitacion] [nvarchar](max) NULL,
+	[metodo_presentacion_oferta] [nvarchar](max) NULL,
+	[resultado] [nvarchar](max) NULL,
+	[adjudicatario] [nvarchar](max) NULL,
+	[num_licitadores_presentados] [nvarchar](max) NULL,
+	[importe_adjudicacion] [nvarchar](max) NULL,
+	[analisis_proyecto] [nvarchar](max) NULL,
+	[criterio_ecónomico] [nvarchar](max) NULL,
+	[criterio_juicio_val] [nvarchar](max) NULL,
+	[evaluables_autom] [nvarchar](max) NULL,
+	[memoria_constructiva] [nvarchar](max) NULL,
+	[precio_unit] [nvarchar](max) NULL,
+	[programa_trabajos] [nvarchar](max) NULL,
+	[tanto_alzado] [nvarchar](max) NULL,
+	[tanto_alzado_con] [nvarchar](max) NULL,
+PRIMARY KEY CLUSTERED 
+(
+	[id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[auth_group]    Script Date: 6/15/2025 10:04:50 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[auth_group](
+	[id] [int] IDENTITY(1,1) NOT NULL,
+	[name] [nvarchar](150) NOT NULL,
+PRIMARY KEY CLUSTERED 
+(
+	[id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY],
+ CONSTRAINT [auth_group_name_a6ea08ec_uniq] UNIQUE NONCLUSTERED 
+(
+	[name] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[auth_group_permissions]    Script Date: 6/15/2025 10:04:50 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[auth_group_permissions](
+	[id] [bigint] IDENTITY(1,1) NOT NULL,
+	[group_id] [int] NOT NULL,
+	[permission_id] [int] NOT NULL,
+PRIMARY KEY CLUSTERED 
+(
+	[id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[auth_permission]    Script Date: 6/15/2025 10:04:50 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[auth_permission](
+	[id] [int] IDENTITY(1,1) NOT NULL,
+	[name] [nvarchar](255) NOT NULL,
+	[content_type_id] [int] NOT NULL,
+	[codename] [nvarchar](100) NOT NULL,
+PRIMARY KEY CLUSTERED 
+(
+	[id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[auth_user]    Script Date: 6/15/2025 10:04:50 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[auth_user](
+	[id] [int] IDENTITY(1,1) NOT NULL,
+	[password] [nvarchar](128) NOT NULL,
+	[last_login] [datetime] NULL,
+	[is_superuser] [bit] NOT NULL,
+	[username] [nvarchar](150) NOT NULL,
+	[first_name] [nvarchar](150) NOT NULL,
+	[last_name] [nvarchar](150) NOT NULL,
+	[email] [nvarchar](254) NOT NULL,
+	[is_staff] [bit] NOT NULL,
+	[is_active] [bit] NOT NULL,
+	[date_joined] [datetime] NOT NULL,
+PRIMARY KEY CLUSTERED 
+(
+	[id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY],
+ CONSTRAINT [auth_user_username_6821ab7c_uniq] UNIQUE NONCLUSTERED 
+(
+	[username] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[auth_user_groups]    Script Date: 6/15/2025 10:04:50 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[auth_user_groups](
+	[id] [bigint] IDENTITY(1,1) NOT NULL,
+	[user_id] [int] NOT NULL,
+	[group_id] [int] NOT NULL,
+PRIMARY KEY CLUSTERED 
+(
+	[id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[auth_user_user_permissions]    Script Date: 6/15/2025 10:04:50 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[auth_user_user_permissions](
+	[id] [bigint] IDENTITY(1,1) NOT NULL,
+	[user_id] [int] NOT NULL,
+	[permission_id] [int] NOT NULL,
+PRIMARY KEY CLUSTERED 
+(
+	[id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[Codigos]    Script Date: 6/15/2025 10:04:50 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[Codigos](
+	[COD] [varchar](100) NOT NULL,
+	[DIR_URL] [varchar](255) NULL,
+	[Fechas] [varchar](max) NULL,
+PRIMARY KEY CLUSTERED 
+(
+	[COD] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[Codigos_Test]    Script Date: 6/15/2025 10:04:50 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[Codigos_Test](
+	[cod] [varchar](255) NOT NULL,
+	[dir_url] [varchar](max) NULL,
+PRIMARY KEY CLUSTERED 
+(
+	[cod] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[django_admin_log]    Script Date: 6/15/2025 10:04:50 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[django_admin_log](
+	[id] [int] IDENTITY(1,1) NOT NULL,
+	[action_time] [datetimeoffset](7) NOT NULL,
+	[object_id] [nvarchar](max) NULL,
+	[object_repr] [nvarchar](200) NOT NULL,
+	[action_flag] [smallint] NOT NULL,
+	[change_message] [nvarchar](max) NOT NULL,
+	[content_type_id] [int] NULL,
+	[user_id] [int] NOT NULL,
+PRIMARY KEY CLUSTERED 
+(
+	[id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[django_content_type]    Script Date: 6/15/2025 10:04:50 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[django_content_type](
+	[id] [int] IDENTITY(1,1) NOT NULL,
+	[app_label] [nvarchar](100) NOT NULL,
+	[model] [nvarchar](100) NOT NULL,
+PRIMARY KEY CLUSTERED 
+(
+	[id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[django_migrations]    Script Date: 6/15/2025 10:04:50 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[django_migrations](
+	[id] [bigint] IDENTITY(1,1) NOT NULL,
+	[app] [nvarchar](255) NOT NULL,
+	[name] [nvarchar](255) NOT NULL,
+	[applied] [datetimeoffset](7) NOT NULL,
+PRIMARY KEY CLUSTERED 
+(
+	[id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[django_session]    Script Date: 6/15/2025 10:04:50 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[django_session](
+	[session_key] [nvarchar](40) NOT NULL,
+	[session_data] [nvarchar](max) NOT NULL,
+	[expire_date] [datetimeoffset](7) NOT NULL,
+PRIMARY KEY CLUSTERED 
+(
+	[session_key] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[Documentos]    Script Date: 6/15/2025 10:04:50 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[Documentos](
+	[COD] [varchar](255) NOT NULL,
+	[url_anexo] [varchar](max) NULL,
+	[url_pliego] [varchar](max) NULL,
+	[titulo_anexo] [varchar](255) NULL,
+	[anexo_I] [bit] NULL,
+	[multiples] [bit] NULL,
+	[modificado] [bit] NULL,
+PRIMARY KEY CLUSTERED 
+(
+	[COD] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[Licitaciones]    Script Date: 6/15/2025 10:04:50 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[Licitaciones](
+	[COD] [varchar](100) NOT NULL,
+	[ID_Publicacion_TED] [varchar](100) NULL,
+	[Organo_Contratacion] [varchar](255) NULL,
+	[ID_Organo_Contratacion] [varchar](100) NULL,
+	[Estado_Licitacion] [varchar](255) NULL,
+	[Objeto_Contrato] [varchar](1023) NULL,
+	[Financiacion_UE] [varchar](100) NULL,
+	[Presupuesto_Base_Licitacion] [varchar](100) NULL,
+	[Valor_Estimado_Contrato] [varchar](100) NULL,
+	[Tipo_Contrato] [varchar](100) NULL,
+	[Codigo_CPV] [nvarchar](max) NULL,
+	[Lugar_Ejecucion] [varchar](255) NULL,
+	[Sistema_Contratacion] [varchar](100) NULL,
+	[Procedimiento_Contratacion] [varchar](100) NULL,
+	[Tipo_Tramitacion] [varchar](100) NULL,
+	[Metodo_Presentacion_Oferta] [varchar](255) NULL,
+	[Resultado] [varchar](255) NULL,
+	[Adjudicatario] [varchar](255) NULL,
+	[Num_Licitadores_Presentados] [varchar](100) NULL,
+	[Importe_Adjudicacion] [varchar](100) NULL,
+	[Fecha_Adjudicacion] [varchar](20) NULL,
+	[Fecha_Formalizacion] [varchar](20) NULL,
+	[Fecha_Desistimiento] [varchar](20) NULL,
+	[Fecha_Presentacion_Oferta] [varchar](20) NULL,
+	[Fecha_Presentacion_Solicitud] [varchar](20) NULL,
+ CONSTRAINT [PK_COD] PRIMARY KEY CLUSTERED 
+(
+	[COD] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[Licitaciones_test]    Script Date: 6/15/2025 10:04:50 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[Licitaciones_test](
+	[COD] [varchar](100) NOT NULL,
+	[ID_Publicacion_TED] [varchar](100) NULL,
+	[Organo_Contratacion] [varchar](255) NULL,
+	[ID_Organo_Contratacion] [varchar](100) NULL,
+	[Estado_Licitacion] [varchar](255) NULL,
+	[Objeto_Contrato] [varchar](1023) NULL,
+	[Financiacion_UE] [varchar](100) NULL,
+	[Presupuesto_Base_Licitacion] [varchar](100) NULL,
+	[Valor_Estimado_Contrato] [varchar](100) NULL,
+	[Tipo_Contrato] [varchar](100) NULL,
+	[Codigo_CPV] [nvarchar](max) NULL,
+	[Lugar_Ejecucion] [varchar](255) NULL,
+	[Sistema_Contratacion] [varchar](100) NULL,
+	[Procedimiento_Contratacion] [varchar](100) NULL,
+	[Tipo_Tramitacion] [varchar](100) NULL,
+	[Metodo_Presentacion_Oferta] [varchar](255) NULL,
+	[Resultado] [varchar](255) NULL,
+	[Adjudicatario] [varchar](255) NULL,
+	[Num_Licitadores_Presentados] [varchar](100) NULL,
+	[Importe_Adjudicacion] [varchar](100) NULL
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+GO
+ALTER TABLE [dbo].[alertas] ADD  DEFAULT ((1)) FOR [activo]
+GO
+ALTER TABLE [dbo].[anexos_guardados] ADD  DEFAULT (getdate()) FOR [fecha_guardado]
+GO
+ALTER TABLE [dbo].[auth_group_permissions]  WITH CHECK ADD  CONSTRAINT [auth_group_permissions_group_id_b120cbf9_fk_auth_group_id] FOREIGN KEY([group_id])
+REFERENCES [dbo].[auth_group] ([id])
+GO
+ALTER TABLE [dbo].[auth_group_permissions] CHECK CONSTRAINT [auth_group_permissions_group_id_b120cbf9_fk_auth_group_id]
+GO
+ALTER TABLE [dbo].[auth_group_permissions]  WITH CHECK ADD  CONSTRAINT [auth_group_permissions_permission_id_84c5c92e_fk_auth_permission_id] FOREIGN KEY([permission_id])
+REFERENCES [dbo].[auth_permission] ([id])
+GO
+ALTER TABLE [dbo].[auth_group_permissions] CHECK CONSTRAINT [auth_group_permissions_permission_id_84c5c92e_fk_auth_permission_id]
+GO
+ALTER TABLE [dbo].[auth_permission]  WITH CHECK ADD  CONSTRAINT [auth_permission_content_type_id_2f476e4b_fk_django_content_type_id] FOREIGN KEY([content_type_id])
+REFERENCES [dbo].[django_content_type] ([id])
+GO
+ALTER TABLE [dbo].[auth_permission] CHECK CONSTRAINT [auth_permission_content_type_id_2f476e4b_fk_django_content_type_id]
+GO
+ALTER TABLE [dbo].[auth_user_groups]  WITH CHECK ADD  CONSTRAINT [auth_user_groups_group_id_97559544_fk_auth_group_id] FOREIGN KEY([group_id])
+REFERENCES [dbo].[auth_group] ([id])
+GO
+ALTER TABLE [dbo].[auth_user_groups] CHECK CONSTRAINT [auth_user_groups_group_id_97559544_fk_auth_group_id]
+GO
+ALTER TABLE [dbo].[auth_user_groups]  WITH CHECK ADD  CONSTRAINT [auth_user_groups_user_id_6a12ed8b_fk_auth_user_id] FOREIGN KEY([user_id])
+REFERENCES [dbo].[auth_user] ([id])
+GO
+ALTER TABLE [dbo].[auth_user_groups] CHECK CONSTRAINT [auth_user_groups_user_id_6a12ed8b_fk_auth_user_id]
+GO
+ALTER TABLE [dbo].[auth_user_user_permissions]  WITH CHECK ADD  CONSTRAINT [auth_user_user_permissions_permission_id_1fbb5f2c_fk_auth_permission_id] FOREIGN KEY([permission_id])
+REFERENCES [dbo].[auth_permission] ([id])
+GO
+ALTER TABLE [dbo].[auth_user_user_permissions] CHECK CONSTRAINT [auth_user_user_permissions_permission_id_1fbb5f2c_fk_auth_permission_id]
+GO
+ALTER TABLE [dbo].[auth_user_user_permissions]  WITH CHECK ADD  CONSTRAINT [auth_user_user_permissions_user_id_a95ead1b_fk_auth_user_id] FOREIGN KEY([user_id])
+REFERENCES [dbo].[auth_user] ([id])
+GO
+ALTER TABLE [dbo].[auth_user_user_permissions] CHECK CONSTRAINT [auth_user_user_permissions_user_id_a95ead1b_fk_auth_user_id]
+GO
+ALTER TABLE [dbo].[django_admin_log]  WITH CHECK ADD  CONSTRAINT [django_admin_log_content_type_id_c4bce8eb_fk_django_content_type_id] FOREIGN KEY([content_type_id])
+REFERENCES [dbo].[django_content_type] ([id])
+GO
+ALTER TABLE [dbo].[django_admin_log] CHECK CONSTRAINT [django_admin_log_content_type_id_c4bce8eb_fk_django_content_type_id]
+GO
+ALTER TABLE [dbo].[django_admin_log]  WITH CHECK ADD  CONSTRAINT [django_admin_log_user_id_c564eba6_fk_auth_user_id] FOREIGN KEY([user_id])
+REFERENCES [dbo].[auth_user] ([id])
+GO
+ALTER TABLE [dbo].[django_admin_log] CHECK CONSTRAINT [django_admin_log_user_id_c564eba6_fk_auth_user_id]
+GO
+ALTER TABLE [dbo].[django_admin_log]  WITH CHECK ADD  CONSTRAINT [django_admin_log_action_flag_a8637d59_check] CHECK  (([action_flag]>=(0)))
+GO
+ALTER TABLE [dbo].[django_admin_log] CHECK CONSTRAINT [django_admin_log_action_flag_a8637d59_check]
+GO
