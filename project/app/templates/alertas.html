@@ -10,76 +10,39 @@
 </button>
 
 <table class="table table-hover">
-  <thead class="thead-light">
+  <thead>
     <tr>
       <th>Nombre</th>
-      <th>Activo</th>
-      <th>Frecuencia</th>
-      <th>Última Notificación</th>
+      <th>Condiciones</th>
       <th>Acciones</th>
     </tr>
   </thead>
   <tbody>
     {% for alerta in alertas %}
-    <tr>
-      <td>{{ alerta.nombre }}</td>
-      <td>
-        {% if alerta.activo %}
-        <span class="badge bg-success">Sí</span>
-        {% else %}
-        <span class="badge bg-danger">No</span>
+      {% if isinstance(alerta, dict) %}
+        {% if not alerta.get('nombre') %}
+          {% set alerta = alerta|merge({'nombre': 'Sin nombre'}) %}
         {% endif %}
-      </td>
-      <td>{{ alerta.frecuencia }}</td>
-      <td>{{ alerta.ultima_notificacion }}</td>
-      <td>
-        <!-- Botón para abrir el modal -->
-        <button type="button" class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#modalAjustar{{ alerta.id }}">
-          Ajustar
-        </button>
-      </td>
-    </tr>
-
-    <!-- Modal para ajustar el filtro -->
-    <div class="modal fade" id="modalAjustar{{ alerta.id }}" tabindex="-1" aria-labelledby="modalAjustarLabel{{ alerta.id }}" aria-hidden="true">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="modalAjustarLabel{{ alerta.id }}">Ajustar Filtro: {{ alerta.nombre }}</h5>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
-          </div>
-          <div class="modal-body">
-            <form method="post" class="ajax-form" data-id="{{ alerta.id }}">
-              {% csrf_token %}
-              
-              <!-- Campo para cambiar el nombre -->
-              <div class="mb-3">
-                <label for="nombre{{ alerta.id }}" class="form-label">Nombre</label>
-                <input type="text" class="form-control" id="nombre{{ alerta.id }}" name="nombre" value="{{ alerta.nombre }}" required>
-              </div>
-
-              <!-- Campo para cambiar la frecuencia -->
-              <div class="mb-3">
-                <label for="frecuencia{{ alerta.id }}" class="form-label">Frecuencia</label>
-                <select class="form-select" id="frecuencia{{ alerta.id }}" name="frecuencia">
-                  <option value="Diaria" {% if alerta.frecuencia == "Diaria" %}selected{% endif %}>Diaria</option>
-                  <option value="Semanal" {% if alerta.frecuencia == "Semanal" %}selected{% endif %}>Semanal</option>
-                  <option value="Mensual" {% if alerta.frecuencia == "Mensual" %}selected{% endif %}>Mensual</option>
-                </select>
-              </div>
-
-              <!-- Campo para activar/desactivar la alerta -->
-              <div class="mb-3 form-check">
-                <input type="checkbox" class="form-check-input" id="activo{{ alerta.id }}" name="activo" {% if alerta.activo %}checked{% endif %}>
-                <label class="form-check-label" for="activo{{ alerta.id }}">Activo</label>
-              </div>
-
-              <button type="submit" class="btn btn-primary">Guardar Cambios</button>
-            </form>
-          </div>
-        </div>
-      </div>
-    </div>
+      {% else %}
+        {% if not getattr(alerta, 'nombre', None) %}
+          {% set alerta = alerta|merge({'nombre': 'Sin nombre'}) %}
+        {% endif %}
+      {% endif %}
+      <tr id="alerta-{{ forloop.counter0 }}">
+        <td>{{ alerta.nombre }}</td>
+        <td>
+          {% for condicion in alerta.condiciones %}
+            <span class="badge bg-secondary">{{ condicion.campo }}: {{ condicion.valor }}</span>
+          {% endfor %}
+        </td>
+        <td>
+          <button type="button" class="btn btn-danger btn-sm" onclick="eliminarAlerta('alerta-{{ forloop.counter0 }}')">Eliminar</button>
+        </td>
+      </tr>
+    {% empty %}
+      <tr>
+        <td colspan="3" class="text-center">No tienes alertas guardadas.</td>
+      </tr>
     {% endfor %}
   </tbody>
 </table>
@@ -88,39 +51,81 @@
 <div class="modal fade" id="modalNuevaAlerta" tabindex="-1" aria-labelledby="modalNuevaAlertaLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="modalNuevaAlertaLabel">Añadir Nueva Alerta</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
-      </div>
-      <div class="modal-body">
-        <form method="post" id="formNuevaAlerta" class="ajax-form-nueva-alerta" action="{% url 'app:crear_alerta' %}">
-          {% csrf_token %}
-          
-          <!-- Campo para el nombre de la nueva alerta -->
+      <form id="formNuevaAlerta" method="post" action="{% url 'app:crear_alerta' %}">
+        {% csrf_token %}
+        <div class="modal-header">
+          <h5 class="modal-title" id="modalNuevaAlertaLabel">Añadir Nueva Alerta</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+        </div>
+        <div class="modal-body">
           <div class="mb-3">
-            <label for="nombreNueva" class="form-label">Nombre</label>
-            <input type="text" class="form-control" id="nombreNueva" name="nombre" placeholder="Nombre de la alerta" required>
+            <label class="form-label">Nombre de la alerta</label>
+            <input type="text" class="form-control" name="nombre_alerta" required>
           </div>
-
-          <!-- Campo para la frecuencia de la nueva alerta -->
           <div class="mb-3">
-            <label for="frecuenciaNueva" class="form-label">Frecuencia</label>
-            <select class="form-select" id="frecuenciaNueva" name="frecuencia">
-              <option value="Diaria">Diaria</option>
-              <option value="Semanal">Semanal</option>
-              <option value="Mensual">Mensual</option>
-            </select>
+            <label class="form-label">Condiciones de la alerta</label>
+            <div id="condiciones-lista-nueva"></div>
+            <div class="input-group mb-2">
+              <select class="form-select" id="campo-condicion-nueva">
+                <option value="Sistema_Retribucion">Sistema_Retribucion</option>
+                <option value="Valor_estimado">Valor_estimado</option>
+                <option value="Revision_precios">Revision_precios</option>
+                <option value="Garantia_definitiva">Garantia_definitiva</option>
+                <option value="Garantia_provisional">Garantia_provisional</option>
+                <option value="Admisibilidad_variantes">Admisibilidad_variantes</option>
+                <option value="Clasificacion">Clasificacion</option>
+                <option value="Grupo">Grupo</option>
+                <option value="Subgrupo">Subgrupo</option>
+                <option value="Categoria">Categoria</option>
+                <option value="Criterio_Solvencia_economica">Criterio_Solvencia_economica</option>
+                <option value="Criterio_Solvencia_tecnica">Criterio_Solvencia_tecnica</option>
+                <option value="Condiciones_especiales">Condiciones_especiales</option>
+                <option value="Penalidad_incumplimiento">Penalidad_incumplimiento</option>
+                <option value="Forma_pago">Forma_pago</option>
+                <option value="Causas_modificacion">Causas_modificacion</option>
+                <option value="Plazo_garantia">Plazo_garantia</option>
+                <option value="Contratacion_precio_unit">Contratacion_precio_unit</option>
+                <option value="Tanto_alzado">Tanto_alzado</option>
+                <option value="Tanto_alzado_con">Tanto_alzado_con</option>
+                <option value="Criterio_juicio_val">Criterio_juicio_val</option>
+                <option value="Evaluables_autom">Evaluables_autom</option>
+                <option value="Criterio_ecónomico">Criterio_ecónomico</option>
+                <option value="Obligaciones_ambientales">Obligaciones_ambientales</option>
+                <option value="Regimen_penalidades">Regimen_penalidades</option>
+                <option value="Ambiental">Ambiental</option>
+                <option value="Tecnico">Tecnico</option>
+                <option value="Precio">Precio</option>
+                <option value="Garantia">Garantia</option>
+                <option value="Experiencia">Experiencia</option>
+                <option value="Calidad">Calidad</option>
+                <option value="Social">Social</option>
+                <option value="Seguridad">Seguridad</option>
+                <option value="Juicio_valor">Juicio_valor</option>
+                <option value="Formula_precio">Formula_precio</option>
+                <option value="Formula_JuicioValor">Formula_JuicioValor</option>
+                <option value="Criterios_valores_anormales">Criterios_valores_anormales</option>
+                <option value="Infraccion_grave">Infraccion_grave</option>
+                <option value="Gastos_desistimiento">Gastos_desistimiento</option>
+                <option value="Contratacion_control">Contratacion_control</option>
+                <option value="Tareas_criticas">Tareas_criticas</option>
+                <option value="Regulacion_armonizada">Regulacion_armonizada</option>
+                <option value="Sometido_recurso_especial">Sometido_recurso_especial</option>
+                <option value="Plazo_ejecución">Plazo_ejecución</option>
+                <option value="Presupuesto_sinIVA">Presupuesto_sinIVA</option>
+                <option value="Presupuesto_conIVA">Presupuesto_conIVA</option>
+                <option value="Importe_IVA">Importe_IVA</option>
+              </select>
+              <input type="text" class="form-control" id="valor-condicion-nueva" placeholder="Palabra o valor">
+              <button type="button" class="btn btn-outline-secondary" onclick="agregarCondicionNueva()">Añadir</button>
+            </div>
           </div>
-
-          <!-- Campo para activar la nueva alerta -->
-          <div class="mb-3 form-check">
-            <input type="checkbox" class="form-check-input" id="activoNueva" name="activo" checked>
-            <label class="form-check-label" for="activoNueva">Activo</label>
-          </div>
-
-          <button type="submit" class="btn btn-success">Crear Alerta</button>
-        </form>
-      </div>
+          <input type="hidden" name="condiciones" id="condiciones-json-nueva">
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+          <button type="submit" class="btn btn-success">Guardar Alerta</button>
+        </div>
+      </form>
     </div>
   </div>
 </div>
@@ -218,5 +223,93 @@
         });
     });
   });
+
+  function agregarCondicion(alertaId) {
+    const campo = document.getElementById(`campo-condicion-${alertaId}`).value;
+    const valor = document.getElementById(`valor-condicion-${alertaId}`).value.trim();
+    if (!valor) return;
+
+    // Obtiene condiciones actuales
+    let condiciones = [];
+    const hidden = document.getElementById(`condiciones-json-${alertaId}`);
+    if (hidden.value) {
+      condiciones = JSON.parse(hidden.value);
+    }
+    condiciones.push({campo, valor});
+    hidden.value = JSON.stringify(condiciones);
+
+    mostrarCondiciones(alertaId, condiciones);
+    document.getElementById(`valor-condicion-${alertaId}`).value = '';
+  }
+
+  function eliminarCondicion(alertaId, idx) {
+    let condiciones = [];
+    const hidden = document.getElementById(`condiciones-json-${alertaId}`);
+    if (hidden.value) {
+      condiciones = JSON.parse(hidden.value);
+    }
+    condiciones.splice(idx, 1);
+    hidden.value = JSON.stringify(condiciones);
+    mostrarCondiciones(alertaId, condiciones);
+  }
+
+  function mostrarCondiciones(alertaId, condiciones) {
+    const lista = document.getElementById(`condiciones-lista-${alertaId}`);
+    lista.innerHTML = '';
+    condiciones.forEach((cond, idx) => {
+      lista.innerHTML += `
+        <div class="alert alert-secondary py-1 px-2 mb-1 d-flex justify-content-between align-items-center">
+          <span><strong>${cond.campo}</strong>: ${cond.valor}</span>
+          <button type="button" class="btn btn-sm btn-danger" onclick="eliminarCondicion('${alertaId}', ${idx})">&times;</button>
+        </div>
+      `;
+    });
+  }
+
+  function agregarCondicionNueva() {
+    const campo = document.getElementById('campo-condicion-nueva').value;
+    const valor = document.getElementById('valor-condicion-nueva').value.trim();
+    if (!valor) return;
+
+    let condiciones = [];
+    const hidden = document.getElementById('condiciones-json-nueva');
+    if (hidden.value) {
+      condiciones = JSON.parse(hidden.value);
+    }
+    condiciones.push({campo, valor});
+    hidden.value = JSON.stringify(condiciones);
+
+    mostrarCondicionesNueva(condiciones);
+    document.getElementById('valor-condicion-nueva').value = '';
+  }
+
+  function eliminarCondicionNueva(idx) {
+    let condiciones = [];
+    const hidden = document.getElementById('condiciones-json-nueva');
+    if (hidden.value) {
+      condiciones = JSON.parse(hidden.value);
+    }
+    condiciones.splice(idx, 1);
+    hidden.value = JSON.stringify(condiciones);
+    mostrarCondicionesNueva(condiciones);
+  }
+
+  function mostrarCondicionesNueva(condiciones) {
+    const lista = document.getElementById('condiciones-lista-nueva');
+    lista.innerHTML = '';
+    condiciones.forEach((cond, idx) => {
+      lista.innerHTML += `
+        <div class="alert alert-secondary py-1 px-2 mb-1 d-flex justify-content-between align-items-center">
+          <span><strong>${cond.campo}</strong>: ${cond.valor}</span>
+          <button type="button" class="btn btn-sm btn-danger" onclick="eliminarCondicionNueva(${idx})">&times;</button>
+        </div>
+      `;
+    });
+  }
+
+  function eliminarAlerta(rowId) {
+    const fila = document.getElementById(rowId);
+    if (fila) fila.remove();
+  }
 </script>
 {% endblock %}

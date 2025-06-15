@@ -1,0 +1,319 @@
+{% extends 'base.html' %}
+{% block title %}Estadísticas de Licitaciones{% endblock %}
+
+{% block content %}
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<div class="row">
+  <div class="col-md-6 mb-4">
+    <h5>Estados</h5>
+    <canvas id="pieEstados"></canvas>
+  </div>
+  <div class="col-md-6 mb-4">
+    <h5>Financiación</h5>
+    <canvas id="pieFinanciacion"></canvas>
+  </div>
+  <div class="col-md-6 mb-4">
+    <h5>Presupuesto</h5>
+    <canvas id="piePresupuesto"></canvas>
+  </div>
+  <div class="col-md-6 mb-4">
+    <h5>Valor Estimado</h5>
+    <canvas id="pieValorEstimado"></canvas>
+  </div>
+  <div class="col-md-6 mb-4">
+    <h5>Tipo de Contrato</h5>
+    <canvas id="pieTipoContrato"></canvas>
+  </div>
+  <div class="col-md-6 mb-4">
+    <h5>CPV</h5>
+    <canvas id="pieCPV"></canvas>
+  </div>
+  <div class="col-md-6 mb-4">
+    <h5>Lugar</h5>
+    <canvas id="pieLugar"></canvas>
+  </div>
+  <div class="col-md-6 mb-4">
+    <h5>Procedimiento</h5>
+    <canvas id="pieProcedimiento"></canvas>
+  </div>
+</div>
+
+{% load static %}
+
+<script>
+function ordenarPorPorcentaje(labels, counts) {
+  // Devuelve un array de objetos ordenados por counts descendente
+  const total = counts.reduce((a, b) => a + b, 0);
+  return labels.map((l, i) => ({
+    label: l,
+    count: counts[i],
+    porcentaje: ((counts[i] / total) * 100)
+  }))
+  .sort((a, b) => b.porcentaje - a.porcentaje);
+}
+
+function crearPieChart(idCanvas, datos, titulo) {
+  const total = datos.length;
+  const conteo = {};
+  datos.forEach(e => {
+    conteo[e] = (conteo[e] || 0) + 1;
+  });
+  let labels = Object.keys(conteo);
+  let counts = Object.values(conteo);
+
+  // Ordenar por porcentaje descendente
+  const ordenados = ordenarPorPorcentaje(labels, counts);
+  labels = ordenados.map(o => o.label);
+  counts = ordenados.map(o => o.count);
+  const porcentajes = ordenados.map(o => o.porcentaje.toFixed(1));
+  const labelsConPorcentaje = labels.map((l, i) => `${l} (${porcentajes[i]}%)`);
+
+  const ctx = document.getElementById(idCanvas).getContext('2d');
+  new Chart(ctx, {
+    type: 'pie',
+    data: {
+      labels: labelsConPorcentaje,
+      datasets: [{
+        data: counts,
+        backgroundColor: [
+          '#007bff', '#28a745', '#ffc107', '#dc3545', '#6c757d', '#17a2b8', '#fd7e14', '#6610f2',
+          '#bdb76b', '#20c997', '#e83e8c', '#343a40', '#adb5bd', '#ffb300', '#8e24aa', '#43a047'
+        ],
+      }]
+    },
+    options: {
+      responsive: true,
+      plugins: {
+        legend: { position: 'bottom' },
+        title: { display: true, text: titulo }
+      }
+    }
+  });
+}
+
+function limpiarNumero(texto) {
+  if (!texto) return null;
+  let limpio = texto.replace(/[^\d,\.]/g, '').replace(/\./g, '').replace(',', '.');
+  let num = parseFloat(limpio);
+  return isNaN(num) ? null : num;
+}
+
+function agruparPorRango(valores, rangos) {
+  const grupos = Array(rangos.length).fill(0);
+  valores.forEach(v => {
+    for (let i = 0; i < rangos.length; i++) {
+      if (rangos[i].cond(v)) {
+        grupos[i]++;
+        break;
+      }
+    }
+  });
+  return grupos;
+}
+
+function crearPieChartRangos(idCanvas, datos, titulo, rangos) {
+  const valores = datos.map(limpiarNumero).filter(v => v !== null);
+  const total = valores.length;
+  const grupos = agruparPorRango(valores, rangos);
+
+  // Ordenar por porcentaje descendente
+  const ordenados = ordenarPorPorcentaje(rangos.map(r => r.label), grupos);
+  const labels = ordenados.map(o => o.label);
+  const counts = ordenados.map(o => o.count);
+  const porcentajes = ordenados.map(o => o.porcentaje.toFixed(1));
+  const labelsConPorcentaje = labels.map((l, i) => `${l} (${porcentajes[i]}%)`);
+
+  const ctx = document.getElementById(idCanvas).getContext('2d');
+  new Chart(ctx, {
+    type: 'pie',
+    data: {
+      labels: labelsConPorcentaje,
+      datasets: [{
+        data: counts,
+        backgroundColor: [
+          '#007bff', '#28a745', '#ffc107', '#dc3545', '#6c757d', '#17a2b8', '#fd7e14', '#6610f2'
+        ],
+      }]
+    },
+    options: {
+      responsive: true,
+      plugins: {
+        legend: { position: 'bottom' },
+        title: { display: true, text: titulo }
+      }
+    }
+  });
+}
+
+function crearPieChartCPV(idCanvas, datos, titulo) {
+  let codigos = [];
+  datos.forEach(item => {
+    if (item) {
+      let partes = item.split(/[,; ]+/);
+      partes.forEach(parte => {
+        let codigo = parte.replace(/[^\d]/g, '');
+        if (codigo.length > 0) {
+          codigos.push(codigo);
+        }
+      });
+    }
+  });
+  const total = codigos.length;
+  const conteo = {};
+  codigos.forEach(c => {
+    conteo[c] = (conteo[c] || 0) + 1;
+  });
+  let labels = Object.keys(conteo);
+  let counts = Object.values(conteo);
+
+  // Ordenar por porcentaje descendente
+  const ordenados = ordenarPorPorcentaje(labels, counts);
+  labels = ordenados.map(o => o.label);
+  counts = ordenados.map(o => o.count);
+  const porcentajes = ordenados.map(o => (o.porcentaje));
+
+  // Clasifica como "Otros" los que no lleguen al 0.1%
+  let topLabels = [];
+  let topCounts = [];
+  let otrosCount = 0;
+  for (let i = 0; i < labels.length; i++) {
+    if (porcentajes[i] < 0.2) {
+      otrosCount += counts[i];
+    } else {
+      topLabels.push(labels[i]);
+      topCounts.push(counts[i]);
+    }
+  }
+  if (otrosCount > 0) {
+    topLabels.push("Otros");
+    topCounts.push(otrosCount);
+  }
+
+  const totalTop = topCounts.reduce((a, b) => a + b, 0);
+  const labelsConPorcentaje = topLabels.map((l, i) =>
+    `${l} (${((topCounts[i] / totalTop) * 100).toFixed(1)}%)`
+  );
+
+  const ctx = document.getElementById(idCanvas).getContext('2d');
+  new Chart(ctx, {
+    type: 'pie',
+    data: {
+      labels: labelsConPorcentaje,
+      datasets: [{
+        data: topCounts,
+        backgroundColor: [
+          '#007bff', '#28a745', '#ffc107', '#dc3545', '#6c757d', '#17a2b8', '#fd7e14', '#6610f2',
+          '#bdb76b', '#20c997', '#e83e8c', '#343a40', '#adb5bd', '#ffb300', '#8e24aa', '#43a047'
+        ],
+      }]
+    },
+    options: {
+      responsive: true,
+      plugins: {
+        legend: { position: 'bottom' },
+        title: { display: true, text: titulo }
+      }
+    }
+  });
+}
+
+function normalizarTexto(texto) {
+  if (!texto) return '';
+  return texto
+    .normalize("NFD").replace(/[\u0300-\u036f]/g, "") // Quita tildes
+    .replace(/[.,;:¡!¿?'"´`^~_/\\]/g, "") // Quita puntuación (pero NO guiones)
+    .replace(/\s+/g, " ")
+    .trim()
+    .toLowerCase();
+}
+
+function capitalizarFrase(frase) {
+  return frase.replace(/\w\S*/g, function(txt) {
+    return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();
+  });
+}
+
+function extraerLugarPrincipal(lugar) {
+  if (!lugar) return '';
+  // Elimina paréntesis y su contenido
+  let sinParentesis = lugar.replace(/\([^)]*\)/g, '').trim();
+  // Divide por guiones
+  let partes = sinParentesis.split('-').map(p => p.trim()).filter(Boolean);
+  // Si la última parte es "España" y hay más de una parte, toma la penúltima
+  let principal = (partes.length > 1 && normalizarTexto(partes[partes.length - 1]) === 'espana')
+    ? partes[partes.length - 2]
+    : partes[partes.length - 1];
+  // Capitaliza y normaliza para agrupar
+  let clave = normalizarTexto(principal);
+  let mostrar = capitalizarFrase(principal);
+  return {clave, mostrar};
+}
+
+function crearPieChartLugar(idCanvas, datos, titulo) {
+  // Agrupa por clave normalizada pero muestra el texto capitalizado y con guiones
+  const conteo = {};
+  const mostrarPorClave = {};
+  datos.forEach(lugar => {
+    const {clave, mostrar} = extraerLugarPrincipal(lugar);
+    if (!clave) return;
+    conteo[clave] = (conteo[clave] || 0) + 1;
+    mostrarPorClave[clave] = mostrar;
+  });
+
+  // Ordenar por frecuencia
+  let claves = Object.keys(conteo);
+  let counts = Object.values(conteo);
+  const ordenados = ordenarPorPorcentaje(claves, counts);
+  claves = ordenados.map(o => o.label);
+  counts = ordenados.map(o => o.count);
+
+  const total = counts.reduce((a, b) => a + b, 0);
+  const porcentajes = counts.map(c => ((c / total) * 100).toFixed(1));
+  const labelsConPorcentaje = claves.map((clave, i) => `${mostrarPorClave[clave]} (${porcentajes[i]}%)`);
+
+  const ctx = document.getElementById(idCanvas).getContext('2d');
+  new Chart(ctx, {
+    type: 'pie',
+    data: {
+      labels: labelsConPorcentaje,
+      datasets: [{
+        data: counts,
+        backgroundColor: [
+          '#007bff', '#28a745', '#ffc107', '#dc3545', '#6c757d', '#17a2b8', '#fd7e14', '#6610f2',
+          '#bdb76b', '#20c997', '#e83e8c', '#343a40', '#adb5bd', '#ffb300', '#8e24aa', '#43a047'
+        ],
+      }]
+    },
+    options: {
+      responsive: true,
+      plugins: {
+        legend: { position: 'bottom' },
+        title: { display: true, text: titulo }
+      }
+    }
+  });
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+  crearPieChart('pieEstados', {{ estados|safe }}, 'Estados');
+  crearPieChart('pieFinanciacion', {{ financiacion|safe }}, 'Financiación');
+  crearPieChart('pieTipoContrato', {{ tipo_contrato|safe }}, 'Tipo de Contrato');
+  crearPieChartCPV('pieCPV', {{ cpv|safe }}, 'CPV');
+  crearPieChartLugar('pieLugar', {{ lugar|safe }}, 'Lugar principal');
+  crearPieChart('pieProcedimiento', {{ procedimiento|safe }}, 'Procedimiento');
+
+  const rangosDinero = [
+    { label: '< 100.000 €', cond: v => v < 100000 },
+    { label: '100.000 - 500.000 €', cond: v => v >= 100000 && v < 500000 },
+    { label: '500.000 - 1.000.000 €', cond: v => v >= 500000 && v < 1000000 },
+    { label: '1.000.000 - 5.000.000 €', cond: v => v >= 1000000 && v < 5000000 },
+    { label: '> 5.000.000 €', cond: v => v >= 5000000 }
+  ];
+
+  crearPieChartRangos('piePresupuesto', {{ presupuesto|safe }}, 'Presupuesto (por rangos)', rangosDinero);
+  crearPieChartRangos('pieValorEstimado', {{ valor_estimado|safe }}, 'Valor Estimado (por rangos)', rangosDinero);
+});
+</script>
+
+{% endblock %}

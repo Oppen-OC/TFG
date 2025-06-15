@@ -15,4 +15,5 @@ urlpatterns = [
     path('crear-alerta/', views.crear_alerta, name='crear_alerta'),
     path('mis-licitaciones/', views.mis_licitaciones, name='mis_licitaciones'),
     path('update', views.update_database, name='update_database'),
+    path('estadisticas', views.estadisticas, name='estadisticas'),
 ]

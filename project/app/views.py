@@ -250,7 +250,7 @@ def mostrar_anexo_i(cod):
         # Carga el anexo I a la base de datos
         util_main(cod) 
         data = db.searchTable("AnexoI", {"COD": cod})
-        data1 = db.searchTable("anexoI_fuentes", {"COD": cod})
+        data1 = db.searchTable("AnexoI_fuentes", {"COD": cod})
 
     if not data:
         return JsonResponse({'error': 'Licitación no encontrada'}, status=404)
@@ -307,6 +307,7 @@ def mostrar_anexo_i(cod):
         "Contratacion_control": data[46],
         "Tareas_criticas": data[47]
     }    
+
     anexoI_fuentes = {
         "COD": data1[0],
         "Regulacion_armonizada": data1[1],
@@ -357,7 +358,8 @@ def mostrar_anexo_i(cod):
         "Contratacion_control": data1[46],
         "Tareas_criticas": data1[47]
     }
-
+    print(anexoI["Tareas_criticas"])
+    print(anexoI_fuentes["Tareas_criticas"])
     return anexoI, anexoI_fuentes
 
 def chatbot(request):   
@@ -410,54 +412,109 @@ def detalles_licitacion(request, cod):
         'Fecha_Presentacion_Solicitud': data[24],
     } 
 
+
     # Obtener los documentos relacionados desde la tabla "Documentos"
     documentos = db.searchTable("Documentos", {"COD": cod})
     anexo = db.searchTable("Anexos", {"COD": cod})
+    data1 = db.searchTable("Anexoi_fuentes", {"COD": cod})
     url_original = db.searchTable("Codigos", {"COD": cod})[1]
     db.closeConnection()
+
+    anexoI_fuentes = {
+        "COD": data1[0],
+        "Regulacion_armonizada": data1[1],
+        "Sometido_recurso_especial": data[2],
+        "Plazo_ejecución": data1[3],
+        "Presupuesto_sinIVA": data1[4],
+        "Presupuesto_conIVA": data1[5],
+        "Importe_IVA": data1[6],
+        "Sistema_Retribucion": data1[7],
+        "Valor_estimado": data1[8],
+        "Revision_precios": data1[9],
+        "Garantia_definitiva": data1[10],
+        "Garantia_provisional": data1[11],
+        "Admisibilidad_variantes": data1[12],
+        "Clasificacion": data1[13],
+        "Grupo": data1[14],
+        "Subgrupo": data1[15],
+        "Categoria": data1[16],
+        "Criterio_Solvencia_economica": data1[17],
+        "Criterio_Solvencia_tecnica": data1[18],
+        "Condiciones_especiales": data1[19],
+        "Penalidad_incumplimiento": data1[20],
+        "Forma_pago": data1[21],
+        "Causas_modificacion": data1[22],
+        "Plazo_garantia": data1[23],
+        "Contratacion_precio_unit": data1[24],
+        "Tanto_alzado": data1[25],
+        "Tanto_alzado_con": data1[26],
+        "Criterio_juicio_val": data1[27],
+        "Evaluables_autom": data1[28],
+        "Criterio_ecónomico": data1[29],
+        "Obligaciones_ambientales": data1[30],
+        "Regimen_penalidades": data1[31],
+        "Ambiental": data1[32],
+        "Tecnico": data1[33],
+        "Precio": data1[34],
+        "Garantia": data1[35],
+        "Experiencia": data1[36],
+        "Calidad": data1[37],
+        "Social": data1[38],
+        "Seguridad": data1[39],
+        "Juicio_valor": data1[40],
+        "Formula_precio": data1[41],
+        "Formula_JuicioValor": data1[42],
+        "Criterios_valores_anormales": data1[43],
+        "Infraccion_grave": data1[44],
+        "Gastos_desistimiento": data1[45],
+        "Contratacion_control": data1[46],
+        "Tareas_criticas": data1[47]
+    }
 
     if len(anexo) == 0: anexo = None
 
     # Procesar los documentos
-    pliego_administrativo_url = documentos[1]
-    anexo_url = documentos[2]
+    pliego_administrativo_url = documentos[2]
+    anexo_url = documentos[1]
     titulo_anexo = documentos[3]
     # anexoI, anexoI_fuentes = mostrar_anexo_i(cod)
 
-    context = {
+    contexto = {
         'licitacion': licitacion,
         'pliego_administrativo_url': pliego_administrativo_url,
         'anexo_url': anexo_url,
         'titulo_anexo': titulo_anexo,
         'pliego_original_url': url_original,
-        'anexo': anexo
+        'anexo': anexo,
+        'anexoI_fuentes': anexoI_fuentes
     }
-    #'anexoI': anexoI,
-    #'anexoI_fuentes': json.dumps(anexoI_fuentes or {}),
+    print(anexoI_fuentes)
    
-    return render(request, 'detalles_licitacion.html', context)
+    return render(request, 'detalles_licitacion.html', contexto)
 
 def user_settings(request):
     return render(request, 'user_settings.html')
 
 def alertas(request):
+    """
     # Datos de ejemplo, reemplázalos con datos de tu base de datos
     alertas = [
         {
             'id': 1,
             'nombre': 'Publicaciones en Valencia',
             'activo': True,
-            'frecuencia': 'Diaria',
+            'condiciones': 'Diaria',
             'ultima_notificacion': '2025-06-01',
         },
         {
-            'id': 2,
+            'user': admin,
             'nombre': 'Contratos mayores a 1M€',
             'activo': False,
-            'frecuencia': 'Semanal',
+            'condiciones': 'Semanal',
             'ultima_notificacion': '2025-05-28',
         },
     ]
+    """
     return render(request, 'alertas.html', {'alertas': alertas})
 
 def ajustar_filtro(request, filtro_id):
@@ -523,3 +580,32 @@ def update_database(request):
             return JsonResponse({"error": str(e)}, status=500)
     else:
         return JsonResponse({"error": "Método no permitido."}, status=405)
+    
+
+def estadisticas(request):
+    db = DBManager()
+    db.openConnection()
+    data = db.viewTable("Licitaciones")
+    db.closeConnection()
+    # Suponiendo que Estado_Licitacion es la columna 5 (índice 4)
+    estados = [row[4] for row in data]
+    financiacion = [row[6] for row in data]
+    presupuesto = [row[7] for row in data]
+    valor_estimado = [row[8] for row in data]
+    tipo_contrato = [row[9] for row in data]
+    cpv = [row[10] for row in data]
+    lugar = [row[11] for row in data]
+    procedimiento = [row[13] for row in data]
+
+    contexto = {'estados': estados, 
+                'financiacion': financiacion, 
+                'presupuesto': presupuesto, 
+                'valor_estimado': valor_estimado,
+                'tipo_contrato': tipo_contrato,
+                'cpv': cpv,
+                'lugar': lugar,
+                'procedimiento': procedimiento
+                }
+
+    return render(request, 'estadisticas.html', contexto)
+

@@ -157,37 +157,36 @@
 </script>
 
 <script>
-  let anexoI_fuentes = {};
-  try {
-    anexoI_fuentes = JSON.parse(document.getElementById('anexoI-fuentes-data').textContent);
-  } catch (e) {
-    anexoI_fuentes = {};
-    console.warn("anexoI-fuentes-data JSON inválido o vacío");
-  }
-  console.log(anexoI_fuentes); // <-- Añade esto para depurar
-
-  function mostrarUbicacion(campo) {
-    console.log("Mostrando ubicación para el campo:", campo);
+  function mostrarFuenteCampo(campo) {
     const fuente = anexoI_fuentes[campo];
-    console.log("Fuente encontrada:", fuente);
-    let mensaje = "Información no disponible.";
-
+    let html = '';
     if (fuente) {
-        // Add \n before "Page: n" and after the number
-        mensaje = fuente.replace(/Page: (\d+)/g, (match, pageNumber) => {
-            return `\n<strong style="color: #007bff;">Page: ${pageNumber}</strong>\n`;
-        });
+      // Formatear "Page:" y "chunk:" según lo solicitado
+      let fuenteFormateada = fuente;
 
-        // Highlight "Chunk: n" and keep the rest of the content
-        mensaje = mensaje.replace(/Chunk: (\d+)/g, (match, chunkNumber) => {
-            return `<strong style="color: #28a745;">Chunk: ${chunkNumber}</strong>`;
-        });
+      // Formatear "chunk:" siempre con salto de línea antes y negrita
+      fuenteFormateada = fuenteFormateada.replace(/(chunk:)/gi, '<br><strong>$1</strong>');
+
+      // Formatear "Page:": la primera aparición sin salto, las siguientes con dos saltos de línea antes y negrita
+      let pageCount = 0;
+      fuenteFormateada = fuenteFormateada.replace(/(Page:)/gi, function(match) {
+        pageCount++;
+        if (pageCount === 1) {
+          return '<strong>Page:</strong>';
+        } else {
+          return '<br><br><strong>Page:</strong>';
+        }
+      });
+
+      html = fuenteFormateada;
+    } else {
+      html = 'No hay fuente registrada para este campo.';
     }
-
-    document.getElementById('ubicacionModalBody').innerHTML = `<div style="white-space: pre-line; line-height: 1.6; font-size: 1rem;">${mensaje}</div>`;
+    document.getElementById('ubicacionModalBody').innerHTML = html;
     var myModal = new bootstrap.Modal(document.getElementById('ubicacionModal'));
     myModal.show();
-  }
+  } 
+
 
   // Mostrar u ocultar el contenedor del anexo al hacer clic en el botón
   document.getElementById('cargarAnexoButton').addEventListener('click', function() {
@@ -230,10 +229,14 @@
           return;
         }
 
-        // Construir el contenido del anexo
+        // ACTUALIZA el diccionario global con las nuevas fuentes recibidas
+        if (data.anexoI_fuentes) {
+          window.anexoI_fuentes = data.anexoI_fuentes;
+        }
+
         const anexoI = data.anexoI;
         const orderedFields = [
-          "COD", "Regulacion_armonizada", "Sometido_recurso_especial", "Plazo_ejecución",
+          "Regulacion_armonizada", "Sometido_recurso_especial", "Plazo_ejecución",
           "Presupuesto_sinIVA", "Presupuesto_conIVA", "Importe_IVA", "Sistema_Retribucion",
           "Valor_estimado", "Revision_precios", "Garantia_definitiva", "Garantia_provisional",
           "Admisibilidad_variantes", "Clasificacion", "Grupo", "Subgrupo", "Categoria",
@@ -252,17 +255,22 @@
           html += `
             <tr>
               <th>${key.replace(/_/g, ' ')}</th>
-              <td>${anexoI[key] || 'N/A'}</td>
+              <td style="position:relative;">
+                <span>${anexoI[key] || 'N/A'}</span>
+                <button type="button"
+                        class="btn btn-primary btn-sm"
+                        style="float:right; margin-left:10px;"
+                        onclick="mostrarFuenteCampo('${key}')">
+                  Fuentes
+                </button>
+              </td>
             </tr>
           `;
         });
         html += '</table>';
 
-        // Mostrar el contenido en el contenedor
         anexoContent.innerHTML = html;
         anexoContainer.style.display = 'block';
-
-        // Ocultar el botón
         button.style.display = 'none';
       })
       .catch(error => {
@@ -275,6 +283,13 @@
       });
   });
 </script>
+
+<style>
+  /* Aumenta el ancho del modal */
+  #ubicacionModal .modal-dialog {
+    max-width: 700px;
+  }
+</style>
 
 {% if licitacion %}
 <a href="{% url 'app:licitaciones' %}" class="btn btn-secondary mt-3">Volver a licitaciones</a>
