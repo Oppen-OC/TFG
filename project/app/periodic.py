@@ -19,7 +19,7 @@ def cumple_condiciones(documento, condiciones):
     return True
 
 def periodic_task(cond=False):
-    while True:
+    while False:
         print("Ejecutando búsqueda de licitaciones y actualizando la base de datos...")
         update()
         if cond:

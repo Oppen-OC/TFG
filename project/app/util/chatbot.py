@@ -1,8 +1,8 @@
 import os
 import openai
-from db_manager import DBManager
-from document_handler import download_to_json
-from rag_operations import RAG
+from .db_manager import DBManager
+from .document_handler import download_to_json
+from .rag_operations import RAG
 import logging
 
 # Configuración del logger específico para el chatbot

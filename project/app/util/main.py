@@ -1,7 +1,10 @@
-from .document_handler import download_to_json
-from .rag_operations import main as rag_main
-from .db_manager import DBManager
+from document_handler import download_to_json
+from rag_operations import main as rag_main
+from db_manager import DBManager
+from memory_profiler import profile
+import gc
 
+@profile
 def main(cod):
    
     db = DBManager()
@@ -32,7 +35,7 @@ if __name__ == "__main__":
     for documento in documentos:
         if documento[0] not in codigos:
             print("COD:", documento[0])
-            elemento = documento[0] 
+            elemento = documento[0]
             main(elemento)
-
+            gc.collect()
     db.closeConnection()
