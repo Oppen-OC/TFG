@@ -56,61 +56,72 @@
             <th>Gastos_desistimiento</th>
             <th>Contratacion_control</th>
             <th>Tareas_criticas</th>
+            <th>Fuentes</th>
         </tr>
     </thead>
     <tbody>
         {% for fila in datos %}
         <tr>
-            <td>{{ fila.0 }}</td>
-            <td>{{ fila.1 }}</td>
-            <td>{{ fila.2 }}</td>
-            <td>{{ fila.3 }}</td>
-            <td>{{ fila.4 }}</td>
-            <td>{{ fila.5 }}</td>
-            <td>{{ fila.6 }}</td>
-            <td>{{ fila.7 }}</td>
-            <td>{{ fila.8 }}</td>
-            <td>{{ fila.9 }}</td>
-            <td>{{ fila.10 }}</td>
-            <td>{{ fila.11 }}</td>
-            <td>{{ fila.12 }}</td>
-            <td>{{ fila.13 }}</td>
-            <td>{{ fila.14 }}</td>
-            <td>{{ fila.15 }}</td>
-            <td>{{ fila.16 }}</td>
-            <td>{{ fila.17 }}</td>
-            <td>{{ fila.18 }}</td>
-            <td>{{ fila.19 }}</td>
-            <td>{{ fila.20 }}</td>
-            <td>{{ fila.21 }}</td>
-            <td>{{ fila.22 }}</td>
-            <td>{{ fila.23 }}</td>
-            <td>{{ fila.24 }}</td>
-            <td>{{ fila.25 }}</td>
-            <td>{{ fila.26 }}</td>
-            <td>{{ fila.27 }}</td>
-            <td>{{ fila.28 }}</td>
-            <td>{{ fila.29 }}</td>
-            <td>{{ fila.30 }}</td>
-            <td>{{ fila.31 }}</td>
-            <td>{{ fila.32 }}</td>
-            <td>{{ fila.33 }}</td>
-            <td>{{ fila.34 }}</td>
-            <td>{{ fila.35 }}</td>
-            <td>{{ fila.36 }}</td>
-            <td>{{ fila.37 }}</td>
-            <td>{{ fila.38 }}</td>
-            <td>{{ fila.39 }}</td>
-            <td>{{ fila.40 }}</td>
-            <td>{{ fila.41 }}</td>
-            <td>{{ fila.42 }}</td>
-            <td>{{ fila.43 }}</td>
-            <td>{{ fila.44 }}</td>
-            <td>{{ fila.45 }}</td>
-            <td>{{ fila.46 }}</td>
-            <td>{{ fila.47 }}</td>
+            {% for valor in fila %}
+            <td>{{ valor }}</td>
+            {% endfor %}
+            <td>
+                <button type="button"
+                        class="btn btn-primary btn-sm"
+                        onclick="mostrarFuentes('{{ fila.0 }}')">
+                    Fuentes
+                </button>
+            </td>
         </tr>
         {% endfor %}
     </tbody>
 </table>
+
+<!-- Modal Bootstrap para mostrar la fuente -->
+<div class="modal fade" id="fuenteModal" tabindex="-1" aria-labelledby="fuenteModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="fuenteModalLabel">Fuentes de la fila</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+      </div>
+      <div class="modal-body" id="fuenteModalBody">
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Bloque de datos JSON seguro con las fuentes -->
+<script type="application/json" id="anexoI-fuentes-data">
+{{ anexoI_fuentes|default:"{}"|safe }}
+</script>
+
+<script>
+let anexoI_fuentes = {};
+try {
+    anexoI_fuentes = JSON.parse(document.getElementById('anexoI-fuentes-data').textContent);
+} catch (e) {
+    anexoI_fuentes = {};
+}
+
+function mostrarFuentes(cod) {
+    const fuentes = anexoI_fuentes[cod];
+    let html = '';
+    if (fuentes) {
+        html += '<ul>';
+        for (const [campo, valor] of Object.entries(fuentes)) {
+            html += `<li><strong>${campo.replace(/_/g, ' ')}:</strong> ${valor}</li>`;
+        }
+        html += '</ul>';
+    } else {
+        html = 'No hay fuentes registradas para este elemento.';
+    }
+    document.getElementById('fuenteModalBody').innerHTML = html;
+    var myModal = new bootstrap.Modal(document.getElementById('fuenteModal'));
+    myModal.show();
+}
+</script>
 {% endblock %}

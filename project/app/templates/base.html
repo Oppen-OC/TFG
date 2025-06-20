@@ -40,7 +40,7 @@
       <h4>Dashboard.v01</h4>
       <hr />
       <ul class="nav nav-pills flex-column">
-        <li><a href="" class="nav-link {% if request.path == '/estadisticas/' %}active{% endif %}">📊 Estadísticas</a></li>
+        <li><a href="{% url 'app:estadisticas' %}" class="nav-link {% if request.path == '/estadisticas/' %}active{% endif %}">📊 Estadísticas</a></li>
         <li><a href="{% url 'app:licitaciones' %}" class="nav-link {% if request.path == '/licitaciones/' %}active{% endif %}">📁 Licitaciones</a></li>
         <li><a href="{% url 'app:chatbot' %}" class="nav-link {% if request.path == '/chatbot/' %}active{% endif %}">🐱‍👤 Chatbot</a></li>
         <li><a href="{% url 'app:alertas' %}" class="nav-link {% if request.path == '/alertas/' %}active{% endif %}">⏰ Alertas</a></li>
@@ -51,8 +51,8 @@
       </ul>
       <hr />
       <div class="mt-auto">
-        <strong>Evano</strong><br />
-        <small class="text-muted">Project Manager</small>
+        <strong>{{ request.user.username }}</strong><br />
+        <small class="text-muted">Usuario</small>
         <a href="{% url 'app:user_settings' %}" class="d-block mt-2 text-muted" title="Opciones de usuario">
           <i class="bi bi-gear-fill" style="font-size: 1.2rem;"></i> Opciones de Usuario
         </a>

@@ -1,10 +1,11 @@
-from flask import Flask, jsonify, request
+from flask import jsonify, request, session
 from flask_cors import CORS
 from app import app
 from app.util.db_manager import DBManager
 from app.util.scrapper import update
 from app.util.main import main as util_main
-import sqlite3  # Cambia esto según tu base de datos
+import json
+from app.util.chatbot import chatbot_simple  # Asegúrate de que esta función esté definida en chatbot.py
 
 # Habilitar CORS para toda la aplicación
 CORS(app)
@@ -17,6 +18,12 @@ def update_licitaciones():
     except Exception as e:
         return jsonify({'success': False, 'message': str(e)}), 500
 
+def estadisticas():
+    print("Endpoint /estadisticas fue llamado")
+
+def estadisticas():
+    print("Endpoint /estadisticas fue llamado")
+    
 @app.route('/cargar-anexo', methods=['POST'])
 def cargar_anexo():
     cod = request.json.get('cod')  # Obtener el código enviado desde el cliente
@@ -94,54 +101,54 @@ def cargar_anexo():
         "Tareas_criticas": data[47]
     }    
     anexoI_fuentes = {
-        "COD": data[0],
-        "Regulacion_armonizada": data[1],
-        "Sometido_recurso_especial": data[2],
-        "Plazo_ejecución": data[3],
-        "Presupuesto_sinIVA": data[4],
-        "Presupuesto_conIVA": data[5],
-        "Importe_IVA": data[6],
-        "Sistema_Retribucion": data[7],
-        "Valor_estimado": data[8],
-        "Revision_precios": data[9],
-        "Garantia_definitiva": data[10],
-        "Garantia_provisional": data[11],
-        "Admisibilidad_variantes": data[12],
-        "Clasificacion": data[13],
-        "Grupo": data[14],
-        "Subgrupo": data[15],
-        "Categoria": data[16],
-        "Criterio_Solvencia_economica": data[17],
-        "Criterio_Solvencia_tecnica": data[18],
-        "Condiciones_especiales": data[19],
-        "Penalidad_incumplimiento": data[20],
-        "Forma_pago": data[21],
-        "Causas_modificacion": data[22],
-        "Plazo_garantia": data[23],
-        "Contratacion_precio_unit": data[24],
-        "Tanto_alzado": data[25],
-        "Tanto_alzado_con": data[26],
-        "Criterio_juicio_val": data[27],
-        "Evaluables_autom": data[28],
-        "Criterio_ecónomico": data[29],
-        "Obligaciones_ambientales": data[30],
-        "Regimen_penalidades": data[31],
-        "Ambiental": data[32],
-        "Tecnico": data[33],
-        "Precio": data[34],
-        "Garantia": data[35],
-        "Experiencia": data[36],
-        "Calidad": data[37],
-        "Social": data[38],
-        "Seguridad": data[39],
-        "Juicio_valor": data[40],
-        "Formula_precio": data[41],
-        "Formula_JuicioValor": data[42],
-        "Criterios_valores_anormales": data[43],
-        "Infraccion_grave": data[44],
-        "Gastos_desistimiento": data[45],
-        "Contratacion_control": data[46],
-        "Tareas_criticas": data[47]
+        "COD": data1[0],
+        "Regulacion_armonizada": data1[1],
+        "Sometido_recurso_especial": data1[2],
+        "Plazo_ejecución": data1[3],
+        "Presupuesto_sinIVA": data1[4],
+        "Presupuesto_conIVA": data1[5],
+        "Importe_IVA": data1[6],
+        "Sistema_Retribucion": data1[7],
+        "Valor_estimado": data1[8],
+        "Revision_precios": data1[9],
+        "Garantia_definitiva": data1[10],
+        "Garantia_provisional": data1[11],
+        "Admisibilidad_variantes": data1[12],
+        "Clasificacion": data1[13],
+        "Grupo": data1[14],
+        "Subgrupo": data1[15],
+        "Categoria": data1[16],
+        "Criterio_Solvencia_economica": data1[17],
+        "Criterio_Solvencia_tecnica": data1[18],
+        "Condiciones_especiales": data1[19],
+        "Penalidad_incumplimiento": data1[20],
+        "Forma_pago": data1[21],
+        "Causas_modificacion": data1[22],
+        "Plazo_garantia": data1[23],
+        "Contratacion_precio_unit": data1[24],
+        "Tanto_alzado": data1[25],
+        "Tanto_alzado_con": data1[26],
+        "Criterio_juicio_val": data1[27],
+        "Evaluables_autom": data1[28],
+        "Criterio_ecónomico": data1[29],
+        "Obligaciones_ambientales": data1[30],
+        "Regimen_penalidades": data1[31],
+        "Ambiental": data1[32],
+        "Tecnico": data1[33],
+        "Precio": data1[34],
+        "Garantia": data1[35],
+        "Experiencia": data1[36],
+        "Calidad": data1[37],
+        "Social": data1[38],
+        "Seguridad": data1[39],
+        "Juicio_valor": data1[40],
+        "Formula_precio": data1[41],
+        "Formula_JuicioValor": data1[42],
+        "Criterios_valores_anormales": data1[43],
+        "Infraccion_grave": data1[44],
+        "Gastos_desistimiento": data1[45],
+        "Contratacion_control": data1[46],
+        "Tareas_criticas": data1[47]
     }
 
     return jsonify({
@@ -184,3 +191,160 @@ def get_anexoI_data():
         print(f"Error al obtener los datos de anexoI: {e}")
         return jsonify({'error': str(e)}), 500
 
+@app.route('/crear-alerta', methods=['POST', 'OPTIONS'])
+def crear_alerta():
+    print("Endpoint /crear-alerta fue llamado")
+    if request.method == 'OPTIONS':
+        response = app.make_default_options_response()
+        headers = response.headers
+        headers['Access-Control-Allow-Origin'] = 'http://127.0.0.1:8000'
+        headers['Access-Control-Allow-Methods'] = 'POST, OPTIONS'
+        headers['Access-Control-Allow-Headers'] = 'Content-Type, X-Requested-With'
+        headers['Access-Control-Allow-Credentials'] = 'true'
+        return response
+
+    print("FORM DATA:", request.form)
+    print("SESSION:", session)
+    nombre = request.form.get('nombre_alerta')
+    condiciones = request.form.get('condiciones')
+    user = request.form.get('user')
+    print(nombre, condiciones, user)
+
+    if not nombre or not condiciones or not user:
+        return jsonify({'success': False, 'error': 'Datos incompletos'}), 400
+
+    try:
+        condiciones_json = json.loads(condiciones)
+    except Exception:
+        return jsonify({'success': False, 'error': 'Condiciones mal formateadas'}), 400
+
+    try:
+        db = DBManager()
+        db.openConnection()
+        # Prepara los valores en el orden correcto según tu tabla y tu DBManager
+        values = [user, nombre, 1, json.dumps(condiciones_json)]
+        db.insertDb("alertas", values)
+        db.closeConnection()
+        return jsonify({
+            'success': True,
+            'nombre': nombre,
+            'activo': True,
+            'condiciones': condiciones_json
+        })
+    except Exception as e:
+        print("ERROR AL GUARDAR ALERTA:", e)
+        return jsonify({'success': False, 'error': str(e)}), 500
+
+@app.route('/eliminar-alerta', methods=['POST', 'OPTIONS'])
+def eliminar_alerta():
+    if request.method == 'OPTIONS':
+        response = app.make_default_options_response()
+        headers = response.headers
+        headers['Access-Control-Allow-Origin'] = 'http://127.0.0.1:8000'
+        headers['Access-Control-Allow-Methods'] = 'POST, OPTIONS'
+        headers['Access-Control-Allow-Headers'] = 'Content-Type, X-Requested-With'
+        headers['Access-Control-Allow-Credentials'] = 'true'
+        return response
+
+    alerta_id = request.form.get('id')
+
+    if not alerta_id:
+        return jsonify({'success': False, 'error': 'Datos incompletos'}), 400
+
+    try:
+        db = DBManager()
+        db.openConnection()
+        # Usa deleteObject para eliminar por id
+        db.deleteObject("alertas", "id", alerta_id)
+        db.closeConnection()
+        return jsonify({'success': True})
+    except Exception as e:
+        print("ERROR AL ELIMINAR ALERTA:", e)
+        return jsonify({'success': False, 'error': str(e)}), 500
+
+@app.route('/guardar-anexo', methods=['POST', 'OPTIONS'])
+def guardar_anexo():
+    if request.method == 'OPTIONS':
+        response = app.make_default_options_response()
+        headers = response.headers
+        headers['Access-Control-Allow-Origin'] = 'http://127.0.0.1:8000'
+        headers['Access-Control-Allow-Methods'] = 'POST, OPTIONS'
+        headers['Access-Control-Allow-Headers'] = 'Content-Type, X-Requested-With'
+        headers['Access-Control-Allow-Credentials'] = 'true'
+        return response
+
+    cod_licitacion = request.form.get('cod_licitacion')
+    user = request.form.get('user')
+
+    if not cod_licitacion or not user:
+        return jsonify({'success': False, 'error': 'Datos incompletos'}), 400
+
+    try:
+        db = DBManager()
+        db.openConnection()
+        values = [cod_licitacion, user]
+        db.insertDb("anexos_guardados", values)
+        db.closeConnection()
+        return jsonify({'success': True})
+    except Exception as e:
+        print("ERROR AL GUARDAR ANEXO:", e)
+        return jsonify({'success': False, 'error': str(e)}), 500
+
+@app.route('/actualizar-usuario', methods=['POST', 'OPTIONS'])
+def actualizar_usuario():
+    if request.method == 'OPTIONS':
+        response = app.make_default_options_response()
+        headers = response.headers
+        headers['Access-Control-Allow-Origin'] = 'http://127.0.0.1:8000'
+        headers['Access-Control-Allow-Methods'] = 'POST, OPTIONS'
+        headers['Access-Control-Allow-Headers'] = 'Content-Type, X-Requested-With'
+        headers['Access-Control-Allow-Credentials'] = 'true'
+        return response
+
+    username_actual = request.form.get('username_actual')  # El nombre de usuario antes del cambio
+    nuevo_username = request.form.get('username')
+    nuevo_email = request.form.get('email')
+    nueva_password = request.form.get('password')
+
+    if not username_actual or not nuevo_username or not nuevo_email or not nueva_password:
+        return jsonify({'success': False, 'error': 'Datos incompletos'}), 400
+
+    try:
+        db = DBManager()
+        db.openConnection()
+        sql = """
+        UPDATE auth_user
+        SET username = ?, email = ?, password = ?
+        WHERE username = ?
+        """
+        db.cursor.execute(sql, (nuevo_username, nuevo_email, nueva_password, username_actual))
+        db.cnxn.commit()
+        db.closeConnection()
+        return jsonify({'success': True})
+    except Exception as e:
+        print("ERROR AL ACTUALIZAR USUARIO:", e)
+        return jsonify({'success': False, 'error': str(e)}), 500
+
+@app.route('/chatbot', methods=['POST', 'OPTIONS'])
+def chatbot_input():
+    if request.method == 'OPTIONS':
+        response = app.make_default_options_response()
+        headers = response.headers
+        headers['Access-Control-Allow-Origin'] = 'http://127.0.0.1:8000'
+        headers['Access-Control-Allow-Methods'] = 'POST, OPTIONS'
+        headers['Access-Control-Allow-Headers'] = 'Content-Type, X-Requested-With'
+        headers['Access-Control-Allow-Credentials'] = 'true'
+        return response
+
+    data = request.get_json()
+    user_message = data.get('message', '')
+
+    if not user_message:
+        return jsonify({'success': False, 'error': 'Mensaje vacío'}), 400
+
+    try:
+        bot_response = chatbot_simple(user_message)
+        return jsonify({'success': True, 'response': bot_response})
+    except Exception as e:
+        print("ERROR EN CHATBOT:", e)
+        return jsonify({'success': False, 'error': str(e)}), 500

@@ -74,7 +74,8 @@ class RAG:
         # Cliente de OpenAI
         client = openai.OpenAI(api_key=api_key, base_url=base_url)
         strings = RAG.strings
-
+        spacy.load('es_core_news_md')
+        
         self.prompts = strings["Prompts"]["Ajuntament"]  
         self.semantics = strings["Prompts"]["Semantic"] 
         self.format = strings["Prompts"]["Ajuntament_formato"]

@@ -20,5 +20,5 @@ from django.urls import path, include
 urlpatterns = [
     path('admin/', admin.site.urls),  # Incluye el panel de administración una sola vez
     path('', include('app.urls')),   # Incluye las URLs de tu aplicación
-
+    path('accounts/', include('django.contrib.auth.urls')),
 ]
