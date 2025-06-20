@@ -1,10 +1,8 @@
-from document_handler import download_to_json
-from rag_operations import main as rag_main
-from db_manager import DBManager
-from memory_profiler import profile
+from .document_handler import download_to_json
+from .rag_operations import main as rag_main
+from .db_manager import DBManager
 import gc
 
-@profile
 def main(cod):
    
     db = DBManager()

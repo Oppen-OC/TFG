@@ -17,7 +17,7 @@ import os
 import re
 import gc
 
-from db_manager import DBManager
+from .db_manager import DBManager
 
 load_dotenv()
 
@@ -551,8 +551,18 @@ class RAG:
                 batch_chunks = self.chunks[batch_start:batch_end]
                 batch_metadata = self.metadata[batch_start:batch_end]
 
+                # Filtrar chunks vacíos
+                filtered_batch = [
+                    (chunk, meta) for chunk, meta in zip(batch_chunks, batch_metadata) if chunk.strip()
+                ]
+                if not filtered_batch:
+                    continue
+
+                # Separar los chunks y metadatos filtrados
+                filtered_chunks, filtered_metadata = zip(*filtered_batch)
+
                 # Normaliza todos los chunks del batch
-                normalized_batch = [self.normalize_chunk(chunk) for chunk in batch_chunks]
+                normalized_batch = [self.normalize_chunk(chunk) for chunk in filtered_chunks]
 
                 try:
                     # Solicita los embeddings en batch
@@ -564,7 +574,7 @@ class RAG:
                     embeddings = [item.embedding for item in response.data]
 
                     # Log y añade cada embedding a la colección
-                    for i, (normalized_chunk, embedding, meta) in enumerate(zip(normalized_batch, embeddings, batch_metadata)):
+                    for i, (normalized_chunk, embedding, meta) in enumerate(zip(normalized_batch, embeddings, filtered_metadata)):
                         idx = batch_start + i
                         self.logger.info(f"Created embedding for chunk {idx}: {normalized_chunk}")
                         self.collection.add(
@@ -698,9 +708,10 @@ class RAG:
         return fuentes
 
 def process_prompt(rag_object, prompt_key, prompt):
+    new_prompt = rag_object.reformulate_query(prompt)
     rag_object.key = prompt_key
-    final_chunks, score, index = rag_object.union_top_chunks(prompt)
-    response =  rag_object.generate_response_with_context(prompt, final_chunks)
+    final_chunks, score, index = rag_object.union_top_chunks(new_prompt)
+    response =  rag_object.generate_response_with_context(new_prompt, final_chunks)
 
     return Prompt(prompt_key=prompt_key, prompt=prompt, response=response, score=score, index=index, chunks=final_chunks, format=rag_object.format[rag_object.key]), response
 

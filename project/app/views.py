@@ -19,35 +19,12 @@ def home(request):
     # Funcion que devuelve un string a modo de respuesta
     return redirect('app:licitaciones')
 
-@csrf_exempt  # Desactiva la protección CSRF para esta vista (solo para desarrollo; usa tokens CSRF en producción)
-def chatbot_view(request):
-    # Solo renderiza la plantilla, el procesamiento lo hace Flask
-    return render(request, 'chatbot.html')
-
-@csrf_exempt
-def check_document_view(request):
-    global cod_documento  # Declarar que se usará la variable global
-
-    if request.method == 'POST':
-        data = json.loads(request.body)
-        document_code = data.get('code', '')
-
-        # Llamar a la función en chatbot.py para verificar el código
-        from app.util.chatbot import verify_document_code
-        exists = verify_document_code(document_code)
-
-        if exists:
-            cod_documento = document_code  # Actualizar la variable global
-
-        return JsonResponse({'exists': exists})
-    
-    return JsonResponse({'error': 'Método no permitido'}, status=405)
 
 def licitaciones_view(request):
     db = DBManager()
     db.openConnection()
     data = db.viewTable("Licitaciones")
-    
+
     # Procesar los datos para que coincidan con el formato esperado
     licitaciones = [
         {
@@ -76,6 +53,7 @@ def licitaciones_view(request):
             'Fecha_Desistimiento': row[22],
             'Fecha_Presentacion_Oferta': row[23],
             'Fecha_Presentacion_Solicitud': row[24],
+            "URL_Original": db.searchTable("Codigos", {"COD": row[0]})[1] if db.searchTable("Codigos", {"COD": row[0]}) else ""
         }
         for row in data
     ]
@@ -99,6 +77,7 @@ def licitaciones_view(request):
     for licitacion in licitaciones:
         cod = licitacion["COD"]
         data = db.searchTable("AnexoI", {"COD": cod})
+        Modificado = db.searchTable("Documentos", {"COD": cod})[6] if db.searchTable("Documentos", {"COD": cod}) else ""
         if not data:
             # Si no hay datos, agregar claves con valores vacíos
             licitacion.update({
@@ -149,6 +128,8 @@ def licitaciones_view(request):
                 "Gastos_desistimiento": "",
                 "Contratacion_control": "",
                 "Tareas_criticas": "",
+                "Modificado": Modificado,
+
             })
         else:
             # Si hay datos, agregar los valores correspondientes
@@ -200,6 +181,7 @@ def licitaciones_view(request):
                 "Gastos_desistimiento": data[45],
                 "Contratacion_control": data[46],
                 "Tareas_criticas": data[47],
+                "Modificado": Modificado,
             })
 
     db.closeConnection()
@@ -261,6 +243,8 @@ def mostrar_anexo_i(cod):
         data = db.searchTable("AnexoI", {"COD": cod})
         data1 = db.searchTable("AnexoI_fuentes", {"COD": cod})
 
+    documentos = db.searchTable("Documentos", {"COD": cod})
+
     if not data:
         return JsonResponse({'error': 'Licitación no encontrada'}, status=404)
 
@@ -314,7 +298,8 @@ def mostrar_anexo_i(cod):
         "Infraccion_grave": data[44],
         "Gastos_desistimiento": data[45],
         "Contratacion_control": data[46],
-        "Tareas_criticas": data[47]
+        "Tareas_criticas": data[47],
+        "Modificado": documentos[6]
     }    
 
     anexoI_fuentes = {
@@ -365,13 +350,12 @@ def mostrar_anexo_i(cod):
         "Infraccion_grave": data1[44],
         "Gastos_desistimiento": data1[45],
         "Contratacion_control": data1[46],
-        "Tareas_criticas": data1[47]
+        "Tareas_criticas": data1[47],
+        "Modificado": documentos[6]
     }
 
     return anexoI, anexoI_fuentes
 
-def chatbot(request):   
-    return True
 
 
 def detalles_licitacion(request, cod):
@@ -385,6 +369,7 @@ def detalles_licitacion(request, cod):
     if data is None:
         db.closeConnection()
         return render(request, '404.html', {})
+    documentos = db.searchTable("Documentos", {"COD": cod})
 
     # Procesar los datos de la licitación (igual que antes)
     licitacion = {
@@ -413,11 +398,11 @@ def detalles_licitacion(request, cod):
         'Fecha_Desistimiento': data[22],
         'Fecha_Presentacion_Oferta': data[23],
         'Fecha_Presentacion_Solicitud': data[24],
+        "Modificado": documentos[6]
+
     }
 
     # Obtener los documentos relacionados desde la tabla "Documentos"
-    documentos = db.searchTable("Documentos", {"COD": cod})
-    anexo = db.searchTable("Anexos", {"COD": cod})
     data1 = db.searchTable("Anexoi_fuentes", {"COD": cod})
     url_original = db.searchTable("Codigos", {"COD": cod})[1]
 
@@ -478,7 +463,7 @@ def detalles_licitacion(request, cod):
             "Infraccion_grave": data1[44],
             "Gastos_desistimiento": data1[45],
             "Contratacion_control": data1[46],
-            "Tareas_criticas": data1[47]
+            "Tareas_criticas": data1[47],
         }
     else:
         anexoI_fuentes = {
@@ -529,9 +514,8 @@ def detalles_licitacion(request, cod):
             "Infraccion_grave": "",
             "Gastos_desistimiento": "",
             "Contratacion_control": "",
-            "Tareas_criticas": ""
+            "Tareas_criticas": "",
         }
-    if len(anexo) == 0: anexo = None
 
     # Procesar los documentos
     pliego_administrativo_url = documentos[2]
@@ -545,7 +529,6 @@ def detalles_licitacion(request, cod):
         'anexo_url': anexo_url,
         'titulo_anexo': titulo_anexo,
         'pliego_original_url': url_original,
-        'anexo': anexo,
         'anexoI_fuentes': anexoI_fuentes,
         'anexo_guardado': anexo_guardado,  # <-- Añade esto al contexto
     }

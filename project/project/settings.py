@@ -83,7 +83,7 @@ DATABASES = {
         'NAME': 'TFG',
         'USER': '',  # Usuario de la base de datos
         'PASSWORD': '',  # Contraseña del usuario
-        'HOST': 'SOFTMAX',  # Nombre del servidor SQL
+        'HOST': 'TATIOLD',  # Nombre del servidor SQL
         'PORT': '',  # Puerto del servidor (por defecto es 1433)
         'OPTIONS': {
             'driver': 'ODBC Driver 17 for SQL Server',

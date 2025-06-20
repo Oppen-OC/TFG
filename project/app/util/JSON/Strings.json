@@ -229,7 +229,7 @@
             "Contratacion_precio_unit": ["contratación de obras a precios unitarios", "precio unitario", "precios unitarios", "[seleccionado]"],
             "Tanto_alzado": ["tanto alzado", "[seleccionado]"],
             "Tanto_alzado_con": ["tanto alzado", "precio cerrado", "[seleccionado]"],
-            "Criterio_juicio_val": ["CRITERIOS DEPENDIENTES DE UN JUICIO DE VALOR", "juicio de valor", "criterios basados en juicio de valor"],
+            "Criterio_juicio_val": ["CRITERIOS DEPENDIENTES DE UN JUICIO DE VALOR", "juicio de valor", "criterios basados en juicio de valor", "CRITERIOS DE ADJUDICACIÓN SUJETOS A JUICIO DE VALOR"],
             "Evaluables_autom": ["criterios de adjudicación evaluables automáticamente", "de forma automática" ,"criterios cualitativos valorables de forma automática"],
             "Criterio_ecónomico": ["oferta económica", "criterios económicos", "criterio precio"],
             "Obligaciones_ambientales": ["obligaciones medioambientales", "sociales o laborables"],

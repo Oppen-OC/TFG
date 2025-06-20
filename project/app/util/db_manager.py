@@ -6,7 +6,7 @@ import os
 
 cnxn_str_base = (
     r"DRIVER={ODBC Driver 17 for SQL Server};"
-    r"SERVER=SOFTMAX;"
+    r"SERVER=TATIOLD;"
     r"DATABASE=TFG;"
     r"Trusted_Connection=yes;"
 )

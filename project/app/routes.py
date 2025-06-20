@@ -5,7 +5,6 @@ from app.util.db_manager import DBManager
 from app.util.scrapper import update
 from app.util.main import main as util_main
 import json
-from app.util.chatbot import chatbot_simple  # Asegúrate de que esta función esté definida en chatbot.py
 
 # Habilitar CORS para toda la aplicación
 CORS(app)
@@ -37,6 +36,7 @@ def cargar_anexo():
 
     data = db.searchTable("AnexoI", {"COD": cod})
     data1 = db.searchTable("anexoI_fuentes", {"COD": cod})
+    documentos = db.searchTable("Documentos", {"COD": cod})[6]
 
     #print(data)
     if data == []:
@@ -47,6 +47,8 @@ def cargar_anexo():
 
     if not data:
         return jsonify({'error': 'Licitación no encontrada'}), 404
+
+
 
     db.closeConnection()
 
@@ -98,7 +100,8 @@ def cargar_anexo():
         "Infraccion_grave": data[44],
         "Gastos_desistimiento": data[45],
         "Contratacion_control": data[46],
-        "Tareas_criticas": data[47]
+        "Tareas_criticas": data[47],
+        "Modificado": documentos
     }    
     anexoI_fuentes = {
         "COD": data1[0],
@@ -148,7 +151,8 @@ def cargar_anexo():
         "Infraccion_grave": data1[44],
         "Gastos_desistimiento": data1[45],
         "Contratacion_control": data1[46],
-        "Tareas_criticas": data1[47]
+        "Tareas_criticas": data1[47],
+        "Modificado": documentos
     }
 
     return jsonify({
@@ -325,26 +329,3 @@ def actualizar_usuario():
         print("ERROR AL ACTUALIZAR USUARIO:", e)
         return jsonify({'success': False, 'error': str(e)}), 500
 
-@app.route('/chatbot', methods=['POST', 'OPTIONS'])
-def chatbot_input():
-    if request.method == 'OPTIONS':
-        response = app.make_default_options_response()
-        headers = response.headers
-        headers['Access-Control-Allow-Origin'] = 'http://127.0.0.1:8000'
-        headers['Access-Control-Allow-Methods'] = 'POST, OPTIONS'
-        headers['Access-Control-Allow-Headers'] = 'Content-Type, X-Requested-With'
-        headers['Access-Control-Allow-Credentials'] = 'true'
-        return response
-
-    data = request.get_json()
-    user_message = data.get('message', '')
-
-    if not user_message:
-        return jsonify({'success': False, 'error': 'Mensaje vacío'}), 400
-
-    try:
-        bot_response = chatbot_simple(user_message)
-        return jsonify({'success': True, 'response': bot_response})
-    except Exception as e:
-        print("ERROR EN CHATBOT:", e)
-        return jsonify({'success': False, 'error': str(e)}), 500
