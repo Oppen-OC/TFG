@@ -13,6 +13,15 @@
   box-shadow: 0 2px 8px rgba(0,0,0,0.04);
   border: 1px solid #e0e0e0;
 }
+
+.grafico-container canvas {
+  width: 500px !important;
+  height: 500px !important;
+  max-width: 100%;
+  max-height: 100%;
+  margin: 0 auto;
+  display: block;
+}
 </style>
 
 <div class="row">
@@ -39,6 +48,9 @@
   </div>
   <div class="col-md-6 mb-4 grafico-container">
     <canvas id="pieProcedimiento"></canvas>
+  </div>
+  <div class="col-md-6 mb-4 grafico-container">
+    <canvas id="miGrafico" width="500" height="500"></canvas>
   </div>
 </div>
 
@@ -262,19 +274,20 @@ function capitalizarFrase(frase) {
 }
 
 function extraerLugarPrincipal(lugar) {
-  if (!lugar) return '';
-  // Elimina paréntesis y su contenido
+  if (!lugar) return {clave: 'otros', mostrar: 'Otros'};
   let sinParentesis = lugar.replace(/\([^)]*\)/g, '').trim();
-  // Divide por guiones
   let partes = sinParentesis.split('-').map(p => p.trim()).filter(Boolean);
-  // Si la última parte es "España" y hay más de una parte, toma la penúltima
-  let principal = (partes.length > 1 && normalizarTexto(partes[partes.length - 1]) === 'espana')
-    ? partes[partes.length - 2]
-    : partes[partes.length - 1];
-  // Capitaliza y normaliza para agrupar
+  let principal = partes[partes.length - 1];
   let clave = normalizarTexto(principal);
-  let mostrar = capitalizarFrase(principal);
-  return {clave, mostrar};
+
+  for (const [municipio, variantes] of Object.entries(municipiosCV)) {
+    for (const variante of variantes) {
+      if (clave.includes(normalizarTexto(variante))) {
+        return {clave: municipio, mostrar: capitalizarFrase(municipio)};
+      }
+    }
+  }
+  return {clave: 'otros', mostrar: 'Otros'};
 }
 
 function crearPieChartLugar(idCanvas, datos, titulo) {
@@ -331,7 +344,7 @@ function crearPieChartLugar(idCanvas, datos, titulo) {
 }
 
 document.addEventListener('DOMContentLoaded', function() {
-  crearPieChart('pieEstados', {{ estados|safe }}, 'Estados');
+  crearPieChart('pieEstados', {{ estados|safe }}, 'Estado de cada licitacion');
   crearPieChart('pieFinanciacion', {{ financiacion|safe }}, 'Financiación');
   crearPieChart('pieTipoContrato', {{ tipo_contrato|safe }}, 'Tipo de Contrato');
   crearPieChartCPV('pieCPV', {{ cpv|safe }}, 'CPV');
@@ -349,6 +362,77 @@ document.addEventListener('DOMContentLoaded', function() {
   crearPieChartRangos('piePresupuesto', {{ presupuesto|safe }}, 'Presupuesto (por rangos)', rangosDinero);
   crearPieChartRangos('pieValorEstimado', {{ valor_estimado|safe }}, 'Valor Estimado (por rangos)', rangosDinero);
 });
+
+const municipiosCV = {
+  // Valencia
+  "valencia": ["valencia", "valència"],
+  "alaquàs": ["alaquàs"],
+  "alboraya": ["alboraya", "alboraia"],
+  "aldaia": ["aldaia"],
+  "alfafar": ["alfafar"],
+  "algemesí": ["algemesí"],
+  "alzira": ["alzira"],
+  "benetússer": ["benetússer"],
+  "burjassot": ["burjassot"],
+  "carcaixent": ["carcaixent"],
+  "cullera": ["cullera"],
+  "gandía": ["gandía", "gandia"],
+  "manises": ["manises"],
+  "mislata": ["mislata"],
+  "ontinyent": ["ontinyent"],
+  "paterna": ["paterna"],
+  "picanya": ["picanya"],
+  "picassent": ["picassent"],
+  "puçol": ["puçol", "puzol"],
+  "quart de poblet": ["quart de poblet"],
+  "sagunto": ["sagunto", "sagunt"],
+  "sueca": ["sueca"],
+  "torrent": ["torrent"],
+  "xàtiva": ["xàtiva", "jativa"],
+  "xirivella": ["xirivella"],
+
+  // Castellón
+  "castellón de la plana": ["castellón de la plana", "castelló de la plana", "castellón", "castelló"],
+  "villarreal": ["villarreal", "vila-real"],
+  "borriana": ["borriana", "burriana"],
+  "la vall d'uixó": ["la vall d'uixó", "vall de uxo", "vall d'uixó"],
+  "benicàssim": ["benicàssim", "benicasim"],
+  "almenara": ["almenara"],
+  "alqueries": ["alqueries", "les alqueries"],
+  "alcalà de xivert": ["alcalà de xivert", "alcala de xivert"],
+  "oropesa del mar": ["oropesa del mar", "oropesa", "oropesa del mar"],
+  "nules": ["nules"],
+  "segorbe": ["segorbe"],
+  "benicarló": ["benicarló", "benicarlo"],
+  "vinaròs": ["vinaròs", "vinaros"],
+
+  // Alicante
+  "alicante": ["alicante", "alacant"],
+  "elche": ["elche", "elx"],
+  "benidorm": ["benidorm"],
+  "alcoy": ["alcoy", "alcoi"],
+  "san vicente del raspeig": ["san vicente del raspeig", "sant vicent del raspeig"],
+  "torrevieja": ["torrevieja"],
+  "denia": ["denia", "dénia"],
+  "elda": ["elda"],
+  "villena": ["villena"],
+  "novelda": ["novelda"],
+  "petrer": ["petrer"],
+  "la villajoyosa": ["la villajoyosa", "la vila joiosa", "villajoyosa", "vila joiosa"],
+  "crevillente": ["crevillente", "crevillent"],
+  "almoradí": ["almoradí", "almoradi"],
+  "ibi": ["ibi"],
+  "aspe": ["aspe"],
+  "calpe": ["calpe", "calp"],
+  "santa pola": ["santa pola"],
+  "guardamar del segura": ["guardamar del segura"],
+  "sax": ["sax"],
+  "mutxamel": ["mutxamel", "muchamiel"],
+  "cocentaina": ["cocentaina"],
+  "ondara": ["ondara"],
+  "orihuela": ["orihuela", "orihuela"],
+  // ...añade más municipios si lo necesitas
+};
 </script>
 
 {% endblock %}

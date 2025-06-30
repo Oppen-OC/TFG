@@ -121,6 +121,7 @@
         <td>{{ licitacion.Importe_Adjudicacion }}</td>
         <td>
           <a href="{% url 'app:detalles_licitacion' licitacion.COD|urlencode %}" class="btn btn-primary btn-sm">Detalles</a>
+          <button class="btn btn-danger btn-sm ms-2" onclick="eliminarLicitacion('{{ licitacion.COD }}')">Eliminar</button>
         </td>
       </tr>
       {% endfor %}
@@ -223,6 +224,37 @@ function updateHiddenColumnsVisibility() {
   const hiddenColumnsContainer = document.getElementById('hiddenColumnsContainer');
   const hiddenColumnsList = document.getElementById('hiddenColumnsList');
   hiddenColumnsContainer.style.display = hiddenColumnsList.children.length > 0 ? 'block' : 'none';
+}
+
+function eliminarLicitacion(cod) {
+  if (!confirm('¿Seguro que quieres eliminar esta licitación de tu lista?')) return;
+
+  fetch('http://192.168.1.4:5000/eliminar-licitacion', {
+    method: 'POST',
+    body: JSON.stringify({ cod_licitacion: cod, user: '{{ request.user.username }}' }),
+    headers: {
+      'Content-Type': 'application/json',
+      'X-Requested-With': 'XMLHttpRequest',
+    },
+  })
+    .then(response => response.json())
+    .then(data => {
+      if (data.success) {
+        // Elimina la fila de la tabla
+        const rows = document.querySelectorAll('#licitacionesTable tbody tr');
+        rows.forEach(row => {
+          if (row.children[0].textContent.trim() === cod) {
+            row.remove();
+          }
+        });
+      } else {
+        alert('No se pudo eliminar la licitación: ' + (data.error || 'Error desconocido'));
+      }
+    })
+    .catch(error => {
+      console.error('Error al eliminar la licitación:', error);
+      alert('Hubo un error al eliminar la licitación.');
+    });
 }
 </script>
 {% endblock %}

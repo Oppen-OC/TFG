@@ -182,7 +182,7 @@
       for (let pair of formData.entries()) {
       }
 
-      fetch('http://127.0.0.1:5000/crear-alerta', {
+      fetch('http://192.168.1.4:5000/crear-alerta', {
         method: 'POST',
         body: formData,
         headers: {
@@ -315,7 +315,7 @@
     formData.append('id', alertaId);
     formData.append('user', user);
 
-    fetch('http://127.0.0.1:5000/eliminar-alerta', {
+    fetch('http://192.168.1.4:5000/eliminar-alerta', {
       method: 'POST',
       body: formData,
       headers: {

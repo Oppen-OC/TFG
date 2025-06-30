@@ -1,11 +1,10 @@
-from flask import jsonify, request, session
+from flask import jsonify, request, session, make_response
 from flask_cors import CORS
 from app import app
 from app.util.db_manager import DBManager
 from app.util.scrapper import update
 from app.util.main import main as util_main
 import json
-from app.util.chatbot import chatbot_simple  # Asegúrate de que esta función esté definida en chatbot.py
 
 # Habilitar CORS para toda la aplicación
 CORS(app)
@@ -37,6 +36,7 @@ def cargar_anexo():
 
     data = db.searchTable("AnexoI", {"COD": cod})
     data1 = db.searchTable("anexoI_fuentes", {"COD": cod})
+    documentos = db.searchTable("Documentos", {"COD": cod})[6]
 
     #print(data)
     if data == []:
@@ -47,6 +47,8 @@ def cargar_anexo():
 
     if not data:
         return jsonify({'error': 'Licitación no encontrada'}), 404
+
+
 
     db.closeConnection()
 
@@ -98,7 +100,8 @@ def cargar_anexo():
         "Infraccion_grave": data[44],
         "Gastos_desistimiento": data[45],
         "Contratacion_control": data[46],
-        "Tareas_criticas": data[47]
+        "Tareas_criticas": data[47],
+        "Modificado": documentos
     }    
     anexoI_fuentes = {
         "COD": data1[0],
@@ -148,7 +151,8 @@ def cargar_anexo():
         "Infraccion_grave": data1[44],
         "Gastos_desistimiento": data1[45],
         "Contratacion_control": data1[46],
-        "Tareas_criticas": data1[47]
+        "Tareas_criticas": data1[47],
+        "Modificado": documentos
     }
 
     return jsonify({
@@ -191,18 +195,9 @@ def get_anexoI_data():
         print(f"Error al obtener los datos de anexoI: {e}")
         return jsonify({'error': str(e)}), 500
 
-@app.route('/crear-alerta', methods=['POST', 'OPTIONS'])
+@app.route('/crear-alerta', methods=['POST'])
 def crear_alerta():
     print("Endpoint /crear-alerta fue llamado")
-    if request.method == 'OPTIONS':
-        response = app.make_default_options_response()
-        headers = response.headers
-        headers['Access-Control-Allow-Origin'] = 'http://127.0.0.1:8000'
-        headers['Access-Control-Allow-Methods'] = 'POST, OPTIONS'
-        headers['Access-Control-Allow-Headers'] = 'Content-Type, X-Requested-With'
-        headers['Access-Control-Allow-Credentials'] = 'true'
-        return response
-
     print("FORM DATA:", request.form)
     print("SESSION:", session)
     nombre = request.form.get('nombre_alerta')
@@ -221,7 +216,6 @@ def crear_alerta():
     try:
         db = DBManager()
         db.openConnection()
-        # Prepara los valores en el orden correcto según tu tabla y tu DBManager
         values = [user, nombre, 1, json.dumps(condiciones_json)]
         db.insertDb("alertas", values)
         db.closeConnection()
@@ -235,17 +229,8 @@ def crear_alerta():
         print("ERROR AL GUARDAR ALERTA:", e)
         return jsonify({'success': False, 'error': str(e)}), 500
 
-@app.route('/eliminar-alerta', methods=['POST', 'OPTIONS'])
+@app.route('/eliminar-alerta', methods=['POST'])
 def eliminar_alerta():
-    if request.method == 'OPTIONS':
-        response = app.make_default_options_response()
-        headers = response.headers
-        headers['Access-Control-Allow-Origin'] = 'http://127.0.0.1:8000'
-        headers['Access-Control-Allow-Methods'] = 'POST, OPTIONS'
-        headers['Access-Control-Allow-Headers'] = 'Content-Type, X-Requested-With'
-        headers['Access-Control-Allow-Credentials'] = 'true'
-        return response
-
     alerta_id = request.form.get('id')
 
     if not alerta_id:
@@ -254,7 +239,6 @@ def eliminar_alerta():
     try:
         db = DBManager()
         db.openConnection()
-        # Usa deleteObject para eliminar por id
         db.deleteObject("alertas", "id", alerta_id)
         db.closeConnection()
         return jsonify({'success': True})
@@ -262,17 +246,8 @@ def eliminar_alerta():
         print("ERROR AL ELIMINAR ALERTA:", e)
         return jsonify({'success': False, 'error': str(e)}), 500
 
-@app.route('/guardar-anexo', methods=['POST', 'OPTIONS'])
+@app.route('/guardar-anexo', methods=['POST'])
 def guardar_anexo():
-    if request.method == 'OPTIONS':
-        response = app.make_default_options_response()
-        headers = response.headers
-        headers['Access-Control-Allow-Origin'] = 'http://127.0.0.1:8000'
-        headers['Access-Control-Allow-Methods'] = 'POST, OPTIONS'
-        headers['Access-Control-Allow-Headers'] = 'Content-Type, X-Requested-With'
-        headers['Access-Control-Allow-Credentials'] = 'true'
-        return response
-
     cod_licitacion = request.form.get('cod_licitacion')
     user = request.form.get('user')
 
@@ -285,22 +260,15 @@ def guardar_anexo():
         values = [cod_licitacion, user]
         db.insertDb("anexos_guardados", values)
         db.closeConnection()
-        return jsonify({'success': True})
+        response = make_response('OK')
+        response.headers['Access-Control-Allow-Origin'] = '*'
+        return jsonify({"success": True})
     except Exception as e:
         print("ERROR AL GUARDAR ANEXO:", e)
         return jsonify({'success': False, 'error': str(e)}), 500
 
-@app.route('/actualizar-usuario', methods=['POST', 'OPTIONS'])
+@app.route('/actualizar-usuario', methods=['POST'])
 def actualizar_usuario():
-    if request.method == 'OPTIONS':
-        response = app.make_default_options_response()
-        headers = response.headers
-        headers['Access-Control-Allow-Origin'] = 'http://127.0.0.1:8000'
-        headers['Access-Control-Allow-Methods'] = 'POST, OPTIONS'
-        headers['Access-Control-Allow-Headers'] = 'Content-Type, X-Requested-With'
-        headers['Access-Control-Allow-Credentials'] = 'true'
-        return response
-
     username_actual = request.form.get('username_actual')  # El nombre de usuario antes del cambio
     nuevo_username = request.form.get('username')
     nuevo_email = request.form.get('email')
@@ -325,26 +293,27 @@ def actualizar_usuario():
         print("ERROR AL ACTUALIZAR USUARIO:", e)
         return jsonify({'success': False, 'error': str(e)}), 500
 
-@app.route('/chatbot', methods=['POST', 'OPTIONS'])
-def chatbot_input():
-    if request.method == 'OPTIONS':
-        response = app.make_default_options_response()
-        headers = response.headers
-        headers['Access-Control-Allow-Origin'] = 'http://127.0.0.1:8000'
-        headers['Access-Control-Allow-Methods'] = 'POST, OPTIONS'
-        headers['Access-Control-Allow-Headers'] = 'Content-Type, X-Requested-With'
-        headers['Access-Control-Allow-Credentials'] = 'true'
-        return response
-
+@app.route('/eliminar-licitacion', methods=['POST'])
+def eliminar_licitacion():
+    # Intenta obtener los datos como JSON
     data = request.get_json()
-    user_message = data.get('message', '')
+    cod_licitacion = data.get('cod_licitacion') if data else None
 
-    if not user_message:
-        return jsonify({'success': False, 'error': 'Mensaje vacío'}), 400
+    if not cod_licitacion:
+        return jsonify({'success': False, 'error': 'Código de licitación no proporcionado'}), 400
 
     try:
-        bot_response = chatbot_simple(user_message)
-        return jsonify({'success': True, 'response': bot_response})
+        db = DBManager()
+        db.openConnection()
+        # Eliminar de la tabla "licitaciones"
+        db.deleteObject("licitaciones", "COD", cod_licitacion)
+        # Eliminar de la tabla "AnexoI"
+        db.deleteObject("AnexoI", "COD", cod_licitacion)
+        # Eliminar de la tabla "anexoI_fuentes"
+        db.deleteObject("anexoI_fuentes", "COD", cod_licitacion)
+        db.closeConnection()
+        return jsonify({'success': True, 'message': 'Licitación eliminada correctamente.'}), 200
     except Exception as e:
-        print("ERROR EN CHATBOT:", e)
+        print("ERROR AL ELIMINAR LICITACION:", e)
         return jsonify({'success': False, 'error': str(e)}), 500
+

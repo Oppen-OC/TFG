@@ -125,7 +125,10 @@
 </ul>
 
 <!-- Botón para cargar el anexo -->
-<button id="cargarAnexoButton" class="btn btn-primary mt-3">Cargar Anexo</button>
+<button id="cargarAnexoButton" class="btn btn-primary mt-3"
+  {% if not anexo_url or anexo_url|slice:":4" != "http" %}disabled{% endif %}>
+  Cargar Anexo
+</button>
 
 <!-- Contenedor del anexo, inicialmente vacío -->
 <div id="anexoContainer" style="display: none;">
@@ -157,38 +160,32 @@
 </script>
 
 <script>
+  // Define la función globalmente
+  function mostrarFuenteCampo(campo) {
+    const fuente = window.anexoI_fuentes ? window.anexoI_fuentes[campo] : undefined;
+    let html = '';
+    if (fuente) {
+      let fuenteFormateada = fuente;
+      fuenteFormateada = fuenteFormateada.replace(/(chunk:)/gi, '<br><strong>$1</strong>');
+      let pageCount = 0;
+      fuenteFormateada = fuenteFormateada.replace(/(Page:)/gi, function(match) {
+        pageCount++;
+        if (pageCount === 1) {
+          return '<strong>Page:</strong>';
+        } else {
+          return '<br><br><strong>Page:</strong>';
+        }
+      });
+      html = fuenteFormateada;
+    } else {
+      html = 'No hay fuente registrada para este campo.';
+    }
+    document.getElementById('ubicacionModalBody').innerHTML = html;
+    var myModal = new bootstrap.Modal(document.getElementById('ubicacionModal'));
+    myModal.show();
+  }
+
   document.addEventListener('DOMContentLoaded', function() {
-    function mostrarFuenteCampo(campo) {
-      const fuente = anexoI_fuentes[campo];
-      let html = '';
-      if (fuente) {
-        // Formatear "Page:" y "chunk:" según lo solicitado
-        let fuenteFormateada = fuente;
-
-        // Formatear "chunk:" siempre con salto de línea antes y negrita
-        fuenteFormateada = fuenteFormateada.replace(/(chunk:)/gi, '<br><strong>$1</strong>');
-
-        // Formatear "Page:": la primera aparición sin salto, las siguientes con dos saltos de línea antes y negrita
-        let pageCount = 0;
-        fuenteFormateada = fuenteFormateada.replace(/(Page:)/gi, function(match) {
-          pageCount++;
-          if (pageCount === 1) {
-            return '<strong>Page:</strong>';
-          } else {
-            return '<br><br><strong>Page:</strong>';
-          }
-        });
-
-        html = fuenteFormateada;
-      } else {
-        html = 'No hay fuente registrada para este campo.';
-      }
-      document.getElementById('ubicacionModalBody').innerHTML = html;
-      var myModal = new bootstrap.Modal(document.getElementById('ubicacionModal'));
-      myModal.show();
-    } 
-
-
     // Mostrar u ocultar el contenedor del anexo al hacer clic en el botón
     document.getElementById('cargarAnexoButton').addEventListener('click', function() {
       const container = document.getElementById('anexoContainer');
@@ -211,9 +208,10 @@
       const anexoContent = document.getElementById('anexoContent');
 
       // Realizar la solicitud AJAX
-      fetch('http://127.0.0.1:5000/cargar-anexo', {
+      fetch('http://192.168.1.4:5000/cargar-anexo', {
         method: 'POST',
         headers: {
+          "Allow-Origin": "*",
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({ cod: cod }),
@@ -291,17 +289,29 @@
       formData.append('cod_licitacion', cod);
       formData.append('user', user);
 
-      fetch('http://127.0.0.1:5000/guardar-anexo', {
+      fetch('http://192.168.1.4:5000/guardar-anexo', {
           method: 'POST',
           body: formData,
           headers: {
-              'X-Requested-With': 'XMLHttpRequest',
+          'Access-Control-Allow-Origin': '*',
+          'X-Requested-With': 'XMLHttpRequest',
           },
       })
       .then(response => response.json())
       .then(data => {
           if (data.success) {
               alert('Anexo guardado correctamente.');
+              const btn = document.getElementById('guardarAnexoBtn');
+              btn.disabled = true;
+              btn.textContent = 'Añadido a favoritos';
+              // Opcional: muestra el mensaje de "Ya guardado"
+              if (!document.getElementById('ya-guardado-msg')) {
+                  const span = document.createElement('span');
+                  span.className = 'text-success ms-2';
+                  span.id = 'ya-guardado-msg';
+                  span.textContent = 'Ya guardado';
+                  btn.parentNode.insertBefore(span, btn.nextSibling);
+              }
           } else {
               alert('No se pudo guardar el anexo: ' + (data.error || 'Error desconocido'));
           }
@@ -325,7 +335,7 @@
 <a href="{% url 'app:licitaciones' %}" class="btn btn-secondary mt-3">Volver a licitaciones</a>
 <button id="guardarAnexoBtn" class="btn btn-success mt-3 ms-2"
   {% if anexo_guardado %}disabled{% endif %}>
-  Guardar Anexo
+  Añadir a favoritos
 </button>
 {% if anexo_guardado %}
   <span class="text-success ms-2">Ya guardado</span>

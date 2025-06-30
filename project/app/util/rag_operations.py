@@ -12,8 +12,10 @@ import openai
 import torch
 import spacy
 import json
+import time
 import os
 import re
+import gc
 
 from .db_manager import DBManager
 
@@ -355,7 +357,13 @@ class RAG:
 
         # Tokenize chunks and query
         candidate_chunks = [self.chunks[idx] for idx in candidate_ids]
+        # Filtra chunks vacíos
+        candidate_chunks = [chunk for chunk in candidate_chunks if chunk and chunk.strip()]
+        if not candidate_chunks:
+            return [], []
         tokenized_chunks = [chunk.lower().split() for chunk in candidate_chunks]
+        if not tokenized_chunks:
+            return [], []
         tokenized_query = query.lower().split()
         bm25 = BM25Okapi(tokenized_chunks)
         scores = bm25.get_scores(tokenized_query)
@@ -472,64 +480,7 @@ class RAG:
 
         return answer
     
-    def QNA_RAG(self, query, top_k=3):
-        try:
-            # Generar el embedding para la consulta
-            response = self.client.embeddings.create(
-                input=query,
-                model=self.embedding_model
-            )
-            query_embedding = response.data[0].embedding  # Chroma espera una lista de floats
-
-            # Buscar los chunks más similares en ChromaDB
-            results = self.collection.query(
-                query_embeddings=[query_embedding],
-                n_results=top_k,
-                include=["documents", "distances", "ids"]
-            )
-
-            documents = results.get("documents", [[]])[0]
-            distances = results.get("distances", [[]])[0]
-            ids = results.get("ids", [[]])[0]
-
-            # Calcular las puntuaciones basadas en las distancias
-            scores = [1 - distance for distance in distances]
-
-            # Recuperar los chunks correspondientes
-            similar_chunks = [(documents[i], scores[i], int(ids[i].split("_")[-1])) for i in range(len(documents)) if i < len(documents)]
-
-            # Ordenar por puntuación descendente
-            similar_chunks = sorted(similar_chunks, key=lambda x: x[1], reverse=True)
-
-            self.logger.info(f"Chunks similares encontrados: {similar_chunks}")
-
-        except Exception as e:
-            self.logger.error(f"Error al buscar chunks similares: {e}")
-            return ""
-
-        system_message = {
-            "role": "system",
-            "content": "Eres un asistente RAG, respondes preguntas de un usuario en base al contexto otorgado."
-        }
-
-        user_message = {
-            "role": "user",
-            "content": f"""
-            Contexto: {similar_chunks}\n
-
-            Pregunta: {query}\n
-
-            Respuesta:
-            """
-        }
-
-        response = self.client.chat.completions.create(
-            model=self.llm_model,
-            messages=[system_message, user_message],
-        )
-
-        return response.choices[0].message.content.strip()
-
+    
     def reformulate_query(self, prompt):
         try:
             # Reformula el prompt usando la API de OpenAI
@@ -560,7 +511,7 @@ class RAG:
             self.logger.error(f"Error reformulating query: {e}")
             return prompt  # Devuelve el prompt original si ocurre un error
 
-    def embed_json(self):
+    def embed_json1(self):
         try:
             # Procesar cada chunk de forma secuencial
             for i, chunk in enumerate(tqdm(self.chunks, desc="Embedding Chunks", unit="chunk")):
@@ -587,6 +538,60 @@ class RAG:
                     )
                 except Exception as e:
                     self.logger.error(f"Error generating embedding for chunk {i}: {e}")
+
+        except Exception as e:
+            self.logger.error(f"Error embedding JSON file with ChromaDB: {e}")
+
+
+    def embed_json(self, batch_size=16):
+        try:
+            num_chunks = len(self.chunks)
+            for batch_start in tqdm(range(0, num_chunks, batch_size), desc="Embedding Chunks", unit="batch"):
+                batch_end = min(batch_start + batch_size, num_chunks)
+                batch_chunks = self.chunks[batch_start:batch_end]
+                batch_metadata = self.metadata[batch_start:batch_end]
+
+                # Filtrar chunks vacíos
+                filtered_batch = [
+                    (chunk, meta) for chunk, meta in zip(batch_chunks, batch_metadata) if chunk.strip()
+                ]
+                if not filtered_batch:
+                    continue
+
+                # Separar los chunks y metadatos filtrados
+                filtered_chunks, filtered_metadata = zip(*filtered_batch)
+
+                # Normaliza todos los chunks del batch
+                normalized_batch = [self.normalize_chunk(chunk) for chunk in filtered_chunks]
+
+                try:
+                    # Solicita los embeddings en batch
+                    response = self.client.embeddings.create(
+                        input=normalized_batch,
+                        model=self.embedding_model,
+                        timeout=600000  # Ajusta el timeout según sea necesario
+                    )
+                    embeddings = [item.embedding for item in response.data]
+
+                    # Log y añade cada embedding a la colección
+                    for i, (normalized_chunk, embedding, meta) in enumerate(zip(normalized_batch, embeddings, filtered_metadata)):
+                        idx = batch_start + i
+                        self.logger.info(f"Created embedding for chunk {idx}: {normalized_chunk}")
+                        self.collection.add(
+                            documents=[normalized_chunk],
+                            embeddings=[embedding],
+                            ids=[f"chunk_{idx}"],
+                            metadatas=[{
+                                "page": meta[0],
+                                "sections": ", ".join(meta[1])
+                            }]
+                        )
+                except Exception as e:
+                    self.logger.error(f"Error generating embedding for batch {batch_start}-{batch_end-1}: {e}")
+
+                # Espera 5 segundos antes de la siguiente solicitud
+                gc.collect()
+                time.sleep(5)
 
         except Exception as e:
             self.logger.error(f"Error embedding JSON file with ChromaDB: {e}")
@@ -703,9 +708,10 @@ class RAG:
         return fuentes
 
 def process_prompt(rag_object, prompt_key, prompt):
+    new_prompt = rag_object.reformulate_query(prompt)
     rag_object.key = prompt_key
-    final_chunks, score, index = rag_object.union_top_chunks(prompt)
-    response =  rag_object.generate_response_with_context(prompt, final_chunks)
+    final_chunks, score, index = rag_object.union_top_chunks(new_prompt)
+    response =  rag_object.generate_response_with_context(new_prompt, final_chunks)
 
     return Prompt(prompt_key=prompt_key, prompt=prompt, response=response, score=score, index=index, chunks=final_chunks, format=rag_object.format[rag_object.key]), response
 
@@ -732,6 +738,8 @@ def main(cod):
         except Exception as e:
             print(f"Error processing prompt: {e}")
             traceback.print_exc()
+        gc.collect()  # <-- FUERZA LA RECOLECCIÓN DE BASURA AQUÍ
+
 
     db.insertDb("AnexoI", results_db)
 
